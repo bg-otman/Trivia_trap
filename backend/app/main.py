@@ -1,23 +1,10 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from engine.room_manager import router as room_manager
 
 app = FastAPI()
 
+app.include_router(room_manager)
+
 @app.get("/")
 def root():
-    return {"HELLO" : "WORLD"}
-
-items = []
-
-class Item(BaseModel):
-    name: str
-    description: str = "No description available"
-    price: int
-
-@app.post("/item")
-def add_item(item: Item):
-    items.append(item)
-
-@app.get("/items/{id}")
-def get_item(id: int):
-    return {f"item with id : {id}" : items[id]}
+    return "HELLO WORLD! THIS IS THE HOME PAGE :)"
