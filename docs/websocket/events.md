@@ -120,6 +120,7 @@ Note: is_present to indicate if a player is currently connected.
       "total_rounds": 5,
       "bluff_time": 30,
       "voting_time": 20,
+      "max_players": 8
     }
   }
 }
@@ -255,6 +256,7 @@ Purpose: action rejected.
 - UNAUTHORIZED
 - FORBIDDEN
 - ROOM_NOT_FOUND
+- FULL_ROOM
 - INVALID_PHASE
 - INVALID_ACTION
 - ALREADY_SUBMITTED

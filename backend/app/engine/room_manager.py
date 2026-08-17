@@ -1,58 +1,49 @@
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, status, Query
 from typing import Annotated
-from dataclasses import dataclass
+from pydantic import Field
+from models import Room
+from events import join_room
 
 router = APIRouter(prefix="/room", tags=["Room"])
 
-@dataclass
-class Player:
-    ws: WebSocket
-    user_id: str
-    user_name: str
-    room_id: str
-
 class RoomManager():
     def __init__(self):
-        self.connections : Annotated[dict[str, dict[str, Player]], "list of active connections on each room, grouped by room_id and user_id"] = dict()
+        self.rooms : Annotated[dict[str, Room], "Dictionary of rooms with room_id as key and Room object as value"] = Field(default_factory=dict)
 
     async def connect(self, ws: WebSocket, room_id: str):
         await ws.accept()
         if not ws.state.user_id or not ws.state.user_name:
-            raise ValueError("Token is invalid, user_id or user_name is missing")
-        if room_id not in self.connections:
-            self.connections[room_id] = {}
-        self.connections[room_id][ws.state.user_id] = Player(ws=ws, user_id=ws.state.user_id, user_name=ws.state.user_name, room_id=room_id)
+            raise ValueError("UNAUTHORIZED")
+        join_room(self.rooms, ws, room_id, ws.state.user_id, ws.state.user_name)
 
     async def broadcast(self, data: Annotated[str, "Data in JSON format"], room_id: str):
-        for player in list(self.connections.get(room_id, {}).values()):
+        for id, player in self.rooms.get(room_id, {}).players.items():
             try:
                 await player.ws.send_json(data)
-            except Exception:
-                self.remove_connection(player.ws, room_id)
+            except Exception as e:
+                print(f"Error broadcast data by {player.name} in room {room_id}: {e}")
+                self.remove_connection(id, room_id)
 
-    def remove_connection(self, ws: WebSocket, room_id: str):
+    def remove_connection(self, player_id: str, room_id: str):
         """
-            remove disconnected user from the list of active connections
+            remove disconnected user from the list of active rooms
         """
-        player = None
-        for p in self.connections.get(room_id, {}).values():
-            if p.ws == ws:
-                player = p
-                break
-        if player and room_id in self.connections:
-            del self.connections[room_id][player.user_id]
-        if room_id in self.connections and not self.connections[room_id]:
-            del self.connections[room_id]
+        player = self.rooms.get(room_id, {}).players.get(player_id)
+        if player and room_id in self.rooms:
+            del self.rooms[room_id].players[player_id]
+        if room_id in self.rooms and not self.rooms[room_id].players:
+            del self.rooms[room_id]
 
-    async def kick(self, ws: WebSocket, room_id: str):
+    async def kick(self, player_id: str, room_id: str):
         """
             Kick a user from the room
         """
-        self.remove_connection(ws, room_id)
         try:
+            ws = self.rooms[room_id].players[player_id].ws
             await ws.close()
         except Exception:
             pass
+        self.remove_connection(player_id, room_id)
 
 
 manager = RoomManager()
@@ -65,7 +56,6 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
 
     ws.state.user_id = user_id
     ws.state.user_name = user_name
-    ws.state.room_id = room_id
 
     try:
         await manager.connect(ws, room_id)
@@ -83,8 +73,8 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
         print(f"Connection error: {ve}")
         await ws.close(code=status.WS_1008_POLICY_VIOLATION)
     except WebSocketDisconnect:
-        print(f"Player {user_name} disconnected from room {room_id}")
-        manager.remove_connection(ws, room_id)
+        print(f"PlayerInfo {user_name} disconnected from room {room_id}")
+        manager.remove_connection(ws.state.user_id, room_id)
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
