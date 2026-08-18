@@ -92,30 +92,30 @@ Purpose: host removes a player from the room.
 }
 ```
 
-7. CHOOSE_CATEGORY
-Purpose: Player select a category.
-```json
-{
-  "event": "CHOOSE_CATEGORY",
-  "data": { "category": "Science" }
-}
-```
-
-8. JOIN_ROOM
-Purpose: Player joins a room.
-```json
-{
-  "event": "JOIN_ROOM",
-  "data": { "username": "alice", "user_id": "usr_1" }
-}
-```
-
-9. LEAVE_ROOM
+7. LEAVE_ROOM
 Purpose: Player leaves a room.
 ```json
 {
   "event": "LEAVE_ROOM",
   "data": { "user_id": "usr_1" }
+}
+```
+
+8. NEXT_ROUND
+Purpose: Host moves to the next round.
+```json
+{
+  "event": "NEXT_ROUND",
+  "data": {}
+}
+```
+
+9. CHOOSE_CATEGORY
+Purpose: Host chooses a category for the round.
+```json
+{
+  "event": "CHOOSE_CATEGORY",
+  "data": { "category": "Science" }
 }
 ```
 
@@ -163,7 +163,7 @@ Purpose: round starts and question is shown.
   "data": {
     "round": 1,
     "total_rounds": 5,
-    "prompt": "In 1923, Liechtenstein adopted which neighbor currency?",
+    "question": "In 1923, Liechtenstein adopted which neighbor currency?",
     "duration": 30
   }
 }

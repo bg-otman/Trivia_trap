@@ -25,8 +25,6 @@ class RoomPhase(StateMachine):
         PODIUM.to(LOBBY)
     )
 
-room_phase = RoomPhase()
-
 class PlayerInfo(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True) # Allow WebSocket type in Pydantic model
     ws: WebSocket
@@ -44,7 +42,7 @@ class RoomMetaData(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True) # Allow RoomPhase type in Pydantic model
     host_id: str
     settings: RoomSettings
-    current_phase: Annotated[State, Field(description="Current phase of the room, set based on the game state")] = room_phase.current_state
+    phase: Annotated[RoomPhase, Field(description="Access to the room phase state machine by phase.current_state")] = RoomPhase()
     current_round: int = 0
 
 class Room(BaseModel):

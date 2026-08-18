@@ -2,7 +2,7 @@ from fastapi import APIRouter, WebSocket, WebSocketDisconnect, status, Query
 from typing import Annotated
 from pydantic import Field
 from .room_models import Room
-from .events import join_room
+from .events import join_room, process_event
 
 router = APIRouter(prefix="/room", tags=["Room"])
 
@@ -16,7 +16,7 @@ class RoomManager():
             raise ValueError("UNAUTHORIZED")
         join_room(self.rooms, ws, room_id, ws.state.user_id, ws.state.user_name)
 
-    async def broadcast(self, data: Annotated[str, Field(description="Data in JSON format")], room_id: str):
+    async def broadcast(self, data: Annotated[str | dict, Field(description="Data in JSON format")], room_id: str):
         if room_id not in self.rooms:
             raise ValueError("ROOM_NOT_FOUND")
         for id, player in self.rooms.get(room_id).players.items():
@@ -76,17 +76,16 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
     try:
         await manager.connect(ws, room_id)
         while True:
-            data = await ws.receive_text()
-            payload = {
-                "room_id": room_id,
-                "user_id": user_id,
-                "user_name": user_name,
-                "data": data
-            }
-            print(f"data sent by user {user_name} in room {room_id}: {data}")
-            await manager.broadcast(payload, room_id)
+            request = await ws.receive_json()
+            event_name = request.get("event")
+            data = request.get("data")
+            if not event_name or not data:
+                raise ValueError("no event or data in the request")
+            response = process_event(manager, room_id, user_id, user_name, event_name, data)
+            await manager.broadcast(response, room_id)
     except ValueError as ve:
-        print(f"Connection error: {ve}")
+        print(f"INVALID_PAYLOAD: {ve}")
+        manager.remove_connection(ws.state.user_id, room_id)
         await ws.close(code=status.WS_1008_POLICY_VIOLATION)
     except WebSocketDisconnect:
         print(f"Player {user_name} disconnected from room {room_id}")
