@@ -101,6 +101,23 @@ Purpose: Player select a category.
 }
 ```
 
+8. JOIN_ROOM
+Purpose: Player joins a room.
+```json
+{
+  "event": "JOIN_ROOM",
+  "data": { "username": "alice", "user_id": "usr_1" }
+}
+```
+
+9. LEAVE_ROOM
+Purpose: Player leaves a room.
+```json
+{
+  "event": "LEAVE_ROOM",
+  "data": { "user_id": "usr_1" }
+}
+```
 
 ### 3.2 Server -> Client
 
