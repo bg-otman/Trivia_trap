@@ -10,7 +10,6 @@ class RoomPhase(StateMachine):
     LOBBY = State("Lobby", initial=True)
     CATEGORY = State("Category Selection")
     QUESTION = State("Question")
-    BLUFF = State("Bluff")
     VOTE = State("Vote")
     REVEAL = State("Reveal")
     PODIUM = State("Podium")
@@ -20,8 +19,7 @@ class RoomPhase(StateMachine):
 
     cycle = (
         CATEGORY.to(QUESTION) |
-        QUESTION.to(BLUFF) |
-        BLUFF.to(VOTE) |
+        QUESTION.to(VOTE) |
         VOTE.to(REVEAL) |
         REVEAL.to(PODIUM) |
         PODIUM.to(CATEGORY)
@@ -45,7 +43,13 @@ class RoomMetaData(BaseModel):
     host_id: str
     settings: RoomSettings
     phase: Annotated[RoomPhase, Field(description="Access to the room phase state machine by phase.current_state")] = RoomPhase()
-    current_round: int = 0
+    current_round: int = 1
+    active_question: Annotated[str | None, Field(description="The current question being asked in the room")] = None
+    correct_answer: Annotated[str | None, Field(description="The correct answer for the current question")] = None
+    sumbitted_bluffs: Annotated[dict[str, str], Field(description="Map of player_id to their submitted bluff answer")] = Field(default_factory=dict)
+    fake_answers: Annotated[list[str], Field(description="Additional fake answers for the current question")] = Field(default_factory=list)
+    voting_results: Annotated[dict[str, str], Field(description="Map of player_id to the answer they voted for")] = Field(default_factory=dict)
+    podium: Annotated[list[dict[str, str]], Field(description="List of players and their scores for the current round")] = Field(default_factory=list)
 
 class Room(BaseModel):
     meta_data: RoomMetaData

@@ -28,8 +28,7 @@ class RoomManager():
             try:
                 if player.is_present:
                     await player.ws.send_json(data)
-            except Exception as e:
-                print(f"Error broadcast data by {player.name} in room {room_id}: {e}")
+            except Exception:
                 self.mark_disconnected(id, room_id)
 
     async def send_to_player(self, data: Annotated[str | dict, Field(description="Data in JSON format")], room_id: str, player_id: str):
@@ -40,8 +39,7 @@ class RoomManager():
             return
         try:
             await player.ws.send_json(data)
-        except Exception as e:
-            print(f"Error sending data to {player.name} in room {room_id}: {e}")
+        except Exception:
             self.mark_disconnected(player_id, room_id)
 
     def remove_connection(self, player_id: str, room_id: str):
@@ -108,8 +106,8 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
                 request = await ws.receive_json()
                 event_name = request.get("event")
                 data = request.get("data")
-                if not event_name:
-                    raise GameError("INVALID_PAYLOAD", "Missing event name")
+                if not event_name or "data" not in request:
+                    raise GameError("INVALID_PAYLOAD", "Missing event name or data in request")
                 response = process_event(manager, room_id, user_id, user_name, event_name, data)
                 await manager.broadcast(response, room_id, None)
             except GameError as e:

@@ -46,7 +46,7 @@ Purpose: player submits fake answer.
 ```json
 {
   "event": "SUBMIT_BLUFF",
-  "data": { "text": "Austria" }
+  "data": { "bluff_answer": "Austria" }
 }
 ```
 
@@ -56,7 +56,7 @@ Purpose: player votes for the answer they think is true.
 ```json
 {
   "event": "SUBMIT_VOTE",
-  "data": { "choice_id": "c2" }
+  "data": { "choice_id": "2" }
 }
 ```
 
@@ -110,11 +110,11 @@ Purpose: Host moves to the next round.
 }
 ```
 
-9. CHOOSE_CATEGORY
-Purpose: Host chooses a category for the round.
+9. GET_QUESTION
+Purpose: Player requests a question from the selected category.
 ```json
 {
-  "event": "CHOOSE_CATEGORY",
+  "event": "GET_QUESTION",
   "data": { "category": "Science" }
 }
 ```
@@ -169,59 +169,49 @@ Purpose: round starts and question is shown.
 }
 ```
 
-4. BLUFF_CORRECT (broadcast)
-Purpose: a player has submitted the correct answer, need to submit a fake answer.
-```json
-{
-  "event": "BLUFF_CORRECT",
-  "data": {
-    "player_id": "usr_3"
-  }
-}
-```
-
-5. PHASE_VOTING (broadcast)
+6. PHASE_VOTING (broadcast)
 Purpose: voting starts with answer choices.
 
 ```json
 {
   "event": "PHASE_VOTING",
   "data": {
+    "round": 1,
+    "total_rounds": 5,
     "duration": 20,
     "choices": [
-      { "id": "c1", "text": "Austria" },
-      { "id": "c2", "text": "Switzerland" }
+      { "id": "1", "text": "Austria" },
+      { "id": "2", "text": "Switzerland" }
     ]
   }
 }
 ```
 
-6. PHASE_REVEAL (broadcast)
+7. RESULTS_REVEALED (broadcast)
 Purpose: reveal truth, votes, and updated scores.
 
 ```json
 {
-  "event": "PHASE_REVEAL",
+  "event": "RESULTS_REVEALED",
   "data": {
-    "correct_choice_id": "c2",
+    "correct_choice_id": "2",
     "choices": [
       {
-        "id": "c1",
+        "id": "1",
         "text": "Austria",
-        "author_id": "usr_1",
-        "is_correct": false,
-        "voters": ["usr_2"]
+        "author_name": "usr_1",
+        "voters": ["usr_2, usr_3"]
       },
       {
-        "id": "c2",
+        "id": "2",
         "text": "Switzerland",
-        "author_id": null,
-        "is_correct": true,
-        "voters": ["usr_1", "usr_3"]
+        "author_name": null,
+        "voters": ["usr_1"]
       }
     ],
     "leaderboard": [
-      { "id": "usr_1", "username": "alice", "round_points": 1500, "total_score": 3200 }
+      { "username": "alice", "score": 10 },
+      { "username": "bob", "score": 5 }
     ]
   }
 }
@@ -235,7 +225,8 @@ Purpose: final standings when match ends.
   "event": "PHASE_PODIUM",
   "data": {
     "winners": [
-      { "rank": 1, "id": "usr_1", "username": "alice", "score": 8500 }
+      { "username": "alice", "score": 18 },
+      { "username": "bob", "score": 12 }
     ]
   }
 }
@@ -268,6 +259,18 @@ Purpose: action rejected.
 }
 ```
 
+10. ERROR (direct)
+Purpose: notify player that their bluff was rejected.
+```json
+{
+  "event": "ERROR",
+  "data": {
+    "code": "BLUFF_REJECTED",
+    "message": "Your bluff answer is the correct answer, please submit a different bluff."
+  }
+}
+```
+
 10. PLAYER_DISCONNECTED (broadcast)
 Purpose: notify room that a player has disconnected.
 ```json
@@ -280,6 +283,27 @@ Purpose: notify room that a player has disconnected.
 }
 ```
 
+11. BLUFF_SUBMITTED (broadcast)
+Purpose: notify room that a player has submitted their bluff.
+```json
+{
+  "event": "BLUFF_SUBMITTED",
+  "data": {
+    "player_id": "usr_3",
+  }
+}
+```
+
+12. VOTE_SUBMITTED (broadcast)
+Purpose: notify room that a player has submitted their vote.
+```json
+{
+  "event": "VOTE_SUBMITTED",
+  "data": {
+    "player_id": "usr_3",
+  }
+}
+```
 
 ## 4. Recommended Error Codes
 
@@ -289,6 +313,7 @@ Purpose: notify room that a player has disconnected.
 - FULL_ROOM
 - INVALID_PHASE
 - INVALID_ACTION
+- BLUFF_CORRECT
 - ALREADY_SUBMITTED
 - ALREADY_VOTED
 - INVALID_PAYLOAD
