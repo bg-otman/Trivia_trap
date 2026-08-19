@@ -15,14 +15,16 @@ class RoomPhase(StateMachine):
     REVEAL = State("Reveal")
     PODIUM = State("Podium")
 
+    start = LOBBY.to(CATEGORY)
+    end = PODIUM.to(LOBBY)
+
     cycle = (
-        LOBBY.to(CATEGORY) |
         CATEGORY.to(QUESTION) |
         QUESTION.to(BLUFF) |
         BLUFF.to(VOTE) |
         VOTE.to(REVEAL) |
         REVEAL.to(PODIUM) |
-        PODIUM.to(LOBBY)
+        PODIUM.to(CATEGORY)
     )
 
 class PlayerInfo(BaseModel):

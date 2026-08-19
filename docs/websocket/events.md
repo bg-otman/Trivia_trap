@@ -97,7 +97,7 @@ Purpose: Player leaves a room.
 ```json
 {
   "event": "LEAVE_ROOM",
-  "data": { "user_id": "usr_1" }
+  "data": { "player_id": "usr_1" }
 }
 ```
 
@@ -267,6 +267,19 @@ Purpose: action rejected.
   }
 }
 ```
+
+10. PLAYER_DISCONNECTED (broadcast)
+Purpose: notify room that a player has disconnected.
+```json
+{
+  "event": "PLAYER_DISCONNECTED",
+  "data": {
+    "player_id": "usr_2",
+    "player_name": "bob"
+  }
+}
+```
+
 
 ## 4. Recommended Error Codes
 
