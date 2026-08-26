@@ -1,3 +1,4 @@
+from .room_models import RoomPhase
 from pydantic import Field, BaseModel
 from typing import Annotated
 
@@ -31,3 +32,18 @@ class Context(BaseModel):
     user_id: Annotated[str, Field(min_length=1)]
     user_name: Annotated[str, Field(min_length=1, max_length=15)]
     data: Annotated[dict, Field(description="Data in JSON format")] = Field(default_factory=dict)
+
+def validate_phase(current_phase: str, event_name: str) -> None:
+    """
+        Validate if the current phase is valid for the requested action.
+    """
+    if current_phase == RoomPhase.LOBBY and event_name != "START_GAME":
+        raise GameError("INVALID_PHASE", "Game has not started yet")
+    if current_phase == RoomPhase.CATEGORY and event_name != "GET_QUESTION":
+        raise GameError("INVALID_PHASE", "Not in category selection phase")
+    if current_phase == RoomPhase.QUESTION and event_name != "SUBMIT_BLUFF":
+        raise GameError("INVALID_PHASE", "Not in bluff submission phase")
+    if current_phase == RoomPhase.VOTE and event_name != "SUBMIT_VOTE":
+        raise GameError("INVALID_PHASE", "Not in voting phase")
+    if (current_phase == RoomPhase.REVEAL or current_phase == RoomPhase.PODIUM) and event_name != "NEXT_PHASE":
+        raise GameError("INVALID_PHASE", "only next phase is allowed in reveal or podium phase")

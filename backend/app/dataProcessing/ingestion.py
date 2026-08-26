@@ -43,7 +43,7 @@ def validate_bluff_answer(bluff_answer: str) -> dict:
         "reason": "" # if it's invalid. set it to : EXACT_TRUTH
         }
 
-def build_voting_choices(bluff_answers: dict, correct_answer: str, fake_answers: list) -> list[dict[str, str]]:
+def build_voting_choices(player_count: int, bluff_answers: dict, correct_answer: str, fake_answers: list) -> list[dict[str, str]]:
     """
         Get the choices for voting phase. This includes the correct answer and all bluff answers submitted by players.
     """
@@ -59,7 +59,7 @@ def build_voting_choices(bluff_answers: dict, correct_answer: str, fake_answers:
         choices.append({ "id": f"f_{i}", "text": fake_answer })
     return choices
 
-def calculate_results(votes: dict[str, str], bluffs: dict[str, str], correct_answer: str, players: dict[str, dict]) -> dict[str, int]:
+def calculate_results(votes: dict[str, str], bluffs: dict[str, str], correct_answer: str, players: dict[str, dict]) -> dict:
     """
         Calculate the results of the round based on the voting results and submitted bluffs.
     """

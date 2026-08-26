@@ -1,7 +1,8 @@
 from fastapi import WebSocket
 from pydantic import BaseModel, Field, ConfigDict
-from typing import Annotated
+from typing import Annotated, Any
 from statemachine import StateMachine, State
+import asyncio
 
 class RoomPhase(StateMachine):
     """
@@ -43,6 +44,7 @@ class RoomMetaData(BaseModel):
     host_id: str
     settings: RoomSettings
     phase: Annotated[RoomPhase, Field(description="Access to the room phase state machine by phase.current_state")] = RoomPhase()
+    timer_task: Annotated[asyncio.Task | None, Field(description="Timer task to trigger next phase when timeout")] = None
     current_round: int = 1
     active_question: Annotated[str | None, Field(description="The current question being asked in the room")] = None
     correct_answer: Annotated[str | None, Field(description="The correct answer for the current question")] = None

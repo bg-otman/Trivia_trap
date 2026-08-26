@@ -1,6 +1,6 @@
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect, status, Query
+from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Query
 from typing import Annotated
-from pydantic import Field
+from pydantic import Field, ValidationError
 from .utils import GameError
 from .room_models import Room
 from .events import join_room, process_event
@@ -106,14 +106,13 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
                 request = await ws.receive_json()
                 event_name = request.get("event")
                 data = request.get("data")
-                if not event_name or "data" not in request:
-                    raise GameError("INVALID_PAYLOAD", "Missing event name or data in request")
-                response = process_event(manager, room_id, user_id, user_name, event_name, data)
-                await manager.broadcast(response, room_id, None)
+                await process_event(manager, room_id, user_id, user_name, event_name, data)
             except GameError as e:
                 await manager.send_to_player(e.to_dict(), room_id, user_id)
             except JSONDecodeError:
                 await manager.send_to_player({"event": "ERROR", "data": {"code": "INVALID_PAYLOAD", "message": "Invalid JSON format"}}, room_id, user_id)
+            except ValidationError:
+                await manager.send_to_player({"event": "ERROR", "data": {"code": "INVALID_PAYLOAD", "message": "Invalid Data"}}, room_id, user_id)
     except WebSocketDisconnect:
         manager.mark_disconnected(user_id, room_id)
         await manager.broadcast({"event": "PLAYER_DISCONNECTED", "data": {"player_id": user_id, "player_name": user_name}}, room_id, user_id)
@@ -121,9 +120,5 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
         await manager.send_to_player(e.to_dict(), room_id, user_id)
     except Exception as e:
         print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
-        try:
-            manager.remove_connection(ws.state.user_id, room_id)
-            await ws.close(code=status.WS_1008_POLICY_VIOLATION)
-        except Exception:
-            pass
+        manager.remove_connection(ws.state.user_id, room_id)
 
