@@ -2,20 +2,15 @@ from __future__ import annotations # to treat type hints as strings to avoid cir
 from fastapi import WebSocket
 from .room_models import PlayerInfo, RoomMetaData, RoomSettings, Room, RoomPhase
 from pydantic import Field
-from typing import Annotated, TYPE_CHECKING, Callable
+from typing import TYPE_CHECKING
 from dataProcessing.ingestion import ( get_category_list, get_random_question, 
            validate_bluff_answer, build_voting_choices, calculate_results ) # import demo functions until we have a proper data processing module
-from .utils import GameError, Context, validate_phase
+from .utils import GameError, Context, validate_phase, lobby_update
 import asyncio
 
 if TYPE_CHECKING: # it evaluates to False at runtime, so the import is only for type checking and avoids circular imports
     from .room_manager import RoomManager
 
-# transitionStates in the game are as follows:
-# CHOOSE_CATEGORY (Timer) -> BLUFF (Timer) -> VOTE (Timer) -> REVEAL (Host trigger next round) -> 
-# PODIUM (Host trigger next round) -> if round < total_rounds then CHOOSE_CATEGORY else LOBBY
-# For the timer, we can use asyncio.sleep() to wait for the duration of the phase and then transition to the next phase.
-# and take in consideration to cancel the timer if all players have submitted their answers/bluffs/votes before the timer ends.
 async def phase_timer(manager: RoomManager, context: Context, duration: int):
     """
         Transition to the next phase after a delay.
@@ -42,6 +37,20 @@ def join_room(rooms: dict, ws: WebSocket, room_id: str, player_id: str, name: st
         room.players[player_id].ws = ws
         room.players[player_id].is_present = True
 
+async def leave_room(manager: RoomManager, context: Context):
+    """
+        Leave the room and remove the player from the room.
+        If the player is the host, transfer host to another player.
+    """
+    room = manager.rooms.get(context.room_id)
+    if context.user_id == room.meta_data.host_id:
+        if len(room.players) > 1:
+            for player_id in room.players:
+                if player_id != context.user_id:
+                    room.meta_data.host_id = player_id
+                    break
+    await manager.remove_connection(context.user_id, context.room_id)
+    await manager.broadcast(lobby_update(room), context.room_id, context.user_id)
 
 async def get_categories(manager: RoomManager, context: Context):
     """
@@ -51,6 +60,8 @@ async def get_categories(manager: RoomManager, context: Context):
     await manager.broadcast({
         "event": "PHASE_CATEGORY",
         "data": {
+            "round": room.meta_data.current_round,
+            "total_rounds": room.meta_data.settings.total_rounds,
             "categories": get_category_list() 
             }
         }, context.room_id, None)
@@ -106,6 +117,8 @@ async def reveal_results(manager: RoomManager, context: Context):
     room = manager.rooms.get(context.room_id)
     results = calculate_results(room.meta_data.voting_results, room.meta_data.sumbitted_bluffs, room.meta_data.correct_answer, room.players)
     room.meta_data.podium = results.get("leaderboard", [])
+    results["round"] = room.meta_data.current_round
+    results["total_rounds"] = room.meta_data.settings.total_rounds
     room.meta_data.current_round += 1
     await manager.broadcast({
         "event": "RESULTS_REVEALED",
@@ -126,7 +139,9 @@ async def podium(manager: RoomManager, context: Context):
     await manager.broadcast({
         "event": "PHASE_PODIUM",
         "data": {
-            "winners": room.meta_data.podium
+            "round": room.meta_data.current_round,
+            "total_rounds": room.meta_data.settings.total_rounds,
+            "leaderboard": room.meta_data.podium
         }
     }, context.room_id, None)
 
@@ -140,10 +155,19 @@ game_phases = {
 
 async def to_next_phase(manager: RoomManager, context: Context):
     """
-        Advance to next phase when time end, all player submitted their answers
-        or the host request the next phase.
+        Transition to the next phase of the game.
+        This function is called when the host triggers the next phase 
+        or when all players have submitted their answers/bluffs/votes
+        or when the timer for the current phase has expired.
     """
     room = manager.rooms.get(context.room_id)
+    if context.user_id != room.meta_data.host_id:
+        raise GameError("FORBIDDEN", "Only the host can advance to the next phase")
+    # start game
+    if room.meta_data.phase.current_state == RoomPhase.LOBBY:
+        room.meta_data.phase.start()
+        await get_categories(manager, context)
+        return
     if room.meta_data.timer_task and not room.meta_data.timer_task.done():
         room.meta_data.timer_task.cancel()
     if room.meta_data.phase.current_state not in game_phases:
@@ -187,25 +211,42 @@ async def submit_vote(manager: RoomManager, context: Context):
             }
         }, context.room_id, context.user_id)
 
-async def start_game(manager: RoomManager, context: Context):
+async def kick_player(manager: RoomManager, context: Context):
     """
-        Start the game by changing the room phase to CATEGORY and broadcasting the event to all players in the room.
+        Kick a player from the room. Only the host can kick players.
     """
     room = manager.rooms.get(context.room_id)
     if context.user_id != room.meta_data.host_id:
-        raise GameError("FORBIDDEN", "Only the host can start the game")
-    room.meta_data.phase.start()
-    await get_categories(manager, context)
+        raise GameError("FORBIDDEN", "Only the host can kick players")
+    player_id = context.data.get("player_id")
+    if player_id not in room.players:
+        raise GameError("PLAYER_NOT_FOUND", "Player not found in the room")
+    await manager.remove_connection(player_id, context.room_id)
+    await manager.broadcast(lobby_update(room), context.room_id, None)
+
+async def update_settings(manager: RoomManager, context: Context):
+    room = manager.rooms.get(context.room_id)
+    if context.user_id != room.meta_data.host_id:
+        raise GameError("FORBIDDEN", "Only the host can update settings")
+    try:
+        total_rounds = context.data.get("total_rounds")
+        bluff_time = context.data.get("bluff_time")
+        vote_time = context.data.get("vote_time")
+        max_players = context.data.get("max_players")
+        new_settings = RoomSettings(total_rounds=total_rounds, bluff_time=bluff_time, vote_time=vote_time, max_players=max_players)
+        room.meta_data.settings = new_settings
+        await manager.broadcast(lobby_update(room), context.room_id, None)
+    except Exception:
+        raise GameError("INVALID_PAYLOAD", "Invalid settings in request")
 
 event_handlers = {
-    "START_GAME" : start_game,
+    "NEXT_PHASE" : to_next_phase,
     "GET_QUESTION" : get_question,
     "SUBMIT_BLUFF" : submit_bluff,
     "SUBMIT_VOTE" : submit_vote,
-    # "NEXT_PHASE" : next_phase,
-    # "LEAVE_ROOM" : leave_room,
-    # "KICK_PLAYER" : kick_player,
-    # "UPDATE_SETTINGS" : update_settings,
+    "LEAVE_ROOM" : leave_room,
+    "KICK_PLAYER" : kick_player,
+    "UPDATE_SETTINGS" : update_settings,
     # "CHAT_MESSAGE" : handle_chat_message,
 }
 
