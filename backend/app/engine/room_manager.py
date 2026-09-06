@@ -1,7 +1,7 @@
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect, status, Query
+from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Query
 from typing import Annotated
-from pydantic import Field
-from .utils import GameError
+from pydantic import Field, ValidationError
+from .utils import GameError, lobby_update
 from .room_models import Room
 from .events import join_room, process_event
 from json import JSONDecodeError
@@ -17,6 +17,7 @@ class RoomManager():
         if not ws.state.user_id or not ws.state.user_name:
             raise GameError("INVALID_PAYLOAD", "Missing user_id or user_name in WebSocket state")
         join_room(self.rooms, ws, room_id, ws.state.user_id, ws.state.user_name)
+        await self.broadcast(lobby_update(self.rooms[room_id]), room_id, None)
 
     async def broadcast(self, data: Annotated[str | dict, Field(description="Data in JSON format")], room_id: str,
                         exclude : Annotated[str, Field(description="Player ID to exclude from broadcast")] = None):
@@ -42,13 +43,18 @@ class RoomManager():
         except Exception:
             self.mark_disconnected(player_id, room_id)
 
-    def remove_connection(self, player_id: str, room_id: str):
+    async def remove_connection(self, player_id: str, room_id: str):
         """
             remove disconnected user from the list of active rooms
         """
         if room_id not in self.rooms:
             return
         player = self.rooms.get(room_id).players.get(player_id)
+        try:
+            if player is not None:
+                await player.ws.close()
+        except Exception:
+            pass
         if player is not None:
             del self.rooms[room_id].players[player_id]
         if room_id in self.rooms and not self.rooms[room_id].players:
@@ -64,20 +70,7 @@ class RoomManager():
         if player is not None:
             player.is_present = False
 
-    async def kick(self, player_id: str, room_id: str):
-        """
-            Kick a user from the room
-        """
-        try:
-            ws = self.rooms[room_id].players[player_id].ws
-            await ws.close()
-        except Exception:
-            pass
-        self.remove_connection(player_id, room_id)
-
-
 manager = RoomManager()
-
 
 def get_available_rooms(manager: RoomManager = manager) -> dict[str, Room]:
     """
@@ -103,27 +96,24 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
         await manager.connect(ws, room_id)
         while True:
             try:
+                if room_id not in manager.rooms or user_id not in manager.rooms[room_id].players:
+                    break # if player left the room
                 request = await ws.receive_json()
                 event_name = request.get("event")
                 data = request.get("data")
-                if not event_name or "data" not in request:
-                    raise GameError("INVALID_PAYLOAD", "Missing event name or data in request")
-                response = process_event(manager, room_id, user_id, user_name, event_name, data)
-                await manager.broadcast(response, room_id, None)
+                await process_event(manager, room_id, user_id, user_name, event_name, data)
             except GameError as e:
                 await manager.send_to_player(e.to_dict(), room_id, user_id)
             except JSONDecodeError:
                 await manager.send_to_player({"event": "ERROR", "data": {"code": "INVALID_PAYLOAD", "message": "Invalid JSON format"}}, room_id, user_id)
+            except ValidationError:
+                await manager.send_to_player({"event": "ERROR", "data": {"code": "INVALID_PAYLOAD", "message": "Invalid Data"}}, room_id, user_id)
     except WebSocketDisconnect:
         manager.mark_disconnected(user_id, room_id)
-        await manager.broadcast({"event": "PLAYER_DISCONNECTED", "data": {"player_id": user_id, "player_name": user_name}}, room_id, user_id)
+        await manager.broadcast(lobby_update(manager.rooms[room_id]), room_id, user_id)
     except GameError as e:
         await manager.send_to_player(e.to_dict(), room_id, user_id)
     except Exception as e:
         print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
-        try:
-            manager.remove_connection(ws.state.user_id, room_id)
-            await ws.close(code=status.WS_1008_POLICY_VIOLATION)
-        except Exception:
-            pass
+        await manager.remove_connection(ws.state.user_id, room_id)
 

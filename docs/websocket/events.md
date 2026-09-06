@@ -78,7 +78,8 @@ Purpose: host modifies room settings.
   "data": {
     "total_rounds": 5,
     "bluff_time": 30,
-    "voting_time": 20
+    "vote_time": 20,
+    "max_players": 10
   }
 }
 ```
@@ -97,15 +98,15 @@ Purpose: Player leaves a room.
 ```json
 {
   "event": "LEAVE_ROOM",
-  "data": { "player_id": "usr_1" }
+  "data": {}
 }
 ```
 
-8. NEXT_ROUND
-Purpose: Host moves to the next round.
+8. NEXT_PHASE
+Purpose: Host moves to the next phase.
 ```json
 {
-  "event": "NEXT_ROUND",
+  "event": "NEXT_PHASE",
   "data": {}
 }
 ```
@@ -122,13 +123,14 @@ Purpose: Player requests a question from the selected category.
 ### 3.2 Server -> Client
 
 1. LOBBY_UPDATE (broadcast)
-Purpose: single lobby sync event after join/leave/ready/settings change.
+Purpose: single lobby sync event after join/leave/settings change.
 Note: is_present to indicate if a player is currently connected.
 
 ```json
 {
   "event": "LOBBY_UPDATE",
   "data": {
+    "round": 1,
     "host_id": "usr_1",
     "players": [
       { "id": "usr_1", "username": "alice", "is_present": true, "score": 0 }
@@ -136,7 +138,7 @@ Note: is_present to indicate if a player is currently connected.
     "settings": {
       "total_rounds": 5,
       "bluff_time": 30,
-      "voting_time": 20,
+      "vote_time": 20,
       "max_players": 8
     }
   }
@@ -149,6 +151,8 @@ Purpose: category selection phase.
 {
   "event": "PHASE_CATEGORY",
   "data": {
+    "round": 1,
+    "total_rounds": 5,
     "categories": ["General Knowledge", "Science", "History"]
   }
 }
@@ -194,6 +198,8 @@ Purpose: reveal truth, votes, and updated scores.
 {
   "event": "RESULTS_REVEALED",
   "data": {
+    "round": 1,
+    "total_rounds": 5,
     "correct_choice_id": "2",
     "choices": [
       {
@@ -224,7 +230,9 @@ Purpose: final standings when match ends.
 {
   "event": "PHASE_PODIUM",
   "data": {
-    "winners": [
+    "round": 5,
+    "total_rounds": 5,
+    "leaderboard": [
       { "username": "alice", "score": 18 },
       { "username": "bob", "score": 12 }
     ]
@@ -271,18 +279,6 @@ Purpose: notify player that their bluff was rejected.
 }
 ```
 
-10. PLAYER_DISCONNECTED (broadcast)
-Purpose: notify room that a player has disconnected.
-```json
-{
-  "event": "PLAYER_DISCONNECTED",
-  "data": {
-    "player_id": "usr_2",
-    "player_name": "bob"
-  }
-}
-```
-
 11. BLUFF_SUBMITTED (broadcast)
 Purpose: notify room that a player has submitted their bluff.
 ```json
@@ -307,18 +303,13 @@ Purpose: notify room that a player has submitted their vote.
 
 ## 4. Recommended Error Codes
 
-- UNAUTHORIZED
 - FORBIDDEN
 - ROOM_NOT_FOUND
+- PLAYER_NOT_FOUND
 - FULL_ROOM
 - INVALID_PHASE
-- INVALID_ACTION
-- BLUFF_CORRECT
-- ALREADY_SUBMITTED
-- ALREADY_VOTED
+- BLUFF_REJECTED
 - INVALID_PAYLOAD
-- RATE_LIMITED
-- SERVER_ERROR
 
 ## 5. Minimal Flow
 
@@ -326,9 +317,11 @@ Purpose: notify room that a player has submitted their vote.
 2. Server sends LOBBY_UPDATE.
 3. Host sends START_GAME.
 4. Server sends PHASE_CATEGORY.
-5. Server sends PHASE_QUESTION.
-6. Players send SUBMIT_BLUFF.
-7. Server sends PHASE_VOTING.
-8. Players send SUBMIT_VOTE.
-9. Server sends PHASE_REVEAL.
-10. Repeat question loop or send PHASE_PODIUM.
+5. Player send GET_QUESTION.
+6. Server sends PHASE_QUESTION.
+7. Players send SUBMIT_BLUFF.
+8. Server sends PHASE_VOTING.
+9. Players send SUBMIT_VOTE.
+10. Server sends PHASE_REVEAL.
+11. Server sends PHASE_PODIUM.
+12. Repeat question loop or send LOBBY_UPDATE.
