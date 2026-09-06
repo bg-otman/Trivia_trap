@@ -153,7 +153,11 @@ Purpose: category selection phase.
   "data": {
     "round": 1,
     "total_rounds": 5,
-    "categories": ["General Knowledge", "Science", "History"]
+    "categories": [
+      { "name": "General Knowledge", "image_url": "https://example.com/general_knowledge.png" },
+      { "name": "Science", "image_url": "https://example.com/science.png" },
+      { "name": "History", "image_url": "https://example.com/history.png" }
+    ]
   }
 }
 ```
@@ -165,9 +169,11 @@ Purpose: round starts and question is shown.
 {
   "event": "PHASE_QUESTION",
   "data": {
+    "category": "Geography",
+    "question": "Which country is known for its Alps?",
+    "image_url": "https://example.com/question.png",  // can be None if no image is available for the question
     "round": 1,
     "total_rounds": 5,
-    "question": "In 1923, Liechtenstein adopted which neighbor currency?",
     "duration": 30
   }
 }
@@ -183,6 +189,10 @@ Purpose: voting starts with answer choices.
     "round": 1,
     "total_rounds": 5,
     "duration": 20,
+    "question": {
+      "text": "Which country is known for its Alps?",
+      "image_url": "https://example.com/alps.png"
+    },
     "choices": [
       { "id": "1", "text": "Austria" },
       { "id": "2", "text": "Switzerland" }
@@ -216,8 +226,8 @@ Purpose: reveal truth, votes, and updated scores.
       }
     ],
     "leaderboard": [
-      { "username": "alice", "score": 10 },
-      { "username": "bob", "score": 5 }
+      { "username": "alice", "score": 10, "avatar_url": "https://example.com/alice.png" },
+      { "username": "bob", "score": 5, "avatar_url": "https://example.com/bob.png" }
     ]
   }
 }
@@ -233,8 +243,8 @@ Purpose: final standings when match ends.
     "round": 5,
     "total_rounds": 5,
     "leaderboard": [
-      { "username": "alice", "score": 18 },
-      { "username": "bob", "score": 12 }
+      { "username": "alice", "score": 18, "avatar_url": "https://example.com/alice.png" },
+      { "username": "bob", "score": 12, "avatar_url": "https://example.com/bob.png" }
     ]
   }
 }
@@ -247,8 +257,7 @@ Purpose: distribute room chat message.
 {
   "event": "CHAT_MESSAGE",
   "data": {
-    "player_id": "usr_1",
-    "username": "alice",
+    "player" : { "id": "usr_1", "username": "alice", "avatar_url": "https://example.com/alice.png" },
     "message": "Nice bluff"
   }
 }

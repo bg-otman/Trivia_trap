@@ -5,16 +5,9 @@ def get_category_list() -> list:
         Get a list of categories for the game.
     """
     return [
-        "Science",
-        "History",
-        "Geography",
-        "Sports",
-        "Entertainment",
-        "Art & Literature",
-        "Technology",
-        "Music",
-        "Movies",
-        "Television"
+        { "name": "General Knowledge", "image_url": "https://example.com/general_knowledge.png" },
+        { "name": "Science", "image_url": "https://example.com/science.png" },
+        { "name": "History", "image_url": "https://example.com/history.png" }
     ]
 
 def get_random_question(category: str) -> dict[str, str]:
@@ -24,6 +17,7 @@ def get_random_question(category: str) -> dict[str, str]:
     return {
         "question": f"This is Demo question for category: {category}. What is the answer?",
         "correct_answer": f"The correct answer for category: {category} is...",
+        "image_url": f"https://example.com/{category.lower()}.png", # can be None if no image is available for the question
         "fake_answers": [
             f"Fake answer 1 for category: {category}",
             f"Fake answer 2 for category: {category}",
@@ -81,7 +75,7 @@ def calculate_results(votes: dict[str, str], bluffs: dict[str, str], correct_ans
           }
         ],
         "leaderboard": [
-          { "username": "alice", "score": 10 },
-          { "username": "bob", "score": 5 }
+          { "username": "alice", "score": 10, "avatar_url": "https://example.com/alice.png" },
+          { "username": "bob", "score": 5, "avatar_url": "https://example.com/bob.png" }
         ]
       }

@@ -5,7 +5,7 @@ from pydantic import Field
 from typing import TYPE_CHECKING
 from dataProcessing.ingestion import ( get_category_list, get_random_question, 
            validate_bluff_answer, build_voting_choices, calculate_results ) # import demo functions until we have a proper data processing module
-from .utils import GameError, Context, validate_phase, lobby_update
+from .utils import GameError, Context, clear_data, validate_phase, lobby_update
 import asyncio
 
 if TYPE_CHECKING: # it evaluates to False at runtime, so the import is only for type checking and avoids circular imports
@@ -71,19 +71,20 @@ async def get_question(manager: RoomManager, context: Context):
     """
         get a question from the selected category.
     """
+    clear_data(room)
     room = manager.rooms.get(context.room_id)
     category = context.data.get("category")
     question = get_random_question(category)
     room.meta_data.active_question = question.get("question")
+    room.meta_data.image_url = question.get("image_url")
     room.meta_data.correct_answer = question.get("correct_answer")
     room.meta_data.fake_answers = question.get("fake_answers", [])
-    room.meta_data.sumbitted_bluffs.clear()
-    room.meta_data.voting_results.clear()
     await manager.broadcast({
         "event": "PHASE_QUESTION",
         "data": { 
             "category": category, 
             "question": question.get("question"),
+            "image_url": room.meta_data.image_url,
             "round": room.meta_data.current_round,
             "total_rounds": room.meta_data.settings.total_rounds,
             "duration": room.meta_data.settings.bluff_time
@@ -102,6 +103,10 @@ async def get_vote_choices(manager: RoomManager, context: Context):
             "round": room.meta_data.current_round,
             "total_rounds": room.meta_data.settings.total_rounds,
             "duration": room.meta_data.settings.vote_time,
+            "question": {
+                "text": room.meta_data.active_question,
+                "image_url": room.meta_data.image_url
+            },
             "choices": build_voting_choices(len(room.players),
                                             room.meta_data.sumbitted_bluffs,
                                             room.meta_data.correct_answer,
@@ -239,6 +244,29 @@ async def update_settings(manager: RoomManager, context: Context):
     except Exception:
         raise GameError("INVALID_PAYLOAD", "Invalid settings in request")
 
+async def handle_chat_message(manager: RoomManager, context: Context):
+    """
+        Handle a chat message sent by a player in the room.
+    """
+    room = manager.rooms.get(context.room_id)
+    message = context.data.get("message")
+    if message is None or len(message.strip()) == 0:
+        raise GameError("INVALID_PAYLOAD", "Missing or empty chat message in request")
+    player_info = room.players.get(context.user_id)
+    if player_info is None:
+        raise GameError("PLAYER_NOT_FOUND", "Player not found in the room")
+    await manager.broadcast({
+        "event": "CHAT_MESSAGE",
+        "data": {
+            "player" : { 
+                "id": context.user_id, 
+                "username": player_info.name, 
+                "avatar_url": player_info.avatar_url
+            },
+            "message": message
+        }
+    }, context.room_id, None)
+
 event_handlers = {
     "NEXT_PHASE" : to_next_phase,
     "GET_QUESTION" : get_question,
@@ -247,7 +275,7 @@ event_handlers = {
     "LEAVE_ROOM" : leave_room,
     "KICK_PLAYER" : kick_player,
     "UPDATE_SETTINGS" : update_settings,
-    # "CHAT_MESSAGE" : handle_chat_message,
+    "CHAT_MESSAGE" : handle_chat_message,
 }
 
 async def process_event(manager: RoomManager, room_id: str, user_id: str, user_name: str, event_name: str, data: dict

@@ -32,6 +32,7 @@ class PlayerInfo(BaseModel):
     name: Annotated[str, Field(min_length=1, max_length=15)]
     score: Annotated[int, Field(ge=0)] = 0
     is_present: Annotated[bool, Field(description="Indicates if the player is currently connected to the room")] = True
+    avatar_url: Annotated[str | None, Field(description="URL to the player's avatar image")] = None
 
 class RoomSettings(BaseModel):
     total_rounds: Annotated[int, Field(ge=1, description="At least one round")] = 10
@@ -47,6 +48,7 @@ class RoomMetaData(BaseModel):
     timer_task: Annotated[asyncio.Task | None, Field(description="Timer task to trigger next phase when timeout")] = None
     current_round: int = 1
     active_question: Annotated[str | None, Field(description="The current question being asked in the room")] = None
+    image_url: Annotated[str | None, Field(description="The image URL associated with the current question, if any")] = None
     correct_answer: Annotated[str | None, Field(description="The correct answer for the current question")] = None
     sumbitted_bluffs: Annotated[dict[str, str], Field(description="Map of player_id to their submitted bluff answer")] = Field(default_factory=dict)
     fake_answers: Annotated[list[str], Field(description="Additional fake answers for the current question")] = Field(default_factory=list)

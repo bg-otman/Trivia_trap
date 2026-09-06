@@ -73,3 +73,15 @@ def lobby_update(room: Room):
             "settings": room.meta_data.settings.model_dump()
         }
     }
+
+def clear_data(room: Room):
+    """
+        Clear the room's data for a new round.
+    """
+    room.meta_data.active_question = None
+    room.meta_data.image_url = None
+    room.meta_data.correct_answer = None
+    room.meta_data.sumbitted_bluffs.clear()
+    room.meta_data.fake_answers.clear()
+    room.meta_data.voting_results.clear()
+    room.meta_data.podium.clear()
