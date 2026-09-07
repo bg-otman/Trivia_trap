@@ -1,216 +1,43 @@
-import {
-  Zap,
-  Drama,
-  Users,
-  Crown,
-  Timer,
-} from "lucide-react";
+import { ArrowRight, BrainCircuit, Check, Crown, Users, Zap } from "lucide-react";
 
 const players = [
-  ["Alex", "2600"],
-  ["Maya", "2300"],
-  ["You", "3100"],
-  ["James", "1800"],
-  ["Luna", "1500"],
+  { name: "Alex", score: 2600, avatar: "🧑🏾‍🦱" },
+  { name: "Maya", score: 2300, avatar: "👩🏽" },
+  { name: "You", score: 3100, avatar: "🧑🏻‍🦰", active: true },
+  { name: "James", score: 1800, avatar: "👨🏿" },
+  { name: "Luna", score: 1500, avatar: "👩🏻" },
 ];
+
+const panel = "relative z-[4] min-h-[242px] rounded-[19px] border border-[rgba(142,158,213,.18)] bg-[linear-gradient(145deg,rgba(9,17,43,.76),rgba(3,9,27,.82))] p-4 px-5 shadow-[inset_0_1px_0_rgba(255,255,255,.025)] backdrop-blur-[18px]";
 
 export default function FeatureSection() {
   return (
-    <section className="mx-auto max-w-[1450px] px-5 pb-20 md:px-8">
-
-      <div className="grid gap-5 lg:grid-cols-[0.7fr_1.3fr]">
-
-        {/* LEFT */}
-        <div className="rounded-[28px] border border-white/[0.07] bg-white/[0.018] p-6 md:p-8">
-
-          <h2 className="text-xl font-bold">
-            <span className="mr-2 text-pink-400">♥</span>
-            Why you'll love Trivia Trap
-          </h2>
-
-          <div className="mt-8 space-y-7">
-
-            <Feature
-              icon={<Zap size={20} />}
-              title="Easy to learn"
-              description="Jump in a room and start the fun in seconds."
-            />
-
-            <Feature
-              icon={<Drama size={20} />}
-              title="Bluff & Outsmart"
-              description="Not sure of the answer? Bluff your way to victory."
-            />
-
-            <Feature
-              icon={<Users size={20} />}
-              title="Play with anyone"
-              description="Friends or random players, the party is always on."
-            />
-
-          </div>
-
+    <div className="mx-auto grid max-w-[1390px] grid-cols-[31%_1fr] gap-4 max-[1050px]:grid-cols-1 max-[760px]:hidden">
+      <section className={panel} id="features">
+        <h2 className="m-0 flex items-center gap-2 text-base">💗 Why you&apos;ll love Trivia Trap</h2>
+        <Benefit icon={<Zap className="w-[22px]" />} title="Easy to learn" text="Jump in a room and start the fun in seconds." />
+        <Benefit icon={<BrainCircuit className="w-[22px]" />} title="Bluff & Outsmart" text="Not sure of the answer? Bluff your way to victory." />
+        <Benefit tone="amber" icon={<Users className="w-[22px]" />} title="Play with anyone" text="Friends or random players, the party is always on!" />
+      </section>
+      <section className={panel} id="leaderboard">
+        <div className="grid grid-cols-[120px_1fr_160px] items-center gap-4">
+          <div><small className="block text-[.65rem] text-[#a8aec1]">Room Code</small><strong className="block text-[.88rem]">7X4K2B</strong></div>
+          <div className="text-center"><strong className="text-[.88rem]">Round 3 / 10</strong><div className="mt-[.45rem] flex justify-center gap-1"><i className="h-1 w-11 rounded-[9px] bg-[linear-gradient(90deg,#5c65ff,#ad42ff)]" /><i className="h-1 w-11 rounded-[9px] bg-[linear-gradient(90deg,#5c65ff,#ad42ff)]" /><i className="h-1 w-11 rounded-[9px] bg-[#202744]" /><i className="h-1 w-11 rounded-[9px] bg-[#202744]" /><i className="h-1 w-11 rounded-[9px] bg-[#202744]" /></div></div>
+          <span className="flex items-center justify-end gap-[.45rem] text-[.72rem] text-[#b8bdcc]"><Crown className="w-[27px] fill-[#ffc51f] text-[#ffc51f] drop-shadow-[0_0_9px_#ff9f00]" /> Leaderboard <ArrowRight className="w-4" /></span>
         </div>
-
-        {/* GAME PREVIEW */}
-        <div className="overflow-hidden rounded-[28px] border border-purple-400/15 bg-[#07091a] p-5 shadow-[0_20px_70px_rgba(0,0,0,0.35)] md:p-7">
-
-          {/* Header */}
-          <div className="flex items-center justify-between">
-
-            <div>
-              <span className="text-[10px] text-white/35">
-                ROOM CODE
-              </span>
-
-              <div className="font-mono text-sm">
-                7X4K2B
-              </div>
-            </div>
-
-            <div className="text-sm font-semibold">
-              Round 3 / 10
-            </div>
-
-            <button className="text-sm text-purple-300">
-              Leaderboard →
-            </button>
-
-          </div>
-
-          {/* Progress */}
-          <div className="mt-5 flex gap-1.5">
-            {Array.from({ length: 10 }).map((_, i) => (
-              <div
-                key={i}
-                className={`h-1 flex-1 rounded-full ${
-                  i < 3
-                    ? "bg-gradient-to-r from-purple-500 to-blue-400"
-                    : "bg-white/[0.07]"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Players */}
-          <div className="mt-6 grid grid-cols-5 gap-2">
-
-            {players.map(([name, score], index) => (
-              <div
-                key={name}
-                className={`rounded-xl p-2 text-center ${
-                  name === "You"
-                    ? "border border-purple-400/40 bg-purple-500/10"
-                    : "bg-white/[0.025]"
-                }`}
-              >
-
-                <div className="mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purple-500/70 to-cyan-400/50 text-xs font-bold">
-                  {name[0]}
-                </div>
-
-                <div className="mt-2 truncate text-[10px] text-white/60">
-                  {name}
-                </div>
-
-                <div className="text-xs font-bold">
-                  {score}
-                </div>
-
-                {name === "You" && (
-                  <Crown
-                    size={12}
-                    className="mx-auto mt-1 text-yellow-400"
-                  />
-                )}
-
-              </div>
-            ))}
-
-          </div>
-
-          {/* Question */}
-          <div className="mt-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-5">
-
-            <div className="flex items-center justify-between">
-
-              <span className="rounded-full bg-purple-500/10 px-3 py-1 text-[11px] text-purple-300">
-                Science
-              </span>
-
-              <div className="flex items-center gap-1 text-xs text-white/40">
-                <Timer size={13} />
-                12s
-              </div>
-
-            </div>
-
-            <h3 className="mt-5 text-lg font-semibold md:text-xl">
-              Which element has the chemical symbol
-              <span className="text-yellow-400"> 'O'</span>?
-            </h3>
-
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-
-              {["Gold", "Oxygen", "Iron", "Silver"].map(
-                (answer, index) => (
-                  <button
-                    key={answer}
-                    className={`rounded-xl border p-3 text-left text-sm transition ${
-                      answer === "Oxygen"
-                        ? "border-purple-400/60 bg-gradient-to-r from-purple-600/70 to-blue-500/60 shadow-[0_0_25px_rgba(139,92,246,0.18)]"
-                        : "border-white/[0.07] bg-white/[0.02] hover:bg-white/[0.05]"
-                    }`}
-                  >
-                    <span className="mr-3 text-white/35">
-                      {String.fromCharCode(65 + index)}
-                    </span>
-
-                    {answer}
-
-                    {answer === "Oxygen" && (
-                      <span className="float-right">✓</span>
-                    )}
-                  </button>
-                ),
-              )}
-
-            </div>
-
-          </div>
-
+        <div className="my-3 grid grid-cols-5 gap-[.7rem]">
+          {players.map((player) => <div className="relative flex items-center justify-center gap-[.45rem]" key={player.name}><span className={`grid h-[43px] w-[43px] place-items-center rounded-full border-2 bg-[#112149] text-[1.75rem] ${player.active ? "border-[#f067ff] shadow-[0_0_18px_rgba(238,79,255,.5)]" : "border-[#2b67b8]"}`}>{player.avatar}</span><div><small className="block text-[.67rem]">{player.name}</small><strong className="mt-[.15rem] block text-[.85rem]">{player.score}</strong></div>{player.active && <Crown className="absolute right-[18%] top-[-6px] w-[14px] fill-[#ffd225] text-[#ffd225]" />}</div>)}
         </div>
-      </div>
-    </section>
-  );
-}
-
-function Feature({
-  icon,
-  title,
-  description,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="flex gap-4">
-
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-purple-400/20 bg-purple-500/10 text-purple-300">
-        {icon}
-      </div>
-
-      <div>
-        <h3 className="font-semibold">{title}</h3>
-
-        <p className="mt-1 max-w-[300px] text-sm leading-6 text-white/45">
-          {description}
-        </p>
-      </div>
-
+        <div className="relative rounded-[13px] border border-[rgba(112,132,192,.12)] bg-[rgba(4,11,31,.72)] p-[.6rem_.8rem]"><p className="m-0 mb-2 text-[.84rem]"><span className="mr-[.55rem] rounded-md bg-[#0e6b9e] px-2 py-1 text-[.65rem]">Science</span>Which element has the chemical symbol ‘O’?</p><div className="grid grid-cols-4 gap-[.55rem] pr-[3.6rem]"><Answer text="A  Gold" /><Answer text="B  Oxygen" selected /><Answer text="C  Iron" /><Answer text="D  Silver" /></div><div className="absolute right-[.6rem] top-1/2 grid h-[43px] w-[43px] -translate-y-[18%] place-items-center rounded-full border-2 border-[#7777ff] text-[.78rem]">12s</div></div>
+      </section>
     </div>
   );
 }
 
+function Benefit({ icon, title, text, tone = "purple" }: { icon: React.ReactNode; title: string; text: string; tone?: string }) {
+  return <div className="mt-[.85rem] grid grid-cols-[43px_1fr] items-start gap-[.85rem]"><span className={`grid h-[39px] w-[39px] place-items-center rounded-xl border border-[rgba(154,75,255,.23)] ${tone === "amber" ? "bg-[rgba(255,178,20,.09)] text-[#ffc326]" : "bg-[rgba(137,48,255,.14)] text-[#d84fff]"}`}>{icon}</span><div><h3 className="m-0 mb-[.12rem] text-[.86rem]">{title}</h3><p className="m-0 text-[.73rem] leading-[1.35] text-[#b0b5c6]">{text}</p></div></div>;
+}
 
+function Answer({ text, selected = false }: { text: string; selected?: boolean }) {
+  return <button className={`flex min-h-[34px] items-center justify-between rounded-[9px] border px-[.7rem] text-left text-[.7rem] ${selected ? "border-[#d14ff0] bg-[linear-gradient(90deg,#5041e5,#b22bd3)] text-white" : "border-[rgba(82,97,143,.14)] bg-[#091126] text-[#d9dbe4]"}`}>{text}{selected && <Check className="w-4" />}</button>;
+}
