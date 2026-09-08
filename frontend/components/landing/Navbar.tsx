@@ -121,8 +121,8 @@ export default function Navbar() {
           </button>
 
           {/* Create Room */}
-          <button
-            type="button"
+          <Link
+            href="/room/7X4K2B"
             className="
               flex
               cursor-pointer
@@ -139,13 +139,10 @@ export default function Navbar() {
               transition-transform
               hover:scale-[1.03]
             "
-            onClick={() =>
-              begin("Your room is ready to be created!")
-            }
           >
             Create Room
             <ArrowRight size={17} />
-          </button>
+          </Link>
         </div>
 
         {/* Mobile menu button */}

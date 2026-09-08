@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   Gamepad2,
@@ -79,20 +80,56 @@ export default function Hero() {
             color="text-amber-400"
           />
         </div>
-        <div className="mt-9 flex gap-4 max-[760px]:grid max-[760px]:gap-[.55rem] [&>button]:h-[49px] [&>button]:cursor-pointer [&>button]:items-center [&>button]:justify-between [&>button]:rounded-full [&>button]:font-bold [&>button]:transition-[transform,filter] [&>button:hover]:-translate-y-0.5 [&>button:hover]:brightness-[1.12] max-[760px]:[&>button]:w-full">
-          <button
-            className="inline-flex w-[220px] bg-[linear-gradient(100deg,#ff5b84,#992cff_48%,#00d8e9)] py-0 pl-[2.35rem] pr-[.65rem] shadow-[0_0_28px_rgba(165,49,255,.3),inset_0_0_0_1px_rgba(255,255,255,.48)] max-[760px]:pl-[calc(50%_-_3.8rem)] [&_svg]:h-[34px] [&_svg]:w-[34px] [&_svg]:rounded-full [&_svg]:border [&_svg]:border-white/20 [&_svg]:p-[7px]"
-            onClick={() => begin("Room creation flow coming next.")}
+        <div className="mt-9 flex gap-4 max-[760px]:grid max-[760px]:gap-2.5">
+          <Link
+            href="/room/7X4K2B"
+            className="
+    inline-flex h-[49px] w-[220px]
+    items-center justify-between
+    rounded-full
+    bg-[linear-gradient(100deg,#ff5b84,#992cff_48%,#00d8e9)]
+    pl-9 pr-4
+    font-medium text-white
+    shadow-[0_0_28px_rgba(165,49,255,.3),inset_0_0_0_1px_rgba(255,255,255,.48)]
+    transition-all duration-300
+    hover:-translate-y-0.5
+    hover:brightness-110
+    max-[760px]:w-full
+    max-[760px]:justify-center
+    max-[760px]:gap-4
+    max-[760px]:pl-0
+    max-[760px]:pr-0
+  "
           >
             <span>Create Room</span>
-            <Plus />
-          </button>
-          <button
-            className="inline-flex w-[160px] border border-white/19 bg-[rgba(6,10,29,.9)] py-0 pl-[1.45rem] pr-[1.05rem] max-[760px]:justify-center max-[760px]:gap-[1.2rem] max-[760px]:bg-transparent [&_svg]:w-[18px]"
-            onClick={() => begin("Enter a room code in the next project step.")}
+
+            <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/5">
+              <Plus className="h-5 w-5" />
+            </span>
+          </Link>
+
+          <Link
+            href="/join-room"
+            className="
+      inline-flex h-[49px] w-[160px]
+      items-center justify-between
+      rounded-full
+      border border-white/15
+      bg-[rgba(6,10,29,.9)]
+      pl-5 pr-4
+      font-medium text-white
+      transition-all duration-300
+      hover:-translate-y-0.5
+      hover:border-white/25
+      hover:bg-white/5
+      max-[760px]:w-full
+      max-[760px]:justify-center
+      max-[760px]:gap-5
+    "
           >
-            Join a Room <ArrowRight />
-          </button>
+            <span>Join a Room</span>
+            <ArrowRight className="h-[18px] w-[18px]" />
+          </Link>
         </div>
         <div className="mt-[1.15rem] flex items-center gap-[.7rem] text-[.78rem] text-[#c5c7d3] max-[760px]:my-4 max-[760px]:mb-[1.1rem] max-[760px]:justify-center max-[760px]:text-[.7rem]">
           <div className="flex" aria-hidden="true">
