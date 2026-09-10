@@ -1,280 +1,174 @@
-"use client";
+'use client';
 
-import { Menu, ArrowRight, X } from "lucide-react";
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { Menu, X, Dices } from 'lucide-react';
+import { navLinks } from '@/lib/data';
+import CTAButton from './CTAButton';
+import { cn } from '@/lib/utils';
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const prefersReduced = useReducedMotion();
 
-  const begin = (message: string) => {
-    console.log(message);
-  };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <>
-      {/* Ambient background */}
-      <div className="pointer-events-none absolute top-80 right-[-12rem] h-96 w-96 rounded-full bg-[#9b25ff] opacity-[0.12] blur-[110px]" />
-
-      <div className="pointer-events-none absolute top-[42rem] left-[-15rem] h-96 w-96 rounded-full bg-[#00d9ff] opacity-[0.12] blur-[110px]" />
-
-      {/* Navbar */}
-      <header className="relative z-50 mx-auto flex h-[106px] max-w-[1460px] items-center justify-between px-6 md:grid md:grid-cols-[170px_1fr_auto] md:gap-8">
-
-        {/* Logo */}
-        <Link
-          href="/"
-          className="group relative flex h-full items-center"
-          aria-label="Trivia Trap home"
-        >
-          {/* Logo glow */}
+      <motion.nav
+        initial={prefersReduced ? {} : { y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className={cn(
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          scrolled ? 'py-2' : 'py-4'
+        )}
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div
-            className="
-              pointer-events-none
-              absolute
-              inset-0
-              scale-75
-              rounded-full
-              bg-purple-500/20
-              opacity-0
-              blur-2xl
-              transition-all
-              duration-500
-              group-hover:scale-100
-              group-hover:opacity-100
-            "
-          />
-
-          <Image
-            src="/images/logo.png"
-            alt="Trivia Trap"
-            width={105}
-            height={40}
-            priority
-            className="
-              relative
-              h-auto
-              w-[105px]
-              object-contain
-              transition-transform
-              duration-300
-              group-hover:scale-[1.04]
-              sm:w-[120px]
-              lg:w-[135px]
-            "
-          />
-        </Link>
-
-        {/* Desktop navigation */}
-        <nav
-          className="
-            hidden
-            items-center
-            justify-center
-            gap-[clamp(1.4rem,3vw,3.6rem)]
-            text-[0.92rem]
-            md:flex
-
-            [&_a]:text-[#f0eff5]
-            [&_a]:transition-[color,transform]
-            [&_a]:duration-200
-            [&_a:hover]:-translate-y-0.5
-            [&_a:hover]:text-[#4bdbea]
-          "
-          aria-label="Main navigation"
-        >
-          <Link href="/#how">How to Play</Link>
-
-          <Link href="/#features">Features</Link>
-
-          <Link href="/categories">Categories</Link>
-
-          <Link href="/leaderboard">Leaderboard</Link>
-
-          <Link href="#faq">FAQ</Link>
-        </nav>
-
-        {/* Desktop actions */}
-        <div className="hidden gap-4 md:flex">
-
-          {/* Login */}
-          <button
-            type="button"
-            className="
-              cursor-pointer
-              rounded-full
-              border
-              border-white/22
-              bg-transparent
-              px-[1.7rem]
-              py-[0.82rem]
-              text-white
-              transition-colors
-              hover:bg-white/5
-            "
-            onClick={() =>
-              begin("Login opens in the next project step.")
-            }
+            className={cn(
+              'flex items-center justify-between rounded-2xl border transition-all duration-300',
+              scrolled
+                ? 'border-white/10 bg-trap-navy-900/80 px-4 py-2.5 backdrop-blur-xl shadow-lg shadow-black/30'
+                : 'border-transparent bg-transparent px-4 py-2.5'
+            )}
           >
-            Log in
-          </button>
+            {/* Logo */}
+            <Link href="/" className="group flex items-center gap-2">
+              <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-trap-pink via-trap-purple to-trap-cyan shadow-lg shadow-purple-500/30 transition-transform duration-300 group-hover:scale-110">
+                <Dices size={18} className="text-white" strokeWidth={2.5} />
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-white/20 to-transparent" />
+              </div>
+              <span className="text-lg font-extrabold tracking-tight text-white">
+                TRIVIA <span className="text-gradient-pink-purple">TRAP</span>
+              </span>
+            </Link>
 
-          {/* Create Room */}
-          <Link
-            href="/room/7X4K2B"
-            className="
-              flex
-              cursor-pointer
-              items-center
-              gap-3
-              rounded-full
-              border-0
-              bg-[linear-gradient(100deg,#7c2af0,#a02ff0_45%,#00d6e9)]
-              px-[1.45rem]
-              py-[0.85rem]
-              font-bold
-              text-white
-              shadow-[inset_0_0_0_1px_rgba(255,255,255,0.34),0_0_25px_rgba(87,69,255,0.18)]
-              transition-transform
-              hover:scale-[1.03]
-            "
-          >
-            Create Room
-            <ArrowRight size={17} />
-          </Link>
-        </div>
+            {/* Desktop nav */}
+            <div className="hidden items-center gap-1 lg:flex">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-white/70 transition-colors duration-200 hover:bg-white/5 hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
 
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          className="
-            block
-            cursor-pointer
-            rounded-lg
-            p-2
-            text-white
-            md:hidden
-          "
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </header>
+            {/* Desktop CTAs */}
+            <div className="hidden items-center gap-3 lg:flex">
+              <CTAButton
+                variant="secondary"
+                size="sm"
+                label="Join a Room"
+                href="/join-room"
+                icon="arrow"
+              />
+              <CTAButton
+                variant="primary"
+                size="sm"
+                label="Create Room"
+                href="/room/7X4K2B"
+                icon="plus"
+              />
+            </div>
 
-      {/* Mobile navigation */}
-      {menuOpen && (
-        <nav
-          className="
-            absolute
-            left-0
-            right-0
-            top-[106px]
-            z-40
-            flex
-            flex-col
-            gap-5
-            border-t
-            border-white/10
-            bg-[#0d0b18]/95
-            p-6
-            shadow-2xl
-            backdrop-blur-xl
-            md:hidden
-          "
-          aria-label="Mobile navigation"
-        >
-          <Link
-            href="#how"
-            className="text-white transition-colors hover:text-[#4bdbea]"
-            onClick={() => setMenuOpen(false)}
-          >
-            How to Play
-          </Link>
-
-          <Link
-            href="#features"
-            className="text-white transition-colors hover:text-[#4bdbea]"
-            onClick={() => setMenuOpen(false)}
-          >
-            Features
-          </Link>
-
-          <Link
-            href="/categories"
-            className="text-white transition-colors hover:text-[#4bdbea]"
-            onClick={() => setMenuOpen(false)}
-          >
-            Categories
-          </Link>
-
-          <Link
-            href="/leaderboard"
-            className="text-white transition-colors hover:text-[#4bdbea]"
-            onClick={() => setMenuOpen(false)}
-          >
-            Leaderboard
-          </Link>
-
-          <Link
-            href="#faq"
-            className="text-white transition-colors hover:text-[#4bdbea]"
-            onClick={() => setMenuOpen(false)}
-          >
-            FAQ
-          </Link>
-
-          {/* Mobile actions */}
-          <div className="mt-2 flex flex-col gap-3 border-t border-white/10 pt-5">
-
-            {/* Login */}
+            {/* Mobile menu button */}
             <button
-              type="button"
-              className="
-                rounded-full
-                border
-                border-white/20
-                px-6
-                py-3
-                text-white
-              "
-              onClick={() => {
-                begin("Login opens in the next project step.");
-                setMenuOpen(false);
-              }}
+              onClick={() => setMobileOpen(true)}
+              className="flex h-10 w-10 items-center justify-center rounded-lg text-white/80 transition-colors hover:bg-white/5 hover:text-white lg:hidden"
+              aria-label="Open menu"
             >
-              Log in
+              <Menu size={22} />
             </button>
-
-            {/* Create Room */}
-            <button
-              type="button"
-              className="
-                flex
-                items-center
-                justify-center
-                gap-3
-                rounded-full
-                bg-[linear-gradient(100deg,#7c2af0,#a02ff0_45%,#00d6e9)]
-                px-6
-                py-3
-                font-bold
-                text-white
-              "
-              onClick={() => {
-                begin("Your room is ready to be created!");
-                setMenuOpen(false);
-              }}
-            >
-              Create Room
-              <ArrowRight size={17} />
-            </button>
-
           </div>
-        </nav>
-      )}
+        </div>
+      </motion.nav>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[60] lg:hidden"
+          >
+            <div
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setMobileOpen(false)}
+            />
+            <motion.div
+              initial={prefersReduced ? {} : { x: '100%' }}
+              animate={{ x: 0 }}
+              exit={prefersReduced ? {} : { x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="absolute right-0 top-0 h-full w-80 max-w-[85vw] border-l border-white/10 bg-trap-navy-900/95 p-6"
+            >
+              <div className="mb-8 flex items-center justify-between">
+                <span className="text-lg font-extrabold text-white">
+                  TRIVIA <span className="text-gradient-pink-purple">TRAP</span>
+                </span>
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  className="flex h-10 w-10 items-center justify-center rounded-lg text-white/80 transition-colors hover:bg-white/10"
+                  aria-label="Close menu"
+                >
+                  <X size={22} />
+                </button>
+              </div>
+
+              <div className="flex flex-col gap-1">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.label}
+                    initial={prefersReduced ? {} : { opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.06 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="block rounded-xl px-4 py-3 text-base font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-col gap-3">
+                <CTAButton
+                  variant="secondary"
+                  size="md"
+                  label="Join a Room"
+                  href="/join-room"
+                  icon="arrow"
+                  className="w-full"
+                />
+                <CTAButton
+                  variant="primary"
+                  size="md"
+                  label="Create Room"
+                  href="/room/7X4K2B"
+                  icon="plus"
+                  className="w-full"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
