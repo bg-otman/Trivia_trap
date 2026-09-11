@@ -91,6 +91,7 @@ dependencies = [
     { name = "asyncpg" },
     { name = "fastapi", extra = ["standard"] },
     { name = "python-statemachine" },
+    { name = "sqlalchemy" },
     { name = "websockets" },
 ]
 
@@ -100,6 +101,7 @@ requires-dist = [
     { name = "asyncpg", specifier = ">=0.31.0" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.141.1" },
     { name = "python-statemachine", specifier = ">=3.2.1" },
+    { name = "sqlalchemy", specifier = ">=2.0.52" },
     { name = "websockets", specifier = ">=17.0.1" },
 ]
 
