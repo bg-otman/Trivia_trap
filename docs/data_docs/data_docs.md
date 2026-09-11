@@ -30,3 +30,25 @@ If you delete a customer from the Parent table, the database automatically delet
 | `round_options`        | الاختيارات اللي بانو فالجولة. |
 | `round_option_authors` | شكون كتب كل اختيار.           |
 | `round_votes`          | شكون صوت على كل اختيار.       |
+
+
+بالنسبة للـCategories:
+
+* الـHost كيختار لغة الـRoom كاملة.
+* `PHASE_CATEGORY` كترجع `id`, `name` و`image_url` حسب لغة الـRoom.
+* الـFrontend كيعرض الاسم والصورة.
+* ملي اللاعب يختار Category، `GET_QUESTION` كيصيفط غير `category_id`.
+* الـBackend كيجيب سؤال عندو نفس `category_id` ونفس `language_code` ديال الـRoom.
+
+مثال:
+
+```json
+{
+  "event": "GET_QUESTION",
+  "data": {
+    "category_id": 1
+  }
+}
+```
+
+يعني ما نستعملوش اسم Category كـIdentifier لأنه كيتبدل حسب اللغة؛ نستعملو دائماً `category_id`.

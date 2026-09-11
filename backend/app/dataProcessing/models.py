@@ -13,11 +13,6 @@ class Category(Base):
         primary_key=True,
         autoincrement=True,
     )
-    slug: Mapped[str] = mapped_column(
-        String(120),
-        nullable=False,
-        unique=True,
-    )
     image_url: Mapped[str | None] = mapped_column(Text)
 
     translations: Mapped[list["CategoryTranslation"]] = relationship(
