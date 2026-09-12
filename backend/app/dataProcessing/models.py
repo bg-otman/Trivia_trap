@@ -1,6 +1,9 @@
 from __future__ import annotations
 
-from sqlalchemy import ForeignKey, String, Text, UniqueConstraint, Index 
+from datetime import datetime
+from uuid import UUID, uuid4
+
+from sqlalchemy import ForeignKey, String, Text, UniqueConstraint, Index, CheckConstraint, DateTime, Uuid, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .database import Base
@@ -137,3 +140,86 @@ class QuestionDecoy(Base):
     question: Mapped["Question"] = relationship(
         back_populates="decoys",
     )
+
+class User(Base):
+    __tablename__ = "users"
+
+    __table_args__ = (
+        CheckConstraint(
+            "password_hash IS NOT NULL OR google_sub IS NOT NULL",
+            name="check_user_if_has_auth_method",
+        ),
+    )
+
+    id: Mapped[int] = mapped_column(
+        primary_key=True,
+        autoincrement=True,
+    )
+
+    username: Mapped[str] = mapped_column(
+        String(50),
+        nullable=False,
+        unique=True,
+    )
+
+    email: Mapped[str] = mapped_column(
+        String(255),
+        nullable=False,
+        unique=True,
+    )
+
+    avatar_url: Mapped[str | None] = mapped_column(
+        Text,
+        nullable=True,
+    )
+
+    password_hash: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True,
+    )
+
+    google_sub: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True,
+        unique=True,
+    )
+
+    hosted_games: Mapped[list["Game"]] = relationship(
+        back_populates="host",
+    
+    )
+
+class Game(Base):
+    __tablename__ = "games"
+
+    id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True),
+        primary_key=True,
+        default=uuid4,
+    )
+
+    host_user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="RESTRICT"),
+        nullable=False,
+    )
+
+    language_code: Mapped[str] = mapped_column(
+        String(5),
+        nullable=False,
+    )
+
+    started_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        nullable=False,
+        server_default=func.now(),
+    )
+
+    finished_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True),
+        nullable=True,
+    )
+
+    host: Mapped["User"] = relationship(
+        back_populates="hosted_games",
+    )
+
