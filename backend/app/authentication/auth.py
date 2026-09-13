@@ -1,52 +1,43 @@
-from fastapi import APIRouter
-from pydantic import BaseModel, EmailStr, Field, SecretStr, field_validator
-from password_validator import PasswordValidator
+from fastapi import APIRouter, HTTPException, status
+from starlette.concurrency import run_in_threadpool
+
+from authentication.memory_store import (
+    DuplicateUserError,
+    create_user,
+    find_existing_user_id,
+)
+from authentication.schemas import RegisterData, UserResponse
+from authentication.security import hash_password
+
 
 auth_router = APIRouter(prefix="/auth", tags=["AUTH"])
+DUPLICATE_USER_MESSAGE = "Username or email is already registered."
 
-schema = (
-    PasswordValidator()
-    .has().uppercase()
-    .has().lowercase()
-    .has().digits()
-    .has().symbols()
-    .has().no().spaces()
+
+@auth_router.post(
+    "/register",
+    status_code=status.HTTP_201_CREATED,
+    response_model=UserResponse,
 )
+async def register(data: RegisterData) -> UserResponse:
+    if find_existing_user_id(data.username, data.email) is not None:
+        raise HTTPException(status.HTTP_409_CONFLICT, DUPLICATE_USER_MESSAGE)
 
+    password_hash = await run_in_threadpool(
+        hash_password,
+        data.password.get_secret_value(),
+    )
 
-class RegisterData(BaseModel):
-    email: EmailStr = Field(max_length=256)
-    username: str = Field(min_length=3, max_length=30)
-    password: SecretStr = Field(min_length=15, max_length=128)
+    try:
+        # Rechecks duplicates in case another request registered during hashing.
+        user = create_user(data.username, data.email, password_hash)
+    except DuplicateUserError:
+        raise HTTPException(
+            status.HTTP_409_CONFLICT, DUPLICATE_USER_MESSAGE
+        ) from None
 
-    @field_validator("username")
-    @classmethod
-    def validate_username(cls, username: str) -> str:
-        if not username[0].isalpha() or not username.isalnum():
-            raise ValueError(
-                "Username must start with a letter and contain only letters and numbers."
-            )
-        return username
-
-    @field_validator("password")
-    @classmethod
-    def validate_password_complexity(cls, value: SecretStr) -> SecretStr:
-        if not schema.validate(value.get_secret_value()):
-            raise ValueError(
-                "Password must contain at least one uppercase letter, "
-                "one lowercase letter, one digit, and one symbol, "
-                "and must not contain spaces."
-            )
-
-        return value
-
-
-@auth_router.post("/register")
-def register(data: RegisterData):
-    print(data.username)
-    print(data.email)
-    print(data.password) #print secret password .get_secret_value()
-    # Input has passed validation.
-    # Next: check for an existing user, hash the password,
-    # and save the user to the database.
-    return {"message": "Registration endpoint received the data"}
+    return UserResponse(
+        id=user["id"],
+        username=user["username"],
+        email=user["email"],
+    )
