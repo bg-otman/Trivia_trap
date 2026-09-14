@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Plus, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Plus, Sparkles, Dices } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -62,7 +62,7 @@ export default function JoinRoom() {
         <div
           className="
             absolute -left-40 top-20
-            h-[420px] w-[420px]
+            h-105 w-105
             rounded-full
             bg-cyan-500/[0.07]
             blur-[120px]
@@ -72,7 +72,7 @@ export default function JoinRoom() {
         <div
           className="
             absolute -right-32 top-10
-            h-[500px] w-[500px]
+            h-105 w-105
             rounded-full
             bg-purple-600/[0.10]
             blur-[130px]
@@ -101,27 +101,16 @@ export default function JoinRoom() {
           py-6
         "
       >
-        <Link
-          href="/"
-          className="group flex items-center"
-          aria-label="Back to home"
-        >
-          <Image
-            src="/images/logo.png"
-            alt="Trivia Trap"
-            width={135}
-            height={45}
-            priority
-            className="
-              h-auto w-[105px]
-              object-contain
-              transition-transform duration-300
-              group-hover:scale-[1.04]
-              sm:w-[120px]
-              lg:w-[135px]
-            "
-          />
+        <Link href="/" className="group flex items-center gap-2">
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-trap-pink via-trap-purple to-trap-cyan shadow-lg shadow-purple-500/30 transition-transform duration-300 group-hover:scale-110">
+            <Dices size={18} className="text-white" strokeWidth={2.5} />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-white/20 to-transparent" />
+          </div>
+          <span className="text-lg font-extrabold tracking-tight text-white">
+            TRIVIA <span className="text-gradient-pink-purple">TRAP</span>
+          </span>
         </Link>
+
 
         <Link
           href="/"
@@ -286,10 +275,9 @@ export default function JoinRoom() {
                   border
                   bg-[#05091b]/80
                   transition-all duration-300
-                  ${
-                    error
-                      ? "border-red-400/40 shadow-[0_0_25px_rgba(248,113,113,.08)]"
-                      : "border-white/[0.10] focus-within:border-purple-400/40 focus-within:shadow-[0_0_30px_rgba(139,92,246,.10)]"
+                  ${error
+                    ? "border-red-400/40 shadow-[0_0_25px_rgba(248,113,113,.08)]"
+                    : "border-white/[0.10] focus-within:border-purple-400/40 focus-within:shadow-[0_0_30px_rgba(139,92,246,.10)]"
                   }
                 `}
               >
@@ -438,7 +426,7 @@ export default function JoinRoom() {
 
               {/* Create room */}
               <Link
-                href="/create-room"
+                href="/room/7X4K2B"
                 className="
                   group/create
                   flex h-[50px] w-full

@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowLeft, Check, Copy, LogOut, Settings, Wifi } from "lucide-react";
+import { ArrowLeft, Check, Copy, LogOut, Settings, Wifi,Dices } from "lucide-react";
+import Link from "next/link";
 
 type RoomHeaderProps = {
   playerCount: number;
@@ -69,11 +70,15 @@ export default function RoomHeader({
             <ArrowLeft size={20} />
           </button>
 
-          <img
-            src="/images/logo.png"
-            alt="Trivia Trap"
-            className="hidden h-auto w-[110px] object-contain sm:block"
-          />
+          <Link href="/" className="group flex items-center gap-2">
+            <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-trap-pink via-trap-purple to-trap-cyan shadow-lg shadow-purple-500/30 transition-transform duration-300 group-hover:scale-110">
+              <Dices size={18} className="text-white" strokeWidth={2.5} />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-white/20 to-transparent" />
+            </div>
+            <span className="text-lg font-extrabold tracking-tight text-white">
+              TRIVIA <span className="text-gradient-pink-purple">TRAP</span>
+            </span>
+          </Link>
 
           <div className="hidden items-center gap-1.5 rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3 py-1.5 text-[11px] font-medium text-emerald-300 md:flex">
             <Wifi size={13} />

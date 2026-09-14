@@ -1,69 +1,28 @@
 "use client";
 
 import { Check, Grid2X2 } from "lucide-react";
+import { categories as dataCategories } from "@/lib/data";
 
-const categories = [
-  {
-    name: "Geography",
-    icon: "🌍",
-    color: "cyan",
-  },
-  {
-    name: "History",
-    icon: "🏛️",
-    color: "amber",
-  },
-  {
-    name: "Science",
-    icon: "🧪",
-    color: "blue",
-  },
-  {
-    name: "Movies & TV",
-    icon: "🎬",
-    color: "purple",
-  },
-  {
-    name: "Sports",
-    icon: "⚽",
-    color: "emerald",
-  },
-  {
-    name: "Art & Culture",
-    icon: "🎨",
-    color: "orange",
-  },
-  {
-    name: "Technology",
-    icon: "💻",
-    color: "indigo",
-  },
-  {
-    name: "Music",
-    icon: "🎵",
-    color: "pink",
-  },
-  {
-    name: "Food & Drink",
-    icon: "🍔",
-    color: "yellow",
-  },
-  {
-    name: "Animals",
-    icon: "🦁",
-    color: "green",
-  },
-  {
-    name: "Space",
-    icon: "🚀",
-    color: "violet",
-  },
-  {
-    name: "Gaming",
-    icon: "🎮",
-    color: "fuchsia",
-  },
-];
+const categoryColors: Record<string, string> = {
+  Geography: "cyan",
+  History: "amber",
+  Science: "blue",
+  "Movies & TV": "purple",
+  Sports: "emerald",
+  "Art & Culture": "orange",
+  Technology: "indigo",
+  Music: "pink",
+  "Food & Drink": "yellow",
+  Animals: "green",
+  Space: "violet",
+  Gaming: "fuchsia",
+};
+
+const categories = dataCategories.map((category) => ({
+  name: category.name,
+  icon: category.emoji,
+  color: categoryColors[category.name] ?? "cyan",
+}));
 
 const colors: Record<string, string> = {
   cyan:

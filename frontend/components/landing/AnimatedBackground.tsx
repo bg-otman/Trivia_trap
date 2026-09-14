@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
 const particleValue = (index: number, offset: number) => {
@@ -21,6 +21,11 @@ const particles = Array.from({ length: 18 }, (_, i) => ({
 export default function AnimatedBackground() {
   const prefersReduced = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (prefersReduced) return;
@@ -124,7 +129,8 @@ export default function AnimatedBackground() {
       />
 
       {/* Floating particles */}
-      {!prefersReduced &&
+      {mounted &&
+        !prefersReduced &&
         particles.map((p) => (
           <motion.div
             key={p.id}
