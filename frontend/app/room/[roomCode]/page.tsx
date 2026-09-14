@@ -1,15 +1,15 @@
-import RoomLobby from "@/components/room/RoomLobby";
+// app/room/[roomCode]/page.tsx
 
-type RoomPageProps = {
+import Room from "@/components/room/Room";
+
+type Props = {
   params: Promise<{
     roomCode: string;
   }>;
 };
 
-export default async function RoomPage({
-  params,
-}: RoomPageProps) {
+export default async function RoomPage({ params }: Props) {
   const { roomCode } = await params;
 
-  return <RoomLobby roomCode={roomCode} />;
+  return <Room roomCode={roomCode} />;
 }
