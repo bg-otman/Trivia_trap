@@ -14,6 +14,7 @@ import RoomFooter from "./RoomFooter";
 
 type RoomLobbyProps = {
   roomCode: string;
+  onStartGame: () => void;
 };
 
 export type RoomSettings = {
@@ -25,6 +26,7 @@ export type RoomSettings = {
 
 export default function RoomLobby({
   roomCode,
+  onStartGame,
 }: RoomLobbyProps) {
   const router = useRouter();
 
@@ -150,7 +152,7 @@ export default function RoomLobby({
      * router.push(`/game/${roomCode}`);
      */
 
-    router.push(`/game/${roomCode}`);
+    onStartGame();
   };
 
   return (
