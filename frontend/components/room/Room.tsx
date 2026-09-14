@@ -20,7 +20,7 @@ export default function Room({ roomCode }: RoomProps) {
 
   switch (phase) {
     case "lobby":
-      return <RoomLobby roomCode={roomCode} />;
+      return <RoomLobby roomCode={roomCode} onStartGame={() => setPhase("category")} />;
 
     // case "category":
     //   return <CategoryPhase />;
