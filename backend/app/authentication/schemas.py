@@ -17,6 +17,7 @@ class RegisterData(BaseModel):
     username: str = Field(min_length=3, max_length=30)
     password: SecretStr = Field(min_length=15, max_length=128)
 
+    # validate the username start with character and only contain letters and numbers
     @field_validator("username")
     @classmethod
     def validate_username(cls, username: str) -> str:
@@ -25,7 +26,7 @@ class RegisterData(BaseModel):
                 "Username must start with a letter and contain only letters and numbers."
             )
         return username
-
+    # validate the password complexity
     @field_validator("password")
     @classmethod
     def validate_password_complexity(cls, value: SecretStr) -> SecretStr:

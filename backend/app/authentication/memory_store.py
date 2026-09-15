@@ -19,11 +19,18 @@ TEST_USERS: list[StoredUser] = [
 class DuplicateUserError(Exception):
     pass
 
-
+#check existing user by username or email and handle the 
 def find_existing_user_id(username: str, email: str) -> int | None:
+    username_key = username.casefold()
+    email_key = email.casefold()
+
     for user in TEST_USERS:
-        if user["username"] == username or user["email"] == email:
+        if (
+            user["username"].casefold() == username_key
+            or user["email"].casefold() == email_key
+        ):
             return user["id"]
+
     return None
 
 
