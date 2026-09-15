@@ -21,13 +21,11 @@ class DuplicateUserError(Exception):
 
 #check existing user by username or email and handle the 
 def find_existing_user_id(username: str, email: str) -> int | None:
-    username_key = username.casefold()
-    email_key = email.casefold()
 
     for user in TEST_USERS:
         if (
-            user["username"].casefold() == username_key
-            or user["email"].casefold() == email_key
+            user["username"].casefold() == username.casefold()
+            or user["email"].casefold() == email.casefold()
         ):
             return user["id"]
 
@@ -35,8 +33,6 @@ def find_existing_user_id(username: str, email: str) -> int | None:
 
 
 def create_user(username: str, email: str, password_hash: str) -> StoredUser:
-    # No await between checking and inserting: atomic on this event loop.
-    # PostgreSQL will need unique constraints and conflict handling instead.
     if find_existing_user_id(username, email) is not None:
         raise DuplicateUserError
 
