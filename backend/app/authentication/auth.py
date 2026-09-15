@@ -1,12 +1,12 @@
 from fastapi import APIRouter, HTTPException, status
 from starlette.concurrency import run_in_threadpool
-
 from authentication.memory_store import (DuplicateUserError, create_user, find_existing_user_id,)
 from authentication.schemas import RegisterData, UserResponse
 from authentication.security import hash_password
+from authentication.routes import AuthRoute
 
 
-auth_router = APIRouter(prefix="/auth", tags=["AUTH"])
+auth_router = APIRouter(prefix="/auth", tags=["AUTH"], route_class=AuthRoute)
 DUPLICATE_USER_MESSAGE = "Username or email is already registered."
 
 
