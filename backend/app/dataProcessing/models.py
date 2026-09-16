@@ -1,7 +1,10 @@
 from __future__ import annotations
 
-from sqlalchemy import ForeignKey, String, Text, UniqueConstraint, Index 
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from datetime import datetime
+from uuid import UUID, uuid4
+
+from sqlalchemy import ForeignKey, String, Text, UniqueConstraint, Index, CheckConstraint, DateTime, Uuid, func, text
+from sqlalchemy.orm import Mapped, mapped_column, relationship 
 
 from .database import Base
 
@@ -136,4 +139,204 @@ class QuestionDecoy(Base):
 
     question: Mapped["Question"] = relationship(
         back_populates="decoys",
+    )
+
+class User(Base):
+    __tablename__ = "users"
+
+    __table_args__ = (
+        CheckConstraint(
+            "password_hash IS NOT NULL OR google_sub IS NOT NULL",
+            name="check_user_if_has_auth_method",
+        ),
+    )
+
+    id: Mapped[int] = mapped_column(
+        primary_key=True,
+        autoincrement=True,
+    )
+
+    username: Mapped[str] = mapped_column(
+        String(50),
+        nullable=False,
+        unique=True,
+    )
+
+    email: Mapped[str] = mapped_column(
+        String(255),
+        nullable=False,
+        unique=True,
+    )
+
+    avatar_url: Mapped[str | None] = mapped_column(
+        Text,
+        nullable=True,
+    )
+
+    password_hash: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True,
+    )
+
+    google_sub: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True,
+        unique=True,
+    )
+
+    hosted_games: Mapped[list["Game"]] = relationship(
+        back_populates="host",
+    
+    )
+
+    game_results: Mapped[list["GamePlayerResult"]] = relationship(
+        back_populates="user",
+    )
+
+    sent_friendships: Mapped[list["Friendship"]] = relationship(
+    back_populates="requester",
+    foreign_keys="Friendship.requester_id",
+    passive_deletes=True,
+    )
+
+    received_friendships: Mapped[list["Friendship"]] = relationship(
+    back_populates="receiver",
+    foreign_keys="Friendship.receiver_id",
+    passive_deletes=True,
+)
+
+class Game(Base):
+    __tablename__ = "games"
+
+    id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True),
+        primary_key=True,
+        default=uuid4,
+    )
+
+    host_user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="RESTRICT"),
+        nullable=False,
+    )
+
+    language_code: Mapped[str] = mapped_column(
+        String(5),
+        nullable=False,
+    )
+
+    started_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        nullable=False,
+        server_default=func.now(),
+    )
+
+    finished_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True),
+        nullable=True,
+    )
+
+    host: Mapped["User"] = relationship(
+        back_populates="hosted_games",
+    )
+
+    player_results: Mapped[list["GamePlayerResult"]] = relationship(
+        back_populates="game",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
+    )
+
+
+class GamePlayerResult(Base):
+    __tablename__ = "game_player_results"
+
+    __table_args__ = (
+        CheckConstraint(
+            "final_score >= 0",
+            name="check_game_player_result_score",
+        ),
+        CheckConstraint(
+            "final_rank BETWEEN 1 AND 4",
+            name="check_game_player_result_rank",
+        ),
+        Index(
+            "ix_game_player_results_user_id",
+            "user_id",
+        ),
+    )
+
+    game_id: Mapped[UUID] = mapped_column(
+        ForeignKey("games.id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+
+    user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="RESTRICT"),
+        primary_key=True,
+    )
+
+    final_score: Mapped[int] = mapped_column(
+        nullable=False,
+    )
+
+    final_rank: Mapped[int] = mapped_column(
+        nullable=False,
+    )
+
+    game: Mapped["Game"] = relationship(
+        back_populates="player_results",
+    )
+
+    user: Mapped["User"] = relationship(
+        back_populates="game_results",
+    )
+
+
+class Friendship(Base):
+    __tablename__ = "friendships"
+
+    __table_args__ = (
+        CheckConstraint(
+            "requester_id <> receiver_id",
+            name="check_friendship_not_self",
+        ),
+        CheckConstraint(
+            "status IN ('pending', 'accepted')",
+            name="check_friendship_status",
+        ),
+        Index(
+            "ix_friendships_receiver_id",
+            "receiver_id",
+        ),
+    )
+
+    requester_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+
+    receiver_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+
+    status: Mapped[str] = mapped_column(
+        String(20),
+        nullable=False,
+        server_default=text("'pending'"),
+    )
+
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        nullable=False,
+        server_default=func.now(),
+    )
+
+    requester: Mapped["User"] = relationship(
+        back_populates="sent_friendships",
+        foreign_keys=[requester_id],
+    )
+
+    receiver: Mapped["User"] = relationship(
+        back_populates="received_friendships",
+        foreign_keys=[receiver_id],
     )
