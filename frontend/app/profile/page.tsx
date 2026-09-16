@@ -19,7 +19,7 @@ export async function getUserData( username : string)
     const mock_game_data = [
         {
             id: "55",
-            end_time: new Date("2025-9-7"),
+            end_time: new Date(),
             total_rounds: 10,
             player_numbers: 5,
             host_username: "ali",
@@ -34,9 +34,9 @@ export async function getUserData( username : string)
     const mock_data = {
         id: "123",
         username: "b.othmane",
-        avatar: "path_to_avatar",
-        banner: "path_to_banner",
-        join_date: new Date(2025-9-5),
+        avatar: "/avatars/a1.png", // use the one exist in the db or the default if none
+        banner: "/banners/banner2.png",
+        join_date: new Date("9/10/2026"),
         total_games: 200,
         total_wins: 150,
         total_points: 356,

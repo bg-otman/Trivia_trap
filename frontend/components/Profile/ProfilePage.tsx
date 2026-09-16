@@ -1,4 +1,4 @@
-import ProfileBanner from "./ProfileBanner";
+import ProfileHeader from "./ProfileHeader";
 
 
 type UserAchievements = {
@@ -54,10 +54,16 @@ function NavBar()
 export default function ProfilePage({ user, isOwner = false } : UserProps)
 {
     return (
-        <div className="mx-auto w-full max-w-[1453px] px-4 sm:px-8 md:px-12 lg:px-16">
-            <NavBar/>
-            <ProfileBanner username={user.username} banner_url={user.banner} avatar_url={user.avatar}/>
-        </div>
+        <main className="w-full min-h-screen bg-[#0B0F19]">
+            <div className="mx-auto w-full min-h-screen relative max-w-[1440px] px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-center justify-start gap-4">
+                <NavBar/>
+                <ProfileHeader
+                    username={user.username}
+                    join_date={user.join_date} 
+                    banner_url={user.banner} 
+                    avatar_url={user.avatar}/>
+            </div>
+        </main>
     ); 
 }
 
