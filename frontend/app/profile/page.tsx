@@ -57,7 +57,6 @@ export default async function Profile()
     // if !user return UserNotFoundPage
     return (
         <div>
-            <h1>From profile page -_+</h1>
             <ProfilePage user={user} isOwner={true} />
         </div>
     );

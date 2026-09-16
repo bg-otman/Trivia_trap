@@ -61,7 +61,9 @@ export default function ProfilePage({ user, isOwner = false } : UserProps)
                     username={user.username}
                     join_date={user.join_date} 
                     banner_url={user.banner} 
-                    avatar_url={user.avatar}/>
+                    avatar_url={user.avatar}
+                    isOwner={isOwner}
+                    />
             </div>
         </main>
     ); 
