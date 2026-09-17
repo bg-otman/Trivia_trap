@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import RoomLobby from "./lobby/RoomLobby";
+import CategoryPhase from "./game/CategoryPhase";
 
 type RoomPhase =
   | "lobby"
@@ -22,8 +23,8 @@ export default function Room({ roomCode }: RoomProps) {
     case "lobby":
       return <RoomLobby roomCode={roomCode} onStartGame={() => setPhase("category")} />;
 
-    // case "category":
-    //   return <CategoryPhase />;
+    case "category":
+      return <CategoryPhase />;
 
     // case "question":
     //   return <QuestionPhase />;
