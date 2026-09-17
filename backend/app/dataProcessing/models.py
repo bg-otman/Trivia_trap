@@ -3,8 +3,20 @@ from __future__ import annotations
 from datetime import datetime
 from uuid import UUID, uuid4
 
-from sqlalchemy import ForeignKey, String, Text, UniqueConstraint, Index, CheckConstraint, DateTime, Uuid, func, text
-from sqlalchemy.orm import Mapped, mapped_column, relationship 
+from sqlalchemy import (
+    CheckConstraint,
+    DateTime,
+    ForeignKey,
+    ForeignKeyConstraint,
+    Index,
+    String,
+    Text,
+    UniqueConstraint,
+    Uuid,
+    func,
+    text,
+)
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .database import Base
 
@@ -23,6 +35,10 @@ class Category(Base):
         cascade="all, delete-orphan",
     )
     questions: Mapped[list["Question"]] = relationship(
+        back_populates="category",
+        passive_deletes=True,
+    )
+    player_results: Mapped[list["GamePlayerCategoryResult"]] = relationship(
         back_populates="category",
         passive_deletes=True,
     )
@@ -58,7 +74,6 @@ class CategoryTranslation(Base):
 
 class Question(Base):
     __tablename__ = "questions"
-
     __table_args__ = (
         Index(
             "ix_questions_category_language",
@@ -71,7 +86,6 @@ class Question(Base):
         primary_key=True,
         autoincrement=True,
     )
-
     category_id: Mapped[int] = mapped_column(
         ForeignKey(
             "categories.id",
@@ -79,28 +93,23 @@ class Question(Base):
         ),
         nullable=False,
     )
-
     language_code: Mapped[str] = mapped_column(
         String(5),
         nullable=False,
     )
-
     question_text: Mapped[str] = mapped_column(
         String(500),
         nullable=False,
     )
-
     correct_answer: Mapped[str] = mapped_column(
         String(200),
         nullable=False,
     )
-
     image_url: Mapped[str | None] = mapped_column(Text)
 
     category: Mapped["Category"] = relationship(
         back_populates="questions",
     )
-
     decoys: Mapped[list["QuestionDecoy"]] = relationship(
         back_populates="question",
         cascade="all, delete-orphan",
@@ -110,7 +119,6 @@ class Question(Base):
 
 class QuestionDecoy(Base):
     __tablename__ = "question_decoys"
-
     __table_args__ = (
         UniqueConstraint(
             "question_id",
@@ -123,7 +131,6 @@ class QuestionDecoy(Base):
         primary_key=True,
         autoincrement=True,
     )
-
     question_id: Mapped[int] = mapped_column(
         ForeignKey(
             "questions.id",
@@ -131,7 +138,6 @@ class QuestionDecoy(Base):
         ),
         nullable=False,
     )
-
     decoy_text: Mapped[str] = mapped_column(
         String(200),
         nullable=False,
@@ -141,9 +147,9 @@ class QuestionDecoy(Base):
         back_populates="decoys",
     )
 
+
 class User(Base):
     __tablename__ = "users"
-
     __table_args__ = (
         CheckConstraint(
             "password_hash IS NOT NULL OR google_sub IS NOT NULL",
@@ -155,81 +161,100 @@ class User(Base):
         primary_key=True,
         autoincrement=True,
     )
-
     username: Mapped[str] = mapped_column(
         String(50),
         nullable=False,
         unique=True,
     )
-
     email: Mapped[str] = mapped_column(
         String(255),
         nullable=False,
         unique=True,
     )
-
     avatar_url: Mapped[str | None] = mapped_column(
         Text,
         nullable=True,
     )
-
+    cover_url: Mapped[str | None] = mapped_column(
+        Text,
+        nullable=True,
+    )
     password_hash: Mapped[str | None] = mapped_column(
         String(255),
         nullable=True,
     )
-
     google_sub: Mapped[str | None] = mapped_column(
         String(255),
         nullable=True,
         unique=True,
     )
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        nullable=False,
+        server_default=func.now(),
+    )
 
     hosted_games: Mapped[list["Game"]] = relationship(
         back_populates="host",
-    
     )
-
     game_results: Mapped[list["GamePlayerResult"]] = relationship(
         back_populates="user",
     )
-
+    achievements: Mapped[list["UserAchievement"]] = relationship(
+        back_populates="user",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
+    )
     sent_friendships: Mapped[list["Friendship"]] = relationship(
-    back_populates="requester",
-    foreign_keys="Friendship.requester_id",
-    passive_deletes=True,
+        back_populates="requester",
+        foreign_keys="Friendship.requester_id",
+        passive_deletes=True,
+    )
+    received_friendships: Mapped[list["Friendship"]] = relationship(
+        back_populates="receiver",
+        foreign_keys="Friendship.receiver_id",
+        passive_deletes=True,
     )
 
-    received_friendships: Mapped[list["Friendship"]] = relationship(
-    back_populates="receiver",
-    foreign_keys="Friendship.receiver_id",
-    passive_deletes=True,
-)
 
 class Game(Base):
     __tablename__ = "games"
+    __table_args__ = (
+        CheckConstraint(
+            "finished_at IS NULL OR finished_at >= started_at",
+            name="check_game_valid_dates",
+        ),
+        CheckConstraint(
+            "total_rounds > 0",
+            name="check_game_total_rounds",
+        ),
+        Index(
+            "ix_games_host_user_id",
+            "host_user_id",
+        ),
+    )
 
     id: Mapped[UUID] = mapped_column(
         Uuid(as_uuid=True),
         primary_key=True,
         default=uuid4,
     )
-
     host_user_id: Mapped[int] = mapped_column(
         ForeignKey("users.id", ondelete="RESTRICT"),
         nullable=False,
     )
-
     language_code: Mapped[str] = mapped_column(
         String(5),
         nullable=False,
     )
-
+    total_rounds: Mapped[int] = mapped_column(
+        nullable=False,
+    )
     started_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,
         server_default=func.now(),
     )
-
     finished_at: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True),
         nullable=True,
@@ -238,7 +263,6 @@ class Game(Base):
     host: Mapped["User"] = relationship(
         back_populates="hosted_games",
     )
-
     player_results: Mapped[list["GamePlayerResult"]] = relationship(
         back_populates="game",
         cascade="all, delete-orphan",
@@ -255,8 +279,12 @@ class GamePlayerResult(Base):
             name="check_game_player_result_score",
         ),
         CheckConstraint(
-            "final_rank BETWEEN 1 AND 4",
+            "final_rank >= 1",
             name="check_game_player_result_rank",
+        ),
+        CheckConstraint(
+            "bluff_votes_received >= 0",
+            name="check_game_player_result_bluff_votes",
         ),
         Index(
             "ix_game_player_results_user_id",
@@ -268,31 +296,114 @@ class GamePlayerResult(Base):
         ForeignKey("games.id", ondelete="CASCADE"),
         primary_key=True,
     )
-
     user_id: Mapped[int] = mapped_column(
         ForeignKey("users.id", ondelete="RESTRICT"),
         primary_key=True,
     )
-
     final_score: Mapped[int] = mapped_column(
         nullable=False,
+        server_default=text("0"),
     )
-
     final_rank: Mapped[int] = mapped_column(
         nullable=False,
     )
-
+    bluff_votes_received: Mapped[int] = mapped_column(
+        nullable=False,
+        server_default=text("0"),
+    )
     game: Mapped["Game"] = relationship(
         back_populates="player_results",
     )
-
     user: Mapped["User"] = relationship(
         back_populates="game_results",
+    )
+    category_results: Mapped[list["GamePlayerCategoryResult"]] = relationship(
+        back_populates="game_player_result",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
+    )
+
+
+class GamePlayerCategoryResult(Base):
+    __tablename__ = "game_player_category_results"
+    __table_args__ = (
+        ForeignKeyConstraint(
+            ["game_id", "user_id"],
+            [
+                "game_player_results.game_id",
+                "game_player_results.user_id",
+            ],
+            ondelete="CASCADE",
+            name="fk_player_category_result_game_player",
+        ),
+        CheckConstraint(
+            "questions_played >= 0",
+            name="check_player_category_questions",
+        ),
+        CheckConstraint(
+            "correct_answers >= 0",
+            name="check_player_category_correct_answers",
+        ),
+        CheckConstraint(
+            "correct_answers <= questions_played",
+            name="check_player_category_valid_answers",
+        ),
+        Index(
+            "ix_player_category_results_user_category",
+            "user_id",
+            "category_id",
+        ),
+    )
+
+    game_id: Mapped[UUID] = mapped_column(
+        Uuid(as_uuid=True),
+        primary_key=True,
+    )
+    user_id: Mapped[int] = mapped_column(
+        primary_key=True,
+    )
+    category_id: Mapped[int] = mapped_column(
+        ForeignKey("categories.id", ondelete="RESTRICT"),
+        primary_key=True,
+    )
+    questions_played: Mapped[int] = mapped_column(
+        nullable=False,
+        server_default=text("0"),
+    )
+    correct_answers: Mapped[int] = mapped_column(
+        nullable=False,
+        server_default=text("0"),
+    )
+
+    game_player_result: Mapped["GamePlayerResult"] = relationship(
+        back_populates="category_results",
+    )
+    category: Mapped["Category"] = relationship(
+        back_populates="player_results",
     )
 
 
 class Friendship(Base):
     __tablename__ = "friendships"
+
+    requester_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+    receiver_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+    status: Mapped[str] = mapped_column(
+        String(20),
+        nullable=False,
+        server_default=text("'pending'"),
+    )
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        nullable=False,
+        server_default=func.now(),
+    )
 
     __table_args__ = (
         CheckConstraint(
@@ -300,43 +411,48 @@ class Friendship(Base):
             name="check_friendship_not_self",
         ),
         CheckConstraint(
-            "status IN ('pending', 'accepted')",
+            "status IN ('pending', 'accepted', 'rejected')",
             name="check_friendship_status",
         ),
         Index(
             "ix_friendships_receiver_id",
             "receiver_id",
         ),
-    )
-
-    requester_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="CASCADE"),
-        primary_key=True,
-    )
-
-    receiver_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="CASCADE"),
-        primary_key=True,
-    )
-
-    status: Mapped[str] = mapped_column(
-        String(20),
-        nullable=False,
-        server_default=text("'pending'"),
-    )
-
-    created_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True),
-        nullable=False,
-        server_default=func.now(),
+        Index(
+            "uq_friendship_user_pair",
+            func.least(requester_id, receiver_id),
+            func.greatest(requester_id, receiver_id),
+            unique=True,
+        ),
     )
 
     requester: Mapped["User"] = relationship(
         back_populates="sent_friendships",
         foreign_keys=[requester_id],
     )
-
     receiver: Mapped["User"] = relationship(
         back_populates="received_friendships",
         foreign_keys=[receiver_id],
+    )
+
+
+class UserAchievement(Base):
+    __tablename__ = "user_achievements"
+
+    user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+    achievement_code: Mapped[str] = mapped_column(
+        String(50),
+        primary_key=True,
+    )
+    unlocked_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        nullable=False,
+        server_default=func.now(),
+    )
+
+    user: Mapped["User"] = relationship(
+        back_populates="achievements",
     )
