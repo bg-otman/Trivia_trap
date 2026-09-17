@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from engine.room_manager import router as room_manager
 from engine.room_manager import get_available_rooms
-from authentication.auth import auth_router
+from authentication.router import auth_router
 
 
 app = FastAPI()

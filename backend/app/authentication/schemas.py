@@ -1,5 +1,7 @@
+from typing import Annotated
+
 from password_validator import PasswordValidator
-from pydantic import BaseModel, EmailStr, Field, SecretStr, field_validator
+from pydantic import AfterValidator, BaseModel, EmailStr, Field, SecretStr, field_validator
 
 
 password_policy = (
@@ -12,10 +14,22 @@ password_policy = (
 )
 
 
+def validate_password_encoding(value: SecretStr) -> SecretStr:
+    try:
+        value.get_secret_value().encode("utf-8")
+    except UnicodeEncodeError:
+        raise ValueError("Password must contain valid Unicode characters.") from None
+    return value
+
+
+Password = Annotated[SecretStr, AfterValidator(validate_password_encoding)]
+
+
 class RegisterData(BaseModel):
     email: EmailStr = Field(max_length=256)
-    username: str = Field(min_length=3, max_length=30)
-    password: SecretStr = Field(min_length=15, max_length=128)
+    # Match the room player's maximum name length.
+    username: str = Field(min_length=3, max_length=15)
+    password: Password = Field(min_length=15, max_length=128)
 
     # validate the username start with character and only contain letters and numbers
     @field_validator("username")
@@ -26,7 +40,7 @@ class RegisterData(BaseModel):
                 "Username must start with a letter and contain only letters and numbers."
             )
         return username
-    # validate the password complexity
+
     @field_validator("password")
     @classmethod
     def validate_password_complexity(cls, value: SecretStr) -> SecretStr:
@@ -36,11 +50,19 @@ class RegisterData(BaseModel):
                 "one lowercase letter, one digit, and one symbol, "
                 "and must not contain spaces."
             )
-
         return value
 
 
 class UserResponse(BaseModel):
-    id: int
+    id: str
     username: str
     email: EmailStr
+
+class LoginData(BaseModel):
+    email: EmailStr = Field(max_length=256)
+    password: Password = Field(min_length=1, max_length=128)
+
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"

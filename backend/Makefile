@@ -9,7 +9,7 @@ help:
 install: $(VENV)
 
 run: $(VENV)
-	@uv run fastapi dev app/main.py --port 8000
+	@uv run --env-file .env fastapi dev app/main.py --port 8000
 
 $(VENV):
 	@uv sync

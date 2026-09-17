@@ -1,27 +1,28 @@
-"""Temporary development storage, reset on reload and separate per worker."""
+"""Temporary development storage. Users disappear on server restart."""
 
 from typing import NotRequired, TypedDict
+from uuid import uuid4
 
 
 class StoredUser(TypedDict):
-    id: int
+    id: str
     username: str
     email: str
-    # The original lookup-only fixture has no password hash.
-    password_hash: NotRequired[str]
+    # External-provider accounts may have no local password.
+    password_hash: NotRequired[str | None]
 
 
-TEST_USERS: list[StoredUser] = [
-    {"id": 1, "username": "Aleeeeeex123", "email": "alex@example.com"},
-]
+TEST_USERS: list[StoredUser] = []
 
 
 class DuplicateUserError(Exception):
     pass
 
-#check existing user by username or email and handle the 
-def find_existing_user_id(username: str, email: str) -> int | None:
 
+def find_existing_user_id(
+    username: str,
+    email: str,
+) -> str | None:
     for user in TEST_USERS:
         if (
             user["username"].casefold() == username.casefold()
@@ -32,15 +33,36 @@ def find_existing_user_id(username: str, email: str) -> int | None:
     return None
 
 
-def create_user(username: str, email: str, password_hash: str) -> StoredUser:
+def find_user_by_email(email: str) -> StoredUser | None:
+    for user in TEST_USERS:
+        if user["email"].casefold() == email.casefold():
+            return user
+
+    return None
+
+
+def find_user_by_id(user_id: str) -> StoredUser | None:
+    for user in TEST_USERS:
+        if user["id"] == user_id:
+            return user
+
+    return None
+
+
+def create_user(
+    username: str,
+    email: str,
+    password_hash: str,
+) -> StoredUser:
     if find_existing_user_id(username, email) is not None:
         raise DuplicateUserError
 
     user: StoredUser = {
-        "id": max((user["id"] for user in TEST_USERS), default=0) + 1,
+        "id": str(uuid4()),
         "username": username,
         "email": email,
         "password_hash": password_hash,
     }
+
     TEST_USERS.append(user)
     return user
