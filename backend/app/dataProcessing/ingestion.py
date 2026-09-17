@@ -1,20 +1,39 @@
 
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
-def get_category_list() -> list:
-    """
-        Get a list of categories for the game.
-    """
+from .models import Category, CategoryTranslation
+
+
+async def get_category_list(
+    session: AsyncSession,
+    language_code: str,
+) -> list[dict]:
+    statement = (
+        select(
+            Category.id,
+            Category.image_url,
+            CategoryTranslation.name,
+        )
+        .join(
+            CategoryTranslation,
+            CategoryTranslation.category_id == Category.id,
+        )
+        .where(
+            CategoryTranslation.language_code == language_code,
+        )
+        .order_by(Category.id)
+    )
+
+    result = await session.execute(statement)
+
     return [
-        "Science",
-        "History",
-        "Geography",
-        "Sports",
-        "Entertainment",
-        "Art & Literature",
-        "Technology",
-        "Music",
-        "Movies",
-        "Television"
+        {
+            "id": row.id,
+            "name": row.name,
+            "image_url": row.image_url,
+        }
+        for row in result.all()
     ]
 
 def get_random_question(category: str) -> dict[str, str]:
