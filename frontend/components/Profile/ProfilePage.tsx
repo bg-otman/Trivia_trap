@@ -1,13 +1,16 @@
 import ProfileHeader from "./ProfileHeader";
+import PlayerStatistics from "./PlayerStatistics";
+import PlayerAchievements from "./PlayerAchievements";
 
 
-type UserAchievements = {
+export type UserAchievements = {
     name: string;
     description: string;
     img: string;
+    unlocked: boolean;
 };
 
-type gameData = {
+export type GameData = {
     id: string;
     end_time: Date;
     total_rounds: number;
@@ -20,18 +23,22 @@ type gameData = {
     bluffs: number;
 };
 
+export type UserStatistics = {
+    total_games: number;
+    total_wins: number;
+    total_points: number;
+    high_score: number;
+};
+
 type UserData = {
     id: string;
     username: string;
     banner: string;
     avatar: string;
     join_date: Date;
-    total_games: number;
-    total_wins: number;
-    total_points: number;
-    high_score: number;
+    stats: UserStatistics;
     achievements: UserAchievements[];
-    gameData: gameData[];
+    gameData: GameData[];
 };
 
 export type UserProps = {
@@ -63,11 +70,10 @@ export default function ProfilePage({ user, isOwner = false } : UserProps)
                     banner_url={user.banner} 
                     avatar_url={user.avatar}
                     isOwner={isOwner}
-                    />
+                />
+                <PlayerStatistics stats={user.stats} />
+                <PlayerAchievements achievements={user.achievements} />
             </div>
         </main>
     ); 
 }
-
-// this is the profile page for user : -{user.username}-
-// is owener {isOwner ? <h1>yes</h1> : <h1>no</h1>}

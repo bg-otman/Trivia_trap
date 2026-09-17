@@ -1,6 +1,6 @@
 
 import ProfilePage from "@/components/Profile/ProfilePage";
-import { UserProps } from "@/components/Profile/ProfilePage";
+import { UserAchievements } from "@/components/Profile/ProfilePage";
 
 
 export async function getUserData( username : string)
@@ -8,11 +8,72 @@ export async function getUserData( username : string)
     // this function should fetch user data if user exist.
     // if !user return null
 
-    const mock_achievements = [
+    const mock_achievements: UserAchievements[] = [
         {
             name: "Remontada Master",
             description: "Achieve remontada on 10 games",
-            img: "path_to_achievement_img",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+        {
+            name: "BLUFFER",
+            description: "Bluff all the player in a game of 5",
+            img: "/achievements/bluffer.png",
+            unlocked: true,
+        },
+        {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
         },
     ];
 
@@ -37,10 +98,12 @@ export async function getUserData( username : string)
         avatar: "/avatars/a1.png", // use the one exist in the db or the default if none
         banner: "/banners/banner2.png",
         join_date: new Date("9/10/2026"),
-        total_games: 200,
-        total_wins: 150,
-        total_points: 356,
-        high_score: 22,
+        stats: {
+            total_games: 100,
+            total_wins: 50,
+            total_points: 2000,
+            high_score: 300,
+        },
         achievements: mock_achievements,
         gameData: mock_game_data,
     };
