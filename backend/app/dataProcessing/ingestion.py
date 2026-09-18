@@ -1,9 +1,13 @@
-
-from sqlalchemy import select
+import unicodedata
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
-from .models import Category, CategoryTranslation
-
+from .models import (
+    Category,
+    CategoryTranslation,
+    Question,
+)
 
 async def get_category_list(
     session: AsyncSession,
@@ -36,31 +40,89 @@ async def get_category_list(
         for row in result.all()
     ]
 
-def get_random_question(category: str) -> dict[str, str]:
-    """
-        return a question and its correct answer for the given category.
-    """
+async def get_random_question(
+    session: AsyncSession,
+    category_id: int,
+    language_code: str,
+) -> dict | None:
+    statement = (
+        select(Question)
+        .options(selectinload(Question.decoys))
+        .where(
+            Question.category_id == category_id,
+            Question.language_code == language_code,
+        )
+        .order_by(func.random())
+        .limit(1)
+    )
+
+    result = await session.execute(statement)
+    question = result.scalar_one_or_none()
+
+    if question is None:
+        return None
+
     return {
-        "question": f"This is Demo question for category: {category}. What is the answer?",
-        "correct_answer": f"The correct answer for category: {category} is...",
+        "id": question.id,
+        "question": question.question_text,
+        "correct_answer": question.correct_answer,
+        "image_url": question.image_url,
         "fake_answers": [
-            f"Fake answer 1 for category: {category}",
-            f"Fake answer 2 for category: {category}",
-            f"Fake answer 3 for category: {category}"
-        ]
+            decoy.decoy_text
+            for decoy in question.decoys
+        ],
     }
 
 
-def validate_bluff_answer(bluff_answer: str) -> dict:
-    """
-        Validate the bluff answer submitted by the player.
-    """
-    # here need to process the bluff answer 
-    # check if it's equal to the correct or similar to the correct answer
+def normalize_answer(answer: str) -> str:
+    normalized = unicodedata.normalize(
+        "NFKC",
+        answer,
+    ).casefold()
+
+    cleaned_characters = []
+
+    for character in normalized:
+        category = unicodedata.category(character)
+
+        if category.startswith("M"):
+            continue
+
+        if category.startswith("P"):
+            cleaned_characters.append(" ")
+            continue
+
+        cleaned_characters.append(character)
+
+    return " ".join(
+        "".join(cleaned_characters).split()
+    )
+
+
+
+def validate_bluff_answer(
+    bluff_answer: str,
+    correct_answer: str,
+) -> dict:
+    normalized_bluff = normalize_answer(bluff_answer)
+    normalized_correct = normalize_answer(correct_answer)
+
+    if not normalized_bluff:
+        return {
+            "is_valid": False,
+            "reason": "EMPTY_ANSWER",
+        }
+
+    if normalized_bluff == normalized_correct:
+        return {
+            "is_valid": False,
+            "reason": "EXACT_TRUTH",
+        }
+
     return {
         "is_valid": True,
-        "reason": "" # if it's invalid. set it to : EXACT_TRUTH
-        }
+        "reason": "",
+    }
 
 def build_voting_choices(player_count: int, bluff_answers: dict, correct_answer: str, fake_answers: list) -> list[dict[str, str]]:
     """
