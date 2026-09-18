@@ -1,12 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from starlette.concurrency import run_in_threadpool
-from authentication.memory_store import (DuplicateUserError, create_user, find_existing_user_id,)
+from authentication.memory_store import DuplicateUserError, create_user, find_existing_user_id
 from authentication.schemas import RegisterData, UserResponse
 from authentication.security import hash_password
 from authentication.validation_route import AuthRoute
 from authentication.schemas import LoginData, TokenResponse
-from authentication.security import create_access_token
-from authentication.service import authenticate_user
+from authentication.security import create_access_token, authenticate_user
 from typing import Annotated
 
 from authentication.current_user import get_current_user
