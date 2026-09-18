@@ -31,7 +31,6 @@ async def register(data: RegisterData) -> UserResponse:
         data.password.get_secret_value(),
     )
     try:
-        # Rechecks duplicates in case another request registered during hashing.
         user = create_user(data.username, data.email, password_hash)
     except DuplicateUserError:
         raise HTTPException(status.HTTP_409_CONFLICT, DUPLICATE_USER_MESSAGE) from None
@@ -63,9 +62,7 @@ async def login(data: LoginData) -> TokenResponse:
 
 
 @auth_router.get("/me", response_model=UserResponse)
-async def me(
-    user: Annotated[StoredUser, Depends(get_current_user)],
-) -> UserResponse:
+async def me(user: Annotated[StoredUser, Depends(get_current_user)],) -> UserResponse:
     return UserResponse(
         id=user["id"],
         username=user["username"],

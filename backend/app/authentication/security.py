@@ -1,33 +1,34 @@
-from datetime import datetime, timedelta, timezone
-from uuid import UUID
-
+import os
 import jwt
 from jwt.exceptions import InvalidTokenError
+from datetime import datetime, timedelta, timezone
+from uuid import UUID
 from pwdlib import PasswordHash
 from pwdlib.exceptions import UnknownHashError
 
-from authentication.config import (
-    ACCESS_TOKEN_EXPIRE_MINUTES,
-    JWT_ALGORITHM,
-    JWT_SECRET_KEY,
-)
 
+JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY")
+JWT_ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-password_hasher = PasswordHash.recommended()
+if not JWT_SECRET_KEY:
+    raise RuntimeError("JWT_SECRET_KEY is missing. Set it before starting the backend.")
+
+password_hasher = PasswordHash.recommended() #password hashing and verification
 
 
 def hash_password(password: str) -> str:
-    return password_hasher.hash(password)
+    return password_hasher.hash(password) #hash password
 
 
-def verify_password(password: str, password_hash: str) -> bool:
+def verify_password(password: str, password_hash: str) -> bool: #check password in db
     try:
         return password_hasher.verify(password, password_hash)
     except UnknownHashError:
         return False
 
 
-def create_access_token(user_id: str) -> str:
+def create_access_token(user_id: str) -> str: #create JWT for user
     now = datetime.now(timezone.utc)
 
     payload = {
@@ -52,7 +53,6 @@ def decode_access_token(token: str) -> str:
             options={"require": ["sub", "iat", "exp"]},
         )
     except (TypeError, ValueError, OverflowError) as exc:
-        # Some malformed date claims raise built-in exceptions in PyJWT.
         raise InvalidTokenError("Invalid token claims") from exc
 
     for claim in ("iat", "exp", "nbf"):

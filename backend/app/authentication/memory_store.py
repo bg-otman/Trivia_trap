@@ -8,26 +8,22 @@ class StoredUser(TypedDict):
     id: str
     username: str
     email: str
-    # External-provider accounts may have no local password.
+    # add google auth 
     password_hash: NotRequired[str | None]
 
 
-TEST_USERS: list[StoredUser] = []
+TEST_USERS: list[StoredUser] = [] #hardcoded users for testing purposes. In production, use a database or persistent storage.
 
 
 class DuplicateUserError(Exception):
     pass
 
 
-def find_existing_user_id(
-    username: str,
-    email: str,
-) -> str | None:
+def find_existing_user_id(username: str, email: str,) -> str | None:
     for user in TEST_USERS:
-        if (
-            user["username"].casefold() == username.casefold()
-            or user["email"].casefold() == email.casefold()
-        ):
+        if (user["username"].casefold() == username.casefold()
+            or user["email"].casefold() == email.casefold()):
+
             return user["id"]
 
     return None
@@ -49,11 +45,7 @@ def find_user_by_id(user_id: str) -> StoredUser | None:
     return None
 
 
-def create_user(
-    username: str,
-    email: str,
-    password_hash: str,
-) -> StoredUser:
+def create_user(username: str, email: str, password_hash: str,) -> StoredUser:
     if find_existing_user_id(username, email) is not None:
         raise DuplicateUserError
 

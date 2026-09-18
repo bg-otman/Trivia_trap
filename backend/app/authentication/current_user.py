@@ -20,11 +20,7 @@ def unauthorized() -> HTTPException:
 
 
 async def get_current_user(
-    credentials: Annotated[
-        HTTPAuthorizationCredentials | None,
-        Depends(bearer_scheme),
-    ],
-) -> StoredUser:
+    credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer_scheme),],) -> StoredUser:
     if credentials is None:
         raise unauthorized()
 

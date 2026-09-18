@@ -7,17 +7,12 @@ from authentication.memory_store import (
 from authentication.security import hash_password, verify_password
 
 
-DUMMY_PASSWORD_HASH = hash_password(
-    "DummyPassword123!ThisIsNeverARealAccount"
-)
+DUMMY_PASSWORD_HASH = hash_password("DummyPassword123!ThisIsNeverARealAccount")
 
 
-async def authenticate_user(
-    email: str,
-    password: str,
-) -> StoredUser | None:
+async def authenticate_user(email: str, password: str,) -> StoredUser | None:
+
     user = find_user_by_email(email)
-
     password_hash = user.get("password_hash") if user is not None else None
 
     password_matches = await run_in_threadpool(
