@@ -34,8 +34,8 @@ services:
       - backend
       - frontend
     ports:
-      - "80:80"
-      - "443:443"
+      - "80:80"    # On rootless Docker machines like the school's one , use 8080:80 instead
+      - "443:443"  # same here , use 8443:443 instead
     volumes:
       - nginx_certs:/etc/nginx/certs
 
