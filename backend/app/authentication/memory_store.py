@@ -8,7 +8,7 @@ class StoredUser(TypedDict):
     id: str
     username: str
     email: str
-    # add google auth 
+    google_sub: NotRequired[str| None]
     password_hash: NotRequired[str | None]
 
 
@@ -45,8 +45,23 @@ def find_user_by_id(user_id: str) -> StoredUser | None:
     return None
 
 
-def create_user(username: str, email: str, password_hash: str,) -> StoredUser:
+def find_user_by_google_sub(google_sub: str) -> StoredUser | None:
+    return next(
+        (user for user in TEST_USERS if user.get("google_sub") == google_sub),
+        None,
+    )
+
+
+def create_user(
+    username: str,
+    email: str,
+    password_hash: str | None,
+    *,
+    google_sub: str | None = None,
+) -> StoredUser:
     if find_existing_user_id(username, email) is not None:
+        raise DuplicateUserError
+    if google_sub is not None and find_user_by_google_sub(google_sub) is not None:
         raise DuplicateUserError
 
     user: StoredUser = {
@@ -55,6 +70,9 @@ def create_user(username: str, email: str, password_hash: str,) -> StoredUser:
         "email": email,
         "password_hash": password_hash,
     }
+
+    if google_sub is not None:
+        user["google_sub"] = google_sub
 
     TEST_USERS.append(user)
     return user

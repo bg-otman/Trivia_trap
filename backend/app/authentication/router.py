@@ -9,11 +9,15 @@ from authentication.security import create_access_token, authenticate_user
 from typing import Annotated
 
 from authentication.current_user import get_current_user
+from authentication.google_auth import google_router
 from authentication.memory_store import StoredUser
 
 
 auth_router = APIRouter(prefix="/auth", tags=["AUTH"], route_class=AuthRoute)
 DUPLICATE_USER_MESSAGE = "Username or email is already registered."
+
+auth_router.include_router(google_router)
+
 
 
 @auth_router.post(
