@@ -75,6 +75,54 @@ export async function getUserData( username : string)
             img: "/achievements/bluffer.png",
             unlocked: false,
         },
+                        {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                        {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: true,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
+                {
+            name: "Einstein",
+            description: "Get 10 correct answer in one game",
+            img: "/achievements/bluffer.png",
+            unlocked: false,
+        },
     ];
 
     const mock_game_data = [

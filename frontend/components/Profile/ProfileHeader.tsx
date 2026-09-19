@@ -21,7 +21,7 @@ type BannerProps = {
 
 export function AvatarWithBadge({ avatar_url, isOwner }: { avatar_url: string; isOwner: boolean }) {
   return (
-    <Avatar className="md:h-[130px] md:w-[130px] h-[100px] w-[100px] relative outline-offset-0 outline-3 outline-white-50 relative border-2 border-green-500">
+    <Avatar className="md:h-[130px] md:w-[130px] h-[100px] w-[100px] relative outline-offset-0 outline-3 outline-white-50 relative border-2 border-[#5B5FEF]">
         {isOwner && (
             <Button className="absolute cursor-pointer z-10 top-0 w-full h-full rounded-full opacity-0 hover:opacity-50 transition-opacity duration-300 bg-black">
                 <CameraIcon className="h-10 w-10 text-[#9f85db] font-bold" />
@@ -37,7 +37,7 @@ export function AvatarWithBadge({ avatar_url, isOwner }: { avatar_url: string; i
 function BannerSection({ banner_url, isOwner } : { banner_url: string; isOwner: boolean })
 {
     return (
-        <div className="relative h-full" >
+        <div className="relative h-full border-2 border-[#5B5FEF]">
             <Image
                 src={banner_url}
                 alt="banner img"

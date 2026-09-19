@@ -61,7 +61,7 @@ function NavBar()
 export default function ProfilePage({ user, isOwner = false } : UserProps)
 {
     return (
-        <main className="w-full min-h-screen bg-[#0B0F19]">
+        <main className="w-full min-h-screen bg-[#111114]">
             <div className="mx-auto w-full min-h-screen relative max-w-[1440px] px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-center justify-start gap-4">
                 <NavBar/>
                 <ProfileHeader
