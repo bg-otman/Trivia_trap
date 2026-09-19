@@ -6,3 +6,7 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# TLS material
+infra/nginx/certs/*.crt
+infra/nginx/certs/*.key
