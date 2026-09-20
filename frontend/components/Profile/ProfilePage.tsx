@@ -1,6 +1,7 @@
 import ProfileHeader from "./ProfileHeader";
 import PlayerStatistics from "./PlayerStatistics";
 import PlayerAchievements from "./PlayerAchievements";
+import PlayerAnalytics from "./PlayerAnalytics";
 
 
 export type UserAchievements = {
@@ -8,6 +9,13 @@ export type UserAchievements = {
     description: string;
     img: string;
     unlocked: boolean;
+};
+
+export type CategoryAnalytics = {
+    category: string;
+    total_rounds: number;
+    knowledge_accuracy: number;
+    bluff_efficiency: number;
 };
 
 export type GameData = {
@@ -39,6 +47,7 @@ type UserData = {
     stats: UserStatistics;
     achievements: UserAchievements[];
     gameData: GameData[];
+    analytics: CategoryAnalytics[];
 };
 
 export type UserProps = {
@@ -73,6 +82,7 @@ export default function ProfilePage({ user, isOwner = false } : UserProps)
                 />
                 <PlayerStatistics stats={user.stats} />
                 <PlayerAchievements achievements={user.achievements} />
+                <PlayerAnalytics analytics={user.analytics} />
             </div>
         </main>
     ); 

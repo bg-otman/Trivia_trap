@@ -1,12 +1,45 @@
 
 import ProfilePage from "@/components/Profile/ProfilePage";
-import { UserAchievements } from "@/components/Profile/ProfilePage";
+import { UserAchievements, CategoryAnalytics } from "@/components/Profile/ProfilePage";
 
 
 export async function getUserData( username : string)
 {
     // this function should fetch user data if user exist.
     // if !user return null
+
+    const mock_analytics : CategoryAnalytics[] = [
+            {
+                "category": "Science",
+                "total_rounds": 42,
+                "knowledge_accuracy": 68.5,
+                "bluff_efficiency": 45.2,
+            },
+            {
+                "category": "History",
+                "total_rounds": 35,
+                "knowledge_accuracy": 54.0,
+                "bluff_efficiency": 71.4,
+            },
+            {
+                "category": "Geography",
+                "total_rounds": 28,
+                "knowledge_accuracy": 75.0,
+                "bluff_efficiency": 32.1,
+            },
+            {
+                "category": "Pop Culture",
+                "total_rounds": 22,
+                "knowledge_accuracy": 81.8,
+                "bluff_efficiency": 50.0,
+            },
+            {
+                "category": "Literature",
+                "total_rounds": 15,
+                "knowledge_accuracy": 40.0,
+                "bluff_efficiency": 60.0,
+            }
+        ];
 
     const mock_achievements: UserAchievements[] = [
         {
@@ -154,6 +187,7 @@ export async function getUserData( username : string)
         },
         achievements: mock_achievements,
         gameData: mock_game_data,
+        analytics: mock_analytics,
     };
 
     return mock_data;
