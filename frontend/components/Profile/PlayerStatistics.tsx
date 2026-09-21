@@ -3,7 +3,7 @@ import { UserStatistics } from './ProfilePage';
 export default function PlayerStatistics({ stats }: { stats: UserStatistics }) {
     return (
         <div className="w-full grid gap-4 sm:grid-cols-2 xs:grid-cols-2 lg:grid-cols-4 font-blackops text-2xl
-            *:border-2 *:border-[#5B5FEF] *:p-3 *:rounded-md *:bg-[#0b1329] [&>div]:flex [&>div]:flex-col [&>div]:justify-between [&>div]:gap-5
+            *:border-2 *:border-[var(--secondary)] *:p-3 *:rounded-md *:bg-[#0b1329] [&>div]:flex [&>div]:flex-col [&>div]:justify-between [&>div]:gap-5
             [&_span]:bg-[#000000e8] [&_span]:px-2 [&_span]:py-1 [&_span]:rounded-md
             [&_p]:mt-2">
             <div>

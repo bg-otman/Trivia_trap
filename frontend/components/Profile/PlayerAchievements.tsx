@@ -65,7 +65,7 @@ export default function PlayerAchievements({ achievements }: { achievements: Use
         <div className="w-full border border-2 border-[#5B5FEF] rounded-lg p-2 font-blackops relative">
             {displayAll && <AllAchievements achievements={achievements} toggleAchievements={toggleAchievements} />}
             <div className="flex justify-between flex-col xs:flex-row gap-2 items-center">
-                <span>🏆 <strong className="mx-2">Achievements</strong></span>
+                <span>🏆<strong className="mx-2">Achievements</strong></span>
                 <button className="flex cursor-pointer bg-[#5700B8] p-2 rounded-lg hover:bg-[#6c20c2] transition-colors"
                         onClick={() => toggleAchievements(displayAll ? false : true)} >
                     <p>View All <span>{unlocked_achievements.toLocaleString()}/{achievements_count.toLocaleString()}</span></p>
