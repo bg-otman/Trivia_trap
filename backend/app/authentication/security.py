@@ -6,7 +6,7 @@ from uuid import UUID
 from pwdlib import PasswordHash
 from pwdlib.exceptions import UnknownHashError
 from starlette.concurrency import run_in_threadpool
-from authentication.memory_store import StoredUser, find_user_by_email
+from authentication.memory_store import StoredUser, find_user_by_email, find_user_by_id
 
 
 JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY")
@@ -35,6 +35,7 @@ def create_access_token(user_id: str) -> str: #create JWT for user
 
     payload = {
         "sub": user_id,
+        "ver": (find_user_by_id(user_id) or {}).get("auth_version", 0),
         "iat": now,
         "exp": now + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES),
     }
@@ -71,6 +72,12 @@ def decode_access_token(token: str) -> str:
     except ValueError as exc:
         raise InvalidTokenError("Invalid user ID") from exc
 
+    user = find_user_by_id(user_id)
+    version = payload.get("ver", 0)
+    if type(version) is not int or user is None or version != user.get("auth_version", 0):
+        raise InvalidTokenError("Session expired")
+
+
     return user_id
 
 
@@ -80,6 +87,7 @@ async def authenticate_user(email: str, password: str,) -> StoredUser | None:
 
     user = find_user_by_email(email)
     password_hash = user.get("password_hash") if user is not None else None
+    auth_version = user.get("auth_version", 0) if user is not None else 0
 
     password_matches = await run_in_threadpool(
         verify_password,
@@ -88,6 +96,10 @@ async def authenticate_user(email: str, password: str,) -> StoredUser | None:
     )
 
     if user is None or not password_hash or not password_matches:
+        return None
+
+    # A reset may finish while password verification runs in another thread.
+    if user.get("password_hash") != password_hash or user.get("auth_version", 0) != auth_version:
         return None
 
     return user

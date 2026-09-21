@@ -10,6 +10,10 @@ class StoredUser(TypedDict):
     email: str
     google_sub: NotRequired[str| None]
     password_hash: NotRequired[str | None]
+    auth_version: NotRequired[int]
+    reset_digest: NotRequired[str]
+    reset_expires: NotRequired[float]
+    reset_sent_at: NotRequired[float]
 
 
 TEST_USERS: list[StoredUser] = [] #hardcoded users for testing purposes. In production, use a database or persistent storage.

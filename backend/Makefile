@@ -11,6 +11,9 @@ install: $(VENV)
 run: $(VENV)
 	@uv run --env-file .env fastapi dev app/main.py --port 8000
 
+test:
+	@PYTHONPATH=app uv run python -m unittest discover -s tests -v
+
 $(VENV):
 	@uv sync
 	@echo "To activate the virtual environment run the following command: source $(VENV)/bin/activate"
@@ -22,4 +25,4 @@ fclean: clean
 	@find . -type d -name "__pycache__" -exec rm -rf {} +
 	@find . -type f -name "*.py[co]" -delete
 
-.PHONY: install run
+.PHONY: install run test
