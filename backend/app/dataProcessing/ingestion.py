@@ -260,7 +260,7 @@ def calculate_results(
                 player_stats[author_id]["bluff_votes_received"] += 1
     for stats in player_stats.values():
         stats["round_points"] = (
-            2 * stats["correct_votes"] + stats["bluff_votes_received"])
+             stats["correct_votes"] + 2 * stats["bluff_votes_received"])
 
     return {
         "correct_choice_id": correct_choices[0]["id"],
