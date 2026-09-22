@@ -6,35 +6,26 @@ import {
   UsersRound,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-type PlayerStatus = "locked" | "submitted" | "thinking";
-
-interface Player {
-  name: string;
-  initials: string;
-  status: PlayerStatus;
-  isYou?: boolean;
-  isHost?: boolean;
-}
+import type { Player, PlayerStatus } from "@/types/player";
 
 const players: Player[] = [
   {
+    id: "mehdi",
     name: "MEHDI",
-    initials: "ME",
-    status: "locked",
+    status: "VOTED",
     isYou: true,
-    isHost: true,
+    role: "HOST",
   },
-  { name: "ALEX", initials: "AL", status: "submitted" },
-  { name: "SARAH", initials: "SA", status: "submitted" },
-  { name: "YASSINE", initials: "YA", status: "submitted" },
-  { name: "ADAM", initials: "AD", status: "thinking" },
-  { name: "SAM", initials: "SM", status: "thinking" },
+  { id: "alex", name: "ALEX", status: "SUBMITTED", isYou: false, role: "PLAYER" },
+  { id: "sarah", name: "SARAH", status: "SUBMITTED", isYou: false, role: "PLAYER" },
+  { id: "yassine", name: "YASSINE", status: "SUBMITTED", isYou: false, role: "PLAYER" },
+  { id: "adam", name: "ADAM", status: "THINKING", isYou: false, role: "PLAYER" },
+  { id: "sam", name: "SAM", status: "THINKING", isYou: false, role: "PLAYER" },
 ];
 
 function StatusIcon({ status }: { status: PlayerStatus }) {
-  if (status === "locked") return <LockKeyhole className="size-2.5" />;
-  if (status === "submitted") return <Check className="size-3" />;
+  if (status === "VOTED") return <LockKeyhole className="size-2.5" />;
+  if (status === "SUBMITTED") return <Check className="size-3" />;
   return (
     <LoaderCircle className="size-3 animate-spin [animation-duration:2s]" />
   );
@@ -65,7 +56,7 @@ export function PlayerRoster() {
             const active = player.isYou;
             return (
               <div
-                key={player.name}
+                key={player.id}
                 className={cn(
                   "relative flex min-w-0 items-center gap-2.5 rounded-xl bg-popover p-3",
                   active
@@ -73,7 +64,7 @@ export function PlayerRoster() {
                     : "border border-border",
                 )}
               >
-                {player.isHost && (
+                {player.role === "HOST" && (
                   <Crown
                     className="absolute -right-1 -top-2 size-4 fill-[#efc141] text-[#efc141] drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)]"
                     aria-label="Host"
@@ -89,7 +80,7 @@ export function PlayerRoster() {
                   )}
                   aria-hidden="true"
                 >
-                  {player.initials}
+                  {player.name.slice(0, 2)}
                 </div>
 
                 <div className="min-w-0 flex-1">
@@ -106,13 +97,13 @@ export function PlayerRoster() {
                   <div
                     className={cn(
                       "mt-0.5 flex items-center gap-1 font-meta text-[10px] font-bold leading-[15px]",
-                      player.status === "locked" && "text-primary",
-                      player.status === "submitted" && "text-[#efc141]",
-                      player.status === "thinking" && "text-muted-foreground",
+                      player.status === "VOTED" && "text-primary",
+                      player.status === "SUBMITTED" && "text-[#efc141]",
+                      player.status === "THINKING" && "text-muted-foreground",
                     )}
                   >
                     <StatusIcon status={player.status} />
-                    <span>{player.status.toUpperCase()}</span>
+                    <span>{player.status === "VOTED" ? "LOCKED" : player.status}</span>
                   </div>
                 </div>
               </div>

@@ -2,11 +2,12 @@ import { Crown, Target } from "lucide-react";
 import { PlayerAvatar, type PlayerAvatarStatus } from "./player-avatar";
 import { StatusBadge } from "./status-badge";
 import { cn } from "@/lib/utils";
+import type { Player } from "@/types/player";
 
 export type PlayerCardState = "waiting" | "ready" | "targeted" | "winner";
 
 interface PlayerCardProps {
-  name: string;
+  name: Player["name"];
   points: number;
   state?: PlayerCardState;
   className?: string;

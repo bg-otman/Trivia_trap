@@ -2,14 +2,10 @@
 
 import { Check, Crosshair, Landmark, ShieldCheck, Vote } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-export interface AnswerOption {
-  id: "A" | "B" | "C" | "D";
-  label: string;
-}
+import type { AnswerOption, Question } from "@/types/question";
 
 interface VotingArenaProps {
-  answers: AnswerOption[];
+  question: Question;
   selectedAnswer: AnswerOption["id"];
   hasVoted: boolean;
   onSelectAnswer: (answer: AnswerOption["id"]) => void;
@@ -17,12 +13,13 @@ interface VotingArenaProps {
 }
 
 export function VotingArena({
-  answers,
+  question,
   selectedAnswer,
   hasVoted,
   onSelectAnswer,
   onCastVote,
 }: VotingArenaProps) {
+  const answers = question.answers;
   const selected =
     answers.find((answer) => answer.id === selectedAnswer) ?? answers[0];
   const voters = hasVoted ? 5 : 4;
@@ -40,7 +37,7 @@ export function VotingArena({
         <div className="mb-2 flex items-center gap-2 rounded-full border border-[#3f4366] bg-[#1c1c22] px-4 py-1.5 shadow-sm">
           <Landmark className="size-3.5 text-ring" aria-hidden="true" />
           <span className="font-ui text-xs font-bold tracking-[0.1em] text-ring">
-            HISTORY &amp; ARCHAEOLOGY
+            {question.category}
           </span>
         </div>
 
@@ -48,8 +45,7 @@ export function VotingArena({
           id="trivia-question"
           className="font-display max-w-[880px] text-balance text-2xl font-extrabold leading-tight tracking-[-0.025em] text-foreground sm:text-[30px] sm:leading-9"
         >
-          Which ancient wonder was located in the city of Babylon and celebrated
-          for its tiered stone terraces?
+          {question.text}
         </h1>
 
         <div className="mt-3 flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-xl border border-[rgba(255,77,109,0.3)] bg-[rgba(255,77,109,0.1)] px-4 py-2 text-xs">

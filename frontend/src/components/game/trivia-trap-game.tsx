@@ -3,17 +3,21 @@
 import { useEffect, useState } from "react";
 import { GameHud } from "@/components/game/hud/game-hud";
 import { PlayerRoster } from "@/components/game/players/player-roster";
-import {
-  type AnswerOption,
-  VotingArena,
-} from "@/components/game/voting/voting-arena";
+import { VotingArena } from "@/components/game/voting/voting-arena";
+import type { AnswerOption, Question } from "@/types/question";
 
-const answers: AnswerOption[] = [
-  { id: "A", label: "Hanging Gardens" },
-  { id: "B", label: "The Sunken Obelisk" },
-  { id: "C", label: "Golden Temple" },
-  { id: "D", label: "Colossus of Rhodes" },
-];
+const question: Question = {
+  id: "ancient-wonders",
+  category: "HISTORY & ARCHAEOLOGY",
+  text: "Which ancient wonder was located in the city of Babylon and celebrated for its tiered stone terraces?",
+  type: "TEXT",
+  answers: [
+    { id: "A", label: "Hanging Gardens", text: "Hanging Gardens" },
+    { id: "B", label: "The Sunken Obelisk", text: "The Sunken Obelisk" },
+    { id: "C", label: "Golden Temple", text: "Golden Temple" },
+    { id: "D", label: "Colossus of Rhodes", text: "Colossus of Rhodes" },
+  ],
+};
 
 export function TriviaTrapGame() {
   const [selectedAnswer, setSelectedAnswer] = useState<AnswerOption["id"]>("B");
@@ -60,7 +64,7 @@ export function TriviaTrapGame() {
         <GameHud />
 
         <VotingArena
-          answers={answers}
+          question={question}
           selectedAnswer={selectedAnswer}
           hasVoted={hasVoted}
           onSelectAnswer={setSelectedAnswer}

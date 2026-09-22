@@ -9,13 +9,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-
-export type GamePhase =
-  | "category"
-  | "question"
-  | "bluff"
-  | "voting"
-  | "results";
+import type { GamePhase } from "@/types/game";
 
 interface PhaseIndicatorProps {
   phase: GamePhase;
@@ -29,30 +23,30 @@ const phaseConfig: Record<
     icon: React.ElementType;
   }
 > = {
-  category: {
+  LOBBY: { label: "LOBBY", icon: CheckCircle2 },
+  CATEGORY: {
     label: "CHOOSE CATEGORY",
     icon: CheckCircle2,
   },
 
-  question: {
+  QUESTION: {
     label: "QUESTION PHASE",
     icon: HelpCircle,
   },
 
-  bluff: {
+  BLUFF: {
     label: "BLUFF PHASE",
     icon: MessageSquareText,
   },
 
-  voting: {
+  VOTING: {
     label: "VOTING PHASE",
     icon: CheckCircle2,
   },
 
-  results: {
-    label: "RESULTS",
-    icon: Trophy,
-  },
+  RESULTS_REVEAL: { label: "RESULTS REVEAL", icon: Trophy },
+  ROUND_RESULTS: { label: "ROUND RESULTS", icon: Trophy },
+  FINAL_RESULTS: { label: "FINAL RESULTS", icon: Trophy },
 };
 
 export function PhaseIndicator({ phase, className }: PhaseIndicatorProps) {
