@@ -3,10 +3,11 @@ from fastapi import WebSocket
 from .room_models import PlayerInfo, RoomMetaData, RoomSettings, Room, RoomPhase
 from pydantic import Field
 from typing import TYPE_CHECKING
-from dataProcessing.ingestion import ( get_category_list, get_random_question, 
-           validate_bluff_answer, build_voting_choices, calculate_results ) # import demo functions until we have a proper data processing module
+from dataProcessing.ingestion import ( validate_bluff_answer, build_voting_choices, calculate_results ) # import demo functions until we have a proper data processing module
+from dataProcessing.services import load_categories, load_question
 from .utils import GameError, Context, clear_data, validate_phase, lobby_update
 import asyncio
+import random
 
 if TYPE_CHECKING: # it evaluates to False at runtime, so the import is only for type checking and avoids circular imports
     from .room_manager import RoomManager
@@ -17,6 +18,9 @@ async def phase_timer(manager: RoomManager, context: Context, duration: int):
     """
     try:
         await asyncio.sleep(duration)
+        room = manager.rooms.get(context.room_id)
+        if room is None or room.meta_data.host_id != context.user_id:
+            return
         await to_next_phase(manager, context)
     except asyncio.CancelledError:
         # Task was canceled early (all players submitted before deadline).
@@ -57,12 +61,14 @@ async def get_categories(manager: RoomManager, context: Context):
         Get the list of random categories for the game.
     """
     room = manager.rooms.get(context.room_id)
+    categories = await load_categories(room.meta_data.settings.language)
+    room.meta_data.fallback_category = random.choice(categories)
     await manager.broadcast({
         "event": "PHASE_CATEGORY",
         "data": {
             "round": room.meta_data.current_round,
             "total_rounds": room.meta_data.settings.total_rounds,
-            "categories": get_category_list() 
+            "categories": categories
             }
         }, context.room_id, None)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.vote_time))
@@ -71,10 +77,25 @@ async def get_question(manager: RoomManager, context: Context):
     """
         get a question from the selected category.
     """
-    clear_data(room)
     room = manager.rooms.get(context.room_id)
+    clear_data(room)
+    current_task = asyncio.current_task()
+    if room.meta_data.phase.current_state == RoomPhase.CATEGORY:
+        if (
+            room.meta_data.timer_task
+            and room.meta_data.timer_task is not current_task
+            and not room.meta_data.timer_task.done()
+        ):
+            room.meta_data.timer_task.cancel()
+        room.meta_data.phase.cycle()
     category = context.data.get("category")
-    question = get_random_question(category)
+    if category is None:
+        category = room.meta_data.fallback_category
+    category_id = category.get("id")
+    language = room.meta_data.settings.language
+    question = await load_question(category_id, language)
+    if question is None:
+        raise GameError("NO_QUESTION", "No question available for the selected category")
     room.meta_data.active_question = question.get("question")
     room.meta_data.image_url = question.get("image_url")
     room.meta_data.correct_answer = question.get("correct_answer")
@@ -82,8 +103,10 @@ async def get_question(manager: RoomManager, context: Context):
     await manager.broadcast({
         "event": "PHASE_QUESTION",
         "data": { 
-            "category": category, 
+            "category": category.get("name"),
+            "category_id": category_id,
             "question": question.get("question"),
+            "question_id": question.get("id"),
             "image_url": room.meta_data.image_url,
             "round": room.meta_data.current_round,
             "total_rounds": room.meta_data.settings.total_rounds,
@@ -173,7 +196,12 @@ async def to_next_phase(manager: RoomManager, context: Context):
         room.meta_data.phase.start()
         await get_categories(manager, context)
         return
-    if room.meta_data.timer_task and not room.meta_data.timer_task.done():
+    current_task = asyncio.current_task()
+    if (
+        room.meta_data.timer_task
+        and room.meta_data.timer_task is not current_task
+        and not room.meta_data.timer_task.done()
+    ):
         room.meta_data.timer_task.cancel()
     if room.meta_data.phase.current_state not in game_phases:
         raise GameError("INVALID_PHASE", "Cannot advance to next phase from current phase")
@@ -186,7 +214,7 @@ async def submit_bluff(manager: RoomManager, context: Context):
     bluff_answer = context.data.get("bluff_answer")
     if bluff_answer is None:
         raise GameError("INVALID_PAYLOAD", "Missing bluff answer in request")
-    validate_bluff = validate_bluff_answer(bluff_answer)
+    validate_bluff = validate_bluff_answer(bluff_answer, room.meta_data.correct_answer)
     if not validate_bluff.get("is_valid"):
         raise GameError("BLUFF_REJECTED", validate_bluff.get("reason", "EXACT_TRUTH"))
     room.meta_data.sumbitted_bluffs[context.user_id] = bluff_answer
@@ -238,7 +266,9 @@ async def update_settings(manager: RoomManager, context: Context):
         bluff_time = context.data.get("bluff_time")
         vote_time = context.data.get("vote_time")
         max_players = context.data.get("max_players")
-        new_settings = RoomSettings(total_rounds=total_rounds, bluff_time=bluff_time, vote_time=vote_time, max_players=max_players)
+        language = context.data.get("language")
+        new_settings = RoomSettings(total_rounds=total_rounds, bluff_time=bluff_time,
+                        vote_time=vote_time, max_players=max_players, language=language)
         room.meta_data.settings = new_settings
         await manager.broadcast(lobby_update(room), context.room_id, None)
     except Exception:
