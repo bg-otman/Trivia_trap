@@ -1,5 +1,5 @@
-import { DesignSystemShowcase } from "@/components/showcase/design-system-showcase";
+import { TriviaTrapGame } from "@/components/game/trivia-trap-game";
 
-export default function DesignSystemPage() {
-  return <DesignSystemShowcase />;
+export default function GamePage() {
+  return <TriviaTrapGame />;
 }
