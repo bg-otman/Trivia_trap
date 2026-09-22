@@ -8,21 +8,6 @@ import {
 import { cn } from "@/lib/utils";
 import type { Player, PlayerStatus } from "@/types/player";
 
-const players: Player[] = [
-  {
-    id: "mehdi",
-    name: "MEHDI",
-    status: "VOTED",
-    isYou: true,
-    role: "HOST",
-  },
-  { id: "alex", name: "ALEX", status: "SUBMITTED", isYou: false, role: "PLAYER" },
-  { id: "sarah", name: "SARAH", status: "SUBMITTED", isYou: false, role: "PLAYER" },
-  { id: "yassine", name: "YASSINE", status: "SUBMITTED", isYou: false, role: "PLAYER" },
-  { id: "adam", name: "ADAM", status: "THINKING", isYou: false, role: "PLAYER" },
-  { id: "sam", name: "SAM", status: "THINKING", isYou: false, role: "PLAYER" },
-];
-
 function StatusIcon({ status }: { status: PlayerStatus }) {
   if (status === "VOTED") return <LockKeyhole className="size-2.5" />;
   if (status === "SUBMITTED") return <Check className="size-3" />;
@@ -31,7 +16,12 @@ function StatusIcon({ status }: { status: PlayerStatus }) {
   );
 }
 
-export function PlayerRoster() {
+export function PlayerRoster({ players }: { players: Player[] }) {
+  const submittedCount = players.filter(
+    (player) => player.status === "SUBMITTED" || player.status === "VOTED",
+  ).length;
+  const thinkingCount = players.filter((player) => player.status === "THINKING").length;
+
   return (
     <footer
       className="relative z-10 px-4 pb-5 sm:px-6 lg:px-8"
@@ -47,7 +37,7 @@ export function PlayerRoster() {
           </div>
           <div className="flex items-center gap-2 font-meta text-[11px] font-semibold tracking-[0.05em] text-muted-foreground">
             <span className="size-2 rounded-full bg-[#efc141]" />
-            <span>4 / 6 players submitted • 2 players thinking...</span>
+            <span>{submittedCount} / {players.length} players submitted • {thinkingCount} players thinking...</span>
           </div>
         </div>
 

@@ -4,25 +4,16 @@ import { useEffect, useState } from "react";
 import { GameHud } from "@/components/game/hud/game-hud";
 import { PlayerRoster } from "@/components/game/players/player-roster";
 import { VotingArena } from "@/components/game/voting/voting-arena";
-import type { AnswerOption, Question } from "@/types/question";
+import { mockGame } from "@/mocks/game";
+import { mockQuestions } from "@/mocks/questions";
+import type { AnswerOption } from "@/types/question";
 
-const question: Question = {
-  id: "ancient-wonders",
-  category: "HISTORY & ARCHAEOLOGY",
-  text: "Which ancient wonder was located in the city of Babylon and celebrated for its tiered stone terraces?",
-  type: "TEXT",
-  answers: [
-    { id: "A", label: "Hanging Gardens", text: "Hanging Gardens" },
-    { id: "B", label: "The Sunken Obelisk", text: "The Sunken Obelisk" },
-    { id: "C", label: "Golden Temple", text: "Golden Temple" },
-    { id: "D", label: "Colossus of Rhodes", text: "Colossus of Rhodes" },
-  ],
-};
+const question = mockQuestions[0];
 
 export function TriviaTrapGame() {
   const [selectedAnswer, setSelectedAnswer] = useState<AnswerOption["id"]>("B");
   const [hasVoted, setHasVoted] = useState(false);
-  const [seconds, setSeconds] = useState(18);
+  const [seconds, setSeconds] = useState(mockGame.timeRemaining);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [pinCopied, setPinCopied] = useState(false);
 
@@ -38,7 +29,7 @@ export function TriviaTrapGame() {
 
   async function copyRoomPin() {
     try {
-      await navigator.clipboard.writeText("X7K9P2");
+      await navigator.clipboard.writeText(mockGame.roomCode);
       setPinCopied(true);
       window.setTimeout(() => setPinCopied(false), 1400);
     } catch {
@@ -61,7 +52,12 @@ export function TriviaTrapGame() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,rgba(255,255,255,0.025),transparent_42%)]" />
 
       <div className="relative flex min-h-screen flex-col lg:min-h-[819px]">
-        <GameHud />
+        <GameHud
+          round={mockGame.currentRound}
+          totalRounds={mockGame.totalRounds}
+          seconds={seconds}
+          roomCode={mockGame.roomCode}
+        />
 
         <VotingArena
           question={question}
@@ -71,7 +67,7 @@ export function TriviaTrapGame() {
           onCastVote={castVote}
         />
 
-        <PlayerRoster />
+        <PlayerRoster players={mockGame.players} />
       </div>
     </div>
   );
