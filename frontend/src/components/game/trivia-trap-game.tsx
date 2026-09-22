@@ -27,7 +27,12 @@ export function TriviaTrapGame() {
   function renderPhase() {
     switch (game.phase) {
       case "CATEGORY":
-        return <CategoryPhase />;
+        return (
+          <CategoryPhase
+            currentRound={game.currentRound}
+            totalRounds={game.totalRounds}
+          />
+        );
       case "QUESTION":
         return <QuestionPhase />;
       case "BLUFF":
