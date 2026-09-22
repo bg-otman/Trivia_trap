@@ -2,16 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { mockGame } from "@/mocks/game";
+import { mockQuestions } from "@/mocks/questions";
 import { GameHud } from "./hud/game-hud";
 import { PlayerRoster } from "./players/player-roster";
 import { CategoryPhase } from "./phases/category-phase";
-import { QuestionPhase } from "./phases/question-phase";
-import { BluffPhase } from "./phases/bluff-phase";
+import { TrapPhase } from "./phases/trap-phase";
 import { VotingPhase } from "./phases/voting-phase";
 import { ResultsRevealPhase } from "./phases/results-reveal-phase";
 import type { GamePhase } from "@/types/game";
 
-const timedPhases: GamePhase[] = ["CATEGORY", "QUESTION", "BLUFF", "VOTING"];
+const timedPhases: GamePhase[] = ["CATEGORY", "TRAP", "VOTING"];
 
 export function TriviaTrapGame() {
   const game = mockGame;
@@ -36,10 +36,15 @@ export function TriviaTrapGame() {
             totalRounds={game.totalRounds}
           />
         );
-      case "QUESTION":
-        return <QuestionPhase />;
-      case "BLUFF":
-        return <BluffPhase />;
+      case "TRAP":
+        return (
+          <TrapPhase
+            question={mockQuestions[0]}
+            players={game.players}
+            currentRound={game.currentRound}
+            totalRounds={game.totalRounds}
+          />
+        );
       case "VOTING":
         return <VotingPhase seconds={seconds} />;
       case "RESULTS_REVEAL":
