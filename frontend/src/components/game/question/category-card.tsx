@@ -163,16 +163,29 @@ export function CategoryCard({
       className={cn(
         "group relative",
         "min-h-[150px]",
-        "cursor-pointer",
         "p-6",
 
-        variant === "selected" && "border-primary bg-primary/10",
-        variant === "interactive" && "cursor-pointer hover:border-primary/50",
+        (variant === "selected" || selected) &&
+          "border-primary bg-primary/10 shadow-[0_0_0_1px_rgba(255,107,53,0.28)]",
+        variant === "interactive" &&
+          !disabled &&
+          "cursor-pointer hover:border-primary/50",
         variant === "default" && "border-border",
+        disabled && "cursor-default opacity-70",
         className,
       )}
+      role="radio"
+      aria-checked={selected}
+      aria-disabled={disabled}
+      tabIndex={disabled ? -1 : 0}
       onClick={() => {
         if (!disabled) {
+          onSelect?.(category);
+        }
+      }}
+      onKeyDown={(event) => {
+        if (!disabled && (event.key === "Enter" || event.key === " ")) {
+          event.preventDefault();
           onSelect?.(category);
         }
       }}
