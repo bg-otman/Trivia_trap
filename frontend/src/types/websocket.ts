@@ -12,7 +12,7 @@ export type ClientEvent =
 export type ServerEvent =
     | "LOBBY_UPDATE"
     | "PHASE_CATEGORY"
-    | "PHASE_QUESTION"
+    | "PHASE_TRAP"
     | "PHASE_VOTING"
     | "RESULTS_REVEALED";
 

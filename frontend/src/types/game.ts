@@ -3,8 +3,7 @@ import type { Player } from "./player";
 export type GamePhase =
   | "LOBBY"
   | "CATEGORY"
-  | "QUESTION"
-  | "BLUFF"
+  | "TRAP"
   | "VOTING"
   | "RESULTS_REVEAL"
   | "ROUND_RESULTS"
