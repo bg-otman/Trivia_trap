@@ -3,7 +3,6 @@
 import * as React from "react";
 import {
   CheckCircle2,
-  HelpCircle,
   MessageSquareText,
   Trophy,
 } from "lucide-react";
@@ -29,13 +28,8 @@ const phaseConfig: Record<
     icon: CheckCircle2,
   },
 
-  QUESTION: {
-    label: "QUESTION PHASE",
-    icon: HelpCircle,
-  },
-
-  BLUFF: {
-    label: "BLUFF PHASE",
+  TRAP: {
+    label: "TRAP PHASE",
     icon: MessageSquareText,
   },
 
