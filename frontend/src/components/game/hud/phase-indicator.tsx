@@ -54,7 +54,7 @@ export function PhaseIndicator({ phase, className }: PhaseIndicatorProps) {
   const Icon = config.icon;
 
   return (
-    <div className="ml-auto flex min-w-0 shrink-0 items-center">
+    <div className="flex min-w-0 shrink-0 items-center">
       <div
         className={cn(
           "flex items-center gap-1.5 sm:gap-2",
@@ -65,7 +65,7 @@ export function PhaseIndicator({ phase, className }: PhaseIndicatorProps) {
           className,
         )}
       >
-        <span className="size-2 shrink-0 rounded-full bg-accent" />
+        <Icon className="size-3.5 shrink-0 text-ring" aria-hidden="true" />
 
         <span className="truncate text-xs font-bold uppercase tracking-wide text-ring sm:block sm:max-w-[18ch] lg:max-w-none">
           {config.label}

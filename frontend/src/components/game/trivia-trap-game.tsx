@@ -9,13 +9,16 @@ import { QuestionPhase } from "./phases/question-phase";
 import { BluffPhase } from "./phases/bluff-phase";
 import { VotingPhase } from "./phases/voting-phase";
 import { ResultsRevealPhase } from "./phases/results-reveal-phase";
+import type { GamePhase } from "@/types/game";
+
+const timedPhases: GamePhase[] = ["CATEGORY", "QUESTION", "BLUFF", "VOTING"];
 
 export function TriviaTrapGame() {
   const game = mockGame;
   const [seconds, setSeconds] = useState(game.timeRemaining);
 
   useEffect(() => {
-    if (game.phase !== "VOTING" || seconds <= 0) return;
+    if (!timedPhases.includes(game.phase) || seconds <= 0) return;
 
     const interval = window.setInterval(() => {
       setSeconds((current) => Math.max(0, current - 1));
@@ -51,20 +54,27 @@ export function TriviaTrapGame() {
   }
 
   return (
-    <main className="relative isolate min-h-screen overflow-hidden bg-background text-foreground lg:min-h-[819px]">
-      <div className="pointer-events-none absolute -left-32 -top-32 size-96 rounded-full bg-[rgba(255,107,53,0.10)] blur-[60px]" />
-      <div className="pointer-events-none absolute -bottom-16 -right-32 size-96 rounded-full bg-[rgba(91,95,239,0.10)] blur-[60px]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,rgba(255,255,255,0.025),transparent_42%)]" />
+    <main className="relative isolate min-h-dvh overflow-x-hidden bg-background text-foreground">
+      <div
+        className="pointer-events-none fixed inset-0 overflow-hidden"
+        aria-hidden="true"
+      >
+        <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] [background-size:48px_48px]" />
+        <div className="absolute left-[-12rem] top-[-12rem] size-[min(38rem,60vw)] rounded-full bg-primary/10 blur-[100px]" />
+        <div className="absolute bottom-[-14rem] right-[-12rem] size-[min(42rem,65vw)] rounded-full bg-secondary/15 blur-[120px]" />
+        <div className="absolute inset-x-0 top-0 h-[40vh] bg-gradient-to-b from-white/[0.025] to-transparent" />
+      </div>
 
-      <div className="relative flex min-h-screen flex-col lg:min-h-[819px]">
+      <div className="relative flex  flex-col">
         <GameHud
           round={game.currentRound}
           totalRounds={game.totalRounds}
           seconds={seconds}
           roomCode={game.roomCode}
+          phase={game.phase}
         />
 
-        {renderPhase()}
+        <div className="flex flex-1 flex-col">{renderPhase()}</div>
 
         <PlayerRoster players={game.players} />
       </div>
