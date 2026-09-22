@@ -1,12 +1,4 @@
-export type PlayerRole = "HOST" | "PLAYER";
-
-export type PlayerStatus =
-  | "READY"
-  | "NOT_READY"
-  | "THINKING"
-  | "SUBMITTED"
-  | "VOTED"
-  | "OFFLINE";
+import type { Player } from "./player";
 
 export type GamePhase =
   | "LOBBY"
@@ -18,11 +10,24 @@ export type GamePhase =
   | "ROUND_RESULTS"
   | "FINAL_RESULTS";
 
-export interface Player {
-  id: string;
-  name: string;
-  avatar?: string;
-  role: PlayerRole;
-  status: PlayerStatus;
-  isYou: boolean;
+export interface GameSettings {
+  totalRounds: number;
+  bluffTime: number;
+  voteTime: number;
+  maxPlayers: number;
+}
+
+export interface GameState {
+  roomCode: string;
+
+  currentRound: number;
+  totalRounds: number;
+
+  phase: GamePhase;
+
+  timeRemaining: number;
+
+  settings: GameSettings;
+
+  players: Player[];
 }
