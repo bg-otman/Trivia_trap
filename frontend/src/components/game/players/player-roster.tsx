@@ -24,7 +24,7 @@ export function PlayerRoster({ players }: { players: Player[] }) {
 
   return (
     <footer
-      className="relative z-10 px-4 pb-5 sm:px-6 lg:px-8"
+      className="relative z-10 mt-auto px-4 pb-5 sm:px-6 lg:px-8"
       data-node-id="2:4264"
     >
       <section className="mx-auto w-full max-w-[1216px] rounded-2xl border border-border bg-card px-5 py-3 shadow-[0_20px_25px_-5px_rgba(0,0,0,0.10),0_8px_10px_-6px_rgba(0,0,0,0.10)]">
