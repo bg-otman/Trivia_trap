@@ -7,7 +7,8 @@ KEY_FILE="$CERT_DIR/trivia.key"
 
 mkdir -p "$CERT_DIR"
 
-
+# local development certificate. The named Docker volume keeps it between
+# container recreations. Production can replace these files with real certs.
 if [ ! -f "$CERT_FILE" ] || [ ! -f "$KEY_FILE" ]; then
     openssl req \
         -x509 \
@@ -21,4 +22,8 @@ if [ ! -f "$CERT_FILE" ] || [ ! -f "$KEY_FILE" ]; then
     chmod 600 "$KEY_FILE"
 fi
 
-exec "$@"
+# The OWASP image's original entrypoint generates the ModSecurity/CRS and
+# Nginx configuration from its environment before starting Nginx.
+export SSL_CERT_FILE="$CERT_FILE"
+export SSL_CERT_KEY_FILE="$KEY_FILE"
+exec /docker-entrypoint.sh "$@"
