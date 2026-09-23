@@ -48,6 +48,10 @@ def accept_request(receiver_id: str, sender_id: str):
     if request not in pending_requests:
         raise ValueError("Friend request not found")
 
+    if find_user_by_id(sender_id) is None:
+        pending_requests.remove(request)
+        raise ValueError("User not found")
+
     pending_requests.remove(request)
     friendships.add(frozenset({sender_id, receiver_id}))
 
@@ -93,5 +97,4 @@ def remove_friend(user_id: str, friend_id: str):
         raise ValueError("You are not friends")
 
     friendships.remove(pair)
-
 
