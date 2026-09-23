@@ -2,7 +2,7 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-# package.json pin the pnpm version used by the project
+# package.json pins the pnpm version used by the project.
 RUN corepack enable
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
