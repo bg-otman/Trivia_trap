@@ -3,25 +3,34 @@
 import { useState } from "react";
 import { VotingArena } from "@/components/game/voting/voting-arena";
 import { mockQuestions } from "@/mocks/questions";
-import type { AnswerOption } from "@/types/question";
+import { mockVotingOptions, mockVotingProgress } from "@/mocks/voting";
+import type { VotingOption } from "@/types/question";
 
 interface VotingPhaseProps {
   seconds: number;
 }
 
 export function VotingPhase({ seconds }: VotingPhaseProps) {
-  const [selectedAnswer, setSelectedAnswer] = useState<AnswerOption["id"]>("B");
-  const [hasVoted, setHasVoted] = useState(false);
+  const [lockedOptionId, setLockedOptionId] = useState<VotingOption["id"] | null>(
+    null,
+  );
+
+  function lockVote(optionId: VotingOption["id"]) {
+    if (seconds <= 0 || lockedOptionId) return;
+    setLockedOptionId(optionId);
+  }
 
   return (
     <VotingArena
       question={mockQuestions[0]}
-      selectedAnswer={selectedAnswer}
-      hasVoted={hasVoted}
-      onSelectAnswer={setSelectedAnswer}
-      onCastVote={() => {
-        if (seconds > 0) setHasVoted(true);
-      }}
+      options={mockVotingOptions}
+      lockedOptionId={lockedOptionId}
+      votesSubmitted={
+        mockVotingProgress.votesSubmitted + (lockedOptionId ? 1 : 0)
+      }
+      totalVoters={mockVotingProgress.totalVoters}
+      votingClosed={seconds <= 0}
+      onVote={lockVote}
     />
   );
 }
