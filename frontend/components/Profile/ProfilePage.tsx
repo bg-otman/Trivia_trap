@@ -2,6 +2,7 @@ import ProfileHeader from "./ProfileHeader";
 import PlayerStatistics from "./PlayerStatistics";
 import PlayerAchievements from "./PlayerAchievements";
 import PlayerAnalytics from "./PlayerAnalytics";
+import PlayerMatchHistory from "./PlayerMatchHistory";
 
 
 export type UserAchievements = {
@@ -18,7 +19,7 @@ export type CategoryAnalytics = {
     bluff_efficiency: number;
 };
 
-export type GameData = {
+export type MatchHistory = {
     id: string;
     end_time: Date;
     total_rounds: number;
@@ -46,7 +47,7 @@ type UserData = {
     join_date: Date;
     stats: UserStatistics;
     achievements: UserAchievements[];
-    gameData: GameData[];
+    matchHistory: MatchHistory[];
     analytics: CategoryAnalytics[];
 };
 
@@ -83,6 +84,7 @@ export default function ProfilePage({ user, isOwner = false } : UserProps)
                 <PlayerStatistics stats={user.stats} />
                 <PlayerAchievements achievements={user.achievements} />
                 <PlayerAnalytics analytics={user.analytics} />
+                <PlayerMatchHistory matchHistory={user.matchHistory} />
             </div>
         </main>
     ); 

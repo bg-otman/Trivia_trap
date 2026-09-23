@@ -1,5 +1,5 @@
 
-import ProfilePage from "@/components/Profile/ProfilePage";
+import ProfilePage, { MatchHistory } from "@/components/Profile/ProfilePage";
 import { UserAchievements, CategoryAnalytics } from "@/components/Profile/ProfilePage";
 
 
@@ -158,7 +158,19 @@ export async function getUserData( username : string)
         },
     ];
 
-    const mock_game_data = [
+    const mock_matchHistory : MatchHistory[] = [
+        {
+            id: "51",
+            end_time: new Date(),
+            total_rounds: 10,
+            player_numbers: 5,
+            host_username: "ali",
+            winner_username: "rachid",
+            rank: 1,
+            score: 17,
+            correct_answers: 10,
+            bluffs: 5,
+        },
         {
             id: "55",
             end_time: new Date(),
@@ -167,6 +179,30 @@ export async function getUserData( username : string)
             host_username: "ali",
             winner_username: "rachid",
             rank: 2,
+            score: 17,
+            correct_answers: 10,
+            bluffs: 5,
+        },
+        {
+            id: "52",
+            end_time: new Date(),
+            total_rounds: 10,
+            player_numbers: 5,
+            host_username: "ali",
+            winner_username: "rachid",
+            rank: 3,
+            score: 17,
+            correct_answers: 10,
+            bluffs: 5,
+        },
+        {
+            id: "58",
+            end_time: new Date(),
+            total_rounds: 10,
+            player_numbers: 5,
+            host_username: "ali",
+            winner_username: "rachid",
+            rank: 4,
             score: 17,
             correct_answers: 10,
             bluffs: 5,
@@ -186,7 +222,7 @@ export async function getUserData( username : string)
             high_score: 300,
         },
         achievements: mock_achievements,
-        gameData: mock_game_data,
+        matchHistory: mock_matchHistory,
         analytics: mock_analytics,
     };
 
