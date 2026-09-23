@@ -1,7 +1,70 @@
-export function ResultsRevealPhase() {
+import { ArrowRight, Eye, UsersRound } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  CorrectAnswerCard,
+  SubmittedAnswerCard,
+} from "@/components/game/results/answer-reveal-card";
+import type { AnswerReveal } from "@/types/results";
+
+interface ResultsRevealPhaseProps {
+  reveal: AnswerReveal;
+  onShowResults: () => void;
+}
+
+export function ResultsRevealPhase({
+  reveal,
+  onShowResults,
+}: ResultsRevealPhaseProps) {
   return (
-    <section className="flex min-h-[400px] items-center justify-center">
-      <p className="text-muted-foreground">Results reveal coming soon.</p>
+    <section className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+      <div className="w-full max-w-[1080px]">
+        <header className="mb-5 text-center">
+          <div className="mb-2 inline-flex items-center gap-2 text-accent">
+            <Eye className="size-4" aria-hidden="true" />
+            <span className="font-meta text-[11px] font-black tracking-[0.15em]">
+              ANSWERS REVEALED
+            </span>
+          </div>
+          <h1 className="font-display text-2xl font-black tracking-[-0.025em] text-foreground sm:text-3xl">
+            The truth is out
+          </h1>
+          <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-muted-foreground">
+            See the real answer and every player trap before continuing.
+          </p>
+        </header>
+
+        <CorrectAnswerCard answer={reveal.correctAnswer} />
+
+        <div className="mb-3 mt-6 flex items-center justify-between gap-3 px-1">
+          <div className="flex items-center gap-2 text-[#e4e1e6]">
+            <UsersRound className="size-4" aria-hidden="true" />
+            <h2 className="font-display text-sm font-black tracking-[0.06em]">
+              PLAYER ANSWERS
+            </h2>
+          </div>
+          <span className="font-mono text-xs text-muted-foreground">
+            {reveal.submissions.length} SUBMITTED
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2">
+          {reveal.submissions.map((submission) => (
+            <SubmittedAnswerCard key={submission.id} submission={submission} />
+          ))}
+        </div>
+
+        <div className="mt-7 flex justify-center">
+          <Button
+            type="button"
+            size="lg"
+            onClick={onShowResults}
+            className="w-full sm:w-auto sm:min-w-56"
+          >
+            SHOW RESULTS
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Button>
+        </div>
+      </div>
     </section>
   );
 }
