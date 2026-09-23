@@ -3,7 +3,7 @@
 ## 1. Connection
 
 WebSocket URL:
-- ws://<backend>/room/{room_id}?token=<JWT>
+- ws://localhost/room/{room_id}
 
 Rules:
 - room_id comes from the URL path.
@@ -111,7 +111,7 @@ Purpose: Player requests a question from the selected category.
     "category": {
       "id": 1,
       "name": "Science",
-      "language": "en",
+      "language": "en"
       }
     }
 }
@@ -215,13 +215,13 @@ Purpose: reveal truth, votes, and updated scores.
       {
         "id": "1",
         "text": "Austria",
-        "author_name": "usr_1",
+        "authors_name": ["usr_2"],
         "voters": ["usr_2, usr_3"]
       },
       {
         "id": "2",
         "text": "Switzerland",
-        "author_name": null,
+        "authors_name": null,
         "voters": ["usr_1"]
       }
     ],
