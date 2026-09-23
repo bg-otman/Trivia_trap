@@ -35,7 +35,7 @@ export function CategoryPhase({
   }
 
   return (
-    <section className="relative z-10 flex flex-1 flex-col items-center px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+    <section className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <div className="w-full max-w-[1020px]">
         <header className="mx-auto max-w-2xl text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 text-accent">
