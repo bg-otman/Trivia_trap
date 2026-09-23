@@ -3,32 +3,35 @@
 import { useEffect, useState } from "react";
 import { mockGame } from "@/mocks/game";
 import { mockQuestions } from "@/mocks/questions";
+import { mockAnswerReveal } from "@/mocks/results";
 import { GameHud } from "./hud/game-hud";
 import { PlayerRoster } from "./players/player-roster";
 import { CategoryPhase } from "./phases/category-phase";
 import { TrapPhase } from "./phases/trap-phase";
 import { VotingPhase } from "./phases/voting-phase";
 import { ResultsRevealPhase } from "./phases/results-reveal-phase";
+import { RoundResultsPhase } from "./phases/round-results-phase";
 import type { GamePhase } from "@/types/game";
 
 const timedPhases: GamePhase[] = ["CATEGORY", "TRAP", "VOTING"];
 
 export function TriviaTrapGame() {
   const game = mockGame;
+  const [phase, setPhase] = useState<GamePhase>(game.phase);
   const [seconds, setSeconds] = useState(game.timeRemaining);
 
   useEffect(() => {
-    if (!timedPhases.includes(game.phase) || seconds <= 0) return;
+    if (!timedPhases.includes(phase) || seconds <= 0) return;
 
     const interval = window.setInterval(() => {
       setSeconds((current) => Math.max(0, current - 1));
     }, 1000);
 
     return () => window.clearInterval(interval);
-  }, [game.phase, seconds]);
+  }, [phase, seconds]);
 
   function renderPhase() {
-    switch (game.phase) {
+    switch (phase) {
       case "CATEGORY":
         return (
           <CategoryPhase
@@ -47,7 +50,14 @@ export function TriviaTrapGame() {
       case "VOTING":
         return <VotingPhase seconds={seconds} />;
       case "RESULTS_REVEAL":
-        return <ResultsRevealPhase />;
+        return (
+          <ResultsRevealPhase
+            reveal={mockAnswerReveal}
+            onShowResults={() => setPhase("ROUND_RESULTS")}
+          />
+        );
+      case "ROUND_RESULTS":
+        return <RoundResultsPhase />;
       default:
         return (
           <div className="flex min-h-[400px] items-center justify-center">
@@ -75,7 +85,7 @@ export function TriviaTrapGame() {
           totalRounds={game.totalRounds}
           seconds={seconds}
           roomCode={game.roomCode}
-          phase={game.phase}
+          phase={phase}
         />
 
         <div className="flex w-full flex-1 flex-col justify-center">
