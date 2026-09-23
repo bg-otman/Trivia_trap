@@ -40,7 +40,6 @@ export function TriviaTrapGame() {
         return (
           <TrapPhase
             question={mockQuestions[0]}
-            players={game.players}
             currentRound={game.currentRound}
             totalRounds={game.totalRounds}
           />
@@ -70,7 +69,7 @@ export function TriviaTrapGame() {
         <div className="absolute inset-x-0 top-0 h-[40vh] bg-gradient-to-b from-white/[0.025] to-transparent" />
       </div>
 
-      <div className="relative flex  flex-col">
+      <div className="relative flex min-h-dvh flex-col">
         <GameHud
           round={game.currentRound}
           totalRounds={game.totalRounds}
@@ -79,7 +78,9 @@ export function TriviaTrapGame() {
           phase={game.phase}
         />
 
-        <div className="flex flex-1 flex-col">{renderPhase()}</div>
+        <div className="flex w-full flex-1 flex-col justify-center">
+          {renderPhase()}
+        </div>
 
         <PlayerRoster players={game.players} />
       </div>
