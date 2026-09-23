@@ -6,24 +6,20 @@ import {
   LockKeyhole,
   MessageSquareText,
   Send,
-  UsersRound,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { QuestionCard } from "@/components/game/question/question-card";
-import type { Player } from "@/types/player";
 import type { Question } from "@/types/question";
 
 interface TrapPhaseProps {
   question: Question;
-  players: Player[];
   currentRound: number;
   totalRounds: number;
 }
 
 export function TrapPhase({
   question,
-  players,
   currentRound,
   totalRounds,
 }: TrapPhaseProps) {
@@ -31,21 +27,6 @@ export function TrapPhase({
   const [submittedAnswer, setSubmittedAnswer] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const submittedPlayers = players.filter(
-    (player) => player.status === "SUBMITTED" || player.status === "VOTED",
-  ).length;
-  const currentPlayerAlreadySubmitted = players.some(
-    (player) =>
-      player.isYou &&
-      (player.status === "SUBMITTED" || player.status === "VOTED"),
-  );
-  const visibleSubmittedCount = Math.min(
-    players.length,
-    submittedPlayers + (submittedAnswer && !currentPlayerAlreadySubmitted ? 1 : 0),
-  );
-  const progress = players.length
-    ? Math.round((visibleSubmittedCount / players.length) * 100)
-    : 0;
 
   function submitTrap(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -61,7 +42,7 @@ export function TrapPhase({
   }
 
   return (
-    <section className="relative z-10 flex flex-1 flex-col items-center px-4 py-7 sm:px-6 lg:px-8 lg:py-9">
+    <section className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-7 sm:px-6 lg:px-8 lg:py-9">
       <div className="w-full max-w-[1080px]">
         <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
           <div>
