@@ -5,7 +5,7 @@ export const mockGame: GameState = {
   roomCode: "X7K9P2",
   currentRound: 2,
   totalRounds: 5,
-  phase: "TRAP",
+  phase: "VOTING",
   timeRemaining: 18,
   settings: {
     totalRounds: 5,

@@ -6,6 +6,12 @@ export interface AnswerOption {
     text: string;
 }
 
+/** Anonymous option delivered by the server during the voting phase. */
+export interface VotingOption {
+    id: string;
+    text: string;
+}
+
 export interface Question {
     id: string;
 
