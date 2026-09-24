@@ -211,68 +211,96 @@ def validate_vote(
     return {"is_valid": True, "reason": ""}
 
 
-def calculate_results(
-    votes: dict[str, str],
-    choices: list[dict],
-    players: dict,
-) -> dict:
-    choices_by_id = {choice["id"]: choice for choice in choices}
-    correct_choices = [
-        choice for choice in choices if choice["is_correct"]
-    ]
+# def calculate_results(
+#     votes: dict[str, str],
+#     choices: list[dict],
+#     players: dict,
+# ) -> dict:
+#     choices_by_id = {choice["id"]: choice for choice in choices}
+#     correct_choices = [
+#         choice for choice in choices if choice["is_correct"]
+#     ]
 
-    if len(correct_choices) != 1:
-        raise ValueError("The round must have exactly one correct choice")
+#     if len(correct_choices) != 1:
+#         raise ValueError("The round must have exactly one correct choice")
 
-    player_stats = {
-        player_id: {
-            "correct_votes": 0,
-            "bluff_votes_received": 0,
-        }
-        for player_id in players
-    }
+#     player_stats = {
+#         player_id: {
+#             "correct_votes": 0,
+#             "bluff_votes_received": 0,
+#         }
+#         for player_id in players
+#     }
 
-    voters_by_choice = {
-        choice["id"]: []
-        for choice in choices
-    }
+#     voters_by_choice = {
+#         choice["id"]: []
+#         for choice in choices
+#     }
 
-    for voter_id, choice_id in votes.items():
-        if voter_id not in player_stats:
-            raise ValueError("Vote from a player outside the room")
+#     for voter_id, choice_id in votes.items():
+#         if voter_id not in player_stats:
+#             raise ValueError("Vote from a player outside the room")
 
-        choice = choices_by_id.get(choice_id)
-        if choice is None:
-            raise ValueError("Vote for an unknown choice")
+#         choice = choices_by_id.get(choice_id)
+#         if choice is None:
+#             raise ValueError("Vote for an unknown choice")
 
-        if voter_id in choice["author_ids"]:
-            raise ValueError("Player voted for their own bluff")
+#         if voter_id in choice["author_ids"]:
+#             raise ValueError("Player voted for their own bluff")
 
-        voters_by_choice[choice_id].append(voter_id)
+#         voters_by_choice[choice_id].append(voter_id)
 
-        if choice["is_correct"]:
-            player_stats[voter_id]["correct_votes"] += 1
-        else:
-            for author_id in choice["author_ids"]:
-                if author_id not in player_stats:
-                    raise ValueError("Bluff author is outside the room")
+#         if choice["is_correct"]:
+#             player_stats[voter_id]["correct_votes"] += 1
+#         else:
+#             for author_id in choice["author_ids"]:
+#                 if author_id not in player_stats:
+#                     raise ValueError("Bluff author is outside the room")
 
-                player_stats[author_id]["bluff_votes_received"] += 1
-    for stats in player_stats.values():
-        stats["round_points"] = (
-             stats["correct_votes"] + 2 * stats["bluff_votes_received"])
+#                 player_stats[author_id]["bluff_votes_received"] += 1
+#     for stats in player_stats.values():
+#         stats["round_points"] = (
+#              stats["correct_votes"] + 2 * stats["bluff_votes_received"])
 
+#     return {
+#         "correct_choice_id": correct_choices[0]["id"],
+#         "choices": [
+#             {
+#                 "id": choice["id"],
+#                 "text": choice["text"],
+#                 "author_ids": choice["author_ids"],
+#                 "voters": voters_by_choice[choice["id"]],
+#                 "is_correct": choice["is_correct"],
+#             }
+#             for choice in choices
+#         ],
+#         "player_stats": player_stats,
+#     }
+
+
+def calculate_results(votes: dict[str, str], bluffs: dict[str, str], correct_answer: str, players: dict[str, dict]) -> dict:
+    """
+        Calculate the results of the round based on the voting results and submitted bluffs.
+    """
+    # the expected output is in the return statement below. For now, i will return a demo result.
     return {
-        "correct_choice_id": correct_choices[0]["id"],
+        "correct_choice_id": "2",
         "choices": [
-            {
-                "id": choice["id"],
-                "text": choice["text"],
-                "author_ids": choice["author_ids"],
-                "voters": voters_by_choice[choice["id"]],
-                "is_correct": choice["is_correct"],
-            }
-            for choice in choices
+          {
+            "id": "1",
+            "text": "Austria",
+            "author_name": "usr_1",
+            "voters": ["usr_2, usr_3"]
+          },
+          {
+            "id": "2",
+            "text": "Switzerland",
+            "author_name": None, # None because it's the correct answer
+            "voters": ["usr_1"]
+          }
         ],
-        "player_stats": player_stats,
-    }
+        "leaderboard": [
+          { "username": "alice", "score": 10, "avatar_url": "https://example.com/alice.png" },
+          { "username": "bob", "score": 5, "avatar_url": "https://example.com/bob.png" }
+        ]
+      }

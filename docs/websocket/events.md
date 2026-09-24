@@ -3,7 +3,7 @@
 ## 1. Connection
 
 WebSocket URL:
-- ws://<backend>/room/{room_id}?token=<JWT>
+- ws://localhost/room/{room_id}
 
 Rules:
 - room_id comes from the URL path.
@@ -30,17 +30,7 @@ Notes:
 
 ### 3.1 Client -> Server
 
-1. START_GAME
-Purpose: host starts the match.
-
-```json
-{
-  "event": "START_GAME",
-  "data": {}
-}
-```
-
-2. SUBMIT_BLUFF
+1. SUBMIT_BLUFF
 Purpose: player submits fake answer.
 
 ```json
@@ -50,7 +40,7 @@ Purpose: player submits fake answer.
 }
 ```
 
-3. SUBMIT_VOTE
+2. SUBMIT_VOTE
 Purpose: player votes for the answer they think is true.
 
 ```json
@@ -60,7 +50,7 @@ Purpose: player votes for the answer they think is true.
 }
 ```
 
-4. CHAT_MESSAGE
+3. CHAT_MESSAGE
 Purpose: send a room chat message.
 
 ```json
@@ -70,7 +60,7 @@ Purpose: send a room chat message.
 }
 ```
 
-5. UPDATE_SETTINGS
+4. UPDATE_SETTINGS
 Purpose: host modifies room settings.
 ```json
 {
@@ -79,12 +69,13 @@ Purpose: host modifies room settings.
     "total_rounds": 5,
     "bluff_time": 30,
     "vote_time": 20,
-    "max_players": 10
+    "max_players": 10,
+    "language": "en" // "en" or "ar"
   }
 }
 ```
 
-6. KICK_PLAYER
+5. KICK_PLAYER
 Purpose: host removes a player from the room.
 ```json
 {
@@ -93,7 +84,7 @@ Purpose: host removes a player from the room.
 }
 ```
 
-7. LEAVE_ROOM
+6. LEAVE_ROOM
 Purpose: Player leaves a room.
 ```json
 {
@@ -102,8 +93,8 @@ Purpose: Player leaves a room.
 }
 ```
 
-8. NEXT_PHASE
-Purpose: Host moves to the next phase.
+7. NEXT_PHASE
+Purpose: Host moves to the next phase. Also used to start the game from the lobby.
 ```json
 {
   "event": "NEXT_PHASE",
@@ -111,12 +102,18 @@ Purpose: Host moves to the next phase.
 }
 ```
 
-9. GET_QUESTION
+8. GET_QUESTION
 Purpose: Player requests a question from the selected category.
 ```json
 {
   "event": "GET_QUESTION",
-  "data": { "category": "Science" }
+  "data": { 
+    "category": {
+      "id": 1,
+      "name": "Science",
+      "language": "en"
+      }
+    }
 }
 ```
 
@@ -139,7 +136,8 @@ Note: is_present to indicate if a player is currently connected.
       "total_rounds": 5,
       "bluff_time": 30,
       "vote_time": 20,
-      "max_players": 8
+      "max_players": 8,
+      "language": "en"
     }
   }
 }
@@ -153,7 +151,11 @@ Purpose: category selection phase.
   "data": {
     "round": 1,
     "total_rounds": 5,
-    "categories": ["General Knowledge", "Science", "History"]
+    "categories": [
+      { "id": 1, "name": "General Knowledge", "image_url": "https://example.com/general_knowledge.png"},
+      { "id": 2, "name": "Science", "image_url": "https://example.com/science.png"},
+      { "id": 3, "name": "History", "image_url": "https://example.com/history.png"}
+    ]
   }
 }
 ```
@@ -165,9 +167,13 @@ Purpose: round starts and question is shown.
 {
   "event": "PHASE_QUESTION",
   "data": {
+    "category": "Geography",
+    "category_id": 1,
+    "question": "Which country is known for its Alps?",
+    "question_id": 123,
+    "image_url": "https://example.com/question.png",  // can be None if no image is available for the question
     "round": 1,
     "total_rounds": 5,
-    "question": "In 1923, Liechtenstein adopted which neighbor currency?",
     "duration": 30
   }
 }
@@ -183,6 +189,10 @@ Purpose: voting starts with answer choices.
     "round": 1,
     "total_rounds": 5,
     "duration": 20,
+    "question": {
+      "text": "Which country is known for its Alps?",
+      "image_url": "https://example.com/alps.png"
+    },
     "choices": [
       { "id": "1", "text": "Austria" },
       { "id": "2", "text": "Switzerland" }
@@ -205,19 +215,19 @@ Purpose: reveal truth, votes, and updated scores.
       {
         "id": "1",
         "text": "Austria",
-        "author_name": "usr_1",
+        "authors_name": ["usr_2"],
         "voters": ["usr_2, usr_3"]
       },
       {
         "id": "2",
         "text": "Switzerland",
-        "author_name": null,
+        "authors_name": null,
         "voters": ["usr_1"]
       }
     ],
     "leaderboard": [
-      { "username": "alice", "score": 10 },
-      { "username": "bob", "score": 5 }
+      { "username": "alice", "score": 10, "avatar_url": "https://example.com/alice.png" },
+      { "username": "bob", "score": 5, "avatar_url": "https://example.com/bob.png" }
     ]
   }
 }
@@ -233,8 +243,8 @@ Purpose: final standings when match ends.
     "round": 5,
     "total_rounds": 5,
     "leaderboard": [
-      { "username": "alice", "score": 18 },
-      { "username": "bob", "score": 12 }
+      { "username": "alice", "score": 18, "avatar_url": "https://example.com/alice.png" },
+      { "username": "bob", "score": 12, "avatar_url": "https://example.com/bob.png" }
     ]
   }
 }
@@ -247,8 +257,7 @@ Purpose: distribute room chat message.
 {
   "event": "CHAT_MESSAGE",
   "data": {
-    "player_id": "usr_1",
-    "username": "alice",
+    "player" : { "id": "usr_1", "username": "alice", "avatar_url": "https://example.com/alice.png" },
     "message": "Nice bluff"
   }
 }
