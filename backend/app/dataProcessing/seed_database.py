@@ -32,6 +32,13 @@ CATEGORY_SEEDS: dict[int, dict[str, Any]] = {
             "ar": "العلوم",
         },
     },
+    2: {
+        "image_url": "/images/history.png",
+        "translations": {
+            "en": "History",
+            "ar": "التاريخ",
+        },
+    },
 }
 
 LANGUAGE_CODE_MAX_LENGTH = Question.__table__.c.language_code.type.length

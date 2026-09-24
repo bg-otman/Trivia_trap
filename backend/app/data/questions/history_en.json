@@ -1,0 +1,902 @@
+[
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which pharaoh commissioned the Great Pyramid at Giza?",
+    "correct_answer": "Khufu",
+    "decoys": ["Khafre", "Menkaure", "Djoser"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Great-Pyramid-of-Giza"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Babylonian king issued the law collection commonly called his code?",
+    "correct_answer": "Hammurabi",
+    "decoys": ["Nebuchadnezzar II", "Sargon of Akkad", "Ashurbanipal"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Hammurabi"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which ancient artifact bears a decree in hieroglyphic, Demotic, and Greek scripts?",
+    "correct_answer": "Rosetta Stone",
+    "decoys": ["Narmer Palette", "Behistun Inscription", "Black Obelisk"],
+    "image_url": null,
+    "source_url": "https://www.britishmuseum.org/blog/everything-you-ever-wanted-know-about-rosetta-stone"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who became the first Roman emperor?",
+    "correct_answer": "Augustus",
+    "decoys": ["Tiberius", "Julius Caesar", "Nero"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Augustus-Roman-emperor"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which two Greek city-states were the principal opponents in the Peloponnesian War?",
+    "correct_answer": "Athens and Sparta",
+    "decoys": ["Corinth and Thebes", "Argos and Delphi", "Miletus and Ephesus"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Peloponnesian-War"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In what year BCE was the Battle of Marathon fought?",
+    "correct_answer": "490 BCE",
+    "decoys": ["480 BCE", "431 BCE", "404 BCE"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Battle-of-Marathon"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Macedonian conqueror defeated Darius III and brought down the Achaemenid Empire?",
+    "correct_answer": "Alexander the Great",
+    "decoys": ["Philip II", "Pyrrhus", "Antigonus II"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Alexander-the-Great"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who was the first ruler to unify China and take the title of emperor?",
+    "correct_answer": "Qin Shi Huang",
+    "decoys": ["Han Wudi", "Liu Bang", "Wang Mang"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Qin-Shi-Huang"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In which present-day country is the ancient city of Mohenjo-daro located?",
+    "correct_answer": "Pakistan",
+    "decoys": ["India", "Afghanistan", "Iran"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/138/"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which volcano buried Pompeii in 79 CE?",
+    "correct_answer": "Mount Vesuvius",
+    "decoys": ["Mount Etna", "Mount Stromboli", "Mount Vulcano"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Pompeii"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "What was the capital of the Aztec empire?",
+    "correct_answer": "Tenochtitlan",
+    "decoys": ["Texcoco", "Tlacopan", "Cholula"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Tenochtitlan"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "What city served as the capital of the Inca empire?",
+    "correct_answer": "Cuzco",
+    "decoys": ["Quito", "Cajamarca", "Chan Chan"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Cuzco"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which seafaring ancient people were centered along the coast of modern Lebanon?",
+    "correct_answer": "Phoenicians",
+    "decoys": ["Hittites", "Sumerians", "Elamites"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Phoenicia"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which ancient African kingdom adopted Christianity after King Ezana's conversion in the 4th century?",
+    "correct_answer": "Kingdom of Aksum",
+    "decoys": ["Kingdom of Kush", "Kingdom of Makuria", "Kingdom of Alodia"],
+    "image_url": null,
+    "source_url": "https://www.britishmuseum.org/blog/historical-city-travel-guide-aksum-6th-century-ad"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which people founded the ancient city of Carthage?",
+    "correct_answer": "Phoenicians",
+    "decoys": ["Etruscans", "Mycenaeans", "Numidians"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Carthage-ancient-city-Tunisia"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "At which Greek sanctuary were the ancient Olympic Games held?",
+    "correct_answer": "Olympia",
+    "decoys": ["Delphi", "Delos", "Epidaurus"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/sports/ancient-Olympic-Games"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which city did Constantine I dedicate in 330 CE as the new capital of the Roman Empire?",
+    "correct_answer": "Constantinople",
+    "decoys": ["Nicaea", "Antioch", "Thessalonica"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Constantinople"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which ancient Mesoamerican civilization built major cities including Tikal and Palenque?",
+    "correct_answer": "Maya",
+    "decoys": ["Olmec", "Zapotec", "Toltec"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Maya-people"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Mesoamerican civilization is especially known for colossal stone heads?",
+    "correct_answer": "Olmec",
+    "decoys": ["Mixtec", "Totonac", "Toltec"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Olmec"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which writing system was developed under King Sejong in 15th-century Korea?",
+    "correct_answer": "Hangul",
+    "decoys": ["Hiragana", "Katakana", "Zhuyin"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Hangul-Korean-alphabet"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which ruler of Mali became famous for his pilgrimage to Mecca in 1324?",
+    "correct_answer": "Mansa Musa",
+    "decoys": ["Sundiata Keita", "Sunni Ali", "Askia Muhammad"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Musa-I-of-Mali"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which city was the capital of the Songhai Empire?",
+    "correct_answer": "Gao",
+    "decoys": ["Kano", "Kumbi Saleh", "Agadez"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Songhai-empire"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "The monumental stone ruins near Masvingo gave their name to which modern country?",
+    "correct_answer": "Zimbabwe",
+    "decoys": ["Zambia", "Botswana", "Mozambique"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/364/"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which African country defeated an invading Italian army at the Battle of Adwa in 1896?",
+    "correct_answer": "Ethiopia",
+    "decoys": ["Eritrea", "Sudan", "Somalia"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Battle-of-Adwa"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who became South Africa's first Black president in 1994?",
+    "correct_answer": "Nelson Mandela",
+    "decoys": ["Walter Sisulu", "Oliver Tambo", "Thabo Mbeki"],
+    "image_url": null,
+    "source_url": "https://www.nelsonmandela.org/biography"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who led Ghana to independence and became its first prime minister?",
+    "correct_answer": "Kwame Nkrumah",
+    "decoys": ["Jomo Kenyatta", "Julius Nyerere", "Kenneth Kaunda"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Kwame-Nkrumah"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which waterway opened in 1869 to connect the Mediterranean Sea with the Red Sea?",
+    "correct_answer": "Suez Canal",
+    "decoys": ["Corinth Canal", "Kiel Canal", "Panama Canal"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Suez-Canal"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which early 19th-century leader founded the Zulu empire in southern Africa?",
+    "correct_answer": "Shaka",
+    "decoys": ["Cetshwayo", "Dingane", "Mzilikazi"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Shaka-Zulu-chief"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which German statesman hosted the Berlin West Africa Conference of 1884–85?",
+    "correct_answer": "Otto von Bismarck",
+    "decoys": ["Helmuth von Moltke", "Kaiser Wilhelm II", "Bernhard von Bulow"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Berlin-West-Africa-Conference"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "To which city did Muhammad and his followers migrate during the Hijra?",
+    "correct_answer": "Medina",
+    "decoys": ["Damascus", "Jerusalem", "Taif"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Hijrah-Islam"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which city served as the capital of the Umayyad Caliphate?",
+    "correct_answer": "Damascus",
+    "decoys": ["Kufa", "Cairo", "Samarkand"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Umayyad-dynasty-Islamic-history"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which dynasty overthrew the Umayyads in 750 and established a caliphate based in Baghdad?",
+    "correct_answer": "Abbasid dynasty",
+    "decoys": ["Fatimid dynasty", "Ayyubid dynasty", "Seljuq dynasty"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Abbasid-caliphate"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In which city was the Abbasid scholarly center known as the House of Wisdom located?",
+    "correct_answer": "Baghdad",
+    "decoys": ["Basra", "Isfahan", "Bukhara"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/House-of-Wisdom-Baghdad-Iraq"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In which Spanish city is the Alhambra palace-fortress located?",
+    "correct_answer": "Granada",
+    "decoys": ["Cordoba", "Seville", "Toledo"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/314/"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Muslim ruler recaptured Jerusalem from the Crusaders in 1187?",
+    "correct_answer": "Saladin",
+    "decoys": ["Nur al-Din", "Baybars", "Alp Arslan"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Saladin"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Ottoman sultan conquered Constantinople in 1453?",
+    "correct_answer": "Mehmed II",
+    "decoys": ["Murad II", "Bayezid I", "Selim I"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Mehmed-II-Ottoman-sultan"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In which Moroccan city was the medieval traveler Ibn Battuta born?",
+    "correct_answer": "Tangier",
+    "decoys": ["Fez", "Marrakesh", "Tlemcen"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Ibn-Battuta"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Frankish leader defeated an Umayyad army near Tours in 732?",
+    "correct_answer": "Charles Martel",
+    "decoys": ["Pepin the Short", "Charlemagne", "Clovis I"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Battle-of-Tours-732"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which dynasty founded Cairo in 969?",
+    "correct_answer": "Fatimid dynasty",
+    "decoys": ["Ayyubid dynasty", "Mamluk dynasty", "Idrisid dynasty"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Cairo"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which English king placed his seal on Magna Carta at Runnymede in 1215?",
+    "correct_answer": "King John",
+    "decoys": ["Henry II", "Richard I", "Edward I"],
+    "image_url": null,
+    "source_url": "https://www.archives.gov/exhibits/featured-documents/magna-carta"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who won the English throne after the Battle of Hastings in 1066?",
+    "correct_answer": "William the Conqueror",
+    "decoys": ["Harold Godwinson", "Harald Hardrada", "Edgar the Aetheling"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/William-I-king-of-England"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "What pandemic devastated Europe between 1347 and 1351?",
+    "correct_answer": "Black Death",
+    "decoys": ["Great Plague of London", "Plague of Justinian", "Sweating sickness"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Black-Death"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which French heroine helped lift the English siege of Orleans in 1429?",
+    "correct_answer": "Joan of Arc",
+    "decoys": ["Christine de Pisan", "Catherine de Medici", "Eleanor of Aquitaine"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Saint-Joan-of-Arc"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which German inventor is credited with developing a mechanical movable-type printing press in Europe around 1450?",
+    "correct_answer": "Johannes Gutenberg",
+    "decoys": ["Aldus Manutius", "William Caxton", "Christophe Plantin"],
+    "image_url": null,
+    "source_url": "https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/gutenberg/"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who is traditionally credited with posting the Ninety-five Theses in 1517?",
+    "correct_answer": "Martin Luther",
+    "decoys": ["John Calvin", "Huldrych Zwingli", "Jan Hus"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Martin-Luther"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In what year did the attempted invasion known as the Spanish Armada take place?",
+    "correct_answer": "1588",
+    "decoys": ["1571", "1603", "1618"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Armada-Spanish-naval-fleet"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which settlement ended the Thirty Years' War in 1648?",
+    "correct_answer": "Peace of Westphalia",
+    "decoys": ["Peace of Augsburg", "Treaty of Utrecht", "Treaty of Tordesillas"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Peace-of-Westphalia"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which French king moved his court and government to Versailles in 1682?",
+    "correct_answer": "Louis XIV",
+    "decoys": ["Louis XIII", "Louis XV", "Henry IV"],
+    "image_url": null,
+    "source_url": "https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which diplomatic gathering redrew Europe's borders after the Napoleonic Wars?",
+    "correct_answer": "Congress of Vienna",
+    "decoys": ["Congress of Berlin", "Congress of Aix-la-Chapelle", "Congress of Paris"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Congress-of-Vienna"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Mauryan emperor expressed remorse after conquering Kalinga and promoted dhamma in his edicts?",
+    "correct_answer": "Ashoka",
+    "decoys": ["Chandragupta Maurya", "Bindusara", "Dasharatha"],
+    "image_url": null,
+    "source_url": "https://www.nationalmuseumindia.gov.in/en/collections/index/21"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which dynasty ruled much of northern India during a classical age from the 4th to 6th centuries CE?",
+    "correct_answer": "Gupta dynasty",
+    "decoys": ["Maurya dynasty", "Pala dynasty", "Chola dynasty"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Gupta-dynasty"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Chinese dynasty made Chang'an its capital and ruled from 618 to 907?",
+    "correct_answer": "Tang dynasty",
+    "decoys": ["Song dynasty", "Yuan dynasty", "Ming dynasty"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Tang-dynasty"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "What was Genghis Khan's original name?",
+    "correct_answer": "Temujin",
+    "decoys": ["Ogodei", "Jochi", "Tolui"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Genghis-Khan"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Ming admiral led seven major maritime expeditions between 1405 and 1433?",
+    "correct_answer": "Zheng He",
+    "decoys": ["Yi Sun-shin", "Qi Jiguang", "Koxinga"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Zheng-He"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who founded the Tokugawa shogunate in Japan?",
+    "correct_answer": "Tokugawa Ieyasu",
+    "decoys": ["Oda Nobunaga", "Toyotomi Hideyoshi", "Tokugawa Iemitsu"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Tokugawa-Ieyasu"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In what year did the Meiji Restoration begin in Japan?",
+    "correct_answer": "1868",
+    "decoys": ["1853", "1877", "1889"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Meiji-Restoration"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which empire built Angkor Wat in the 12th century?",
+    "correct_answer": "Khmer Empire",
+    "decoys": ["Srivijaya Empire", "Majapahit Empire", "Pagan Kingdom"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/668/"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who founded the Mughal dynasty in India after victory at Panipat in 1526?",
+    "correct_answer": "Babur",
+    "decoys": ["Humayun", "Akbar", "Sher Shah Suri"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Babur"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Mughal emperor commissioned the Taj Mahal?",
+    "correct_answer": "Shah Jahan",
+    "decoys": ["Jahangir", "Akbar", "Aurangzeb"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/252/"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "What was the first permanent English settlement in North America?",
+    "correct_answer": "Jamestown",
+    "decoys": ["Plymouth", "Roanoke", "St. Augustine"],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/jame/learn/historyculture/a-short-history-of-jamestown.htm"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which ship carried English colonists to Plymouth in 1620?",
+    "correct_answer": "Mayflower",
+    "decoys": ["Susan Constant", "Godspeed", "Discovery"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Mayflower-ship"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "On what date did the Continental Congress adopt the Declaration of Independence?",
+    "correct_answer": "July 4, 1776",
+    "decoys": ["July 2, 1776", "September 17, 1787", "December 15, 1791"],
+    "image_url": null,
+    "source_url": "https://www.archives.gov/founding-docs/declaration-history"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "From which country did the United States purchase the Louisiana Territory in 1803?",
+    "correct_answer": "France",
+    "decoys": ["Spain", "Britain", "Mexico"],
+    "image_url": null,
+    "source_url": "https://www.archives.gov/milestone-documents/louisiana-purchase-treaty"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which country became independent in 1804 after a successful revolution by enslaved people?",
+    "correct_answer": "Haiti",
+    "decoys": ["Jamaica", "Barbados", "Cuba"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Haitian-Revolution"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which priest issued the Grito de Dolores in 1810, helping launch Mexico's independence movement?",
+    "correct_answer": "Miguel Hidalgo y Costilla",
+    "decoys": ["Jose Maria Morelos", "Agustin de Iturbide", "Vicente Guerrero"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Miguel-Hidalgo-y-Costilla"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who declared Brazil's independence and became its first emperor?",
+    "correct_answer": "Pedro I",
+    "decoys": ["Pedro II", "John VI", "Jose Bonifacio"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Pedro-I-emperor-of-Brazil"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In what year did the Dominion of Canada come into being through Confederation?",
+    "correct_answer": "1867",
+    "decoys": ["1841", "1873", "1885"],
+    "image_url": null,
+    "source_url": "https://www.thecanadianencyclopedia.ca/en/article/confederation"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "At which fort did the first battle of the American Civil War begin in 1861?",
+    "correct_answer": "Fort Sumter",
+    "decoys": ["Fort Monroe", "Fort Donelson", "Fort McHenry"],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/fosu/learn/historyculture/index.htm"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which U.S. president issued the Emancipation Proclamation?",
+    "correct_answer": "Abraham Lincoln",
+    "decoys": ["Andrew Johnson", "Ulysses S. Grant", "James Buchanan"],
+    "image_url": null,
+    "source_url": "https://www.archives.gov/milestone-documents/emancipation-proclamation"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which 1494 treaty divided newly claimed lands outside Europe between Spain and Portugal?",
+    "correct_answer": "Treaty of Tordesillas",
+    "decoys": ["Treaty of Zaragoza", "Treaty of Utrecht", "Treaty of Alcacovas"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Treaty-of-Tordesillas"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which two kingdoms fought the Hundred Years' War?",
+    "correct_answer": "England and France",
+    "decoys": ["Spain and Portugal", "Denmark and Sweden", "Austria and Prussia"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Hundred-Years-War"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which English king won the Battle of Agincourt in 1415?",
+    "correct_answer": "Henry V",
+    "decoys": ["Henry IV", "Edward III", "Richard II"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Battle-of-Agincourt"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which defeated emperor abdicated after the Battle of Waterloo?",
+    "correct_answer": "Napoleon I",
+    "decoys": ["Francis II", "Alexander I", "Pedro I"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Battle-of-Waterloo"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which country fought the alliance of Britain, France, the Ottoman Empire, and Sardinia in the Crimean War?",
+    "correct_answer": "Russia",
+    "decoys": ["Austria", "Prussia", "Greece"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Crimean-War"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which treaty formally ended the state of war between Germany and most Allied powers after World War I?",
+    "correct_answer": "Treaty of Versailles",
+    "decoys": ["Treaty of Brest-Litovsk", "Treaty of Sevres", "Treaty of Lausanne"],
+    "image_url": null,
+    "source_url": "https://guides.loc.gov/treaty-of-versailles"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "On what date did the armistice ending fighting on the Western Front in World War I take effect?",
+    "correct_answer": "November 11, 1918",
+    "decoys": ["June 28, 1919", "September 1, 1918", "January 10, 1920"],
+    "image_url": null,
+    "source_url": "https://www.iwm.org.uk/history/what-happened-on-armistice-day-1918"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In which region of France did the D-Day landings take place?",
+    "correct_answer": "Normandy",
+    "decoys": ["Brittany", "Provence", "Picardy"],
+    "image_url": null,
+    "source_url": "https://www.iwm.org.uk/history/the-10-things-you-need-to-know-about-d-day"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which army forced the German surrender at Stalingrad in February 1943?",
+    "correct_answer": "Soviet Red Army",
+    "decoys": ["British Eighth Army", "United States First Army", "French First Army"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Battle-of-Stalingrad"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which three countries were represented by the principal leaders at the Potsdam Conference?",
+    "correct_answer": "United States, United Kingdom, and Soviet Union",
+    "decoys": ["United States, France, and China", "United Kingdom, France, and Italy", "Soviet Union, Poland, and Yugoslavia"],
+    "image_url": null,
+    "source_url": "https://history.state.gov/milestones/1937-1945/potsdam-conf"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In which city was the United Nations Charter signed in 1945?",
+    "correct_answer": "San Francisco",
+    "decoys": ["New York City", "Geneva", "The Hague"],
+    "image_url": null,
+    "source_url": "https://www.un.org/en/about-us/history-of-the-un/san-francisco-conference"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Portuguese explorer reached India by sea in 1498?",
+    "correct_answer": "Vasco da Gama",
+    "decoys": ["Bartolomeu Dias", "Pedro Alvares Cabral", "Afonso de Albuquerque"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Vasco-da-Gama"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who commanded the expedition that began the first circumnavigation of the globe?",
+    "correct_answer": "Ferdinand Magellan",
+    "decoys": ["Amerigo Vespucci", "John Cabot", "Giovanni da Verrazzano"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Ferdinand-Magellan"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who captained the Victoria on its return to Spain, completing the first circumnavigation after Magellan's death?",
+    "correct_answer": "Juan Sebastián Elcano",
+    "decoys": ["Francisco Pizarro", "Hernando de Soto", "Martin Alonso Pinzon"],
+    "image_url": null,
+    "source_url": "https://www.cultura.gob.es/en/cultura/areas/archivos/mc/archivos/agi/exposiciones-y-actividades/exposiciones/exposicion-pacifico/exposicion/exploracion/primera-vuelta.html"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who led the first expedition confirmed to have reached the South Pole?",
+    "correct_answer": "Roald Amundsen",
+    "decoys": ["Robert Falcon Scott", "Ernest Shackleton", "Fridtjof Nansen"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Roald-Amundsen"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which two explorers led the Corps of Discovery across the Louisiana Purchase?",
+    "correct_answer": "Meriwether Lewis and William Clark",
+    "decoys": ["John Fremont and Kit Carson", "Zebulon Pike and James Wilkinson", "Daniel Boone and George Rogers Clark"],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/lecl/learn/historyculture/index.htm"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Venetian traveler described his journeys in Asia and his time at Kublai Khan's court?",
+    "correct_answer": "Marco Polo",
+    "decoys": ["Niccolo de Conti", "Odoric of Pordenone", "Giovanni da Pian del Carpine"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Marco-Polo"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Portuguese navigator reached the coast of Brazil in 1500?",
+    "correct_answer": "Pedro Alvares Cabral",
+    "decoys": ["Diogo Cao", "Gaspar Corte-Real", "Joao de Nova"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Pedro-Alvares-Cabral"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Portuguese explorer rounded the Cape of Good Hope in 1488?",
+    "correct_answer": "Bartolomeu Dias",
+    "decoys": ["Diogo Cao", "Nuno Tristao", "Gil Eanes"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Bartolomeu-Dias"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who led the 1947 Kon-Tiki raft expedition across the Pacific?",
+    "correct_answer": "Thor Heyerdahl",
+    "decoys": ["Fridtjof Nansen", "Jacques Cousteau", "Robert Ballard"],
+    "image_url": null,
+    "source_url": "https://www.kon-tiki.no/en/heyerdahls-expeditions/kon-tiki"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which British ship carried out the pioneering global oceanographic expedition of 1872–76?",
+    "correct_answer": "HMS Challenger",
+    "decoys": ["HMS Beagle", "HMS Endeavour", "HMS Discovery"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Challenger-Expedition"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which prison was stormed in Paris on July 14, 1789?",
+    "correct_answer": "Bastille",
+    "decoys": ["Conciergerie", "Temple Prison", "Chatelet"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/storming-of-the-Bastille"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which English king was deposed during the Glorious Revolution of 1688?",
+    "correct_answer": "James II",
+    "decoys": ["Charles II", "William III", "George I"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Glorious-Revolution"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which political group seized power in Russia during the October Revolution of 1917?",
+    "correct_answer": "Bolsheviks",
+    "decoys": ["Mensheviks", "Kadets", "Socialist Revolutionaries"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/October-Revolution-Russian-history"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In which country did the Industrial Revolution begin?",
+    "correct_answer": "Great Britain",
+    "decoys": ["France", "Germany", "United States"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Industrial-Revolution"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which British suffragette was a leading founder of the Women's Social and Political Union in 1903?",
+    "correct_answer": "Emmeline Pankhurst",
+    "decoys": ["Millicent Fawcett", "Emily Davison", "Josephine Butler"],
+    "image_url": null,
+    "source_url": "https://www.parliament.uk/about/living-heritage/transformingsociety/electionsvoting/womenvote/overview/startsuffragette-/"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In what year did the Berlin Wall open after nearly three decades of division?",
+    "correct_answer": "1989",
+    "decoys": ["1987", "1990", "1991"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Berlin-Wall"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Who led Poland's Solidarity trade-union movement and later became president?",
+    "correct_answer": "Lech Walesa",
+    "decoys": ["Tadeusz Mazowiecki", "Wojciech Jaruzelski", "Bronislaw Geremek"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Lech-Walesa"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which country underwent the largely peaceful Carnation Revolution in 1974?",
+    "correct_answer": "Portugal",
+    "decoys": ["Spain", "Greece", "Italy"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Carnation-Revolution"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "Which Chinese dynasty was overthrown by the revolution of 1911?",
+    "correct_answer": "Qing dynasty",
+    "decoys": ["Ming dynasty", "Yuan dynasty", "Song dynasty"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Chinese-Revolution-1911-1912"
+  },
+  {
+    "category_id": 2,
+    "language_code": "en",
+    "question_text": "In which country did the Velvet Revolution end communist rule in 1989?",
+    "correct_answer": "Czechoslovakia",
+    "decoys": ["Hungary", "Romania", "Bulgaria"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Velvet-Revolution"
+  }
+]
