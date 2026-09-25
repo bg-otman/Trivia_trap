@@ -1,20 +1,24 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import {
   Crosshair,
   Landmark,
   LockKeyhole,
 } from "lucide-react";
+import { motion } from "motion/react";
 import { QuestionMedia } from "@/components/game/question/question-media";
 import { cn } from "@/lib/utils";
+import { animateSuccessIcon } from "@/animations/micro-interactions";
+import { createVotingEntrance } from "@/animations/voting-animations";
+import { useGsapContext } from "@/hooks/use-gsap-context";
 import type { Question, VotingOption } from "@/types/question";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 export interface VotingArenaProps {
   question: Question;
   options: VotingOption[];
   lockedOptionId: VotingOption["id"] | null;
-  votesSubmitted: number;
-  totalVoters: number;
   votingClosed?: boolean;
   onVote: (optionId: VotingOption["id"]) => void;
 }
@@ -27,8 +31,23 @@ export function VotingArena({
   onVote,
 }: VotingArenaProps) {
   const hasVoted = lockedOptionId !== null;
+  const reducedMotion = useReducedMotion();
+  const arena = useRef<HTMLElement>(null);
+
+  useGsapContext(arena, () => {
+    if (arena.current) createVotingEntrance(arena.current, Boolean(reducedMotion));
+  }, [options.length, reducedMotion]);
+
+  useEffect(() => {
+    if (!lockedOptionId) return;
+    const animation = animateSuccessIcon(
+      arena.current?.querySelector<HTMLElement>("[data-vote-lock]") ?? null,
+      Boolean(reducedMotion),
+    );
+    return () => { animation?.cancel(); };
+  }, [lockedOptionId, reducedMotion]);
   return (
-    <main className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 pb-6 pt-8 sm:px-6 lg:px-8 lg:pt-10">
+    <main ref={arena} className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 pb-6 pt-8 sm:px-6 lg:px-8 lg:pt-10">
       <section
         className="flex w-full max-w-[900px] flex-col items-center text-center"
         aria-labelledby="voting-question"
@@ -74,8 +93,13 @@ export function VotingArena({
             const isDisabled = hasVoted || votingClosed;
 
             return (
-              <button
+              <motion.button
                 key={option.id}
+                data-voting-option
+                transition={{ type: "spring", stiffness: 300, damping: 24, mass: 0.75 }}
+                whileHover={!isDisabled && !reducedMotion ? { scale: 1.015, y: -2 } : undefined}
+                whileTap={!isDisabled && !reducedMotion ? { scale: 0.97 } : undefined}
+                animate={isSelected && !reducedMotion ? { scale: [1, 1.025, 1.02] } : { scale: 1 }}
                 type="button"
                 onClick={() => onVote(option.id)}
                 disabled={isDisabled}
@@ -101,13 +125,13 @@ export function VotingArena({
                   </span>
                   {isSelected && (
                     <span className="mt-1 flex items-center gap-1 font-ui text-[10px] font-bold tracking-[0.08em] text-primary">
-                      <LockKeyhole className="size-3" aria-hidden="true" />
+                      <span data-vote-lock><LockKeyhole className="size-3" aria-hidden="true" /></span>
                       VOTE LOCKED
                     </span>
                   )}
                 </span>
 
-              </button>
+              </motion.button>
             );
           })}
         </section>
