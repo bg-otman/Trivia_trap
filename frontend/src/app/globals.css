@@ -179,3 +179,8 @@ textarea {
     ),
     radial-gradient(circle at 7% 90%, rgba(46, 47, 197, 0.18), transparent 30%);
 }
+
+@keyframes transition-sweep {
+  from { transform: translateX(0) skewX(-18deg); }
+  to { transform: translateX(500%) skewX(-18deg); }
+}
