@@ -1,71 +1,334 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { animationPacing } from "@/animations/pacing";
+import { mockChatMessages } from "@/mocks/chat";
 import { mockGame } from "@/mocks/game";
 import { mockQuestions } from "@/mocks/questions";
-import { mockAnswerReveal } from "@/mocks/results";
+import {
+  mockAnswerReveal,
+  mockFinalResults,
+  mockRoundResults,
+} from "@/mocks/results";
 import { GameHud } from "./hud/game-hud";
 import { PlayerRoster } from "./players/player-roster";
+import { FullScreenPhaseTransition } from "./transitions/phase-transition";
+import { GameIntro } from "./system/game-intro";
+import { LobbyPhase } from "./phases/lobby-phase";
 import { CategoryPhase } from "./phases/category-phase";
 import { TrapPhase } from "./phases/trap-phase";
 import { VotingPhase } from "./phases/voting-phase";
 import { ResultsRevealPhase } from "./phases/results-reveal-phase";
 import { RoundResultsPhase } from "./phases/round-results-phase";
-import type { GamePhase } from "@/types/game";
+import { FinalResultsPhase } from "./phases/final-results-phase";
+import type { Category } from "./question/category-card";
+import type { ChatMessageData } from "@/types/chat";
+import type { GamePhase, GameSettings } from "@/types/game";
+import type { Player } from "@/types/player";
+import type { Question, VotingOption } from "@/types/question";
+import type {
+  AnswerReveal,
+  FinalResults,
+  RoundResults,
+} from "@/types/results";
+
+interface MockGameFlowState {
+  currentPhase: GamePhase;
+  roomCode: string;
+  settings: GameSettings;
+  players: Player[];
+  chatMessages: ChatMessageData[];
+  currentRound: number;
+  totalRounds: number;
+  selectedCategory: Category | null;
+  currentQuestion: Question;
+  submittedTrapAnswer: string;
+  votingOptions: VotingOption[];
+  selectedVote: VotingOption["id"] | null;
+  playerSubmitted: boolean;
+  playerVoted: boolean;
+  revealState: AnswerReveal | null;
+  roundStandings: RoundResults;
+  finalStandings: FinalResults;
+  timeRemaining: number;
+}
 
 const timedPhases: GamePhase[] = ["CATEGORY", "TRAP", "VOTING"];
+const activePlayerIds = new Set(mockGame.players.map((player) => player.id));
+const mockRoundStandings: RoundResults = {
+  players: mockRoundResults.players.filter((player) => activePlayerIds.has(player.id)),
+};
+const mockGameFinalStandings: FinalResults = {
+  standings: mockFinalResults.standings.filter((player) =>
+    activePlayerIds.has(player.id),
+  ),
+};
 
 export function TriviaTrapGame() {
-  const game = mockGame;
-  const [phase, setPhase] = useState<GamePhase>(game.phase);
-  const [seconds, setSeconds] = useState(game.timeRemaining);
+  const [game, setGame] = useState<MockGameFlowState>(() => createInitialState());
+  const [showGameIntro, setShowGameIntro] = useState(false);
+  const isHost = game.players.some(
+    (player) => player.isYou && player.role === "HOST",
+  );
 
   useEffect(() => {
-    if (!timedPhases.includes(phase) || seconds <= 0) return;
+    if (!timedPhases.includes(game.currentPhase) || game.timeRemaining <= 0) {
+      return;
+    }
 
     const interval = window.setInterval(() => {
-      setSeconds((current) => Math.max(0, current - 1));
+      setGame((current) => ({
+        ...current,
+        timeRemaining: Math.max(0, current.timeRemaining - 1),
+      }));
     }, 1000);
 
     return () => window.clearInterval(interval);
-  }, [phase, seconds]);
+  }, [game.currentPhase, game.timeRemaining]);
 
-  function renderPhase() {
+  function startGame() {
+    setGame((current) =>
+      resetRound({ ...current, totalRounds: current.settings.totalRounds }, 1),
+    );
+    setShowGameIntro(true);
+    window.setTimeout(() => setShowGameIntro(false), 1650);
+  }
+
+  function toggleReady() {
+    setGame((current) => ({
+      ...current,
+      players: current.players.map((player) =>
+        player.isYou && player.role !== "HOST"
+          ? {
+              ...player,
+              status: player.status === "READY" ? "NOT_READY" : "READY",
+            }
+          : player,
+      ),
+    }));
+  }
+
+  function kickPlayer(playerId: Player["id"]) {
+    setGame((current) => ({
+      ...current,
+      players: current.players.filter((player) => player.id !== playerId),
+      roundStandings: {
+        players: current.roundStandings.players.filter(
+          (player) => player.id !== playerId,
+        ),
+      },
+      finalStandings: {
+        standings: current.finalStandings.standings.filter(
+          (player) => player.id !== playerId,
+        ),
+      },
+    }));
+  }
+
+  function updateSettings(settings: GameSettings) {
+    setGame((current) => ({
+      ...current,
+      settings,
+      totalRounds: settings.totalRounds,
+    }));
+  }
+
+  function selectCategory(category: Category) {
+    setGame((current) => ({
+      ...current,
+      selectedCategory: category,
+      currentQuestion: questionForRound(current.currentRound, category),
+    }));
+
+    window.setTimeout(() => {
+      setGame((current) =>
+        current.currentPhase === "CATEGORY" && current.selectedCategory === category
+          ? {
+              ...current,
+              currentPhase: "TRAP",
+              timeRemaining: current.settings.bluffTime,
+            }
+          : current,
+      );
+    }, animationPacing.categoryReactionMs);
+  }
+
+  function sendChatMessage(text: string) {
+    setGame((current) => {
+      const player = current.players.find((candidate) => candidate.isYou);
+      if (!player) return current;
+
+      return {
+        ...current,
+        chatMessages: [
+          ...current.chatMessages,
+          {
+            id: `message-${Date.now()}`,
+            playerId: player.id,
+            playerName: player.name,
+            playerAvatar: player.avatar,
+            text,
+            timestamp: new Date().toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
+            }),
+            isYou: true,
+          },
+        ],
+      };
+    });
+  }
+
+  function submitTrapAnswer(answer: string) {
+    setGame((current) => {
+      const revealState = buildRevealState(answer, current.players);
+      return {
+        ...current,
+        submittedTrapAnswer: answer,
+        playerSubmitted: true,
+        revealState,
+        votingOptions: buildVotingOptions(revealState, current.currentRound),
+        selectedVote: null,
+        playerVoted: false,
+      };
+    });
+
+    window.setTimeout(() => {
+      setGame((current) =>
+        current.currentPhase === "TRAP" && current.playerSubmitted
+          ? { ...current, currentPhase: "VOTING", timeRemaining: current.settings.voteTime }
+          : current,
+      );
+    }, animationPacing.trapLockHoldMs);
+  }
+
+  function castVote(optionId: VotingOption["id"]) {
+    setGame((current) => {
+      if (current.playerVoted || current.timeRemaining <= 0) return current;
+      return { ...current, selectedVote: optionId, playerVoted: true };
+    });
+
+    window.setTimeout(() => {
+      setGame((current) =>
+        current.currentPhase === "VOTING" && current.selectedVote === optionId
+          ? { ...current, currentPhase: "RESULTS_REVEAL", timeRemaining: 0 }
+          : current,
+      );
+    }, animationPacing.voteLockHoldMs);
+  }
+
+  function continueAfterRound() {
+    setGame((current) => {
+      if (current.currentRound >= current.totalRounds) {
+        return { ...current, currentPhase: "FINAL_RESULTS" };
+      }
+
+      const nextRound = current.currentRound + 1;
+      return resetRound(current, nextRound);
+    });
+  }
+
+  function playAgain() {
+    setGame(createInitialState("CATEGORY"));
+  }
+
+  function leaveRoom() {
+    setShowGameIntro(false);
+    setGame(createInitialState("LOBBY"));
+  }
+
+  function renderPhase(phase: GamePhase) {
     switch (phase) {
+      case "LOBBY":
+        return (
+          <LobbyPhase
+            players={game.players}
+            roomCode={game.roomCode}
+            settings={game.settings}
+            chatMessages={game.chatMessages}
+            isHost={isHost}
+            onStartGame={startGame}
+            onToggleReady={toggleReady}
+            onKickPlayer={kickPlayer}
+            onSettingsChange={updateSettings}
+            onSendMessage={sendChatMessage}
+          />
+        );
       case "CATEGORY":
         return (
           <CategoryPhase
             currentRound={game.currentRound}
             totalRounds={game.totalRounds}
+            selectedCategory={game.selectedCategory}
+            onSelectCategory={selectCategory}
           />
         );
       case "TRAP":
         return (
           <TrapPhase
-            question={mockQuestions[0]}
+            question={game.currentQuestion}
             currentRound={game.currentRound}
             totalRounds={game.totalRounds}
+            answer={game.submittedTrapAnswer}
+            submitted={game.playerSubmitted}
+            onAnswerChange={(answer) =>
+              setGame((current) => ({
+                ...current,
+                submittedTrapAnswer: answer,
+              }))
+            }
+            onSubmitAnswer={submitTrapAnswer}
           />
         );
       case "VOTING":
-        return <VotingPhase seconds={seconds} />;
-      case "RESULTS_REVEAL":
         return (
-          <ResultsRevealPhase
-            reveal={mockAnswerReveal}
-            onShowResults={() => setPhase("ROUND_RESULTS")}
+          <VotingPhase
+            question={game.currentQuestion}
+            options={game.votingOptions}
+            selectedVote={game.selectedVote}
+            hasVoted={game.playerVoted}
+            seconds={game.timeRemaining}
+            onCastVote={castVote}
           />
         );
+      case "RESULTS_REVEAL":
+        return game.revealState ? (
+          <ResultsRevealPhase
+            reveal={game.revealState}
+            onShowResults={() =>
+              setGame((current) => ({
+                ...current,
+                currentPhase: "ROUND_RESULTS",
+              }))
+            }
+          />
+        ) : null;
       case "ROUND_RESULTS":
-        return <RoundResultsPhase />;
-      default:
         return (
-          <div className="flex min-h-[400px] items-center justify-center">
-            <p className="text-muted-foreground">Phase not implemented yet.</p>
-          </div>
+          <RoundResultsPhase
+            results={game.roundStandings}
+            currentRound={game.currentRound}
+            totalRounds={game.totalRounds}
+            isHost={isHost}
+            onContinue={continueAfterRound}
+          />
+        );
+      case "FINAL_RESULTS":
+        return (
+          <FinalResultsPhase
+            results={game.finalStandings}
+            onPlayAgain={playAgain}
+            onLeaveRoom={leaveRoom}
+          />
         );
     }
   }
+
+  const showHud = game.currentPhase !== "LOBBY";
+  const showRoster =
+    game.currentPhase !== "LOBBY" &&
+    game.currentPhase !== "ROUND_RESULTS" &&
+    game.currentPhase !== "FINAL_RESULTS";
 
   return (
     <main className="relative isolate min-h-dvh overflow-x-hidden bg-background text-foreground">
@@ -79,21 +342,144 @@ export function TriviaTrapGame() {
         <div className="absolute inset-x-0 top-0 h-[40vh] bg-gradient-to-b from-white/[0.025] to-transparent" />
       </div>
 
+      {showGameIntro ? <GameIntro round={game.currentRound} /> : null}
+
       <div className="relative flex min-h-dvh flex-col">
-        <GameHud
-          round={game.currentRound}
-          totalRounds={game.totalRounds}
-          seconds={seconds}
-          roomCode={game.roomCode}
-          phase={phase}
-        />
+        {showHud ? (
+          <GameHud
+            round={game.currentRound}
+            totalRounds={game.totalRounds}
+            seconds={game.timeRemaining}
+            roomCode={game.roomCode}
+            phase={game.currentPhase}
+          />
+        ) : null}
 
-        <div className="flex w-full flex-1 flex-col justify-center">
-          {renderPhase()}
-        </div>
+        <FullScreenPhaseTransition phase={game.currentPhase}>
+          {(displayedPhase) => renderPhase(displayedPhase)}
+        </FullScreenPhaseTransition>
 
-        <PlayerRoster players={game.players} />
+        {showRoster && <PlayerRoster players={game.players} />}
       </div>
     </main>
   );
+}
+
+function createInitialState(
+  currentPhase: GamePhase = mockGame.phase,
+): MockGameFlowState {
+  return {
+    currentPhase,
+    roomCode: mockGame.roomCode,
+    settings: { ...mockGame.settings },
+    players: mockGame.players.map((player) => ({ ...player })),
+    chatMessages: mockChatMessages.map((message) => ({ ...message })),
+    currentRound: 1,
+    totalRounds: mockGame.totalRounds,
+    selectedCategory: null,
+    currentQuestion: questionForRound(1),
+    submittedTrapAnswer: "",
+    votingOptions: [],
+    selectedVote: null,
+    playerSubmitted: false,
+    playerVoted: false,
+    revealState: null,
+    roundStandings: mockRoundStandings,
+    finalStandings: mockGameFinalStandings,
+    timeRemaining: mockGame.settings.bluffTime,
+  };
+}
+
+function resetRound(
+  current: MockGameFlowState,
+  nextRound: number,
+): MockGameFlowState {
+  return {
+    ...current,
+    currentPhase: "CATEGORY",
+    currentRound: nextRound,
+    selectedCategory: null,
+    currentQuestion: questionForRound(nextRound),
+    submittedTrapAnswer: "",
+    votingOptions: [],
+    selectedVote: null,
+    playerSubmitted: false,
+    playerVoted: false,
+    revealState: null,
+    timeRemaining: current.settings.bluffTime,
+  };
+}
+
+function questionForRound(round: number, category?: Category): Question {
+  const categoryQuestion = category
+    ? mockQuestions.find(
+        (question) => question.category.toLowerCase() === category,
+      )
+    : undefined;
+  const question =
+    categoryQuestion ?? mockQuestions[(round - 1) % mockQuestions.length];
+
+  if (!question) {
+    throw new Error("At least one mock question is required to start the game.");
+  }
+
+  return {
+    ...question,
+    category: category ? category.toUpperCase() : question.category,
+  };
+}
+
+function buildRevealState(
+  submittedAnswer: string,
+  players: Player[],
+): AnswerReveal {
+  const currentPlayer = players.find((player) => player.isYou);
+  const playerIds = new Set(players.map((player) => player.id));
+  const submissions = mockAnswerReveal.submissions
+    .filter((submission) => playerIds.has(submission.author.id))
+    .map((submission) =>
+      submission.author.id === currentPlayer?.id
+        ? { ...submission, text: submittedAnswer }
+        : submission,
+    );
+
+  if (
+    currentPlayer &&
+    !submissions.some((submission) => submission.author.id === currentPlayer.id)
+  ) {
+    submissions.push({
+      id: `trap_${currentPlayer.id}`,
+      text: submittedAnswer,
+      author: {
+        id: currentPlayer.id,
+        name: currentPlayer.name,
+        avatar: currentPlayer.avatar,
+      },
+    });
+  }
+
+  return {
+    correctAnswer: mockAnswerReveal.correctAnswer,
+    submissions,
+  };
+}
+
+function buildVotingOptions(
+  reveal: AnswerReveal,
+  round: number,
+): VotingOption[] {
+  const answerTexts = [
+    reveal.correctAnswer,
+    ...reveal.submissions.map((submission) => submission.text),
+  ];
+  const offset = answerTexts.length > 0 ? round % answerTexts.length : 0;
+  const randomized = [
+    ...answerTexts.slice(offset),
+    ...answerTexts.slice(0, offset),
+  ];
+
+  return randomized.map((text, index) => ({
+    id: `choice_${round}_${String(index + 1).padStart(2, "0")}`,
+    text,
+  }));
 }
