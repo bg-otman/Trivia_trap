@@ -393,7 +393,7 @@
     "correct_answer": "Johannes Gutenberg",
     "decoys": ["Aldus Manutius", "William Caxton", "Christophe Plantin"],
     "image_url": null,
-    "source_url": "https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/gutenberg/"
+    "source_url": "https://www.loc.gov/exhibits/bibles/the-gutenberg-bible.html"
   },
   {
     "category_id": 2,
@@ -447,7 +447,7 @@
     "correct_answer": "Ashoka",
     "decoys": ["Chandragupta Maurya", "Bindusara", "Dasharatha"],
     "image_url": null,
-    "source_url": "https://www.nationalmuseumindia.gov.in/en/collections/index/21"
+    "source_url": "https://www.incredibleindia.gov.in/en/odisha/bhubaneswar/the-unexplored-ashokan-rock-edicts-odisha"
   },
   {
     "category_id": 2,
@@ -744,7 +744,7 @@
     "correct_answer": "Juan Sebastián Elcano",
     "decoys": ["Francisco Pizarro", "Hernando de Soto", "Martin Alonso Pinzon"],
     "image_url": null,
-    "source_url": "https://www.cultura.gob.es/en/cultura/areas/archivos/mc/archivos/agi/exposiciones-y-actividades/exposiciones/exposicion-pacifico/exposicion/exploracion/primera-vuelta.html"
+    "source_url": "https://ejercito.defensa.gob.es/museo/HECHOS_HISTORICOS/HECHOS_HISTORICOS/09.06_sept_SE_COMPLETO_LA_PRIMERA_VUELTA_AL_MUNDO_POR_ELCANO.html"
   },
   {
     "category_id": 2,

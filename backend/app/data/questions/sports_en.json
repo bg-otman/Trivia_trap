@@ -1,0 +1,1302 @@
+[
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the maximum number of players one association football team may have on the field?",
+        "correct_answer": "11",
+        "decoys": [
+            "9",
+            "10",
+            "12"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-players/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Under the IFAB Laws, a football match may not start or continue if a team has fewer than how many players?",
+        "correct_answer": "7",
+        "decoys": [
+            "6",
+            "8",
+            "9"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-players/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the distance between the inside edges of the goalposts in association football?",
+        "correct_answer": "7.32 metres",
+        "decoys": [
+            "6.32 metres",
+            "8.32 metres",
+            "9.32 metres"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-field-of-play/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How high is the lower edge of a football goal's crossbar above the ground?",
+        "correct_answer": "2.44 metres",
+        "decoys": [
+            "2.14 metres",
+            "2.74 metres",
+            "3.04 metres"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-field-of-play/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How far is the penalty mark from the midpoint between the goalposts in association football?",
+        "correct_answer": "11 metres",
+        "decoys": [
+            "9 metres",
+            "10 metres",
+            "12 metres"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-field-of-play/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the radius of the quarter circle marking each corner area on a football field?",
+        "correct_answer": "1 metre",
+        "decoys": [
+            "0.5 metres",
+            "1.5 metres",
+            "2 metres"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-field-of-play/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What circumference range is permitted for a regulation association football?",
+        "correct_answer": "68-70 centimetres",
+        "decoys": [
+            "58-60 centimetres",
+            "63-65 centimetres",
+            "73-75 centimetres"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-ball/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What weight range must a regulation football have at the start of a match?",
+        "correct_answer": "410-450 grams",
+        "decoys": [
+            "310-350 grams",
+            "360-400 grams",
+            "460-500 grams"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-ball/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many equal halves make up normal playing time in association football?",
+        "correct_answer": "2",
+        "decoys": [
+            "1",
+            "3",
+            "4"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-duration-of-the-match/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How long is each half of a standard association football match?",
+        "correct_answer": "45 minutes",
+        "decoys": [
+            "30 minutes",
+            "40 minutes",
+            "50 minutes"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-duration-of-the-match/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the maximum permitted half-time interval in association football?",
+        "correct_answer": "15 minutes",
+        "decoys": [
+            "10 minutes",
+            "20 minutes",
+            "25 minutes"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-duration-of-the-match/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which restart begins each half of an association football match?",
+        "correct_answer": "Kick-off",
+        "decoys": [
+            "Corner kick",
+            "Goal kick",
+            "Throw-in"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-start-and-restart-of-play/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "When is the ball out of play after crossing a football field's boundary line?",
+        "correct_answer": "When it wholly crosses the line",
+        "decoys": [
+            "When half of it crosses the line",
+            "When most of it crosses the line",
+            "When it touches the line"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-ball-in-and-out-of-play/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What ball-position requirement must be met for a goal in association football?",
+        "correct_answer": "The whole ball must cross the goal line between the posts and under the crossbar",
+        "decoys": [
+            "Half the ball must cross the goal line",
+            "The ball must touch the goal line",
+            "The goalkeeper must touch the ball behind the line"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "For an offside position, an attacker is compared with which opponent?",
+        "correct_answer": "The second-last opponent",
+        "decoys": [
+            "The last opponent",
+            "The third-last opponent",
+            "The nearest substitute"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/offside/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which card indicates that a football player has been cautioned?",
+        "correct_answer": "Yellow card",
+        "decoys": [
+            "Red card",
+            "Blue card",
+            "Green card"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/fouls-and-misconduct/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which type of free kick can be scored directly into the opponents' goal?",
+        "correct_answer": "Direct free kick",
+        "decoys": [
+            "Indirect free kick",
+            "Dropped ball",
+            "Throw-in"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/free-kicks/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How far must opponents normally remain from the ball at a football free kick?",
+        "correct_answer": "9.15 metres",
+        "decoys": [
+            "7.15 metres",
+            "8.15 metres",
+            "10.15 metres"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/free-kicks/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How must a player deliver a legal throw-in in association football?",
+        "correct_answer": "With both hands",
+        "decoys": [
+            "With one hand",
+            "With either foot",
+            "With the head"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-throw-in/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which restart is awarded when a defender last touches the ball before it wholly crosses that team's goal line without a goal?",
+        "correct_answer": "Corner kick",
+        "decoys": [
+            "Goal kick",
+            "Kick-off",
+            "Throw-in"
+        ],
+        "image_url": null,
+        "source_url": "https://www.theifab.com/laws/latest/the-corner-kick/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many players from each team must be ready on the court for a FIBA basketball game to start?",
+        "correct_answer": "5",
+        "decoys": [
+            "4",
+            "6",
+            "7"
+        ],
+        "image_url": null,
+        "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-fiba-official-rules-2024-v10a.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many quarters are played in a FIBA basketball game?",
+        "correct_answer": "4",
+        "decoys": [
+            "2",
+            "3",
+            "5"
+        ],
+        "image_url": null,
+        "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-fiba-official-rules-2024-v10a.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How long is each quarter under FIBA basketball rules?",
+        "correct_answer": "10 minutes",
+        "decoys": [
+            "8 minutes",
+            "12 minutes",
+            "15 minutes"
+        ],
+        "image_url": null,
+        "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-fiba-official-rules-2024-v10a.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How long is the standard FIBA basketball shot-clock period?",
+        "correct_answer": "24 seconds",
+        "decoys": [
+            "20 seconds",
+            "30 seconds",
+            "35 seconds"
+        ],
+        "image_url": null,
+        "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-fiba-official-rules-2024-v10a.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Within how many seconds must a FIBA team move the ball from its backcourt into its frontcourt?",
+        "correct_answer": "8 seconds",
+        "decoys": [
+            "5 seconds",
+            "10 seconds",
+            "12 seconds"
+        ],
+        "image_url": null,
+        "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-fiba-official-rules-2024-v10a.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "While their team controls the live ball in the frontcourt and the game clock is running, how long may a FIBA player remain in the opponents' restricted area?",
+        "correct_answer": "3 seconds",
+        "decoys": [
+            "2 seconds",
+            "4 seconds",
+            "5 seconds"
+        ],
+        "image_url": null,
+        "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-fiba-official-rules-2024-v10a.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the official length of a FIBA basketball court?",
+        "correct_answer": "28 metres",
+        "decoys": [
+            "24 metres",
+            "26 metres",
+            "30 metres"
+        ],
+        "image_url": null,
+        "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-fiba-official-rules-2024-v10a.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the official width of a FIBA basketball court?",
+        "correct_answer": "15 metres",
+        "decoys": [
+            "12 metres",
+            "14 metres",
+            "18 metres"
+        ],
+        "image_url": null,
+        "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-fiba-official-rules-2024-v10a.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many points is a successful basketball free throw worth?",
+        "correct_answer": "1 point",
+        "decoys": [
+            "2 points",
+            "3 points",
+            "4 points"
+        ],
+        "image_url": null,
+        "source_url": "https://official.nba.com/rule-no-5-scoring-and-timing/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How high is the upper edge of an NBA basket ring above the floor?",
+        "correct_answer": "10 feet",
+        "decoys": [
+            "8 feet",
+            "9 feet",
+            "12 feet"
+        ],
+        "image_url": null,
+        "source_url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How long is a regulation tennis court?",
+        "correct_answer": "78 feet",
+        "decoys": [
+            "68 feet",
+            "74 feet",
+            "84 feet"
+        ],
+        "image_url": null,
+        "source_url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How wide is a tennis court for singles matches?",
+        "correct_answer": "27 feet",
+        "decoys": [
+            "24 feet",
+            "30 feet",
+            "36 feet"
+        ],
+        "image_url": null,
+        "source_url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How wide is a tennis court for doubles matches?",
+        "correct_answer": "36 feet",
+        "decoys": [
+            "27 feet",
+            "30 feet",
+            "39 feet"
+        ],
+        "image_url": null,
+        "source_url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the height of a tennis net at its centre?",
+        "correct_answer": "3 feet",
+        "decoys": [
+            "2.5 feet",
+            "3.5 feet",
+            "4 feet"
+        ],
+        "image_url": null,
+        "source_url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What word represents zero points in standard tennis scoring?",
+        "correct_answer": "Love",
+        "decoys": [
+            "Deuce",
+            "Advantage",
+            "Let"
+        ],
+        "image_url": null,
+        "source_url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What score follows 30 in a standard tennis game?",
+        "correct_answer": "40",
+        "decoys": [
+            "35",
+            "45",
+            "50"
+        ],
+        "image_url": null,
+        "source_url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the score called when both players have won three points in a standard tennis game?",
+        "correct_answer": "Deuce",
+        "decoys": [
+            "Love",
+            "Advantage",
+            "Game"
+        ],
+        "image_url": null,
+        "source_url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many games must a player normally win to take a standard tennis set, with a two-game margin?",
+        "correct_answer": "6 games",
+        "decoys": [
+            "4 games",
+            "5 games",
+            "7 games"
+        ],
+        "image_url": null,
+        "source_url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "From which side does the server begin each standard tennis game?",
+        "correct_answer": "Right side",
+        "decoys": [
+            "Left side",
+            "Centre mark",
+            "Either side by choice"
+        ],
+        "image_url": null,
+        "source_url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How is a tennis ball that touches a boundary line judged?",
+        "correct_answer": "It is in",
+        "decoys": [
+            "It is out",
+            "The point is replayed",
+            "The serve is a let"
+        ],
+        "image_url": null,
+        "source_url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which city hosted the first modern Olympic Games in 1896?",
+        "correct_answer": "Athens",
+        "decoys": [
+            "Paris",
+            "London",
+            "Rome"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "In which year were the first modern Olympic Games held?",
+        "correct_answer": "1896",
+        "decoys": [
+            "1888",
+            "1900",
+            "1904"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Who became the first Olympic champion of the modern era at Athens 1896?",
+        "correct_answer": "James Connolly",
+        "decoys": [
+            "Spyridon Louis",
+            "Thomas Burke",
+            "Robert Garrett"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many athletes took part in the Athens 1896 Olympic Games?",
+        "correct_answer": "241 athletes",
+        "decoys": [
+            "141 athletes",
+            "341 athletes",
+            "441 athletes"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Who won the marathon at the Athens 1896 Olympic Games?",
+        "correct_answer": "Spyridon Louis",
+        "decoys": [
+            "James Connolly",
+            "Thomas Burke",
+            "Robert Garrett"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "At which Olympic Games did women first compete?",
+        "correct_answer": "Paris 1900",
+        "decoys": [
+            "Athens 1896",
+            "St Louis 1904",
+            "London 1908"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many sports were contested at the Athens 1896 Olympic Games?",
+        "correct_answer": "9 sports",
+        "decoys": [
+            "7 sports",
+            "11 sports",
+            "13 sports"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "In which sport did British athlete Charlotte Cooper compete at Paris 1900?",
+        "correct_answer": "Tennis",
+        "decoys": [
+            "Golf",
+            "Archery",
+            "Sailing"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Besides tennis, in which sport did women make their Olympic debut at Paris 1900?",
+        "correct_answer": "Golf",
+        "decoys": [
+            "Swimming",
+            "Fencing",
+            "Athletics"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which town hosted the event later recognised as the first Olympic Winter Games?",
+        "correct_answer": "Chamonix",
+        "decoys": [
+            "St Moritz",
+            "Oslo",
+            "Grenoble"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/Default/basicfilesdownload.ashx?itemId=1002"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many athletes participated in the event later recognised as the Chamonix 1924 Olympic Winter Games?",
+        "correct_answer": "258 athletes",
+        "decoys": [
+            "158 athletes",
+            "358 athletes",
+            "458 athletes"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/Default/basicfilesdownload.ashx?itemId=1002"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Who became the first champion at the Chamonix 1924 Winter Games?",
+        "correct_answer": "Charles Jewtraw",
+        "decoys": [
+            "Clas Thunberg",
+            "Thorleif Haug",
+            "Gillis Grafstrom"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/Default/basicfilesdownload.ashx?itemId=1002"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many countries were represented at the Chamonix 1924 Winter Games?",
+        "correct_answer": "16 countries",
+        "decoys": [
+            "12 countries",
+            "20 countries",
+            "24 countries"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/Default/basicfilesdownload.ashx?itemId=1002"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many interlinked rings make up the Olympic symbol?",
+        "correct_answer": "5",
+        "decoys": [
+            "4",
+            "6",
+            "7"
+        ],
+        "image_url": null,
+        "source_url": "https://gstatic.olympics.com/s3/mc2026/documents/Education%20Programme/OVEP/English%20Toolkit/OVEP-Fundamentals-2023%20-%20English.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "At which Games was the Olympic flag first hoisted over an Olympic stadium?",
+        "correct_answer": "Antwerp 1920",
+        "decoys": [
+            "Stockholm 1912",
+            "Paris 1924",
+            "Amsterdam 1928"
+        ],
+        "image_url": null,
+        "source_url": "https://gstatic.olympics.com/s3/mc2026/documents/Education%20Programme/OVEP/English%20Toolkit/OVEP-Fundamentals-2023%20-%20English.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What term does Formula 1 use for the combination of components that powers the car?",
+        "correct_answer": "Power unit",
+        "decoys": [
+            "Pit board",
+            "Front wing",
+            "Survival cell"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/latest/article/f1-glossary-p-t.GBhLQtpeu9b8LrK5VM0F1"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which circuit hosted the first Formula 1 World Championship race in 1950?",
+        "correct_answer": "Silverstone",
+        "decoys": [
+            "Monza",
+            "Monaco",
+            "Spa-Francorchamps"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/latest/article/why-is-it-called-formula-1-and-12-other-questions-about-the-championships.1GHeel6u4jga6hMpX2eFs1"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Who won the first Formula 1 World Championship race in 1950?",
+        "correct_answer": "Giuseppe Farina",
+        "decoys": [
+            "Juan Manuel Fangio",
+            "Luigi Fagioli",
+            "Reg Parnell"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/latest/article/who-was-Giuseppe-farina-f1s-first-winner-and-world-champion.2F9v3g8tSavnqiL9wUjYAx"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which item is held out from the pit wall to display information to a Formula 1 driver?",
+        "correct_answer": "Pit board",
+        "decoys": [
+            "Timing loop",
+            "Wheel gun",
+            "Front jack"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/latest/article/f1-glossary-p-t.GBhLQtpeu9b8LrK5VM0F1"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What does pole position mean in Formula 1?",
+        "correct_answer": "The first starting grid slot",
+        "decoys": [
+            "The final pit box",
+            "The fastest race lap",
+            "The lead safety car position"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/latest/article/f1-glossary-p-t.GBhLQtpeu9b8LrK5VM0F1"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the pit lane in Formula 1?",
+        "correct_answer": "The track section giving access to pit boxes and garages",
+        "decoys": [
+            "The final sector of the racing circuit",
+            "The area where the starting grid is formed",
+            "The escape road beyond a corner"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/latest/article/f1-glossary-p-t.GBhLQtpeu9b8LrK5VM0F1"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What normally happens during a Formula 1 pit stop?",
+        "correct_answer": "Tyres are changed or repairs are made",
+        "decoys": [
+            "The starting order is redrawn",
+            "The circuit direction is reversed",
+            "Championship points are awarded"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/latest/article/f1-glossary-p-t.GBhLQtpeu9b8LrK5VM0F1"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the main role of an FIA steward at a Formula 1 weekend?",
+        "correct_answer": "To enforce the regulations and investigate incidents",
+        "decoys": [
+            "To design the racing circuit",
+            "To change tyres during pit stops",
+            "To operate the television cameras"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/latest/article/f1-glossary-p-t.GBhLQtpeu9b8LrK5VM0F1"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which flag signals the end of a Formula 1 race?",
+        "correct_answer": "Chequered flag",
+        "decoys": [
+            "Blue flag",
+            "Green flag",
+            "Yellow flag"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/latest/article/watch-f1-explained-what-do-all-the-marshals-flags-mean.11m6Sp8b24f4gfFUnwprNJ"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is prohibited while an F1 driver serves a stop-go penalty in the pit box?",
+        "correct_answer": "Work on the car",
+        "decoys": [
+            "Stopping the engine",
+            "Speaking by radio",
+            "Rejoining the race"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/latest/article/f1-glossary-p-t.GBhLQtpeu9b8LrK5VM0F1"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Under World Boxing's ten-point must system, how many points does a judge normally award the round's winner?",
+        "correct_answer": "10 points",
+        "decoys": [
+            "8 points",
+            "9 points",
+            "12 points"
+        ],
+        "image_url": null,
+        "source_url": "https://worldboxing.org/wp-content/uploads/2024/09/World-Boxing-Competition-Rules-Feb-2024-v3.99-ClEAN.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "A boxer who cannot resume boxing before which count loses by knockout under World Boxing rules?",
+        "correct_answer": "10",
+        "decoys": [
+            "8",
+            "12",
+            "15"
+        ],
+        "image_url": null,
+        "source_url": "https://worldboxing.org/wp-content/uploads/2024/09/World-Boxing-Competition-Rules-Feb-2024-v3.99-ClEAN.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which referee command tells boxers to start or continue boxing?",
+        "correct_answer": "Box",
+        "decoys": [
+            "Break",
+            "Stop",
+            "Time"
+        ],
+        "image_url": null,
+        "source_url": "https://worldboxing.org/wp-content/uploads/2024/09/World-Boxing-Competition-Rules-Feb-2024-v3.99-ClEAN.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many rounds did each men's and women's Olympic boxing bout have at Paris 2024?",
+        "correct_answer": "3 rounds",
+        "decoys": [
+            "2 rounds",
+            "4 rounds",
+            "5 rounds"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3416177&parentDocumentId=3416166&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How long was each Olympic boxing round at Paris 2024?",
+        "correct_answer": "3 minutes",
+        "decoys": [
+            "2 minutes",
+            "4 minutes",
+            "5 minutes"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3416177&parentDocumentId=3416166&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the decisive full-point score called in judo?",
+        "correct_answer": "Ippon",
+        "decoys": [
+            "Waza-ari",
+            "Yuko",
+            "Koka"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/default/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=158482&parentDocumentId=69352&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the matted competition area in judo called?",
+        "correct_answer": "Tatami",
+        "decoys": [
+            "Dohyo",
+            "Octagon",
+            "Ring"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/default/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=158482&parentDocumentId=69352&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the competition suit worn by a judo athlete called?",
+        "correct_answer": "Judogi",
+        "decoys": [
+            "Karategi",
+            "Dobok",
+            "Hakama"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/default/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=158482&parentDocumentId=69352&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which karate discipline consists of demonstrating a sequence of forms against a virtual opponent?",
+        "correct_answer": "Kata",
+        "decoys": [
+            "Kumite",
+            "Kihon",
+            "Randori"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/Default/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=207321&parentDocumentId=206701&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What were the dimensions of the karate kumite competition area at Tokyo 2020?",
+        "correct_answer": "8 m by 8 m",
+        "decoys": [
+            "6 m by 6 m",
+            "10 m by 10 m",
+            "12 m by 12 m"
+        ],
+        "image_url": null,
+        "source_url": "https://library.olympics.com/Default/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=207321&parentDocumentId=206701&skipCopyright=true&skipWatermark=true"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many laps of a standard outdoor track make up a 400-metre race?",
+        "correct_answer": "1 lap",
+        "decoys": [
+            "2 laps",
+            "3 laps",
+            "4 laps"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/disciplines/sprints/400-metres"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many hurdles are cleared in the men's 110-metre hurdles?",
+        "correct_answer": "10",
+        "decoys": [
+            "8",
+            "9",
+            "12"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/disciplines/hurdles/110-metres-hurdles"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "In which year did the women's 100-metre hurdles in its current format make its Olympic debut?",
+        "correct_answer": "1972",
+        "decoys": [
+            "1964",
+            "1968",
+            "1976"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/disciplines/hurdles/100-metres-hurdles"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the official marathon distance?",
+        "correct_answer": "42.195 kilometres",
+        "decoys": [
+            "40.000 kilometres",
+            "41.500 kilometres",
+            "43.000 kilometres"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/disciplines/race-walks/marathon"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many runners compete for one team in a 4x100-metre relay?",
+        "correct_answer": "4 runners",
+        "decoys": [
+            "3 runners",
+            "5 runners",
+            "6 runners"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/disciplines/relays/4x100-metres-relay"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How far does each runner cover in a 4x100-metre relay?",
+        "correct_answer": "100 metres",
+        "decoys": [
+            "50 metres",
+            "200 metres",
+            "400 metres"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/disciplines/relays/4x100-metres-relay"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many disciplines make up an athletics decathlon?",
+        "correct_answer": "10",
+        "decoys": [
+            "7",
+            "8",
+            "12"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/disciplines/combined/decathlon"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which event is contested last in a standard decathlon?",
+        "correct_answer": "1500 metres",
+        "decoys": [
+            "400 metres",
+            "110 metres hurdles",
+            "Javelin throw"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/disciplines/combined/decathlon"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many disciplines make up an outdoor women's heptathlon?",
+        "correct_answer": "7",
+        "decoys": [
+            "5",
+            "8",
+            "10"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/disciplines/combined/heptathlon"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "Which event concludes the standard outdoor women's heptathlon?",
+        "correct_answer": "800 metres",
+        "decoys": [
+            "200 metres",
+            "1500 metres",
+            "Javelin throw"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/disciplines/combined/heptathlon"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many players are on the field for each team in standard rugby union?",
+        "correct_answer": "15",
+        "decoys": [
+            "11",
+            "13",
+            "17"
+        ],
+        "image_url": null,
+        "source_url": "https://passport.world.rugby/laws-of-the-game/foreword/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How long is normal playing time in a standard rugby union match?",
+        "correct_answer": "80 minutes",
+        "decoys": [
+            "60 minutes",
+            "70 minutes",
+            "90 minutes"
+        ],
+        "image_url": null,
+        "source_url": "https://passport.world.rugby/laws-of-the-game/laws-by-number/5-time/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many points is a try worth in rugby union?",
+        "correct_answer": "5 points",
+        "decoys": [
+            "3 points",
+            "4 points",
+            "6 points"
+        ],
+        "image_url": null,
+        "source_url": "https://passport.world.rugby/laws-of-the-game/laws-by-number/8-scoring/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many points is a successful conversion worth in rugby union?",
+        "correct_answer": "2 points",
+        "decoys": [
+            "1 point",
+            "3 points",
+            "5 points"
+        ],
+        "image_url": null,
+        "source_url": "https://passport.world.rugby/laws-of-the-game/laws-by-number/8-scoring/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many points is a successful penalty goal worth in rugby union?",
+        "correct_answer": "3 points",
+        "decoys": [
+            "1 point",
+            "2 points",
+            "5 points"
+        ],
+        "image_url": null,
+        "source_url": "https://passport.world.rugby/laws-of-the-game/laws-by-number/8-scoring/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many players are normally on each side in a cricket match?",
+        "correct_answer": "11",
+        "decoys": [
+            "9",
+            "10",
+            "12"
+        ],
+        "image_url": null,
+        "source_url": "https://www.lords.org/mcc/the-laws/the-players"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many valid balls make up a standard over in cricket?",
+        "correct_answer": "6",
+        "decoys": [
+            "5",
+            "7",
+            "8"
+        ],
+        "image_url": null,
+        "source_url": "https://www.lords.org/mcc/the-laws/the-over"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the length of a regulation cricket pitch?",
+        "correct_answer": "22 yards",
+        "decoys": [
+            "18 yards",
+            "20 yards",
+            "24 yards"
+        ],
+        "image_url": null,
+        "source_url": "https://www.lords.org/mcc/the-laws/the-pitch"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many wooden stumps form each wicket in cricket?",
+        "correct_answer": "3",
+        "decoys": [
+            "2",
+            "4",
+            "5"
+        ],
+        "image_url": null,
+        "source_url": "https://www.lords.org/mcc/the-laws/the-wickets"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many runs are normally scored when a cricket ball clears the boundary without first touching the ground?",
+        "correct_answer": "6 runs",
+        "decoys": [
+            "3 runs",
+            "4 runs",
+            "5 runs"
+        ],
+        "image_url": null,
+        "source_url": "https://www.lords.org/mcc/the-laws/boundaries"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many defensive positions does a baseball team field at one time?",
+        "correct_answer": "9",
+        "decoys": [
+            "8",
+            "10",
+            "11"
+        ],
+        "image_url": null,
+        "source_url": "https://www.mlb.com/glossary/positions"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many players from one volleyball team are on the court during play?",
+        "correct_answer": "6",
+        "decoys": [
+            "5",
+            "7",
+            "8"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fivb.com/volleyball/the-game/basic-rules/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the maximum number of holes in a round under the Rules of Golf?",
+        "correct_answer": "18 holes",
+        "decoys": [
+            "9 holes",
+            "12 holes",
+            "24 holes"
+        ],
+        "image_url": null,
+        "source_url": "https://www.randa.org/rog/the-rules-of-golf/rule-5"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "How many points normally win a table tennis game before the deuce rule applies?",
+        "correct_answer": "11 points",
+        "decoys": [
+            "9 points",
+            "15 points",
+            "21 points"
+        ],
+        "image_url": null,
+        "source_url": "https://db.ittf.com/sites/default/files/public/2021-04/2020ITTFHandbook.pdf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "en",
+        "question_text": "What is the maximum number of players from one team permitted on the field in outdoor hockey?",
+        "correct_answer": "11",
+        "decoys": [
+            "9",
+            "10",
+            "12"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fih.hockey/about-fih/official-documents/rules-of-hockey"
+    }
+]

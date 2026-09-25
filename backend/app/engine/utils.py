@@ -83,5 +83,6 @@ def clear_data(room: Room):
     room.meta_data.correct_answer = None
     room.meta_data.sumbitted_bluffs.clear()
     room.meta_data.fake_answers.clear()
+    room.meta_data.voting_choices.clear()
     room.meta_data.voting_results.clear()
     room.meta_data.podium.clear()

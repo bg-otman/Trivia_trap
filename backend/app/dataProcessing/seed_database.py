@@ -39,6 +39,34 @@ CATEGORY_SEEDS: dict[int, dict[str, Any]] = {
             "ar": "التاريخ",
         },
     },
+    3: {
+        "image_url": "/images/geography.png",
+        "translations": {
+            "en": "Geography",
+            "ar": "الجغرافيا",
+        },
+    },
+    4: {
+        "image_url": "/images/sports.png",
+        "translations": {
+            "en": "Sports",
+            "ar": "الرياضة",
+        },
+    },
+    5: {
+        "image_url": "/images/art-literature.png",
+        "translations": {
+            "en": "Art & Literature",
+            "ar": "الفن والأدب",
+        },
+    },
+    6: {
+        "image_url": "/images/technology.png",
+        "translations": {
+            "en": "Technology",
+            "ar": "التكنولوجيا",
+        },
+    },
 }
 
 LANGUAGE_CODE_MAX_LENGTH = Question.__table__.c.language_code.type.length

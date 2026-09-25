@@ -38,7 +38,6 @@ from .models import (
 
 
 async def save_game_results(
-    *,
     host_user_id: int,
     language_code: str,
     total_rounds: int,

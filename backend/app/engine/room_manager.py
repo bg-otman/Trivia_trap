@@ -3,7 +3,7 @@ from typing import Annotated
 from pydantic import Field, ValidationError
 from .utils import GameError, lobby_update
 from .room_models import Room
-from .events import join_room, process_event
+from .events import join_room, process_event, reevaluate_room_progress
 from json import JSONDecodeError
 
 router = APIRouter(prefix="/room", tags=["Room"])
@@ -16,6 +16,13 @@ class RoomManager():
         await ws.accept()
         if not ws.state.user_id or not ws.state.user_name:
             raise GameError("INVALID_PAYLOAD", "Missing user_id or user_name in WebSocket state")
+        room = self.rooms.get(room_id)
+        existing = room.players.get(ws.state.user_id) if room else None
+        if existing is not None and existing.ws is not ws:
+            try:
+                await existing.ws.close()
+            except Exception:
+                pass
         join_room(self.rooms, ws, room_id, ws.state.user_id, ws.state.user_name)
         await self.broadcast(lobby_update(self.rooms[room_id]), room_id, None)
 
@@ -30,7 +37,7 @@ class RoomManager():
                 if player.is_present:
                     await player.ws.send_json(data)
             except Exception:
-                self.mark_disconnected(id, room_id)
+                await self.mark_disconnected(id, room_id, player.ws)
 
     async def send_to_player(self, data: Annotated[str | dict, Field(description="Data in JSON format")], room_id: str, player_id: str):
         if room_id not in self.rooms:
@@ -41,34 +48,64 @@ class RoomManager():
         try:
             await player.ws.send_json(data)
         except Exception:
-            self.mark_disconnected(player_id, room_id)
+            await self.mark_disconnected(player_id, room_id, player.ws)
 
-    async def remove_connection(self, player_id: str, room_id: str):
+    async def remove_connection(self, player_id: str, room_id: str, expected_ws: WebSocket | None = None):
         """
             remove disconnected user from the list of active rooms
         """
         if room_id not in self.rooms:
             return
         player = self.rooms.get(room_id).players.get(player_id)
+        if player is not None and expected_ws is not None and player.ws is not expected_ws:
+            return
         try:
             if player is not None:
                 await player.ws.close()
         except Exception:
             pass
         if player is not None:
+            room = self.rooms[room_id]
+            room.meta_data.sumbitted_bluffs.pop(player_id, None)
+            room.meta_data.voting_results.pop(player_id, None)
+            for choice in room.meta_data.voting_choices:
+                choice["author_ids"] = [
+                    author_id
+                    for author_id in choice.get("author_ids", [])
+                    if author_id != player_id
+                ]
             del self.rooms[room_id].players[player_id]
-        if room_id in self.rooms and not self.rooms[room_id].players:
-            del self.rooms[room_id]
+        if room_id in self.rooms:
+            room = self.rooms[room_id]
+            if not room.players:
+                if room.meta_data.timer_task and not room.meta_data.timer_task.done():
+                    room.meta_data.timer_task.cancel()
+                del self.rooms[room_id]
+            elif room.meta_data.host_id == player_id:
+                room.meta_data.host_id = next(iter(room.players))
 
-    def mark_disconnected(self, player_id: str, room_id: str):
+    async def mark_disconnected(
+        self,
+        player_id: str,
+        room_id: str,
+        expected_ws: WebSocket | None = None,
+    ) -> bool:
         """
             Mark a user as disconnected in the room, but keep them in the room for a while in case they reconnect.
         """
         if room_id not in self.rooms:
-            return
+            return False
         player = self.rooms.get(room_id).players.get(player_id)
-        if player is not None:
-            player.is_present = False
+        if player is None or (expected_ws is not None and player.ws is not expected_ws):
+            return False
+        player.is_present = False
+        room = self.rooms[room_id]
+        if room.meta_data.host_id == player_id:
+            for candidate_id, candidate in room.players.items():
+                if candidate_id != player_id and candidate.is_present:
+                    room.meta_data.host_id = candidate_id
+                    break
+        return True
 
 manager = RoomManager()
 
@@ -98,7 +135,11 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
             try:
                 if room_id not in manager.rooms or user_id not in manager.rooms[room_id].players:
                     break # if player left the room
+                if manager.rooms[room_id].players[user_id].ws is not ws:
+                    break
                 request = await ws.receive_json()
+                if manager.rooms[room_id].players[user_id].ws is not ws:
+                    break
                 event_name = request.get("event")
                 data = request.get("data")
                 await process_event(manager, room_id, user_id, user_name, event_name, data)
@@ -109,11 +150,24 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
             except ValidationError:
                 await manager.send_to_player({"event": "ERROR", "data": {"code": "INVALID_PAYLOAD", "message": "Invalid Data"}}, room_id, user_id)
     except WebSocketDisconnect:
-        manager.mark_disconnected(user_id, room_id)
-        await manager.broadcast(lobby_update(manager.rooms[room_id]), room_id, user_id)
+        marked = await manager.mark_disconnected(user_id, room_id, ws)
+        if marked:
+            await reevaluate_room_progress(manager, room_id)
+            if room_id in manager.rooms:
+                await manager.broadcast(lobby_update(manager.rooms[room_id]), room_id, user_id)
     except GameError as e:
         await manager.send_to_player(e.to_dict(), room_id, user_id)
     except Exception as e:
         print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
-        await manager.remove_connection(ws.state.user_id, room_id)
-
+        try:
+            await ws.send_json({
+                "event": "ERROR",
+                "data": {
+                    "code": "SERVER_ERROR",
+                    "message": "An unexpected server error occurred",
+                },
+            })
+        except Exception:
+            pass
+        await manager.remove_connection(ws.state.user_id, room_id, ws)
+        await reevaluate_room_progress(manager, room_id)
