@@ -15,7 +15,7 @@ from .models import (
 async def get_category_list(
     session: AsyncSession,
     language_code: str,
-) -> list[dict]:
+) -> list[dict] | None:
     statement = (
         select(
             Category.id,
@@ -32,7 +32,10 @@ async def get_category_list(
         .order_by(Category.id)
     )
 
-    result = await session.execute(statement)
+    try:
+        result = await session.execute(statement)
+    except Exception as e:
+        return None
 
     return [
         {
@@ -59,9 +62,12 @@ async def get_random_question(
         .limit(1)
     )
 
-    result = await session.execute(statement)
-    question = result.scalar_one_or_none()
+    try:
+        result = await session.execute(statement)
+    except Exception as e:
+        return None
 
+    question = result.scalar_one_or_none()
     if question is None:
         return None
 
@@ -146,12 +152,12 @@ def build_voting_choices(
             continue
 
         if key in fake_choices:
-            fake_choices[key]["author_ids"].append(player_id)
+            fake_choices[key]["authors_names"].append(player_id)
         else:
             fake_choices[key] = {
                 "id": uuid4().hex,
                 "text": answer,
-                "author_ids": [player_id],
+                "authors_names": [player_id],
                 "is_correct": False,
             }
 
@@ -167,7 +173,7 @@ def build_voting_choices(
         fake_choices[key] = {
             "id": uuid4().hex,
             "text": decoy,
-            "author_ids": [],
+            "authors_names": [],
             "is_correct": False,
         }
 
@@ -176,7 +182,7 @@ def build_voting_choices(
     choices.append({
         "id": uuid4().hex,
         "text": correct_answer,
-        "author_ids": [],
+        "authors_names": [],
         "is_correct": True,
     })
 
@@ -205,102 +211,112 @@ def validate_vote(
     if choice is None:
         return {"is_valid": False, "reason": "INVALID_CHOICE"}
 
-    if voter_id in choice["author_ids"]:
+    if voter_id in choice["authors_names"]:
         return {"is_valid": False, "reason": "SELF_VOTE"}
 
     return {"is_valid": True, "reason": ""}
 
 
-# def calculate_results(
-#     votes: dict[str, str],
-#     choices: list[dict],
-#     players: dict,
-# ) -> dict:
-#     choices_by_id = {choice["id"]: choice for choice in choices}
-#     correct_choices = [
-#         choice for choice in choices if choice["is_correct"]
-#     ]
-
-#     if len(correct_choices) != 1:
-#         raise ValueError("The round must have exactly one correct choice")
-
-#     player_stats = {
-#         player_id: {
-#             "correct_votes": 0,
-#             "bluff_votes_received": 0,
-#         }
-#         for player_id in players
-#     }
-
-#     voters_by_choice = {
-#         choice["id"]: []
-#         for choice in choices
-#     }
-
-#     for voter_id, choice_id in votes.items():
-#         if voter_id not in player_stats:
-#             raise ValueError("Vote from a player outside the room")
-
-#         choice = choices_by_id.get(choice_id)
-#         if choice is None:
-#             raise ValueError("Vote for an unknown choice")
-
-#         if voter_id in choice["author_ids"]:
-#             raise ValueError("Player voted for their own bluff")
-
-#         voters_by_choice[choice_id].append(voter_id)
-
-#         if choice["is_correct"]:
-#             player_stats[voter_id]["correct_votes"] += 1
-#         else:
-#             for author_id in choice["author_ids"]:
-#                 if author_id not in player_stats:
-#                     raise ValueError("Bluff author is outside the room")
-
-#                 player_stats[author_id]["bluff_votes_received"] += 1
-#     for stats in player_stats.values():
-#         stats["round_points"] = (
-#              stats["correct_votes"] + 2 * stats["bluff_votes_received"])
-
-#     return {
-#         "correct_choice_id": correct_choices[0]["id"],
-#         "choices": [
-#             {
-#                 "id": choice["id"],
-#                 "text": choice["text"],
-#                 "author_ids": choice["author_ids"],
-#                 "voters": voters_by_choice[choice["id"]],
-#                 "is_correct": choice["is_correct"],
-#             }
-#             for choice in choices
-#         ],
-#         "player_stats": player_stats,
-#     }
-
-
-def calculate_results(votes: dict[str, str], bluffs: dict[str, str], correct_answer: str, players: dict[str, dict]) -> dict:
+def calculate_results(
+    votes: dict[str, str],
+    bluffs: dict[str, str],
+    correct_answer: str,
+    players: dict[str, "PlayerInfo"],
+    voting_choices: list[dict],
+) -> dict:
     """
-        Calculate the results of the round based on the voting results and submitted bluffs.
+    Calculate the round results from the choices that were actually broadcast in the vote phase.
     """
-    # the expected output is in the return statement below. For now, i will return a demo result.
+    if not voting_choices:
+        raise ValueError("Voting choices are missing for the current round")
+
+    choices_by_id = {
+        choice["id"]: {
+            **choice,
+            "authors_names": list(choice.get("authors_names", [])),
+            "voters": [],
+        }
+        for choice in voting_choices
+    }
+    correct_choice = next((choice for choice in choices_by_id.values() if choice.get("is_correct")), None)
+
+    if correct_choice is None:
+        raise ValueError("Voting choices must include exactly one correct answer")
+
+    normalized_correct_answer = normalize_answer(correct_answer)
+
+    bluff_owner_names: dict[str, list[str]] = {}
+    for player_id, bluff_text in bluffs.items():
+        normalized_bluff = normalize_answer(bluff_text)
+        if not normalized_bluff or normalized_bluff == normalized_correct_answer:
+            continue
+        player = players.get(player_id)
+        if player is None:
+            continue
+        bluff_owner_names.setdefault(normalized_bluff, []).append(player.name)
+
+    choice_by_normalized_text = {
+        normalize_answer(choice["text"]): choice
+        for choice in choices_by_id.values()
+    }
+
+    for normalized_text, authors_names in bluff_owner_names.items():
+        choice = choice_by_normalized_text.get(normalized_text)
+        if choice is None or choice.get("is_correct"):
+            continue
+        choice.setdefault("authors_names", [])
+        choice["authors_names"].extend(authors_names)
+
+    for voter_id, choice_id in votes.items():
+        choice = choices_by_id.get(choice_id)
+        player = players.get(voter_id)
+        if choice is None or player is None:
+            continue
+        choice.setdefault("voters", [])
+        choice["voters"].append(player.name)
+
+    player_scores = {player_id: 0 for player_id in players}
+
+    for choice in choices_by_id.values():
+        if choice.get("is_correct"):
+            for voter_name in choice.get("voters", []):
+                for player_id, player in players.items():
+                    if player.name == voter_name:
+                        player_scores[player_id] += 1
+                        break
+        else:
+            voter_count = len(choice.get("voters", []))
+            for author_name in choice.get("authors_names", []):
+                for player_id, player in players.items():
+                    if player.name == author_name:
+                        player_scores[player_id] += voter_count * 2
+                        break
+
+    leaderboard = []
+    for player_id, player in players.items():
+        player.score += player_scores[player_id]
+        leaderboard.append({
+            "username": player.name,
+            "score": player.score,
+            "avatar_url": player.avatar_url,
+        })
+
+    leaderboard.sort(key=lambda item: item["score"], reverse=True)
+
+    choices = []
+    for choice in voting_choices:
+        resolved_choice = choices_by_id[choice["id"]]
+        choices.append({
+            "id": resolved_choice["id"],
+            "text": resolved_choice["text"],
+            "authors_names": None if resolved_choice.get("is_correct") else resolved_choice.get("authors_names", []),
+            "voters": resolved_choice.get("voters", []),
+            "is_correct": resolved_choice.get("is_correct", False),
+        })
+
     return {
-        "correct_choice_id": "2",
-        "choices": [
-          {
-            "id": "1",
-            "text": "Austria",
-            "author_name": "usr_1",
-            "voters": ["usr_2, usr_3"]
-          },
-          {
-            "id": "2",
-            "text": "Switzerland",
-            "author_name": None, # None because it's the correct answer
-            "voters": ["usr_1"]
-          }
-        ],
-        "leaderboard": [
-          { "username": "alice", "score": 10, "avatar_url": "https://example.com/alice.png" },
-          { "username": "bob", "score": 5, "avatar_url": "https://example.com/bob.png" }
-        ]
-      }
+        "choices": choices,
+        "leaderboard": leaderboard,
+    }
+
+    

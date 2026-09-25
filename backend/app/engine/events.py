@@ -62,12 +62,15 @@ async def get_categories(manager: RoomManager, context: Context):
     """
     room = manager.rooms.get(context.room_id)
     categories = await load_categories(room.meta_data.settings.language)
+    if not categories:
+        raise GameError("ERROR", "Something went wrong while fetching categories")
     room.meta_data.fallback_category = random.choice(categories)
     await manager.broadcast({
         "event": "PHASE_CATEGORY",
         "data": {
             "round": room.meta_data.current_round,
             "total_rounds": room.meta_data.settings.total_rounds,
+            "duration": room.meta_data.settings.vote_time,
             "categories": categories
             }
         }, context.room_id, None)
@@ -95,7 +98,7 @@ async def get_question(manager: RoomManager, context: Context):
     language = room.meta_data.settings.language
     question = await load_question(category_id, language)
     if question is None:
-        raise GameError("NO_QUESTION", "No question available for the selected category")
+        raise GameError("ERROR", "Something went wrong while fetching the question")
     room.meta_data.active_question = question.get("question")
     room.meta_data.image_url = question.get("image_url")
     room.meta_data.correct_answer = question.get("correct_answer")
@@ -104,7 +107,6 @@ async def get_question(manager: RoomManager, context: Context):
         "event": "PHASE_QUESTION",
         "data": { 
             "category": category.get("name"),
-            "category_id": category_id,
             "question": question.get("question"),
             "question_id": question.get("id"),
             "image_url": room.meta_data.image_url,
@@ -120,6 +122,12 @@ async def get_vote_choices(manager: RoomManager, context: Context):
         get the vote list for the current question. This includes the correct answer and all bluff answers submitted by players.
     """
     room = manager.rooms.get(context.room_id)
+    room.meta_data.voting_choices = build_voting_choices(
+        len(room.players),
+        room.meta_data.sumbitted_bluffs,
+        room.meta_data.correct_answer,
+        room.meta_data.fake_answers,
+    )
     await manager.broadcast({
         "event": "PHASE_VOTING",
         "data": { 
@@ -130,10 +138,7 @@ async def get_vote_choices(manager: RoomManager, context: Context):
                 "text": room.meta_data.active_question,
                 "image_url": room.meta_data.image_url
             },
-            "choices": build_voting_choices(len(room.players),
-                                            room.meta_data.sumbitted_bluffs,
-                                            room.meta_data.correct_answer,
-                                            room.meta_data.fake_answers)
+            "choices": room.meta_data.voting_choices
             } 
         }, context.room_id, None)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.vote_time))
@@ -143,7 +148,13 @@ async def reveal_results(manager: RoomManager, context: Context):
         Reveal the results of the round, including the correct answer, votes, and updated scores.
     """
     room = manager.rooms.get(context.room_id)
-    results = calculate_results(room.meta_data.voting_results, room.meta_data.sumbitted_bluffs, room.meta_data.correct_answer, room.players)
+    results = calculate_results(
+        room.meta_data.voting_results,
+        room.meta_data.sumbitted_bluffs,
+        room.meta_data.correct_answer,
+        room.players,
+        room.meta_data.voting_choices,
+    )
     room.meta_data.podium = results.get("leaderboard", [])
     results["round"] = room.meta_data.current_round
     results["total_rounds"] = room.meta_data.settings.total_rounds
@@ -189,8 +200,6 @@ async def to_next_phase(manager: RoomManager, context: Context):
         or when the timer for the current phase has expired.
     """
     room = manager.rooms.get(context.room_id)
-    if context.user_id != room.meta_data.host_id:
-        raise GameError("FORBIDDEN", "Only the host can advance to the next phase")
     # start game
     if room.meta_data.phase.current_state == RoomPhase.LOBBY:
         room.meta_data.phase.start()

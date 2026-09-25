@@ -151,6 +151,7 @@ Purpose: category selection phase.
   "data": {
     "round": 1,
     "total_rounds": 5,
+    "duration": 30,
     "categories": [
       { "id": 1, "name": "General Knowledge", "image_url": "https://example.com/general_knowledge.png"},
       { "id": 2, "name": "Science", "image_url": "https://example.com/science.png"},
@@ -168,7 +169,6 @@ Purpose: round starts and question is shown.
   "event": "PHASE_QUESTION",
   "data": {
     "category": "Geography",
-    "category_id": 1,
     "question": "Which country is known for its Alps?",
     "question_id": 123,
     "image_url": "https://example.com/question.png",  // can be None if no image is available for the question
@@ -210,19 +210,20 @@ Purpose: reveal truth, votes, and updated scores.
   "data": {
     "round": 1,
     "total_rounds": 5,
-    "correct_choice_id": "2",
     "choices": [
       {
         "id": "1",
         "text": "Austria",
-        "authors_name": ["usr_2"],
-        "voters": ["usr_2, usr_3"]
+        "authors_names": ["usr_2"],
+        "voters": ["usr_2, usr_3"],
+        "is_correct": false
       },
       {
         "id": "2",
         "text": "Switzerland",
-        "authors_name": null,
-        "voters": ["usr_1"]
+        "authors_names": null,
+        "voters": ["usr_1"],
+        "is_correct": true
       }
     ],
     "leaderboard": [

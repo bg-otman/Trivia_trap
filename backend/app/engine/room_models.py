@@ -54,6 +54,7 @@ class RoomMetaData(BaseModel):
     correct_answer: Annotated[str | None, Field(description="The correct answer for the current question")] = None
     sumbitted_bluffs: Annotated[dict[str, str], Field(description="Map of player_id to their submitted bluff answer")] = Field(default_factory=dict)
     fake_answers: Annotated[list[str], Field(description="Additional fake answers for the current question")] = Field(default_factory=list)
+    voting_choices: Annotated[list[dict], Field(description="The answer choices broadcast during the voting phase")] = Field(default_factory=list)
     voting_results: Annotated[dict[str, str], Field(description="Map of player_id to the answer they voted for")] = Field(default_factory=dict)
     podium: Annotated[list[dict[str, str]], Field(description="List of players and their scores for the current round")] = Field(default_factory=list)
 
