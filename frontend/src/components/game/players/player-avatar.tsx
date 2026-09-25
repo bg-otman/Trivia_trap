@@ -1,5 +1,7 @@
 import { Crown, Skull, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Blobatar } from "@blobatar/react";
+import "blobatar/motion.css";
 
 export type PlayerAvatarStatus =
   | "default"
@@ -34,12 +36,12 @@ export function PlayerAvatar({
   status = "default",
   className,
 }: PlayerAvatarProps) {
-  const initials = name
-    .split(/[\s_]+/)
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
+  const avatarSource =
+    src ??
+    `https://blobatar.dev/avatar/${encodeURIComponent(
+      name.trim().toLowerCase(),
+    )}?size=${size}&background=none&gen=2`;
+
 
   return (
     <span
@@ -70,11 +72,15 @@ export function PlayerAvatar({
             "ring-4 ring-[#131316] outline outline-[8px] outline-primary shadow-[0_10px_24px_rgba(255,107,53,0.2)]",
         )}
       >
-        {src ? (
-          <img src={src} alt="" className="size-full object-cover" />
-        ) : (
-          initials
-        )}
+        {/* Blobatar returns a cacheable SVG from its avatar endpoint. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <Blobatar
+          name={avatarSource}
+          animate="always"
+          width={size}
+          height={size}
+          className="size-full object-cover"
+        />
       </span>
 
       {status === "ready" ? (

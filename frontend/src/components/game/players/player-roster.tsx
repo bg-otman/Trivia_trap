@@ -5,6 +5,7 @@ import {
   LockKeyhole,
   UsersRound,
 } from "lucide-react";
+import { PlayerAvatar } from "./player-avatar";
 import { cn } from "@/lib/utils";
 import type { Player, PlayerStatus } from "@/types/player";
 
@@ -61,17 +62,12 @@ export function PlayerRoster({ players }: { players: Player[] }) {
                   />
                 )}
 
-                <div
-                  className={cn(
-                    "flex size-10 shrink-0 items-center justify-center rounded-full bg-muted font-display text-xs font-bold text-[#e4e1e6]",
-                    active
-                      ? "border-2 border-primary"
-                      : "border border-border",
-                  )}
-                  aria-hidden="true"
-                >
-                  {player.name.slice(0, 2)}
-                </div>
+                <PlayerAvatar
+                  name={player.name}
+                  src={player.avatar}
+                  size={40}
+                  className={active ? "rounded-full ring-2 ring-primary" : undefined}
+                />
 
                 <div className="min-w-0 flex-1">
                   <div className="flex min-w-0 items-center gap-1">
