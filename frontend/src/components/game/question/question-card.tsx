@@ -1,7 +1,12 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
 import { Eye, HelpCircle, ImageIcon } from "lucide-react";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { QuestionMedia } from "./question-media";
 import type { Question } from "@/types/question";
 import { cn } from "@/lib/utils";
+import { playCategoryHandoff } from "@/animations/category-transition";
 
 interface QuestionCardProps {
   question: Question;
@@ -17,6 +22,12 @@ export function QuestionCard({
   className,
 }: QuestionCardProps) {
   const hasImage = question.type === "IMAGE";
+  const categoryTarget = useRef<HTMLDivElement>(null);
+  const reducedMotion = useReducedMotion();
+
+  useLayoutEffect(() => {
+    playCategoryHandoff(categoryTarget.current, Boolean(reducedMotion));
+  }, [question.id, reducedMotion]);
 
   return (
     <article
@@ -26,7 +37,7 @@ export function QuestionCard({
       )}
     >
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-white/[0.025] px-5 py-4 sm:px-7">
-        <div className="flex min-w-0 items-center gap-2.5">
+        <div ref={categoryTarget} data-category-handoff-target className="flex min-w-0 items-center gap-2.5">
           <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-secondary/40 bg-secondary/20 text-ring">
             {hasImage ? (
               <ImageIcon className="size-4" aria-hidden="true" />

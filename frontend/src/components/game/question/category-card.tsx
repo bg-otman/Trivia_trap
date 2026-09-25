@@ -169,7 +169,7 @@ export function CategoryCard({
           "border-primary bg-primary/10 shadow-[0_0_0_1px_rgba(255,107,53,0.28)]",
         variant === "interactive" &&
           !disabled &&
-          "cursor-pointer hover:border-primary/50",
+          "cursor-pointer hover:border-primary/50 active:scale-[0.98]",
         variant === "default" && "border-border",
         disabled && "cursor-default opacity-70",
         className,
