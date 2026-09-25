@@ -1,5 +1,6 @@
 import { ArrowRight, Eye, UsersRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PhaseContent, StaggerGroup, StaggerItem } from "@/components/game/system/phase-transition";
 import {
   CorrectAnswerCard,
   SubmittedAnswerCard,
@@ -18,7 +19,7 @@ export function ResultsRevealPhase({
   return (
     <section className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <div className="w-full max-w-[1080px]">
-        <header className="mb-5 text-center">
+        <PhaseContent className="mb-5 text-center">
           <div className="mb-2 inline-flex items-center gap-2 text-accent">
             <Eye className="size-4" aria-hidden="true" />
             <span className="font-meta text-[11px] font-black tracking-[0.15em]">
@@ -31,9 +32,9 @@ export function ResultsRevealPhase({
           <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-muted-foreground">
             See the real answer and every player trap before continuing.
           </p>
-        </header>
+        </PhaseContent>
 
-        <CorrectAnswerCard answer={reveal.correctAnswer} />
+        <PhaseContent delay={0.22}><CorrectAnswerCard answer={reveal.correctAnswer} /></PhaseContent>
 
         <div className="mb-3 mt-6 flex items-center justify-between gap-3 px-1">
           <div className="flex items-center gap-2 text-[#e4e1e6]">
@@ -47,13 +48,13 @@ export function ResultsRevealPhase({
           </span>
         </div>
 
-        <div className="grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2">
-          {reveal.submissions.map((submission) => (
-            <SubmittedAnswerCard key={submission.id} submission={submission} />
+        <StaggerGroup delay={0.48} stagger={0.11} className="grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2">
+          {reveal.submissions.map((submission, index) => (
+            <StaggerItem key={submission.id} direction={index % 2 === 0 ? -1 : 1}><SubmittedAnswerCard submission={submission} /></StaggerItem>
           ))}
-        </div>
+        </StaggerGroup>
 
-        <div className="mt-7 flex justify-center">
+        <PhaseContent delay={0.92} className="mt-7 flex justify-center">
           <Button
             type="button"
             size="lg"
@@ -63,7 +64,7 @@ export function ResultsRevealPhase({
             SHOW RESULTS
             <ArrowRight className="size-4" aria-hidden="true" />
           </Button>
-        </div>
+        </PhaseContent>
       </div>
     </section>
   );

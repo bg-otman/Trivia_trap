@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { Check, Crown, Sparkles } from "lucide-react";
+import { motion } from "motion/react";
 import {
   CategoryCard,
   type Category,
 } from "@/components/game/question/category-card";
+import { gameSpring, StaggerGroup, StaggerItem } from "@/components/game/system/phase-transition";
+import { captureCategoryCard } from "@/animations/category-transition";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 const roundCategories: Category[] = [
   "movies",
@@ -14,25 +17,24 @@ const roundCategories: Category[] = [
   "sports",
   "gaming",
   "geography",
+  "music",
 ];
 
 interface CategoryPhaseProps {
   currentRound: number;
   totalRounds: number;
+  selectedCategory: Category | null;
+  onSelectCategory: (category: Category) => void;
 }
 
 export function CategoryPhase({
   currentRound,
   totalRounds,
+  selectedCategory,
+  onSelectCategory,
 }: CategoryPhaseProps) {
-  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
-  const [isLocked, setIsLocked] = useState(false);
-
-  function selectCategory(category: Category) {
-    if (isLocked) return;
-    setSelectedCategory(category);
-    setIsLocked(true);
-  }
+  const isLocked = selectedCategory !== null;
+  const reducedMotion = useReducedMotion();
 
   return (
     <section className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
@@ -54,23 +56,47 @@ export function CategoryPhase({
           </p>
         </header>
 
-        <div
+        <StaggerGroup
           className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4"
-          role="radiogroup"
-          aria-label="Available categories"
         >
-          {roundCategories.map((category) => (
-            <CategoryCard
-              key={category}
-              category={category}
-              selected={selectedCategory === category}
-              disabled={isLocked}
-              variant="interactive"
-              onSelect={selectCategory}
-              className="min-h-[132px] sm:min-h-[150px]"
-            />
-          ))}
-        </div>
+          {roundCategories.map((category) => {
+            const selected = selectedCategory === category;
+            return (
+              <StaggerItem key={category}>
+                <motion.div
+                  data-category-card={category}
+                  animate={reducedMotion ? { opacity: selectedCategory && !selected ? 0.55 : 1 } : {
+                    opacity: selectedCategory && !selected ? 0.45 : 1,
+                    scale: selected ? 1.04 : selectedCategory ? 0.97 : 1,
+                    y: selected ? -4 : 0,
+                  }}
+                  transition={gameSpring}
+                  className="relative"
+                >
+                  {selected && !reducedMotion ? (
+                    <motion.span
+                      className="pointer-events-none absolute inset-2 rounded-2xl border border-primary/40"
+                      initial={{ opacity: 0.7, scale: 0.9 }}
+                      animate={{ opacity: 0, scale: 1.2 }}
+                      transition={{ duration: 0.38 }}
+                    />
+                  ) : null}
+                  <CategoryCard
+                    category={category}
+                    selected={selected}
+                    disabled={isLocked}
+                    variant="interactive"
+                    onSelect={() => {
+                      captureCategoryCard(document.querySelector(`[data-category-card="${category}"]`), Boolean(reducedMotion));
+                      onSelectCategory(category);
+                    }}
+                    className="min-h-[132px] transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_28px_rgba(0,0,0,0.24)] sm:min-h-[150px]"
+                  />
+                </motion.div>
+              </StaggerItem>
+            );
+          })}
+        </StaggerGroup>
 
         <div className="mt-6 flex items-center gap-3 rounded-2xl border border-border bg-card/80 p-4 shadow-lg backdrop-blur-md sm:px-5">
           <div className="flex min-w-0 items-center gap-3">
