@@ -11,3 +11,25 @@ export const mockAnswerReveal: AnswerReveal = {
     { id: "trap_sam", text: "The Palace of Semiramis", author: { id: "sam", name: "SAM" } },
   ],
 };
+
+export const mockRoundResults = {
+  players: [
+    { id: "sarah", name: "SARAH", isYou: false, isHost: false, rankChange: 1, roundPoints: 4, totalScore: 6 },
+    { id: "mehdi", name: "MEHDI", isYou: true, isHost: true, rankChange: 0, roundPoints: 3, totalScore: 4 },
+    { id: "alex", name: "ALEX", isYou: false, isHost: false, rankChange: -1, roundPoints: 1, totalScore: 1 },
+    { id: "yassine", name: "YASSINE", isYou: false, isHost: false, rankChange: 0, roundPoints: 0, totalScore: 0 },
+    { id: "adam", name: "ADAM", isYou: false, isHost: false, rankChange: 1, roundPoints: 1, totalScore: 1 },
+    { id: "sam", name: "SAM", isYou: false, isHost: false, rankChange: -1, roundPoints: 2, totalScore: 2 },
+  ],
+} satisfies import("@/types/results").RoundResults;
+
+export const mockFinalResults = {
+  standings: [
+    { id: "sarah", rank: 1, name: "SARAH", isYou: false, finalScore: 18 },
+    { id: "mehdi", rank: 2, name: "MEHDI", isYou: true, finalScore: 15 },
+    { id: "sam", rank: 3, name: "SAM", isYou: false, finalScore: 12 },
+    { id: "alex", rank: 4, name: "ALEX", isYou: false, finalScore: 10 },
+    { id: "adam", rank: 5, name: "ADAM", isYou: false, finalScore: 8 },
+    { id: "yassine", rank: 6, name: "YASSINE", isYou: false, finalScore: 6 },
+  ],
+} satisfies import("@/types/results").FinalResults;
