@@ -3,6 +3,13 @@
 import { useEffect, useState } from "react";
 import { getProject, onChange } from "@theatre/core";
 
+// These cinematics use sequence position, not Studio-authored object tracks.
+const cinematicState = {
+  definitionVersion: "0.4.0",
+  revisionHistory: [],
+  sheetsById: {},
+};
+
 export function useTheatreCinematic(name: string, duration: number, enabled = true) {
   const [position, setPosition] = useState(0);
 
@@ -10,7 +17,7 @@ export function useTheatreCinematic(name: string, duration: number, enabled = tr
     if (!enabled) return;
     let disposed = false;
     let stopListening: (() => void) | undefined;
-    const project = getProject("Trivia Trap Cinematics");
+    const project = getProject("Trivia Trap Cinematics", { state: cinematicState });
 
     void project.ready.then(() => {
       if (disposed) return;
