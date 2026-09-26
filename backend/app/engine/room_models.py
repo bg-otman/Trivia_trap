@@ -45,8 +45,7 @@ class RoomMetaData(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True) # Allow RoomPhase type in Pydantic model
     host_id: str
     settings: RoomSettings
-    phase: Annotated[RoomPhase, Field(description="Access to the room phase state machine by phase.current_state")] = Field(default_factory=RoomPhase)
-    state_lock: Annotated[asyncio.Lock, Field(description="Serializes room state changes")] = Field(default_factory=asyncio.Lock)
+    phase: Annotated[RoomPhase, Field(description="Access to the room phase state machine by phase.current_state")] = RoomPhase()
     timer_task: Annotated[asyncio.Task | None, Field(description="Timer task to trigger next phase when timeout")] = None
     current_round: int = 1
     active_question: Annotated[str | None, Field(description="The current question being asked in the room")] = None

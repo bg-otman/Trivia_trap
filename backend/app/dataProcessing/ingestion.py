@@ -197,9 +197,6 @@ def validate_vote(
     votes: dict[str, str],
     player_ids: set[str],
 ) -> dict:
-    if not isinstance(choice_id, str):
-        return {"is_valid": False, "reason": "INVALID_PAYLOAD"}
-
     if voter_id not in player_ids:
         return {"is_valid": False, "reason": "NOT_IN_ROOM"}
 
