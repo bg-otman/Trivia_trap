@@ -51,10 +51,10 @@ const palette = [
 ] as const;
 
 const leaderboard = [
-  { name: "GoldStreak", points: 2350 },
-  { name: "PixelNinja", points: 1420 },
-  { name: "VaporWave", points: 1100 },
-  { name: "Alex_99", points: 850 },
+  { id: "gold-streak", name: "GoldStreak", points: 2350 },
+  { id: "pixel-ninja", name: "PixelNinja", points: 1420 },
+  { id: "vapor-wave", name: "VaporWave", points: 1100 },
+  { id: "alex-99", name: "Alex_99", points: 850 },
 ];
 
 function TokenIntro() {
