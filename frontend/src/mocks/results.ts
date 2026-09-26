@@ -3,23 +3,68 @@ import type { AnswerReveal } from "@/types/results";
 export const mockAnswerReveal: AnswerReveal = {
   correctAnswer: "Hanging Gardens of Babylon",
   submissions: [
-    { id: "trap_mehdi", text: "The Sunken Obelisk", author: { id: "mehdi", name: "MEHDI" } },
-    { id: "trap_alex", text: "The Golden Temple Terraces", author: { id: "alex", name: "ALEX" } },
-    { id: "trap_sarah", text: "The Tower Gardens of Nineveh", author: { id: "sarah", name: "SARAH" } },
-    { id: "trap_yassine", text: "The Colossus Gardens", author: { id: "yassine", name: "YASSINE" } },
-    { id: "trap_adam", text: "The Euphrates Stone Steps", author: { id: "adam", name: "ADAM" } },
-    { id: "trap_sam", text: "The Palace of Semiramis", author: { id: "sam", name: "SAM" } },
+    {
+      id: "trap_mehdi",
+      text: "The Sunken Obelisk",
+      author: { id: "mehdi", name: "MEHDI" },
+    },
+    {
+      id: "trap_alex",
+      text: "The Golden Temple Terraces",
+      author: { id: "alex", name: "ALEX" },
+    },
+    {
+      id: "trap_sarah",
+      text: "The Tower Gardens of Nineveh",
+      author: { id: "sarah", name: "SARAH" },
+    },
+    {
+      id: "trap_yassine",
+      text: "The Colossus Gardens",
+      author: { id: "yassine", name: "YASSINE" },
+    },
+    {
+      id: "trap_adam",
+      text: "The Euphrates Stone Steps",
+      author: { id: "adam", name: "ADAM" },
+    },
+    {
+      id: "trap_sam",
+      text: "The Palace of Semiramis",
+      author: { id: "sam", name: "SAM" },
+    },
   ],
 };
 
 export const mockRoundResults = {
   players: [
-    { id: "sarah", name: "SARAH", isYou: false, isHost: false, rankChange: 1, roundPoints: 4, totalScore: 6 },
-    { id: "mehdi", name: "MEHDI", isYou: true, isHost: true, rankChange: 0, roundPoints: 3, totalScore: 4 },
-    { id: "alex", name: "ALEX", isYou: false, isHost: false, rankChange: -1, roundPoints: 1, totalScore: 1 },
-    { id: "yassine", name: "YASSINE", isYou: false, isHost: false, rankChange: 0, roundPoints: 0, totalScore: 0 },
-    { id: "adam", name: "ADAM", isYou: false, isHost: false, rankChange: 1, roundPoints: 1, totalScore: 1 },
-    { id: "sam", name: "SAM", isYou: false, isHost: false, rankChange: -1, roundPoints: 2, totalScore: 2 },
+    {
+      id: "alex",
+      name: "ALEX",
+      isYou: false,
+      isHost: false,
+      rankChange: -1,
+      roundPoints: 0,
+      totalScore: 1000,
+    },
+    {
+      id: "mehdi",
+      name: "MEHDI",
+      isYou: true,
+      isHost: true,
+      rankChange: -1,
+      roundPoints: 0,
+      totalScore: 900,
+    },
+    {
+      id: "sarah",
+      name: "SARAH",
+      isYou: false,
+      isHost: false,
+      rankChange: 2,
+      roundPoints: 400,
+      totalScore: 1100,
+    },
   ],
 } satisfies import("@/types/results").RoundResults;
 
