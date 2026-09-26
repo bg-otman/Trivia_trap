@@ -5,6 +5,7 @@ from .utils import GameError, lobby_update
 from .room_models import Room
 from .events import join_room, process_event, reevaluate_room_progress
 from json import JSONDecodeError
+import traceback
 
 router = APIRouter(prefix="/room", tags=["Room"])
 
@@ -96,16 +97,11 @@ class RoomManager():
         if room_id not in self.rooms:
             return False
         player = self.rooms.get(room_id).players.get(player_id)
-        if player is None or (expected_ws is not None and player.ws is not expected_ws):
-            return False
-        player.is_present = False
-        room = self.rooms[room_id]
-        if room.meta_data.host_id == player_id:
-            for candidate_id, candidate in room.players.items():
-                if candidate_id != player_id and candidate.is_present:
-                    room.meta_data.host_id = candidate_id
-                    break
-        return True
+        if player is not None:
+            player.is_present = False
+            # if the last player in the room disconnected, we remove the room from the list of active rooms
+            if not any(p.is_present for p in self.rooms[room_id].players.values()):
+                del self.rooms[room_id]
 
 manager = RoomManager()
 
@@ -150,24 +146,13 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
             except ValidationError:
                 await manager.send_to_player({"event": "ERROR", "data": {"code": "INVALID_PAYLOAD", "message": "Invalid Data"}}, room_id, user_id)
     except WebSocketDisconnect:
-        marked = await manager.mark_disconnected(user_id, room_id, ws)
-        if marked:
-            await reevaluate_room_progress(manager, room_id)
-            if room_id in manager.rooms:
-                await manager.broadcast(lobby_update(manager.rooms[room_id]), room_id, user_id)
+        manager.mark_disconnected(user_id, room_id)
+        if room_id in manager.rooms:
+            await manager.broadcast(lobby_update(manager.rooms[room_id]), room_id, user_id)
     except GameError as e:
         await manager.send_to_player(e.to_dict(), room_id, user_id)
     except Exception as e:
         print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
-        try:
-            await ws.send_json({
-                "event": "ERROR",
-                "data": {
-                    "code": "SERVER_ERROR",
-                    "message": "An unexpected server error occurred",
-                },
-            })
-        except Exception:
-            pass
-        await manager.remove_connection(ws.state.user_id, room_id, ws)
-        await reevaluate_room_progress(manager, room_id)
+        traceback.print_exc()
+        await manager.remove_connection(ws.state.user_id, room_id)
+

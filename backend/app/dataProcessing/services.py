@@ -7,7 +7,7 @@ from .ingestion import (
 
 async def load_categories(
     language_code: str,
-) -> list[dict]:
+) -> list[dict] | None:
     async with AsyncSessionLocal() as session:
         return await get_category_list(
             session=session,
