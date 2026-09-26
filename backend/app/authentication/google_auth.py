@@ -17,7 +17,7 @@ from authentication.validation_route import AuthRoute
 from google.auth.exceptions import GoogleAuthError, TransportError
 from google.auth.transport.requests import Request
 from google.oauth2 import id_token
-from starlette.concurrency import run_in_threadpool
+from fastapi.concurrency import run_in_threadpool
 
 google_router = APIRouter(route_class=AuthRoute)
 

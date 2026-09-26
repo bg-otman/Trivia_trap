@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, timezone
 from uuid import UUID
 from pwdlib import PasswordHash
 from pwdlib.exceptions import UnknownHashError
-from starlette.concurrency import run_in_threadpool
+from fastapi.concurrency import run_in_threadpool
 from authentication.memory_store import StoredUser, find_user_by_email, find_user_by_id
 
 

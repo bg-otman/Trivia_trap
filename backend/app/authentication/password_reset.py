@@ -7,7 +7,7 @@ from urllib.parse import urlsplit
 
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 from pydantic import BaseModel, EmailStr, Field, SecretStr, field_validator
-from starlette.concurrency import run_in_threadpool
+from fastapi.concurrency import run_in_threadpool
 
 from authentication.mailer import send_email
 from authentication.memory_store import TEST_USERS, find_user_by_email

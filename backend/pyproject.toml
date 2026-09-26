@@ -3,15 +3,10 @@ name = "backend"
 version = "0.1.0"
 requires-python = ">=3.13"
 dependencies = [
-    "alembic>=1.19.1",
-    "asyncpg>=0.31.0",
     "fastapi[standard]>=0.141.1",
     "google-auth>=2.58.0",
     "password-validator>=1.0",
     "pwdlib[argon2]>=0.3.1",
+    "pydantic>=2.13.4",
     "pyjwt>=2.14.0",
-    "python-statemachine>=3.2.1",
-    "requests>=2.34.2",
-    "sqlalchemy>=2.0.52",
-    "websockets>=17.0.1",
 ]
