@@ -17,8 +17,8 @@ if [ ! -f "$CERT_FILE" ] || [ ! -f "$KEY_FILE" ]; then
         -keyout "$KEY_FILE" \
         -out "$CERT_FILE" \
         -days 365 \
-        -subj "/CN=localhost" \
-        -addext "subjectAltName=DNS:localhost,IP:127.0.0.1"
+        -subj "/CN=trivia-trap.local/O=Trivia Trap/OU=ft_transcendence" \
+        -addext "subjectAltName=DNS:trivia-trap.local,DNS:localhost,IP:127.0.0.1"
     chmod 600 "$KEY_FILE"
 fi
 
