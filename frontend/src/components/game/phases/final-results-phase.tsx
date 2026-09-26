@@ -10,14 +10,18 @@ import { useTheatreCinematic } from "@/hooks/use-theatre-cinematic";
 import { animationPacing, cinematicSpring } from "@/animations/pacing";
 import type { FinalResults } from "@/types/results";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { WaitingArena } from "@/components/game/voting/waiting/waiting-arena";
+import type { Player } from "@/types/player";
 
 interface FinalResultsPhaseProps {
+  players: Player[];
   results: FinalResults;
   onPlayAgain: () => void;
   onLeaveRoom: () => void;
 }
 
 export function FinalResultsPhase({
+  players,
   results,
   onPlayAgain,
   onLeaveRoom,
@@ -36,7 +40,7 @@ export function FinalResultsPhase({
   if (!winner) {
     return (
       <section className="relative z-10 flex w-full flex-1 items-center justify-center p-6 text-muted-foreground">
-        Waiting for final standings...
+        <WaitingArena players={players} message="WAITING FOR FINAL STANDINGS" className="max-w-3xl" />
       </section>
     );
   }

@@ -2,16 +2,19 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Check, LockKeyhole, MessageSquareText, Send } from "lucide-react";
-import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { QuestionCard } from "@/components/game/question/question-card";
-import { PhaseContent, gameSpring } from "@/components/game/system/phase-transition";
+import { PhaseContent } from "@/components/game/system/phase-transition";
+import { WaitingArena } from "@/components/game/voting/waiting/waiting-arena";
+import { WaitingSwap } from "@/components/game/voting/waiting/waiting-swap";
 import { animateSuccessIcon } from "@/animations/micro-interactions";
 import type { Question } from "@/types/question";
+import type { Player } from "@/types/player";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 interface TrapPhaseProps {
+  players: Player[];
   question: Question;
   currentRound: number;
   totalRounds: number;
@@ -22,6 +25,7 @@ interface TrapPhaseProps {
 }
 
 export function TrapPhase({
+  players,
   question,
   currentRound,
   totalRounds,
@@ -36,12 +40,18 @@ export function TrapPhase({
 
   useEffect(() => {
     if (!submitted) return;
-    const animation = animateSuccessIcon(successIcon.current, Boolean(reducedMotion));
-    return () => { animation?.cancel(); };
+    const animation = animateSuccessIcon(
+      successIcon.current,
+      Boolean(reducedMotion),
+    );
+    return () => {
+      animation?.cancel();
+    };
   }, [submitted, reducedMotion]);
 
   function submitTrap(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitted) return;
     const trimmedAnswer = answer.trim();
 
     if (trimmedAnswer.length < 2) {
@@ -75,38 +85,46 @@ export function TrapPhase({
 
         <div>
           <QuestionCard
-          question={question}
-          currentRound={currentRound}
-          totalRounds={totalRounds}
+            question={question}
+            currentRound={currentRound}
+            totalRounds={totalRounds}
           />
         </div>
 
-        <PhaseContent delay={0.08} className="mt-5 rounded-2xl border border-white/10 bg-[#19191f]/90 p-5 shadow-[0_16px_36px_rgba(0,0,0,0.2)] sm:p-6">
-          {submitted ? (
-            <div className="flex min-h-[138px] flex-col items-center justify-center text-center">
-              <div className="flex items-center gap-2 text-primary">
-                <LockKeyhole className="size-4" aria-hidden="true" />
-                <p className="font-meta text-[11px] font-black tracking-[0.13em]">
-                  TRAP SUBMITTED · LOCKED
-                </p>
-              </div>
-              <p className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
-                <motion.span ref={successIcon} initial={reducedMotion ? { opacity: 0 } : { opacity: 1 }} animate={{ opacity: 1 }} transition={gameSpring}><Check className="size-3.5 text-[#34d399]" aria-hidden="true" /></motion.span>
-                Waiting for other players...
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={submitTrap}>
+        <PhaseContent delay={0.08} className="mt-5">
+          <WaitingSwap
+            waiting={submitted}
+            className="min-h-64"
+            arena={
+              <WaitingArena
+                players={players}
+                confirmation="TRAP SUBMITTED · LOCKED"
+                detail="Your trap is set. Let's see who takes the bait."
+              />
+            }
+          >
+            <form
+              onSubmit={submitTrap}
+              className="rounded-2xl border border-white/10 bg-[#19191f]/90 p-5 shadow-[0_16px_36px_rgba(0,0,0,0.2)] sm:p-6"
+            >
               <label
                 htmlFor="trap-answer"
                 className="font-meta text-[11px] font-black tracking-[0.13em] text-primary"
               >
-                YOUR ANSWER
+                {submitted ? (
+                  <span className="inline-flex items-center gap-2">
+                    <LockKeyhole className="size-3.5" aria-hidden="true" />
+                    ANSWER LOCKED
+                  </span>
+                ) : (
+                  "YOUR ANSWER"
+                )}
               </label>
               <div className="mt-3 flex flex-col gap-3 sm:flex-row">
                 <Input
                   id="trap-answer"
                   value={answer}
+                  disabled={submitted}
                   onChange={(event) => {
                     onAnswerChange(event.target.value);
                     if (error) setError(null);
@@ -118,15 +136,27 @@ export function TrapPhase({
                   aria-invalid={Boolean(error)}
                   className="h-12 min-w-0 flex-1 rounded-xl border border-border bg-black/25 px-4 text-sm font-semibold text-white outline-none transition placeholder:text-[#6f6f78] focus:border-primary focus:ring-2 focus:ring-primary/20"
                 />
-                <Button type="submit" className="h-12 px-6">
-                  SUBMIT ANSWER
-                  <Send className="size-3.5" aria-hidden="true" />
+                <Button
+                  type="submit"
+                  disabled={submitted}
+                  className="h-12 px-6"
+                >
+                  {submitted ? "ANSWER LOCKED" : "SUBMIT ANSWER"}
+                  {submitted ? (
+                    <span ref={successIcon}>
+                      <Check className="size-3.5" aria-hidden="true" />
+                    </span>
+                  ) : (
+                    <Send className="size-3.5" aria-hidden="true" />
+                  )}
                 </Button>
               </div>
               <div className="mt-2 flex items-start justify-between gap-3 text-[11px]">
                 <p
                   id={error ? "trap-error" : "trap-help"}
-                  className={error ? "text-destructive" : "text-muted-foreground"}
+                  className={
+                    error ? "text-destructive" : "text-muted-foreground"
+                  }
                   role={error ? "alert" : undefined}
                 >
                   {error ?? "Keep it short, specific, and believable."}
@@ -136,7 +166,7 @@ export function TrapPhase({
                 </span>
               </div>
             </form>
-          )}
+          </WaitingSwap>
         </PhaseContent>
       </div>
     </section>

@@ -11,7 +11,7 @@ import {
   mockRoundResults,
 } from "@/mocks/results";
 import { GameHud } from "./hud/game-hud";
-import { PlayerRoster } from "./players/player-roster";
+import { PlayerActivityDock } from "./players/player-activity-dock";
 import { FullScreenPhaseTransition } from "./transitions/phase-transition";
 import { GameIntro } from "./system/game-intro";
 import { LobbyPhase } from "./phases/lobby-phase";
@@ -21,16 +21,14 @@ import { VotingPhase } from "./phases/voting-phase";
 import { ResultsRevealPhase } from "./phases/results-reveal-phase";
 import { RoundResultsPhase } from "./phases/round-results-phase";
 import { FinalResultsPhase } from "./phases/final-results-phase";
+import { WaitingArena } from "./voting/waiting/waiting-arena";
+import { WaitingMotionContext } from "./voting/waiting/waiting-motion";
 import type { Category } from "./question/category-card";
 import type { ChatMessageData } from "@/types/chat";
 import type { GamePhase, GameSettings } from "@/types/game";
 import type { Player } from "@/types/player";
 import type { Question, VotingOption } from "@/types/question";
-import type {
-  AnswerReveal,
-  FinalResults,
-  RoundResults,
-} from "@/types/results";
+import type { AnswerReveal, FinalResults, RoundResults } from "@/types/results";
 
 interface MockGameFlowState {
   currentPhase: GamePhase;
@@ -54,9 +52,14 @@ interface MockGameFlowState {
 }
 
 const timedPhases: GamePhase[] = ["CATEGORY", "TRAP", "VOTING"];
+// Simulated remote-player latency for this mock flow, not an animation/UI lock.
+// A real multiplayer connection advances immediately on the server's phase event.
+const mockPlayerWaitMs = 4800;
 const activePlayerIds = new Set(mockGame.players.map((player) => player.id));
 const mockRoundStandings: RoundResults = {
-  players: mockRoundResults.players.filter((player) => activePlayerIds.has(player.id)),
+  players: mockRoundResults.players.filter((player) =>
+    activePlayerIds.has(player.id),
+  ),
 };
 const mockGameFinalStandings: FinalResults = {
   standings: mockFinalResults.standings.filter((player) =>
@@ -65,10 +68,17 @@ const mockGameFinalStandings: FinalResults = {
 };
 
 export function TriviaTrapGame() {
-  const [game, setGame] = useState<MockGameFlowState>(() => createInitialState());
+  const [game, setGame] = useState<MockGameFlowState>(() =>
+    createInitialState(),
+  );
   const [showGameIntro, setShowGameIntro] = useState(false);
   const isHost = game.players.some(
     (player) => player.isYou && player.role === "HOST",
+  );
+  const voteDeadlinePassed =
+    game.currentPhase === "VOTING" && game.timeRemaining <= 0;
+  const playerScores = Object.fromEntries(
+    game.roundStandings.players.map((player) => [player.id, player.totalScore]),
   );
 
   useEffect(() => {
@@ -85,6 +95,78 @@ export function TriviaTrapGame() {
 
     return () => window.clearInterval(interval);
   }, [game.currentPhase, game.timeRemaining]);
+
+  useEffect(() => {
+    const phase = game.currentPhase;
+    const round = game.currentRound;
+    if (!(
+      (phase === "TRAP" && game.playerSubmitted) ||
+      (phase === "VOTING" && (game.playerVoted || voteDeadlinePassed))
+    ))
+      return;
+
+    const completedStatus = phase === "TRAP" ? "SUBMITTED" : "VOTED";
+    const markRemotePlayers = (count: number) => {
+      setGame((current) => {
+        if (current.currentPhase !== phase || current.currentRound !== round)
+          return current;
+        let completed = 0;
+        return {
+          ...current,
+          players: current.players.map((player) => {
+            if (
+              player.isYou ||
+              player.status === "OFFLINE" ||
+              completed >= count
+            )
+              return player;
+            completed += 1;
+            return { ...player, status: completedStatus };
+          }),
+        };
+      });
+    };
+
+    const activityTimers = voteDeadlinePassed
+      ? []
+      : [
+          window.setTimeout(() => markRemotePlayers(2), 900),
+          window.setTimeout(() => markRemotePlayers(4), 2300),
+        ];
+
+    const timeout = window.setTimeout(
+      () => {
+        setGame((current) => {
+          if (current.currentPhase !== phase || current.currentRound !== round)
+            return current;
+          return phase === "TRAP"
+            ? {
+                ...current,
+                currentPhase: "VOTING",
+                timeRemaining: current.settings.voteTime,
+                players: current.players.map((player) =>
+                  player.status === "OFFLINE"
+                    ? player
+                    : { ...player, status: "THINKING" },
+                ),
+              }
+            : { ...current, currentPhase: "RESULTS_REVEAL", timeRemaining: 0 };
+        });
+      },
+      voteDeadlinePassed ? 0 : mockPlayerWaitMs,
+    );
+
+    return () => {
+      window.clearTimeout(timeout);
+      activityTimers.forEach((timer) => window.clearTimeout(timer));
+    };
+  }, [
+    game.currentPhase,
+    game.currentRound,
+    game.playerSubmitted,
+    game.playerVoted,
+    voteDeadlinePassed,
+  ]);
 
   function startGame() {
     setGame((current) =>
@@ -142,11 +224,17 @@ export function TriviaTrapGame() {
 
     window.setTimeout(() => {
       setGame((current) =>
-        current.currentPhase === "CATEGORY" && current.selectedCategory === category
+        current.currentPhase === "CATEGORY" &&
+        current.selectedCategory === category
           ? {
               ...current,
               currentPhase: "TRAP",
               timeRemaining: current.settings.bluffTime,
+              players: current.players.map((player) =>
+                player.status === "OFFLINE"
+                  ? player
+                  : { ...player, status: "THINKING" },
+              ),
             }
           : current,
       );
@@ -181,40 +269,41 @@ export function TriviaTrapGame() {
 
   function submitTrapAnswer(answer: string) {
     setGame((current) => {
+      if (current.currentPhase !== "TRAP" || current.playerSubmitted)
+        return current;
       const revealState = buildRevealState(answer, current.players);
       return {
         ...current,
         submittedTrapAnswer: answer,
         playerSubmitted: true,
+        players: current.players.map((player) =>
+          player.isYou ? { ...player, status: "SUBMITTED" } : player,
+        ),
         revealState,
         votingOptions: buildVotingOptions(revealState, current.currentRound),
         selectedVote: null,
         playerVoted: false,
       };
     });
-
-    window.setTimeout(() => {
-      setGame((current) =>
-        current.currentPhase === "TRAP" && current.playerSubmitted
-          ? { ...current, currentPhase: "VOTING", timeRemaining: current.settings.voteTime }
-          : current,
-      );
-    }, animationPacing.trapLockHoldMs);
   }
 
   function castVote(optionId: VotingOption["id"]) {
     setGame((current) => {
-      if (current.playerVoted || current.timeRemaining <= 0) return current;
-      return { ...current, selectedVote: optionId, playerVoted: true };
+      if (
+        current.currentPhase !== "VOTING" ||
+        current.playerVoted ||
+        current.timeRemaining <= 0
+      )
+        return current;
+      return {
+        ...current,
+        selectedVote: optionId,
+        playerVoted: true,
+        players: current.players.map((player) =>
+          player.isYou ? { ...player, status: "VOTED" } : player,
+        ),
+      };
     });
-
-    window.setTimeout(() => {
-      setGame((current) =>
-        current.currentPhase === "VOTING" && current.selectedVote === optionId
-          ? { ...current, currentPhase: "RESULTS_REVEAL", timeRemaining: 0 }
-          : current,
-      );
-    }, animationPacing.voteLockHoldMs);
   }
 
   function continueAfterRound() {
@@ -266,6 +355,7 @@ export function TriviaTrapGame() {
       case "TRAP":
         return (
           <TrapPhase
+            players={game.players}
             question={game.currentQuestion}
             currentRound={game.currentRound}
             totalRounds={game.totalRounds}
@@ -283,6 +373,7 @@ export function TriviaTrapGame() {
       case "VOTING":
         return (
           <VotingPhase
+            players={game.players}
             question={game.currentQuestion}
             options={game.votingOptions}
             selectedVote={game.selectedVote}
@@ -302,10 +393,18 @@ export function TriviaTrapGame() {
               }))
             }
           />
-        ) : null;
+        ) : (
+          <div className="mx-auto w-full max-w-4xl px-4 py-8">
+            <WaitingArena
+              players={game.players}
+              message="WAITING FOR RESULTS"
+            />
+          </div>
+        );
       case "ROUND_RESULTS":
         return (
           <RoundResultsPhase
+            players={game.players}
             results={game.roundStandings}
             currentRound={game.currentRound}
             totalRounds={game.totalRounds}
@@ -316,6 +415,7 @@ export function TriviaTrapGame() {
       case "FINAL_RESULTS":
         return (
           <FinalResultsPhase
+            players={game.players}
             results={game.finalStandings}
             onPlayAgain={playAgain}
             onLeaveRoom={leaveRoom}
@@ -356,10 +456,18 @@ export function TriviaTrapGame() {
         ) : null}
 
         <FullScreenPhaseTransition phase={game.currentPhase}>
-          {(displayedPhase) => renderPhase(displayedPhase)}
+          {(displayedPhase) => (
+            <WaitingMotionContext.Provider
+              value={displayedPhase === game.currentPhase}
+            >
+              {renderPhase(displayedPhase)}
+            </WaitingMotionContext.Provider>
+          )}
         </FullScreenPhaseTransition>
 
-        {showRoster && <PlayerRoster players={game.players} />}
+        {showRoster && (
+          <PlayerActivityDock players={game.players} scores={playerScores} />
+        )}
       </div>
     </main>
   );
@@ -420,7 +528,9 @@ function questionForRound(round: number, category?: Category): Question {
     categoryQuestion ?? mockQuestions[(round - 1) % mockQuestions.length];
 
   if (!question) {
-    throw new Error("At least one mock question is required to start the game.");
+    throw new Error(
+      "At least one mock question is required to start the game.",
+    );
   }
 
   return {

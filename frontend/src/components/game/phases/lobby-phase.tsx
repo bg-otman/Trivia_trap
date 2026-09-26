@@ -41,6 +41,8 @@ import type { ChatMessageData } from "@/types/chat";
 import type { GameSettings } from "@/types/game";
 import type { Player } from "@/types/player";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { WaitingArena } from "@/components/game/voting/waiting/waiting-arena";
+import { WaitingMessage } from "@/components/game/voting/waiting/waiting-message";
 
 interface LobbyPhaseProps {
   players: Player[];
@@ -129,8 +131,8 @@ export function LobbyPhase({
             </div>
           </div>
           <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground">
-            <span className="size-2 animate-pulse rounded-full bg-[#4ade80]" />
-            LOBBY OPEN · WAITING FOR PLAYERS
+            <span className="size-2 rounded-full bg-[#4ade80]" />
+            <WaitingMessage message="LOBBY OPEN · WAITING FOR PLAYERS" className="text-[10px] text-muted-foreground" />
           </div>
         </header>
 
@@ -280,12 +282,14 @@ export function LobbyPhase({
             ) : isReady ? (
               <div className="flex w-full gap-2 sm:w-auto">
                 <Button type="button" variant="surface" onClick={onToggleReady} className="flex-1 sm:flex-none">UNREADY</Button>
-                <Button type="button" variant="secondary" disabled className="flex-1 opacity-100 sm:min-w-52">WAITING FOR HOST</Button>
               </div>
             ) : (
               <Button type="button" size="lg" onClick={onToggleReady} className="w-full sm:w-auto sm:min-w-64">READY UP</Button>
             )}
           </div>
+          {isReady || isHost ? (
+            <WaitingArena players={players} compact animateAll message={isHost ? "WAITING FOR PLAYERS TO GET READY" : "WAITING FOR THE HOST"} className="mt-4" />
+          ) : null}
         </Card></motion.div>
       </div>
     </section>

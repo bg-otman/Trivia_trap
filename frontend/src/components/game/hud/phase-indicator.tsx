@@ -58,12 +58,12 @@ export function PhaseIndicator({ phase, className }: PhaseIndicatorProps) {
                 !active && !complete && "text-muted-foreground",
               )}
               animate={active && !reducedMotion ? { scale: [0.92, 1.06, 1] } : { scale: 1 }}
-              transition={gameSpring}
+              transition={{ ...gameSpring, scale: { type: "tween", duration: 0.35, ease: "easeInOut" } }}
               aria-current={active ? "step" : undefined}
               title={item.label}
             >
               {active && <span data-phase-indicator data-flip-id="active-phase-node" className="absolute inset-0 rounded-full bg-secondary" />}
-              <motion.span data-phase-handoff-target={item.phase} className="relative z-10" animate={active && !reducedMotion ? { scale: [0.75, 1.18, 1] } : { scale: 1 }} transition={gameSpring} aria-hidden="true">{item.icon}</motion.span>
+              <motion.span data-phase-handoff-target={item.phase} className="relative z-10" animate={active && !reducedMotion ? { scale: [0.75, 1.18, 1] } : { scale: 1 }} transition={{ type: "tween", duration: 0.4, ease: "easeInOut" }} aria-hidden="true">{item.icon}</motion.span>
               <span className={cn("relative z-10 hidden tracking-[0.06em]", active && "xl:inline")}>{item.label}</span>
             </motion.div>
           </div>

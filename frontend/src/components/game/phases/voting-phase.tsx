@@ -2,8 +2,10 @@
 
 import { VotingArena } from "@/components/game/voting/voting-arena";
 import type { Question, VotingOption } from "@/types/question";
+import type { Player } from "@/types/player";
 
 interface VotingPhaseProps {
+  players: Player[];
   question: Question;
   options: VotingOption[];
   selectedVote: VotingOption["id"] | null;
@@ -13,6 +15,7 @@ interface VotingPhaseProps {
 }
 
 export function VotingPhase({
+  players,
   question,
   options,
   selectedVote,
@@ -22,6 +25,7 @@ export function VotingPhase({
 }: VotingPhaseProps) {
   return (
     <VotingArena
+      players={players}
       question={question}
       options={options}
       lockedOptionId={hasVoted ? selectedVote : null}

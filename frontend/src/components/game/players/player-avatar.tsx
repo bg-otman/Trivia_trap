@@ -26,6 +26,7 @@ interface PlayerAvatarProps {
   src?: string;
   size?: PlayerAvatarSize;
   status?: PlayerAvatarStatus;
+  animated?: boolean;
   className?: string;
 }
 
@@ -34,13 +35,15 @@ export function PlayerAvatar({
   src,
   size = 48,
   status = "default",
+  animated = true,
   className,
 }: PlayerAvatarProps) {
+  // Blobatar hashes this value: preserve the existing 40px roster identity at every size.
   const avatarSource =
     src ??
     `https://blobatar.dev/avatar/${encodeURIComponent(
       name.trim().toLowerCase(),
-    )}?size=${size}&background=none&gen=2`;
+    )}?size=40&background=none&gen=2`;
 
 
   return (
@@ -72,11 +75,10 @@ export function PlayerAvatar({
             "ring-4 ring-[#131316] outline outline-[8px] outline-primary shadow-[0_10px_24px_rgba(255,107,53,0.2)]",
         )}
       >
-        {/* Blobatar returns a cacheable SVG from its avatar endpoint. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {/* Keep the same avatar seed in both the static and animated render modes. */}
         <Blobatar
           name={avatarSource}
-          animate="always"
+          animate={animated ? "always" : undefined}
           width={size}
           height={size}
           className="size-full object-cover"
