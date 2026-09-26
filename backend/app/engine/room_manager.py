@@ -69,6 +69,9 @@ class RoomManager():
         player = self.rooms.get(room_id).players.get(player_id)
         if player is not None:
             player.is_present = False
+            # if the last player in the room disconnected, we remove the room from the list of active rooms
+            if not any(p.is_present for p in self.rooms[room_id].players.values()):
+                del self.rooms[room_id]
 
 manager = RoomManager()
 
@@ -110,7 +113,8 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
                 await manager.send_to_player({"event": "ERROR", "data": {"code": "INVALID_PAYLOAD", "message": "Invalid Data"}}, room_id, user_id)
     except WebSocketDisconnect:
         manager.mark_disconnected(user_id, room_id)
-        await manager.broadcast(lobby_update(manager.rooms[room_id]), room_id, user_id)
+        if room_id in manager.rooms:
+            await manager.broadcast(lobby_update(manager.rooms[room_id]), room_id, user_id)
     except GameError as e:
         await manager.send_to_player(e.to_dict(), room_id, user_id)
     except Exception as e:
