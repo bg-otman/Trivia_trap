@@ -1,0 +1,18 @@
+export const standingsPacing = {
+  container: 0.58,
+  header: 0.15,
+  subtitle: 0.27,
+  rows: 0.08,
+  rowStagger: 0.05,
+  rowDuration: 0.28,
+  avatarOffset: 0.08,
+  roundPoints: 0.3,
+  roundPointsDuration: 0.3,
+  rankChange: 0.7,
+  totalScore: 0.3,
+  totalScoreDuration: 0.3,
+  reorder: 0.8,
+  reorderDuration: 1,
+  highlight: 1.8,
+  resolved: 2.2,
+} as const;
