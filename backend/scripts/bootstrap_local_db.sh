@@ -72,14 +72,14 @@ echo "Synchronizing dependencies..."
 uv sync --frozen
 
 echo "Applying database migrations..."
-uv run alembic upgrade head
+uv run --no-sync python -m alembic upgrade head
 
 echo "Importing categories and questions..."
 uv run python -m app.dataProcessing.seed_database
 
 echo "Checking the database schema..."
-uv run alembic current
-uv run alembic check
+uv run --no-sync python -m alembic current
+uv run --no-sync python -m alembic check
 
 echo "Database content:"
 docker exec "$CONTAINER_NAME" \

@@ -1,0 +1,181 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --font-display:
+    "Space Grotesk", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-ui:
+    "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-meta:
+    "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-mono:
+    "Liberation Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-trap-bg: #111114;
+  --color-trap-canvas: #0e0e11;
+  --color-trap-surface: #1c1c22;
+  --color-trap-panel: #1b1b1e;
+  --color-trap-raised: #1f1f22;
+  --color-trap-muted: #2a2a2d;
+  --color-trap-border: #353438;
+  --color-trap-primary: #ff6b35;
+  --color-trap-primary-soft: #ffb59d;
+  --color-trap-secondary: #5b5fef;
+  --color-trap-secondary-strong: #2e2fc5;
+  --color-trap-secondary-soft: #c0c1ff;
+  --color-trap-host: #f7c948;
+  --color-trap-host-strong: #efc141;
+  --color-trap-success: #4ade80;
+  --color-trap-success-strong: #34d399;
+  --color-trap-danger: #ff4d6d;
+  --color-trap-danger-strong: #f43f5e;
+  --color-trap-danger-soft: #fb7185;
+  --color-trap-text: #f8f8f2;
+  --color-trap-text-soft: #e4e1e6;
+  --color-trap-text-muted: #e1bfb5;
+  --color-trap-text-dim: #a6a6ae;
+}
+
+:root {
+  color-scheme: dark;
+  --background: #111114;
+  --foreground: #f8f8f2;
+  --card: #1b1b1e;
+  --card-foreground: #f8f8f2;
+  --popover: #1f1f22;
+  --popover-foreground: #f8f8f2;
+  --primary: #ff6b35;
+  --primary-foreground: #5f1900;
+  --secondary: #2e2fc5;
+  --secondary-foreground: #ffffff;
+  --muted: #2a2a2d;
+  --muted-foreground: #e1bfb5;
+  --accent: #f7c948;
+  --accent-foreground: #503d00;
+  --destructive: #ff4d6d;
+  --destructive-foreground: #ffffff;
+  --border: #353438;
+  --input: #353438;
+  --ring: #c0c1ff;
+  --radius: 0.75rem;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+html {
+  min-width: 320px;
+  background: #111114;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #111114;
+  color: #f8f8f2;
+  font-family: var(--font-ui);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+[role="button"],
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #c0c1ff;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(255, 107, 53, 0.35);
+  color: #fff;
+}
+
+.arcade-push {
+  --arcade-shadow: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 4px 0 var(--arcade-shadow);
+  transform: translateY(0);
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    filter 140ms ease,
+    border-color 140ms ease,
+    background-color 140ms ease;
+}
+
+.arcade-push:not(:disabled):hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.arcade-push:not(:disabled):active {
+  box-shadow: 0 1px 0 var(--arcade-shadow);
+  transform: translateY(3px);
+}
+
+.arcade-push:disabled {
+  box-shadow: none;
+  transform: none;
+}
+
+@keyframes trap-panic-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.05);
+  }
+  50% {
+    box-shadow:
+      0 0 0 8px rgba(244, 63, 94, 0.1),
+      0 0 28px rgba(244, 63, 94, 0.24);
+  }
+}
+
+.trap-panic-pulse {
+  animation: trap-panic-pulse 900ms ease-in-out infinite;
+}
+
+.trap-grid-glow {
+  background-image:
+    radial-gradient(
+      circle at 88% 10%,
+      rgba(255, 107, 53, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(circle at 7% 90%, rgba(46, 47, 197, 0.18), transparent 30%);
+}
