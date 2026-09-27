@@ -17,6 +17,7 @@ import {
   Plane,
   PawPrint,
   Languages,
+  type LucideIcon,
 } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
@@ -52,7 +53,7 @@ const categoryConfig: Record<
   Category,
   {
     label: string;
-    icon: React.ElementType;
+    icon: LucideIcon;
     color: string;
   }
 > = {

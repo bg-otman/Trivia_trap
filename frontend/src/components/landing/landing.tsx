@@ -6,17 +6,21 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import {
     BookOpen,
+    BrainCircuit,
     Check,
     Clipboard,
     Gamepad2,
     Link2,
     Menu,
+    MessagesCircle,
     MessageSquare,
     MonitorPlay,
     Play,
+    Settings2,
     ShieldQuestion,
     Sparkles,
     Trophy,
+    UserGroup,
     Users,
     Vote,
     X,
@@ -71,10 +75,10 @@ const steps = [
     },
 ];
 const features = [
-    { title: "Multiplayer Rooms", description: "Create a room, share its code or QR link, and bring the group together in one live lobby.", icon: Gamepad2, color: "orange" },
-    { title: "Anonymous Trap Answers", description: "Trap answers are shuffled into the vote, so players must judge the words instead of the author.", icon: ShieldQuestion, color: "purple" },
-    { title: "Live Results & Scoring", description: "Reveal the real answer, see who fooled whom, and follow the standings from round to round.", icon: Trophy, color: "yellow" },
-    { title: "Lobby Controls & Chat", description: "Manage settings, ready states, host controls, room sharing, and group chat before the match starts.", icon: MessageSquare, color: "gray" },
+    { title: "Cross-Device Multiplayer", description: "Use your smartphone as your private secret gamepad while projecting the big scoreboard onto a living room TV or Discord screen share.", icon: Gamepad2, color: "orange" },
+    { title: "High-Stakes Bluffing Engine", description: "You earn points for knowing the truth, but the biggest score windfalls happen when you convince three friends that your hilarious lie is genuine history.", icon: BrainCircuit, color: "purple" },
+    { title: "Real-time Banter & Taunts", description: "Instant sound effects, synchronized on-screen reactions, and custom party taunts that blast out the moment an opponent falls into your trap.", icon: MessagesCircle, color: "yellow" },
+    { title: "Custom Room Rules", description: "Control bluff timer limits, modify round lengths, toggle family-friendly packs, or choose specialized themes like 90s Pop,Cinema, or Weird Science.", icon: Settings2, color: "gray" },
 ];
 function Brand() {
     return (
@@ -121,7 +125,7 @@ function PhaseCard({
                 <span className={`rounded px-2 py-1 ${color}`}>PHASE {phase}</span>
                 <span className="text-[#b6aba9]">00 : 24</span>
             </div>
-            <h3 className="text-lg font-bold">{title}</h3>
+            <h3 className="text-lg font-display">{title}</h3>
             <p className="mb-5 mt-1 min-h-12 text-xs leading-relaxed text-[#aaa3a7]">
                 {description}
             </p>
@@ -175,13 +179,13 @@ export default function LandingPage() {
                                 key={n.href}
                                 href={n.href}
                                 onClick={() => setMobileMenu(false)}
-                                className="text-sm font-bold uppercase text-[#d9cbcb]"
+                                className="text-sm font-display uppercase text-[#d9cbcb]"
                             >
                                 {n.label}
                             </a>
                         ))}
-                        <Button asChild className="text-left text-sm font-bold uppercase text-[#ff6b35]"><Link href="/play?mode=join" onClick={() => setMobileMenu(false)}>Join room</Link></Button>
-                        <Button asChild className="text-left text-sm font-bold uppercase text-[#ff6b35]"><Link href="/play?mode=create" onClick={() => setMobileMenu(false)}>Create room</Link></Button>
+                        <Button asChild className="text-left text-sm font-display uppercase text-[#ff6b35]"><Link href="/play?mode=join" onClick={() => setMobileMenu(false)}>Join room</Link></Button>
+                        <Button asChild className="text-left text-sm font-display uppercase text-[#ff6b35]"><Link href="/play?mode=create" onClick={() => setMobileMenu(false)}>Create room</Link></Button>
                     </nav>
                 )}
             </header>
@@ -264,7 +268,7 @@ export default function LandingPage() {
                                     {s.text}
                                 </p>
                                 <p
-                                    className={`mt-6 border-t border-[#313136] pt-4 text-xs font-bold ${s.color}`}
+                                    className={`mt-6 border-t border-[#313136] pt-4 text-xs font-display ${s.color}`}
                                 >
                                     ◈ {s.footer}
                                 </p>
@@ -295,7 +299,7 @@ export default function LandingPage() {
                             description="Write one convincing trap answer before the round timer expires."
                             color="bg-[#292763] text-[#bbbaff]"
                         >
-                            <p className="mb-2 text-[10px] font-bold uppercase text-[#c5a4a3]">
+                            <p className="mb-2 text-[10px] font-display uppercase text-[#c5a4a3]">
                                 ▣ Submit your fake answer
                             </p>
                             <div className="rounded-md bg-[#2b2b30] p-3 font-mono text-sm">
@@ -326,7 +330,7 @@ export default function LandingPage() {
                                         className={`rounded-md px-3 py-3 ${i === 1 ? "border border-[#7474df] bg-[#302d82] text-white" : "bg-[#2b2b30] text-[#d3cdd0]"}`}
                                     >
                                         {i + 1}. {a}
-                                        <span className="float-right">›</span>
+                                        <span className="float-right"></span>
                                     </div>
                                 ))}
                             </div>
@@ -381,20 +385,20 @@ export default function LandingPage() {
                             <div className="flex gap-4">
                                 <MonitorPlay className="shrink-0 text-[#ff6b35]" size={22} />
                                 <p className="text-sm text-[#a99fa4]">
-                                    <b className="block text-white">Easy Room Sharing</b>Share the room code, link, or QR code directly from the lobby.
+                                    <b className="block text-white">Universal Cross-Play</b>Works natively on iOS, Android, macOS, Windows, and Steam Deck browsers.
                                 </p>
                             </div>
                             <div className="flex gap-4">
-                                <Users className="shrink-0 text-[#f7c948]" size={22} />
+                                <UserGroup className="shrink-0 text-[#f7c948]" size={22} />
                                 <p className="text-sm text-[#a99fa4]">
-                                    <b className="block text-white">Ready States & Host Controls</b>Players ready up while the host manages settings and starts the match.
+                                    <b className="block text-white">Up to 10 Friends in Live Sync</b>Instant zero-lag WebSocket connection ensures synchronised countdowns.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div className="rounded-2xl border border-[#353438] bg-[#1d1d21] p-4 sm:p-7">
                         <div className="rounded-lg bg-[#101013] p-6 text-center">
-                            <p className="text-[10px] font-bold uppercase text-[#b8aab0]">
+                            <p className="text-[10px] font-display uppercase text-[#b8aab0]">
                                 Your exclusive room pin
                             </p>
                             <div className="flex items-center justify-center gap-3">
@@ -419,7 +423,7 @@ export default function LandingPage() {
                                     : "Share this link: your-game.example/X7K9P2"}
                             </p>
                         </div>
-                        <div className="mt-5 flex justify-between text-[10px] font-bold uppercase text-[#c7b7b7]">
+                        <div className="mt-5 flex justify-between text-[10px] font-display uppercase text-[#c7b7b7]">
                             <span>Room roster (6 / 8 connected)</span>
                             <span className="text-[#4ade80]">● Lobby ready</span>
                         </div>
@@ -487,7 +491,7 @@ export default function LandingPage() {
                                     <f.icon size={22} />
                                 </span>
                                 <div>
-                                    <h3 className="font-bold">{f.title}</h3>
+                                    <h3 className="font-display">{f.title}</h3>
                                     <p className="mt-2 text-sm leading-relaxed text-[#b1a6aa]">
                                         {f.description}
                                     </p>
@@ -525,7 +529,7 @@ export default function LandingPage() {
             <footer className="border-t border-[#353438] bg-[#111114]">
                 <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-6 px-5 py-10 lg:px-9">
                     <Brand />
-                    <div className="flex flex-wrap gap-5 text-[10px] font-bold uppercase tracking-wide text-[#b6a8ad]">
+                    <div className="flex flex-wrap gap-5 text-[10px] font-display uppercase tracking-wide text-[#b6a8ad]">
                         <a href="#how-it-works">How it works</a>
                         <a href="#gameplay">Gameplay</a>
                         <a href="#features">Features</a>

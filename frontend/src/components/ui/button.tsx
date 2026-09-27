@@ -9,20 +9,20 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "arcade-push bg-primary text-primary-foreground [--arcade-shadow:#832600]",
+          "arcade-push bg-primary text-primary-foreground [--arcade-shadow:#8f2600]",
         flame:
-          "arcade-push bg-primary text-primary-foreground [--arcade-shadow:#832600]",
+          "arcade-push bg-primary text-primary-foreground [--arcade-shadow:#8f2600]",
         secondary:
-          "arcade-push bg-secondary text-white [--arcade-shadow:#17186b]",
-        host: "arcade-push bg-accent text-accent-foreground [--arcade-shadow:#6e5600]",
+          "arcade-push bg-secondary text-white [--arcade-shadow:#1c1d7a]",
+        host: "arcade-push bg-accent text-accent-foreground [--arcade-shadow:#7d6300]",
         destructive:
-          "arcade-push bg-destructive text-white [--arcade-shadow:#86172d]",
-        trap: "arcade-push bg-destructive text-white [--arcade-shadow:#86172d]",
+          "arcade-push bg-destructive text-white [--arcade-shadow:#8f102b]",
+        trap: "arcade-push bg-destructive text-white [--arcade-shadow:#8f102b]",
         outline:
-          "border-2 border-border bg-transparent text-[#e4e1e6] hover:border-[#58585f] hover:bg-popover",
+          "border-2 border-border bg-transparent text-[#e4e1e6] hover:border-[#58585f] hover:bg-popover [box-shadow:0_3px_0_0_#1b1b1e]",
         ghost: "bg-transparent text-[#e4e1e6] shadow-none hover:bg-muted",
         surface:
-          "border border-border bg-popover text-[#e4e1e6] hover:border-[#59585d] hover:bg-[#27272c]",
+          "border border-border bg-popover text-[#e4e1e6] hover:border-[#59585d] hover:bg-[#27272c] [box-shadow:0_3px_0_0_#1b1b1e]",
       },
       size: {
         sm: "h-9 px-3 text-xs",
