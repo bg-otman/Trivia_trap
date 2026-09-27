@@ -3,7 +3,7 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { motion } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
 import {
     BookOpen,
     BrainCircuit,
@@ -13,15 +13,12 @@ import {
     Link2,
     Menu,
     MessagesCircle,
-    MessageSquare,
     MonitorPlay,
     Play,
     Settings2,
-    ShieldQuestion,
     Sparkles,
     Trophy,
     UserGroup,
-    Users,
     Vote,
     X,
     Zap,
@@ -80,15 +77,32 @@ const features = [
     { title: "Real-time Banter & Taunts", description: "Instant sound effects, synchronized on-screen reactions, and custom party taunts that blast out the moment an opponent falls into your trap.", icon: MessagesCircle, color: "yellow" },
     { title: "Custom Room Rules", description: "Control bluff timer limits, modify round lengths, toggle family-friendly packs, or choose specialized themes like 90s Pop,Cinema, or Weird Science.", icon: Settings2, color: "gray" },
 ];
+
+const easeOut = [0.22, 1, 0.36, 1] as const;
+
+function AmbientHero({ reducedMotion }: { reducedMotion: boolean }) {
+    return (
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            <motion.div className="absolute -left-24 top-16 size-72 rounded-full bg-[#ff6b35]/10 blur-[90px]" animate={reducedMotion ? undefined : { x: [0, 70, 0], y: [0, 35, 0], scale: [1, 1.18, 1] }} transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }} />
+            <motion.div className="absolute right-[8%] top-[10%] size-[28rem] rounded-full bg-[#5b5fef]/10 blur-[110px]" animate={reducedMotion ? undefined : { x: [0, -55, 0], y: [0, 50, 0], scale: [1.1, 0.92, 1.1] }} transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }} />
+            <div className="landing-grid absolute inset-0 opacity-25" />
+        </div>
+    );
+}
+
+function RevealHeading({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+    return <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.7, ease: easeOut }} className={className}>{children}</motion.div>;
+}
+
 function Brand() {
     return (
         <a
             href="#top"
             className="inline-flex items-center gap-2.5 font-black tracking-wide text-[#ff6b35]"
         >
-            <span className="grid size-8 place-items-center rounded-lg bg-[#ff6b35] text-[#5f1900]">
-                <Zap size={18} fill="currentColor" />
-            </span>
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+              <Zap className="size-5 fill-current" aria-hidden="true" />
+            </div>
             <span>TRIVIA TRAP</span>
         </a>
     );
@@ -112,15 +126,17 @@ function PhaseCard({
     description,
     children,
     color,
+    index,
 }: {
     phase: string;
     title: string;
     description: string;
     children: React.ReactNode;
     color: string;
+    index: number;
 }) {
     return (
-        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} whileHover={{ y: -4 }} transition={{ duration: 0.42 }} className="flex min-h-[325px] flex-col rounded-xl border border-[#353438] bg-[#1c1c20] p-5">
+        <motion.div initial={{ opacity: 0, y: 28, scale: 0.98 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, amount: 0.2 }} whileHover={{ y: -7, borderColor: "#5b5fef" }} transition={{ duration: 0.58, delay: index * 0.1, ease: easeOut }} className="flex min-h-[325px] flex-col rounded-xl border border-[#353438] bg-[#1c1c20] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.12)]">
             <div className="mb-3 flex items-center justify-between text-[10px] font-black uppercase tracking-wider">
                 <span className={`rounded px-2 py-1 ${color}`}>PHASE {phase}</span>
                 <span className="text-[#b6aba9]">00 : 24</span>
@@ -138,11 +154,14 @@ function PhaseCard({
 
 export default function LandingPage() {
     const reducedMotion = useReducedMotion();
+    const { scrollYProgress } = useScroll();
+    const progress = useSpring(scrollYProgress, { stiffness: 110, damping: 28, restDelta: 0.001 });
     const [mobileMenu, setMobileMenu] = useState(false);
     const [copied, setCopied] = useState(false);
     return (
         <main id="top" className="overflow-hidden bg-[#0e0e11] text-[#f8f8f2]">
-            <header className="relative z-20 border-b border-[#29292d] bg-[#101013]">
+            <motion.div className="fixed inset-x-0 top-0 z-50 h-[2px] origin-left bg-gradient-to-r from-[#ff6b35] via-[#f7c948] to-[#5b5fef]" style={{ scaleX: progress }} />
+            <motion.header initial={{ y: reducedMotion ? 0 : -70 }} animate={{ y: 0 }} transition={{ duration: 0.7, ease: easeOut }} className="relative z-20 border-b border-[#29292d] bg-[#101013]/90 backdrop-blur-xl">
                 <div className="mx-auto flex h-[66px] max-w-[1400px] items-center justify-between gap-5 px-5 lg:px-9">
                     <Brand />
                     <nav
@@ -188,14 +207,13 @@ export default function LandingPage() {
                         <Button asChild className="text-left text-sm font-display uppercase text-[#ff6b35]"><Link href="/play?mode=create" onClick={() => setMobileMenu(false)}>Create room</Link></Button>
                     </nav>
                 )}
-            </header>
+            </motion.header>
             <section
-                className="relative border-b border-[#29292e] bg-[radial-gradient(circle_at_62%
-        
-        _22%,#33232b_0%,transparent_38%),radial-gradient(circle_at_85%_70%,#242143_0%,transparent_38%)]"
+                className="relative border-b border-[#29292e] bg-[radial-gradient(circle_at_62%_22%,#33232b_0%,transparent_38%),radial-gradient(circle_at_85%_70%,#242143_0%,transparent_38%)]"
             >
-                <div className="mx-auto grid min-h-[670px] max-w-[1400px] items-center gap-14 px-5 py-20 lg:grid-cols-[.95fr_1fr] lg:px-9 lg:py-24">
-                    <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reducedMotion ? 0.01 : 1.05, ease: [0.22, 1, 0.36, 1] }}>
+                <AmbientHero reducedMotion={reducedMotion} />
+                <div className="relative mx-auto grid min-h-[670px] max-w-[1400px] items-center gap-14 px-5 py-20 lg:grid-cols-[.95fr_1fr] lg:px-9 lg:py-24">
+                    <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reducedMotion ? 0.01 : 0.9, ease: easeOut }}>
                         <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#4d3530] bg-[#2b2020] px-3 py-2 text-[10px] font-black uppercase tracking-wider text-[#ead0c9]">
                             <span className="size-1.5 rounded-full bg-[#ff6b35]" /> The
                             multiplayer trivia & deception game
@@ -226,7 +244,7 @@ export default function LandingPage() {
                             <strong>Invite your whole crew</strong> · Play together in the browser
                         </p>
                     </motion.div>
-                    <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: reducedMotion ? 0.01 : 1.2, delay: reducedMotion ? 0 : 0.12, ease: [0.22, 1, 0.36, 1] }} className="relative min-h-[390px] lg:min-h-[560px]"><div className="absolute inset-[15%] rounded-full bg-[#5b5fef]/10 blur-[70px]" /><Hero3DScene /><div className="absolute bottom-[12%] left-[2%] rounded-lg border border-[#854020] bg-[#1c1c22]/95 px-3 py-2 text-[10px] font-black text-[#f7c948] shadow-xl">+300 TRAP POINTS</div></motion.div>
+                    <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: reducedMotion ? 0.01 : 1.2, delay: reducedMotion ? 0 : 0.18, ease: easeOut }} className="relative min-h-[390px] lg:min-h-[560px]"><div className="absolute inset-[15%] rounded-full bg-[#5b5fef]/10 blur-[70px]" /><Hero3DScene /><motion.div animate={reducedMotion ? undefined : { y: [0, -8, 0], rotate: [-1, 1, -1] }} transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[12%] left-[2%] rounded-lg border border-[#854020] bg-[#1c1c22]/95 px-3 py-2 text-[10px] font-black text-[#f7c948] shadow-xl">+300 TRAP POINTS</motion.div></motion.div>
                 </div>
             </section>
             <section
@@ -234,7 +252,7 @@ export default function LandingPage() {
                 className="border-b border-[#29292e] bg-[#141417] py-24"
             >
                 <div className="mx-auto max-w-[1400px] px-5 lg:px-9">
-                    <div className="mb-12 text-center">
+                    <RevealHeading className="mb-12 text-center">
                         <p className="text-xs font-black uppercase tracking-widest text-[#ff6b35]">
                             Four easy steps
                         </p>
@@ -245,15 +263,15 @@ export default function LandingPage() {
                             Simple enough for grandma, ruthless enough to destroy your group
                             chat friendships.
                         </p>
-                    </div>
+                    </RevealHeading>
                     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                        {steps.map((s) => (
+                        {steps.map((s, index) => (
                             <motion.article
                                 initial={{ opacity: 0, y: reducedMotion ? 0 : 18 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.2 }}
                                 whileHover={reducedMotion ? undefined : { y: -4 }}
-                                transition={{ duration: reducedMotion ? 0.01 : 0.42 }}
+                                transition={{ duration: reducedMotion ? 0.01 : 0.58, delay: reducedMotion ? 0 : index * 0.08, ease: easeOut }}
                                 key={s.number}
                                 className="flex min-h-[245px] flex-col rounded-xl border border-[#353438] bg-[#1c1c20] p-6"
                             >
@@ -279,7 +297,7 @@ export default function LandingPage() {
             </section>
             <section id="gameplay" className="border-b border-[#29292e] py-24">
                 <div className="mx-auto max-w-[1400px] px-5 lg:px-9">
-                    <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                    <RevealHeading className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
                         <div>
                             <p className="text-xs font-black uppercase tracking-widest text-[#a8a4ff]">
                                 Dynamic match phases
@@ -291,9 +309,10 @@ export default function LandingPage() {
                         <p className="max-w-md text-sm leading-relaxed text-[#a69b9f]">
                             Follow the real match flow from writing a trap through voting, reveal, and the round standings.
                         </p>
-                    </div>
+                    </RevealHeading>
                     <div className="grid gap-4 lg:grid-cols-3">
                         <PhaseCard
+                            index={0}
                             phase="1: trap"
                             title="Planting The Trap"
                             description="Write one convincing trap answer before the round timer expires."
@@ -314,6 +333,7 @@ export default function LandingPage() {
                             </p>
                         </PhaseCard>
                         <PhaseCard
+                            index={1}
                             phase="2: voting"
                             title="Voting"
                             description="All decoys appear alongside the real answer. Trust your gut or fall into a trap."
@@ -336,6 +356,7 @@ export default function LandingPage() {
                             </div>
                         </PhaseCard>
                         <PhaseCard
+                            index={2}
                             phase="3: answer reveal"
                             title="Answer Reveal"
                             description="Reveal the real answer, expose each trap author, and award the round points."

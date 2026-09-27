@@ -185,3 +185,17 @@ textarea {
     transform: translateX(500%) skewX(-18deg);
   }
 }
+
+.landing-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-grid {
+    background-image: none;
+  }
+}

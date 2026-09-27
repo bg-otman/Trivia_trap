@@ -30,12 +30,20 @@ function AnswerCard({ position, rotation, accent, width = 2.25 }: { position: [n
 
 function TrapComposition({ reducedMotion }: { reducedMotion: boolean }) {
   const group = useRef<THREE.Group>(null);
-  useFrame(({ clock, pointer }) => {
-    if (!group.current || reducedMotion) return;
+  useFrame(({ clock, pointer }, delta) => {
+    if (!group.current) return;
+    if (reducedMotion) {
+      group.current.scale.setScalar(1);
+      return;
+    }
     const time = clock.getElapsedTime();
-    group.current.position.y = Math.sin(time * 0.5) * 0.08;
-    group.current.rotation.y = Math.sin(time * 0.26) * 0.08 + pointer.x * 0.075;
-    group.current.rotation.x = -0.04 + pointer.y * 0.04;
+    const entrance = THREE.MathUtils.clamp(time / 1.35, 0, 1);
+    const easedEntrance = 1 - Math.pow(1 - entrance, 4);
+    group.current.scale.setScalar(THREE.MathUtils.lerp(0.72, 1, easedEntrance));
+    group.current.position.y = Math.sin(time * 0.5) * 0.08 + (1 - easedEntrance) * 0.65;
+    group.current.rotation.y = THREE.MathUtils.damp(group.current.rotation.y, Math.sin(time * 0.26) * 0.08 + pointer.x * 0.12, 4, delta);
+    group.current.rotation.x = THREE.MathUtils.damp(group.current.rotation.x, -0.04 + pointer.y * 0.07, 4, delta);
+    group.current.rotation.z = (1 - easedEntrance) * -0.12;
   });
 
   return (
@@ -55,6 +63,12 @@ function TrapComposition({ reducedMotion }: { reducedMotion: boolean }) {
         <torusGeometry args={[0.34, 0.075, 12, 32]} />
         <meshStandardMaterial color="#f7c948" roughness={0.3} metalness={0.42} />
       </mesh>
+      {[[-1.8, 0.35, -0.7], [1.85, 0.15, -0.8], [-0.25, 1.55, -0.9]].map((position, index) => (
+        <mesh key={index} position={position as [number, number, number]}>
+          <sphereGeometry args={[0.035 + index * 0.012, 12, 12]} />
+          <meshBasicMaterial color={index === 1 ? "#ff6b35" : "#c0c1ff"} />
+        </mesh>
+      ))}
     </group>
   );
 }
