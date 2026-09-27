@@ -156,8 +156,8 @@ export default function LandingPage() {
                         ))}
                     </nav>
                     <div className="hidden gap-2 sm:flex">
-                        <Button asChild className="min-h-9 px-4 text-[10px]" variant="outline"><Link href="/play?mode=join">Join room</Link></Button>
-                        <Button asChild className="min-h-9 px-4 text-[10px]" variant="flame"><Link href="/play?mode=create"><Gamepad2 size={13} /> Create room</Link></Button>
+                        <Button asChild className="min-h-9 px-4 " variant="outline"><Link href="/play?mode=join">Join room</Link></Button>
+                        <Button asChild className="min-h-9 px-4 " variant="flame"><Link href="/play?mode=create"><Gamepad2 size={13} /> Create room</Link></Button>
                     </div>
                     <Button
                         className="rounded-lg p-2 lg:hidden"
