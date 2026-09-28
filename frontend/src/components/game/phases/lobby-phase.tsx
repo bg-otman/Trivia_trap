@@ -90,7 +90,7 @@ export function LobbyPhase({
   const eligiblePlayers = players.filter((player) => player.role !== "HOST");
   const readyPlayers = eligiblePlayers.filter((player) => player.status === "READY");
   const openSlots = Math.max(0, settings.maxPlayers - players.length);
-  const joinUrl = `https://triviatrap.game/join/${roomCode}`;
+  const joinUrl = `http://localhost:3000/room/${roomCode}`;
 
   async function shareRoom() {
     try {
