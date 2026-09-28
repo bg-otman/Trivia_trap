@@ -93,10 +93,8 @@ def normalize_answer(answer: str) -> str:
 
     for character in normalized:
         category = unicodedata.category(character)
-#ila kan lherf fih tachkiil kasra damma tanfotoh tanhydo tachlkil
         if category.startswith("M"):
             continue
-#hna tanfoto bhala 3alamat istifham ta3ajob ? !
         if category.startswith("P"):
             cleaned_characters.append(" ")
             continue
@@ -246,23 +244,7 @@ def prepare_voting_choices(
         )
 
     return choices_by_id
-# this function takes the voting choices and returns a dictionary where the keys are the choice IDs and the values are the choice details, including author IDs and voter IDs. It also checks that there is exactly one correct answer among the choices.*
-# {
-#     "c1": {
-#         "id": "c1",
-#         "text": "Mars",
-#         "author_ids": [],
-#         "is_correct": True,
-#         "voter_ids": [],
-#     },
-#     "c2": {
-#         "id": "c2",
-#         "text": "Venus",
-#         "author_ids": ["u3"],
-#         "is_correct": False,
-#         "voter_ids": [],
-#     },
-# }
+
 
 def calculate_player_stats(
     votes: dict[str, str],
@@ -328,7 +310,6 @@ def build_results_payload(
     )
 
     result_choices = []
-# change from ["u1", "u2"] to ["Alice", "Bob"] for authors and voters
     for choice in choices_by_id.values():
         authors_names = [
             players[author_id].name
@@ -380,23 +361,3 @@ def calculate_results(
         players=players,
     )
 
-
-# Example of the results payload structure:
-# {
-#     "choices": [
-#         {
-#             "id": "c2",
-#             "text": "Venus",
-#             "authors_names": ["Alice"],
-#             "voters": ["Charlie"],
-#             "is_correct": False,
-#         }
-#     ],
-#     "leaderboard": [
-#         {
-#             "username": "Alice",
-#             "score": 3,
-#             "avatar_url": None,
-#         }
-#     ],
-# }

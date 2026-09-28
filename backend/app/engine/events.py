@@ -26,6 +26,7 @@ async def phase_timer(manager: RoomManager, context: Context, duration: int):
         # Task was canceled early (all players submitted before deadline).
         pass
 
+
 def join_room(rooms: dict, ws: WebSocket, room_id: str, player_id: str, name: str):
     """
         Join or Create Room if it does not exist. If the room exists, add the player to the room. If the room is full, raise an error.
@@ -41,6 +42,7 @@ def join_room(rooms: dict, ws: WebSocket, room_id: str, player_id: str, name: st
         room.players[player_id].ws = ws
         room.players[player_id].is_present = True
 
+
 async def leave_room(manager: RoomManager, context: Context):
     """
         Leave the room and remove the player from the room.
@@ -55,6 +57,8 @@ async def leave_room(manager: RoomManager, context: Context):
                     break
     await manager.remove_connection(context.user_id, context.room_id)
     await manager.broadcast(lobby_update(room), context.room_id, context.user_id)
+
+
 
 async def get_categories(manager: RoomManager, context: Context):
     """
@@ -75,6 +79,8 @@ async def get_categories(manager: RoomManager, context: Context):
             }
         }, context.room_id, None)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.vote_time))
+
+
 
 async def get_question(manager: RoomManager, context: Context):
     """
@@ -117,6 +123,8 @@ async def get_question(manager: RoomManager, context: Context):
         }, context.room_id, None)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.bluff_time))
 
+
+
 async def get_vote_choices(manager: RoomManager, context: Context):
     """
         get the vote list for the current question. This includes the correct answer and all bluff answers submitted by players.
@@ -150,6 +158,8 @@ async def get_vote_choices(manager: RoomManager, context: Context):
         }, context.room_id, None)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.vote_time))
 
+
+
 async def reveal_results(manager: RoomManager, context: Context):
     """
         Reveal the results of the round, including the correct answer, votes, and updated scores.
@@ -168,6 +178,8 @@ async def reveal_results(manager: RoomManager, context: Context):
         "event": "RESULTS_REVEALED",
         "data": results
     }, context.room_id, None)
+
+
 
 async def podium(manager: RoomManager, context: Context):
     """
@@ -189,6 +201,7 @@ async def podium(manager: RoomManager, context: Context):
         }
     }, context.room_id, None)
 
+
 game_phases = {
     RoomPhase.CATEGORY : get_categories,
     RoomPhase.QUESTION : get_question,
@@ -196,6 +209,7 @@ game_phases = {
     RoomPhase.REVEAL : reveal_results,
     RoomPhase.PODIUM : podium
 }
+
 
 async def to_next_phase(manager: RoomManager, context: Context):
     """
@@ -223,6 +237,8 @@ async def to_next_phase(manager: RoomManager, context: Context):
     handler = game_phases[room.meta_data.phase.current_state]
     await handler(manager, context)
 
+
+
 async def submit_bluff(manager: RoomManager, context: Context):
     room = manager.rooms.get(context.room_id)
     bluff_answer = context.data.get("bluff_answer")
@@ -241,6 +257,8 @@ async def submit_bluff(manager: RoomManager, context: Context):
                 "player_id": context.user_id,
             }
         }, context.room_id, context.user_id)
+
+
 
 async def submit_vote(manager: RoomManager, context: Context):
     room = manager.rooms.get(context.room_id)
@@ -272,6 +290,8 @@ async def submit_vote(manager: RoomManager, context: Context):
             }
         }, context.room_id, context.user_id)
 
+
+
 async def kick_player(manager: RoomManager, context: Context):
     """
         Kick a player from the room. Only the host can kick players.
@@ -284,6 +304,8 @@ async def kick_player(manager: RoomManager, context: Context):
         raise GameError("PLAYER_NOT_FOUND", "Player not found in the room")
     await manager.remove_connection(player_id, context.room_id)
     await manager.broadcast(lobby_update(room), context.room_id, None)
+
+
 
 async def update_settings(manager: RoomManager, context: Context):
     room = manager.rooms.get(context.room_id)
@@ -301,6 +323,8 @@ async def update_settings(manager: RoomManager, context: Context):
         await manager.broadcast(lobby_update(room), context.room_id, None)
     except Exception:
         raise GameError("INVALID_PAYLOAD", "Invalid settings in request")
+
+
 
 async def handle_chat_message(manager: RoomManager, context: Context):
     """
@@ -335,6 +359,7 @@ event_handlers = {
     "UPDATE_SETTINGS" : update_settings,
     "CHAT_MESSAGE" : handle_chat_message,
 }
+
 
 async def process_event(manager: RoomManager, room_id: str, user_id: str, user_name: str, event_name: str, data: dict
             ) -> None:

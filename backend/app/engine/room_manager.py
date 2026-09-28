@@ -117,7 +117,15 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
         if room_id in manager.rooms:
             await manager.broadcast(lobby_update(manager.rooms[room_id]), room_id, user_id)
     except GameError as e:
-        await manager.send_to_player(e.to_dict(), room_id, user_id)
+        if e.error_code == "FULL_ROOM":
+            # send manually without using send_to_player because the player is not in the room yet
+            try:
+                await ws.send_json(e.to_dict())
+                await ws.close(code=1008, reason=e.message)
+            except Exception:
+                print(f"An unexpected error occurred while sending FULL_ROOM error. Type: {type(e).__name__} | Message: {e}")
+        else:
+            await manager.send_to_player(e.to_dict(), room_id, user_id)
     except Exception as e:
         print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
         traceback.print_exc()
