@@ -27,7 +27,7 @@ export function PhaseTransitionOverlay({ phase, contentRef, onSwap, onComplete }
   }, [contentRef, onComplete, onSwap, phase, reducedMotion]);
 
   return (
-    <div ref={overlay} className="pointer-events-auto fixed inset-0 z-[70] flex items-center justify-center overflow-hidden bg-[#111114] px-6 invisible opacity-0" role="status" aria-live="polite">
+    <div ref={overlay} className="pointer-events-auto fixed inset-0 z-[70] flex items-center justify-center overflow-hidden bg-background px-6 invisible opacity-0" role="status" aria-live="polite">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,53,0.12),transparent_48%)]" />
       <div data-transition-shape className="pointer-events-none absolute left-[12%] top-[20%] size-10 rotate-12 rounded-xl border border-primary/20" />
       <div data-transition-shape className="pointer-events-none absolute bottom-[18%] right-[14%] size-16 -rotate-6 rounded-full border border-secondary/20" />

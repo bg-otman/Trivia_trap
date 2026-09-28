@@ -148,7 +148,7 @@ export function Leaderboard({
               delay: reducedMotion ? 0 : standingsPacing.header,
               ease: "easeOut",
             }}
-            className="font-display text-xl font-black text-[#f8f8f2] sm:text-2xl"
+            className="font-display text-xl font-black text-foreground sm:text-2xl"
           >
             {label ?? (isFinal ? "FINAL STANDINGS" : "CURRENT STANDINGS")}
           </motion.h2>
@@ -313,8 +313,8 @@ export function Leaderboard({
                   <div className="flex min-w-0 items-center gap-1.5">
                     <p
                       className={cn(
-                        "truncate font-display text-sm font-black text-[#f8f8f2]",
-                        isLeader && "text-[#f7c948]",
+                        "truncate font-display text-sm font-black text-foreground",
+                        isLeader && "text-accent",
                       )}
                     >
                       {player.name}
@@ -360,8 +360,8 @@ export function Leaderboard({
               <p
                 data-total-score
                 className={cn(
-                  "whitespace-nowrap text-right font-display text-sm font-black text-[#f8f8f2] sm:text-base",
-                  isLeader && "text-[#f7c948]",
+                  "whitespace-nowrap text-right font-display text-sm font-black text-foreground sm:text-base",
+                  isLeader && "text-accent",
                 )}
               >
                 <AnimatedNumber

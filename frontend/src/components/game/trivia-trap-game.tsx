@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { animationPacing } from "@/animations/pacing";
 import { mockChatMessages } from "@/mocks/chat";
 import { mockGame } from "@/mocks/game";
@@ -67,11 +68,17 @@ const mockGameFinalStandings: FinalResults = {
   ),
 };
 
-export function TriviaTrapGame() {
+interface TriviaTrapGameProps {
+  roomCode: string;
+}
+
+export function TriviaTrapGame({ roomCode }: TriviaTrapGameProps) {
+  const router = useRouter();
   const [game, setGame] = useState<MockGameFlowState>(() =>
-    createInitialState(),
+    createInitialState(roomCode),
   );
   const [showGameIntro, setShowGameIntro] = useState(false);
+  const introTimeoutRef = useRef<number | null>(null);
   const isHost = game.players.some(
     (player) => player.isYou && player.role === "HOST",
   );
@@ -82,15 +89,26 @@ export function TriviaTrapGame() {
   );
 
   useEffect(() => {
+    return () => {
+      if (introTimeoutRef.current !== null) {
+        window.clearTimeout(introTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     if (!timedPhases.includes(game.currentPhase) || game.timeRemaining <= 0) {
       return;
     }
 
     const interval = window.setInterval(() => {
-      setGame((current) => ({
-        ...current,
-        timeRemaining: Math.max(0, current.timeRemaining - 1),
-      }));
+      setGame((current) => {
+        const next = {
+          ...current,
+          timeRemaining: Math.max(0, current.timeRemaining - 1),
+        };
+        return next.timeRemaining === 0 ? advanceExpiredPhase(next) : next;
+      });
     }, 1000);
 
     return () => window.clearInterval(interval);
@@ -173,7 +191,13 @@ export function TriviaTrapGame() {
       resetRound({ ...current, totalRounds: current.settings.totalRounds }, 1),
     );
     setShowGameIntro(true);
-    window.setTimeout(() => setShowGameIntro(false), 1650);
+    if (introTimeoutRef.current !== null) {
+      window.clearTimeout(introTimeoutRef.current);
+    }
+    introTimeoutRef.current = window.setTimeout(() => {
+      setShowGameIntro(false);
+      introTimeoutRef.current = null;
+    }, 1650);
   }
 
   function toggleReady() {
@@ -271,7 +295,11 @@ export function TriviaTrapGame() {
     setGame((current) => {
       if (current.currentPhase !== "TRAP" || current.playerSubmitted)
         return current;
-      const revealState = buildRevealState(answer, current.players);
+      const revealState = buildRevealState(
+        answer,
+        current.players,
+        correctAnswerForQuestion(current.currentQuestion),
+      );
       return {
         ...current,
         submittedTrapAnswer: answer,
@@ -318,12 +346,12 @@ export function TriviaTrapGame() {
   }
 
   function playAgain() {
-    setGame(createInitialState("CATEGORY"));
+    setGame(createInitialState(roomCode, "CATEGORY"));
   }
 
   function leaveRoom() {
     setShowGameIntro(false);
-    setGame(createInitialState("LOBBY"));
+    router.push("/");
   }
 
   function renderPhase(phase: GamePhase) {
@@ -474,11 +502,12 @@ export function TriviaTrapGame() {
 }
 
 function createInitialState(
+  roomCode: string,
   currentPhase: GamePhase = mockGame.phase,
 ): MockGameFlowState {
   return {
     currentPhase,
-    roomCode: mockGame.roomCode,
+    roomCode,
     settings: { ...mockGame.settings },
     players: mockGame.players.map((player) => ({ ...player })),
     chatMessages: mockChatMessages.map((message) => ({ ...message })),
@@ -496,6 +525,45 @@ function createInitialState(
     finalStandings: mockGameFinalStandings,
     timeRemaining: mockGame.settings.bluffTime,
   };
+}
+
+function advanceExpiredPhase(current: MockGameFlowState): MockGameFlowState {
+  if (current.currentPhase === "CATEGORY" && !current.selectedCategory) {
+    const fallbackCategory =
+      current.currentQuestion.category.toLowerCase() as Category;
+    return {
+      ...current,
+      selectedCategory: fallbackCategory,
+      currentPhase: "TRAP",
+      timeRemaining: current.settings.bluffTime,
+      players: current.players.map((player) =>
+        player.status === "OFFLINE"
+          ? player
+          : { ...player, status: "THINKING" },
+      ),
+    };
+  }
+
+  if (current.currentPhase === "TRAP" && !current.playerSubmitted) {
+    const timedOutAnswer = "No answer submitted";
+    const revealState = buildRevealState(
+      timedOutAnswer,
+      current.players,
+      correctAnswerForQuestion(current.currentQuestion),
+    );
+    return {
+      ...current,
+      submittedTrapAnswer: timedOutAnswer,
+      playerSubmitted: true,
+      revealState,
+      votingOptions: buildVotingOptions(revealState, current.currentRound),
+      players: current.players.map((player) =>
+        player.isYou ? { ...player, status: "SUBMITTED" } : player,
+      ),
+    };
+  }
+
+  return current;
 }
 
 function resetRound(
@@ -542,6 +610,7 @@ function questionForRound(round: number, category?: Category): Question {
 function buildRevealState(
   submittedAnswer: string,
   players: Player[],
+  correctAnswer: string,
 ): AnswerReveal {
   const currentPlayer = players.find((player) => player.isYou);
   const playerIds = new Set(players.map((player) => player.id));
@@ -569,9 +638,23 @@ function buildRevealState(
   }
 
   return {
-    correctAnswer: mockAnswerReveal.correctAnswer,
+    correctAnswer,
     submissions,
   };
+}
+
+const correctAnswersByQuestionId: Record<Question["id"], string> = {
+  "history-printing": "The Inca civilization",
+  "science-element": "Tungsten",
+  "geography-capital": "Peru",
+  "sports-trophy": "Uruguay",
+  "gaming-character": "Jumpman",
+  "movies-award": "Wings",
+  "music-instrument": "The piano",
+};
+
+function correctAnswerForQuestion(question: Question) {
+  return correctAnswersByQuestionId[question.id] ?? mockAnswerReveal.correctAnswer;
 }
 
 function buildVotingOptions(

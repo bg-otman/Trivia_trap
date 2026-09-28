@@ -75,7 +75,7 @@ export function FinalResultsPhase({
                 status="host"
               />
               <motion.div initial={false} animate={{ opacity: winnerVisible ? 1 : 0, y: winnerVisible ? 0 : 8 }} transition={{ duration: 0.38, ease: "easeOut" }} className="mt-3 flex items-center gap-2">
-                <h1 className="font-display text-2xl font-black text-[#f7c948] sm:text-3xl">
+                <h1 className="font-display text-2xl font-black text-accent sm:text-3xl">
                   {winner.name}
                 </h1>
                 {winner.isYou && (

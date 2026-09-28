@@ -79,7 +79,7 @@ export function ChatMessage({ message }: { message: ChatMessageData }) {
           "rounded-2xl px-3 py-2 text-left text-xs leading-5",
           message.isYou
             ? "rounded-br-md border border-primary/30 bg-primary/15 text-[#fff3ee]"
-            : "rounded-bl-md border border-white/[0.08] bg-black/20 text-[#f8f8f2]",
+            : "rounded-bl-md border border-white/[0.08] bg-black/20 text-foreground",
         )}>
           {message.text}
         </p>
@@ -122,7 +122,7 @@ export function ChatInput({ onSend }: { onSend: (message: string) => void }) {
         maxLength={240}
         placeholder="Message the room..."
         autoComplete="off"
-        className="h-11 min-w-0 flex-1 rounded-xl border border-border bg-[#111114] px-3 text-sm text-white outline-none placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20"
+        className="h-11 min-w-0 flex-1 rounded-xl border border-border bg-background px-3 text-sm text-white outline-none placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20"
       />
       <motion.div whileTap={reducedMotion ? undefined : { scale: 0.92 }}><Button type="submit" size="icon" disabled={!message.trim()} aria-label="Send message">
         <Send className="size-4" />

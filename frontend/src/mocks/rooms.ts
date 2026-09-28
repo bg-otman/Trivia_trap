@@ -19,6 +19,14 @@ const mockRooms: MockRoom[] = [
     status: "open",
   },
   {
+    code: "ABC123",
+    name: "Weekend Trivia Club",
+    hostName: "Mehdi",
+    playerCount: 6,
+    maxPlayers: 10,
+    status: "open",
+  },
+  {
     code: "FULL42",
     name: "The Final Braincell",
     hostName: "Alex",
@@ -29,6 +37,7 @@ const mockRooms: MockRoom[] = [
 ];
 
 export function findMockRoom(code: string) {
-  return mockRooms.find((room) => room.code === code) ?? null;
+  const normalizedCode = code.trim().toUpperCase();
+  return mockRooms.find((room) => room.code === normalizedCode) ?? null;
 }
 

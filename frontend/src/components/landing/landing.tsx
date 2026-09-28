@@ -56,7 +56,7 @@ const steps = [
         icon: Vote,
         text: "Scan all shuffled submissions anonymously. Can you pick out the actual fact from a friend-made lie?",
         footer: "Mind the landmines",
-        color: "text-[#f7c948]",
+        color: "text-accent",
     },
     {
         number: "04",
@@ -64,7 +64,7 @@ const steps = [
         icon: Trophy,
         text: "Reveal the trap masterminds, score for every player you fooled, and climb the final standings.",
         footer: "See who fooled whom",
-        color: "text-[#ff6b35]",
+        color: "text-primary",
     },
 ];
 const features = [
@@ -79,7 +79,7 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 function AmbientHero({ reducedMotion }: { reducedMotion: boolean }) {
     return (
         <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-            <motion.div className="absolute -left-24 top-16 size-72 rounded-full bg-[#ff6b35]/10 blur-[90px]" animate={reducedMotion ? undefined : { x: [0, 70, 0], y: [0, 35, 0], scale: [1, 1.18, 1] }} transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }} />
+            <motion.div className="absolute -left-24 top-16 size-72 rounded-full bg-primary/10 blur-[90px]" animate={reducedMotion ? undefined : { x: [0, 70, 0], y: [0, 35, 0], scale: [1, 1.18, 1] }} transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }} />
             <motion.div className="absolute right-[8%] top-[10%] size-[28rem] rounded-full bg-[#5b5fef]/10 blur-[110px]" animate={reducedMotion ? undefined : { x: [0, -55, 0], y: [0, 50, 0], scale: [1.1, 0.92, 1.1] }} transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }} />
             <div className="landing-grid absolute inset-0 opacity-25" />
         </div>
@@ -94,7 +94,7 @@ function Brand() {
     return (
         <a
             href="#top"
-            className="inline-flex items-center gap-2.5 font-black tracking-wide text-[#ff6b35]"
+            className="inline-flex items-center gap-2.5 font-black tracking-wide text-primary"
         >
             <div className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
               <Zap className="size-5 fill-current" aria-hidden="true" />
@@ -129,7 +129,7 @@ function PhaseCard({
             <p className="mb-5 mt-1 min-h-12 text-xs leading-relaxed text-[#aaa3a7]">
                 {description}
             </p>
-            <div className="flex-1 rounded-lg border border-[#303035] bg-[#111114] p-3">
+            <div className="flex-1 rounded-lg border border-[#303035] bg-background p-3">
                 {children}
             </div>
         </motion.div>
@@ -143,8 +143,8 @@ export default function LandingPage() {
     const [mobileMenu, setMobileMenu] = useState(false);
     const [copied, setCopied] = useState(false);
     return (
-        <main id="top" className="overflow-hidden bg-[#0e0e11] text-[#f8f8f2]">
-            <motion.div className="fixed inset-x-0 top-0 z-50 h-[2px] origin-left bg-gradient-to-r from-[#ff6b35] via-[#f7c948] to-[#5b5fef]" style={{ scaleX: progress }} />
+        <main id="top" className="overflow-hidden bg-[#0e0e11] text-foreground">
+            <motion.div className="fixed inset-x-0 top-0 z-50 h-[2px] origin-left bg-gradient-to-r from-primary via-accent to-[#5b5fef]" style={{ scaleX: progress }} />
             <motion.header initial={{ y: reducedMotion ? 0 : -70 }} animate={{ y: 0 }} transition={{ duration: 0.7, ease: easeOut }} className="relative z-20 border-b border-[#29292d] bg-[#101013]/90 backdrop-blur-xl">
                 <div className="mx-auto flex h-[66px] max-w-[1400px] items-center justify-between gap-5 px-5 lg:px-9">
                     <Brand />
@@ -187,8 +187,8 @@ export default function LandingPage() {
                                 {n.label}
                             </a>
                         ))}
-                        <Button asChild className="text-left text-sm font-display uppercase text-[#ff6b35]"><Link href="/join" onClick={() => setMobileMenu(false)}>Join room</Link></Button>
-                        <Button asChild className="text-left text-sm font-display uppercase text-[#ff6b35]"><Link href="/room/X7K9P2" onClick={() => setMobileMenu(false)}>Create room</Link></Button>
+                        <Button asChild className="text-left text-sm font-display uppercase text-primary"><Link href="/join" onClick={() => setMobileMenu(false)}>Join room</Link></Button>
+                        <Button asChild className="text-left text-sm font-display uppercase text-primary"><Link href="/room/X7K9P2" onClick={() => setMobileMenu(false)}>Create room</Link></Button>
                     </nav>
                 )}
             </motion.header>
@@ -199,7 +199,7 @@ export default function LandingPage() {
                 <div className="relative mx-auto grid min-h-[670px] max-w-[1400px] items-center gap-14 px-5 py-20 lg:grid-cols-[.95fr_1fr] lg:px-9 lg:py-24">
                     <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reducedMotion ? 0.01 : 0.9, ease: easeOut }}>
                         <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#4d3530] bg-[#2b2020] px-3 py-2 text-[10px] font-black uppercase tracking-wider text-[#ead0c9]">
-                            <span className="size-1.5 rounded-full bg-[#ff6b35]" /> The
+                            <span className="size-1.5 rounded-full bg-primary" /> The
                             multiplayer trivia & deception game
                         </p>
                         <h1 className="max-w-xl text-[clamp(3.4rem,6vw,6.8rem)] font-black uppercase leading-[.91] tracking-[-.055em]">
@@ -207,7 +207,7 @@ export default function LandingPage() {
                             <br />
                             answer.
                             <br />
-                            <span className="text-[#ff6b35] underline decoration-[#ff6b35] decoration-[5px] underline-offset-[8px]">
+                            <span className="text-primary underline decoration-primary decoration-[5px] underline-offset-[8px]">
                                 Bluff the
                                 <br />
                                 room.
@@ -239,10 +239,10 @@ export default function LandingPage() {
                             aria-hidden="true"
                             animate={reducedMotion ? undefined : { rotate: [0, 4, 0], scale: [1, 1.035, 1] }}
                             transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute inset-[12%] rounded-[32%] border border-[#ff6b35]/20 bg-[conic-gradient(from_145deg,rgba(255,107,53,0.13),rgba(91,95,239,0.08),transparent_45%,rgba(247,201,72,0.08),rgba(255,107,53,0.13))] shadow-[0_0_90px_rgba(91,95,239,0.14)]"
+                            className="absolute inset-[12%] rounded-[32%] border border-primary/20 bg-[conic-gradient(from_145deg,rgba(255,107,53,0.13),rgba(91,95,239,0.08),transparent_45%,rgba(247,201,72,0.08),rgba(255,107,53,0.13))] shadow-[0_0_90px_rgba(91,95,239,0.14)]"
                         />
-                        <div className="absolute left-[7%] top-[16%] size-2 rounded-full bg-[#f7c948] shadow-[0_0_18px_5px_rgba(247,201,72,0.3)]" />
-                        <div className="absolute bottom-[18%] right-[5%] size-3 rounded-full bg-[#ff6b35] shadow-[0_0_22px_6px_rgba(255,107,53,0.28)]" />
+                        <div className="absolute left-[7%] top-[16%] size-2 rounded-full bg-accent shadow-[0_0_18px_5px_rgba(247,201,72,0.3)]" />
+                        <div className="absolute bottom-[18%] right-[5%] size-3 rounded-full bg-primary shadow-[0_0_22px_6px_rgba(255,107,53,0.28)]" />
                         <motion.div
                             animate={reducedMotion ? undefined : { y: [0, -10, 0], rotate: [-0.5, 0.5, -0.5] }}
                             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
@@ -266,7 +266,7 @@ export default function LandingPage() {
             >
                 <div className="mx-auto max-w-[1400px] px-5 lg:px-9">
                     <RevealHeading className="mb-12 text-center">
-                        <p className="text-xs font-black uppercase tracking-widest text-[#ff6b35]">
+                        <p className="text-xs font-black uppercase tracking-widest text-primary">
                             Four easy steps
                         </p>
                         <h2 className="mt-2 text-4xl font-black uppercase tracking-tight md:text-5xl">
@@ -336,7 +336,7 @@ export default function LandingPage() {
                             </p>
                             <div className="rounded-md bg-[#2b2b30] p-3 font-mono text-sm">
                                 The Venetian Sky Mirror{" "}
-                                <span className="float-right text-[#ff6b35]">▌</span>
+                                <span className="float-right text-primary">▌</span>
                             </div>
                             <p className="mt-4 text-[10px] text-[#b4a9ac]">
                                 Characters: 24 / 60{" "}
@@ -398,11 +398,11 @@ export default function LandingPage() {
             </section>
             <section
                 id="lobby"
-                className="border-b border-[#29292e] bg-[#111114] py-24"
+                className="border-b border-[#29292e] bg-background py-24"
             >
                 <div className="mx-auto grid max-w-[1400px] items-center gap-14 px-5 lg:grid-cols-2 lg:px-9">
                     <div>
-                        <p className="text-xs font-black uppercase tracking-widest text-[#ff6b35]">
+                        <p className="text-xs font-black uppercase tracking-widest text-primary">
                             Zero friction joining
                         </p>
                         <h2 className="mt-4 text-4xl font-black uppercase leading-[.95] tracking-tight md:text-6xl">
@@ -417,13 +417,13 @@ export default function LandingPage() {
                         </p>
                         <div className="mt-8 space-y-5">
                             <div className="flex gap-4">
-                                <MonitorPlay className="shrink-0 text-[#ff6b35]" size={22} />
+                                <MonitorPlay className="shrink-0 text-primary" size={22} />
                                 <p className="text-sm text-[#a99fa4]">
                                     <b className="block text-white">Universal Cross-Play</b>Works natively on iOS, Android, macOS, Windows, and Steam Deck browsers.
                                 </p>
                             </div>
                             <div className="flex gap-4">
-                                <UserGroup className="shrink-0 text-[#f7c948]" size={22} />
+                                <UserGroup className="shrink-0 text-accent" size={22} />
                                 <p className="text-sm text-[#a99fa4]">
                                     <b className="block text-white">Up to 10 Friends in Live Sync</b>Instant zero-lag WebSocket connection ensures synchronised countdowns.
                                 </p>
@@ -436,7 +436,7 @@ export default function LandingPage() {
                                 Your exclusive room pin
                             </p>
                             <div className="flex items-center justify-center gap-3">
-                                <strong className="text-4xl font-black tracking-[.12em] text-[#f7c948] sm:text-6xl">
+                                <strong className="text-4xl font-black tracking-[.12em] text-accent sm:text-6xl">
                                     X7K9P2
                                 </strong>
                                 <button
@@ -475,7 +475,7 @@ export default function LandingPage() {
                                     className="flex items-center gap-2 rounded-lg border border-[#333338] bg-[#151518] p-2"
                                 >
                                     <span
-                                        className={`grid size-6 shrink-0 place-items-center rounded-full font-black ${i === 0 ? "bg-[#f7c948] text-black" : i === 1 ? "bg-[#ff6b35] text-black" : "bg-[#34343d] text-white"}`}
+                                        className={`grid size-6 shrink-0 place-items-center rounded-full font-black ${i === 0 ? "bg-accent text-black" : i === 1 ? "bg-primary text-black" : "bg-[#34343d] text-white"}`}
                                     >
                                         {p[0]}
                                     </span>
@@ -495,7 +495,7 @@ export default function LandingPage() {
             <section id="features" className="py-24">
                 <div className="mx-auto max-w-[1400px] px-5 lg:px-9">
                     <div className="text-center">
-                        <p className="text-xs font-black uppercase tracking-widest text-[#ff6b35]">
+                        <p className="text-xs font-black uppercase tracking-widest text-primary">
                             Built for party chaos
                         </p>
                         <h2 className="mt-2 text-4xl font-black uppercase leading-none tracking-tight md:text-5xl">
@@ -520,7 +520,7 @@ export default function LandingPage() {
                                 className="flex gap-5 rounded-xl border border-[#353438] bg-[#1c1c20] p-6"
                             >
                                 <span
-                                    className={`grid size-12 shrink-0 place-items-center rounded-lg ${f.color === "orange" ? "bg-[#5c3021] text-[#ff6b35]" : f.color === "purple" ? "bg-[#2e2b73] text-[#c0c1ff]" : f.color === "yellow" ? "bg-[#5c4b20] text-[#f7c948]" : "bg-[#333338] text-[#c4c1c5]"}`}
+                                    className={`grid size-12 shrink-0 place-items-center rounded-lg ${f.color === "orange" ? "bg-[#5c3021] text-primary" : f.color === "purple" ? "bg-[#2e2b73] text-[#c0c1ff]" : f.color === "yellow" ? "bg-[#5c4b20] text-accent" : "bg-[#333338] text-[#c4c1c5]"}`}
                                 >
                                     <f.icon size={22} />
                                 </span>
@@ -560,7 +560,7 @@ export default function LandingPage() {
                     </p>
                 </div>
             </section>
-            <footer className="border-t border-[#353438] bg-[#111114]">
+            <footer className="border-t border-[#353438] bg-background">
                 <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-6 px-5 py-10 lg:px-9">
                     <Brand />
                     <div className="flex flex-wrap gap-5 text-[10px] font-display uppercase tracking-wide text-[#b6a8ad]">

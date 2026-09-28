@@ -38,7 +38,7 @@ export function ResultCard({
       )}
     >
       <header className="mb-4 border-b border-white/10 pb-4">
-        <p className="font-display text-lg font-black text-[#f8f8f2]">
+        <p className="font-display text-lg font-black text-foreground">
           ROUND {currentRound} SCORE
         </p>
         <p className="mt-1 text-[10px] font-bold tracking-[0.14em] text-[#a6a6ae]">
@@ -64,7 +64,7 @@ export function ResultCard({
 
             <div className="min-w-0 flex-1">
               <div className="flex min-w-0 flex-wrap items-center gap-1.5">
-                <p className="truncate font-display text-sm font-black text-[#f8f8f2]">
+                <p className="truncate font-display text-sm font-black text-foreground">
                   {player.name}
                 </p>
                 {player.isYou && (
@@ -96,7 +96,7 @@ export function ResultCard({
 
       {topGainer && (
         <footer className="mt-4 flex items-center justify-between gap-3 border-t border-white/10 pt-4 text-[10px] font-bold tracking-[0.08em]">
-          <span className="flex items-center gap-1.5 text-[#f7c948]">
+          <span className="flex items-center gap-1.5 text-accent">
             <Sparkles className="size-3.5" aria-hidden="true" />
             TOP ROUND GAIN
           </span>

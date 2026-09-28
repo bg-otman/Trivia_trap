@@ -41,9 +41,9 @@ export function RoomCodeInput({
               key={index}
               aria-hidden="true"
               className={cn(
-                "grid aspect-[0.82] min-w-0 place-items-center rounded-xl border bg-[#111114] text-[clamp(1.25rem,6vw,2rem)] font-extrabold uppercase text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition-all",
+                "grid aspect-[0.82] min-w-0 place-items-center rounded-xl border bg-background text-[clamp(1.25rem,6vw,2rem)] font-extrabold uppercase text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition-all",
                 invalid
-                  ? "border-[#ff4d6d]/70 bg-[#ff4d6d]/[0.045] text-[#fecdd3]"
+                  ? "border-destructive/70 bg-destructive/[0.045] text-[#fecdd3]"
                   : active
                     ? "border-[#5b5fef] shadow-[0_0_0_3px_rgba(91,95,239,0.14)]"
                     : character

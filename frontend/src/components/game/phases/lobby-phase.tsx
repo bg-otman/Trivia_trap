@@ -235,7 +235,7 @@ export function LobbyPhase({
                               ...current,
                               [field.key]: Math.min(field.max, Math.max(field.min, Number(event.target.value))),
                             }))}
-                            className="h-11 rounded-xl border border-border bg-[#111114] px-3 text-base font-bold text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                            className="h-11 rounded-xl border border-border bg-background px-3 text-base font-bold text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                           />
                         </label>
                       ))}
@@ -342,7 +342,7 @@ function LobbyPlayer({ player, canKick, onKick }: { player: Player; canKick: boo
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onSelect={onKick} className="text-[#ff4d6d] focus:text-[#ff4d6d]">
+            <DropdownMenuItem onSelect={onKick} className="text-destructive focus:text-destructive">
               <Trash2 className="mr-2 size-3.5" /> KICK PLAYER
             </DropdownMenuItem>
           </DropdownMenuContent>
