@@ -4,14 +4,15 @@ import { findMockRoom } from "@/mocks/rooms";
 
 interface GamePageProps {
   params: Promise<{ coderoom: string }>;
+  searchParams: Promise<{ state?: string }>;
 }
 
-export default async function GamePage({ params }: GamePageProps) {
-  const { coderoom } = await params;
+export default async function GamePage({ params, searchParams }: GamePageProps) {
+  const [{ coderoom }, query] = await Promise.all([params, searchParams]);
   const roomCode = decodeURIComponent(coderoom).trim().toUpperCase();
   const room = findMockRoom(roomCode);
 
   if (!room || room.status !== "open") notFound();
 
-  return <TriviaTrapGame roomCode={room.code} />;
+  return <TriviaTrapGame roomCode={room.code} mockState={process.env.NODE_ENV === "development" ? query.state : undefined} />;
 }

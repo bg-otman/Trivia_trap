@@ -1,11 +1,13 @@
 "use client";
 
 import { Crown, DoorOpen, RotateCcw, Trophy } from "lucide-react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Leaderboard } from "@/components/game/results/leaderboard";
 import { PlayerAvatar } from "@/components/game/players/player-avatar";
 import { StatusBadge } from "@/components/game/players/status-badge";
 import { Button } from "@/components/ui/button";
+import { LoadingState } from "@/components/ui/loading-state";
 import { useTheatreCinematic } from "@/hooks/use-theatre-cinematic";
 import { animationPacing, cinematicSpring } from "@/animations/pacing";
 import type { FinalResults } from "@/types/results";
@@ -27,6 +29,12 @@ export function FinalResultsPhase({
   onLeaveRoom,
 }: FinalResultsPhaseProps) {
   const reducedMotion = useReducedMotion();
+  const [calculating, setCalculating] = useState(true);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setCalculating(false), 750);
+    return () => window.clearTimeout(timer);
+  }, []);
   const cinematicProgress = useTheatreCinematic("Final Results", animationPacing.finalResults, !reducedMotion);
   const trophyVisible = Boolean(reducedMotion) || cinematicProgress >= 0.1;
   const winnerVisible = Boolean(reducedMotion) || cinematicProgress >= 0.28;
@@ -36,6 +44,14 @@ export function FinalResultsPhase({
   const winner =
     results.standings.find((player) => player.rank === 1) ??
     results.standings[0];
+
+  if (calculating) {
+    return (
+      <section className="relative z-10 flex w-full flex-1 items-center justify-center p-6">
+        <LoadingState title="CALCULATING FINAL SCORES..." description="Preparing the final standings." variant="game" className="w-full max-w-3xl min-h-72" />
+      </section>
+    );
+  }
 
   if (!winner) {
     return (

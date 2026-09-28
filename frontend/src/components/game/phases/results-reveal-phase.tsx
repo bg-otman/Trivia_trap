@@ -1,5 +1,9 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { ArrowRight, Eye, UsersRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LoadingState } from "@/components/ui/loading-state";
 import { PhaseContent, StaggerGroup, StaggerItem } from "@/components/game/system/phase-transition";
 import {
   CorrectAnswerCard,
@@ -16,6 +20,17 @@ export function ResultsRevealPhase({
   reveal,
   onShowResults,
 }: ResultsRevealPhaseProps) {
+  const [revealing, setRevealing] = useState(true);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setRevealing(false), 500);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  if (revealing) {
+    return <section className="relative z-10 flex w-full flex-1 items-center justify-center p-6"><LoadingState title="REVEALING ANSWER..." description="The truth is coming out." variant="game" className="w-full max-w-3xl min-h-64" /></section>;
+  }
+
   return (
     <section className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <div className="w-full max-w-[1080px]">

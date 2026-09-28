@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Crosshair, Landmark, Check } from "lucide-react";
 import { motion } from "motion/react";
 import { QuestionMedia } from "@/components/game/question/question-media";
@@ -32,6 +32,8 @@ export function VotingArena({
   onVote,
 }: VotingArenaProps) {
   const hasVoted = lockedOptionId !== null;
+  const [submittingOptionId, setSubmittingOptionId] = useState<VotingOption["id"] | null>(null);
+  const voteTimeout = useRef<number | null>(null);
   const reducedMotion = useReducedMotion();
   const arena = useRef<HTMLElement>(null);
 
@@ -39,6 +41,12 @@ export function VotingArena({
     if (arena.current)
       createVotingEntrance(arena.current, Boolean(reducedMotion));
   }, [options.length, reducedMotion]);
+
+  useEffect(() => {
+    return () => {
+      if (voteTimeout.current !== null) window.clearTimeout(voteTimeout.current);
+    };
+  }, []);
 
   useEffect(() => {
     if (!lockedOptionId) return;
@@ -50,6 +58,17 @@ export function VotingArena({
       animation?.cancel();
     };
   }, [lockedOptionId, reducedMotion]);
+
+  function submitVote(optionId: VotingOption["id"]) {
+    if (hasVoted || votingClosed || submittingOptionId !== null) return;
+    setSubmittingOptionId(optionId);
+    voteTimeout.current = window.setTimeout(() => {
+      onVote(optionId);
+      setSubmittingOptionId(null);
+      voteTimeout.current = null;
+    }, 400);
+  }
+
   return (
     <main
       ref={arena}
@@ -116,8 +135,8 @@ export function VotingArena({
             aria-label="Anonymous voting options"
           >
             {options.map((option) => {
-              const isSelected = lockedOptionId === option.id;
-              const isDisabled = hasVoted || votingClosed;
+              const isSelected = lockedOptionId === option.id || submittingOptionId === option.id;
+              const isDisabled = hasVoted || votingClosed || submittingOptionId !== null;
 
               return (
                 <div key={option.id} data-voting-option className="min-w-0">
@@ -147,7 +166,7 @@ export function VotingArena({
                             : 1,
                     }}
                     type="button"
-                    onClick={() => onVote(option.id)}
+                    onClick={() => submitVote(option.id)}
                     disabled={isDisabled}
                     aria-pressed={isSelected}
                     className={cn(
@@ -172,7 +191,7 @@ export function VotingArena({
                           <span data-vote-lock>
                             <Check className="size-3" aria-hidden="true" />
                           </span>
-                          VOTE LOCKED
+                          {submittingOptionId === option.id ? "LOCKING VOTE..." : "VOTE LOCKED"}
                         </span>
                       )}
                     </span>

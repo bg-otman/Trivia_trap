@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { Leaderboard } from "@/components/game/results/leaderboard";
 import { Button } from "@/components/ui/button";
+import { LoadingState } from "@/components/ui/loading-state";
 import type { RoundResults } from "@/types/results";
 import type { Player } from "@/types/player";
 import { WaitingArena } from "@/components/game/voting/waiting/waiting-arena";
@@ -27,17 +28,24 @@ export function RoundResultsPhase({
   onContinue,
 }: RoundResultsPhaseProps) {
   const [resolved, setResolved] = useState(false);
+  const [calculating, setCalculating] = useState(true);
+  useEffect(() => {
+    const timer = window.setTimeout(() => setCalculating(false), 650);
+    return () => window.clearTimeout(timer);
+  }, []);
   const handleResolved = useCallback(() => setResolved(true), []);
 
   return (
     <section className="relative z-10 mb-10 flex w-full flex-1 items-center justify-center px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <div className="w-full max-w-[980px]">
-        <Leaderboard
+        {calculating ? (
+          <LoadingState title="CALCULATING RESULTS..." description="Updating the current standings." variant="game" className="min-h-72" />
+        ) : <Leaderboard
           players={results.players}
           currentRound={currentRound}
           totalRounds={totalRounds}
           onResolved={handleResolved}
-        />
+        />}
 
         <AnimatePresence>
           {resolved ? (

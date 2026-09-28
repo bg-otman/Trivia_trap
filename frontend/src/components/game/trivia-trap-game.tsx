@@ -15,7 +15,7 @@ import { GameHud } from "./hud/game-hud";
 import { PlayerActivityDock } from "./players/player-activity-dock";
 import { FullScreenPhaseTransition } from "./transitions/phase-transition";
 import { GameIntro } from "./system/game-intro";
-import { LobbyPhase } from "./phases/lobby-phase";
+import { LobbyPhase, type LobbyConnectionState } from "./phases/lobby-phase";
 import { CategoryPhase } from "./phases/category-phase";
 import { TrapPhase } from "./phases/trap-phase";
 import { VotingPhase } from "./phases/voting-phase";
@@ -70,14 +70,16 @@ const mockGameFinalStandings: FinalResults = {
 
 interface TriviaTrapGameProps {
   roomCode: string;
+  mockState?: string;
 }
 
-export function TriviaTrapGame({ roomCode }: TriviaTrapGameProps) {
+export function TriviaTrapGame({ roomCode, mockState }: TriviaTrapGameProps) {
   const router = useRouter();
   const [game, setGame] = useState<MockGameFlowState>(() =>
-    createInitialState(roomCode),
+    createInitialState(roomCode, undefined, mockState),
   );
   const [showGameIntro, setShowGameIntro] = useState(false);
+  const [connectionState, setConnectionState] = useState<LobbyConnectionState>(() => lobbyConnectionForMockState(mockState));
   const introTimeoutRef = useRef<number | null>(null);
   const isHost = game.players.some(
     (player) => player.isYou && player.role === "HOST",
@@ -349,6 +351,14 @@ export function TriviaTrapGame({ roomCode }: TriviaTrapGameProps) {
     setGame(createInitialState(roomCode, "CATEGORY"));
   }
 
+  function retryConnection() {
+    setConnectionState("connecting");
+    window.setTimeout(() => {
+      setConnectionState("restored");
+      window.setTimeout(() => setConnectionState("connected"), 1200);
+    }, 700);
+  }
+
   function leaveRoom() {
     setShowGameIntro(false);
     router.push("/");
@@ -369,6 +379,9 @@ export function TriviaTrapGame({ roomCode }: TriviaTrapGameProps) {
             onKickPlayer={kickPlayer}
             onSettingsChange={updateSettings}
             onSendMessage={sendChatMessage}
+            connectionState={connectionState}
+            onRetryConnection={retryConnection}
+            onLeaveRoom={leaveRoom}
           />
         );
       case "CATEGORY":
@@ -378,6 +391,7 @@ export function TriviaTrapGame({ roomCode }: TriviaTrapGameProps) {
             totalRounds={game.totalRounds}
             selectedCategory={game.selectedCategory}
             onSelectCategory={selectCategory}
+            canChoose={isHost}
           />
         );
       case "TRAP":
@@ -501,16 +515,40 @@ export function TriviaTrapGame({ roomCode }: TriviaTrapGameProps) {
   );
 }
 
+function playersForMockState(mockState?: string): Player[] {
+  const players = mockGame.players.map((player) => ({ ...player }));
+  if (mockState === "lobby-empty") return players.filter((player) => player.role === "HOST");
+  if (mockState === "lobby-player") {
+    return players.map((player) =>
+      player.id === "mehdi"
+        ? { ...player, isYou: false }
+        : player.id === "alex"
+          ? { ...player, isYou: true, role: "PLAYER" }
+          : player,
+    );
+  }
+  return players;
+}
+
+function lobbyConnectionForMockState(mockState?: string): LobbyConnectionState {
+  if (mockState === "lobby-loading") return "joining";
+  if (mockState === "lobby-reconnecting") return "reconnecting";
+  if (mockState === "lobby-connection-lost") return "failed";
+  if (mockState === "lobby-restored") return "restored";
+  return "connected";
+}
+
 function createInitialState(
   roomCode: string,
   currentPhase: GamePhase = mockGame.phase,
+  mockState?: string,
 ): MockGameFlowState {
-  return {
+  const state: MockGameFlowState = {
     currentPhase,
     roomCode,
     settings: { ...mockGame.settings },
-    players: mockGame.players.map((player) => ({ ...player })),
-    chatMessages: mockChatMessages.map((message) => ({ ...message })),
+    players: playersForMockState(mockState),
+    chatMessages: mockState === "lobby-empty" ? [] : mockChatMessages.map((message) => ({ ...message })),
     currentRound: 1,
     totalRounds: mockGame.totalRounds,
     selectedCategory: null,
@@ -525,6 +563,40 @@ function createInitialState(
     finalStandings: mockGameFinalStandings,
     timeRemaining: mockGame.settings.bluffTime,
   };
+
+  if (!mockState || mockState.startsWith("lobby-")) return state;
+
+  if (mockState === "category-waiting") {
+    state.currentPhase = "CATEGORY";
+    state.players = playersForMockState("lobby-player");
+    return state;
+  }
+
+  if (mockState === "trap-normal") state.currentPhase = "TRAP";
+  if (mockState === "trap-submitted" || mockState === "trap-timeout") {
+    state.currentPhase = "TRAP";
+    state.submittedTrapAnswer = mockState === "trap-timeout" ? "No answer submitted" : "The Royal Observatory";
+    state.playerSubmitted = true;
+  }
+
+  if (mockState.startsWith("voting-") || mockState === "reveal") {
+    state.currentPhase = mockState === "reveal" ? "RESULTS_REVEAL" : "VOTING";
+    state.submittedTrapAnswer = "The Royal Observatory";
+    state.playerSubmitted = true;
+  }
+
+  if (state.playerSubmitted && mockState !== "voting-preparing") {
+    state.revealState = buildRevealState(state.submittedTrapAnswer, state.players, correctAnswerForQuestion(state.currentQuestion));
+    state.votingOptions = buildVotingOptions(state.revealState, state.currentRound);
+  }
+  if (mockState === "voting-voted") {
+    state.selectedVote = state.votingOptions[0]?.id ?? null;
+    state.playerVoted = state.selectedVote !== null;
+  }
+  if (mockState === "voting-timeout") state.timeRemaining = 0;
+  if (mockState === "results") state.currentPhase = "ROUND_RESULTS";
+  if (mockState === "final") state.currentPhase = "FINAL_RESULTS";
+  return state;
 }
 
 function advanceExpiredPhase(current: MockGameFlowState): MockGameFlowState {

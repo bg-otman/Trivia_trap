@@ -6,6 +6,7 @@ import { MessageCircle, Send } from "lucide-react";
 import { PlayerAvatar } from "../players/player-avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { EmptyState } from "@/components/ui/empty-state";
 import { cn } from "@/lib/utils";
 import { animateTypingDots } from "@/animations/micro-interactions";
 import type { ChatMessageData } from "@/types/chat";
@@ -44,11 +45,7 @@ export function GroupChat({ messages, onSendMessage, className }: GroupChatProps
 
       <div ref={scrollRef} className="min-h-0 flex-1 space-y-3 overflow-y-auto p-4 sm:p-5" aria-live="polite">
         {messages.length === 0 ? (
-          <div className="flex h-full min-h-64 flex-col items-center justify-center text-center text-muted-foreground">
-            <MessageCircle className="mb-3 size-8 opacity-40" />
-            <p className="text-sm font-bold text-white">No messages yet.</p>
-            <p className="mt-1 text-xs">Say hello!</p>
-          </div>
+          <EmptyState icon={MessageCircle} title="NO MESSAGES YET" description="Say hello!" className="h-full min-h-64" />
         ) : (
           messages.map((message) => <ChatMessage key={message.id} message={message} />)
         )}

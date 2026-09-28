@@ -1,6 +1,7 @@
 "use client";
 
 import { VotingArena } from "@/components/game/voting/voting-arena";
+import { LoadingState } from "@/components/ui/loading-state";
 import type { Question, VotingOption } from "@/types/question";
 import type { Player } from "@/types/player";
 
@@ -23,6 +24,14 @@ export function VotingPhase({
   seconds,
   onCastVote,
 }: VotingPhaseProps) {
+  if (options.length === 0) {
+    return (
+      <section className="relative z-10 flex w-full flex-1 items-center justify-center p-6">
+        <LoadingState title="PREPARING ANSWERS..." description="Shuffling the anonymous answers." variant="game" className="w-full max-w-3xl min-h-64" />
+      </section>
+    );
+  }
+
   return (
     <VotingArena
       players={players}

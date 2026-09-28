@@ -5,21 +5,21 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 import {
-  AlertCircle,
   ArrowLeft,
   ArrowRight,
   Gamepad2,
-  LoaderCircle,
   LockKeyhole,
   UsersRound,
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ErrorState } from "@/components/ui/error-state";
+import { LoadingState } from "@/components/ui/loading-state";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { findMockRoom } from "@/mocks/rooms";
 import { RoomCodeInput } from "./room-code-input";
 
-type JoinState = "idle" | "loading" | "invalid" | "full";
+type JoinState = "idle" | "loading" | "invalid" | "full" | "error";
 
 const mockDelayMs = 850;
 
@@ -30,10 +30,16 @@ export function JoinRoom() {
   const [state, setState] = useState<JoinState>("idle");
 
   const error = state === "invalid"
-    ? { title: "ROOM NOT FOUND", message: "Check the code and try again. The room may have closed." }
+    ? { title: "ROOM NOT FOUND", message: "We couldn't find a room with that code.", action: "TRY AGAIN" }
     : state === "full"
-      ? { title: "ROOM IS FULL", message: "This game has reached its player limit. Ask the host for another room." }
-      : null;
+      ? { title: "ROOM FULL", message: "This room has reached its maximum number of players.", action: "TRY ANOTHER ROOM" }
+      : state === "error"
+        ? { title: "UNABLE TO JOIN", message: "Something went wrong while joining the room.", action: "TRY AGAIN" }
+        : null;
+
+  function retry() {
+    setState("idle");
+  }
 
   function updateCode(nextCode: string) {
     setCode(nextCode);
@@ -46,6 +52,10 @@ export function JoinRoom() {
 
     setState("loading");
     window.setTimeout(() => {
+      if (code === "ERROR1") {
+        setState("error");
+        return;
+      }
       const room = findMockRoom(code);
       if (!room) {
         setState("invalid");
@@ -112,8 +122,8 @@ export function JoinRoom() {
                   <Gamepad2 className="size-6" />
                 </div>
                 <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary">Ready to play?</p>
-                <h2 className="mt-2 font-secondary text-3xl uppercase tracking-[-0.02em] text-white sm:text-4xl">Join a room</h2>
-                <p className="mt-3 text-sm leading-6 text-[#a6a6ae]">Enter the code shown on the host&apos;s screen.</p>
+                <h2 className="mt-2 font-secondary text-3xl uppercase tracking-[-0.02em] text-white sm:text-4xl">{state === "loading" ? "Joining room" : "Join a room"}</h2>
+                <p className="mt-3 text-sm leading-6 text-[#a6a6ae]">{state === "loading" ? "Checking room code..." : "Enter your 6-character room code."}</p>
               </div>
 
               <form onSubmit={submit} noValidate>
@@ -126,18 +136,11 @@ export function JoinRoom() {
 
                 <div id="room-code-status" aria-live="polite" className="min-h-[76px] pt-4">
                   {error ? (
-                    <motion.div
-                      initial={{ opacity: 0, y: -4 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      role="alert"
-                      className="flex gap-3 rounded-xl border border-destructive/25 bg-destructive/[0.07] p-3.5"
-                    >
-                      <AlertCircle className="mt-0.5 size-4 shrink-0 text-destructive" />
-                      <div>
-                        <p className="text-xs font-extrabold text-[#fecdd3]">{error.title}</p>
-                        <p className="mt-1 text-[11px] leading-4 text-[#caa8ad]">{error.message}</p>
-                      </div>
+                    <motion.div initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }}>
+                      <ErrorState title={error.title} description={error.message} actionLabel={error.action} onAction={retry} className="p-3" />
                     </motion.div>
+                  ) : state === "loading" ? (
+                    <LoadingState title="JOINING ROOM" description="Checking room code..." variant="inline" />
                   ) : (
                     <div className="flex items-center gap-2 px-1 text-[11px] text-[#777782]">
                       <LockKeyhole className="size-3.5" /> Room codes are case-insensitive
@@ -145,13 +148,11 @@ export function JoinRoom() {
                   )}
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" disabled={code.length !== 6 || state === "loading"}>
-                  {state === "loading" ? (
-                    <><LoaderCircle className="size-5 animate-spin" /> Finding room...</>
-                  ) : (
-                    <>Join lobby <ArrowRight className="size-5" /></>
-                  )}
-                </Button>
+                {!error ? (
+                  <Button type="submit" size="lg" className="w-full" disabled={code.length !== 6 || state === "loading"}>
+                    {state === "loading" ? "JOINING ROOM..." : <>JOIN ROOM <ArrowRight className="size-5" /></>}
+                  </Button>
+                ) : null}
               </form>
             </div>
 

@@ -35,8 +35,17 @@ export function TrapPhase({
   onSubmitAnswer,
 }: TrapPhaseProps) {
   const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const submitTimeout = useRef<number | null>(null);
   const reducedMotion = useReducedMotion();
   const successIcon = useRef<HTMLSpanElement>(null);
+  const timedOut = submitted && answer === "No answer submitted";
+
+  useEffect(() => {
+    return () => {
+      if (submitTimeout.current !== null) window.clearTimeout(submitTimeout.current);
+    };
+  }, []);
 
   useEffect(() => {
     if (!submitted) return;
@@ -60,7 +69,12 @@ export function TrapPhase({
     }
 
     setError(null);
-    onSubmitAnswer(trimmedAnswer);
+    setSubmitting(true);
+    submitTimeout.current = window.setTimeout(() => {
+      onSubmitAnswer(trimmedAnswer);
+      setSubmitting(false);
+      submitTimeout.current = null;
+    }, 450);
   }
 
   return (
@@ -98,8 +112,9 @@ export function TrapPhase({
             arena={
               <WaitingArena
                 players={players}
-                confirmation="TRAP SUBMITTED · LOCKED"
-                detail="Your trap is set. Let's see who takes the bait."
+                confirmation={timedOut ? "TIME'S UP" : "ANSWER LOCKED"}
+                message="WAITING FOR THE OTHER PLAYERS"
+                detail={timedOut ? "Your answer has been locked." : "Your trap is set. Let's see who takes the bait."}
               />
             }
           >
@@ -124,7 +139,7 @@ export function TrapPhase({
                 <Input
                   id="trap-answer"
                   value={answer}
-                  disabled={submitted}
+                  disabled={submitted || submitting}
                   onChange={(event) => {
                     onAnswerChange(event.target.value);
                     if (error) setError(null);
@@ -138,10 +153,10 @@ export function TrapPhase({
                 />
                 <Button
                   type="submit"
-                  disabled={submitted}
+                  disabled={submitted || submitting}
                   className="h-12 px-6"
                 >
-                  {submitted ? "ANSWER LOCKED" : "SUBMIT ANSWER"}
+                  {submitting ? "LOCKING ANSWER..." : submitted ? "ANSWER LOCKED" : "SUBMIT ANSWER"}
                   {submitted ? (
                     <span ref={successIcon}>
                       <Check className="size-3.5" aria-hidden="true" />

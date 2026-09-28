@@ -9,6 +9,7 @@ import {
 import { gameSpring, StaggerGroup, StaggerItem } from "@/components/game/system/phase-transition";
 import { captureCategoryCard } from "@/animations/category-transition";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { LoadingState } from "@/components/ui/loading-state";
 
 const roundCategories: Category[] = [
   "movies",
@@ -25,6 +26,7 @@ interface CategoryPhaseProps {
   totalRounds: number;
   selectedCategory: Category | null;
   onSelectCategory: (category: Category) => void;
+  canChoose?: boolean;
 }
 
 export function CategoryPhase({
@@ -32,9 +34,18 @@ export function CategoryPhase({
   totalRounds,
   selectedCategory,
   onSelectCategory,
+  canChoose = true,
 }: CategoryPhaseProps) {
   const isLocked = selectedCategory !== null;
   const reducedMotion = useReducedMotion();
+
+  if (!canChoose) {
+    return (
+      <section className="relative z-10 flex w-full flex-1 items-center justify-center p-6">
+        <LoadingState title="WAITING FOR PLAYER" description="ALEX IS CHOOSING THE CATEGORY..." variant="game" className="w-full max-w-2xl min-h-64" />
+      </section>
+    );
+  }
 
   return (
     <section className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
@@ -109,7 +120,7 @@ export function CategoryPhase({
             </div>
             <div className="min-w-0">
               <p className="font-display text-sm font-bold text-foreground">
-                {isLocked ? "Category locked in" : "Select one category"}
+                {isLocked ? "PREPARING QUESTION..." : "Select one category"}
               </p>
               <p className="mt-0.5 truncate text-xs text-muted-foreground">
                 {selectedCategory

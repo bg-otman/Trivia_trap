@@ -13,6 +13,7 @@ import {
   UserPlus,
   UsersRound,
   Zap,
+  Wifi,
 } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { GroupChat } from "../chat/group-chat";
@@ -21,6 +22,9 @@ import { StatusBadge } from "../players/status-badge";
 import { RoomCode } from "../hud/room-code";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { EmptyState } from "@/components/ui/empty-state";
+import { ErrorState } from "@/components/ui/error-state";
+import { LoadingState } from "@/components/ui/loading-state";
 import {
   Dialog,
   DialogContent,
@@ -44,6 +48,8 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { WaitingArena } from "@/components/game/voting/waiting/waiting-arena";
 import { WaitingMessage } from "@/components/game/voting/waiting/waiting-message";
 
+export type LobbyConnectionState = "connected" | "joining" | "connecting" | "reconnecting" | "restored" | "failed";
+
 interface LobbyPhaseProps {
   players: Player[];
   roomCode: string;
@@ -55,6 +61,9 @@ interface LobbyPhaseProps {
   onKickPlayer: (playerId: Player["id"]) => void;
   onSettingsChange: (settings: GameSettings) => void;
   onSendMessage: (message: string) => void;
+  connectionState?: LobbyConnectionState;
+  onRetryConnection?: () => void;
+  onLeaveRoom?: () => void;
 }
 
 const settingFields: Array<{
@@ -81,10 +90,14 @@ export function LobbyPhase({
   onKickPlayer,
   onSettingsChange,
   onSendMessage,
+  connectionState = "connected",
+  onRetryConnection,
+  onLeaveRoom,
 }: LobbyPhaseProps) {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [draftSettings, setDraftSettings] = useState(settings);
   const [shared, setShared] = useState(false);
+  const [shareFailed, setShareFailed] = useState(false);
   const reducedMotion = useReducedMotion();
   const currentPlayer = players.find((player) => player.isYou);
   const eligiblePlayers = players.filter((player) => player.role !== "HOST");
@@ -103,10 +116,12 @@ export function LobbyPhase({
       } else {
         await navigator.clipboard.writeText(joinUrl);
       }
+      setShareFailed(false);
       setShared(true);
       window.setTimeout(() => setShared(false), 1600);
     } catch {
       setShared(false);
+      setShareFailed(true);
     }
   }
 
@@ -159,7 +174,10 @@ export function LobbyPhase({
                   />
                 ))}
               </AnimatePresence>
-              {Array.from({ length: openSlots }, (_, index) => (
+              {players.length <= 1 ? (
+                <EmptyState icon={UserPlus} title="NO OTHER PLAYERS YET" description="Invite your friends to join." className="sm:col-span-2" />
+              ) : null}
+              {players.length > 1 ? Array.from({ length: openSlots }, (_, index) => (
                 <div
                   key={`open-slot-${index}`}
                   className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-dashed border-white/10 bg-black/10 px-4 text-muted-foreground"
@@ -172,7 +190,7 @@ export function LobbyPhase({
                     <p className="mt-0.5 text-[10px]">Waiting for a player</p>
                   </div>
                 </div>
-              ))}
+              )) : null}
             </div>
           </Card></motion.div>
 
@@ -194,6 +212,9 @@ export function LobbyPhase({
                     <Share2 className="size-3.5" />
                     {shared ? "LINK COPIED" : "SHARE ROOM"}
                   </Button>
+                  {shareFailed ? (
+                    <ErrorState title="UNABLE TO COPY LINK" description="Copy the room code manually and try again." actionLabel="TRY AGAIN" onAction={shareRoom} className="mt-3 p-3" />
+                  ) : null}
                 </div>
               </div>
             </Card></motion.div>
@@ -292,6 +313,18 @@ export function LobbyPhase({
           ) : null}
         </Card></motion.div>
       </div>
+
+      {connectionState !== "connected" ? (
+        <div className="absolute inset-0 z-30 grid place-items-center bg-background/75 p-5 backdrop-blur-[2px]">
+          {connectionState === "failed" ? (
+            <ErrorState title="CONNECTION LOST" description="We couldn&apos;t reconnect to the room." actionLabel="RETRY" onAction={onRetryConnection} secondaryActionLabel="LEAVE ROOM" onSecondaryAction={onLeaveRoom} className="w-full max-w-lg bg-card" />
+          ) : connectionState === "restored" ? (
+            <div role="status" className="flex items-center gap-2 rounded-2xl border border-[#4ade80]/30 bg-card px-5 py-4 font-display text-sm font-black text-[#4ade80] shadow-xl"><Wifi className="size-4" /> CONNECTED ✓</div>
+          ) : (
+            <LoadingState title={connectionState === "joining" ? "JOINING ROOM..." : connectionState === "connecting" ? "CONNECTING TO ROOM" : "RECONNECTING..."} description={connectionState === "joining" ? "Preparing your lobby" : connectionState === "connecting" ? "Joining the game..." : "Trying to restore your connection."} variant="game" className="w-full max-w-lg" />
+          )}
+        </div>
+      ) : null}
     </section>
   );
 }
