@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useSpring } from "motion/react";
 import {
@@ -26,10 +26,6 @@ import {
 import { Button } from "../ui/button";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
-const Hero3DScene = dynamic(() => import("./hero-3d-scene"), {
-    ssr: false,
-    loading: () => <HeroLoadingFallback />,
-});
 const nav = [
     { label: "How it works", href: "#how-it-works" },
     { label: "Categories", href: "#categories" },
@@ -105,18 +101,6 @@ function Brand() {
             </div>
             <span>TRIVIA TRAP</span>
         </a>
-    );
-}
-
-function HeroLoadingFallback() {
-    return (
-        <div className="relative flex min-h-[360px] items-center justify-center" aria-hidden="true">
-            <div className="absolute size-72 rounded-full bg-[#5b5fef]/15 blur-[70px]" />
-            <div className="relative w-[min(82%,390px)] -rotate-3 rounded-2xl border border-[#494047] bg-[#1c1c22] p-5 shadow-[0_30px_70px_#0009]">
-                <div className="flex items-center gap-4"><span className="grid size-14 place-items-center rounded-xl bg-[#ff6b35] font-black text-[#5f1900]">?</span><div className="flex-1"><div className="h-3 rounded bg-white/80" /><div className="mt-3 h-2 w-2/3 rounded bg-white/20" /></div></div>
-                <div className="mt-5 grid gap-2"><div className="h-11 rounded-lg bg-[#5b5fef]/35" /><div className="h-11 rounded-lg bg-[#f7c948]/25" /></div>
-            </div>
-        </div>
     );
 }
 
@@ -244,7 +228,36 @@ export default function LandingPage() {
                             <strong>Invite your whole crew</strong> · Play together in the browser
                         </p>
                     </motion.div>
-                    <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: reducedMotion ? 0.01 : 1.2, delay: reducedMotion ? 0 : 0.18, ease: easeOut }} className="relative min-h-[390px] lg:min-h-[560px]"><div className="absolute inset-[15%] rounded-full bg-[#5b5fef]/10 blur-[70px]" /><Hero3DScene /><motion.div animate={reducedMotion ? undefined : { y: [0, -8, 0], rotate: [-1, 1, -1] }} transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[12%] left-[2%] rounded-lg border border-[#854020] bg-[#1c1c22]/95 px-3 py-2 text-[10px] font-black text-[#f7c948] shadow-xl">+300 TRAP POINTS</motion.div></motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: reducedMotion ? 1 : 0.92, y: reducedMotion ? 0 : 24 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: reducedMotion ? 0.01 : 1.1, delay: reducedMotion ? 0 : 0.16, ease: easeOut }}
+                        className="relative min-h-[390px] lg:min-h-[560px]"
+                    >
+                        <div className="absolute inset-[8%] rounded-full bg-[radial-gradient(circle_at_45%_42%,rgba(255,107,53,0.25),transparent_42%),radial-gradient(circle_at_72%_58%,rgba(91,95,239,0.28),transparent_48%)] blur-2xl" />
+                        <motion.div
+                            aria-hidden="true"
+                            animate={reducedMotion ? undefined : { rotate: [0, 4, 0], scale: [1, 1.035, 1] }}
+                            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute inset-[12%] rounded-[32%] border border-[#ff6b35]/20 bg-[conic-gradient(from_145deg,rgba(255,107,53,0.13),rgba(91,95,239,0.08),transparent_45%,rgba(247,201,72,0.08),rgba(255,107,53,0.13))] shadow-[0_0_90px_rgba(91,95,239,0.14)]"
+                        />
+                        <div className="absolute left-[7%] top-[16%] size-2 rounded-full bg-[#f7c948] shadow-[0_0_18px_5px_rgba(247,201,72,0.3)]" />
+                        <div className="absolute bottom-[18%] right-[5%] size-3 rounded-full bg-[#ff6b35] shadow-[0_0_22px_6px_rgba(255,107,53,0.28)]" />
+                        <motion.div
+                            animate={reducedMotion ? undefined : { y: [0, -10, 0], rotate: [-0.5, 0.5, -0.5] }}
+                            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute inset-0 z-10"
+                        >
+                            <Image
+                                src="/images/hero.webp"
+                                alt="Trivia Trap multiplayer game preview"
+                                fill
+                                priority
+                                sizes="(min-width: 1024px) 50vw, 92vw"
+                                className="object-contain drop-shadow-[0_35px_45px_rgba(0,0,0,0.5)]"
+                            />
+                        </motion.div>
+                    </motion.div>
                 </div>
             </section>
             <section
