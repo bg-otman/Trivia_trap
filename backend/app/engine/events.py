@@ -3,7 +3,7 @@ from fastapi import WebSocket
 from .room_models import PlayerInfo, RoomMetaData, RoomSettings, Room, RoomPhase
 from pydantic import Field
 from typing import TYPE_CHECKING
-from dataProcessing.ingestion import ( validate_bluff_answer, build_voting_choices, calculate_results ) # import demo functions until we have a proper data processing module
+from dataProcessing.ingestion import ( validate_bluff_answer, build_voting_choices, validate_vote, calculate_results ) # import demo functions until we have a proper data processing module
 from dataProcessing.services import load_categories, load_question
 from .utils import GameError, Context, clear_data, validate_phase, lobby_update
 import asyncio
@@ -128,6 +128,13 @@ async def get_vote_choices(manager: RoomManager, context: Context):
         room.meta_data.correct_answer,
         room.meta_data.fake_answers,
     )
+    public_choices = [
+        {
+            "id": choice["id"],
+            "text": choice["text"],
+        }
+        for choice in room.meta_data.voting_choices
+    ]
     await manager.broadcast({
         "event": "PHASE_VOTING",
         "data": { 
@@ -138,7 +145,7 @@ async def get_vote_choices(manager: RoomManager, context: Context):
                 "text": room.meta_data.active_question,
                 "image_url": room.meta_data.image_url
             },
-            "choices": room.meta_data.voting_choices
+            "choices": public_choices
             } 
         }, context.room_id, None)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.vote_time))
@@ -149,11 +156,9 @@ async def reveal_results(manager: RoomManager, context: Context):
     """
     room = manager.rooms.get(context.room_id)
     results = calculate_results(
-        room.meta_data.voting_results,
-        room.meta_data.sumbitted_bluffs,
-        room.meta_data.correct_answer,
-        room.players,
-        room.meta_data.voting_choices,
+        votes=room.meta_data.voting_results,
+        players=room.players,
+        voting_choices=room.meta_data.voting_choices,
     )
     room.meta_data.podium = results.get("leaderboard", [])
     results["round"] = room.meta_data.current_round
@@ -242,6 +247,20 @@ async def submit_vote(manager: RoomManager, context: Context):
     vote_choice = context.data.get("choice_id")
     if vote_choice is None:
         raise GameError("INVALID_PAYLOAD", "Missing vote choice in request")
+    validation = validate_vote(
+        voter_id=context.user_id,
+        choice_id=vote_choice,
+        choices=room.meta_data.voting_choices,
+        votes=room.meta_data.voting_results,
+        player_ids=set(room.players.keys()),
+    )
+
+    if not validation["is_valid"]:
+        raise GameError(
+            validation["reason"],
+            "Vote rejected",
+        )
+
     room.meta_data.voting_results[context.user_id] = vote_choice
     if len(room.meta_data.voting_results) >= len(room.players):
         await to_next_phase(manager, context)

@@ -152,12 +152,12 @@ def build_voting_choices(
             continue
 
         if key in fake_choices:
-            fake_choices[key]["authors_names"].append(player_id)
+            fake_choices[key]["author_ids"].append(player_id)
         else:
             fake_choices[key] = {
                 "id": uuid4().hex,
                 "text": answer,
-                "authors_names": [player_id],
+                "author_ids": [player_id],
                 "is_correct": False,
             }
 
@@ -173,7 +173,7 @@ def build_voting_choices(
         fake_choices[key] = {
             "id": uuid4().hex,
             "text": decoy,
-            "authors_names": [],
+            "author_ids": [],
             "is_correct": False,
         }
 
@@ -182,7 +182,7 @@ def build_voting_choices(
     choices.append({
         "id": uuid4().hex,
         "text": correct_answer,
-        "authors_names": [],
+        "author_ids": [],
         "is_correct": True,
     })
 
@@ -211,112 +211,192 @@ def validate_vote(
     if choice is None:
         return {"is_valid": False, "reason": "INVALID_CHOICE"}
 
-    if voter_id in choice["authors_names"]:
+    if voter_id in choice["author_ids"]:
         return {"is_valid": False, "reason": "SELF_VOTE"}
 
     return {"is_valid": True, "reason": ""}
 
 
-def calculate_results(
-    votes: dict[str, str],
-    bluffs: dict[str, str],
-    correct_answer: str,
-    players: dict[str, "PlayerInfo"],
+def prepare_voting_choices(
     voting_choices: list[dict],
-) -> dict:
-    """
-    Calculate the round results from the choices that were actually broadcast in the vote phase.
-    """
+) -> dict[str, dict]:
     if not voting_choices:
-        raise ValueError("Voting choices are missing for the current round")
+        raise ValueError("Voting choices are missing")
 
     choices_by_id = {
         choice["id"]: {
             **choice,
-            "authors_names": list(choice.get("authors_names", [])),
-            "voters": [],
+            "author_ids": list(
+                choice.get("author_ids", [])
+            ),
+            "voter_ids": [],
         }
         for choice in voting_choices
     }
-    correct_choice = next((choice for choice in choices_by_id.values() if choice.get("is_correct")), None)
 
-    if correct_choice is None:
-        raise ValueError("Voting choices must include exactly one correct answer")
-
-    normalized_correct_answer = normalize_answer(correct_answer)
-
-    bluff_owner_names: dict[str, list[str]] = {}
-    for player_id, bluff_text in bluffs.items():
-        normalized_bluff = normalize_answer(bluff_text)
-        if not normalized_bluff or normalized_bluff == normalized_correct_answer:
-            continue
-        player = players.get(player_id)
-        if player is None:
-            continue
-        bluff_owner_names.setdefault(normalized_bluff, []).append(player.name)
-
-    choice_by_normalized_text = {
-        normalize_answer(choice["text"]): choice
+    correct_choices = [
+        choice
         for choice in choices_by_id.values()
-    }
+        if choice.get("is_correct")
+    ]
 
-    for normalized_text, authors_names in bluff_owner_names.items():
-        choice = choice_by_normalized_text.get(normalized_text)
-        if choice is None or choice.get("is_correct"):
-            continue
-        choice.setdefault("authors_names", [])
-        choice["authors_names"].extend(authors_names)
+    if len(correct_choices) != 1:
+        raise ValueError(
+            "Voting choices must contain one correct answer"
+        )
+
+    return choices_by_id
+# this function takes the voting choices and returns a dictionary where the keys are the choice IDs and the values are the choice details, including author IDs and voter IDs. It also checks that there is exactly one correct answer among the choices.*
+# {
+#     "c1": {
+#         "id": "c1",
+#         "text": "Mars",
+#         "author_ids": [],
+#         "is_correct": True,
+#         "voter_ids": [],
+#     },
+#     "c2": {
+#         "id": "c2",
+#         "text": "Venus",
+#         "author_ids": ["u3"],
+#         "is_correct": False,
+#         "voter_ids": [],
+#     },
+# }
+
+def calculate_player_stats(
+    votes: dict[str, str],
+    players: dict[str, "PlayerInfo"],
+    choices_by_id: dict[str, dict],
+) -> dict[str, dict]:
+    player_stats = {
+        player_id: {
+            "correct_votes": 0,
+            "bluff_votes_received": 0,
+            "round_points": 0,
+        }
+        for player_id in players
+    }
 
     for voter_id, choice_id in votes.items():
         choice = choices_by_id.get(choice_id)
-        player = players.get(voter_id)
-        if choice is None or player is None:
+
+        if voter_id not in players or choice is None:
             continue
-        choice.setdefault("voters", [])
-        choice["voters"].append(player.name)
 
-    player_scores = {player_id: 0 for player_id in players}
+        choice["voter_ids"].append(voter_id)
 
-    for choice in choices_by_id.values():
-        if choice.get("is_correct"):
-            for voter_name in choice.get("voters", []):
-                for player_id, player in players.items():
-                    if player.name == voter_name:
-                        player_scores[player_id] += 1
-                        break
+        if choice["is_correct"]:
+            player_stats[voter_id]["correct_votes"] += 1
         else:
-            voter_count = len(choice.get("voters", []))
-            for author_name in choice.get("authors_names", []):
-                for player_id, player in players.items():
-                    if player.name == author_name:
-                        player_scores[player_id] += voter_count * 2
-                        break
+            for author_id in choice["author_ids"]:
+                if author_id in player_stats:
+                    player_stats[author_id][
+                        "bluff_votes_received"
+                    ] += 1
 
+    for stats in player_stats.values():
+        stats["round_points"] = (
+            stats["correct_votes"] * 1
+            + stats["bluff_votes_received"] * 2
+        )
+
+    return player_stats
+
+
+def build_results_payload(
+    choices_by_id: dict[str, dict],
+    player_stats: dict[str, dict],
+    players: dict[str, "PlayerInfo"],
+) -> dict:
     leaderboard = []
+
     for player_id, player in players.items():
-        player.score += player_scores[player_id]
+        player.score += player_stats[player_id][
+            "round_points"
+        ]
+
         leaderboard.append({
             "username": player.name,
             "score": player.score,
             "avatar_url": player.avatar_url,
         })
 
-    leaderboard.sort(key=lambda item: item["score"], reverse=True)
+    leaderboard.sort(
+        key=lambda item: item["score"],
+        reverse=True,
+    )
 
-    choices = []
-    for choice in voting_choices:
-        resolved_choice = choices_by_id[choice["id"]]
-        choices.append({
-            "id": resolved_choice["id"],
-            "text": resolved_choice["text"],
-            "authors_names": None if resolved_choice.get("is_correct") else resolved_choice.get("authors_names", []),
-            "voters": resolved_choice.get("voters", []),
-            "is_correct": resolved_choice.get("is_correct", False),
+    result_choices = []
+# change from ["u1", "u2"] to ["Alice", "Bob"] for authors and voters
+    for choice in choices_by_id.values():
+        authors_names = [
+            players[author_id].name
+            for author_id in choice["author_ids"]
+            if author_id in players
+        ]
+
+        voters_names = [
+            players[voter_id].name
+            for voter_id in choice["voter_ids"]
+            if voter_id in players
+        ]
+
+        result_choices.append({
+            "id": choice["id"],
+            "text": choice["text"],
+            "authors_names": (
+                None
+                if choice["is_correct"]
+                else authors_names
+            ),
+            "voters": voters_names,
+            "is_correct": choice["is_correct"],
         })
 
     return {
-        "choices": choices,
+        "choices": result_choices,
         "leaderboard": leaderboard,
     }
 
-    
+def calculate_results(
+    votes: dict[str, str],
+    players: dict[str, "PlayerInfo"],
+    voting_choices: list[dict],
+) -> dict:
+    choices_by_id = prepare_voting_choices(
+        voting_choices
+    )
+
+    player_stats = calculate_player_stats(
+        votes=votes,
+        players=players,
+        choices_by_id=choices_by_id,
+    )
+
+    return build_results_payload(
+        choices_by_id=choices_by_id,
+        player_stats=player_stats,
+        players=players,
+    )
+
+
+# Example of the results payload structure:
+# {
+#     "choices": [
+#         {
+#             "id": "c2",
+#             "text": "Venus",
+#             "authors_names": ["Alice"],
+#             "voters": ["Charlie"],
+#             "is_correct": False,
+#         }
+#     ],
+#     "leaderboard": [
+#         {
+#             "username": "Alice",
+#             "score": 3,
+#             "avatar_url": None,
+#         }
+#     ],
+# }
