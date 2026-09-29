@@ -3,7 +3,9 @@ from .ingestion import (
     get_category_list,
     get_random_question,
 )
-
+from sqlalchemy.dialects.postgresql import insert
+from .achievements import AchievementCode
+from .models import UserAchievement
 
 async def load_categories(
     language_code: str,
@@ -100,3 +102,50 @@ async def save_game_results(
         session.add_all(category_statistics)
 
     return game_id
+
+
+async def save_unlocked_achievements(
+    unlocked: dict[int, list[AchievementCode]],
+) -> dict[int, list[str]]:
+    rows = [
+        {
+            "user_id": user_id,
+            "achievement_code": code.value,
+        }
+        for user_id, codes in unlocked.items()
+        for code in codes
+    ]
+
+    if not rows:
+        return {}
+# save unlocked achievements to the database .on_conflict_do_nothing() is used to avoid inserting duplicate achievements for the same user. The function returns a dictionary mapping user IDs to lists of achievement codes that were successfully saved to the database.
+    async with AsyncSessionLocal.begin() as session:
+        statement = (
+            insert(UserAchievement)
+            .values(rows)
+            .on_conflict_do_nothing(
+                index_elements=[
+                    "user_id",
+                    "achievement_code",
+                ]
+            )
+            .returning(
+                UserAchievement.user_id,
+                UserAchievement.achievement_code,
+            )
+        )
+
+        result = await session.execute(statement)
+
+    saved = {}
+
+    for user_id, achievement_code in result.all():
+        saved.setdefault(user_id, []).append(
+            achievement_code
+        )
+
+    return saved
+
+# saved = {
+#     5: ["BLUFFER", "LONE_GENIUS"]
+# }

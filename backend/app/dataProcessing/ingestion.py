@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from random import shuffle
 from uuid import uuid4
-
+from .achievements import evaluate_round_achievements
 
 from .models import (
     Category,
@@ -374,12 +374,26 @@ def calculate_results(
         choices_by_id=choices_by_id,
     )
 
-    return build_results_payload(
+    unlocked = evaluate_round_achievements(
+        player_stats
+    )
+
+    result = build_results_payload(
         choices_by_id=choices_by_id,
         player_stats=player_stats,
         players=players,
     )
 
+    result["unlocked_achievements"] = {
+        player_id: [
+            code.value
+            for code in achievement_codes
+        ]
+        for player_id, achievement_codes
+        in unlocked.items()
+    }
+
+    return result
 
 # Example of the results payload structure:
 # {
@@ -399,4 +413,7 @@ def calculate_results(
 #             "avatar_url": None,
 #         }
 #     ],
+#     "unlocked_achievements": {
+#         "u1": ["BLUFFER"]
+#     },
 # }
