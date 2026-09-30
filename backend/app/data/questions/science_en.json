@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Which Apollo mission made the first crewed landing on the Moon?",
+    "correct_answer": "Apollo 11",
+    "decoys": [
+      "Apollo 10",
+      "Apollo 12",
+      "Apollo 13"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nasa.gov/mission/apollo-11/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Name the planet with the greatest mass and diameter in our Solar System.",
+    "correct_answer": "Jupiter",
+    "decoys": [
+      "Saturn",
+      "Neptune",
+      "Earth"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/jupiter/jupiter-facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What satellite set the record for the longest-operating Earth-observation satellite after nearly 29 years of service?",
+    "correct_answer": "Landsat 5",
+    "decoys": [
+      "Landsat 4",
+      "Landsat 7",
+      "Landsat 8"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/landsat-missions/landsat-5"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What common substance has the molecular formula H2O?",
+    "correct_answer": "Water",
+    "decoys": [
+      "Hydrogen peroxide",
+      "Ammonia",
+      "Methane"
+    ],
+    "image_url": null,
+    "source_url": "https://pubchem.ncbi.nlm.nih.gov/compound/Water"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What artery carries oxygen-poor blood from the heart to the lungs?",
+    "correct_answer": "Pulmonary artery",
+    "decoys": [
+      "Pulmonary vein",
+      "Aorta",
+      "Coronary artery"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nhlbi.nih.gov/health/heart/blood-flow"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What semiconductor device can use a small input signal to control a larger electrical current?",
+    "correct_answer": "Transistor",
+    "decoys": [
+      "Resistor",
+      "Capacitor",
+      "Inductor"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/technology/transistor"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the scientific name of the red fox?",
+    "correct_answer": "Vulpes vulpes",
+    "decoys": [
+      "Vulpes lagopus",
+      "Canis lupus",
+      "Urocyon cinereoargenteus"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/animal/red-fox"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What theorem links continuous symmetries in physics to conservation laws?",
+    "correct_answer": "Noether's theorem",
+    "decoys": [
+      "Bell's theorem",
+      "Carnot's theorem",
+      "Gauss's theorem"
+    ],
+    "image_url": null,
+    "source_url": "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.85.085026"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "A positron is the antiparticle of what particle?",
+    "correct_answer": "Electron",
+    "decoys": [
+      "Proton",
+      "Neutron",
+      "Photon"
+    ],
+    "image_url": null,
+    "source_url": "https://home.cern/science/physics/antimatter"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What medical term describes a mass caused by a surgical sponge accidentally left inside a patient?",
+    "correct_answer": "Gossypiboma",
+    "decoys": [
+      "Hematoma",
+      "Granuloma",
+      "Seroma"
+    ],
+    "image_url": null,
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5192210/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the anatomical name for the kneecap?",
+    "correct_answer": "Patella",
+    "decoys": [
+      "Scapula",
+      "Fibula",
+      "Talus"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK513259/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What species did the famous early hominin fossil nicknamed Lucy belong to?",
+    "correct_answer": "Australopithecus afarensis",
+    "decoys": [
+      "Australopithecus africanus",
+      "Homo habilis",
+      "Paranthropus boisei"
+    ],
+    "image_url": null,
+    "source_url": "https://humanorigins.si.edu/evidence/human-fossils/species/australopithecus-afarensis"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What nucleotide base pairs with guanine in DNA?",
+    "correct_answer": "Cytosine",
+    "decoys": [
+      "Adenine",
+      "Thymine",
+      "Uracil"
+    ],
+    "image_url": null,
+    "source_url": "https://www.genome.gov/genetics-glossary/acgt"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the scientific name of the western lowland gorilla?",
+    "correct_answer": "Gorilla gorilla gorilla",
+    "decoys": [
+      "Gorilla gorilla diehli",
+      "Gorilla beringei beringei",
+      "Gorilla beringei graueri"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/western-lowland-gorilla"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Which world has the highest average surface temperature among the Sun's planets?",
+    "correct_answer": "Venus",
+    "decoys": [
+      "Mercury",
+      "Mars",
+      "Jupiter"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/venus/venus-facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "A neutral atom with 92 electrons belongs to what element?",
+    "correct_answer": "Uranium",
+    "decoys": [
+      "Thorium",
+      "Protactinium",
+      "Neptunium"
+    ],
+    "image_url": null,
+    "source_url": "https://pml.nist.gov/PhysRefData/Handbook/Tables/uraniumtable1.htm"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What anatomical term means the navel or belly button?",
+    "correct_answer": "Umbilicus",
+    "decoys": [
+      "Philtrum",
+      "Nares",
+      "Pylorus"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/umbilicus"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the SI base unit of luminous intensity?",
+    "correct_answer": "Candela",
+    "decoys": [
+      "Lumen",
+      "Lux",
+      "Watt"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bipm.org/en/si-base-units/candela"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What deep tendon reflex is tested by tapping the Achilles tendon?",
+    "correct_answer": "Ankle jerk reflex",
+    "decoys": [
+      "Knee jerk reflex",
+      "Biceps reflex",
+      "Triceps reflex"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK531502/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is Earth's thin, outermost major compositional layer?",
+    "correct_answer": "Crust",
+    "decoys": [
+      "Mantle",
+      "Outer core",
+      "Asthenosphere"
+    ],
+    "image_url": null,
+    "source_url": "https://pubs.usgs.gov/gip/interior/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What human organ contains the islets of Langerhans?",
+    "correct_answer": "Pancreas",
+    "decoys": [
+      "Liver",
+      "Kidney",
+      "Spleen"
+    ],
+    "image_url": null,
+    "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments/pancreatic-islet-transplantation"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the SI derived unit of electrical resistance?",
+    "correct_answer": "Ohm",
+    "decoys": [
+      "Volt",
+      "Farad",
+      "Siemens"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bipm.org/en/publications/si-brochure"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Folic acid is a form of what vitamin?",
+    "correct_answer": "Vitamin B9",
+    "decoys": [
+      "Vitamin B6",
+      "Vitamin B12",
+      "Vitamin C"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cdc.gov/folic-acid/about/intake-and-sources.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Approximately how long is the half-life of uranium-235?",
+    "correct_answer": "704 million years",
+    "decoys": [
+      "24 million years",
+      "1.25 billion years",
+      "4.47 billion years"
+    ],
+    "image_url": null,
+    "source_url": "https://analytical-reference-materials.iaea.org/iaea-rgu-1"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the lowest layer of Earth's atmosphere?",
+    "correct_answer": "Troposphere",
+    "decoys": [
+      "Stratosphere",
+      "Mesosphere",
+      "Thermosphere"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cpc.ncep.noaa.gov/products/outreach/glossary.shtml"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "How many chambers does the human heart have?",
+    "correct_answer": "4",
+    "decoys": [
+      "2",
+      "3",
+      "6"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nhlbi.nih.gov/health/heart/anatomy"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "About how old is Earth?",
+    "correct_answer": "4.54 billion years",
+    "decoys": [
+      "3.20 billion years",
+      "5.80 billion years",
+      "13.8 billion years"
+    ],
+    "image_url": null,
+    "source_url": "https://pubs.usgs.gov/gip/geotime/age.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the glowing envelope of gas and dust around a comet's nucleus called?",
+    "correct_answer": "Coma",
+    "decoys": [
+      "Corona",
+      "Magnetosphere",
+      "Photosphere"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/solar-system/comets/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the molecular formula of ozone?",
+    "correct_answer": "O3",
+    "decoys": [
+      "O2",
+      "CO2",
+      "N2O"
+    ],
+    "image_url": null,
+    "source_url": "https://pubchem.ncbi.nlm.nih.gov/compound/Ozone"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What metalloid has atomic number 51?",
+    "correct_answer": "Antimony",
+    "decoys": [
+      "Arsenic",
+      "Tellurium",
+      "Silicon"
+    ],
+    "image_url": null,
+    "source_url": "https://periodic-table.rsc.org/element/51/antimony"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What temperature is 100 degrees Celsius on the Fahrenheit scale?",
+    "correct_answer": "212 degrees Fahrenheit",
+    "decoys": [
+      "180 degrees Fahrenheit",
+      "232 degrees Fahrenheit",
+      "310 degrees Fahrenheit"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/ggw/GlossaryF"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the most abundant chemical element in the universe?",
+    "correct_answer": "Hydrogen",
+    "decoys": [
+      "Helium",
+      "Oxygen",
+      "Carbon"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/universe/stars/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What moon of Saturn has a dense nitrogen-rich atmosphere?",
+    "correct_answer": "Titan",
+    "decoys": [
+      "Europa",
+      "Ganymede",
+      "Triton"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/saturn/moons/titan/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the SI base unit of length?",
+    "correct_answer": "Metre",
+    "decoys": [
+      "Foot",
+      "Yard",
+      "Angstrom"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bipm.org/en/measurement-units/si-base-units"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "How many structural isomers are there of butanol with the formula C4H10O and one alcohol group?",
+    "correct_answer": "4",
+    "decoys": [
+      "2",
+      "3",
+      "5"
+    ],
+    "image_url": null,
+    "source_url": "https://chem.libretexts.org/Courses/Los_Angeles_Southwest_College/LASC_%7C_Chemistry_51_-_Fundamentals_of_Chemistry/16%3A_Organic_Chemistry/16.12%3A_Alcohols"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "How many primary teeth does a typical child have in a complete set?",
+    "correct_answer": "20",
+    "decoys": [
+      "16",
+      "24",
+      "28"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK538475/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "How many planets are in the Solar System?",
+    "correct_answer": "8",
+    "decoys": [
+      "7",
+      "9",
+      "10"
+    ],
+    "image_url": null,
+    "source_url": "https://ssd.jpl.nasa.gov/planets/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What mainly produces the normal first two heart sounds, often described as 'lub-dub'?",
+    "correct_answer": "Closing heart valves",
+    "decoys": [
+      "Opening heart valves",
+      "Contracting coronary arteries",
+      "Air entering the lungs"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK541010/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What physical process is central to the amplification of light in a laser?",
+    "correct_answer": "Stimulated emission",
+    "decoys": [
+      "Spontaneous emission",
+      "The photoelectric effect",
+      "Blackbody radiation"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nist.gov/history/nists-role-laser-measurements-and-applications/what-laser"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What was the mission designation of Space Shuttle Columbia's final flight?",
+    "correct_answer": "STS-107",
+    "decoys": [
+      "STS-51-L",
+      "STS-109",
+      "STS-114"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nasa.gov/mission/sts-107/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What species is the giant fungal clone nicknamed the 'Humongous Fungus' in northeastern Oregon?",
+    "correct_answer": "Armillaria solidipes",
+    "decoys": [
+      "Armillaria mellea",
+      "Armillaria gallica",
+      "Armillaria sinapina"
+    ],
+    "image_url": null,
+    "source_url": "https://research.fs.usda.gov/download/treesearch/68329.pdf"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the atomic number of strontium?",
+    "correct_answer": "38",
+    "decoys": [
+      "28",
+      "47",
+      "56"
+    ],
+    "image_url": null,
+    "source_url": "https://periodic-table.rsc.org/element/38/strontium"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What simple sugar, commonly called blood sugar, has the molecular formula C6H12O6?",
+    "correct_answer": "Glucose",
+    "decoys": [
+      "Sucrose",
+      "Lactose",
+      "Maltose"
+    ],
+    "image_url": null,
+    "source_url": "https://pubchem.ncbi.nlm.nih.gov/compound/Glucose"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Diamonds are made primarily of what element?",
+    "correct_answer": "Carbon",
+    "decoys": [
+      "Silicon",
+      "Calcium",
+      "Boron"
+    ],
+    "image_url": null,
+    "source_url": "https://www.gia.edu/diamond-description"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What mass-extinction boundary is associated with the asteroid impact that eliminated the non-avian dinosaurs?",
+    "correct_answer": "Cretaceous-Paleogene boundary",
+    "decoys": [
+      "Permian-Triassic boundary",
+      "Triassic-Jurassic boundary",
+      "Ordovician-Silurian boundary"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/subjects/fossils/mass-extinctions-through-geologic-time.htm"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the SI unit of absorbed dose from ionizing radiation?",
+    "correct_answer": "Gray",
+    "decoys": [
+      "Sievert",
+      "Becquerel",
+      "Roentgen"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bipm.org/en/publications/si-brochure"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Who discovered X-rays in 1895?",
+    "correct_answer": "Wilhelm Conrad Röntgen",
+    "decoys": [
+      "Henri Becquerel",
+      "J. J. Thomson",
+      "Ernest Rutherford"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/physics/1901/rontgen/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "In what part of the human body is the radius bone located?",
+    "correct_answer": "Forearm",
+    "decoys": [
+      "Lower leg",
+      "Upper arm",
+      "Chest"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK544512/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Miranda, Ariel, Umbriel, Titania, and Oberon orbit what planet?",
+    "correct_answer": "Uranus",
+    "decoys": [
+      "Saturn",
+      "Neptune",
+      "Jupiter"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/uranus/moons/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "In a typical human cell that contains mitochondria, which organelle generates most of the ATP?",
+    "correct_answer": "Mitochondrion",
+    "decoys": [
+      "Lysosome",
+      "Golgi apparatus",
+      "Ribosome"
+    ],
+    "image_url": null,
+    "source_url": "https://www.genome.gov/genetics-glossary/Mitochondria"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What was the first artificial satellite placed in Earth orbit?",
+    "correct_answer": "Sputnik 1",
+    "decoys": [
+      "Explorer 1",
+      "Vostok 1",
+      "Luna 2"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nasa.gov/history/sputnik/index.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What was the highest Saffir-Simpson category reached by Hurricane Katrina over the Gulf of Mexico?",
+    "correct_answer": "Category 5",
+    "decoys": [
+      "Category 2",
+      "Category 3",
+      "Category 4"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nhc.noaa.gov/data/tcr/AL122005_Katrina.pdf"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "How many lobes does the human right lung normally have?",
+    "correct_answer": "3",
+    "decoys": [
+      "1",
+      "2",
+      "4"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK470197/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What type of immune cell belongs to the adaptive immune system and can directly kill infected cells?",
+    "correct_answer": "Cytotoxic T cell",
+    "decoys": [
+      "Natural killer cell",
+      "Neutrophil",
+      "Dendritic cell"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK279396/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What noble gas has the lowest atomic number?",
+    "correct_answer": "Helium",
+    "decoys": [
+      "Neon",
+      "Argon",
+      "Krypton"
+    ],
+    "image_url": null,
+    "source_url": "https://periodic-table.rsc.org/element/2/helium"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Which triplet on a DNA coding strand is a stop signal under the standard genetic code?",
+    "correct_answer": "TAA",
+    "decoys": [
+      "ACT",
+      "ACA",
+      "GTA"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "The medial meniscus is part of what joint?",
+    "correct_answer": "Knee",
+    "decoys": [
+      "Elbow",
+      "Shoulder",
+      "Ankle"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK431067/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What functional group characterizes an alcohol in organic chemistry?",
+    "correct_answer": "Hydroxyl group",
+    "decoys": [
+      "Carbonyl group",
+      "Carboxyl group",
+      "Amino group"
+    ],
+    "image_url": null,
+    "source_url": "https://goldbook.iupac.org/terms/view/A00204"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What animal appears in Schrödinger's famous quantum-mechanics thought experiment?",
+    "correct_answer": "Cat",
+    "decoys": [
+      "Dog",
+      "Mouse",
+      "Rabbit"
+    ],
+    "image_url": null,
+    "source_url": "https://educationalgames.nobelprize.org/educational/physics/quantised_world/final-7.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the name of the supermassive black hole at the center of the Milky Way?",
+    "correct_answer": "Sagittarius A*",
+    "decoys": [
+      "Messier 87*",
+      "Cygnus X-1",
+      "Andromeda A"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nasa.gov/missions/ixpe/milky-ways-central-black-hole-woke-up-200-years-ago-nasas-ixpe-finds/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Botanically, what kind of fruit is a strawberry?",
+    "correct_answer": "Aggregate accessory fruit",
+    "decoys": [
+      "True berry",
+      "Drupe",
+      "Legume"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/plant/strawberry"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the largest animal known to have lived on Earth?",
+    "correct_answer": "Blue whale",
+    "decoys": [
+      "African bush elephant",
+      "Whale shark",
+      "Argentinosaurus"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fisheries.noaa.gov/species/blue-whale"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the SI base unit of electric current?",
+    "correct_answer": "Ampere",
+    "decoys": [
+      "Volt",
+      "Ohm",
+      "Watt"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bipm.org/en/measurement-units/si-base-units"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What does deionization primarily remove from water?",
+    "correct_answer": "Dissolved ions",
+    "decoys": [
+      "Dissolved oxygen",
+      "All microorganisms",
+      "Water molecules"
+    ],
+    "image_url": null,
+    "source_url": "https://www.epa.gov/system/files/documents/2024-03/ws-commercial-bmp-watersenseatwork_section7.1_waterpurification.pdf"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What cognitive bias can make low performers greatly overestimate their competence?",
+    "correct_answer": "Dunning-Kruger effect",
+    "decoys": [
+      "Confirmation bias",
+      "Halo effect",
+      "False-consensus effect"
+    ],
+    "image_url": null,
+    "source_url": "https://www.apa.org/monitor/feb03/overestimate.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the common name for medial tibial stress syndrome?",
+    "correct_answer": "Shin splints",
+    "decoys": [
+      "Tennis elbow",
+      "Runner's knee",
+      "Plantar fasciitis"
+    ],
+    "image_url": null,
+    "source_url": "https://orthoinfo.aaos.org/en/diseases--conditions/shin-splints/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What color is oxygen-poor human blood inside the body?",
+    "correct_answer": "Dark red",
+    "decoys": [
+      "Blue",
+      "Purple",
+      "Green"
+    ],
+    "image_url": null,
+    "source_url": "https://www.loc.gov/everyday-mysteries/biology-and-human-anatomy/item/is-blood-blue/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What psychological term describes discomfort caused by inconsistent beliefs or by conflict between beliefs and behavior?",
+    "correct_answer": "Cognitive dissonance",
+    "decoys": [
+      "Cognitive fixation",
+      "Confirmation bias",
+      "Belief perseverance"
+    ],
+    "image_url": null,
+    "source_url": "https://www.apa.org/ed/precollege/topss/lessons/social-psychology.pdf"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Approximately what percentage of Earth's surface is covered by water?",
+    "correct_answer": "71%",
+    "decoys": [
+      "51%",
+      "61%",
+      "81%"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/special-topics/water-science-school/science/how-much-water-there-earth"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What chemical element has the symbol Fe?",
+    "correct_answer": "Iron",
+    "decoys": [
+      "Fluorine",
+      "Francium",
+      "Fermium"
+    ],
+    "image_url": null,
+    "source_url": "https://periodic-table.rsc.org/element/26/iron"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Approximately what percentage of Earth's atmosphere is oxygen by volume?",
+    "correct_answer": "21%",
+    "decoys": [
+      "11%",
+      "31%",
+      "41%"
+    ],
+    "image_url": null,
+    "source_url": "https://gml.noaa.gov/infodata/info_activities/pdfs/CTA_atmospheric_layers.pdf"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What law relates the net electric flux through a closed surface to the electric charge enclosed?",
+    "correct_answer": "Gauss's law",
+    "decoys": [
+      "Faraday's law",
+      "Ohm's law",
+      "Hooke's law"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/university-physics-volume-2/pages/6-3-applying-gausss-law"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What common name is given to a young marsupial?",
+    "correct_answer": "Joey",
+    "decoys": [
+      "Calf",
+      "Kit",
+      "Cub"
+    ],
+    "image_url": null,
+    "source_url": "https://australian.museum/learn/species-identification/ask-an-expert/what-is-a-marsupial/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "In what desert does the saguaro cactus grow naturally?",
+    "correct_answer": "Sonoran Desert",
+    "decoys": [
+      "Mojave Desert",
+      "Chihuahuan Desert",
+      "Great Basin Desert"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/articles/saguaro-cactus-facts.htm"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What bacterium causes cholera?",
+    "correct_answer": "Vibrio cholerae",
+    "decoys": [
+      "Salmonella enterica",
+      "Clostridium tetani",
+      "Yersinia pestis"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cdc.gov/cholera/about/index.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "A heliotropic plant changes its orientation in response to what?",
+    "correct_answer": "Sunlight",
+    "decoys": [
+      "Gravity",
+      "Touch",
+      "Soil moisture"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/heliotropism"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "In what part of the body is the gluteus maximus muscle located?",
+    "correct_answer": "Buttocks",
+    "decoys": [
+      "Upper arm",
+      "Chest",
+      "Neck"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK538193/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "In what part of the body is the tibia located?",
+    "correct_answer": "Lower leg",
+    "decoys": [
+      "Forearm",
+      "Upper arm",
+      "Pelvis"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK526053/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What mineral defines hardness 1, the lowest value on the Mohs scale?",
+    "correct_answer": "Talc",
+    "decoys": [
+      "Gypsum",
+      "Calcite",
+      "Fluorite"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/articles/mohs-hardness-scale.htm"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "In what year was Dolly, the first mammal cloned from an adult somatic cell, born?",
+    "correct_answer": "1996",
+    "decoys": [
+      "1986",
+      "1991",
+      "2001"
+    ],
+    "image_url": null,
+    "source_url": "https://vet.ed.ac.uk/roslin/about/history/dolly/facts/life-of-dolly"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What five-carbon sugar is part of DNA's sugar-phosphate backbone?",
+    "correct_answer": "Deoxyribose",
+    "decoys": [
+      "Ribose",
+      "Arabinose",
+      "Xylose"
+    ],
+    "image_url": null,
+    "source_url": "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid-DNA"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Approximately how long does sunlight take to reach Earth?",
+    "correct_answer": "8 minutes 20 seconds",
+    "decoys": [
+      "1 minute 20 seconds",
+      "4 minutes 40 seconds",
+      "12 minutes"
+    ],
+    "image_url": null,
+    "source_url": "https://spaceplace.nasa.gov/all-about-the-sun/en/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the chemical formula for ammonia?",
+    "correct_answer": "NH3",
+    "decoys": [
+      "NO3",
+      "CH4",
+      "NH4"
+    ],
+    "image_url": null,
+    "source_url": "https://pubchem.ncbi.nlm.nih.gov/compound/Ammonia"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "How many legs can a normal centipede not have exactly?",
+    "correct_answer": "100",
+    "decoys": [
+      "98",
+      "102",
+      "110"
+    ],
+    "image_url": null,
+    "source_url": "https://australian.museum/learn/animals/centipedes/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Where in the human body is the pineal gland located?",
+    "correct_answer": "Brain",
+    "decoys": [
+      "Throat",
+      "Chest",
+      "Pelvis"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK525955/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What structural protein makes up most of a human fingernail?",
+    "correct_answer": "Keratin",
+    "decoys": [
+      "Collagen",
+      "Chitin",
+      "Elastin"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK513133/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What chemical element has the lowest boiling point?",
+    "correct_answer": "Helium",
+    "decoys": [
+      "Hydrogen",
+      "Neon",
+      "Nitrogen"
+    ],
+    "image_url": null,
+    "source_url": "https://periodic-table.rsc.org/element/2/helium"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What type of rock forms when existing rock is transformed by heat and pressure without fully melting?",
+    "correct_answer": "Metamorphic rock",
+    "decoys": [
+      "Sedimentary rock",
+      "Igneous rock",
+      "Volcanic glass"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/programs/water-resources/science/rocks-and-water-cycle"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What hazard does the yellow quadrant of an NFPA 704 diamond represent?",
+    "correct_answer": "Instability",
+    "decoys": [
+      "Health",
+      "Flammability",
+      "Special hazards"
+    ],
+    "image_url": null,
+    "source_url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/704/704_A2026_CLA_AAA_SD_BallotFinal.pdf"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What scientific term means the sense of taste?",
+    "correct_answer": "Gustation",
+    "decoys": [
+      "Olfaction",
+      "Proprioception",
+      "Nociception"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK557768/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Curium was named in honor of which scientists?",
+    "correct_answer": "Marie and Pierre Curie",
+    "decoys": [
+      "Lise Meitner and Otto Hahn",
+      "Ernest and Mary Rutherford",
+      "Niels and Margrethe Bohr"
+    ],
+    "image_url": null,
+    "source_url": "https://edu.rsc.org/feature/four-curie-centennial-elements/2020149.article"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What pigment is chiefly responsible for the green color of most plant leaves?",
+    "correct_answer": "Chlorophyll",
+    "decoys": [
+      "Carotene",
+      "Anthocyanin",
+      "Melanin"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/chlorophyll"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "In electrical engineering, what property is measured in henries?",
+    "correct_answer": "Inductance",
+    "decoys": [
+      "Capacitance",
+      "Resistance",
+      "Conductance"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bipm.org/en/publications/si-brochure"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What Belgian priest and physicist proposed the 'primeval atom' idea that helped lead to the modern Big Bang theory?",
+    "correct_answer": "Georges Lemaître",
+    "decoys": [
+      "Edwin Hubble",
+      "George Gamow",
+      "Arthur Eddington"
+    ],
+    "image_url": null,
+    "source_url": "https://www.aps.org/apsnews/2026/05/lemaitre-proposes-universe-beginning"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "Which Group 2 metal burns with a bright white light and is used in flares, fireworks, and sparklers?",
+    "correct_answer": "Magnesium",
+    "decoys": [
+      "Calcium",
+      "Strontium",
+      "Barium"
+    ],
+    "image_url": null,
+    "source_url": "https://periodic-table.rsc.org/element/12/magnesium"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the SI base unit of mass?",
+    "correct_answer": "Kilogram",
+    "decoys": [
+      "Gram",
+      "Tonne",
+      "Pound"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bipm.org/en/measurement-units/si-base-units"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "What is the chemical symbol for tin?",
+    "correct_answer": "Sn",
+    "decoys": [
+      "Ti",
+      "Sb",
+      "In"
+    ],
+    "image_url": null,
+    "source_url": "https://periodic-table.rsc.org/element/50/tin"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "How many teeth does a typical adult have if all four wisdom teeth are excluded?",
+    "correct_answer": "28",
+    "decoys": [
+      "24",
+      "30",
+      "32"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK538475/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "How many specified elementary entities are in exactly one mole?",
+    "correct_answer": "6.02214076 × 10^23",
+    "decoys": [
+      "6.02214076 × 10^22",
+      "6.62607015 × 10^23",
+      "9.10938371 × 10^23"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bipm.org/en/si-base-units/mole"
+  },
+  {
+    "category_id": 1,
+    "language_code": "en",
+    "question_text": "At what temperature do the Celsius and Fahrenheit scales show the same numerical value?",
+    "correct_answer": "-40 degrees",
+    "decoys": [
+      "-32 degrees",
+      "0 degrees",
+      "100 degrees"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nist.gov/pml/owm/si-units-temperature"
+  }
+]
