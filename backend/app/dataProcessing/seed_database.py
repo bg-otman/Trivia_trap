@@ -1,17 +1,23 @@
 from __future__ import annotations
 
+import argparse
 import asyncio
 import json
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from uuid import NAMESPACE_URL, uuid5
 
 from sqlalchemy import or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from .database import AsyncSessionLocal, engine
 from .ingestion import normalize_answer
-from .models import Category, CategoryTranslation, Question, QuestionDecoy
+from .models import (
+    Category, CategoryTranslation, Friendship, Game, GamePlayerCategoryResult,
+    GamePlayerResult, Question, QuestionDecoy, User, UserAchievement,
+)
 
 
 QUESTIONS_DIRECTORY = Path(__file__).resolve().parents[1] / "data" / "questions"
@@ -374,7 +380,93 @@ async def seed_questions(
     return inserted, skipped
 
 
-async def main() -> None:
+async def seed_mock_user_data(
+    session: AsyncSession,
+    category_id_map: dict[int, int],
+) -> User:
+    """Add repeatable local fixtures without resetting existing user progress.
+
+    Reserved mock Google subjects satisfy the user constraint but are not real
+    Google identities or login credentials. Authentication is not implemented yet.
+    """
+    joined_at = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    users: list[User] = []
+    for username in ("demo_player", "demo_alex", "demo_sam"):
+        email = f"{username}@example.com"
+        subject = f"local-mock:{username}"
+        matches = (
+            await session.scalars(select(User).where(or_(
+                User.username == username,
+                User.email == email,
+                User.google_sub == subject,
+            )))
+        ).all()
+        if matches:
+            if len(matches) != 1 or (
+                matches[0].username, matches[0].email, matches[0].google_sub
+            ) != (username, email, subject):
+                raise ValueError(f"Mock user conflicts with an existing account: {username}")
+            user = matches[0]
+        else:
+            user = User(
+                username=username, email=email, google_sub=subject,
+                created_at=joined_at,
+            )
+            session.add(user)
+            await session.flush()
+        users.append(user)
+
+    demo = users[0]
+    for friend, status in zip(users[1:], ("accepted", "pending")):
+        existing = await session.scalar(select(Friendship).where(or_(
+            (Friendship.requester_id == demo.id) & (Friendship.receiver_id == friend.id),
+            (Friendship.requester_id == friend.id) & (Friendship.receiver_id == demo.id),
+        )))
+        if existing is None:
+            session.add(Friendship(
+                requester_id=demo.id, receiver_id=friend.id, status=status,
+                created_at=joined_at + timedelta(days=1),
+            ))
+
+    # Each game has two rounds per category, three players, and distinct ranks.
+    for game_number in range(3):
+        game_id = uuid5(NAMESPACE_URL, f"trivia-trap/local-mock/game/{game_number}")
+        if await session.get(Game, game_id) is not None:
+            continue
+        started_at = joined_at + timedelta(days=game_number + 2)
+        game = Game(
+            id=game_id, host_user_id=demo.id, language_code="en",
+            total_rounds=2 * len(category_id_map), started_at=started_at,
+            finished_at=started_at + timedelta(minutes=15),
+            player_results=[],
+        )
+        for player_number, user in enumerate(users):
+            rank = (player_number + game_number) % len(users) + 1
+            game.player_results.append(GamePlayerResult(
+                user_id=user.id, final_rank=rank, final_score=(4 - rank) * 400,
+                bluff_votes_received=4 - rank,
+                category_results=[
+                    GamePlayerCategoryResult(
+                        category_id=category_id, questions_played=2,
+                        correct_answers=(source_id + player_number + game_number) % 3,
+                    )
+                    for source_id, category_id in category_id_map.items()
+                ],
+            ))
+        session.add(game)
+
+    # Development achievement codes; the application has no catalog yet.
+    for code in ("first_game", "first_win"):
+        if await session.get(UserAchievement, (demo.id, code)) is None:
+            session.add(UserAchievement(
+                user_id=demo.id, achievement_code=code,
+                unlocked_at=joined_at + timedelta(days=2, minutes=15),
+            ))
+    await session.flush()
+    return demo
+
+
+async def main(*, with_mock_users: bool = False) -> None:
     validate_category_seeds()
     questions = load_questions()
 
@@ -386,18 +478,34 @@ async def main() -> None:
             category_id_map,
         )
 
+        demo = (
+            await seed_mock_user_data(session, category_id_map)
+            if with_mock_users else None
+        )
+
     print(f"Question files loaded: {len(questions)}")
     print(f"Categories ready: {len(category_id_map)}")
     print(f"Questions inserted: {inserted}")
     print(f"Questions already present: {skipped}")
 
+    if demo is not None:
+        print(f"Mock user ready: {demo.username} (id={demo.id}, email={demo.email})")
+        print("Mock data: 3 users, 3 games, category results, 2 achievements, 2 friendships")
+        print("Mock users are development fixtures; authentication is not configured.")
 
-async def run() -> None:
+
+async def run(*, with_mock_users: bool = False) -> None:
     try:
-        await main()
+        await main(with_mock_users=with_mock_users)
     finally:
         await engine.dispose()
 
 
 if __name__ == "__main__":
-    asyncio.run(run())
+    parser = argparse.ArgumentParser(description="Seed trivia questions and optional local mock users.")
+    parser.add_argument(
+        "--with-mock-users", action="store_true",
+        help="Include development users, game history, achievements, and friendships.",
+    )
+    args = parser.parse_args()
+    asyncio.run(run(with_mock_users=args.with_mock_users))

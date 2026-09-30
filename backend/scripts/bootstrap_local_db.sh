@@ -74,8 +74,8 @@ uv sync --frozen
 echo "Applying database migrations..."
 uv run --no-sync python -m alembic upgrade head
 
-echo "Importing categories and questions..."
-uv run python -m app.dataProcessing.seed_database
+echo "Importing categories, questions, and mock user data..."
+uv run --no-sync python -m app.dataProcessing.seed_database --with-mock-users
 
 echo "Checking the database schema..."
 uv run --no-sync python -m alembic current
@@ -88,7 +88,13 @@ SELECT
     (SELECT COUNT(*) FROM categories) AS categories,
     (SELECT COUNT(*) FROM category_translations) AS translations,
     (SELECT COUNT(*) FROM questions) AS questions,
-    (SELECT COUNT(*) FROM question_decoys) AS decoys;
+    (SELECT COUNT(*) FROM question_decoys) AS decoys,
+    (SELECT COUNT(*) FROM users) AS users,
+    (SELECT COUNT(*) FROM games) AS games,
+    (SELECT COUNT(*) FROM game_player_results) AS player_results,
+    (SELECT COUNT(*) FROM game_player_category_results) AS category_results,
+    (SELECT COUNT(*) FROM user_achievements) AS achievements,
+    (SELECT COUNT(*) FROM friendships) AS friendships;
 "
 
 echo "Local database is ready."

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field
 from typing import Annotated
 
 
@@ -20,8 +20,7 @@ class UserAchievements(BaseModel):
     img: Annotated[str, Field(min_length=3, max_length=50)]
     unlocked: bool = False
 
-class User(BaseModel):
-    model_config = ConfigDict(arbitrary_types_allowed=True)
+class UserProfile(BaseModel, arbitrary_types_allowed=True):
     id: Annotated[int, Field(ge=0)]
     username: Annotated[str, Field(min_length=1, max_length=15)]
     banner: Annotated[str, Field(min_length=3, max_length=50)]
