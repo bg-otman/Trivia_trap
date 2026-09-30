@@ -26,7 +26,7 @@ Password = Annotated[SecretStr, AfterValidator(validate_password_encoding)]
 
 
 class RegisterData(BaseModel):
-    email: EmailStr = Field(max_length=256)
+    email: EmailStr = Field(max_length=255)
     # Match the room player's maximum name length.
     username: str = Field(min_length=3, max_length=15)
     password: Password = Field(min_length=15, max_length=128)
@@ -59,7 +59,7 @@ class UserResponse(BaseModel):
     email: EmailStr
 
 class LoginData(BaseModel):
-    email: EmailStr = Field(max_length=256)
+    email: EmailStr = Field(max_length=255)
     password: Password = Field(min_length=1, max_length=128)
 
 

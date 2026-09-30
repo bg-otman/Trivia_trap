@@ -1,34 +1,35 @@
 from typing import Annotated
 
-from friendship import memory_friends
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Path
 from authentication.current_user import get_current_user
-from authentication.memory_store import StoredUser
-from friendship.memory_friends import get_friends, send_friend, accept_request, get_incoming_requests, reject_request, cancel_request
+from dataProcessing.models import User
+from authentication.repository import DbSession
+from friendship.repository import get_friends, send_friend, accept_request, get_incoming_requests, reject_request, cancel_request, remove_friend as delete_friend
 
 friends_router = APIRouter(prefix="/friends", tags=["Friendship"])
 
-CurrentUser = Annotated[StoredUser, Depends(get_current_user)]
+CurrentUser = Annotated[User, Depends(get_current_user)]
+UserId = Annotated[int, Path(ge=1, le=2147483647)]
 
 
 @friends_router.get("/")
-async def list_friends(current_user: CurrentUser):
-    return get_friends(current_user["id"])
+async def list_friends(current_user: CurrentUser, db: DbSession):
+    return await get_friends(db, current_user.id)
 
 
 @friends_router.post("/request/{user_id}")
-async def send_friend_request(user_id: str, current_user: CurrentUser):
+async def send_friend_request(user_id: UserId, current_user: CurrentUser, db: DbSession):
     try:
-        send_friend(current_user["id"], user_id)
+        await send_friend(db, current_user.id, user_id)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
 
     return {"message": "Friend request sent"}
 
 @friends_router.post("/accept/{sender_id}")
-async def accept_friend_request(sender_id: str, current_user: CurrentUser):
+async def accept_friend_request(sender_id: UserId, current_user: CurrentUser, db: DbSession):
     try:
-        accept_request(current_user["id"], sender_id)
+        await accept_request(db, current_user.id, sender_id)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
 
@@ -36,14 +37,14 @@ async def accept_friend_request(sender_id: str, current_user: CurrentUser):
 
 
 @friends_router.get("/requests")
-async def list_incoming_requests(current_user: CurrentUser):
-    return get_incoming_requests(current_user["id"])
+async def list_incoming_requests(current_user: CurrentUser, db: DbSession):
+    return await get_incoming_requests(db, current_user.id)
 
 
 @friends_router.post("/reject/{sender_id}")
-async def reject_friend_request(sender_id: str, current_user: CurrentUser):
+async def reject_friend_request(sender_id: UserId, current_user: CurrentUser, db: DbSession):
     try:
-        reject_request(current_user["id"], sender_id)
+        await reject_request(db, current_user.id, sender_id)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
 
@@ -51,11 +52,12 @@ async def reject_friend_request(sender_id: str, current_user: CurrentUser):
 
 @friends_router.delete("/request/{receiver_id}")
 async def cancel_friend_request(
-    receiver_id: str,
+    receiver_id: UserId,
     current_user: CurrentUser,
+    db: DbSession,
 ):
     try:
-        cancel_request(current_user["id"], receiver_id)
+        await cancel_request(db, current_user.id, receiver_id)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
 
@@ -63,9 +65,9 @@ async def cancel_friend_request(
 
 
 @friends_router.delete("/{friend_id}")
-async def remove_friend(friend_id: str, current_user: CurrentUser):
+async def remove_friend(friend_id: UserId, current_user: CurrentUser, db: DbSession):
     try:
-        memory_friends.remove_friend(current_user["id"], friend_id)
+        await delete_friend(db, current_user.id, friend_id)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
 

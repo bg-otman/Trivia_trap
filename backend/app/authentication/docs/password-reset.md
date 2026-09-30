@@ -44,21 +44,15 @@ confirm delivery. SMTP errors or missing credentials are logged without tokens o
 credentials. There is no automatic retry. A successful reset also sends a password-change
 notification. Google-only accounts continue to use Google sign-in.
 
-## Development limits
+## Persistence and limits
 
-Users, tokens, cooldowns, and session versions use the existing in-memory user store.
-Use one backend process; restarting loses this state. Deployment still requires a
-shared database with transactional token consumption and shared IP/global request
-limits. The current cooldown only limits emails to each account. Use a durable email
-queue if delivery retries are required.
+Users, reset digests, cooldowns, and session versions are stored in PostgreSQL.
+Reset consumption and version changes are atomic across backend processes.
+The current cooldown limits emails per account; there are no IP/global request
+limits. Email delivery still uses BackgroundTasks without automatic retries.
 
 ## Tests
 
-From `backend`, run `make test`, or:
-
-```sh
-PYTHONPATH=app uv run python -m unittest discover -s tests -v
-```
-
-`tests/test_password_reset.py` is development verification, not part of the running API.
-Keep it to detect regressions. SMTP is mocked: tests never send real emails.
+See [database setup and integration tests](database.md). The database tests cover
+single-use tokens, expiry, concurrent requests, and revocation. SMTP is mocked;
+tests never send real emails.

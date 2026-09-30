@@ -1,16 +1,20 @@
-"""Password recovery for the existing single-process development user store."""
+"""Persistent, single-use password recovery."""
 import hashlib
 import os
 import secrets
-import time
+from datetime import datetime, timedelta, timezone
+
 from urllib.parse import urlsplit
+
+from sqlalchemy import or_, select, update
+from dataProcessing.models import User
 
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 from pydantic import BaseModel, EmailStr, Field, SecretStr, field_validator
 from fastapi.concurrency import run_in_threadpool
 
 from authentication.mailer import send_email
-from authentication.memory_store import TEST_USERS, find_user_by_email
+from authentication.repository import DbSession
 from authentication.schemas import Password, RegisterData
 from authentication.security import hash_password
 from authentication.validation_route import AuthRoute
@@ -22,7 +26,7 @@ GENERIC_MESSAGE = "If an eligible account exists, a password reset email will be
 
 
 class ForgotPasswordData(BaseModel):
-    email: EmailStr = Field(max_length=256)
+    email: EmailStr = Field(max_length=255)
 
 
 class ResetPasswordData(BaseModel):
@@ -42,9 +46,8 @@ class ResetPasswordData(BaseModel):
     def validate_password(cls, value: SecretStr) -> SecretStr:
         return RegisterData.validate_password_complexity(value)
 
-
 @reset_router.post("/forgot-password", status_code=202)
-async def forgot_password(data: ForgotPasswordData, background_tasks: BackgroundTasks):
+async def forgot_password(data: ForgotPasswordData, background_tasks: BackgroundTasks, db: DbSession):
     # Validate configuration for every request, without revealing account existence.
     reset_url = os.environ.get("PASSWORD_RESET_URL", "")
     try:
@@ -55,17 +58,27 @@ async def forgot_password(data: ForgotPasswordData, background_tasks: Background
         valid_url = False
     if not valid_url:
         raise HTTPException(503, "Password recovery is not configured.")
-    user = find_user_by_email(data.email)
-    now = time.time()
-    if user and user.get("password_hash") and now >= user.get("reset_sent_at", 0) + RESEND_SECONDS:
-        token = secrets.token_urlsafe(32)
-        user["reset_digest"] = hashlib.sha256(token.encode()).hexdigest()
-        user["reset_expires"] = now + RESET_SECONDS
-        user["reset_sent_at"] = now
+    now = datetime.now(timezone.utc)
+    token = secrets.token_urlsafe(32)
+    # The conditional UPDATE serializes concurrent requests for the same user.
+    email = await db.scalar(
+        update(User).where(
+            User.email_key == data.email.casefold(),
+            User.password_hash.is_not(None),
+            or_(User.reset_sent_at.is_(None),
+                User.reset_sent_at <= now - timedelta(seconds=RESEND_SECONDS)),
+        ).values(
+            reset_digest=hashlib.sha256(token.encode()).hexdigest(),
+            reset_expires=now + timedelta(seconds=RESET_SECONDS),
+            reset_sent_at=now,
+        ).returning(User.email)
+    )
+    await db.commit()
+    if email is not None:
         # The frontend owns the form; never derive its URL from a request header.
         link = f"{reset_url}#token={token}"
         background_tasks.add_task(
-            send_email, user["email"], "Reset your Trivia Trap password",
+            send_email, email, "Reset your Trivia Trap password",
             f"Open this link to choose a new password:\n\n{link}\n\n"
             "This link expires in 15 minutes and can be used once.\n"
             "If you did not request this, ignore this email.",
@@ -73,28 +86,35 @@ async def forgot_password(data: ForgotPasswordData, background_tasks: Background
     return {"message": GENERIC_MESSAGE}
 
 
-def find_reset_user(digest: str):
-    return next((user for user in TEST_USERS
-                 if secrets.compare_digest(user.get("reset_digest", ""), digest)
-                 and user.get("reset_expires", 0) > time.time()), None)
-
-
 @reset_router.post("/reset-password")
-async def reset_password(data: ResetPasswordData, background_tasks: BackgroundTasks):
+async def reset_password(data: ResetPasswordData, background_tasks: BackgroundTasks, db: DbSession):
     digest = hashlib.sha256(data.token.get_secret_value().encode()).hexdigest()
-    user = find_reset_user(digest)
-    if user is None:
+    eligible = await db.scalar(select(User.id).where(
+        User.reset_digest == digest,
+        User.reset_expires > datetime.now(timezone.utc),
+    ))
+    if eligible is None:
         raise HTTPException(400, "Invalid or expired reset link.")
     password_hash = await run_in_threadpool(hash_password, data.password.get_secret_value())
-    # Recheck after awaiting: concurrent resets or resends may invalidate the link.
-    if find_reset_user(digest) is not user:
+    # Recheck and consume atomically after hashing: only one request can succeed.
+    email = await db.scalar(
+        update(User).where(
+            User.id == eligible,
+            User.reset_digest == digest,
+            User.reset_expires > datetime.now(timezone.utc),
+        ).values(
+            password_hash=password_hash,
+            reset_digest=None,
+            reset_expires=None,
+            auth_version=User.auth_version + 1,
+        ).returning(User.email)
+    )
+    if email is None:
+        await db.rollback()
         raise HTTPException(400, "Invalid or expired reset link.")
-    user["password_hash"] = password_hash
-    user.pop("reset_digest", None)
-    user.pop("reset_expires", None)
-    user["auth_version"] = user.get("auth_version", 0) + 1
+    await db.commit()
     background_tasks.add_task(
-        send_email, user["email"], "Your Trivia Trap password was changed",
+        send_email, email, "Your Trivia Trap password was changed",
         "Your password has been reset. Sign in with your new password.\n"
         "If you did not do this, reset your password immediately.",
     )

@@ -2,11 +2,12 @@ import os
 import jwt
 from jwt.exceptions import InvalidTokenError
 from datetime import datetime, timedelta, timezone
-from uuid import UUID
 from pwdlib import PasswordHash
 from pwdlib.exceptions import UnknownHashError
 from fastapi.concurrency import run_in_threadpool
-from authentication.memory_store import StoredUser, find_user_by_email, find_user_by_id
+from authentication.repository import find_user_by_email
+from dataProcessing.models import User
+from sqlalchemy.ext.asyncio import AsyncSession
 
 
 JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY")
@@ -30,12 +31,12 @@ def verify_password(password: str, password_hash: str) -> bool: #check password 
         return False
 
 
-def create_access_token(user_id: str) -> str: #create JWT for user
+def create_access_token(user_id: int, auth_version: int) -> str: #create JWT for user
     now = datetime.now(timezone.utc)
 
     payload = {
-        "sub": user_id,
-        "ver": (find_user_by_id(user_id) or {}).get("auth_version", 0),
+        "sub": str(user_id),
+        "ver": auth_version,
         "iat": now,
         "exp": now + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES),
     }
@@ -47,13 +48,13 @@ def create_access_token(user_id: str) -> str: #create JWT for user
     )
 
 
-def decode_access_token(token: str) -> str:
+def decode_access_token(token: str) -> tuple[int, int]:
     try:
         payload = jwt.decode(
             token,
             JWT_SECRET_KEY,
             algorithms=[JWT_ALGORITHM],
-            options={"require": ["sub", "iat", "exp"]},
+            options={"require": ["sub", "iat", "exp", "ver"]},
         )
     except (TypeError, ValueError, OverflowError) as exc:
         raise InvalidTokenError("Invalid token claims") from exc
@@ -64,30 +65,24 @@ def decode_access_token(token: str) -> str:
 
     user_id = payload["sub"]
 
-    if not isinstance(user_id, str):
+    if (not isinstance(user_id, str) or not user_id.isascii()
+            or not user_id.isdecimal() or len(user_id) > 10
+            or not 0 < int(user_id) <= 2147483647):
         raise InvalidTokenError("Invalid user ID")
 
-    try:
-        UUID(user_id)
-    except ValueError as exc:
-        raise InvalidTokenError("Invalid user ID") from exc
-
-    user = find_user_by_id(user_id)
-    version = payload.get("ver", 0)
-    if type(version) is not int or user is None or version != user.get("auth_version", 0):
-        raise InvalidTokenError("Session expired")
-
-
-    return user_id
+    version = payload["ver"]
+    if type(version) is not int or version < 0:
+        raise InvalidTokenError("Invalid session version")
+    return int(user_id), version
 
 
 DUMMY_PASSWORD_HASH = hash_password("DummyPassword123!ThisIsNeverARealAccount")
 
-async def authenticate_user(email: str, password: str,) -> StoredUser | None:
+async def authenticate_user(db: AsyncSession, email: str, password: str) -> User | None:
 
-    user = find_user_by_email(email)
-    password_hash = user.get("password_hash") if user is not None else None
-    auth_version = user.get("auth_version", 0) if user is not None else 0
+    user = await find_user_by_email(db, email)
+    password_hash = user.password_hash if user is not None else None
+    auth_version = user.auth_version if user is not None else 0
 
     password_matches = await run_in_threadpool(
         verify_password,
@@ -98,8 +93,9 @@ async def authenticate_user(email: str, password: str,) -> StoredUser | None:
     if user is None or not password_hash or not password_matches:
         return None
 
-    # A reset may finish while password verification runs in another thread.
-    if user.get("password_hash") != password_hash or user.get("auth_version", 0) != auth_version:
+    # Refresh after the thread-pool await to observe concurrent password resets.
+    await db.refresh(user)
+    if user.password_hash != password_hash or user.auth_version != auth_version:
         return None
 
     return user
