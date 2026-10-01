@@ -61,6 +61,7 @@ interface LobbyPhaseProps {
   onKickPlayer: (playerId: Player["id"]) => void;
   onSettingsChange: (settings: GameSettings) => void;
   onSendMessage: (message: string) => void;
+  showMockChatTyping?: boolean;
   connectionState?: LobbyConnectionState;
   connectionError?: ServerErrorData | null;
   onRetryConnection?: () => void;
@@ -90,6 +91,7 @@ export function LobbyPhase({
   onKickPlayer,
   onSettingsChange,
   onSendMessage,
+  showMockChatTyping = false,
   connectionState = "connected",
   connectionError,
   onRetryConnection,
@@ -279,7 +281,7 @@ export function LobbyPhase({
             </div>
           </Card></motion.div>
           <motion.div className="order-3 lg:col-start-2 lg:row-span-3 lg:row-start-1" initial={reducedMotion ? { opacity: 0 } : { opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "spring", stiffness: 260, damping: 25 }}>
-            <GroupChat messages={chatMessages} onSendMessage={onSendMessage} className="lg:h-full" />
+            <GroupChat messages={chatMessages} onSendMessage={onSendMessage} showTypingIndicator={showMockChatTyping} className="lg:h-full" />
           </motion.div>
         </div>
 

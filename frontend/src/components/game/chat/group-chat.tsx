@@ -16,9 +16,10 @@ interface GroupChatProps {
   messages: ChatMessageData[];
   onSendMessage: (message: string) => void;
   className?: string;
+  showTypingIndicator?: boolean;
 }
 
-export function GroupChat({ messages, onSendMessage, className }: GroupChatProps) {
+export function GroupChat({ messages, onSendMessage, className, showTypingIndicator = false }: GroupChatProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -51,7 +52,7 @@ export function GroupChat({ messages, onSendMessage, className }: GroupChatProps
         )}
       </div>
 
-      <TypingIndicator name="SARAH" />
+      {showTypingIndicator ? <TypingIndicator name="SARAH" /> : null}
       <ChatInput onSend={onSendMessage} />
     </Card>
   );
@@ -88,7 +89,6 @@ export function ChatMessage({ message }: { message: ChatMessageData }) {
 export function ChatInput({ onSend }: { onSend: (message: string) => void }) {
   const [message, setMessage] = useState("");
   const reducedMotion = useReducedMotion();
-
   function send() {
     const value = message.trim();
     if (!value) return;

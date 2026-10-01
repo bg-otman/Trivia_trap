@@ -11,6 +11,11 @@ export interface UpdateSettingsData {
   language: string;
 }
 export interface UpdateSettingsMessage { event: "UPDATE_SETTINGS"; data: UpdateSettingsData; }
+export interface ChatMessageState {
+  player: { id: string; username: string; avatar_url?: string | null };
+  message: string;
+}
+export interface ChatMessageEvent { event: "CHAT_MESSAGE"; data: ChatMessageState; }
 export interface ServerErrorData { code: "ROOM_NOT_FOUND" | "FORBIDDEN" | "PLAYER_NOT_FOUND" | "FULL_ROOM" | string; message: string; }
 export interface ServerErrorMessage { event: "ERROR"; data: ServerErrorData; }
-export type LobbyServerMessage = LobbyUpdateMessage | ServerErrorMessage;
+export type LobbyServerMessage = LobbyUpdateMessage | ChatMessageEvent | ServerErrorMessage;

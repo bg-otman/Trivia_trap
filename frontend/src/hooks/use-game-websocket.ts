@@ -12,10 +12,28 @@ export function useGameWebSocket(roomId?: string) {
   );
   const client = useMemo(() => new GameWebSocketClient({
     onStateChange: store.setConnectionState,
-    onMessage: (message) => message.event === "LOBBY_UPDATE" ? store.setLobby(message.data) : store.setError(message.data),
+    onMessage: (message) => {
+      if (message.event === "LOBBY_UPDATE") {
+        store.setLobby(message.data);
+      } else if (message.event === "CHAT_MESSAGE") {
+        store.addChatMessage({
+          id: crypto.randomUUID(),
+          playerId: message.data.player.id,
+          playerName: message.data.player.username,
+          playerAvatar: message.data.player.avatar_url ?? undefined,
+          text: message.data.message,
+          timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+          isYou: message.data.player.id === sessionUser?.id,
+        });
+      } else {
+        store.setError(message.data);
+      }
+    },
     onMalformedMessage: () => { store.setError({ code: "INVALID_PAYLOAD", message: "The server sent an invalid lobby update." }); store.setConnectionState("ERROR"); },
-  }), [store]);
+  }), [store, sessionUser?.id]);
   const state = useSyncExternalStore(store.subscribe, store.getSnapshot, () => initialGameStoreState);
+  const updateSettings = useMemo(() => client.updateSettings.bind(client), [client]);
+  const sendChatMessage = useMemo(() => client.sendChatMessage.bind(client), [client]);
   useEffect(() => {
     if (!roomId) return;
     if (disconnectTimer.current !== null) {
@@ -36,7 +54,8 @@ export function useGameWebSocket(roomId?: string) {
   return {
     ...state,
     sessionUser,
-    updateSettings: client.updateSettings.bind(client),
+    updateSettings,
+    sendChatMessage,
     reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } },
   };
 }

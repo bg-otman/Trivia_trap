@@ -28,6 +28,25 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
     return { event: "ERROR", data: data as unknown as ServerErrorData };
   }
 
+  if (value.event === "CHAT_MESSAGE") {
+    const data = value.data;
+    if (!isRecord(data.player) || !isString(data.player.id) ||
+        !isString(data.player.username) || !isString(data.message)) return null;
+    const avatarUrl = data.player.avatar_url;
+    if (avatarUrl !== undefined && avatarUrl !== null && !isString(avatarUrl)) return null;
+    return {
+      event: "CHAT_MESSAGE",
+      data: {
+        player: {
+          id: data.player.id,
+          username: data.player.username,
+          avatar_url: avatarUrl,
+        },
+        message: data.message,
+      },
+    };
+  }
+
   if (value.event !== "LOBBY_UPDATE") return null;
   const data = value.data;
   if (!isNumber(data.round) || !isString(data.host_id) || !Array.isArray(data.players) || !isRecord(data.settings)) return null;

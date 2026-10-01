@@ -72,6 +72,15 @@ export class GameWebSocketClient {
       }
     };
   }
+  sendChatMessage(message: string) {
+    const value = message.trim();
+    if (!value || !this.socket || this.socket.readyState !== WebSocket.OPEN) {
+      return false;
+    }
+    this.socket.send(JSON.stringify({ event: "CHAT_MESSAGE", data: { message: value } }));
+    return true;
+  }
+
   updateSettings(settings: UpdateSettingsData) {
     if (!this.socket || this.socket.readyState !== WebSocket.OPEN) {
       return false;

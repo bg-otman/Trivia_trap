@@ -370,7 +370,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
             players={roomId ? serverPlayers : game.players}
             roomCode={game.roomCode}
             settings={serverSettings ?? game.settings}
-            chatMessages={roomId ? [] : game.chatMessages}
+            chatMessages={roomId ? websocket.chatMessages : game.chatMessages}
             isHost={roomId ? Boolean(websocket.lobby && websocket.sessionUser && websocket.lobby.host_id === websocket.sessionUser.id) : isHost}
             onStartGame={startGame}
             onKickPlayer={kickPlayer}
@@ -383,7 +383,8 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
                 language: settings.language ?? "en",
               });
             } : updateSettings}
-            onSendMessage={sendChatMessage}
+            onSendMessage={roomId ? websocket.sendChatMessage : sendChatMessage}
+            showMockChatTyping={!roomId}
             connectionState={roomId ? websocketConnectionState(websocket.connectionState) : connectionState}
             connectionError={roomId ? websocket.error : null}
             onRetryConnection={roomId ? websocket.reconnect : retryConnection}
