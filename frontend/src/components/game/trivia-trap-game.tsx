@@ -89,7 +89,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
   );
   const serverPlayers: Player[] = websocket.lobby?.players.map((player) => ({
     id: player.id, name: player.username, role: player.id === websocket.lobby?.host_id ? "HOST" : "PLAYER",
-    status: player.is_present ? "NOT_READY" : "OFFLINE", isYou: player.id === websocket.sessionUser?.id, score: player.score,
+    status: player.is_present ? "ONLINE" : "OFFLINE", isYou: player.id === websocket.sessionUser?.id, score: player.score,
   })) ?? [];
   const serverSettings: GameSettings | null = websocket.lobby ? {
     totalRounds: websocket.lobby.settings.total_rounds, bluffTime: websocket.lobby.settings.bluff_time,
@@ -213,19 +213,6 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
     }, 1650);
   }
 
-  function toggleReady() {
-    setGame((current) => ({
-      ...current,
-      players: current.players.map((player) =>
-        player.isYou && player.role !== "HOST"
-          ? {
-              ...player,
-              status: player.status === "READY" ? "NOT_READY" : "READY",
-            }
-          : player,
-      ),
-    }));
-  }
 
   function kickPlayer(playerId: Player["id"]) {
     setGame((current) => ({
@@ -386,7 +373,6 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
             chatMessages={roomId ? [] : game.chatMessages}
             isHost={roomId ? Boolean(websocket.lobby && websocket.sessionUser && websocket.lobby.host_id === websocket.sessionUser.id) : isHost}
             onStartGame={startGame}
-            onToggleReady={toggleReady}
             onKickPlayer={kickPlayer}
             onSettingsChange={roomId ? (settings) => {
               websocket.updateSettings({

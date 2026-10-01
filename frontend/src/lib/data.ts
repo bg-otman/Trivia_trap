@@ -4,7 +4,7 @@ export const players = [
     name: "MEHDI",
     role: "HOST" as const,
     avatar: "/avatars/avatar.png",
-    status: "READY" as const,
+    status: "ONLINE" as const,
     isYou: true,
   },
   {
@@ -12,7 +12,7 @@ export const players = [
     name: "ALEX",
     role: "PLAYER" as const,
     avatar: "/avatars/avatar.png",
-    status: "READY" as const,
+    status: "ONLINE" as const,
     isYou: false,
   },
   {
@@ -20,7 +20,7 @@ export const players = [
     name: "SAM",
     role: "PLAYER" as const,
     avatar: "/avatars/avatar.png",
-    status: "NOT_READY" as const,
+    status: "ONLINE" as const,
     isYou: false,
   },
   {
@@ -28,7 +28,7 @@ export const players = [
     name: "JORDAN",
     role: "PLAYER" as const,
     avatar: "/avatars/avatar.png",
-    status: "READY" as const,
+    status: "ONLINE" as const,
     isYou: false,
   },
 ];

@@ -58,7 +58,6 @@ interface LobbyPhaseProps {
   chatMessages: ChatMessageData[];
   isHost: boolean;
   onStartGame: () => void;
-  onToggleReady: () => void;
   onKickPlayer: (playerId: Player["id"]) => void;
   onSettingsChange: (settings: GameSettings) => void;
   onSendMessage: (message: string) => void;
@@ -88,7 +87,6 @@ export function LobbyPhase({
   chatMessages,
   isHost,
   onStartGame,
-  onToggleReady,
   onKickPlayer,
   onSettingsChange,
   onSendMessage,
@@ -102,9 +100,8 @@ export function LobbyPhase({
   const [shared, setShared] = useState(false);
   const [shareFailed, setShareFailed] = useState(false);
   const reducedMotion = useReducedMotion();
-  const currentPlayer = players.find((player) => player.isYou);
   const eligiblePlayers = players.filter((player) => player.role !== "HOST");
-  const readyPlayers = eligiblePlayers.filter((player) => player.status === "READY");
+  const readyPlayers = eligiblePlayers.filter((player) => player.status !== "OFFLINE");
   const openSlots = Math.max(0, settings.maxPlayers - players.length);
   const joinUrl = `http://localhost:3000/room/${roomCode}`;
 
@@ -132,8 +129,6 @@ export function LobbyPhase({
     onSettingsChange(draftSettings);
     setSettingsOpen(false);
   }
-
-  const isReady = currentPlayer?.status === "READY";
 
   return (
     <section className="relative z-10 w-full px-4 py-5 sm:px-6 sm:py-8 lg:px-8 mb-18">
@@ -293,9 +288,9 @@ export function LobbyPhase({
             <div className="flex items-center gap-3 px-1">
               <ShieldCheck className="size-5 text-[#4ade80]" />
               <div>
-                <p className="text-xs font-black text-white">{isHost ? "YOU ARE THE HOST" : isReady ? "YOU'RE READY" : "READY TO PLAY?"}</p>
+                <p className="text-xs font-black text-white">{isHost ? "YOU ARE THE HOST" : "YOU'RE READY"}</p>
                 <p className="mt-0.5 text-[11px] text-muted-foreground">
-                  {isHost ? "Start when everyone has joined." : isReady ? "Waiting for the host to start the game." : "Ready up when you are prepared."}
+                  {isHost ? "Start when everyone has joined." : "Waiting for the host to start the game."}
                 </p>
               </div>
             </div>
@@ -303,17 +298,9 @@ export function LobbyPhase({
               <Button type="button" size="lg" onClick={onStartGame} className="w-full sm:w-auto sm:min-w-64">
                 <Play className="size-4 fill-current" /> START GAME
               </Button>
-            ) : isReady ? (
-              <div className="flex w-full gap-2 sm:w-auto">
-                <Button type="button" variant="surface" onClick={onToggleReady} className="flex-1 sm:flex-none">UNREADY</Button>
-              </div>
-            ) : (
-              <Button type="button" size="lg" onClick={onToggleReady} className="w-full sm:w-auto sm:min-w-64">READY UP</Button>
-            )}
+            ) : null}
           </div>
-          {isReady || isHost ? (
-            <WaitingArena players={players} compact animateAll message={isHost ? "WAITING FOR PLAYERS TO GET READY" : "WAITING FOR THE HOST"} className="mt-4" />
-          ) : null}
+          <WaitingArena players={players} compact animateAll message={isHost ? "ALL PLAYERS ARE READY" : "WAITING FOR THE HOST"} className="mt-4" />
         </Card></motion.div>
       </div>
 
@@ -335,7 +322,7 @@ export function LobbyPhase({
 function LobbyPlayer({ player, canKick, onKick }: { player: Player; canKick: boolean; onKick: () => void }) {
   const reducedMotion = useReducedMotion();
   const offline = player.status === "OFFLINE";
-  const ready = player.status === "READY";
+  const ready = !offline;
 
   return (
     <motion.div
@@ -357,10 +344,8 @@ function LobbyPlayer({ player, canKick, onKick }: { player: Player; canKick: boo
           {player.isYou ? <StatusBadge status="you" className="px-2 py-0.5 text-[8px]">YOU</StatusBadge> : null}
         </div>
         <div className="mt-1.5 flex items-center gap-2">
-          {ready && player.role !== "HOST" ? (
+          {player.role !== "HOST" ? (
             <StatusBadge status="ready" className="px-2 py-0.5 text-[8px]">READY</StatusBadge>
-          ) : player.role !== "HOST" ? (
-            <span className="rounded-full bg-white/[0.06] px-2 py-0.5 text-[8px] font-black text-muted-foreground">NOT READY</span>
           ) : (
             <span className="text-[9px] font-bold text-accent">HOST IS READY</span>
           )}

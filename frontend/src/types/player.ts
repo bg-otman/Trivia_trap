@@ -1,8 +1,7 @@
 export type PlayerRole = "HOST" | "PLAYER";
 
 export type PlayerStatus =
-    | "READY"
-    | "NOT_READY"
+    | "ONLINE"
     | "THINKING"
     | "SUBMITTED"
     | "VOTED"
