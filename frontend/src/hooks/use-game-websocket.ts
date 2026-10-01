@@ -33,5 +33,10 @@ export function useGameWebSocket(roomId?: string) {
       }, 0);
     };
   }, [client, roomId, store]);
-  return { ...state, sessionUser, reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } } };
+  return {
+    ...state,
+    sessionUser,
+    updateSettings: client.updateSettings.bind(client),
+    reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } },
+  };
 }

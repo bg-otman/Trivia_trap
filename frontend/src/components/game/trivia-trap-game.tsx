@@ -388,7 +388,15 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
             onStartGame={startGame}
             onToggleReady={toggleReady}
             onKickPlayer={kickPlayer}
-            onSettingsChange={updateSettings}
+            onSettingsChange={roomId ? (settings) => {
+              websocket.updateSettings({
+                total_rounds: settings.totalRounds,
+                bluff_time: settings.bluffTime,
+                vote_time: settings.voteTime,
+                max_players: settings.maxPlayers,
+                language: settings.language ?? "en",
+              });
+            } : updateSettings}
             onSendMessage={sendChatMessage}
             connectionState={roomId ? websocketConnectionState(websocket.connectionState) : connectionState}
             connectionError={roomId ? websocket.error : null}

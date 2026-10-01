@@ -3,6 +3,7 @@ import { getSessionUser } from "./session-user";
 import type {
   GameConnectionState,
   LobbyServerMessage,
+  UpdateSettingsData,
 } from "./websocket-types";
 interface Handlers {
   onStateChange: (state: GameConnectionState) => void;
@@ -71,6 +72,14 @@ export class GameWebSocketClient {
       }
     };
   }
+  updateSettings(settings: UpdateSettingsData) {
+    if (!this.socket || this.socket.readyState !== WebSocket.OPEN) {
+      return false;
+    }
+    this.socket.send(JSON.stringify({ event: "UPDATE_SETTINGS", data: settings }));
+    return true;
+  }
+
   disconnect() {
     this.generation += 1;
     this.roomId = null;

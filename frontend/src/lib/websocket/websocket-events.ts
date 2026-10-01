@@ -42,7 +42,12 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
   if (players.some((player) => player === null)) return null;
 
   const settings = data.settings;
-  if (!isNumber(settings.total_rounds) || !isNumber(settings.bluff_time) || !isNumber(settings.vote_time) || !isNumber(settings.max_players) || !isString(settings.language)) return null;
+  if (
+    !isNumber(settings.total_rounds) ||
+    !isNumber(settings.bluff_time) ||
+    !isNumber(settings.vote_time) ||
+    !isNumber(settings.max_players)
+  ) return null;
 
   return {
     event: "LOBBY_UPDATE",
@@ -55,7 +60,7 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
         bluff_time: settings.bluff_time,
         vote_time: settings.vote_time,
         max_players: settings.max_players,
-        language: settings.language,
+        language: isString(settings.language) ? settings.language : "en",
       },
     },
   };
