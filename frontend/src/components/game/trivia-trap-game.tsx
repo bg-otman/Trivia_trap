@@ -30,6 +30,7 @@ import type { GamePhase, GameSettings } from "@/types/game";
 import type { Player } from "@/types/player";
 import type { Question, VotingOption } from "@/types/question";
 import type { AnswerReveal, FinalResults, RoundResults } from "@/types/results";
+import { useGameWebSocket } from "@/hooks/use-game-websocket";
 
 interface MockGameFlowState {
   currentPhase: GamePhase;
@@ -70,11 +71,13 @@ const mockGameFinalStandings: FinalResults = {
 
 interface TriviaTrapGameProps {
   roomCode: string;
+  roomId?: string;
   mockState?: string;
 }
 
-export function TriviaTrapGame({ roomCode, mockState }: TriviaTrapGameProps) {
+export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGameProps) {
   const router = useRouter();
+  const websocket = useGameWebSocket(roomId);
   const [game, setGame] = useState<MockGameFlowState>(() =>
     createInitialState(roomCode, undefined, mockState),
   );
@@ -84,6 +87,14 @@ export function TriviaTrapGame({ roomCode, mockState }: TriviaTrapGameProps) {
   const isHost = game.players.some(
     (player) => player.isYou && player.role === "HOST",
   );
+  const serverPlayers: Player[] = websocket.lobby?.players.map((player) => ({
+    id: player.id, name: player.username, role: player.id === websocket.lobby?.host_id ? "HOST" : "PLAYER",
+    status: player.is_present ? "NOT_READY" : "OFFLINE", isYou: player.id === websocket.sessionUser?.id, score: player.score,
+  })) ?? [];
+  const serverSettings: GameSettings | null = websocket.lobby ? {
+    totalRounds: websocket.lobby.settings.total_rounds, bluffTime: websocket.lobby.settings.bluff_time,
+    voteTime: websocket.lobby.settings.vote_time, maxPlayers: websocket.lobby.settings.max_players, language: websocket.lobby.settings.language,
+  } : null;
   const voteDeadlinePassed =
     game.currentPhase === "VOTING" && game.timeRemaining <= 0;
   const playerScores = Object.fromEntries(
@@ -369,18 +380,19 @@ export function TriviaTrapGame({ roomCode, mockState }: TriviaTrapGameProps) {
       case "LOBBY":
         return (
           <LobbyPhase
-            players={game.players}
+            players={roomId ? serverPlayers : game.players}
             roomCode={game.roomCode}
-            settings={game.settings}
-            chatMessages={game.chatMessages}
-            isHost={isHost}
+            settings={serverSettings ?? game.settings}
+            chatMessages={roomId ? [] : game.chatMessages}
+            isHost={roomId ? Boolean(websocket.lobby && websocket.sessionUser && websocket.lobby.host_id === websocket.sessionUser.id) : isHost}
             onStartGame={startGame}
             onToggleReady={toggleReady}
             onKickPlayer={kickPlayer}
             onSettingsChange={updateSettings}
             onSendMessage={sendChatMessage}
-            connectionState={connectionState}
-            onRetryConnection={retryConnection}
+            connectionState={roomId ? websocketConnectionState(websocket.connectionState) : connectionState}
+            connectionError={roomId ? websocket.error : null}
+            onRetryConnection={roomId ? websocket.reconnect : retryConnection}
             onLeaveRoom={leaveRoom}
           />
         );
@@ -536,6 +548,12 @@ function lobbyConnectionForMockState(mockState?: string): LobbyConnectionState {
   if (mockState === "lobby-connection-lost") return "failed";
   if (mockState === "lobby-restored") return "restored";
   return "connected";
+}
+
+function websocketConnectionState(state: "CONNECTING" | "CONNECTED" | "DISCONNECTED" | "ERROR"): LobbyConnectionState {
+  if (state === "CONNECTED") return "connected";
+  if (state === "CONNECTING") return "connecting";
+  return "failed";
 }
 
 function createInitialState(

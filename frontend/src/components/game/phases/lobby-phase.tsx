@@ -44,6 +44,7 @@ import { cn } from "@/lib/utils";
 import type { ChatMessageData } from "@/types/chat";
 import type { GameSettings } from "@/types/game";
 import type { Player } from "@/types/player";
+import type { ServerErrorData } from "@/lib/websocket/websocket-types";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { WaitingArena } from "@/components/game/voting/waiting/waiting-arena";
 import { WaitingMessage } from "@/components/game/voting/waiting/waiting-message";
@@ -62,6 +63,7 @@ interface LobbyPhaseProps {
   onSettingsChange: (settings: GameSettings) => void;
   onSendMessage: (message: string) => void;
   connectionState?: LobbyConnectionState;
+  connectionError?: ServerErrorData | null;
   onRetryConnection?: () => void;
   onLeaveRoom?: () => void;
 }
@@ -91,6 +93,7 @@ export function LobbyPhase({
   onSettingsChange,
   onSendMessage,
   connectionState = "connected",
+  connectionError,
   onRetryConnection,
   onLeaveRoom,
 }: LobbyPhaseProps) {
@@ -317,7 +320,7 @@ export function LobbyPhase({
       {connectionState !== "connected" ? (
         <div className="absolute inset-0 z-30 grid place-items-center bg-background/75 p-5 backdrop-blur-[2px]">
           {connectionState === "failed" ? (
-            <ErrorState title="CONNECTION LOST" description="We couldn&apos;t reconnect to the room." actionLabel="RETRY" onAction={onRetryConnection} secondaryActionLabel="LEAVE ROOM" onSecondaryAction={onLeaveRoom} className="w-full max-w-lg bg-card" />
+            <ErrorState title={connectionError?.code === "FULL_ROOM" ? "ROOM FULL" : connectionError?.code === "ROOM_NOT_FOUND" ? "ROOM NOT FOUND" : connectionError?.code === "FORBIDDEN" ? "ACCESS DENIED" : connectionError?.code === "PLAYER_NOT_FOUND" ? "PLAYER NOT FOUND" : "CONNECTION LOST"} description={connectionError?.message ?? "We couldn&apos;t reconnect to the room."} actionLabel="RETRY" onAction={onRetryConnection} secondaryActionLabel="LEAVE ROOM" onSecondaryAction={onLeaveRoom} className="w-full max-w-lg bg-card" />
           ) : connectionState === "restored" ? (
             <div role="status" className="flex items-center gap-2 rounded-2xl border border-[#4ade80]/30 bg-card px-5 py-4 font-display text-sm font-black text-[#4ade80] shadow-xl"><Wifi className="size-4" /> CONNECTED ✓</div>
           ) : (

@@ -14,6 +14,7 @@ export interface GameSettings {
   bluffTime: number;
   voteTime: number;
   maxPlayers: number;
+  language?: string;
 }
 
 export interface GameState {

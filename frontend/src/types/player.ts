@@ -17,4 +17,5 @@ export interface Player {
     status: PlayerStatus;
 
     isYou: boolean;
+    score?: number;
 }
