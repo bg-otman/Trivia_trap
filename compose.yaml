@@ -1,27 +1,83 @@
 services:
-  postgres:
-    image: postgres:16-alpine
+  vault:
+    image: hashicorp/vault:2.1.1
+    user: "0"
     environment:
+      VAULT_ADDR: http://127.0.0.1:8200
+      # vault.hcl uses disable_mlock=true for Integrated Storage and rootless
+      # Docker compatibility, so the image does not need to set IPC_LOCK.
+      SKIP_SETCAP: "true"
+    command: ["server"]
+    expose:
+      - "8200"
+    volumes:
+      - ./infra/vault/vault.hcl:/vault/config/vault.hcl:ro
+      - vault_data:/vault/file
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "vault status -address=http://127.0.0.1:8200 >/dev/null 2>&1; code=$$?; [ $$code -eq 0 ] || [ $$code -eq 2 ]",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+  vault-bootstrap:
+    image: hashicorp/vault:2.1.1
+    user: "0"
+    entrypoint: ["/bin/sh", "/vault/bootstrap-script/bootstrap.sh"]
+    environment:
+      VAULT_ADDR: http://vault:8200
+    depends_on:
+      vault:
+        condition: service_healthy
+    volumes:
+      - ./infra/vault/bootstrap.sh:/vault/bootstrap-script/bootstrap.sh:ro
+      - ./infra/vault/database-policy.hcl:/vault/policies/database-policy.hcl:ro
+      - vault_bootstrap:/vault/bootstrap
+      - vault_backend_approle:/vault/backend-approle
+      - vault_postgres_approle:/vault/postgres-approle
+    restart: "no"
+
+  postgres:
+    build: ./infra/postgres
+    environment:
+      # These values are configuration, not credentials.
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    depends_on:
+      vault-bootstrap:
+        condition: service_completed_successfully
     volumes:
+      - ./infra/vault/postgres-agent.hcl:/vault/agent.hcl:ro
+      - vault_postgres_approle:/vault/approle:ro
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 5s
       timeout: 5s
       retries: 5
+      start_period: 10s
 
   backend:
     build: ./backend
     environment:
-      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      # Vault Agent needs only the non-secret URL components; it injects the
+      # actual PostgreSQL password into DATABASE_URL at process start.
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
     depends_on:
+      vault-bootstrap:
+        condition: service_completed_successfully
       postgres:
         condition: service_healthy
     expose:
       - "8000"
+    volumes:
+      - ./infra/vault/backend-agent.hcl:/vault/agent.hcl:ro
+      - vault_backend_approle:/vault/approle:ro
     healthcheck:
       test:
         [
@@ -33,7 +89,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-      start_period: 10s
+      start_period: 15s
 
   frontend:
     build: ./frontend
@@ -88,5 +144,9 @@ services:
       start_period: 10s
 
 volumes:
+  vault_data:
+  vault_bootstrap:
+  vault_backend_approle:
+  vault_postgres_approle:
   postgres_data:
   nginx_certs:
