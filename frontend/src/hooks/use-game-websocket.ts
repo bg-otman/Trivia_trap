@@ -1,10 +1,11 @@
 "use client";
-import { useEffect, useMemo, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import { GameWebSocketClient } from "@/lib/websocket/websocket-client";
 import { getSessionUser } from "@/lib/websocket/session-user";
 import { createGameStore, initialGameStoreState } from "@/stores/game-store";
 export function useGameWebSocket(roomId?: string) {
   const store = useMemo(() => createGameStore(), []);
+  const disconnectTimer = useRef<number | null>(null);
   const sessionUser = useMemo(
     () => typeof window === "undefined" ? null : getSessionUser(),
     [],
@@ -17,8 +18,20 @@ export function useGameWebSocket(roomId?: string) {
   const state = useSyncExternalStore(store.subscribe, store.getSnapshot, () => initialGameStoreState);
   useEffect(() => {
     if (!roomId) return;
+    if (disconnectTimer.current !== null) {
+      window.clearTimeout(disconnectTimer.current);
+      disconnectTimer.current = null;
+    }
     client.connect(roomId);
-    return () => { client.disconnect(); store.reset(); };
+    return () => {
+      // React Strict Mode immediately re-runs effects in development. Deferring
+      // cleanup lets that second setup retain the in-flight connection.
+      disconnectTimer.current = window.setTimeout(() => {
+        client.disconnect();
+        store.reset();
+        disconnectTimer.current = null;
+      }, 0);
+    };
   }, [client, roomId, store]);
   return { ...state, sessionUser, reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } } };
 }

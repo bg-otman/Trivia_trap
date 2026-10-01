@@ -75,11 +75,22 @@ export class GameWebSocketClient {
     this.generation += 1;
     this.roomId = null;
     if (!this.socket) return;
-    this.socket.onopen = null;
-    this.socket.onmessage = null;
-    this.socket.onerror = null;
-    this.socket.onclose = null;
-    this.socket.close(1000, "Lobby closed");
+    const socket = this.socket;
     this.socket = null;
+    socket.onmessage = null;
+    socket.onerror = null;
+    socket.onclose = null;
+
+    if (socket.readyState === WebSocket.CONNECTING) {
+      // Closing during CONNECTING produces a noisy browser error. Wait for the
+      // handshake, then close immediately without publishing stale events.
+      socket.onopen = () => socket.close(1000, "Lobby closed");
+      return;
+    }
+
+    socket.onopen = null;
+    if (socket.readyState === WebSocket.OPEN) {
+      socket.close(1000, "Lobby closed");
+    }
   }
 }
