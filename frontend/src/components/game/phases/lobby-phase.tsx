@@ -422,7 +422,7 @@ export function LobbyPhase({
                 messages={chatMessages}
                 onSendMessage={onSendMessage}
                 showTypingIndicator={showMockChatTyping}
-                className="lg:h-[min(52dvh,580px)] lg:min-h-[460px]"
+                className="lg:h-[clamp(360px,calc(100dvh-32rem),580px)] lg:min-h-[360px]"
               />
             </motion.div>
           </div>
