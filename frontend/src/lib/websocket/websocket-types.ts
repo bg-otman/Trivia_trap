@@ -44,6 +44,14 @@ export interface KickPlayerMessage {
   event: "KICK_PLAYER";
   data: KickPlayerData;
 }
+export interface NextPhaseMessage {
+  event: "NEXT_PHASE";
+  data: Record<string, never>;
+}
+export interface CategoryPhaseMessage {
+  event: "PHASE_CATEGORY";
+  data: Record<string, unknown>;
+}
 export interface ChatMessageState {
   player: { id: string; username: string; avatar_url?: string | null };
   message: string;
@@ -68,4 +76,5 @@ export interface ServerErrorMessage {
 export type LobbyServerMessage =
   | LobbyUpdateMessage
   | ChatMessageEvent
+  | CategoryPhaseMessage
   | ServerErrorMessage;

@@ -87,6 +87,11 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
   const isHost = game.players.some(
     (player) => player.isYou && player.role === "HOST",
   );
+  const isLiveHost = Boolean(
+    websocket.lobby &&
+      websocket.sessionUser &&
+      websocket.lobby.host_id === websocket.sessionUser.id,
+  );
   const serverPlayers: Player[] = websocket.lobby?.players.map((player) => ({
     id: player.id, name: player.username, role: player.id === websocket.lobby?.host_id ? "HOST" : "PLAYER",
     status: player.is_present ? "ONLINE" : "OFFLINE", isYou: player.id === websocket.sessionUser?.id, score: player.score,
@@ -95,6 +100,10 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
     totalRounds: websocket.lobby.settings.total_rounds, bluffTime: websocket.lobby.settings.bluff_time,
     voteTime: websocket.lobby.settings.vote_time, maxPlayers: websocket.lobby.settings.max_players, language: websocket.lobby.settings.language,
   } : null;
+  const activePhase: GamePhase = roomId
+    ? (websocket.phase ?? "LOBBY")
+    : game.currentPhase;
+  const activePlayers = roomId ? serverPlayers : game.players;
   const voteDeadlinePassed =
     game.currentPhase === "VOTING" && game.timeRemaining <= 0;
   const playerScores = Object.fromEntries(
@@ -371,8 +380,8 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
             roomCode={game.roomCode}
             settings={serverSettings ?? game.settings}
             chatMessages={roomId ? websocket.chatMessages : game.chatMessages}
-            isHost={roomId ? Boolean(websocket.lobby && websocket.sessionUser && websocket.lobby.host_id === websocket.sessionUser.id) : isHost}
-            onStartGame={startGame}
+            isHost={roomId ? isLiveHost : isHost}
+            onStartGame={roomId ? websocket.nextPhase : startGame}
             onKickPlayer={roomId ? websocket.kickPlayer : kickPlayer}
             onSettingsChange={roomId ? (settings) => {
               websocket.updateSettings({
@@ -394,11 +403,11 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
       case "CATEGORY":
         return (
           <CategoryPhase
-            currentRound={game.currentRound}
-            totalRounds={game.totalRounds}
+            currentRound={roomId ? (websocket.lobby?.round ?? 1) : game.currentRound}
+            totalRounds={serverSettings?.totalRounds ?? game.totalRounds}
             selectedCategory={game.selectedCategory}
             onSelectCategory={selectCategory}
-            canChoose={isHost}
+            canChoose={roomId ? isLiveHost : isHost}
           />
         );
       case "TRAP":
@@ -473,11 +482,11 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
     }
   }
 
-  const showHud = game.currentPhase !== "LOBBY";
+  const showHud = activePhase !== "LOBBY";
   const showRoster =
-    game.currentPhase !== "LOBBY" &&
-    game.currentPhase !== "ROUND_RESULTS" &&
-    game.currentPhase !== "FINAL_RESULTS";
+    activePhase !== "LOBBY" &&
+    activePhase !== "ROUND_RESULTS" &&
+    activePhase !== "FINAL_RESULTS";
 
   return (
     <main className="relative isolate min-h-dvh overflow-x-hidden bg-background text-foreground">
@@ -496,18 +505,18 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
       <div className="relative flex min-h-dvh flex-col">
         {showHud ? (
           <GameHud
-            round={game.currentRound}
-            totalRounds={game.totalRounds}
+            round={roomId ? (websocket.lobby?.round ?? 1) : game.currentRound}
+            totalRounds={serverSettings?.totalRounds ?? game.totalRounds}
             seconds={game.timeRemaining}
             roomCode={game.roomCode}
-            phase={game.currentPhase}
+            phase={activePhase}
           />
         ) : null}
 
-        <FullScreenPhaseTransition phase={game.currentPhase}>
+        <FullScreenPhaseTransition phase={activePhase}>
           {(displayedPhase) => (
             <WaitingMotionContext.Provider
-              value={displayedPhase === game.currentPhase}
+              value={displayedPhase === activePhase}
             >
               {renderPhase(displayedPhase)}
             </WaitingMotionContext.Provider>
@@ -515,7 +524,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
         </FullScreenPhaseTransition>
 
         {showRoster && (
-          <PlayerActivityDock players={game.players} scores={playerScores} />
+          <PlayerActivityDock players={activePlayers} scores={playerScores} />
         )}
       </div>
     </main>

@@ -5,6 +5,7 @@ import type {
   KickPlayerData,
   KickPlayerMessage,
   LobbyServerMessage,
+  NextPhaseMessage,
   UpdateSettingsData,
 } from "./websocket-types";
 interface Handlers {
@@ -105,6 +106,16 @@ export class GameWebSocketClient {
         event: "KICK_PLAYER",
         data: { player_id: playerId },
       } satisfies KickPlayerMessage),
+    );
+    return true;
+  }
+
+  nextPhase() {
+    if (!this.socket || this.socket.readyState !== WebSocket.OPEN) {
+      return false;
+    }
+    this.socket.send(
+      JSON.stringify({ event: "NEXT_PHASE", data: {} } satisfies NextPhaseMessage),
     );
     return true;
   }

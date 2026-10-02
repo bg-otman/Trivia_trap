@@ -47,6 +47,10 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
     };
   }
 
+  if (value.event === "PHASE_CATEGORY") {
+    return { event: "PHASE_CATEGORY", data: value.data };
+  }
+
   if (value.event !== "LOBBY_UPDATE") return null;
   const data = value.data;
   if (!isNumber(data.round) || !isString(data.host_id) || !Array.isArray(data.players) || !isRecord(data.settings)) return null;

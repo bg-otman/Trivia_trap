@@ -7,12 +7,14 @@ import type { ChatMessageData } from "@/types/chat";
 export interface GameStoreState {
   connectionState: GameConnectionState;
   lobby: LobbyState | null;
+  phase: "CATEGORY" | null;
   chatMessages: ChatMessageData[];
   error: ServerErrorData | null;
 }
 export const initialGameStoreState: GameStoreState = {
   connectionState: "DISCONNECTED",
   lobby: null,
+  phase: null,
   chatMessages: [],
   error: null,
 };
@@ -36,6 +38,10 @@ export function createGameStore() {
     },
     addChatMessage(message: ChatMessageData) {
       state = { ...state, chatMessages: [...state.chatMessages, message] };
+      publish();
+    },
+    setPhase(phase: GameStoreState["phase"]) {
+      state = { ...state, phase };
       publish();
     },
     setError(error: ServerErrorData) {

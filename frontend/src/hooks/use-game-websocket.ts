@@ -25,6 +25,8 @@ export function useGameWebSocket(roomId?: string) {
           timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
           isYou: message.data.player.id === sessionUser?.id,
         });
+      } else if (message.event === "PHASE_CATEGORY") {
+        store.setPhase("CATEGORY");
       } else {
         store.setError(message.data);
       }
@@ -35,6 +37,7 @@ export function useGameWebSocket(roomId?: string) {
   const updateSettings = useMemo(() => client.updateSettings.bind(client), [client]);
   const sendChatMessage = useMemo(() => client.sendChatMessage.bind(client), [client]);
   const kickPlayer = useMemo(() => client.kickPlayer.bind(client), [client]);
+  const nextPhase = useMemo(() => client.nextPhase.bind(client), [client]);
   useEffect(() => {
     if (!roomId) return;
     if (disconnectTimer.current !== null) {
@@ -58,6 +61,7 @@ export function useGameWebSocket(roomId?: string) {
     updateSettings,
     sendChatMessage,
     kickPlayer,
+    nextPhase,
     reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } },
   };
 }
