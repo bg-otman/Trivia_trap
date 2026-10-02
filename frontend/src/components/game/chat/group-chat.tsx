@@ -30,8 +30,8 @@ export function GroupChat({ messages, onSendMessage, className, showTypingIndica
   }, [messages]);
 
   return (
-    <Card className={cn("flex min-h-[460px] flex-col overflow-hidden bg-[#1c1c22]/95 shadow-[0_20px_55px_rgba(0,0,0,0.28)]", className)}>
-      <div className="flex items-center justify-between border-b border-white/10 px-4 py-4 sm:px-5">
+    <Card className={cn("flex h-[min(70dvh,680px)] min-h-[460px] flex-col overflow-hidden bg-[#1c1c22]/95 shadow-[0_20px_55px_rgba(0,0,0,0.28)]", className)}>
+      <div className="shrink-0 flex items-center justify-between border-b border-white/10 px-4 py-4 sm:px-5">
         <div className="flex items-center gap-2">
           <MessageCircle className="size-4 text-[#5b5fef]" />
           <div>
@@ -44,7 +44,7 @@ export function GroupChat({ messages, onSendMessage, className, showTypingIndica
         </span>
       </div>
 
-      <div ref={scrollRef} className="min-h-0 flex-1 space-y-3 overflow-y-auto p-4 sm:p-5" aria-live="polite">
+      <div ref={scrollRef} className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain p-4 [scrollbar-gutter:stable] sm:p-5" aria-live="polite">
         {messages.length === 0 ? (
           <EmptyState icon={MessageCircle} title="NO MESSAGES YET" description="Say hello!" className="h-full min-h-64" />
         ) : (
@@ -74,7 +74,7 @@ export function ChatMessage({ message }: { message: ChatMessageData }) {
           <time className="text-[9px] text-muted-foreground">{message.timestamp}</time>
         </div>
         <p className={cn(
-          "rounded-2xl px-3 py-2 text-left text-xs leading-5",
+          "break-words rounded-2xl px-3 py-2 text-left text-xs leading-5",
           message.isYou
             ? "rounded-br-md border border-primary/30 bg-primary/15 text-[#fff3ee]"
             : "rounded-bl-md border border-white/[0.08] bg-black/20 text-foreground",
@@ -109,7 +109,7 @@ export function ChatInput({ onSend }: { onSend: (message: string) => void }) {
   }
 
   return (
-    <form onSubmit={submit} className="flex gap-2 border-t border-white/10 bg-black/10 p-3 sm:p-4">
+    <form onSubmit={submit} className="flex shrink-0 gap-2 border-t border-white/10 bg-black/10 p-3 sm:p-4">
       <label className="sr-only" htmlFor="room-chat-message">Message the room</label>
       <input
         id="room-chat-message"

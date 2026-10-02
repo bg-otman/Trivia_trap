@@ -280,8 +280,8 @@ export function LobbyPhase({
               ))}
             </div>
           </Card></motion.div>
-          <motion.div className="order-3 lg:col-start-2 lg:row-span-3 lg:row-start-1" initial={reducedMotion ? { opacity: 0 } : { opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "spring", stiffness: 260, damping: 25 }}>
-            <GroupChat messages={chatMessages} onSendMessage={onSendMessage} showTypingIndicator={showMockChatTyping} className="lg:h-full" />
+          <motion.div className="order-3 lg:sticky lg:top-5 lg:col-start-2 lg:row-span-3 lg:row-start-1" initial={reducedMotion ? { opacity: 0 } : { opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "spring", stiffness: 260, damping: 25 }}>
+            <GroupChat messages={chatMessages} onSendMessage={onSendMessage} showTypingIndicator={showMockChatTyping} className="lg:h-[calc(100dvh-2.5rem)] lg:max-h-[820px] lg:min-h-[560px]" />
           </motion.div>
         </div>
 
