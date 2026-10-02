@@ -9,10 +9,11 @@ help:
 install: $(VENV)
 
 run: $(VENV)
+	@docker start trivia_postgres
+	@until docker exec trivia_postgres pg_isready -U admin -d trivia_db >/dev/null 2>&1; do sleep 1; done
+	@uv run alembic upgrade head
 	@uv run --env-file .env fastapi dev app/main.py --port 8000
 
-test:
-	@PYTHONPATH=app uv run python -m unittest discover -s tests -v
 
 $(VENV):
 	@uv sync
