@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useCallback, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import {
@@ -15,6 +15,7 @@ import {
   Zap,
 } from "lucide-react";
 
+import { GoogleSignIn } from "@/components/auth/google-sign-in";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -23,24 +24,12 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 type Mode = "login" | "register" | "reset";
 
 const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000").replace(/\/$/, "");
-const googleLoginUrl = process.env.NEXT_PUBLIC_GOOGLE_LOGIN_URL;
 
 function safeNextPath() {
   const value = new URLSearchParams(window.location.search).get("next");
   return value && value.startsWith("/") && !value.startsWith("//") && !value.startsWith("/\\")
     ? value
     : "/join";
-}
-
-function GoogleMark() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="size-[18px]">
-      <path fill="#4285F4" d="M21.35 12.25c0-.7-.06-1.22-.2-1.76H12v3.47h5.37a4.6 4.6 0 0 1-2 3.02v2.5h3.25c1.9-1.75 2.73-4.32 2.73-7.23Z" />
-      <path fill="#34A853" d="M12 21.5c2.73 0 5.02-.9 6.7-2.45l-3.25-2.5c-.9.6-2.05.96-3.45.96-2.65 0-4.9-1.8-5.7-4.2H2.96v2.58A10.1 10.1 0 0 0 12 21.5Z" />
-      <path fill="#FBBC05" d="M6.3 13.36a6.06 6.06 0 0 1 0-3.72V7.06H2.96a10.02 10.02 0 0 0 0 8.88l3.34-2.58Z" />
-      <path fill="#EA4335" d="M12 5.44c1.48 0 2.8.51 3.84 1.5l2.9-2.9A9.65 9.65 0 0 0 12 1.5a10.1 10.1 0 0 0-9.04 5.56L6.3 9.64c.8-2.4 3.05-4.2 5.7-4.2Z" />
-    </svg>
-  );
 }
 
 export function LoginPage() {
@@ -54,6 +43,45 @@ export function LoginPage() {
   const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const requestInFlight = useRef(false);
+
+  const handleGoogleCredential = useCallback(async (credential: string) => {
+    if (requestInFlight.current) return;
+    requestInFlight.current = true;
+    setPending(true);
+    setMessage("");
+    try {
+      const response = await fetch(`${apiBase}/auth/google`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ credential }),
+      });
+      if (!response.ok) {
+        if (response.status === 409) {
+          setMessage("An account with this email already exists. Sign in with your existing method.");
+        } else if (response.status === 401 || response.status === 422) {
+          setMessage("Google could not verify your sign-in. Please try again.");
+        } else {
+          setMessage("Google sign-in is temporarily unavailable. Please try again or use email.");
+        }
+        return;
+      }
+      const data = (await response.json()) as { access_token?: string };
+      if (typeof data.access_token !== "string" || !data.access_token) {
+        setMessage("The server did not return a login token. Please try again.");
+        return;
+      }
+      localStorage.setItem("access_token", data.access_token);
+      window.location.assign(safeNextPath());
+    } catch {
+      setMessage("Could not complete Google sign-in. Please try again in a moment.");
+    } finally {
+      requestInFlight.current = false;
+      setPending(false);
+    }
+  }, []);
+
   function changeMode(next: Mode) {
     if (pending) return;
     setMode(next);
@@ -65,7 +93,7 @@ export function LoginPage() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (pending) return;
+    if (requestInFlight.current) return;
     setMessage("");
 
     if (mode === "register" && password !== confirmPassword) {
@@ -73,6 +101,7 @@ export function LoginPage() {
       return;
     }
 
+    requestInFlight.current = true;
     setPending(true);
     const route = mode === "login" ? "/auth/login" : mode === "register" ? "/auth/register" : "/auth/forgot-password";
     const body = mode === "reset" ? { email } : mode === "register" ? { email, username, password } : { email, password };
@@ -115,6 +144,7 @@ export function LoginPage() {
     } catch {
       setMessage("Could not connect. Please try again in a moment.");
     } finally {
+      requestInFlight.current = false;
       setPending(false);
     }
   }
@@ -185,7 +215,7 @@ export function LoginPage() {
               </div>
 
               {mode !== "reset" && <>
-                <Button type="button" variant="surface" disabled={pending} onClick={() => googleLoginUrl ? window.location.assign(googleLoginUrl) : setMessage("Google sign-in is not available yet.")} className="h-12 w-full gap-3 tracking-normal"><GoogleMark /> Continue with Google</Button>
+                <GoogleSignIn disabled={pending} onCredential={handleGoogleCredential} />
                 <div className="my-6 flex items-center gap-4 text-[11px] text-trap-text-dim"><span className="h-px flex-1 bg-border" /> or use your email <span className="h-px flex-1 bg-border" /></div>
               </>}
 
