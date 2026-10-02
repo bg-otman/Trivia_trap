@@ -2,6 +2,8 @@ import { parseLobbyMessage } from "./websocket-events";
 import { getSessionUser } from "./session-user";
 import type {
   GameConnectionState,
+  KickPlayerData,
+  KickPlayerMessage,
   LobbyServerMessage,
   UpdateSettingsData,
 } from "./websocket-types";
@@ -90,6 +92,19 @@ export class GameWebSocketClient {
     }
     this.socket.send(
       JSON.stringify({ event: "UPDATE_SETTINGS", data: settings }),
+    );
+    return true;
+  }
+
+  kickPlayer(playerId: KickPlayerData["player_id"]) {
+    if (!playerId || !this.socket || this.socket.readyState !== WebSocket.OPEN) {
+      return false;
+    }
+    this.socket.send(
+      JSON.stringify({
+        event: "KICK_PLAYER",
+        data: { player_id: playerId },
+      } satisfies KickPlayerMessage),
     );
     return true;
   }

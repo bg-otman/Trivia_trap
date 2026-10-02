@@ -373,7 +373,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
             chatMessages={roomId ? websocket.chatMessages : game.chatMessages}
             isHost={roomId ? Boolean(websocket.lobby && websocket.sessionUser && websocket.lobby.host_id === websocket.sessionUser.id) : isHost}
             onStartGame={startGame}
-            onKickPlayer={kickPlayer}
+            onKickPlayer={roomId ? websocket.kickPlayer : kickPlayer}
             onSettingsChange={roomId ? (settings) => {
               websocket.updateSettings({
                 total_rounds: settings.totalRounds,

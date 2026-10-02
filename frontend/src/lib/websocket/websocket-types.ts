@@ -37,6 +37,13 @@ export interface UpdateSettingsMessage {
   event: "UPDATE_SETTINGS";
   data: UpdateSettingsData;
 }
+export interface KickPlayerData {
+  player_id: string;
+}
+export interface KickPlayerMessage {
+  event: "KICK_PLAYER";
+  data: KickPlayerData;
+}
 export interface ChatMessageState {
   player: { id: string; username: string; avatar_url?: string | null };
   message: string;

@@ -34,6 +34,7 @@ export function useGameWebSocket(roomId?: string) {
   const state = useSyncExternalStore(store.subscribe, store.getSnapshot, () => initialGameStoreState);
   const updateSettings = useMemo(() => client.updateSettings.bind(client), [client]);
   const sendChatMessage = useMemo(() => client.sendChatMessage.bind(client), [client]);
+  const kickPlayer = useMemo(() => client.kickPlayer.bind(client), [client]);
   useEffect(() => {
     if (!roomId) return;
     if (disconnectTimer.current !== null) {
@@ -56,6 +57,7 @@ export function useGameWebSocket(roomId?: string) {
     sessionUser,
     updateSettings,
     sendChatMessage,
+    kickPlayer,
     reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } },
   };
 }
