@@ -63,6 +63,28 @@ export interface CategoryPhaseMessage {
   event: "PHASE_CATEGORY";
   data: CategoryPhaseData;
 }
+export interface GetQuestionCategoryData {
+  id: number;
+  name: string;
+  language: string;
+}
+export interface GetQuestionMessage {
+  event: "GET_QUESTION";
+  data: { category: GetQuestionCategoryData };
+}
+export interface QuestionPhaseData {
+  category: string;
+  question: string;
+  question_id: number;
+  duration: number;
+  image_url: string | null;
+  round: number;
+  total_rounds: number;
+}
+export interface QuestionPhaseMessage {
+  event: "PHASE_QUESTION";
+  data: QuestionPhaseData;
+}
 export interface ChatMessageState {
   player: { id: string; username: string; avatar_url?: string | null };
   message: string;
@@ -88,4 +110,5 @@ export type LobbyServerMessage =
   | LobbyUpdateMessage
   | ChatMessageEvent
   | CategoryPhaseMessage
+  | QuestionPhaseMessage
   | ServerErrorMessage;

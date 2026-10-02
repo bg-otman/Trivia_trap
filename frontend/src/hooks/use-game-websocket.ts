@@ -27,6 +27,8 @@ export function useGameWebSocket(roomId?: string) {
         });
       } else if (message.event === "PHASE_CATEGORY") {
         store.setCategoryPhase(message.data);
+      } else if (message.event === "PHASE_QUESTION") {
+        store.setQuestionPhase(message.data);
       } else {
         store.setError(message.data);
       }
@@ -38,6 +40,7 @@ export function useGameWebSocket(roomId?: string) {
   const sendChatMessage = useMemo(() => client.sendChatMessage.bind(client), [client]);
   const kickPlayer = useMemo(() => client.kickPlayer.bind(client), [client]);
   const nextPhase = useMemo(() => client.nextPhase.bind(client), [client]);
+  const getQuestion = useMemo(() => client.getQuestion.bind(client), [client]);
   useEffect(() => {
     if (!roomId) return;
     if (disconnectTimer.current !== null) {
@@ -62,6 +65,7 @@ export function useGameWebSocket(roomId?: string) {
     sendChatMessage,
     kickPlayer,
     nextPhase,
+    getQuestion,
     clearError: store.clearError,
     reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } },
   };

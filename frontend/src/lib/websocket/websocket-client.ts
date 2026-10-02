@@ -2,6 +2,8 @@ import { parseLobbyMessage } from "./websocket-events";
 import { getSessionUser } from "./session-user";
 import type {
   GameConnectionState,
+  GetQuestionCategoryData,
+  GetQuestionMessage,
   KickPlayerData,
   KickPlayerMessage,
   LobbyServerMessage,
@@ -116,6 +118,19 @@ export class GameWebSocketClient {
     }
     this.socket.send(
       JSON.stringify({ event: "NEXT_PHASE", data: {} } satisfies NextPhaseMessage),
+    );
+    return true;
+  }
+
+  getQuestion(category: GetQuestionCategoryData) {
+    if (!this.socket || this.socket.readyState !== WebSocket.OPEN) {
+      return false;
+    }
+    this.socket.send(
+      JSON.stringify({
+        event: "GET_QUESTION",
+        data: { category },
+      } satisfies GetQuestionMessage),
     );
     return true;
   }

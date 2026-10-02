@@ -2,14 +2,16 @@ import type {
   CategoryPhaseData,
   GameConnectionState,
   LobbyState,
+  QuestionPhaseData,
   ServerErrorData,
 } from "@/lib/websocket/websocket-types";
 import type { ChatMessageData } from "@/types/chat";
 export interface GameStoreState {
   connectionState: GameConnectionState;
   lobby: LobbyState | null;
-  phase: "CATEGORY" | null;
+  phase: "CATEGORY" | "TRAP" | null;
   categoryPhase: CategoryPhaseData | null;
+  questionPhase: QuestionPhaseData | null;
   chatMessages: ChatMessageData[];
   error: ServerErrorData | null;
 }
@@ -18,6 +20,7 @@ export const initialGameStoreState: GameStoreState = {
   lobby: null,
   phase: null,
   categoryPhase: null,
+  questionPhase: null,
   chatMessages: [],
   error: null,
 };
@@ -45,6 +48,10 @@ export function createGameStore() {
     },
     setCategoryPhase(categoryPhase: CategoryPhaseData) {
       state = { ...state, phase: "CATEGORY", categoryPhase, error: null };
+      publish();
+    },
+    setQuestionPhase(questionPhase: QuestionPhaseData) {
+      state = { ...state, phase: "TRAP", questionPhase, error: null };
       publish();
     },
     setError(error: ServerErrorData) {

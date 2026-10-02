@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Check, Crown, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import {
@@ -44,6 +45,7 @@ interface CategoryPhaseProps {
   totalRounds: number;
   selectedCategory: Category | null;
   onSelectCategory: (category: Category) => void;
+  onSelectCategoryOption?: (category: CategoryOption) => void;
   canChoose?: boolean;
   categories?: CategoryOption[];
   duration?: number;
@@ -54,11 +56,13 @@ export function CategoryPhase({
   totalRounds,
   selectedCategory,
   onSelectCategory,
+  onSelectCategoryOption,
   canChoose = true,
   categories,
   duration,
 }: CategoryPhaseProps) {
-  const isLocked = selectedCategory !== null;
+  const [selectedKey, setSelectedKey] = useState<string | number | null>(null);
+  const isLocked = selectedCategory !== null || selectedKey !== null;
   const reducedMotion = useReducedMotion();
   const displayedCategories = categories?.length
     ? categories.map((option) => ({
@@ -66,13 +70,19 @@ export function CategoryPhase({
         category: categoryFromName(option.name),
         label: option.name.toUpperCase(),
         imageUrl: option.imageUrl,
+        option,
       }))
     : roundCategories.map((category) => ({
         key: category,
         category,
         label: undefined,
         imageUrl: null,
+        option: null,
       }));
+  const selectedLabel = displayedCategories.find(
+    (category) => category.key === selectedKey,
+  )?.label;
+  const selectedCategoryLabel = selectedLabel ?? selectedCategory?.toUpperCase();
 
   if (!canChoose) {
     return (
@@ -105,8 +115,8 @@ export function CategoryPhase({
         <StaggerGroup
           className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4"
         >
-          {displayedCategories.map(({ key, category, label, imageUrl }) => {
-            const selected = selectedCategory === category;
+          {displayedCategories.map(({ key, category, label, imageUrl, option }) => {
+            const selected = selectedKey === key || selectedCategory === category;
             return (
               <StaggerItem key={key}>
                 <motion.div
@@ -135,8 +145,13 @@ export function CategoryPhase({
                     disabled={isLocked}
                     variant="interactive"
                     onSelect={() => {
+                      setSelectedKey(key);
                       captureCategoryCard(document.querySelector(`[data-category-card="${category}"]`), Boolean(reducedMotion));
-                      onSelectCategory(category);
+                      if (option && onSelectCategoryOption) {
+                        onSelectCategoryOption(option);
+                      } else {
+                        onSelectCategory(category);
+                      }
                     }}
                     className="min-h-[132px] transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_28px_rgba(0,0,0,0.24)] sm:min-h-[150px]"
                   />
@@ -160,9 +175,7 @@ export function CategoryPhase({
                 {isLocked ? "PREPARING QUESTION..." : "Select one category"}
               </p>
               <p className="mt-0.5 truncate text-xs text-muted-foreground">
-                {selectedCategory
-                  ? selectedCategory.toUpperCase()
-                  : "Click a category to select and lock it."}
+                {selectedCategoryLabel ?? "Click a category to select and lock it."}
               </p>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import type { CategoryPhaseData, LobbyServerMessage, LobbyState, ServerErrorData } from "./websocket-types";
+import type { CategoryPhaseData, LobbyServerMessage, LobbyState, QuestionPhaseData, ServerErrorData } from "./websocket-types";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -61,6 +61,19 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
     return {
       event: "PHASE_CATEGORY",
       data: { ...data, categories } as CategoryPhaseData,
+    };
+  }
+
+  if (value.event === "PHASE_QUESTION") {
+    const data = value.data;
+    if (!isString(data.category) || !isString(data.question) ||
+        !isNumber(data.question_id) || !isNumber(data.duration) ||
+        !isNumber(data.round) || !isNumber(data.total_rounds)) return null;
+    const imageUrl = data.image_url;
+    if (imageUrl !== undefined && imageUrl !== null && !isString(imageUrl)) return null;
+    return {
+      event: "PHASE_QUESTION",
+      data: { ...data, image_url: imageUrl ?? null } as QuestionPhaseData,
     };
   }
 
