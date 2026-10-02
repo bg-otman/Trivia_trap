@@ -17,7 +17,7 @@ export class GameWebSocketClient {
   private socket: WebSocket | null = null;
   private roomId: string | null = null;
   private generation = 0;
-  constructor(private readonly handlers: Handlers) { }
+  constructor(private readonly handlers: Handlers) {}
   connect(roomId: string) {
     if (
       !roomId ||
@@ -30,8 +30,9 @@ export class GameWebSocketClient {
     const generation = ++this.generation;
     this.roomId = roomId;
     this.handlers.onStateChange("CONNECTING");
-    log("Connecting..."); 
-    const baseUrl = process.env.NEXT_PUBLIC_WEBSOCKET_URL ?? "ws://localhost:8000";
+    log("Connecting...");
+    const baseUrl =
+      process.env.NEXT_PUBLIC_WEBSOCKET_URL ?? "ws://localhost:8000";
     const sessionUser = getSessionUser();
     const url = new URL(
       `${baseUrl.replace(/\/$/, "")}/room/${encodeURIComponent(roomId)}`,
@@ -77,7 +78,9 @@ export class GameWebSocketClient {
     if (!value || !this.socket || this.socket.readyState !== WebSocket.OPEN) {
       return false;
     }
-    this.socket.send(JSON.stringify({ event: "CHAT_MESSAGE", data: { message: value } }));
+    this.socket.send(
+      JSON.stringify({ event: "CHAT_MESSAGE", data: { message: value } }),
+    );
     return true;
   }
 
@@ -85,7 +88,9 @@ export class GameWebSocketClient {
     if (!this.socket || this.socket.readyState !== WebSocket.OPEN) {
       return false;
     }
-    this.socket.send(JSON.stringify({ event: "UPDATE_SETTINGS", data: settings }));
+    this.socket.send(
+      JSON.stringify({ event: "UPDATE_SETTINGS", data: settings }),
+    );
     return true;
   }
 

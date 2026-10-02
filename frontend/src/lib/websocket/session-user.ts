@@ -5,7 +5,7 @@ export interface SessionUser {
 
 const storageKey = "trivia-trap:guest-user";
 
-function createUuid() {
+export function createUuid() {
   if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
     return crypto.randomUUID();
   }

@@ -1,18 +1,50 @@
-import type { GameConnectionState, LobbyState, ServerErrorData } from "@/lib/websocket/websocket-types";
+import type {
+  GameConnectionState,
+  LobbyState,
+  ServerErrorData,
+} from "@/lib/websocket/websocket-types";
 import type { ChatMessageData } from "@/types/chat";
-export interface GameStoreState { connectionState: GameConnectionState; lobby: LobbyState | null; chatMessages: ChatMessageData[]; error: ServerErrorData | null; }
-export const initialGameStoreState: GameStoreState = { connectionState: "DISCONNECTED", lobby: null, chatMessages: [], error: null };
+export interface GameStoreState {
+  connectionState: GameConnectionState;
+  lobby: LobbyState | null;
+  chatMessages: ChatMessageData[];
+  error: ServerErrorData | null;
+}
+export const initialGameStoreState: GameStoreState = {
+  connectionState: "DISCONNECTED",
+  lobby: null,
+  chatMessages: [],
+  error: null,
+};
 export function createGameStore() {
   let state = initialGameStoreState;
   const listeners = new Set<() => void>();
   const publish = () => listeners.forEach((listener) => listener());
   return {
     getSnapshot: () => state,
-    subscribe(listener: () => void) { listeners.add(listener); return () => listeners.delete(listener); },
-    setConnectionState(connectionState: GameConnectionState) { state = { ...state, connectionState }; publish(); },
-    setLobby(lobby: LobbyState) { state = { ...state, lobby, error: null }; publish(); },
-    addChatMessage(message: ChatMessageData) { state = { ...state, chatMessages: [...state.chatMessages, message] }; publish(); },
-    setError(error: ServerErrorData) { state = { ...state, error }; publish(); },
-    reset() { state = initialGameStoreState; publish(); },
+    subscribe(listener: () => void) {
+      listeners.add(listener);
+      return () => listeners.delete(listener);
+    },
+    setConnectionState(connectionState: GameConnectionState) {
+      state = { ...state, connectionState };
+      publish();
+    },
+    setLobby(lobby: LobbyState) {
+      state = { ...state, lobby, error: null };
+      publish();
+    },
+    addChatMessage(message: ChatMessageData) {
+      state = { ...state, chatMessages: [...state.chatMessages, message] };
+      publish();
+    },
+    setError(error: ServerErrorData) {
+      state = { ...state, error };
+      publish();
+    },
+    reset() {
+      state = initialGameStoreState;
+      publish();
+    },
   };
 }

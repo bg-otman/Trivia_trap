@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import { GameWebSocketClient } from "@/lib/websocket/websocket-client";
-import { getSessionUser } from "@/lib/websocket/session-user";
+import { createUuid, getSessionUser } from "@/lib/websocket/session-user";
 import { createGameStore, initialGameStoreState } from "@/stores/game-store";
 export function useGameWebSocket(roomId?: string) {
   const store = useMemo(() => createGameStore(), []);
@@ -17,7 +17,7 @@ export function useGameWebSocket(roomId?: string) {
         store.setLobby(message.data);
       } else if (message.event === "CHAT_MESSAGE") {
         store.addChatMessage({
-          id: crypto.randomUUID(),
+          id: createUuid(),
           playerId: message.data.player.id,
           playerName: message.data.player.username,
           playerAvatar: message.data.player.avatar_url ?? undefined,
