@@ -7,10 +7,13 @@ Add these settings to `backend/.env`, alongside your existing JWT and Google set
 ```dotenv
 SMTP_EMAIL=your-sender@gmail.com
 SMTP_PASSWORD=YOUR_GOOGLE_APP_PASSWORD
-PASSWORD_RESET_URL=https://your-frontend.example/reset-password
+PASSWORD_RESET_URL=https://your-frontend.example/login?mode=reset-password
 ```
 
-`PASSWORD_RESET_URL` is the full URL of the reset form owned by the frontend team.
+`PASSWORD_RESET_URL` is the full URL of the frontend reset form. For local development,
+set `PASSWORD_RESET_URL=http://localhost:3000/login?mode=reset-password` in `backend/.env`
+and restart the backend. The frontend API base URL is configured with
+`NEXT_PUBLIC_API_BASE_URL` (defaults to `http://localhost:8000`).
 Use HTTPS in deployment. Do not include a fragment (`#...`) in this setting.
 It replaces `PUBLIC_BACKEND_URL`. No HTML pages are served by the authentication backend.
 Missing or invalid reset-page configuration returns 503 for all forgot-password requests.
@@ -24,7 +27,12 @@ Never commit `.env`. Start the backend with `make run` from `backend`.
   The frontend reads the fragment, removes it from the address bar, and collects a new password.
 - POST `/auth/reset-password`: `{"token":"TOKEN_FROM_EMAIL","password":"NewPassword123!long"}`.
   Returns 200 on success, 400 for an invalid/expired/used link, or 422 for invalid input.
-- After success, the user signs in normally with the new password. Previous access tokens are revoked.
+- The `/login?mode=reset-password` page collects and confirms the new password and displays
+  backend password-policy errors. Invalid, expired, or used links offer a new reset email.
+- After success, the frontend redirects to `/login` with a success message. The user
+  signs in normally with the new password. Previous access tokens are revoked.
+- The token stays in memory after the fragment is cleared. Reloading the form requires
+  reopening the email link.
 
 For backend-only manual testing, use `/docs` to call the two POST endpoints.
 Copy the token after `#token=` from the received email; a working frontend form is
