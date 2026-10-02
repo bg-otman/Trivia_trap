@@ -3,11 +3,16 @@ from fastapi import WebSocket
 from .room_models import PlayerInfo, RoomMetaData, RoomSettings, Room, RoomPhase
 from pydantic import Field
 from typing import TYPE_CHECKING
-from dataProcessing.ingestion import ( validate_bluff_answer, build_voting_choices, validate_vote, calculate_results ) # import demo functions until we have a proper data processing module
-from dataProcessing.services import load_categories, load_question
+from dataProcessing.ingestion import ( validate_bluff_answer, build_voting_choices, validate_vote, calculate_results, calculate_match_achievements ) # import demo functions until we have a proper data processing module
+from dataProcessing.services import load_categories, load_question, save_round_achievements, save_game_results
+from dataProcessing.match_results import record_participants, final_player_results, bind_achievements, player_achievements
+from dataProcessing.achievements import capture_remontada_midpoint
 from .utils import GameError, Context, clear_data, validate_phase, lobby_update
 import asyncio
 import random
+from copy import deepcopy
+from datetime import datetime, timezone
+from uuid import uuid4
 
 if TYPE_CHECKING: # it evaluates to False at runtime, so the import is only for type checking and avoids circular imports
     from .room_manager import RoomManager
@@ -19,12 +24,18 @@ async def phase_timer(manager: RoomManager, context: Context, duration: int):
     try:
         await asyncio.sleep(duration)
         room = manager.rooms.get(context.room_id)
-        if room is None or room.meta_data.host_id != context.user_id:
+        # The last bluff may start voting on behalf of any player. The timer
+        # belongs to the room, not to that submitter's host status.
+        if room is None:
             return
-        await to_next_phase(manager, context)
+        async with room.meta_data.event_lock:
+            await to_next_phase(manager, context)
     except asyncio.CancelledError:
         # Task was canceled early (all players submitted before deadline).
         pass
+    except GameError as exc:
+        # Automatic phase closing must expose persistence failures to the players too.
+        await manager.broadcast(exc.to_dict(), context.room_id, None)
 
 def join_room(rooms: dict, ws: WebSocket, room_id: str, player_id: str, name: str):
     """
@@ -36,7 +47,12 @@ def join_room(rooms: dict, ws: WebSocket, room_id: str, player_id: str, name: st
     if  player_id not in room.players and len(room.players) >= room.meta_data.settings.max_players:
         raise GameError("FULL_ROOM", "Room is full")
     if player_id not in room.players:
-        room.players[player_id] = PlayerInfo(ws=ws, name=name)
+        uid = getattr(ws.state, "authenticated_user_id", None)
+        room.players[player_id] = PlayerInfo(ws=ws, name=name, user_id=uid)
+        previous = room.meta_data.match_players.get(player_id)
+        if previous and previous["user_id"] == uid and room.meta_data.phase.current_state != RoomPhase.LOBBY:
+            room.players[player_id].score = previous["final_score"]
+            room.players[player_id].bluff_votes_received = previous["bluff_votes_received"]
     else:
         room.players[player_id].ws = ws
         room.players[player_id].is_present = True
@@ -151,43 +167,130 @@ async def get_vote_choices(manager: RoomManager, context: Context):
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.vote_time))
 
 async def reveal_results(manager: RoomManager, context: Context):
+    room = manager.rooms.get(context.room_id)
+    async with room.meta_data.persistence_lock:
+        await _reveal_results(manager, context)
+
+
+async def _reveal_results(manager: RoomManager, context: Context):
     """
         Reveal the results of the round, including the correct answer, votes, and updated scores.
     """
     room = manager.rooms.get(context.room_id)
+    if room.meta_data.round_results_processed:
+        if room.meta_data.pending_round is not None:
+            await _save_and_broadcast_round(manager, context, room)
+        return
     results = calculate_results(
         votes=room.meta_data.voting_results,
         players=room.players,
         voting_choices=room.meta_data.voting_choices,
+        correct_answer_streaks=room.meta_data.correct_answer_streaks,
+        truth_seeker_announced=room.meta_data.truth_seeker_announced,
+        correct_answer_totals=room.meta_data.correct_answer_totals,
+        einstein_announced=room.meta_data.einstein_announced,
     )
+    if (
+        room.meta_data.current_round == room.meta_data.remontada_midpoint_round
+        and room.meta_data.remontada_last_player_ids is None
+    ):
+        room.meta_data.remontada_last_player_ids = capture_remontada_midpoint(room.players)
+    room.meta_data.round_results_processed = True
     room.meta_data.podium = results.get("leaderboard", [])
     results["round"] = room.meta_data.current_round
     results["total_rounds"] = room.meta_data.settings.total_rounds
     room.meta_data.current_round += 1
+    if room.meta_data.match is not None:
+        record_participants(room.meta_data.match_players, room.players)
+    room.meta_data.pending_round = deepcopy(results)
+    await _save_and_broadcast_round(manager, context, room)
+
+
+async def _save_and_broadcast_round(manager, context, room):
+    results = room.meta_data.pending_round
+    if room.meta_data.match is not None:
+        try:
+            receipt = await save_round_achievements(
+                match=room.meta_data.match, round_number=results["round"],
+                unlocked=bind_achievements(results["unlocked_achievements"], room.meta_data.match_players),
+            )
+        except Exception as exc:
+            raise GameError("PERSISTENCE_FAILED", "Round save failed; retry with RETRY_PERSISTENCE") from exc
+        results["newly_saved_achievements"] = player_achievements(receipt["newly_saved"], room.meta_data.match_players)
+        results["persistence"] = {"status": "saved", "game_id": str(room.meta_data.match["id"])}
     await manager.broadcast({
         "event": "RESULTS_REVEALED",
         "data": results
     }, context.room_id, None)
+    room.meta_data.pending_round = None
 
 async def podium(manager: RoomManager, context: Context):
+    room = manager.rooms.get(context.room_id)
+    async with room.meta_data.persistence_lock:
+        await _podium(manager, context)
+
+
+async def _podium(manager: RoomManager, context: Context):
     """
         Leaderboard for the current round. This includes the players and their scores for the current round.
     """
     room = manager.rooms.get(context.room_id)
+    unlocked = {}
+    if room.meta_data.match is not None and room.meta_data.pending_finish is None and room.meta_data.phase.current_state == RoomPhase.PODIUM:
+        # A permanent departure after reveal cannot leave a stale winner behind.
+        room.meta_data.podium = sorted(
+            [{"username": p.name, "score": p.score, "avatar_url": p.avatar_url} for p in room.players.values()],
+            key=lambda row: row["score"], reverse=True,
+        )
     # if the current round is greater than the total rounds, end the game and reset the room phase to LOBBY
     # but if the two top players have the same score we add a tie breaker round, so we don't end the game yet.
-    if (room.meta_data.current_round > room.meta_data.settings.total_rounds 
+    if (room.meta_data.phase.current_state == RoomPhase.PODIUM
+        and room.meta_data.current_round > room.meta_data.settings.total_rounds
         and len(room.meta_data.podium) > 1 
         and room.meta_data.podium[0]["score"] != room.meta_data.podium[1]["score"]):
+        if room.meta_data.pending_finish is None:
+            unlocked = calculate_match_achievements(
+                room.players,
+                remontada_last_player_ids=room.meta_data.remontada_last_player_ids,
+                winning_score=room.meta_data.podium[0]["score"],
+            )
+            room.meta_data.pending_finish = {"unlocked": unlocked}
+            if room.meta_data.match is not None:
+                room.meta_data.pending_finish["player_results"] = final_player_results(
+                    room.meta_data.match_players, room.players
+                )
+        pending = room.meta_data.pending_finish
+        unlocked = deepcopy(pending["unlocked"])
+        if room.meta_data.match is not None:
+            try:
+                match = room.meta_data.match
+                receipt = await save_game_results(
+                    game_id=match["id"], host_user_id=match["host_user_id"],
+                    language_code=match["language_code"], total_rounds=match["total_rounds"],
+                    started_at=match["started_at"], player_results=pending["player_results"],
+                    category_results=[], unlocked=bind_achievements(pending["unlocked"], room.meta_data.match_players),
+                )
+            except Exception as exc:
+                raise GameError("PERSISTENCE_FAILED", "Match save failed; retry with RETRY_PERSISTENCE") from exc
+            for pid, codes in player_achievements(receipt["historical"], room.meta_data.match_players).items():
+                unlocked.setdefault(pid, []).extend(codes)
         room.meta_data.phase.end()
-    await manager.broadcast({
+    message = {
         "event": "PHASE_PODIUM",
         "data": {
             "round": room.meta_data.current_round,
             "total_rounds": room.meta_data.settings.total_rounds,
-            "leaderboard": room.meta_data.podium
+            "leaderboard": room.meta_data.podium,
+            "unlocked_achievements": unlocked,
         }
-    }, context.room_id, None)
+    }
+    if room.meta_data.pending_finish is not None:
+        if room.meta_data.match is not None:
+            message["data"]["newly_saved_achievements"] = player_achievements(receipt["newly_saved"], room.meta_data.match_players)
+            message["data"]["persistence"] = {"status": "saved", "game_id": str(room.meta_data.match["id"])}
+        room.meta_data.last_match_result = deepcopy(message)
+        room.meta_data.pending_finish = None
+    await manager.broadcast(message, context.room_id, None)
 
 game_phases = {
     RoomPhase.CATEGORY : get_categories,
@@ -205,8 +308,37 @@ async def to_next_phase(manager: RoomManager, context: Context):
         or when the timer for the current phase has expired.
     """
     room = manager.rooms.get(context.room_id)
+    if room.meta_data.pending_round is not None:
+        await reveal_results(manager, context)
+        return
+    if room.meta_data.pending_finish is not None:
+        await podium(manager, context)
+        return
     # start game
     if room.meta_data.phase.current_state == RoomPhase.LOBBY:
+        ids = [player.user_id for player in room.players.values()]
+        if any(type(uid) is not int or uid <= 0 for uid in ids) or len(set(ids)) != len(ids):
+            raise GameError("AUTH_REQUIRED", "Unique authenticated participants required")
+        room.meta_data.match = dict(
+            id=uuid4(), host_user_id=room.players[room.meta_data.host_id].user_id,
+            language_code=room.meta_data.settings.language,
+            total_rounds=room.meta_data.settings.total_rounds, started_at=datetime.now(timezone.utc),
+        )
+        room.meta_data.match_players.clear()
+        room.meta_data.current_round = 1
+        room.meta_data.correct_answer_streaks.clear()
+        room.meta_data.truth_seeker_announced.clear()
+        room.meta_data.correct_answer_totals.clear()
+        room.meta_data.einstein_announced.clear()
+        room.meta_data.round_results_processed = False
+        room.meta_data.remontada_midpoint_round = (room.meta_data.settings.total_rounds + 1) // 2
+        room.meta_data.remontada_last_player_ids = None
+        for player in room.players.values():
+            player.score = 0
+            player.bluff_votes_received = 0
+            player.on_fire_eligible = True
+            player.remontada_eligible = True
+        record_participants(room.meta_data.match_players, room.players)
         room.meta_data.phase.start()
         await get_categories(manager, context)
         return
@@ -336,6 +468,19 @@ event_handlers = {
     "CHAT_MESSAGE" : handle_chat_message,
 }
 
+
+async def retry_persistence(manager, context):
+    room = manager.rooms[context.room_id]
+    if room.meta_data.pending_round is not None:
+        await reveal_results(manager, context)
+    elif room.meta_data.pending_finish is not None:
+        await podium(manager, context)
+    else:
+        raise GameError("NOTHING_PENDING", "No persistence operation to retry")
+
+
+event_handlers["RETRY_PERSISTENCE"] = retry_persistence
+
 async def process_event(manager: RoomManager, room_id: str, user_id: str, user_name: str, event_name: str, data: dict
             ) -> None:
     """
@@ -350,8 +495,11 @@ async def process_event(manager: RoomManager, room_id: str, user_id: str, user_n
         raise GameError("PLAYER_NOT_FOUND", "Player not found in the room")
     if data is None:
         raise GameError("INVALID_PAYLOAD", "Missing data in request")
-    current_phase = manager.rooms[room_id].meta_data.phase.current_state
-    validate_phase(current_phase, event_name)
     handler = event_handlers[event_name]
     context = Context(room_id=room_id, user_id=user_id, user_name=user_name, data=data)
-    await handler(manager, context)
+    room = manager.rooms[room_id]
+    async with room.meta_data.event_lock:
+        if manager.rooms.get(room_id) is not room or user_id not in room.players:
+            raise GameError("PLAYER_NOT_FOUND", "Player no longer belongs to this room")
+        validate_phase(room.meta_data.phase.current_state, event_name)
+        await handler(manager, context)

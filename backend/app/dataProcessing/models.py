@@ -9,6 +9,7 @@ from sqlalchemy import (
     ForeignKey,
     ForeignKeyConstraint,
     Index,
+    JSON,
     String,
     Text,
     UniqueConstraint,
@@ -456,3 +457,12 @@ class UserAchievement(Base):
     user: Mapped["User"] = relationship(
         back_populates="achievements",
     )
+
+
+class GamePersistenceEvent(Base):
+    """Durable receipt: retries return the committed outcome of the same operation."""
+    __tablename__ = "game_persistence_events"
+    game_id: Mapped[UUID] = mapped_column(ForeignKey("games.id", ondelete="CASCADE"), primary_key=True)
+    event_key: Mapped[str] = mapped_column(String(80), primary_key=True)
+    request_hash: Mapped[str] = mapped_column(String(64), nullable=False)
+    result: Mapped[dict] = mapped_column(JSON, nullable=False)

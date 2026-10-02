@@ -3,4 +3,6 @@ __pycache__
 __pycache__/
 *.py[cod]
 tests/*
-
+!tests/test_persistence.py
+!tests/test_achievement_journey.py
+.achievement-lab/

@@ -37,6 +37,8 @@ def validate_phase(current_phase: str, event_name: str) -> None:
     """
         Validate if the current phase is valid for the requested action.
     """
+    if event_name == "RETRY_PERSISTENCE" and current_phase in (RoomPhase.REVEAL, RoomPhase.PODIUM):
+        return
     game_phases = ["GET_QUESTION", "SUBMIT_BLUFF", "SUBMIT_VOTE"]
     if event_name == "LEAVE_ROOM" or event_name == "KICK_PLAYER":
         return
@@ -86,3 +88,4 @@ def clear_data(room: Room):
     room.meta_data.voting_choices.clear()
     room.meta_data.voting_results.clear()
     room.meta_data.podium.clear()
+    room.meta_data.round_results_processed = False

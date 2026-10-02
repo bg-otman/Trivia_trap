@@ -1,4 +1,5 @@
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Query
+from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Depends
+from .identity import authenticated_player, PlayerIdentity
 from typing import Annotated
 from pydantic import Field, ValidationError
 from .utils import GameError, lobby_update
@@ -88,13 +89,11 @@ def get_available_rooms(manager: RoomManager = manager) -> dict[str, Room]:
     }
 
 @router.websocket("/{room_id}")
-async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], user_name : Annotated[str, Query()]):
-
-    # here i need to retrieve user_id, user_name form JWT... To be implemented by Auth responsible
-    # for now i will use query params.
-
+async def room(ws: WebSocket, room_id: str, identity: Annotated[PlayerIdentity, Depends(authenticated_player)]):
+    user_id, user_name = identity.player_id, identity.username
     ws.state.user_id = user_id
     ws.state.user_name = user_name
+    ws.state.authenticated_user_id = identity.user_id
 
     try:
         await manager.connect(ws, room_id)

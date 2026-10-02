@@ -4,7 +4,13 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from random import shuffle
 from uuid import uuid4
-from .achievements import evaluate_round_achievements
+from .achievements import (
+    evaluate_round_achievements,
+    update_correct_answer_progress,
+    update_on_fire_progress,
+    evaluate_on_fire_achievements,
+    evaluate_remontada_achievements,
+)
 
 from .models import (
     Category,
@@ -315,6 +321,7 @@ def build_results_payload(
         player.score += player_stats[player_id][
             "round_points"
         ]
+        player.bluff_votes_received = getattr(player, "bluff_votes_received", 0) + player_stats[player_id]["bluff_votes_received"]
 
         leaderboard.append({
             "username": player.name,
@@ -363,6 +370,10 @@ def calculate_results(
     votes: dict[str, str],
     players: dict[str, "PlayerInfo"],
     voting_choices: list[dict],
+    correct_answer_streaks: dict[str, int] | None = None,
+    truth_seeker_announced: set[str] | None = None,
+    correct_answer_totals: dict[str, int] | None = None,
+    einstein_announced: set[str] | None = None,
 ) -> dict:
     choices_by_id = prepare_voting_choices(
         voting_choices
@@ -375,14 +386,49 @@ def calculate_results(
     )
 
     unlocked = evaluate_round_achievements(
-        player_stats
+        player_stats,
+        choices_by_id,
     )
+
+    track_streaks = (
+        correct_answer_streaks is not None and truth_seeker_announced is not None
+    )
+    track_totals = (
+        correct_answer_totals is not None and einstein_announced is not None
+    )
+    if track_streaks or track_totals:
+        (
+            streaks,
+            announced,
+            totals,
+            einstein_announcements,
+            progress_unlocks,
+        ) = update_correct_answer_progress(
+            previous_streaks=correct_answer_streaks if track_streaks else {},
+            already_announced=truth_seeker_announced if track_streaks else set(),
+            player_stats=player_stats,
+            previous_totals=correct_answer_totals if track_totals else {},
+            einstein_already_announced=einstein_announced if track_totals else set(),
+        )
+        for player_id, codes in progress_unlocks.items():
+            unlocked.setdefault(player_id, []).extend(codes)
 
     result = build_results_payload(
         choices_by_id=choices_by_id,
         player_stats=player_stats,
         players=players,
     )
+
+    if track_streaks:
+        correct_answer_streaks.clear()
+        correct_answer_streaks.update(streaks)
+        truth_seeker_announced.update(announced)
+    if track_totals:
+        correct_answer_totals.clear()
+        correct_answer_totals.update(totals)
+        einstein_announced.update(einstein_announcements)
+
+    update_on_fire_progress(players, player_stats)
 
     result["unlocked_achievements"] = {
         player_id: [
@@ -394,6 +440,27 @@ def calculate_results(
     }
 
     return result
+
+
+def calculate_match_achievements(
+    players: dict[str, "PlayerInfo"],
+    remontada_last_player_ids: set[str] | None = None,
+    winning_score: int | None = None,
+) -> dict[str, list[str]]:
+    unlocked = evaluate_on_fire_achievements(players)
+    for player_id in unlocked:
+        # Consume eligibility so a repeated match-end evaluation cannot announce again.
+        players[player_id].on_fire_eligible = False
+    remontada = evaluate_remontada_achievements(
+        players, remontada_last_player_ids, winning_score
+    )
+    for player_id, codes in remontada.items():
+        unlocked.setdefault(player_id, []).extend(codes)
+        players[player_id].remontada_eligible = False
+    return {
+        player_id: [code.value for code in codes]
+        for player_id, codes in unlocked.items()
+    }
 
 # Example of the results payload structure:
 # {

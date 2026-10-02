@@ -31,6 +31,10 @@ class PlayerInfo(BaseModel):
     ws: WebSocket
     name: Annotated[str, Field(min_length=1, max_length=15)]
     score: Annotated[int, Field(ge=0)] = 0
+    user_id: int | None = None
+    bluff_votes_received: int = 0
+    on_fire_eligible: bool = False
+    remontada_eligible: bool = False
     is_present: Annotated[bool, Field(description="Indicates if the player is currently connected to the room")] = True
     avatar_url: Annotated[str | None, Field(description="URL to the player's avatar image")] = None
 
@@ -45,7 +49,7 @@ class RoomMetaData(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True) # Allow RoomPhase type in Pydantic model
     host_id: str
     settings: RoomSettings
-    phase: Annotated[RoomPhase, Field(description="Access to the room phase state machine by phase.current_state")] = RoomPhase()
+    phase: Annotated[RoomPhase, Field(description="Access to the room phase state machine by phase.current_state")] = Field(default_factory=RoomPhase)
     timer_task: Annotated[asyncio.Task | None, Field(description="Timer task to trigger next phase when timeout")] = None
     current_round: int = 1
     active_question: Annotated[str | None, Field(description="The current question being asked in the room")] = None
@@ -57,6 +61,20 @@ class RoomMetaData(BaseModel):
     voting_choices: Annotated[list[dict], Field(description="The answer choices broadcast during the voting phase")] = Field(default_factory=list)
     voting_results: Annotated[dict[str, str], Field(description="Map of player_id to the answer they voted for")] = Field(default_factory=dict)
     podium: Annotated[list[dict[str, str]], Field(description="List of players and their scores for the current round")] = Field(default_factory=list)
+    correct_answer_streaks: dict[str, int] = Field(default_factory=dict)
+    truth_seeker_announced: set[str] = Field(default_factory=set)
+    correct_answer_totals: dict[str, int] = Field(default_factory=dict)
+    einstein_announced: set[str] = Field(default_factory=set)
+    round_results_processed: bool = False
+    remontada_midpoint_round: int = 0
+    remontada_last_player_ids: set[str] | None = None
+    match: dict | None = None
+    match_players: dict[str, dict] = Field(default_factory=dict)
+    pending_round: dict | None = None
+    pending_finish: dict | None = None
+    last_match_result: dict | None = None
+    persistence_lock: asyncio.Lock = Field(default_factory=asyncio.Lock)
+    event_lock: asyncio.Lock = Field(default_factory=asyncio.Lock)
 
 class Room(BaseModel):
     meta_data: RoomMetaData
