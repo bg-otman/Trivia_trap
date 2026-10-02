@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Settings, Volume2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { GamePhase } from "@/types/game";
@@ -13,6 +14,7 @@ interface GameHudProps {
   seconds?: number;
   roomCode?: string;
   phase?: GamePhase;
+  timerMode?: "controlled" | "countdown";
   onSettings?: () => void;
   onAudio?: () => void;
 }
@@ -23,9 +25,19 @@ export function GameHud({
   seconds = 18,
   roomCode = "X7K9P2",
   phase = "VOTING",
+  timerMode = "controlled",
   onSettings,
   onAudio,
 }: GameHudProps) {
+  const timer = timerMode === "countdown" ? (
+    <LiveCountdownTimer
+      key={`${phase}-${round}-${seconds}`}
+      duration={seconds}
+    />
+  ) : (
+    <CountdownTimer seconds={seconds} size="pill" />
+  );
+
   return (
     <header className="relative z-20 px-3 pt-3 sm:px-5 sm:pt-5 lg:px-8">
       <div className="mx-auto max-w-[1280px] overflow-hidden rounded-2xl border border-white/10 bg-[#19191f]/95 shadow-[0_14px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl">
@@ -52,7 +64,7 @@ export function GameHud({
 
           <div className="flex items-center justify-end gap-2">
             <div className="hidden items-center gap-2 sm:flex">
-              <CountdownTimer seconds={seconds} size="pill" />
+              {timer}
               <RoomCode code={roomCode} compact />
             </div>
             <Button
@@ -80,13 +92,28 @@ export function GameHud({
             <PhaseIndicator phase={phase} />
           </div>
           <div className="col-span-2 flex items-center justify-between gap-2 sm:col-span-1 sm:justify-end">
-            <CountdownTimer seconds={seconds} size="pill" className="sm:hidden" />
+            <div className="sm:hidden">{timer}</div>
             <RoomCode code={roomCode} compact className="sm:hidden" />
           </div>
         </div>
       </div>
     </header>
   );
+}
+
+function LiveCountdownTimer({ duration }: { duration: number }) {
+  const [seconds, setSeconds] = useState(duration);
+
+  useEffect(() => {
+    const startedAt = Date.now();
+    const interval = window.setInterval(() => {
+      const elapsed = Math.floor((Date.now() - startedAt) / 1000);
+      setSeconds(Math.max(0, duration - elapsed));
+    }, 250);
+    return () => window.clearInterval(interval);
+  }, [duration]);
+
+  return <CountdownTimer seconds={seconds} size="pill" />;
 }
 
 function RoundProgress({

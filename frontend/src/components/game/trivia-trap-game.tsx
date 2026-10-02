@@ -535,6 +535,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
             seconds={websocket.categoryPhase?.duration ?? game.timeRemaining}
             roomCode={game.roomCode}
             phase={activePhase}
+            timerMode={roomId ? "countdown" : "controlled"}
           />
         ) : null}
 
