@@ -31,6 +31,7 @@ import type { Player } from "@/types/player";
 import type { Question, VotingOption } from "@/types/question";
 import type { AnswerReveal, FinalResults, RoundResults } from "@/types/results";
 import { useGameWebSocket } from "@/hooks/use-game-websocket";
+import { ErrorState } from "@/components/ui/error-state";
 
 interface MockGameFlowState {
   currentPhase: GamePhase;
@@ -371,6 +372,13 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
     router.push("/");
   }
 
+  function retryServerAction() {
+    websocket.clearError();
+    if (activePhase === "LOBBY" && isLiveHost) {
+      websocket.nextPhase();
+    }
+  }
+
   function renderPhase(phase: GamePhase) {
     switch (phase) {
       case "LOBBY":
@@ -403,8 +411,18 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
       case "CATEGORY":
         return (
           <CategoryPhase
-            currentRound={roomId ? (websocket.lobby?.round ?? 1) : game.currentRound}
-            totalRounds={serverSettings?.totalRounds ?? game.totalRounds}
+            currentRound={websocket.categoryPhase?.round ?? game.currentRound}
+            totalRounds={
+              websocket.categoryPhase?.total_rounds ??
+              serverSettings?.totalRounds ??
+              game.totalRounds
+            }
+            duration={roomId ? websocket.categoryPhase?.duration : undefined}
+            categories={websocket.categoryPhase?.categories.map((category) => ({
+              id: category.id,
+              name: category.name,
+              imageUrl: category.image_url,
+            }))}
             selectedCategory={game.selectedCategory}
             onSelectCategory={selectCategory}
             canChoose={roomId ? isLiveHost : isHost}
@@ -505,9 +523,16 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
       <div className="relative flex min-h-dvh flex-col">
         {showHud ? (
           <GameHud
-            round={roomId ? (websocket.lobby?.round ?? 1) : game.currentRound}
-            totalRounds={serverSettings?.totalRounds ?? game.totalRounds}
-            seconds={game.timeRemaining}
+            round={
+              websocket.categoryPhase?.round ??
+              (roomId ? (websocket.lobby?.round ?? 1) : game.currentRound)
+            }
+            totalRounds={
+              websocket.categoryPhase?.total_rounds ??
+              serverSettings?.totalRounds ??
+              game.totalRounds
+            }
+            seconds={websocket.categoryPhase?.duration ?? game.timeRemaining}
             roomCode={game.roomCode}
             phase={activePhase}
           />
@@ -527,8 +552,37 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
           <PlayerActivityDock players={activePlayers} scores={playerScores} />
         )}
       </div>
+
+      {roomId &&
+      websocket.error &&
+      websocket.connectionState === "CONNECTED" ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <ErrorState
+            title={serverErrorTitle(websocket.error.code)}
+            description={websocket.error.message}
+            actionLabel={
+              activePhase === "LOBBY" && isLiveHost ? "TRY AGAIN" : "DISMISS"
+            }
+            onAction={
+              activePhase === "LOBBY" && isLiveHost
+                ? retryServerAction
+                : websocket.clearError
+            }
+            secondaryActionLabel={
+              activePhase === "LOBBY" && isLiveHost ? "DISMISS" : undefined
+            }
+            onSecondaryAction={websocket.clearError}
+            className="bg-card/95 shadow-2xl backdrop-blur-xl"
+          />
+        </div>
+      ) : null}
     </main>
   );
+}
+
+function serverErrorTitle(code: string) {
+  if (code === "ERROR") return "SOMETHING WENT WRONG";
+  return code.replaceAll("_", " ");
 }
 
 function playersForMockState(mockState?: string): Player[] {

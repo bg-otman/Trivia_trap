@@ -26,7 +26,7 @@ export function useGameWebSocket(roomId?: string) {
           isYou: message.data.player.id === sessionUser?.id,
         });
       } else if (message.event === "PHASE_CATEGORY") {
-        store.setPhase("CATEGORY");
+        store.setCategoryPhase(message.data);
       } else {
         store.setError(message.data);
       }
@@ -62,6 +62,7 @@ export function useGameWebSocket(roomId?: string) {
     sendChatMessage,
     kickPlayer,
     nextPhase,
+    clearError: store.clearError,
     reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } },
   };
 }

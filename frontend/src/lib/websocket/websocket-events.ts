@@ -1,4 +1,4 @@
-import type { LobbyServerMessage, LobbyState, ServerErrorData } from "./websocket-types";
+import type { CategoryPhaseData, LobbyServerMessage, LobbyState, ServerErrorData } from "./websocket-types";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -48,7 +48,20 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
   }
 
   if (value.event === "PHASE_CATEGORY") {
-    return { event: "PHASE_CATEGORY", data: value.data };
+    const data = value.data;
+    if (!isNumber(data.round) || !isNumber(data.total_rounds) ||
+        !isNumber(data.duration) || !Array.isArray(data.categories)) return null;
+    const categories = data.categories.map((category) => {
+      if (!isRecord(category) || !isNumber(category.id) || !isString(category.name)) return null;
+      const imageUrl = category.image_url;
+      if (imageUrl !== undefined && imageUrl !== null && !isString(imageUrl)) return null;
+      return { id: category.id, name: category.name, image_url: imageUrl ?? null };
+    });
+    if (categories.some((category) => category === null)) return null;
+    return {
+      event: "PHASE_CATEGORY",
+      data: { ...data, categories } as CategoryPhaseData,
+    };
   }
 
   if (value.event !== "LOBBY_UPDATE") return null;

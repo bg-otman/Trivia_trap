@@ -21,12 +21,32 @@ const roundCategories: Category[] = [
   "music",
 ];
 
+const supportedCategories: Category[] = [
+  ...roundCategories,
+  "literature",
+  "art",
+  "technology",
+  "food",
+  "health",
+  "travel",
+  "animals",
+  "languages",
+];
+
+export interface CategoryOption {
+  id: number;
+  name: string;
+  imageUrl: string | null;
+}
+
 interface CategoryPhaseProps {
   currentRound: number;
   totalRounds: number;
   selectedCategory: Category | null;
   onSelectCategory: (category: Category) => void;
   canChoose?: boolean;
+  categories?: CategoryOption[];
+  duration?: number;
 }
 
 export function CategoryPhase({
@@ -35,9 +55,24 @@ export function CategoryPhase({
   selectedCategory,
   onSelectCategory,
   canChoose = true,
+  categories,
+  duration,
 }: CategoryPhaseProps) {
   const isLocked = selectedCategory !== null;
   const reducedMotion = useReducedMotion();
+  const displayedCategories = categories?.length
+    ? categories.map((option) => ({
+        key: option.id,
+        category: categoryFromName(option.name),
+        label: option.name.toUpperCase(),
+        imageUrl: option.imageUrl,
+      }))
+    : roundCategories.map((category) => ({
+        key: category,
+        category,
+        label: undefined,
+        imageUrl: null,
+      }));
 
   if (!canChoose) {
     return (
@@ -63,17 +98,17 @@ export function CategoryPhase({
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#a6a6ae] sm:text-base">
             Pick the arena for this round. Your choice locks as soon as you
-            select it.
+            select it.{duration ? ` You have ${duration} seconds.` : ""}
           </p>
         </header>
 
         <StaggerGroup
           className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4"
         >
-          {roundCategories.map((category) => {
+          {displayedCategories.map(({ key, category, label, imageUrl }) => {
             const selected = selectedCategory === category;
             return (
-              <StaggerItem key={category}>
+              <StaggerItem key={key}>
                 <motion.div
                   data-category-card={category}
                   animate={reducedMotion ? { opacity: selectedCategory && !selected ? 0.55 : 1 } : {
@@ -94,6 +129,8 @@ export function CategoryPhase({
                   ) : null}
                   <CategoryCard
                     category={category}
+                    label={label}
+                    imageUrl={imageUrl}
                     selected={selected}
                     disabled={isLocked}
                     variant="interactive"
@@ -133,4 +170,11 @@ export function CategoryPhase({
       </div>
     </section>
   );
+}
+
+function categoryFromName(name: string): Category {
+  const normalized = name.trim().toLowerCase();
+  return supportedCategories.includes(normalized as Category)
+    ? (normalized as Category)
+    : "science";
 }

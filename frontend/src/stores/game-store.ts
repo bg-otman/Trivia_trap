@@ -1,4 +1,5 @@
 import type {
+  CategoryPhaseData,
   GameConnectionState,
   LobbyState,
   ServerErrorData,
@@ -8,6 +9,7 @@ export interface GameStoreState {
   connectionState: GameConnectionState;
   lobby: LobbyState | null;
   phase: "CATEGORY" | null;
+  categoryPhase: CategoryPhaseData | null;
   chatMessages: ChatMessageData[];
   error: ServerErrorData | null;
 }
@@ -15,6 +17,7 @@ export const initialGameStoreState: GameStoreState = {
   connectionState: "DISCONNECTED",
   lobby: null,
   phase: null,
+  categoryPhase: null,
   chatMessages: [],
   error: null,
 };
@@ -40,12 +43,17 @@ export function createGameStore() {
       state = { ...state, chatMessages: [...state.chatMessages, message] };
       publish();
     },
-    setPhase(phase: GameStoreState["phase"]) {
-      state = { ...state, phase };
+    setCategoryPhase(categoryPhase: CategoryPhaseData) {
+      state = { ...state, phase: "CATEGORY", categoryPhase, error: null };
       publish();
     },
     setError(error: ServerErrorData) {
       state = { ...state, error };
+      publish();
+    },
+    clearError() {
+      if (!state.error) return;
+      state = { ...state, error: null };
       publish();
     },
     reset() {

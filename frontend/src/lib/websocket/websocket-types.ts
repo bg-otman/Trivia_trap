@@ -48,9 +48,20 @@ export interface NextPhaseMessage {
   event: "NEXT_PHASE";
   data: Record<string, never>;
 }
+export interface CategoryOptionState {
+  id: number;
+  name: string;
+  image_url: string | null;
+}
+export interface CategoryPhaseData {
+  round: number;
+  total_rounds: number;
+  duration: number;
+  categories: CategoryOptionState[];
+}
 export interface CategoryPhaseMessage {
   event: "PHASE_CATEGORY";
-  data: Record<string, unknown>;
+  data: CategoryPhaseData;
 }
 export interface ChatMessageState {
   player: { id: string; username: string; avatar_url?: string | null };
