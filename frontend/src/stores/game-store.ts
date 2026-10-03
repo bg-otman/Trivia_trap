@@ -12,6 +12,8 @@ export interface GameStoreState {
   phase: "CATEGORY" | "TRAP" | null;
   categoryPhase: CategoryPhaseData | null;
   questionPhase: QuestionPhaseData | null;
+  bluffAnswer: string;
+  bluffSubmitted: boolean;
   chatMessages: ChatMessageData[];
   error: ServerErrorData | null;
 }
@@ -21,6 +23,8 @@ export const initialGameStoreState: GameStoreState = {
   phase: null,
   categoryPhase: null,
   questionPhase: null,
+  bluffAnswer: "",
+  bluffSubmitted: false,
   chatMessages: [],
   error: null,
 };
@@ -51,7 +55,22 @@ export function createGameStore() {
       publish();
     },
     setQuestionPhase(questionPhase: QuestionPhaseData) {
-      state = { ...state, phase: "TRAP", questionPhase, error: null };
+      state = {
+        ...state,
+        phase: "TRAP",
+        questionPhase,
+        bluffAnswer: "",
+        bluffSubmitted: false,
+        error: null,
+      };
+      publish();
+    },
+    setBluffAnswer(bluffAnswer: string) {
+      state = { ...state, bluffAnswer };
+      publish();
+    },
+    setBluffSubmitted(bluffSubmitted: boolean) {
+      state = { ...state, bluffSubmitted };
       publish();
     },
     setError(error: ServerErrorData) {

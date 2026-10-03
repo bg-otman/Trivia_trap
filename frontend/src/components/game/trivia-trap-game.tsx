@@ -490,15 +490,15 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
             question={liveQuestion ?? game.currentQuestion}
             currentRound={websocket.questionPhase?.round ?? game.currentRound}
             totalRounds={websocket.questionPhase?.total_rounds ?? game.totalRounds}
-            answer={game.submittedTrapAnswer}
-            submitted={game.playerSubmitted}
-            onAnswerChange={(answer) =>
+            answer={roomId ? websocket.bluffAnswer : game.submittedTrapAnswer}
+            submitted={roomId ? websocket.bluffSubmitted : game.playerSubmitted}
+            onAnswerChange={roomId ? websocket.setBluffAnswer : (answer) =>
               setGame((current) => ({
                 ...current,
                 submittedTrapAnswer: answer,
               }))
             }
-            onSubmitAnswer={submitTrapAnswer}
+            onSubmitAnswer={roomId ? websocket.submitBluff : submitTrapAnswer}
           />
         );
       case "VOTING":

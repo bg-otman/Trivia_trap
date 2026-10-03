@@ -85,6 +85,17 @@ export interface QuestionPhaseMessage {
   event: "PHASE_QUESTION";
   data: QuestionPhaseData;
 }
+export interface SubmitBluffData {
+  bluff_answer: string;
+}
+export interface SubmitBluffMessage {
+  event: "SUBMIT_BLUFF";
+  data: SubmitBluffData;
+}
+export interface BluffSubmittedMessage {
+  event: "BLUFF_SUBMITTED";
+  data: { player_id: string };
+}
 export interface ChatMessageState {
   player: { id: string; username: string; avatar_url?: string | null };
   message: string;
@@ -111,4 +122,5 @@ export type LobbyServerMessage =
   | ChatMessageEvent
   | CategoryPhaseMessage
   | QuestionPhaseMessage
+  | BluffSubmittedMessage
   | ServerErrorMessage;

@@ -77,6 +77,12 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
     };
   }
 
+  if (value.event === "BLUFF_SUBMITTED") {
+    const data = value.data;
+    if (!isString(data.player_id)) return null;
+    return { event: "BLUFF_SUBMITTED", data: { player_id: data.player_id } };
+  }
+
   if (value.event !== "LOBBY_UPDATE") return null;
   const data = value.data;
   if (!isNumber(data.round) || !isString(data.host_id) || !Array.isArray(data.players) || !isRecord(data.settings)) return null;

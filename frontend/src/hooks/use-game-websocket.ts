@@ -29,7 +29,14 @@ export function useGameWebSocket(roomId?: string) {
         store.setCategoryPhase(message.data);
       } else if (message.event === "PHASE_QUESTION") {
         store.setQuestionPhase(message.data);
+      } else if (message.event === "BLUFF_SUBMITTED") {
+        if (message.data.player_id === sessionUser?.id) {
+          store.setBluffSubmitted(true);
+        }
       } else {
+        if (message.data.code === "BLUFF_REJECTED") {
+          store.setBluffSubmitted(false);
+        }
         store.setError(message.data);
       }
     },
@@ -41,6 +48,11 @@ export function useGameWebSocket(roomId?: string) {
   const kickPlayer = useMemo(() => client.kickPlayer.bind(client), [client]);
   const nextPhase = useMemo(() => client.nextPhase.bind(client), [client]);
   const getQuestion = useMemo(() => client.getQuestion.bind(client), [client]);
+  const submitBluff = useMemo(() => (answer: string) => {
+    const sent = client.submitBluff(answer);
+    if (sent) store.setBluffSubmitted(true);
+    return sent;
+  }, [client, store]);
   useEffect(() => {
     if (!roomId) return;
     if (disconnectTimer.current !== null) {
@@ -66,6 +78,8 @@ export function useGameWebSocket(roomId?: string) {
     kickPlayer,
     nextPhase,
     getQuestion,
+    submitBluff,
+    setBluffAnswer: store.setBluffAnswer,
     clearError: store.clearError,
     reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } },
   };

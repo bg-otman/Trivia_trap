@@ -8,6 +8,7 @@ import type {
   KickPlayerMessage,
   LobbyServerMessage,
   NextPhaseMessage,
+  SubmitBluffMessage,
   UpdateSettingsData,
 } from "./websocket-types";
 interface Handlers {
@@ -131,6 +132,24 @@ export class GameWebSocketClient {
         event: "GET_QUESTION",
         data: { category },
       } satisfies GetQuestionMessage),
+    );
+    return true;
+  }
+
+  submitBluff(answer: string) {
+    const bluffAnswer = answer.trim();
+    if (
+      bluffAnswer.length < 2 ||
+      !this.socket ||
+      this.socket.readyState !== WebSocket.OPEN
+    ) {
+      return false;
+    }
+    this.socket.send(
+      JSON.stringify({
+        event: "SUBMIT_BLUFF",
+        data: { bluff_answer: bluffAnswer },
+      } satisfies SubmitBluffMessage),
     );
     return true;
   }
