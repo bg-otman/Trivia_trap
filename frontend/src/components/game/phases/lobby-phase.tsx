@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
+  DoorOpen,
   Pencil,
   MoreVertical,
   Play,
@@ -175,12 +176,26 @@ export function LobbyPhase({
               </h1>
             </div>
           </div>
-          <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground">
-            <span className="size-2 rounded-full bg-[#4ade80]" />
-            <WaitingMessage
-              message="LOBBY OPEN · WAITING FOR PLAYERS"
-              className="text-[10px] text-muted-foreground"
-            />
+          <div className="flex flex-col items-start gap-2 sm:items-end">
+            {onLeaveRoom ? (
+              <Button
+                type="button"
+                size="sm"
+                variant="outline"
+                onClick={onLeaveRoom}
+                className="border-white/10 bg-[#1c1c22]/80 text-muted-foreground hover:border-destructive/40 hover:bg-destructive/10 hover:text-destructive"
+              >
+                <DoorOpen className="size-3.5" aria-hidden="true" />
+                LEAVE ROOM
+              </Button>
+            ) : null}
+            <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground">
+              <span className="size-2 rounded-full bg-[#4ade80]" />
+              <WaitingMessage
+                message="LOBBY OPEN · WAITING FOR PLAYERS"
+                className="text-[10px] text-muted-foreground"
+              />
+            </div>
           </div>
         </header>
 

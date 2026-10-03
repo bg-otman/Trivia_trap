@@ -18,6 +18,7 @@ import type { Player } from "@/types/player";
 interface FinalResultsPhaseProps {
   players: Player[];
   results: FinalResults;
+  isHost: boolean;
   onPlayAgain: () => void;
   onLeaveRoom: () => void;
 }
@@ -25,6 +26,7 @@ interface FinalResultsPhaseProps {
 export function FinalResultsPhase({
   players,
   results,
+  isHost,
   onPlayAgain,
   onLeaveRoom,
 }: FinalResultsPhaseProps) {
@@ -122,11 +124,13 @@ export function FinalResultsPhase({
             />
           ) : <div className="min-h-72" aria-hidden="true" />}
 
-          <motion.div initial={false} animate={{ opacity: actionsVisible ? 1 : 0, y: actionsVisible ? 0 : reducedMotion ? 0 : 14 }} transition={{ duration: 0.38, ease: "easeOut" }} className="mt-5 grid gap-3 sm:grid-cols-2">
-            <Button type="button" size="lg" onClick={onPlayAgain}>
-              <RotateCcw className="size-4" aria-hidden="true" />
-              PLAY AGAIN
-            </Button>
+          <motion.div initial={false} animate={{ opacity: actionsVisible ? 1 : 0, y: actionsVisible ? 0 : reducedMotion ? 0 : 14 }} transition={{ duration: 0.38, ease: "easeOut" }} className={isHost ? "mt-5 grid gap-3 sm:grid-cols-2" : "mt-5 grid gap-3"}>
+            {isHost ? (
+              <Button type="button" size="lg" onClick={onPlayAgain}>
+                <RotateCcw className="size-4" aria-hidden="true" />
+                PLAY AGAIN
+              </Button>
+            ) : null}
             <Button
               type="button"
               size="lg"

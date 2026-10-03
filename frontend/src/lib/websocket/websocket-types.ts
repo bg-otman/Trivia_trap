@@ -48,6 +48,10 @@ export interface NextPhaseMessage {
   event: "NEXT_PHASE";
   data: Record<string, never>;
 }
+export interface LeaveRoomMessage {
+  event: "LEAVE_ROOM";
+  data: Record<string, never>;
+}
 export interface CategoryOptionState {
   id: number;
   name: string;

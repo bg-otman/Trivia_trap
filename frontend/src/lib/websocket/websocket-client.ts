@@ -6,6 +6,7 @@ import type {
   GetQuestionMessage,
   KickPlayerData,
   KickPlayerMessage,
+  LeaveRoomMessage,
   LobbyServerMessage,
   NextPhaseMessage,
   SubmitBluffMessage,
@@ -120,6 +121,16 @@ export class GameWebSocketClient {
     }
     this.socket.send(
       JSON.stringify({ event: "NEXT_PHASE", data: {} } satisfies NextPhaseMessage),
+    );
+    return true;
+  }
+
+  leaveRoom() {
+    if (!this.socket || this.socket.readyState !== WebSocket.OPEN) {
+      return false;
+    }
+    this.socket.send(
+      JSON.stringify({ event: "LEAVE_ROOM", data: {} } satisfies LeaveRoomMessage),
     );
     return true;
   }

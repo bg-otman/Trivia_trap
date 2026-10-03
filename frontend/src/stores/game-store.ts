@@ -17,9 +17,11 @@ export interface GameStoreState {
   questionPhase: QuestionPhaseData | null;
   bluffAnswer: string;
   bluffSubmitted: boolean;
+  bluffSubmittedPlayerIds: string[];
   votingPhase: VotingPhaseData | null;
   selectedVote: string | null;
   voteSubmitted: boolean;
+  voteSubmittedPlayerIds: string[];
   resultsRevealed: ResultsRevealedData | null;
   podiumPhase: PodiumPhaseData | null;
   chatMessages: ChatMessageData[];
@@ -33,9 +35,11 @@ export const initialGameStoreState: GameStoreState = {
   questionPhase: null,
   bluffAnswer: "",
   bluffSubmitted: false,
+  bluffSubmittedPlayerIds: [],
   votingPhase: null,
   selectedVote: null,
   voteSubmitted: false,
+  voteSubmittedPlayerIds: [],
   resultsRevealed: null,
   podiumPhase: null,
   chatMessages: [],
@@ -72,8 +76,10 @@ export function createGameStore() {
         votingPhase: null,
         bluffAnswer: "",
         bluffSubmitted: false,
+        bluffSubmittedPlayerIds: [],
         selectedVote: null,
         voteSubmitted: false,
+        voteSubmittedPlayerIds: [],
         resultsRevealed: null,
         podiumPhase: null,
         error: null,
@@ -88,6 +94,10 @@ export function createGameStore() {
         votingPhase: null,
         bluffAnswer: "",
         bluffSubmitted: false,
+        bluffSubmittedPlayerIds: [],
+        selectedVote: null,
+        voteSubmitted: false,
+        voteSubmittedPlayerIds: [],
         error: null,
       };
       publish();
@@ -96,8 +106,33 @@ export function createGameStore() {
       state = { ...state, bluffAnswer };
       publish();
     },
-    setBluffSubmitted(bluffSubmitted: boolean) {
-      state = { ...state, bluffSubmitted };
+    confirmBluffSubmitted(playerId: string, currentPlayerId?: string) {
+      if (!state.lobby?.players.some((player) => player.id === playerId)) return;
+      const alreadyConfirmed = state.bluffSubmittedPlayerIds.includes(playerId);
+      const isCurrentPlayer = playerId === currentPlayerId;
+      if (alreadyConfirmed && (!isCurrentPlayer || state.bluffSubmitted)) return;
+      state = {
+        ...state,
+        bluffSubmitted: state.bluffSubmitted || isCurrentPlayer,
+        bluffSubmittedPlayerIds: alreadyConfirmed
+          ? state.bluffSubmittedPlayerIds
+          : [...state.bluffSubmittedPlayerIds, playerId],
+      };
+      publish();
+    },
+    clearCurrentBluffSubmission() {
+      state = { ...state, bluffSubmitted: false };
+      publish();
+    },
+    clearTransientActivity() {
+      state = {
+        ...state,
+        bluffSubmitted: false,
+        bluffSubmittedPlayerIds: [],
+        selectedVote: null,
+        voteSubmitted: false,
+        voteSubmittedPlayerIds: [],
+      };
       publish();
     },
     setVotingPhase(votingPhase: VotingPhaseData) {
@@ -105,8 +140,11 @@ export function createGameStore() {
         ...state,
         phase: "VOTING",
         votingPhase,
+        bluffSubmitted: false,
         selectedVote: null,
         voteSubmitted: false,
+        bluffSubmittedPlayerIds: [],
+        voteSubmittedPlayerIds: [],
         error: null,
       };
       publish();
@@ -115,11 +153,30 @@ export function createGameStore() {
       state = { ...state, selectedVote, voteSubmitted };
       publish();
     },
+    confirmVoteSubmitted(playerId: string, currentPlayerId?: string) {
+      if (!state.lobby?.players.some((player) => player.id === playerId)) return;
+      const alreadyConfirmed = state.voteSubmittedPlayerIds.includes(playerId);
+      const isCurrentPlayer = playerId === currentPlayerId;
+      if (alreadyConfirmed && (!isCurrentPlayer || state.voteSubmitted)) return;
+      state = {
+        ...state,
+        voteSubmitted: state.voteSubmitted || isCurrentPlayer,
+        voteSubmittedPlayerIds: alreadyConfirmed
+          ? state.voteSubmittedPlayerIds
+          : [...state.voteSubmittedPlayerIds, playerId],
+      };
+      publish();
+    },
     setResultsRevealed(resultsRevealed: ResultsRevealedData) {
       state = {
         ...state,
         phase: "RESULTS_REVEAL",
         resultsRevealed,
+        bluffSubmitted: false,
+        bluffSubmittedPlayerIds: [],
+        selectedVote: null,
+        voteSubmitted: false,
+        voteSubmittedPlayerIds: [],
         podiumPhase: null,
         error: null,
       };

@@ -95,17 +95,24 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
       websocket.sessionUser &&
       websocket.lobby.host_id === websocket.sessionUser.id,
   );
+  const activePhase: GamePhase = roomId
+    ? (websocket.phase ?? "LOBBY")
+    : game.currentPhase;
   const serverPlayers: Player[] = websocket.lobby?.players.map((player) => ({
     id: player.id, name: player.username, role: player.id === websocket.lobby?.host_id ? "HOST" : "PLAYER",
-    status: player.is_present ? "ONLINE" : "OFFLINE", isYou: player.id === websocket.sessionUser?.id, score: player.score,
+    status: !player.is_present
+      ? "OFFLINE"
+      : activePhase === "TRAP"
+        ? websocket.bluffSubmittedPlayerIds.includes(player.id) ? "SUBMITTED" : "THINKING"
+        : activePhase === "VOTING"
+          ? websocket.voteSubmittedPlayerIds.includes(player.id) ? "VOTED" : "THINKING"
+          : "ONLINE",
+    isYou: player.id === websocket.sessionUser?.id, score: player.score,
   })) ?? [];
   const serverSettings: GameSettings | null = websocket.lobby ? {
     totalRounds: websocket.lobby.settings.total_rounds, bluffTime: websocket.lobby.settings.bluff_time,
     voteTime: websocket.lobby.settings.vote_time, maxPlayers: websocket.lobby.settings.max_players, language: websocket.lobby.settings.language,
   } : null;
-  const activePhase: GamePhase = roomId
-    ? (websocket.phase ?? "LOBBY")
-    : game.currentPhase;
   const activePlayers = roomId ? serverPlayers : game.players;
   const getQuestion = websocket.getQuestion;
   const roomLanguage = websocket.lobby?.settings.language ?? "en";
@@ -467,6 +474,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
 
   function leaveRoom() {
     setShowGameIntro(false);
+    if (roomId) websocket.leaveRoom();
     router.push("/");
   }
 
@@ -575,6 +583,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
         return (roomId ? liveReveal : game.revealState) ? (
           <ResultsRevealPhase
             reveal={(roomId ? liveReveal : game.revealState)!}
+            isHost={roomId ? isLiveHost : isHost}
             onShowResults={roomId ? websocket.showResults : () =>
               setGame((current) => ({
                 ...current,
@@ -606,7 +615,8 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
           <FinalResultsPhase
             players={activePlayers}
             results={roomId && liveFinalResults ? liveFinalResults : game.finalStandings}
-            onPlayAgain={playAgain}
+            isHost={roomId ? isLiveHost : isHost}
+            onPlayAgain={roomId ? websocket.nextPhase : playAgain}
             onLeaveRoom={leaveRoom}
           />
         );

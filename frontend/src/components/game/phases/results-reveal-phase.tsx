@@ -13,11 +13,13 @@ import type { AnswerReveal } from "@/types/results";
 
 interface ResultsRevealPhaseProps {
   reveal: AnswerReveal;
+  isHost: boolean;
   onShowResults: () => void;
 }
 
 export function ResultsRevealPhase({
   reveal,
+  isHost,
   onShowResults,
 }: ResultsRevealPhaseProps) {
   const [revealing, setRevealing] = useState(true);
@@ -69,17 +71,19 @@ export function ResultsRevealPhase({
           ))}
         </StaggerGroup>
 
-        <PhaseContent delay={0.92} className="mt-7 flex justify-center">
-          <Button
-            type="button"
-            size="lg"
-            onClick={onShowResults}
-            className="w-full sm:w-auto sm:min-w-56"
-          >
-            SHOW RESULTS
-            <ArrowRight className="size-4" aria-hidden="true" />
-          </Button>
-        </PhaseContent>
+        {isHost ? (
+          <PhaseContent delay={0.92} className="mt-7 flex justify-center">
+            <Button
+              type="button"
+              size="lg"
+              onClick={onShowResults}
+              className="w-full sm:w-auto sm:min-w-56"
+            >
+              SHOW RESULTS
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Button>
+          </PhaseContent>
+        ) : null}
       </div>
     </section>
   );

@@ -104,7 +104,7 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
 
   if (value.event === "BLUFF_SUBMITTED") {
     const data = value.data;
-    if (!isString(data.player_id)) return null;
+    if (!isString(data.player_id) || data.player_id.trim().length === 0) return null;
     return { event: "BLUFF_SUBMITTED", data: { player_id: data.player_id } };
   }
 
@@ -134,7 +134,7 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
 
   if (value.event === "VOTE_SUBMITTED") {
     const data = value.data;
-    if (!isString(data.player_id)) return null;
+    if (!isString(data.player_id) || data.player_id.trim().length === 0) return null;
     return { event: "VOTE_SUBMITTED", data: { player_id: data.player_id } };
   }
 

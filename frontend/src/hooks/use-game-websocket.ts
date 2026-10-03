@@ -30,22 +30,18 @@ export function useGameWebSocket(roomId?: string) {
       } else if (message.event === "PHASE_QUESTION") {
         store.setQuestionPhase(message.data);
       } else if (message.event === "BLUFF_SUBMITTED") {
-        if (message.data.player_id === sessionUser?.id) {
-          store.setBluffSubmitted(true);
-        }
+        store.confirmBluffSubmitted(message.data.player_id, sessionUser?.id);
       } else if (message.event === "PHASE_VOTING") {
         store.setVotingPhase(message.data);
       } else if (message.event === "VOTE_SUBMITTED") {
-        if (message.data.player_id === sessionUser?.id) {
-          store.setVoteSubmitted(store.getSnapshot().selectedVote, true);
-        }
+        store.confirmVoteSubmitted(message.data.player_id, sessionUser?.id);
       } else if (message.event === "RESULTS_REVEALED") {
         store.setResultsRevealed(message.data);
       } else if (message.event === "PHASE_PODIUM") {
         store.setPodiumPhase(message.data);
       } else {
         if (message.data.code === "BLUFF_REJECTED") {
-          store.setBluffSubmitted(false);
+          store.clearCurrentBluffSubmission();
         }
         if (["VOTE_REJECTED", "NOT_IN_ROOM", "INVALID_CHOICE", "SELF_VOTE"].includes(message.data.code)) {
           store.setVoteSubmitted(null, false);
@@ -53,22 +49,27 @@ export function useGameWebSocket(roomId?: string) {
         store.setError(message.data);
       }
     },
-    onMalformedMessage: () => { store.setError({ code: "INVALID_PAYLOAD", message: "The server sent an invalid lobby update." }); store.setConnectionState("ERROR"); },
+    onMalformedMessage: () => {
+      if (process.env.NODE_ENV === "development") {
+        console.warn("[WS] Ignored malformed server event.");
+      }
+    },
   }), [store, sessionUser?.id]);
   const state = useSyncExternalStore(store.subscribe, store.getSnapshot, () => initialGameStoreState);
   const updateSettings = useMemo(() => client.updateSettings.bind(client), [client]);
   const sendChatMessage = useMemo(() => client.sendChatMessage.bind(client), [client]);
   const kickPlayer = useMemo(() => client.kickPlayer.bind(client), [client]);
+  const leaveRoom = useMemo(() => client.leaveRoom.bind(client), [client]);
   const nextPhase = useMemo(() => client.nextPhase.bind(client), [client]);
   const getQuestion = useMemo(() => client.getQuestion.bind(client), [client]);
   const submitBluff = useMemo(() => (answer: string) => {
-    const sent = client.submitBluff(answer);
-    if (sent) store.setBluffSubmitted(true);
-    return sent;
+    if (store.getSnapshot().bluffSubmitted) return false;
+    return client.submitBluff(answer);
   }, [client, store]);
   const submitVote = useMemo(() => (choiceId: string) => {
+    if (store.getSnapshot().voteSubmitted) return false;
     const sent = client.submitVote(choiceId);
-    if (sent) store.setVoteSubmitted(choiceId, true);
+    if (sent) store.setVoteSubmitted(choiceId, false);
     return sent;
   }, [client, store]);
   const showResults = useMemo(() => () => {
@@ -99,6 +100,7 @@ export function useGameWebSocket(roomId?: string) {
     updateSettings,
     sendChatMessage,
     kickPlayer,
+    leaveRoom,
     nextPhase,
     getQuestion,
     submitBluff,
@@ -106,6 +108,12 @@ export function useGameWebSocket(roomId?: string) {
     showResults,
     setBluffAnswer: store.setBluffAnswer,
     clearError: store.clearError,
-    reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } },
+    reconnect: () => {
+      if (roomId) {
+        client.disconnect();
+        store.clearTransientActivity();
+        client.connect(roomId);
+      }
+    },
   };
 }
