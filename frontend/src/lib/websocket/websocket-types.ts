@@ -96,6 +96,25 @@ export interface BluffSubmittedMessage {
   event: "BLUFF_SUBMITTED";
   data: { player_id: string };
 }
+export interface VotingPhaseData {
+  round: number;
+  total_rounds: number;
+  duration: number;
+  question: { text: string; image_url: string | null };
+  choices: Array<{ id: string; text: string }>;
+}
+export interface VotingPhaseMessage {
+  event: "PHASE_VOTING";
+  data: VotingPhaseData;
+}
+export interface SubmitVoteMessage {
+  event: "SUBMIT_VOTE";
+  data: { choice_id: string };
+}
+export interface VoteSubmittedMessage {
+  event: "VOTE_SUBMITTED";
+  data: { player_id: string };
+}
 export interface ChatMessageState {
   player: { id: string; username: string; avatar_url?: string | null };
   message: string;
@@ -123,4 +142,6 @@ export type LobbyServerMessage =
   | CategoryPhaseMessage
   | QuestionPhaseMessage
   | BluffSubmittedMessage
+  | VotingPhaseMessage
+  | VoteSubmittedMessage
   | ServerErrorMessage;

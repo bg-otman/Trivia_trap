@@ -1,4 +1,4 @@
-import type { CategoryPhaseData, LobbyServerMessage, LobbyState, QuestionPhaseData, ServerErrorData } from "./websocket-types";
+import type { CategoryPhaseData, LobbyServerMessage, LobbyState, QuestionPhaseData, ServerErrorData, VotingPhaseData } from "./websocket-types";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -81,6 +81,36 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
     const data = value.data;
     if (!isString(data.player_id)) return null;
     return { event: "BLUFF_SUBMITTED", data: { player_id: data.player_id } };
+  }
+
+  if (value.event === "PHASE_VOTING") {
+    const data = value.data;
+    if (!isNumber(data.round) || !isNumber(data.total_rounds) ||
+        !isNumber(data.duration) || !isRecord(data.question) ||
+        !isString(data.question.text) || !Array.isArray(data.choices)) return null;
+    const imageUrl = data.question.image_url;
+    if (imageUrl !== undefined && imageUrl !== null && !isString(imageUrl)) return null;
+    const choices = data.choices.map((choice) => {
+      if (!isRecord(choice) || !isString(choice.id) || !isString(choice.text)) return null;
+      return { id: choice.id, text: choice.text };
+    });
+    if (choices.some((choice) => choice === null)) return null;
+    return {
+      event: "PHASE_VOTING",
+      data: {
+        round: data.round,
+        total_rounds: data.total_rounds,
+        duration: data.duration,
+        question: { text: data.question.text, image_url: imageUrl ?? null },
+        choices,
+      } as VotingPhaseData,
+    };
+  }
+
+  if (value.event === "VOTE_SUBMITTED") {
+    const data = value.data;
+    if (!isString(data.player_id)) return null;
+    return { event: "VOTE_SUBMITTED", data: { player_id: data.player_id } };
   }
 
   if (value.event !== "LOBBY_UPDATE") return null;

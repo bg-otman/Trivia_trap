@@ -9,6 +9,7 @@ import type {
   LobbyServerMessage,
   NextPhaseMessage,
   SubmitBluffMessage,
+  SubmitVoteMessage,
   UpdateSettingsData,
 } from "./websocket-types";
 interface Handlers {
@@ -150,6 +151,19 @@ export class GameWebSocketClient {
         event: "SUBMIT_BLUFF",
         data: { bluff_answer: bluffAnswer },
       } satisfies SubmitBluffMessage),
+    );
+    return true;
+  }
+
+  submitVote(choiceId: string) {
+    if (!choiceId || !this.socket || this.socket.readyState !== WebSocket.OPEN) {
+      return false;
+    }
+    this.socket.send(
+      JSON.stringify({
+        event: "SUBMIT_VOTE",
+        data: { choice_id: choiceId },
+      } satisfies SubmitVoteMessage),
     );
     return true;
   }

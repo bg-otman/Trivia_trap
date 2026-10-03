@@ -4,16 +4,20 @@ import type {
   LobbyState,
   QuestionPhaseData,
   ServerErrorData,
+  VotingPhaseData,
 } from "@/lib/websocket/websocket-types";
 import type { ChatMessageData } from "@/types/chat";
 export interface GameStoreState {
   connectionState: GameConnectionState;
   lobby: LobbyState | null;
-  phase: "CATEGORY" | "TRAP" | null;
+  phase: "CATEGORY" | "TRAP" | "VOTING" | null;
   categoryPhase: CategoryPhaseData | null;
   questionPhase: QuestionPhaseData | null;
   bluffAnswer: string;
   bluffSubmitted: boolean;
+  votingPhase: VotingPhaseData | null;
+  selectedVote: string | null;
+  voteSubmitted: boolean;
   chatMessages: ChatMessageData[];
   error: ServerErrorData | null;
 }
@@ -25,6 +29,9 @@ export const initialGameStoreState: GameStoreState = {
   questionPhase: null,
   bluffAnswer: "",
   bluffSubmitted: false,
+  votingPhase: null,
+  selectedVote: null,
+  voteSubmitted: false,
   chatMessages: [],
   error: null,
 };
@@ -51,7 +58,18 @@ export function createGameStore() {
       publish();
     },
     setCategoryPhase(categoryPhase: CategoryPhaseData) {
-      state = { ...state, phase: "CATEGORY", categoryPhase, error: null };
+      state = {
+        ...state,
+        phase: "CATEGORY",
+        categoryPhase,
+        questionPhase: null,
+        votingPhase: null,
+        bluffAnswer: "",
+        bluffSubmitted: false,
+        selectedVote: null,
+        voteSubmitted: false,
+        error: null,
+      };
       publish();
     },
     setQuestionPhase(questionPhase: QuestionPhaseData) {
@@ -59,6 +77,7 @@ export function createGameStore() {
         ...state,
         phase: "TRAP",
         questionPhase,
+        votingPhase: null,
         bluffAnswer: "",
         bluffSubmitted: false,
         error: null,
@@ -71,6 +90,21 @@ export function createGameStore() {
     },
     setBluffSubmitted(bluffSubmitted: boolean) {
       state = { ...state, bluffSubmitted };
+      publish();
+    },
+    setVotingPhase(votingPhase: VotingPhaseData) {
+      state = {
+        ...state,
+        phase: "VOTING",
+        votingPhase,
+        selectedVote: null,
+        voteSubmitted: false,
+        error: null,
+      };
+      publish();
+    },
+    setVoteSubmitted(selectedVote: string | null, voteSubmitted: boolean) {
+      state = { ...state, selectedVote, voteSubmitted };
       publish();
     },
     setError(error: ServerErrorData) {

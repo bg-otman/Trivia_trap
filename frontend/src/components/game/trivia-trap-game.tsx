@@ -120,6 +120,15 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
       : undefined,
     answers: [],
   } : null;
+  const liveVotingQuestion: Question | null = websocket.votingPhase ? {
+    id: websocket.questionPhase ? String(websocket.questionPhase.question_id) : "live-vote",
+    category: websocket.questionPhase?.category ?? "TRIVIA",
+    text: websocket.votingPhase.question.text,
+    type: websocket.votingPhase.question.image_url ? "IMAGE" : "TEXT",
+    image: websocket.votingPhase.question.image_url ?? undefined,
+    imageAlt: websocket.votingPhase.question.image_url ? "Voting question" : undefined,
+    answers: [],
+  } : null;
   const voteDeadlinePassed =
     game.currentPhase === "VOTING" && game.timeRemaining <= 0;
   const playerScores = Object.fromEntries(
@@ -504,13 +513,13 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
       case "VOTING":
         return (
           <VotingPhase
-            players={game.players}
-            question={game.currentQuestion}
-            options={game.votingOptions}
-            selectedVote={game.selectedVote}
-            hasVoted={game.playerVoted}
-            seconds={game.timeRemaining}
-            onCastVote={castVote}
+            players={activePlayers}
+            question={liveVotingQuestion ?? game.currentQuestion}
+            options={websocket.votingPhase?.choices ?? game.votingOptions}
+            selectedVote={roomId ? websocket.selectedVote : game.selectedVote}
+            hasVoted={roomId ? websocket.voteSubmitted : game.playerVoted}
+            seconds={websocket.votingPhase?.duration ?? game.timeRemaining}
+            onCastVote={roomId ? websocket.submitVote : castVote}
           />
         );
       case "RESULTS_REVEAL":
@@ -579,17 +588,20 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
         {showHud ? (
           <GameHud
             round={
+              websocket.votingPhase?.round ??
               websocket.questionPhase?.round ??
               websocket.categoryPhase?.round ??
               (roomId ? (websocket.lobby?.round ?? 1) : game.currentRound)
             }
             totalRounds={
+              websocket.votingPhase?.total_rounds ??
               websocket.questionPhase?.total_rounds ??
               websocket.categoryPhase?.total_rounds ??
               serverSettings?.totalRounds ??
               game.totalRounds
             }
             seconds={
+              websocket.votingPhase?.duration ??
               websocket.questionPhase?.duration ??
               websocket.categoryPhase?.duration ??
               game.timeRemaining

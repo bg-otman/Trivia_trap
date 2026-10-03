@@ -33,9 +33,18 @@ export function useGameWebSocket(roomId?: string) {
         if (message.data.player_id === sessionUser?.id) {
           store.setBluffSubmitted(true);
         }
+      } else if (message.event === "PHASE_VOTING") {
+        store.setVotingPhase(message.data);
+      } else if (message.event === "VOTE_SUBMITTED") {
+        if (message.data.player_id === sessionUser?.id) {
+          store.setVoteSubmitted(store.getSnapshot().selectedVote, true);
+        }
       } else {
         if (message.data.code === "BLUFF_REJECTED") {
           store.setBluffSubmitted(false);
+        }
+        if (["VOTE_REJECTED", "NOT_IN_ROOM", "INVALID_CHOICE", "SELF_VOTE"].includes(message.data.code)) {
+          store.setVoteSubmitted(null, false);
         }
         store.setError(message.data);
       }
@@ -51,6 +60,11 @@ export function useGameWebSocket(roomId?: string) {
   const submitBluff = useMemo(() => (answer: string) => {
     const sent = client.submitBluff(answer);
     if (sent) store.setBluffSubmitted(true);
+    return sent;
+  }, [client, store]);
+  const submitVote = useMemo(() => (choiceId: string) => {
+    const sent = client.submitVote(choiceId);
+    if (sent) store.setVoteSubmitted(choiceId, true);
     return sent;
   }, [client, store]);
   useEffect(() => {
@@ -79,6 +93,7 @@ export function useGameWebSocket(roomId?: string) {
     nextPhase,
     getQuestion,
     submitBluff,
+    submitVote,
     setBluffAnswer: store.setBluffAnswer,
     clearError: store.clearError,
     reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } },
