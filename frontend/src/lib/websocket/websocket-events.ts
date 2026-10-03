@@ -1,4 +1,4 @@
-import type { CategoryPhaseData, LobbyServerMessage, LobbyState, QuestionPhaseData, ServerErrorData, VotingPhaseData } from "./websocket-types";
+import type { CategoryPhaseData, LobbyServerMessage, LobbyState, QuestionPhaseData, ResultsRevealedData, ServerErrorData, VotingPhaseData } from "./websocket-types";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -111,6 +111,37 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
     const data = value.data;
     if (!isString(data.player_id)) return null;
     return { event: "VOTE_SUBMITTED", data: { player_id: data.player_id } };
+  }
+
+  if (value.event === "RESULTS_REVEALED") {
+    const data = value.data;
+    if (!isNumber(data.round) || !isNumber(data.total_rounds) ||
+        !Array.isArray(data.choices) || !Array.isArray(data.leaderboard)) return null;
+    const choices = data.choices.map((choice) => {
+      if (!isRecord(choice) || !isString(choice.id) || !isString(choice.text) ||
+          typeof choice.is_correct !== "boolean" || !Array.isArray(choice.voters) ||
+          !choice.voters.every(isString)) return null;
+      const authors = choice.authors_names;
+      if (authors !== null && (!Array.isArray(authors) || !authors.every(isString))) return null;
+      return {
+        id: choice.id,
+        text: choice.text,
+        authors_names: authors as string[] | null,
+        voters: choice.voters as string[],
+        is_correct: choice.is_correct,
+      };
+    });
+    const leaderboard = data.leaderboard.map((player) => {
+      if (!isRecord(player) || !isString(player.username) || !isNumber(player.score)) return null;
+      const avatarUrl = player.avatar_url;
+      if (avatarUrl !== undefined && avatarUrl !== null && !isString(avatarUrl)) return null;
+      return { username: player.username, score: player.score, avatar_url: avatarUrl ?? null };
+    });
+    if (choices.some((choice) => choice === null) || leaderboard.some((player) => player === null)) return null;
+    return {
+      event: "RESULTS_REVEALED",
+      data: { round: data.round, total_rounds: data.total_rounds, choices, leaderboard } as ResultsRevealedData,
+    };
   }
 
   if (value.event !== "LOBBY_UPDATE") return null;

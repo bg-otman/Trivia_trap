@@ -115,6 +115,26 @@ export interface VoteSubmittedMessage {
   event: "VOTE_SUBMITTED";
   data: { player_id: string };
 }
+export interface ResultsRevealedData {
+  round: number;
+  total_rounds: number;
+  choices: Array<{
+    id: string;
+    text: string;
+    authors_names: string[] | null;
+    voters: string[];
+    is_correct: boolean;
+  }>;
+  leaderboard: Array<{
+    username: string;
+    score: number;
+    avatar_url: string | null;
+  }>;
+}
+export interface ResultsRevealedMessage {
+  event: "RESULTS_REVEALED";
+  data: ResultsRevealedData;
+}
 export interface ChatMessageState {
   player: { id: string; username: string; avatar_url?: string | null };
   message: string;
@@ -144,4 +164,5 @@ export type LobbyServerMessage =
   | BluffSubmittedMessage
   | VotingPhaseMessage
   | VoteSubmittedMessage
+  | ResultsRevealedMessage
   | ServerErrorMessage;

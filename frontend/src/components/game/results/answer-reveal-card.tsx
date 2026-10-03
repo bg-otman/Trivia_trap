@@ -4,9 +4,10 @@ import type { RevealedSubmission } from "@/types/results";
 
 interface CorrectAnswerCardProps {
   answer: string;
+  voterNames?: string[];
 }
 
-export function CorrectAnswerCard({ answer }: CorrectAnswerCardProps) {
+export function CorrectAnswerCard({ answer, voterNames = [] }: CorrectAnswerCardProps) {
   return (
     <div className="relative overflow-hidden rounded-3xl border border-accent/50 bg-[linear-gradient(135deg,rgba(247,201,72,0.18),rgba(247,201,72,0.06))] px-5 py-6 text-center shadow-[0_18px_55px_rgba(247,201,72,0.12)] sm:px-8 sm:py-8">
       <div className="pointer-events-none absolute -right-12 -top-16 size-40 rounded-full bg-accent/15 blur-3xl" />
@@ -20,6 +21,11 @@ export function CorrectAnswerCard({ answer }: CorrectAnswerCardProps) {
         <p className="mx-auto mt-2 max-w-3xl text-balance font-display text-2xl font-black leading-tight text-white sm:text-3xl">
           {answer}
         </p>
+        {voterNames.length > 0 ? (
+          <p className="mt-3 text-xs font-bold text-[#d8c678]">
+            {voterNames.length} {voterNames.length === 1 ? "PLAYER" : "PLAYERS"} FOUND THE TRUTH · {voterNames.join(", ")}
+          </p>
+        ) : null}
       </div>
     </div>
   );
@@ -47,6 +53,11 @@ export function SubmittedAnswerCard({
         <p className="mt-1.5 whitespace-normal break-words font-display text-base font-bold leading-6 text-foreground">
           {submission.text}
         </p>
+        {submission.voterNames && submission.voterNames.length > 0 ? (
+          <p className="mt-1 text-[10px] font-bold text-muted-foreground">
+            {submission.voterNames.length} {submission.voterNames.length === 1 ? "VOTE" : "VOTES"} · {submission.voterNames.join(", ")}
+          </p>
+        ) : null}
       </div>
     </article>
   );

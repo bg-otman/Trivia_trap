@@ -49,7 +49,7 @@ export function ResultsRevealPhase({
           </p>
         </PhaseContent>
 
-        <PhaseContent delay={0.22}><CorrectAnswerCard answer={reveal.correctAnswer} /></PhaseContent>
+        <PhaseContent delay={0.22}><CorrectAnswerCard answer={reveal.correctAnswer} voterNames={reveal.correctVoterNames} /></PhaseContent>
 
         <div className="mb-3 mt-6 flex items-center justify-between gap-3 px-1">
           <div className="flex items-center gap-2 text-[#e4e1e6]">

@@ -3,6 +3,7 @@ import type {
   GameConnectionState,
   LobbyState,
   QuestionPhaseData,
+  ResultsRevealedData,
   ServerErrorData,
   VotingPhaseData,
 } from "@/lib/websocket/websocket-types";
@@ -10,7 +11,7 @@ import type { ChatMessageData } from "@/types/chat";
 export interface GameStoreState {
   connectionState: GameConnectionState;
   lobby: LobbyState | null;
-  phase: "CATEGORY" | "TRAP" | "VOTING" | null;
+  phase: "CATEGORY" | "TRAP" | "VOTING" | "RESULTS_REVEAL" | null;
   categoryPhase: CategoryPhaseData | null;
   questionPhase: QuestionPhaseData | null;
   bluffAnswer: string;
@@ -18,6 +19,7 @@ export interface GameStoreState {
   votingPhase: VotingPhaseData | null;
   selectedVote: string | null;
   voteSubmitted: boolean;
+  resultsRevealed: ResultsRevealedData | null;
   chatMessages: ChatMessageData[];
   error: ServerErrorData | null;
 }
@@ -32,6 +34,7 @@ export const initialGameStoreState: GameStoreState = {
   votingPhase: null,
   selectedVote: null,
   voteSubmitted: false,
+  resultsRevealed: null,
   chatMessages: [],
   error: null,
 };
@@ -68,6 +71,7 @@ export function createGameStore() {
         bluffSubmitted: false,
         selectedVote: null,
         voteSubmitted: false,
+        resultsRevealed: null,
         error: null,
       };
       publish();
@@ -105,6 +109,15 @@ export function createGameStore() {
     },
     setVoteSubmitted(selectedVote: string | null, voteSubmitted: boolean) {
       state = { ...state, selectedVote, voteSubmitted };
+      publish();
+    },
+    setResultsRevealed(resultsRevealed: ResultsRevealedData) {
+      state = {
+        ...state,
+        phase: "RESULTS_REVEAL",
+        resultsRevealed,
+        error: null,
+      };
       publish();
     },
     setError(error: ServerErrorData) {

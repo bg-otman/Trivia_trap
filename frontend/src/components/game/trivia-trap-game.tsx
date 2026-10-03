@@ -129,10 +129,36 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
     imageAlt: websocket.votingPhase.question.image_url ? "Voting question" : undefined,
     answers: [],
   } : null;
+  const liveReveal: AnswerReveal | null = websocket.resultsRevealed ? (() => {
+    const correctChoice = websocket.resultsRevealed.choices.find((choice) => choice.is_correct);
+    if (!correctChoice) return null;
+    return {
+      correctAnswer: correctChoice.text,
+      correctVoterNames: correctChoice.voters,
+      submissions: websocket.resultsRevealed.choices
+        .filter((choice) => !choice.is_correct)
+        .map((choice) => {
+          const authorName = choice.authors_names?.join(" & ") || "TRIVIA TRAP";
+          const player = serverPlayers.find((candidate) => candidate.name === choice.authors_names?.[0]);
+          return {
+            id: choice.id,
+            text: choice.text,
+            author: { id: player?.id ?? `answer-${choice.id}`, name: authorName, avatar: player?.avatar },
+            voterNames: choice.voters,
+          };
+        }),
+    };
+  })() : null;
   const voteDeadlinePassed =
     game.currentPhase === "VOTING" && game.timeRemaining <= 0;
   const playerScores = Object.fromEntries(
     game.roundStandings.players.map((player) => [player.id, player.totalScore]),
+  );
+  const livePlayerScores = Object.fromEntries(
+    serverPlayers.map((player) => [
+      player.id,
+      websocket.resultsRevealed?.leaderboard.find((entry) => entry.username === player.name)?.score ?? player.score ?? 0,
+    ]),
   );
 
   useEffect(() => {
@@ -523,10 +549,10 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
           />
         );
       case "RESULTS_REVEAL":
-        return game.revealState ? (
+        return (roomId ? liveReveal : game.revealState) ? (
           <ResultsRevealPhase
-            reveal={game.revealState}
-            onShowResults={() =>
+            reveal={(roomId ? liveReveal : game.revealState)!}
+            onShowResults={roomId ? websocket.nextPhase : () =>
               setGame((current) => ({
                 ...current,
                 currentPhase: "ROUND_RESULTS",
@@ -588,12 +614,14 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
         {showHud ? (
           <GameHud
             round={
+              websocket.resultsRevealed?.round ??
               websocket.votingPhase?.round ??
               websocket.questionPhase?.round ??
               websocket.categoryPhase?.round ??
               (roomId ? (websocket.lobby?.round ?? 1) : game.currentRound)
             }
             totalRounds={
+              websocket.resultsRevealed?.total_rounds ??
               websocket.votingPhase?.total_rounds ??
               websocket.questionPhase?.total_rounds ??
               websocket.categoryPhase?.total_rounds ??
@@ -601,6 +629,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
               game.totalRounds
             }
             seconds={
+              activePhase === "RESULTS_REVEAL" ? 0 :
               websocket.votingPhase?.duration ??
               websocket.questionPhase?.duration ??
               websocket.categoryPhase?.duration ??
@@ -623,7 +652,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
         </FullScreenPhaseTransition>
 
         {showRoster && (
-          <PlayerActivityDock players={activePlayers} scores={playerScores} />
+          <PlayerActivityDock players={activePlayers} scores={roomId ? livePlayerScores : playerScores} />
         )}
       </div>
 

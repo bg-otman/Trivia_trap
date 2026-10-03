@@ -39,6 +39,8 @@ export function useGameWebSocket(roomId?: string) {
         if (message.data.player_id === sessionUser?.id) {
           store.setVoteSubmitted(store.getSnapshot().selectedVote, true);
         }
+      } else if (message.event === "RESULTS_REVEALED") {
+        store.setResultsRevealed(message.data);
       } else {
         if (message.data.code === "BLUFF_REJECTED") {
           store.setBluffSubmitted(false);
