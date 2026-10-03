@@ -132,7 +132,7 @@ function PlayerActivity({
           status={player.isYou ? "targeted" : "default"}
           animated={false}
         />
-        {showAction ? (
+        {finished ? (
           <span
             ref={actionIcon}
             role="img"

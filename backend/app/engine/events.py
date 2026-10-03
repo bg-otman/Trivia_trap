@@ -251,12 +251,12 @@ async def submit_bluff(manager: RoomManager, context: Context):
     if len(room.meta_data.sumbitted_bluffs) >= len(room.players):
         await to_next_phase(manager, context)
     else:
-        await manager.send_to_player({ 
+        await manager.broadcast({
             "event": "BLUFF_SUBMITTED",
             "data": {
                 "player_id": context.user_id,
             }
-        }, context.room_id, context.user_id)
+        }, context.room_id, None)
 
 
 
@@ -283,12 +283,12 @@ async def submit_vote(manager: RoomManager, context: Context):
     if len(room.meta_data.voting_results) >= len(room.players):
         await to_next_phase(manager, context)
     else:
-        await manager.send_to_player({ 
+        await manager.broadcast({
             "event": "VOTE_SUBMITTED",
             "data": {
                 "player_id": context.user_id,
             }
-        }, context.room_id, context.user_id)
+        }, context.room_id, None)
 
 
 
