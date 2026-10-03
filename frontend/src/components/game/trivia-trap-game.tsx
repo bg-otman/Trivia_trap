@@ -87,6 +87,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
   const introTimeoutRef = useRef<number | null>(null);
   const categoryTimeoutRef = useRef<number | null>(null);
   const categoryRequestedRef = useRef(false);
+  const leavingRoomRef = useRef(false);
   const isHost = game.players.some(
     (player) => player.isYou && player.role === "HOST",
   );
@@ -473,8 +474,10 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
   }
 
   function leaveRoom() {
+    if (leavingRoomRef.current) return;
+    if (roomId && !websocket.leaveRoom()) return;
+    leavingRoomRef.current = true;
     setShowGameIntro(false);
-    if (roomId) websocket.leaveRoom();
     router.push("/");
   }
 
@@ -671,6 +674,9 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
             roomCode={game.roomCode}
             phase={activePhase}
             timerMode={roomId ? "countdown" : "controlled"}
+            chatMessages={roomId ? websocket.chatMessages : game.chatMessages}
+            onSendChatMessage={roomId ? websocket.sendChatMessage : sendChatMessage}
+            onLeaveRoom={leaveRoom}
           />
         ) : null}
 

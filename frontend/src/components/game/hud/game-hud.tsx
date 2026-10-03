@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Settings, Volume2, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Zap } from "lucide-react";
 import type { GamePhase } from "@/types/game";
+import type { ChatMessageData } from "@/types/chat";
 import { CountdownTimer } from "./countdown-timer";
+import { GameMenu } from "./game-menu";
 import { PhaseIndicator } from "./phase-indicator";
+import { RoomChatButton } from "./room-chat-button";
 import { RoomCode } from "./room-code";
 
 interface GameHudProps {
@@ -15,8 +17,9 @@ interface GameHudProps {
   roomCode?: string;
   phase?: GamePhase;
   timerMode?: "controlled" | "countdown";
-  onSettings?: () => void;
-  onAudio?: () => void;
+  chatMessages?: ChatMessageData[];
+  onSendChatMessage?: (message: string) => void;
+  onLeaveRoom?: () => void;
 }
 
 export function GameHud({
@@ -26,9 +29,11 @@ export function GameHud({
   roomCode = "X7K9P2",
   phase = "VOTING",
   timerMode = "controlled",
-  onSettings,
-  onAudio,
+  chatMessages = [],
+  onSendChatMessage = () => undefined,
+  onLeaveRoom,
 }: GameHudProps) {
+  const [chatOpen, setChatOpen] = useState(false);
   const timer = timerMode === "countdown" ? (
     <LiveCountdownTimer
       key={`${phase}-${round}-${seconds}`}
@@ -62,27 +67,24 @@ export function GameHud({
             <PhaseIndicator phase={phase} />
           </div>
 
-          <div className="flex items-center justify-end gap-2">
+          <div className="flex items-center justify-end gap-1.5 sm:gap-2">
             <div className="hidden items-center gap-2 sm:flex">
               {timer}
               <RoomCode code={roomCode} compact />
             </div>
-            <Button
-              variant="surface"
-              size="icon-sm"
-              onClick={onAudio}
-              aria-label="Audio"
-            >
-              <Volume2 className="size-3.5" />
-            </Button>
-            <Button
-              variant="surface"
-              size="icon-sm"
-              onClick={onSettings}
-              aria-label="Settings"
-            >
-              <Settings className="size-3.5" />
-            </Button>
+            <RoomChatButton
+              open={chatOpen}
+              onOpenChange={setChatOpen}
+              messages={chatMessages}
+              onSendMessage={onSendChatMessage}
+            />
+            <GameMenu
+              roomCode={roomCode}
+              phase={phase}
+              round={round}
+              totalRounds={totalRounds}
+              onLeaveRoom={onLeaveRoom}
+            />
           </div>
         </div>
 

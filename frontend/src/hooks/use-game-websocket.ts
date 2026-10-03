@@ -59,7 +59,19 @@ export function useGameWebSocket(roomId?: string) {
   const updateSettings = useMemo(() => client.updateSettings.bind(client), [client]);
   const sendChatMessage = useMemo(() => client.sendChatMessage.bind(client), [client]);
   const kickPlayer = useMemo(() => client.kickPlayer.bind(client), [client]);
-  const leaveRoom = useMemo(() => client.leaveRoom.bind(client), [client]);
+  const leaveRoom = useMemo(() => () => {
+    const sent = client.leaveRoom();
+    if (!sent) {
+      store.setError({
+        code: "LEAVE_FAILED",
+        message: "Could not leave the room. Check your connection and try again.",
+      });
+      return false;
+    }
+    client.disconnect();
+    store.reset();
+    return true;
+  }, [client, store]);
   const nextPhase = useMemo(() => client.nextPhase.bind(client), [client]);
   const getQuestion = useMemo(() => client.getQuestion.bind(client), [client]);
   const submitBluff = useMemo(() => (answer: string) => {

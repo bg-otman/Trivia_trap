@@ -38,7 +38,9 @@ def validate_phase(current_phase: str, event_name: str) -> None:
         Validate if the current phase is valid for the requested action.
     """
     game_phases = ["GET_QUESTION", "SUBMIT_BLUFF", "SUBMIT_VOTE"]
-    if event_name == "LEAVE_ROOM" or event_name == "KICK_PLAYER":
+    # Room-level interactions remain available throughout the match and do
+    # not advance or otherwise mutate the active game phase.
+    if event_name in {"LEAVE_ROOM", "KICK_PLAYER", "CHAT_MESSAGE"}:
         return
     if current_phase == RoomPhase.LOBBY and event_name in game_phases:
         raise GameError("INVALID_PHASE", "Game has not started yet")
