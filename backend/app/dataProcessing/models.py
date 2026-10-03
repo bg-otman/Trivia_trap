@@ -16,7 +16,7 @@ from sqlalchemy import (
     func,
     text,
 )
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship, validates
 
 from .database import Base
 
@@ -193,6 +193,21 @@ class User(Base):
         nullable=False,
         server_default=func.now(),
     )
+
+    # Preserve the casefold matching used by authentication, including Unicode.
+    username_key: Mapped[str] = mapped_column(Text, nullable=False, unique=True)
+    email_key: Mapped[str] = mapped_column(Text, nullable=False, unique=True)
+    auth_version: Mapped[int] = mapped_column(
+        nullable=False, default=0, server_default=text("0"),
+    )
+    reset_digest: Mapped[str | None] = mapped_column(String(64), index=True)
+    reset_expires: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    reset_sent_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+    @validates("username", "email")
+    def normalize_identity(self, key: str, value: str) -> str:
+        setattr(self, f"{key}_key", value.casefold())
+        return value
 
     hosted_games: Mapped[list["Game"]] = relationship(
         back_populates="host",

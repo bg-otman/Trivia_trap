@@ -13,3 +13,9 @@ AsyncSessionLocal = async_sessionmaker(
 
 class Base(DeclarativeBase):
     pass
+
+
+async def get_db():
+    """One session per request; repository writes commit explicitly."""
+    async with AsyncSessionLocal() as session:
+        yield session
