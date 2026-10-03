@@ -291,16 +291,29 @@ def build_results_payload(
     player_stats: dict[str, dict],
     players: dict[str, "PlayerInfo"],
 ) -> dict:
+    # Python's sort is stable, so equal scores retain the room's established
+    # player insertion order. This is also the deterministic initial ranking
+    # for round one when every player starts on the same score.
+    previous_order = sorted(
+        players.items(),
+        key=lambda item: item[1].score,
+        reverse=True,
+    )
+    previous_ranks = {
+        player_id: index + 1
+        for index, (player_id, _player) in enumerate(previous_order)
+    }
     leaderboard = []
 
     for player_id, player in players.items():
-        player.score += player_stats[player_id][
-            "round_points"
-        ]
+        round_points = player_stats[player_id]["round_points"]
+        player.score += round_points
 
         leaderboard.append({
+            "player_id": player_id,
             "username": player.name,
             "score": player.score,
+            "round_points": round_points,
             "avatar_url": player.avatar_url,
         })
 
@@ -308,6 +321,12 @@ def build_results_payload(
         key=lambda item: item["score"],
         reverse=True,
     )
+
+    for current_rank, entry in enumerate(leaderboard, start=1):
+        entry["rank"] = current_rank
+        entry["rank_change"] = (
+            previous_ranks[entry["player_id"]] - current_rank
+        )
 
     result_choices = []
     for choice in choices_by_id.values():
@@ -360,4 +379,3 @@ def calculate_results(
         player_stats=player_stats,
         players=players,
     )
-

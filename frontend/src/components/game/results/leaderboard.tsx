@@ -49,7 +49,9 @@ export function Leaderboard({
   const rowsRef = useRef<HTMLDivElement>(null);
   const flipStateRef = useRef<ReturnType<typeof Flip.getState> | null>(null);
   const rankedPlayers = useMemo(
-    () => [...players].sort(compareFinalRank),
+    // The backend sends authoritative rank order. Keep it exactly as received;
+    // sorting here would duplicate ranking policy in React.
+    () => [...players],
     [players],
   );
   const previousPlayers = useMemo(() => {

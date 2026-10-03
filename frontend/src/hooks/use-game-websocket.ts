@@ -41,6 +41,8 @@ export function useGameWebSocket(roomId?: string) {
         }
       } else if (message.event === "RESULTS_REVEALED") {
         store.setResultsRevealed(message.data);
+      } else if (message.event === "PHASE_PODIUM") {
+        store.setPodiumPhase(message.data);
       } else {
         if (message.data.code === "BLUFF_REJECTED") {
           store.setBluffSubmitted(false);
@@ -67,6 +69,11 @@ export function useGameWebSocket(roomId?: string) {
   const submitVote = useMemo(() => (choiceId: string) => {
     const sent = client.submitVote(choiceId);
     if (sent) store.setVoteSubmitted(choiceId, true);
+    return sent;
+  }, [client, store]);
+  const showResults = useMemo(() => () => {
+    const sent = client.nextPhase();
+    if (sent) store.showRoundResults();
     return sent;
   }, [client, store]);
   useEffect(() => {
@@ -96,6 +103,7 @@ export function useGameWebSocket(roomId?: string) {
     getQuestion,
     submitBluff,
     submitVote,
+    showResults,
     setBluffAnswer: store.setBluffAnswer,
     clearError: store.clearError,
     reconnect: () => { if (roomId) { client.disconnect(); client.connect(roomId); } },

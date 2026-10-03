@@ -20,6 +20,7 @@ export interface AnswerReveal {
 
 export interface RoundResultPlayer {
   id: string;
+  rank?: number;
   name: string;
   avatar?: string;
   isYou: boolean;

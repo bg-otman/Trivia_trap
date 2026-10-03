@@ -1,4 +1,4 @@
-import type { CategoryPhaseData, LobbyServerMessage, LobbyState, QuestionPhaseData, ResultsRevealedData, ServerErrorData, VotingPhaseData } from "./websocket-types";
+import type { CategoryPhaseData, LobbyServerMessage, LobbyState, QuestionPhaseData, ResultsLeaderboardEntry, ResultsRevealedData, ServerErrorData, VotingPhaseData } from "./websocket-types";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -10,6 +10,31 @@ function isString(value: unknown): value is string {
 
 function isNumber(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value);
+}
+
+function parseResultsLeaderboard(value: unknown): ResultsLeaderboardEntry[] | null {
+  if (!Array.isArray(value)) return null;
+  const entries = value.map((player) => {
+    if (!isRecord(player) || !isString(player.player_id) ||
+        !isString(player.username) || !isNumber(player.score) ||
+        !isNumber(player.round_points) || !isNumber(player.rank) ||
+        !Number.isInteger(player.rank) || player.rank < 1 ||
+        !isNumber(player.rank_change)) return null;
+    const avatarUrl = player.avatar_url;
+    if (avatarUrl !== undefined && avatarUrl !== null && !isString(avatarUrl)) return null;
+    return {
+      player_id: player.player_id,
+      username: player.username,
+      score: player.score,
+      round_points: player.round_points,
+      rank: player.rank,
+      rank_change: player.rank_change,
+      avatar_url: avatarUrl ?? null,
+    };
+  });
+  return entries.some((entry) => entry === null)
+    ? null
+    : entries as ResultsLeaderboardEntry[];
 }
 
 export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
@@ -131,16 +156,34 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
         is_correct: choice.is_correct,
       };
     });
-    const leaderboard = data.leaderboard.map((player) => {
-      if (!isRecord(player) || !isString(player.username) || !isNumber(player.score)) return null;
-      const avatarUrl = player.avatar_url;
-      if (avatarUrl !== undefined && avatarUrl !== null && !isString(avatarUrl)) return null;
-      return { username: player.username, score: player.score, avatar_url: avatarUrl ?? null };
-    });
-    if (choices.some((choice) => choice === null) || leaderboard.some((player) => player === null)) return null;
+    const leaderboard = parseResultsLeaderboard(data.leaderboard);
+    if (!leaderboard) {
+      if (process.env.NODE_ENV === "development") {
+        console.warn("[WS] RESULTS_REVEALED uses the legacy leaderboard contract; authoritative standings are unavailable.");
+      }
+      return {
+        event: "ERROR",
+        data: {
+          code: "LEGACY_RESULTS_CONTRACT",
+          message: "The server leaderboard is missing authoritative rank and round fields.",
+        },
+      };
+    }
+    if (choices.some((choice) => choice === null)) return null;
     return {
       event: "RESULTS_REVEALED",
       data: { round: data.round, total_rounds: data.total_rounds, choices, leaderboard } as ResultsRevealedData,
+    };
+  }
+
+  if (value.event === "PHASE_PODIUM") {
+    const data = value.data;
+    if (!isNumber(data.round) || !isNumber(data.total_rounds)) return null;
+    const leaderboard = parseResultsLeaderboard(data.leaderboard);
+    if (!leaderboard) return null;
+    return {
+      event: "PHASE_PODIUM",
+      data: { round: data.round, total_rounds: data.total_rounds, leaderboard },
     };
   }
 

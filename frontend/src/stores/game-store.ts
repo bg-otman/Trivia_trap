@@ -2,6 +2,7 @@ import type {
   CategoryPhaseData,
   GameConnectionState,
   LobbyState,
+  PodiumPhaseData,
   QuestionPhaseData,
   ResultsRevealedData,
   ServerErrorData,
@@ -11,7 +12,7 @@ import type { ChatMessageData } from "@/types/chat";
 export interface GameStoreState {
   connectionState: GameConnectionState;
   lobby: LobbyState | null;
-  phase: "CATEGORY" | "TRAP" | "VOTING" | "RESULTS_REVEAL" | null;
+  phase: "CATEGORY" | "TRAP" | "VOTING" | "RESULTS_REVEAL" | "ROUND_RESULTS" | "FINAL_RESULTS" | null;
   categoryPhase: CategoryPhaseData | null;
   questionPhase: QuestionPhaseData | null;
   bluffAnswer: string;
@@ -20,6 +21,7 @@ export interface GameStoreState {
   selectedVote: string | null;
   voteSubmitted: boolean;
   resultsRevealed: ResultsRevealedData | null;
+  podiumPhase: PodiumPhaseData | null;
   chatMessages: ChatMessageData[];
   error: ServerErrorData | null;
 }
@@ -35,6 +37,7 @@ export const initialGameStoreState: GameStoreState = {
   selectedVote: null,
   voteSubmitted: false,
   resultsRevealed: null,
+  podiumPhase: null,
   chatMessages: [],
   error: null,
 };
@@ -72,6 +75,7 @@ export function createGameStore() {
         selectedVote: null,
         voteSubmitted: false,
         resultsRevealed: null,
+        podiumPhase: null,
         error: null,
       };
       publish();
@@ -116,6 +120,25 @@ export function createGameStore() {
         ...state,
         phase: "RESULTS_REVEAL",
         resultsRevealed,
+        podiumPhase: null,
+        error: null,
+      };
+      publish();
+    },
+    showRoundResults() {
+      if (!state.resultsRevealed) return;
+      state = { ...state, phase: "ROUND_RESULTS", error: null };
+      publish();
+    },
+    setPodiumPhase(podiumPhase: PodiumPhaseData) {
+      const isFinal = Boolean(
+        state.resultsRevealed &&
+        state.resultsRevealed.round >= state.resultsRevealed.total_rounds,
+      );
+      state = {
+        ...state,
+        phase: isFinal ? "FINAL_RESULTS" : "ROUND_RESULTS",
+        podiumPhase,
         error: null,
       };
       publish();

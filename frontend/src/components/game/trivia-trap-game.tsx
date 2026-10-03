@@ -149,16 +149,39 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
         }),
     };
   })() : null;
+  const liveRoundResults: RoundResults | null = websocket.resultsRevealed ? {
+    players: websocket.resultsRevealed.leaderboard.map((entry) => ({
+      id: entry.player_id,
+      rank: entry.rank,
+      name: entry.username,
+      avatar: entry.avatar_url ?? undefined,
+      isYou: entry.player_id === websocket.sessionUser?.id,
+      isHost: entry.player_id === websocket.lobby?.host_id,
+      rankChange: entry.rank_change,
+      roundPoints: entry.round_points,
+      totalScore: entry.score,
+    })),
+  } : null;
+  const liveFinalResults: FinalResults | null = websocket.podiumPhase ? {
+    standings: websocket.podiumPhase.leaderboard.map((entry) => ({
+      id: entry.player_id,
+      rank: entry.rank,
+      name: entry.username,
+      avatar: entry.avatar_url ?? undefined,
+      isYou: entry.player_id === websocket.sessionUser?.id,
+      finalScore: entry.score,
+    })),
+  } : null;
   const voteDeadlinePassed =
     game.currentPhase === "VOTING" && game.timeRemaining <= 0;
   const playerScores = Object.fromEntries(
     game.roundStandings.players.map((player) => [player.id, player.totalScore]),
   );
   const livePlayerScores = Object.fromEntries(
-    serverPlayers.map((player) => [
-      player.id,
-      websocket.resultsRevealed?.leaderboard.find((entry) => entry.username === player.name)?.score ?? player.score ?? 0,
-    ]),
+    websocket.resultsRevealed?.leaderboard.map((entry) => [
+      entry.player_id,
+      entry.score,
+    ]) ?? [],
   );
 
   useEffect(() => {
@@ -552,7 +575,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
         return (roomId ? liveReveal : game.revealState) ? (
           <ResultsRevealPhase
             reveal={(roomId ? liveReveal : game.revealState)!}
-            onShowResults={roomId ? websocket.nextPhase : () =>
+            onShowResults={roomId ? websocket.showResults : () =>
               setGame((current) => ({
                 ...current,
                 currentPhase: "ROUND_RESULTS",
@@ -570,19 +593,19 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
       case "ROUND_RESULTS":
         return (
           <RoundResultsPhase
-            players={game.players}
-            results={game.roundStandings}
-            currentRound={game.currentRound}
-            totalRounds={game.totalRounds}
-            isHost={isHost}
-            onContinue={continueAfterRound}
+            players={activePlayers}
+            results={roomId && liveRoundResults ? liveRoundResults : game.roundStandings}
+            currentRound={websocket.resultsRevealed?.round ?? game.currentRound}
+            totalRounds={websocket.resultsRevealed?.total_rounds ?? game.totalRounds}
+            isHost={roomId ? isLiveHost : isHost}
+            onContinue={roomId ? websocket.nextPhase : continueAfterRound}
           />
         );
       case "FINAL_RESULTS":
         return (
           <FinalResultsPhase
-            players={game.players}
-            results={game.finalStandings}
+            players={activePlayers}
+            results={roomId && liveFinalResults ? liveFinalResults : game.finalStandings}
             onPlayAgain={playAgain}
             onLeaveRoom={leaveRoom}
           />

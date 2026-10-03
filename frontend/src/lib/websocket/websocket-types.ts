@@ -115,6 +115,15 @@ export interface VoteSubmittedMessage {
   event: "VOTE_SUBMITTED";
   data: { player_id: string };
 }
+export interface ResultsLeaderboardEntry {
+  player_id: string;
+  username: string;
+  score: number;
+  round_points: number;
+  rank: number;
+  rank_change: number;
+  avatar_url: string | null;
+}
 export interface ResultsRevealedData {
   round: number;
   total_rounds: number;
@@ -125,15 +134,20 @@ export interface ResultsRevealedData {
     voters: string[];
     is_correct: boolean;
   }>;
-  leaderboard: Array<{
-    username: string;
-    score: number;
-    avatar_url: string | null;
-  }>;
+  leaderboard: ResultsLeaderboardEntry[];
 }
 export interface ResultsRevealedMessage {
   event: "RESULTS_REVEALED";
   data: ResultsRevealedData;
+}
+export interface PodiumPhaseData {
+  round: number;
+  total_rounds: number;
+  leaderboard: ResultsLeaderboardEntry[];
+}
+export interface PodiumPhaseMessage {
+  event: "PHASE_PODIUM";
+  data: PodiumPhaseData;
 }
 export interface ChatMessageState {
   player: { id: string; username: string; avatar_url?: string | null };
@@ -165,4 +179,5 @@ export type LobbyServerMessage =
   | VotingPhaseMessage
   | VoteSubmittedMessage
   | ResultsRevealedMessage
+  | PodiumPhaseMessage
   | ServerErrorMessage;
