@@ -20,16 +20,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { apiFetch, clearAccessToken, setAccessToken } from "@/lib/api";
 
 type Mode = "login" | "register" | "reset" | "new-password";
-
-const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000").replace(/\/$/, "");
 
 function safeNextPath() {
   const value = new URLSearchParams(window.location.search).get("next");
   return value && value.startsWith("/") && !value.startsWith("//") && !value.startsWith("/\\")
     ? value
-    : "/join";
+    : "/profile";
 }
 
 export function LoginPage({ initialMode = "login", initialMessage = "" }: { initialMode?: Mode; initialMessage?: string }) {
@@ -68,7 +67,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
     setPending(true);
     setMessage("");
     try {
-      const response = await fetch(`${apiBase}/auth/google`, {
+      const response = await apiFetch("/auth/google", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -89,7 +88,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
         setMessage("The server did not return a login token. Please try again.");
         return;
       }
-      localStorage.setItem("access_token", data.access_token);
+      setAccessToken(data.access_token);
       window.location.assign(safeNextPath());
     } catch {
       setMessage("Could not complete Google sign-in. Please try again in a moment.");
@@ -129,7 +128,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
     const body = mode === "new-password" ? { token: resetToken.current, password } : mode === "reset" ? { email } : mode === "register" ? { email, username, password } : { email, password };
 
     try {
-      const response = await fetch(`${apiBase}${route}`, {
+      const response = await apiFetch(route, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -169,7 +168,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
         resetToken.current = "";
         setPassword("");
         setConfirmPassword("");
-        localStorage.removeItem("access_token");
+        clearAccessToken();
         window.location.replace("/login?passwordReset=success");
       } else if (mode === "login") {
         const data = (await response.json()) as { access_token?: string };
@@ -177,7 +176,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
           setMessage("The server did not return a login token. Please try again.");
           return;
         }
-        localStorage.setItem("access_token", data.access_token);
+        setAccessToken(data.access_token);
         window.location.assign(safeNextPath());
       } else if (mode === "register") {
         changeMode("login");

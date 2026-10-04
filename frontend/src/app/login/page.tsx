@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default async function Page({ searchParams }: {
   searchParams: Promise<{ mode?: string; passwordReset?: string }>;
 }) {
+
   const { mode, passwordReset } = await searchParams;
   const initialMode = mode === "reset-password" ? "new-password" : "login";
 
