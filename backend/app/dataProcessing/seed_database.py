@@ -455,13 +455,34 @@ async def seed_mock_user_data(
             ))
         session.add(game)
 
-    # Development achievement codes; the application has no catalog yet.
-    for code in ("first_game", "first_win"):
-        if await session.get(UserAchievement, (demo.id, code)) is None:
+    mock_achievements = (
+        {
+            "code": "first_game",
+            "description": "Play your first game",
+            "img": "/images/achievements/first_game.png",
+            "unlocked": False,
+        },
+        {
+            "code": "first_win",
+            "description": "Win your first game",
+            "img": "/images/achievements/first_win.png",
+            "unlocked": True,
+        },
+    )
+    for achievement in mock_achievements:
+        code = achievement["code"]
+        existing = await session.get(UserAchievement, (demo.id, code))
+        if existing is None:
             session.add(UserAchievement(
                 user_id=demo.id, achievement_code=code,
-                unlocked_at=joined_at + timedelta(days=2, minutes=15),
+                description=achievement["description"],
+                img=achievement["img"],
+                unlocked=achievement["unlocked"],
             ))
+        else:
+            existing.description = achievement["description"]
+            existing.img = achievement["img"]
+            existing.unlocked = achievement["unlocked"]
     await session.flush()
     return demo
 

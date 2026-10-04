@@ -4,7 +4,7 @@ from authentication.current_user import get_current_user
 from dataProcessing.models import User
 from sqlalchemy.orm import Session
 from typing import Annotated
-from users.utils import build_user_profile, get_user_statistics
+from users.utils import build_user_profile
 from .schemas import UserProfile
 
 

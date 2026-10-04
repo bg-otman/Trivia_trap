@@ -4,8 +4,8 @@ from sqlalchemy import select, func, case
 from typing import Annotated
 from fastapi import Depends
 from dataProcessing.database import get_db
-from dataProcessing.models import User, GamePlayerResult
-from .schemas import UserStatistics, UserProfile
+from dataProcessing.models import User, GamePlayerResult, UserAchievement
+from .schemas import UserStatistics, UserProfile, UserAchievements as achievements
 from fastapi import HTTPException, status
 
 
@@ -29,10 +29,32 @@ async def get_user_statistics(db: Annotated[Session, Depends(get_db)], user_id: 
     return user_stats
 
 
+
+async def get_user_achievements(db: Annotated[Session, Depends(get_db)], user_id: int):
+    user_achievements = []
+    statement = select(UserAchievement).where(UserAchievement.user_id == user_id)
+    try:
+        trophies = (await db.execute(statement)).scalars().all()
+        for trophy in trophies:
+            user_achievements.append(achievements(
+                name=trophy.achievement_code,
+                description=trophy.description,
+                img=trophy.img,
+                unlocked=trophy.unlocked
+            ))
+    except Exception:
+        pass
+    return user_achievements
+
+
+
 async def build_user_profile(session: Annotated[Session, Depends(get_db)], 
                    user_id: int = None, 
                    username: str = None) -> UserProfile:
-    "get user by id or username"
+    """
+        builds a user profile based on the provided user_id or username.
+        If both are provided, user_id takes precedence.
+    """
     user = None
     try:
         if user_id is not None:
@@ -58,5 +80,6 @@ async def build_user_profile(session: Annotated[Session, Depends(get_db)],
         banner=user.cover_url,
         avatar=user.avatar_url,
         joined_date=user.created_at,
-        stats=await get_user_statistics(session, user.id)
+        stats=await get_user_statistics(session, user.id),
+        achievements=await get_user_achievements(session, user.id)
     )
