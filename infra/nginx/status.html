@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trivia Trap - System Status</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b1020;
+      color: #eef2ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #172554 0, #0b1020 42%);
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+
+    .header {
+      display: flex;
+      gap: 24px;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    h1 { margin: 0 0 8px; font-size: clamp(2rem, 6vw, 3.4rem); }
+    p { margin: 0; color: #a5b4fc; }
+
+    .overall {
+      margin: 28px 0;
+      padding: 18px 20px;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.82);
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.78);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .service { font-size: 1.05rem; font-weight: 700; }
+    .message { margin-top: 10px; color: #94a3b8; font-size: 0.92rem; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #cbd5e1;
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: #64748b; }
+    .ok .dot { background: #22c55e; box-shadow: 0 0 12px rgba(34, 197, 94, 0.75); }
+    .bad .dot { background: #ef4444; box-shadow: 0 0 12px rgba(239, 68, 68, 0.65); }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 24px;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    button {
+      border: 1px solid #475569;
+      border-radius: 10px;
+      padding: 9px 13px;
+      background: #172033;
+      color: #e2e8f0;
+      cursor: pointer;
+    }
+
+    button:hover { background: #1e293b; }
+
+    @media (max-width: 650px) {
+      main { padding-top: 36px; }
+      .header { align-items: start; flex-direction: column; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="header">
+      <div>
+        <h1>System status</h1>
+        <p>Live health information for Trivia Trap.</p>
+      </div>
+      <button id="refresh" type="button">Refresh</button>
+    </div>
+
+    <div class="overall" id="overall">Checking services...</div>
+
+    <section class="grid">
+      <article class="card" id="frontend-card">
+        <div class="row">
+          <span class="service">Frontend</span>
+          <span class="badge"><span class="dot"></span><span class="state">Checking</span></span>
+        </div>
+        <div class="message">Checking the web application.</div>
+      </article>
+
+      <article class="card" id="api-card">
+        <div class="row">
+          <span class="service">Backend API</span>
+          <span class="badge"><span class="dot"></span><span class="state">Checking</span></span>
+        </div>
+        <div class="message">Checking FastAPI liveness.</div>
+      </article>
+
+      <article class="card" id="database-card">
+        <div class="row">
+          <span class="service">Database</span>
+          <span class="badge"><span class="dot"></span><span class="state">Checking</span></span>
+        </div>
+        <div class="message">Checking a real PostgreSQL query.</div>
+      </article>
+
+      <article class="card" id="backup-card">
+        <div class="row">
+          <span class="service">Database backups</span>
+          <span class="badge"><span class="dot"></span><span class="state">Checking</span></span>
+        </div>
+        <div class="message">Checking the latest automated backup.</div>
+      </article>
+    </section>
+
+    <footer>
+      <span id="checked">Not checked yet</span>
+      <span>Auto-refreshes every 15 seconds</span>
+    </footer>
+  </main>
+
+  <script>
+    const results = {};
+
+    function setCard(id, ok, message) {
+      const card = document.getElementById(id);
+      card.classList.remove("ok", "bad");
+      card.classList.add(ok ? "ok" : "bad");
+      card.querySelector(".state").textContent = ok ? "Operational" : "Unavailable";
+      card.querySelector(".message").textContent = message;
+      results[id] = ok;
+    }
+
+    async function fetchOk(url) {
+      try {
+        const response = await fetch(url, { cache: "no-store" });
+        return response.ok;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    function ageText(seconds) {
+      if (seconds < 60) return `${seconds}s ago`;
+      if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+      return `${Math.floor(seconds / 3600)}h ago`;
+    }
+
+    async function refreshStatus() {
+      results["frontend-card"] = false;
+      results["api-card"] = false;
+      results["database-card"] = false;
+      results["backup-card"] = false;
+
+      const frontendOk = await fetchOk("/");
+      setCard("frontend-card", frontendOk,
+        frontendOk ? "Web application is responding." : "Web application is unavailable.");
+
+      const apiOk = await fetchOk("/health");
+      setCard("api-card", apiOk,
+        apiOk ? "FastAPI is responding." : "FastAPI is unavailable.");
+
+      const databaseOk = await fetchOk("/ready");
+      setCard("database-card", databaseOk,
+        databaseOk ? "Backend can query PostgreSQL." : "PostgreSQL is not ready.");
+
+      try {
+        const response = await fetch("/backup-status", { cache: "no-store" });
+        if (!response.ok) throw new Error("backup status unavailable");
+
+        const data = await response.json();
+        const now = Math.floor(Date.now() / 1000);
+        const age = Math.max(0, now - Number(data.last_success || 0));
+        const maxAge = Number(data.max_age_seconds || 7200);
+        const backupOk = data.status === "operational" && age <= maxAge;
+        const message = backupOk
+          ? `Latest backup: ${data.backup} (${ageText(age)}).`
+          : (data.message || "Backup is stale or unavailable.");
+        setCard("backup-card", backupOk, message);
+      } catch (_) {
+        setCard("backup-card", false, "No successful backup is available yet.");
+      }
+
+      const allOk = Object.values(results).every(Boolean);
+      document.getElementById("overall").textContent = allOk
+        ? "All systems operational"
+        : "One or more systems need attention";
+      document.getElementById("checked").textContent =
+        `Last checked: ${new Date().toLocaleTimeString()}`;
+    }
+
+    document.getElementById("refresh").addEventListener("click", refreshStatus);
+    refreshStatus();
+    setInterval(refreshStatus, 15000);
+  </script>
+</body>
+</html>

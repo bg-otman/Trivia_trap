@@ -5,6 +5,7 @@ FROM owasp/modsecurity-crs:4.25.1-nginx-alpine-lts
 
 USER root
 COPY default.conf /etc/nginx/templates/conf.d/default.conf.template
+COPY status.html /usr/share/nginx/html/status.html
 COPY start.sh /start.sh
 RUN chmod +x /start.sh \
     && mkdir -p /etc/nginx/certs \
