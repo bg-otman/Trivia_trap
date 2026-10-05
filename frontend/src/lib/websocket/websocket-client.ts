@@ -9,6 +9,7 @@ import type {
   LeaveRoomMessage,
   LobbyServerMessage,
   NextPhaseMessage,
+  ReturnToLobbyMessage,
   SubmitBluffMessage,
   SubmitVoteMessage,
   UpdateSettingsData,
@@ -121,6 +122,16 @@ export class GameWebSocketClient {
     }
     this.socket.send(
       JSON.stringify({ event: "NEXT_PHASE", data: {} } satisfies NextPhaseMessage),
+    );
+    return true;
+  }
+
+  returnToLobby() {
+    if (!this.socket || this.socket.readyState !== WebSocket.OPEN) {
+      return false;
+    }
+    this.socket.send(
+      JSON.stringify({ event: "RETURN_TO_LOBBY", data: {} } satisfies ReturnToLobbyMessage),
     );
     return true;
   }

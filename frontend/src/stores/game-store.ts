@@ -200,6 +200,25 @@ export function createGameStore() {
       };
       publish();
     },
+    returnToLobby() {
+      state = {
+        ...state,
+        phase: null,
+        categoryPhase: null,
+        questionPhase: null,
+        bluffAnswer: "",
+        bluffSubmitted: false,
+        bluffSubmittedPlayerIds: [],
+        votingPhase: null,
+        selectedVote: null,
+        voteSubmitted: false,
+        voteSubmittedPlayerIds: [],
+        resultsRevealed: null,
+        podiumPhase: null,
+        error: null,
+      };
+      publish();
+    },
     setError(error: ServerErrorData) {
       state = { ...state, error };
       publish();

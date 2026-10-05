@@ -187,7 +187,7 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
     };
   }
 
-  if (value.event !== "LOBBY_UPDATE") return null;
+  if (value.event !== "LOBBY_UPDATE" && value.event !== "RETURNED_TO_LOBBY") return null;
   const data = value.data;
   if (!isNumber(data.round) || !isString(data.host_id) || !Array.isArray(data.players) || !isRecord(data.settings)) return null;
 
@@ -209,7 +209,7 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
   ) return null;
 
   return {
-    event: "LOBBY_UPDATE",
+    event: value.event,
     data: {
       round: data.round,
       host_id: data.host_id,

@@ -10,7 +10,6 @@ import {
 import { gameSpring, StaggerGroup, StaggerItem } from "@/components/game/system/phase-transition";
 import { captureCategoryCard } from "@/animations/category-transition";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import { LoadingState } from "@/components/ui/loading-state";
 
 const roundCategories: Category[] = [
   "movies",
@@ -86,19 +85,6 @@ export function CategoryPhase({
   )?.label;
   const selectedCategoryLabel = selectedLabel ?? selectedCategory?.toUpperCase();
 
-  if (!canChoose) {
-    return (
-      <section className="relative z-10 flex w-full flex-1 items-center justify-center p-6">
-        <LoadingState
-          title="WAITING FOR PLAYER"
-          description={`${chooserName?.toUpperCase() ?? "ANOTHER PLAYER"} IS CHOOSING THE CATEGORY...`}
-          variant="game"
-          className="w-full max-w-2xl min-h-64"
-        />
-      </section>
-    );
-  }
-
   return (
     <section className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <div className="w-full max-w-[1020px]">
@@ -106,16 +92,19 @@ export function CategoryPhase({
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 text-accent">
             <Crown className="size-3.5 fill-current" aria-hidden="true" />
             <span className="font-meta text-[11px] font-bold tracking-[0.12em]">
-              YOUR PICK · ROUND {currentRound} OF {totalRounds}
+              {canChoose ? "YOUR PICK" : `${chooserName?.toUpperCase() ?? "ANOTHER PLAYER"}'S PICK`} · ROUND {currentRound} OF {totalRounds}
             </span>
           </div>
 
           <h1 className="font-display text-3xl font-black tracking-[-0.03em] text-foreground sm:text-4xl">
-            Choose the next category
+            {canChoose
+              ? "Choose the next category"
+              : `${chooserName ?? "Another player"} is choosing the category`}
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#a6a6ae] sm:text-base">
-            Pick the arena for this round. Your choice locks as soon as you
-            select it.{duration ? ` You have ${duration} seconds.` : ""}
+            {canChoose
+              ? `Pick the arena for this round. Your choice locks as soon as you select it.${duration ? ` You have ${duration} seconds.` : ""}`
+              : "You can view the available categories while you wait for their choice."}
           </p>
         </header>
 
@@ -149,9 +138,10 @@ export function CategoryPhase({
                     label={label}
                     imageUrl={imageUrl}
                     selected={selected}
-                    disabled={isLocked}
+                    disabled={isLocked || !canChoose}
                     variant="interactive"
                     onSelect={() => {
+                      if (!canChoose) return;
                       setSelectedKey(key);
                       captureCategoryCard(document.querySelector(`[data-category-card="${category}"]`), Boolean(reducedMotion));
                       if (option && onSelectCategoryOption) {
@@ -179,10 +169,16 @@ export function CategoryPhase({
             </div>
             <div className="min-w-0">
               <p className="font-display text-sm font-bold text-foreground">
-                {isLocked ? "PREPARING QUESTION..." : "Select one category"}
+                {isLocked
+                  ? "PREPARING QUESTION..."
+                  : canChoose
+                    ? "Select one category"
+                    : "WAITING FOR PLAYER"}
               </p>
               <p className="mt-0.5 truncate text-xs text-muted-foreground">
-                {selectedCategoryLabel ?? "Click a category to select and lock it."}
+                {selectedCategoryLabel ?? (canChoose
+                  ? "Click a category to select and lock it."
+                  : `${chooserName?.toUpperCase() ?? "ANOTHER PLAYER"} IS CHOOSING THE CATEGORY...`)}
               </p>
             </div>
           </div>

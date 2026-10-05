@@ -15,6 +15,9 @@ export function useGameWebSocket(roomId?: string) {
     onMessage: (message) => {
       if (message.event === "LOBBY_UPDATE") {
         store.setLobby(message.data);
+      } else if (message.event === "RETURNED_TO_LOBBY") {
+        store.setLobby(message.data);
+        store.returnToLobby();
       } else if (message.event === "CHAT_MESSAGE") {
         store.addChatMessage({
           id: createUuid(),
@@ -73,6 +76,7 @@ export function useGameWebSocket(roomId?: string) {
     return true;
   }, [client, store]);
   const nextPhase = useMemo(() => client.nextPhase.bind(client), [client]);
+  const returnToLobby = useMemo(() => client.returnToLobby.bind(client), [client]);
   const getQuestion = useMemo(() => client.getQuestion.bind(client), [client]);
   const submitBluff = useMemo(() => (answer: string) => {
     if (store.getSnapshot().bluffSubmitted) return false;
@@ -118,6 +122,7 @@ export function useGameWebSocket(roomId?: string) {
     submitBluff,
     submitVote,
     showResults,
+    returnToLobby,
     setBluffAnswer: store.setBluffAnswer,
     clearError: store.clearError,
     reconnect: () => {

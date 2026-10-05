@@ -465,7 +465,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
   }
 
   function playAgain() {
-    setGame(createInitialState(roomCode, "CATEGORY"));
+    setGame(createInitialState(roomCode, "LOBBY"));
   }
 
   function retryConnection() {
@@ -623,7 +623,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
             players={activePlayers}
             results={roomId && liveFinalResults ? liveFinalResults : game.finalStandings}
             isHost={roomId ? isLiveHost : isHost}
-            onPlayAgain={roomId ? websocket.nextPhase : playAgain}
+            onPlayAgain={roomId ? websocket.returnToLobby : playAgain}
             onLeaveRoom={leaveRoom}
           />
         );

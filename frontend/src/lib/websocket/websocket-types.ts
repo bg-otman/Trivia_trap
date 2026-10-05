@@ -26,6 +26,10 @@ export interface LobbyUpdateMessage {
   event: "LOBBY_UPDATE";
   data: LobbyState;
 }
+export interface ReturnedToLobbyMessage {
+  event: "RETURNED_TO_LOBBY";
+  data: LobbyState;
+}
 export interface UpdateSettingsData {
   total_rounds: number;
   bluff_time: number;
@@ -46,6 +50,10 @@ export interface KickPlayerMessage {
 }
 export interface NextPhaseMessage {
   event: "NEXT_PHASE";
+  data: Record<string, never>;
+}
+export interface ReturnToLobbyMessage {
+  event: "RETURN_TO_LOBBY";
   data: Record<string, never>;
 }
 export interface LeaveRoomMessage {
@@ -176,6 +184,7 @@ export interface ServerErrorMessage {
 }
 export type LobbyServerMessage =
   | LobbyUpdateMessage
+  | ReturnedToLobbyMessage
   | ChatMessageEvent
   | CategoryPhaseMessage
   | QuestionPhaseMessage
