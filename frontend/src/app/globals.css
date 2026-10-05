@@ -8,6 +8,16 @@
   --font-secondary:
     "Bowlby One SC", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-ui:
+    "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-meta:
+    "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-mono:
+    "Liberation Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --breakpoint-xs: 521px;
+  --font-blackops: var(--font-black-ops);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
