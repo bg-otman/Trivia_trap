@@ -12,6 +12,7 @@ import type { ChatMessageData } from "@/types/chat";
 export interface GameStoreState {
   connectionState: GameConnectionState;
   lobby: LobbyState | null;
+  playerScores: Record<string, number>;
   phase: "CATEGORY" | "TRAP" | "VOTING" | "RESULTS_REVEAL" | "ROUND_RESULTS" | "FINAL_RESULTS" | null;
   categoryPhase: CategoryPhaseData | null;
   questionPhase: QuestionPhaseData | null;
@@ -30,6 +31,7 @@ export interface GameStoreState {
 export const initialGameStoreState: GameStoreState = {
   connectionState: "DISCONNECTED",
   lobby: null,
+  playerScores: {},
   phase: null,
   categoryPhase: null,
   questionPhase: null,
@@ -60,7 +62,14 @@ export function createGameStore() {
       publish();
     },
     setLobby(lobby: LobbyState) {
-      state = { ...state, lobby, error: null };
+      state = {
+        ...state,
+        lobby,
+        playerScores: Object.fromEntries(
+          lobby.players.map((player) => [player.id, player.score]),
+        ),
+        error: null,
+      };
       publish();
     },
     addChatMessage(message: ChatMessageData) {
@@ -172,6 +181,12 @@ export function createGameStore() {
         ...state,
         phase: "RESULTS_REVEAL",
         resultsRevealed,
+        playerScores: Object.fromEntries(
+          resultsRevealed.leaderboard.map((player) => [
+            player.player_id,
+            player.score,
+          ]),
+        ),
         bluffSubmitted: false,
         bluffSubmittedPlayerIds: [],
         selectedVote: null,

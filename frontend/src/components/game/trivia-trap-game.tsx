@@ -188,12 +188,6 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
   const playerScores = Object.fromEntries(
     game.roundStandings.players.map((player) => [player.id, player.totalScore]),
   );
-  const livePlayerScores = Object.fromEntries(
-    websocket.resultsRevealed?.leaderboard.map((entry) => [
-      entry.player_id,
-      entry.score,
-    ]) ?? [],
-  );
 
   useEffect(() => {
     return () => {
@@ -695,7 +689,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
         </FullScreenPhaseTransition>
 
         {showRoster && (
-          <PlayerActivityDock players={activePlayers} scores={roomId ? livePlayerScores : playerScores} />
+          <PlayerActivityDock players={activePlayers} scores={roomId ? websocket.playerScores : playerScores} />
         )}
       </div>
 
