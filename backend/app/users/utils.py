@@ -51,14 +51,27 @@ async def get_user_achievements(db: Annotated[Session, Depends(get_db)], user_id
 
 async def get_user_category_analytics(db: Annotated[Session, Depends(get_db)], user_id: int, language: str = 'en') -> list[UserCategoryAnalytics]:
     category_analytics = []
+    player_counts = (
+        select(
+            GamePlayerResult.game_id,
+            func.count(GamePlayerResult.user_id).label("player_count"),
+        )
+        .group_by(GamePlayerResult.game_id)
+        .subquery()
+    )
     statement = select(
         CategoryTranslation.name.label("category"),
         func.sum(GamePlayerCategoryResult.questions_played).label("total_rounds"),
         func.sum(GamePlayerCategoryResult.correct_answers).label("correct_answers"),
         func.sum(GamePlayerCategoryResult.bluff_votes_received).label("bluff_votes_received"),
-        # get the Total eligible opponent votes in Category
+        func.sum(
+            GamePlayerCategoryResult.questions_played
+            * (player_counts.c.player_count - 1)
+        ).label("player_count"),
     ).join(
         CategoryTranslation, GamePlayerCategoryResult.category_id == CategoryTranslation.category_id
+    ).join(
+        player_counts, GamePlayerCategoryResult.game_id == player_counts.c.game_id
     ).where(
         GamePlayerCategoryResult.user_id == user_id,
         CategoryTranslation.language_code == language
@@ -76,7 +89,9 @@ async def get_user_category_analytics(db: Annotated[Session, Depends(get_db)], u
                 category=row.category,
                 total_rounds=row.total_rounds,
                 knowledge_accuracy=(row.correct_answers / row.total_rounds) * 100 if row.total_rounds > 0 else 0.0,
-                bluff_efficiency=(row.bluff_votes_received / row.total_rounds) * 100 if row.total_rounds > 0 else 0.0 # i need to replace total_rounds with the total eligible opponent votes in Category, but i don't have that data yet
+                bluff_efficiency=(
+                    row.bluff_votes_received / row.player_count
+                ) * 100 if row.player_count > 0 else 0.0
             ))
     except Exception:
         pass
