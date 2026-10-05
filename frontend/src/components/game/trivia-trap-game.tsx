@@ -115,6 +115,9 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
     voteTime: websocket.lobby.settings.vote_time, maxPlayers: websocket.lobby.settings.max_players, language: websocket.lobby.settings.language,
   } : null;
   const activePlayers = roomId ? serverPlayers : game.players;
+  const categoryRound = websocket.categoryPhase?.round ?? game.currentRound;
+  const categoryChooser = getCategoryChooser(activePlayers, categoryRound);
+  const isCategoryChooser = Boolean(categoryChooser?.isYou);
   const getQuestion = websocket.getQuestion;
   const roomLanguage = websocket.lobby?.settings.language ?? "en";
   const liveQuestion: Question | null = websocket.questionPhase ? {
@@ -202,7 +205,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
 
   useEffect(() => {
     const categoryPhase = websocket.categoryPhase;
-    if (!roomId || !isLiveHost || activePhase !== "CATEGORY" || !categoryPhase) {
+    if (!roomId || !isCategoryChooser || activePhase !== "CATEGORY" || !categoryPhase) {
       return;
     }
     categoryRequestedRef.current = false;
@@ -223,7 +226,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
         categoryTimeoutRef.current = null;
       }
     };
-  }, [activePhase, getQuestion, isLiveHost, roomId, roomLanguage, websocket.categoryPhase]);
+  }, [activePhase, getQuestion, isCategoryChooser, roomId, roomLanguage, websocket.categoryPhase]);
 
   useEffect(() => {
     if (!timedPhases.includes(game.currentPhase) || game.timeRemaining <= 0) {
@@ -534,7 +537,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
       case "CATEGORY":
         return (
           <CategoryPhase
-            currentRound={websocket.categoryPhase?.round ?? game.currentRound}
+            currentRound={categoryRound}
             totalRounds={
               websocket.categoryPhase?.total_rounds ??
               serverSettings?.totalRounds ??
@@ -549,7 +552,8 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
             selectedCategory={game.selectedCategory}
             onSelectCategory={selectCategory}
             onSelectCategoryOption={roomId ? requestQuestion : undefined}
-            canChoose={roomId ? isLiveHost : isHost}
+            canChoose={isCategoryChooser}
+            chooserName={categoryChooser?.name}
           />
         );
       case "TRAP":
@@ -854,6 +858,14 @@ function advanceExpiredPhase(current: MockGameFlowState): MockGameFlowState {
   }
 
   return current;
+}
+
+function getCategoryChooser(players: Player[], round: number): Player | null {
+  const availablePlayers = players.filter((player) => player.status !== "OFFLINE");
+  if (availablePlayers.length === 0) return null;
+
+  const chooserIndex = (Math.max(1, round) - 1) % availablePlayers.length;
+  return availablePlayers[chooserIndex] ?? null;
 }
 
 function resetRound(

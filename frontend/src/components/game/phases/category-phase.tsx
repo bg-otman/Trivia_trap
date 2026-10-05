@@ -47,6 +47,7 @@ interface CategoryPhaseProps {
   onSelectCategory: (category: Category) => void;
   onSelectCategoryOption?: (category: CategoryOption) => void;
   canChoose?: boolean;
+  chooserName?: string;
   categories?: CategoryOption[];
   duration?: number;
 }
@@ -58,6 +59,7 @@ export function CategoryPhase({
   onSelectCategory,
   onSelectCategoryOption,
   canChoose = true,
+  chooserName,
   categories,
   duration,
 }: CategoryPhaseProps) {
@@ -87,7 +89,12 @@ export function CategoryPhase({
   if (!canChoose) {
     return (
       <section className="relative z-10 flex w-full flex-1 items-center justify-center p-6">
-        <LoadingState title="WAITING FOR PLAYER" description="ALEX IS CHOOSING THE CATEGORY..." variant="game" className="w-full max-w-2xl min-h-64" />
+        <LoadingState
+          title="WAITING FOR PLAYER"
+          description={`${chooserName?.toUpperCase() ?? "ANOTHER PLAYER"} IS CHOOSING THE CATEGORY...`}
+          variant="game"
+          className="w-full max-w-2xl min-h-64"
+        />
       </section>
     );
   }
@@ -99,7 +106,7 @@ export function CategoryPhase({
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 text-accent">
             <Crown className="size-3.5 fill-current" aria-hidden="true" />
             <span className="font-meta text-[11px] font-bold tracking-[0.12em]">
-              HOST&apos;S PICK · ROUND {currentRound} OF {totalRounds}
+              YOUR PICK · ROUND {currentRound} OF {totalRounds}
             </span>
           </div>
 
