@@ -61,6 +61,36 @@ services:
       retries: 5
       start_period: 10s
 
+  backup:
+    build: ./infra/backup
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      BACKUP_INTERVAL_SECONDS: ${BACKUP_INTERVAL_SECONDS:-3600}
+      BACKUP_RETENTION_DAYS: ${BACKUP_RETENTION_DAYS:-7}
+      BACKUP_MAX_AGE_SECONDS: ${BACKUP_MAX_AGE_SECONDS:-7200}
+    depends_on:
+      vault-bootstrap:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./infra/vault/backup-agent.hcl:/vault/agent.hcl:ro
+      # Backup needs the same read-only database secret as PostgreSQL. Reusing
+      # this restricted AppRole also keeps existing Vault installations usable.
+      - vault_postgres_approle:/vault/approle:ro
+      - postgres_backups:/backups
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "test -s /backups/status.json && grep -q operational /backups/status.json && last=$$(cat /backups/last_success) && now=$$(date +%s) && age=$$((now-last)) && [ $$age -le $${BACKUP_MAX_AGE_SECONDS} ]",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
   backend:
     build: ./backend
     environment:
@@ -84,7 +114,7 @@ services:
           "CMD",
           "python",
           "-c",
-          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/rooms', timeout=3).read()",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready', timeout=3).read()",
         ]
       interval: 10s
       timeout: 5s
@@ -132,6 +162,7 @@ services:
       - "8443:8443"
     volumes:
       - nginx_certs:/etc/nginx/certs
+      - postgres_backups:/backups:ro
     healthcheck:
       test:
         [
@@ -149,4 +180,5 @@ volumes:
   vault_backend_approle:
   vault_postgres_approle:
   postgres_data:
+  postgres_backups:
   nginx_certs:
