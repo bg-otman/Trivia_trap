@@ -4,8 +4,8 @@ from sqlalchemy import select, func, case
 from typing import Annotated
 from fastapi import Depends
 from dataProcessing.database import get_db
-from dataProcessing.models import User, GamePlayerResult, UserAchievement
-from .schemas import UserStatistics, UserProfile, UserAchievements as achievements
+from dataProcessing.models import User, GamePlayerResult, UserAchievement, CategoryTranslation, GamePlayerCategoryResult
+from .schemas import UserStatistics, UserProfile, UserAchievements as achievements, UserCategoryAnalytics
 from fastapi import HTTPException, status
 
 
@@ -48,9 +48,46 @@ async def get_user_achievements(db: Annotated[Session, Depends(get_db)], user_id
 
 
 
+
+async def get_user_category_analytics(db: Annotated[Session, Depends(get_db)], user_id: int, language: str = 'en') -> list[UserCategoryAnalytics]:
+    category_analytics = []
+    statement = select(
+        CategoryTranslation.name.label("category"),
+        func.sum(GamePlayerCategoryResult.questions_played).label("total_rounds"),
+        func.sum(GamePlayerCategoryResult.correct_answers).label("correct_answers"),
+        func.sum(GamePlayerCategoryResult.bluff_votes_received).label("bluff_votes_received"),
+        # get the Total eligible opponent votes in Category
+    ).join(
+        CategoryTranslation, GamePlayerCategoryResult.category_id == CategoryTranslation.category_id
+    ).where(
+        GamePlayerCategoryResult.user_id == user_id,
+        CategoryTranslation.language_code == language
+    ).group_by(
+        CategoryTranslation.name
+    ).order_by(
+        func.sum(GamePlayerCategoryResult.questions_played).desc(),
+        func.sum(GamePlayerCategoryResult.correct_answers).desc(),
+        func.sum(GamePlayerCategoryResult.bluff_votes_received).desc()
+    ).limit(5)
+    try:
+        results = (await db.execute(statement)).all()
+        for row in results:
+            category_analytics.append(UserCategoryAnalytics(
+                category=row.category,
+                total_rounds=row.total_rounds,
+                knowledge_accuracy=(row.correct_answers / row.total_rounds) * 100 if row.total_rounds > 0 else 0.0,
+                bluff_efficiency=(row.bluff_votes_received / row.total_rounds) * 100 if row.total_rounds > 0 else 0.0 # i need to replace total_rounds with the total eligible opponent votes in Category, but i don't have that data yet
+            ))
+    except Exception:
+        pass
+    return category_analytics
+
+
+
 async def build_user_profile(session: Annotated[Session, Depends(get_db)], 
                    user_id: int = None, 
-                   username: str = None) -> UserProfile:
+                   username: str = None,
+                   language: str = 'en') -> UserProfile:
     """
         builds a user profile based on the provided user_id or username.
         If both are provided, user_id takes precedence.
@@ -81,5 +118,6 @@ async def build_user_profile(session: Annotated[Session, Depends(get_db)],
         avatar=user.avatar_url,
         joined_date=user.created_at,
         stats=await get_user_statistics(session, user.id),
-        achievements=await get_user_achievements(session, user.id)
+        achievements=await get_user_achievements(session, user.id),
+        analytics=await get_user_category_analytics(session, user.id, language)
     )

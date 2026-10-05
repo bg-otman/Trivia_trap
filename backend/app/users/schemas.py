@@ -29,4 +29,4 @@ class UserProfile(BaseModel, arbitrary_types_allowed=True):
     joined_date: datetime
     stats: UserStatistics
     achievements: list[UserAchievements]
-    # analytics: list[UserCategoryAnalytics]
+    analytics: list[UserCategoryAnalytics]

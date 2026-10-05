@@ -93,6 +93,7 @@ async def save_game_results(
                 category_id=result["category_id"],
                 questions_played=result["questions_played"],
                 correct_answers=result["correct_answers"],
+                bluff_votes_received=result["bluff_votes_received"],
             )
             for result in category_results
         ]

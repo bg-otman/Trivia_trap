@@ -390,6 +390,10 @@ class GamePlayerCategoryResult(Base):
         nullable=False,
         server_default=text("0"),
     )
+    bluff_votes_received: Mapped[int] = mapped_column(
+        nullable=False,
+        server_default=text("0"),
+    )
 
     game_player_result: Mapped["GamePlayerResult"] = relationship(
         back_populates="category_results",

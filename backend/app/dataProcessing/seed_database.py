@@ -431,7 +431,19 @@ async def seed_mock_user_data(
     # Each game has two rounds per category, three players, and distinct ranks.
     for game_number in range(3):
         game_id = uuid5(NAMESPACE_URL, f"trivia-trap/local-mock/game/{game_number}")
-        if await session.get(Game, game_id) is not None:
+        existing_game = await session.get(Game, game_id)
+        if existing_game is not None:
+            existing_results = (
+                await session.scalars(
+                    select(GamePlayerCategoryResult).where(
+                        GamePlayerCategoryResult.game_id == game_id
+                    )
+                )
+            ).all()
+            for category_result in existing_results:
+                category_result.bluff_votes_received = (
+                    (category_result.user_id - 1) + game_number
+                ) % 3
             continue
         started_at = joined_at + timedelta(days=game_number + 2)
         game = Game(
@@ -449,6 +461,7 @@ async def seed_mock_user_data(
                     GamePlayerCategoryResult(
                         category_id=category_id, questions_played=2,
                         correct_answers=(source_id + player_number + game_number) % 3,
+                        bluff_votes_received=(player_number + game_number) % 3,
                     )
                     for source_id, category_id in category_id_map.items()
                 ],
