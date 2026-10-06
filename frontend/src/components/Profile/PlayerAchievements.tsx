@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import { UserAchievements } from "./ProfilePage";
+import { UserAchievements } from "@/types/userData";
 import { ChevronRight, LockKeyhole } from "lucide-react";
 import Image from "next/image";
 

@@ -49,7 +49,6 @@ function PaginationLink({
       variant={isActive ? "outline" : "ghost"}
       size={size}
       className={cn(className)}
-      asChild
     >
       <a
         aria-current={isActive ? "page" : undefined}

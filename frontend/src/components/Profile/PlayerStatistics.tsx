@@ -1,4 +1,4 @@
-import { UserStatistics } from './ProfilePage';
+import { UserStatistics } from "@/types/userData";
 
 export default function PlayerStatistics({ stats }: { stats: UserStatistics }) {
     return (

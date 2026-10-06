@@ -1,6 +1,5 @@
-// 'use client';
 import { Trophy, CircleStar, Award } from "lucide-react";
-import { MatchHistory } from "./ProfilePage";
+import { MatchHistory } from "@/types/userData";
 import Link from 'next/link';
 import { Button } from "../ui/button";
 import {

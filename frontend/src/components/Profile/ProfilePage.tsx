@@ -2,54 +2,8 @@ import ProfileHeader from "./ProfileHeader";
 import PlayerStatistics from "./PlayerStatistics";
 import PlayerAchievements from "./PlayerAchievements";
 import PlayerAnalytics from "./PlayerAnalytics";
-import PlayerMatchHistory from "./PlayerMatchHistory";
+import { UserData } from "@/types/userData";
 
-
-export type UserAchievements = {
-    name: string;
-    description: string;
-    img: string;
-    unlocked: boolean;
-};
-
-export type CategoryAnalytics = {
-    category: string;
-    total_rounds: number;
-    knowledge_accuracy: number;
-    bluff_efficiency: number;
-};
-
-export type MatchHistory = {
-    id: string;
-    end_time: Date;
-    total_rounds: number;
-    player_numbers: number;
-    host_username: string;
-    winner_username: string;
-    rank: number;
-    score: number;
-    correct_answers: number;
-    bluffs: number;
-};
-
-export type UserStatistics = {
-    total_games: number;
-    total_wins: number;
-    total_points: number;
-    high_score: number;
-};
-
-type UserData = {
-    id: string;
-    username: string;
-    banner: string;
-    avatar: string;
-    join_date: Date;
-    stats: UserStatistics;
-    achievements: UserAchievements[];
-    matchHistory: MatchHistory[];
-    analytics: CategoryAnalytics[];
-};
 
 export type UserProps = {
     user: UserData;
@@ -84,7 +38,6 @@ export default function ProfilePage({ user, isOwner = false } : UserProps)
                 <PlayerStatistics stats={user.stats} />
                 <PlayerAchievements achievements={user.achievements} />
                 <PlayerAnalytics analytics={user.analytics} />
-                <PlayerMatchHistory matchHistory={user.matchHistory} />
             </div>
         </main>
     ); 

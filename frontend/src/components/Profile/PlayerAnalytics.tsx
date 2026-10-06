@@ -1,5 +1,5 @@
 "use client";
-import { CategoryAnalytics } from "./ProfilePage";
+import { CategoryAnalytics } from "@/types/userData";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, LabelList } from "recharts";
 import {
   ChartContainer,
@@ -22,6 +22,12 @@ const chartConfig = {
 } satisfies ChartConfig
 
 export function ChartBarDemoLegend({ chartData }: { chartData: CategoryAnalytics[] }) {
+  // when the chartData is empty, we will show a placeholder chart with 1 bar for each metric
+  if (chartData.length === 0) {
+    chartData = [
+      { category: "No Data", total_rounds: 0, knowledge_accuracy: 0, bluff_efficiency: 0 },
+    ];
+  }
   return (
     <ChartContainer 
       config={chartConfig}

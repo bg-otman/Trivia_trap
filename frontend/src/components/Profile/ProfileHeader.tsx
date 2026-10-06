@@ -23,7 +23,7 @@ export function AvatarWithBadge({ avatar_url, isOwner }: { avatar_url: string; i
   return (
     <Avatar className="md:h-[130px] md:w-[130px] h-[100px] w-[100px] relative outline-offset-0 outline-3 outline-white-50 relative border-2 border-[#5B5FEF]">
         {isOwner && (
-            <Button className="absolute cursor-pointer z-10 top-0 w-full h-full rounded-full opacity-0 hover:opacity-50 transition-opacity duration-300 bg-black">
+            <Button className="absolute cursor-pointer z-10 top-0 w-full h-full rounded-full opacity-0 hover:opacity-50  transition-opacity duration-300 bg-black">
                 <CameraIcon className="h-10 w-10 text-[#9f85db] font-bold" />
             </Button>
         )}
@@ -47,9 +47,13 @@ function BannerSection({ banner_url, isOwner } : { banner_url: string; isOwner: 
                 style={{ objectFit: 'cover' }} 
             />
             {isOwner && (
-                <Button className="absolute top-4 right-4 bg-black/60 hover:bg-black/85 text-white text-xs px-3 py-1.5 rounded-md font-medium transition-colors cursor-pointer" variant="outline">
+                <Button
+                    className="h-8 w-8 sm:h-auto sm:w-auto absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/60 hover:bg-black/85 text-white text-xs p-0 sm:px-3 sm:py-1.5 rounded-md font-medium transition-colors cursor-pointer"
+                    variant="ghost"
+                    aria-label="Edit image"
+                >
                     <CameraIcon className="h-4 w-4 text-[#9f85db]" />
-                    <span className="text-[#9f85db]">Edit image</span>
+                    <span className="hidden sm:inline text-[#9f85db]">Edit image</span>
                 </Button>
             )}
         </div>
@@ -68,14 +72,7 @@ function AvatarSection({ username, avatar_url, join_date, isOwner }: { username:
             <div className="flex items-center gap-1 flex-wrap justify-center font-bold text-xs sm:text-sm text-white-400 bg-black/50 px-2 py-1 rounded-md">
                 <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span className="sm:inline">Joined: </span>
-                {join_date.toLocaleDateString(
-                'en-US',
-                {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                }
-                )}
+                {join_date && join_date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
             </div>
             </div>
         </div>
