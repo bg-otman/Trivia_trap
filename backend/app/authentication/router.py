@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from fastapi.concurrency import run_in_threadpool
 from authentication.repository import DuplicateUserError, create_user, find_existing_user_id
 from authentication.schemas import RegisterData, UserResponse
@@ -6,6 +6,7 @@ from authentication.security import hash_password
 from authentication.validation_route import AuthRoute
 from authentication.schemas import LoginData, TokenResponse
 from authentication.security import create_access_token, authenticate_user
+from authentication.session_cookie import set_access_cookie
 from typing import Annotated
 
 from authentication.current_user import get_current_user
@@ -47,7 +48,7 @@ async def register(data: RegisterData, db: DbSession) -> UserResponse:
 
 
 @auth_router.post("/login", response_model=TokenResponse)
-async def login(data: LoginData, db: DbSession) -> TokenResponse:
+async def login(data: LoginData, db: DbSession, request: Request, response: Response) -> TokenResponse:
     user = await authenticate_user(
         db, data.email,
         data.password.get_secret_value(),
@@ -61,6 +62,7 @@ async def login(data: LoginData, db: DbSession) -> TokenResponse:
         )
 
     access_token = create_access_token(user.id, user.auth_version)
+    set_access_cookie(response, request, access_token)
 
     return TokenResponse(access_token=access_token)
 

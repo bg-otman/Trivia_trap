@@ -20,10 +20,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { apiFetch } from "@/lib/api";
 
 type Mode = "login" | "register" | "reset" | "new-password";
-
-const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000").replace(/\/$/, "");
 
 function safeNextPath() {
   const value = new URLSearchParams(window.location.search).get("next");
@@ -62,16 +61,26 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
     return () => window.removeEventListener("hashchange", captureToken);
   }, [initialMode]);
 
+  const finishSignIn = useCallback(async () => {
+    // Remove tokens left by the previous Local Storage implementation.
+    localStorage.removeItem("access_token");
+    const session = await apiFetch("/auth/me");
+    if (!session.ok) {
+      setMessage("Sign-in succeeded, but the browser could not save your session. Check that the site and API use the same hostname.");
+      return;
+    }
+    window.location.assign(safeNextPath());
+  }, []);
+
   const handleGoogleCredential = useCallback(async (credential: string) => {
     if (requestInFlight.current) return;
     requestInFlight.current = true;
     setPending(true);
     setMessage("");
     try {
-      const response = await fetch(`${apiBase}/auth/google`, {
+      const response = await apiFetch("/auth/google", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        credentials: "include",
         body: JSON.stringify({ credential }),
       });
       if (!response.ok) {
@@ -84,20 +93,19 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
         }
         return;
       }
-      const data = (await response.json()) as { access_token?: string };
-      if (typeof data.access_token !== "string" || !data.access_token) {
-        setMessage("The server did not return a login token. Please try again.");
+      const data = (await response.json()) as { access_token?: string; token_type?: string };
+      if (!data.access_token || data.token_type !== "bearer") {
+        setMessage("The server did not return a valid login session. Please try again.");
         return;
       }
-      localStorage.setItem("access_token", data.access_token);
-      window.location.assign(safeNextPath());
+      await finishSignIn();
     } catch {
       setMessage("Could not complete Google sign-in. Please try again in a moment.");
     } finally {
       requestInFlight.current = false;
       setPending(false);
     }
-  }, []);
+  }, [finishSignIn]);
 
   function changeMode(next: Mode) {
     if (pending) return;
@@ -129,10 +137,9 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
     const body = mode === "new-password" ? { token: resetToken.current, password } : mode === "reset" ? { email } : mode === "register" ? { email, username, password } : { email, password };
 
     try {
-      const response = await fetch(`${apiBase}${route}`, {
+      const response = await apiFetch(route, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        credentials: "include",
         body: JSON.stringify(body),
       });
 
@@ -172,13 +179,12 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
         localStorage.removeItem("access_token");
         window.location.replace("/login?passwordReset=success");
       } else if (mode === "login") {
-        const data = (await response.json()) as { access_token?: string };
-        if (!data.access_token) {
-          setMessage("The server did not return a login token. Please try again.");
+        const data = (await response.json()) as { access_token?: string; token_type?: string };
+        if (!data.access_token || data.token_type !== "bearer") {
+          setMessage("The server did not return a valid login session. Please try again.");
           return;
         }
-        localStorage.setItem("access_token", data.access_token);
-        window.location.assign(safeNextPath());
+        await finishSignIn();
       } else if (mode === "register") {
         changeMode("login");
         setMessage("Account created. You can sign in now.");
