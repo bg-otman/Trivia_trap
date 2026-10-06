@@ -45,13 +45,13 @@ export function MatchHistoryPagination() {
 
 export default function PlayerMatchHistory({ matchHistory }: { matchHistory: MatchHistory[] }) {
     return (
-        <div className="min-h-[300px] w-full border-2 rounded-lg border-[var(--secondary)] p-4">
-            <h2 className="text-lg font-bold font-blackops">⏳Recent Matches</h2>
-            <div className="mt-4 bg-[var(--background)] border border-[var(--secondary)/50] rounded-lg overflow-hidden mb-4">
-                <table className="w-full border-collapse text-center text-gray-300">
-                    <thead className=" bg-gray-900/50">
-                        <tr className="border-b border-gray-800 text-xs sm:text-base font-semibold uppercase text-gray-400 bg-gray-900/50
-                        *:py-2 *:px-4 *:border-b *:border-[var(--secondary)/50]">
+        <div className="min-h-[300px] w-full rounded-xl border border-trap-border bg-trap-panel p-4">
+            <h2 className="font-blackops text-lg text-trap-text">Recent Matches</h2>
+            <div className="mb-4 mt-4 overflow-hidden rounded-lg border border-trap-border bg-trap-bg">
+                <table className="w-full border-collapse text-center text-trap-text-soft">
+                    <thead className="bg-trap-raised">
+                        <tr className="border-b border-trap-border text-xs font-semibold uppercase text-trap-text-dim sm:text-base
+                        *:border-b *:border-trap-border *:px-4 *:py-2">
                             <th>Rank</th>
                             <th>Score</th>
                             <th className="hidden sm:table-cell">Correct Answers</th>
@@ -68,8 +68,8 @@ export default function PlayerMatchHistory({ matchHistory }: { matchHistory: Mat
                             </tr>
                         )}
                         {matchHistory.map((match, index) => (
-                            <tr key={index} className="border-b border-gray-800 hover:bg-gray-900/50
-                            *:py-2 *:px-2 *:border-b *:border-[var(--secondary)/50]">
+                            <tr key={index} className="border-b border-trap-border transition-colors hover:bg-trap-raised
+                            *:border-b *:border-trap-border *:px-2 *:py-2">
                                 <td>
                                     <div className="flex items-center justify-center gap-1">
                                         {match.rank === 1 ? (

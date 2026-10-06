@@ -21,15 +21,15 @@ type BannerProps = {
 
 export function AvatarWithBadge({ avatar_url, isOwner }: { avatar_url: string; isOwner: boolean }) {
   return (
-    <Avatar className="md:h-[130px] md:w-[130px] h-[100px] w-[100px] relative outline-offset-0 outline-3 outline-white-50 relative border-2 border-[#5B5FEF]">
+    <Avatar className="relative h-[100px] w-[100px] border-2 border-trap-primary bg-trap-panel shadow-[0_0_0_5px_rgba(17,17,20,.8),0_0_28px_rgba(255,107,53,.28)] md:h-[130px] md:w-[130px]">
         {isOwner && (
             <Button className="absolute cursor-pointer z-10 top-0 w-full h-full rounded-full opacity-0 hover:opacity-50  transition-opacity duration-300 bg-black">
-                <CameraIcon className="h-10 w-10 text-[#9f85db] font-bold" />
+                <CameraIcon className="h-10 w-10 font-bold text-trap-primary-soft" />
             </Button>
         )}
       <AvatarImage src={avatar_url} alt="@shadcn" />
       <AvatarFallback>AV</AvatarFallback>
-      <AvatarBadge className="absolute bottom-2 right-5 bg-green-600 dark:bg-green-800" />
+      <AvatarBadge className="absolute bottom-2 right-5 bg-trap-success ring-2 ring-trap-panel" />
     </Avatar>
   )
 }
@@ -37,7 +37,7 @@ export function AvatarWithBadge({ avatar_url, isOwner }: { avatar_url: string; i
 function BannerSection({ banner_url, isOwner } : { banner_url: string; isOwner: boolean })
 {
     return (
-        <div className="relative h-full border-2 border-[#5B5FEF]">
+        <div className="relative h-full border-2 border-trap-secondary/60">
             <Image
                 src={banner_url}
                 alt="banner img"
@@ -48,12 +48,12 @@ function BannerSection({ banner_url, isOwner } : { banner_url: string; isOwner: 
             />
             {isOwner && (
                 <Button
-                    className="h-8 w-8 sm:h-auto sm:w-auto absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/60 hover:bg-black/85 text-white text-xs p-0 sm:px-3 sm:py-1.5 rounded-md font-medium transition-colors cursor-pointer"
+                    className="absolute right-2 top-2 h-8 w-8 cursor-pointer rounded-lg bg-trap-bg/80 p-0 text-xs font-medium text-white transition-colors hover:bg-trap-bg sm:right-4 sm:top-4 sm:h-auto sm:w-auto sm:px-3 sm:py-1.5"
                     variant="ghost"
                     aria-label="Edit image"
                 >
-                    <CameraIcon className="h-4 w-4 text-[#9f85db]" />
-                    <span className="hidden sm:inline text-[#9f85db]">Edit image</span>
+                    <CameraIcon className="h-4 w-4 text-trap-primary-soft" />
+                    <span className="hidden text-trap-primary-soft sm:inline">Edit image</span>
                 </Button>
             )}
         </div>
@@ -68,9 +68,9 @@ function AvatarSection({ username, avatar_url, join_date, isOwner }: { username:
         <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[200px] sm:w-[220px] md:w-[240px] flex flex-col items-center gap-2">
             <AvatarWithBadge avatar_url={avatar_url} isOwner={isOwner} />
             <div className="flex flex-col items-center gap-1 w-full px-2">
-            <span className="text-sm sm:text-lg font-blackops">{username}</span>
-            <div className="flex items-center gap-1 flex-wrap justify-center font-bold text-xs sm:text-sm text-white-400 bg-black/50 px-2 py-1 rounded-md">
-                <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
+            <span className="font-blackops text-sm tracking-wide text-white sm:text-lg">{username}</span>
+            <div className="flex flex-wrap items-center justify-center gap-1 rounded-full border border-white/10 bg-trap-bg/75 px-3 py-1 text-xs font-semibold text-trap-text-soft sm:text-sm">
+                <Calendar className="h-3 w-3 text-trap-primary sm:h-4 sm:w-4" />
                 <span className="sm:inline">Joined: </span>
                 {join_date && join_date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
             </div>
@@ -82,7 +82,7 @@ function AvatarSection({ username, avatar_url, join_date, isOwner }: { username:
 export default function ProfileHeader({ username, banner_url, avatar_url, join_date, isOwner }: BannerProps)
 {
     return (
-        <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 rounded-lg border-1 border-white-50 overflow-hidden border-2 border-indigo-500/50">
+        <div className="relative h-48 w-full overflow-hidden rounded-2xl border-2 border-trap-secondary/60 bg-trap-panel shadow-[0_18px_50px_rgba(0,0,0,.32)] sm:h-64 md:h-80 lg:h-96">
             <BannerSection banner_url={banner_url} isOwner={isOwner} />
             <AvatarSection
                 username={username}

@@ -3,21 +3,14 @@
 
 @theme inline {
   --font-display:
-    "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+    var(--font-jakarta), ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-secondary:
-    "Bowlby One SC", ui-sans-serif, system-ui, -apple-system,
+    var(--font-bowlby), ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-ui:
-    "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  --font-meta:
-    "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  --font-mono:
-    "Liberation Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-blackops:
+    var(--font-black-ops), ui-sans-serif, system-ui, sans-serif;
   --breakpoint-xs: 521px;
-  --font-blackops: var(--font-black-ops);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -205,24 +198,14 @@ textarea {
   mask-image: linear-gradient(to bottom, black, transparent 90%);
 }
 
-.auth-input {
-  display: block;
-  height: 48px;
-  width: 100%;
-  border: 1px solid #38383e;
-  border-radius: 10px;
-  background: #101013;
-  padding: 0 44px 0 42px;
-  color: #f8f8f2;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 160ms ease, box-shadow 160ms ease;
+.auth-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #93939d;
+  pointer-events: none;
 }
-
-.auth-input::placeholder { color: #777782; }
-.auth-input:hover { border-color: #5b5962; }
-.auth-input:focus { border-color: #c0c1ff; box-shadow: 0 0 0 3px rgba(192, 193, 255, .14); }
-.auth-input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #93939d; pointer-events: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .landing-grid {

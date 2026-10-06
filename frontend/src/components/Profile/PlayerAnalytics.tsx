@@ -146,10 +146,10 @@ export function ChartBarDemoLegend({ chartData }: { chartData: CategoryAnalytics
 
 export default function PlayerAnalytics({ analytics }: { analytics: CategoryAnalytics[] }) {
     return (
-        <div className="min-h-[300px] w-full border-2 rounded-lg border-[var(--secondary)] p-4">
+        <div className="min-h-[300px] w-full rounded-xl border border-trap-border bg-trap-panel p-4 shadow-[0_16px_40px_rgba(0,0,0,.18)]">
             <div className="flex flex-col md:flex-row gap-2 items-center">
-              <h2 className="text-lg font-bold font-blackops">📈 Player Analytics</h2>
-              <p className="text-center border rounded-xl border-[var(--primary)/10] px-2 py-1 text-xs font-semibold text-[var(--accent)]">
+              <h2 className="font-blackops text-lg text-trap-text">Player Analytics</h2>
+              <p className="rounded-full border border-trap-host/30 bg-trap-host/10 px-3 py-1 text-center text-xs font-semibold text-trap-host">
                 Category Mastery: Knowledge vs Bluff Efficiency
               </p>
             </div>

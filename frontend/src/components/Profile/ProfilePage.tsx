@@ -15,8 +15,13 @@ export type UserProps = {
 function NavBar()
 {
     return (
-        <div className="border">
-            This is temp nav bar
+        <div className="flex w-full items-center justify-between border-b border-trap-border/70 py-4">
+            <span className="font-secondary text-lg tracking-tight text-trap-text">
+                TRIVIA<span className="text-trap-primary">TRAP</span>
+            </span>
+            <span className="rounded-full border border-trap-secondary/40 bg-trap-secondary/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-trap-secondary-soft">
+                Player card
+            </span>
         </div>
     );
 }
@@ -25,8 +30,8 @@ function NavBar()
 export default function ProfilePage({ user, isOwner = false } : UserProps)
 {
     return (
-        <main className="w-full min-h-screen bg-[#111114]">
-            <div className="mx-auto w-full min-h-screen relative max-w-[1440px] px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-center justify-start gap-4">
+        <main className="trap-grid-glow w-full min-h-screen bg-trap-bg">
+            <div className="relative mx-auto flex min-h-screen w-full max-w-[1440px] flex-col items-center justify-start gap-5 px-4 pb-12 sm:px-8 md:px-12 lg:px-16">
                 <NavBar/>
                 <ProfileHeader
                     username={user.username}
