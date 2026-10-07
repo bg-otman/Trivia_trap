@@ -89,8 +89,20 @@ fi
 
 # First-time configuration: secrets, policy and application identities.
 if [ "$NEW_INSTALL" -eq 1 ]; then
-  echo "Configuring Vault secret storage and application identities..."
   export VAULT_TOKEN="$ROOT_TOKEN"
+
+  # On slower school machines, Raft may need a few seconds after unseal before
+  # the single node becomes active. Wait for an authenticated admin request to
+  # succeed instead of racing the first configuration command.
+  echo "Waiting for Vault to become active..."
+  i=0
+  until vault secrets list >/dev/null 2>&1; do
+    i=$((i + 1))
+    [ "$i" -ge 30 ] && { echo "Vault did not become active in time" >&2; exit 1; }
+    sleep 1
+  done
+
+  echo "Configuring Vault secret storage and application identities..."
 
   # Create the KV store used for application secrets.
   vault secrets enable -path=secret kv-v2 >/dev/null
