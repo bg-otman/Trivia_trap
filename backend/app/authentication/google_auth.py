@@ -1,6 +1,6 @@
 import os
 from uuid import uuid4
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, HTTPException, Request, Response, status
 from pydantic import BaseModel, Field, SecretStr
 
 from authentication.schemas import TokenResponse
@@ -13,10 +13,11 @@ from authentication.repository import (
     find_user_by_google_sub,
 )
 from authentication.security import create_access_token
+from authentication.session_cookie import set_access_cookie
 from authentication.validation_route import AuthRoute
 
 from google.auth.exceptions import GoogleAuthError, TransportError
-from google.auth.transport.requests import Request
+from google.auth.transport.requests import Request as GoogleRequest
 from google.oauth2 import id_token
 from fastapi.concurrency import run_in_threadpool
 
@@ -28,7 +29,7 @@ class GoogleLoginData(BaseModel):
 
 
 @google_router.post("/google", response_model=TokenResponse)
-async def google_login(data: GoogleLoginData, db: DbSession) -> TokenResponse:
+async def google_login(data: GoogleLoginData, db: DbSession, request: Request, response: Response) -> TokenResponse:
     claims = await run_in_threadpool(
         verify_google_token,
         data.credential.get_secret_value(),
@@ -60,12 +61,12 @@ async def google_login(data: GoogleLoginData, db: DbSession) -> TokenResponse:
         except DuplicateUserError:
             raise HTTPException(
                 status_code=status.HTTP_409_CONFLICT,
-                detail="An account with this identity already exists.",
+                detail="An ac count with this identity already exists.",
             ) from None
 
-    return TokenResponse(
-        access_token=create_access_token(user.id, user.auth_version),
-    )
+    access_token = create_access_token(user.id, user.auth_version)
+    set_access_cookie(response, request, access_token)
+    return TokenResponse(access_token=access_token)
 
 
 def verify_google_token(credential: str) -> dict:
@@ -81,7 +82,7 @@ def verify_google_token(credential: str) -> dict:
     try:
         return id_token.verify_oauth2_token(
             credential,
-            Request(),
+            GoogleRequest(),
             audience=client_id,
         )
     except TransportError: #google problem

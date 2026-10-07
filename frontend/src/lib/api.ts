@@ -1,36 +1,30 @@
-const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000").replace(/\/$/, "");
-const accessTokenKey = "access_token";
-const accessTokenCookie = "access_token";
+const isLoopback = (hostname: string) => hostname === "localhost" || hostname === "127.0.0.1";
 
-export function getAccessToken(): string | null {
-  if (typeof window === "undefined") return null;
-  return window.localStorage.getItem(accessTokenKey);
-}
+function apiBaseUrl(): string {
+  const configured = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const browserHost = typeof window === "undefined" ? undefined : window.location.hostname;
 
-export function setAccessToken(token: string): void {
-  window.localStorage.setItem(accessTokenKey, token);
-  document.cookie = `${accessTokenCookie}=${encodeURIComponent(token)}; Path=/; Max-Age=1800; SameSite=Lax${window.location.protocol === "https:" ? "; Secure" : ""}`;
-}
-
-export function clearAccessToken(): void {
-  if (typeof window !== "undefined") {
-    window.localStorage.removeItem(accessTokenKey);
-    document.cookie = `${accessTokenCookie}=; Path=/; Max-Age=0; SameSite=Lax`;
+  // A login cookie belongs to a hostname, even when frontend and API use different ports.
+  if (browserHost && isLoopback(browserHost)) {
+    if (!configured) return `http://${browserHost}:8000`;
+    const url = new URL(configured);
+    if (isLoopback(url.hostname)) {
+      url.hostname = browserHost;
+      return url.toString().replace(/\/$/, "");
+    }
   }
+
+  return (configured ?? "http://localhost:8000").replace(/\/$/, "");
 }
 
-export async function apiFetch(path: string, init: RequestInit = {}): Promise<Response> {
-  const headers = new Headers(init.headers);
-  const token = getAccessToken();
+/** Browser requests include the HttpOnly login cookie automatically. */
+export function apiFetch(path: string, options: RequestInit = {}): Promise<Response> {
+  if (!path.startsWith("/") || path.startsWith("//")) {
+    throw new Error("API paths must start with a single slash.");
+  }
 
-  if (token) headers.set("Authorization", `Bearer ${token}`);
-
-  const response = await fetch(`${apiBase}${path}`, {
-    ...init,
-    headers,
+  return fetch(`${apiBaseUrl()}${path}`, {
+    ...options,
+    credentials: "include",
   });
-
-  if (response.status === 401) clearAccessToken();
-
-  return response;
 }
