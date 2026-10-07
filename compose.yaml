@@ -36,9 +36,11 @@ services:
     volumes:
       - ./infra/vault/bootstrap.sh:/vault/bootstrap-script/bootstrap.sh:ro
       - ./infra/vault/database-policy.hcl:/vault/policies/database-policy.hcl:ro
+      - ./infra/vault/monitoring-policy.hcl:/vault/policies/monitoring-policy.hcl:ro
       - vault_bootstrap:/vault/bootstrap
       - vault_backend_approle:/vault/backend-approle
       - vault_postgres_approle:/vault/postgres-approle
+      - vault_monitoring_approle:/vault/monitoring-approle
     restart: "no"
 
   postgres:
@@ -77,7 +79,7 @@ services:
     volumes:
       - ./infra/vault/backup-agent.hcl:/vault/agent.hcl:ro
       # Backup needs the same read-only database secret as PostgreSQL. Reusing
-      # this restricted AppRole also keeps existing Vault installations usable.
+      # this restricted AppRole also keeps the minor simple.
       - vault_postgres_approle:/vault/approle:ro
       - postgres_backups:/backups
     healthcheck:
@@ -138,6 +140,83 @@ services:
       retries: 5
       start_period: 20s
 
+  # One-shot helper: authenticate with the restricted monitoring AppRole and
+  # render only the two runtime secrets needed by Grafana/postgres_exporter.
+  monitoring-secrets:
+    image: hashicorp/vault:2.1.1
+    user: "0"
+    entrypoint: ["/bin/sh", "/monitoring/load-secrets.sh"]
+    environment:
+      VAULT_ADDR: http://vault:8200
+    depends_on:
+      vault-bootstrap:
+        condition: service_completed_successfully
+    volumes:
+      - ./infra/monitoring/secrets/load-secrets.sh:/monitoring/load-secrets.sh:ro
+      - vault_monitoring_approle:/vault/approle:ro
+      - monitoring_runtime_secrets:/run/monitoring-secrets
+    restart: "no"
+
+  postgres-exporter:
+    image: quay.io/prometheuscommunity/postgres-exporter:v0.20.1
+    environment:
+      DATA_SOURCE_URI: postgres:5432/${POSTGRES_DB}?sslmode=disable
+      DATA_SOURCE_USER: ${POSTGRES_USER}
+      DATA_SOURCE_PASS_FILE: /run/monitoring-secrets/postgres_password
+    depends_on:
+      monitoring-secrets:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+    expose:
+      - "9187"
+    volumes:
+      - monitoring_runtime_secrets:/run/monitoring-secrets:ro
+
+  blackbox-exporter:
+    image: quay.io/prometheus/blackbox-exporter:v0.28.0
+    command: ["--config.file=/etc/blackbox_exporter/blackbox.yml"]
+    expose:
+      - "9115"
+    volumes:
+      - ./infra/monitoring/blackbox/blackbox.yml:/etc/blackbox_exporter/blackbox.yml:ro
+
+  prometheus:
+    image: prom/prometheus:v3.15.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=7d
+    expose:
+      - "9090"
+    volumes:
+      - ./infra/monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./infra/monitoring/prometheus/alerts.yml:/etc/prometheus/alerts.yml:ro
+      - prometheus_data:/prometheus
+
+  grafana:
+    image: grafana/grafana:13.2.1
+    environment:
+      GF_SERVER_ROOT_URL: ${GRAFANA_ROOT_URL:-https://localhost:8443/grafana/}
+      GF_SERVER_SERVE_FROM_SUB_PATH: "true"
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD__FILE: /run/monitoring-secrets/grafana_admin_password
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_SECURITY_COOKIE_SECURE: "true"
+    depends_on:
+      monitoring-secrets:
+        condition: service_completed_successfully
+      prometheus:
+        condition: service_started
+    expose:
+      - "3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - monitoring_runtime_secrets:/run/monitoring-secrets:ro
+      - ./infra/monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./infra/monitoring/grafana/dashboards:/etc/grafana/dashboards:ro
+
   nginx:
     build: ./infra/nginx
     depends_on:
@@ -145,6 +224,8 @@ services:
         condition: service_healthy
       frontend:
         condition: service_healthy
+      grafana:
+        condition: service_started
     environment:
       # ModSecurity runs in blocking mode with OWASP CRS at paranoia level 2.
       MODSEC_RULE_ENGINE: "On"
@@ -179,6 +260,10 @@ volumes:
   vault_bootstrap:
   vault_backend_approle:
   vault_postgres_approle:
+  vault_monitoring_approle:
   postgres_data:
   postgres_backups:
+  monitoring_runtime_secrets:
+  prometheus_data:
+  grafana_data:
   nginx_certs:
