@@ -1,8 +1,13 @@
 "use client";
 
-import { Settings, Volume2, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import { Zap } from "lucide-react";
+import type { GamePhase } from "@/types/game";
+import type { ChatMessageData } from "@/types/chat";
 import { CountdownTimer } from "./countdown-timer";
+import { GameMenu } from "./game-menu";
+import { PhaseIndicator } from "./phase-indicator";
+import { RoomChatButton } from "./room-chat-button";
 import { RoomCode } from "./room-code";
 
 interface GameHudProps {
@@ -10,8 +15,11 @@ interface GameHudProps {
   totalRounds?: number;
   seconds?: number;
   roomCode?: string;
-  onSettings?: () => void;
-  onAudio?: () => void;
+  phase?: GamePhase;
+  timerMode?: "controlled" | "countdown";
+  chatMessages?: ChatMessageData[];
+  onSendChatMessage?: (message: string) => void;
+  onLeaveRoom?: () => void;
 }
 
 export function GameHud({
@@ -19,53 +27,117 @@ export function GameHud({
   totalRounds = 5,
   seconds = 18,
   roomCode = "X7K9P2",
-  onSettings,
-  onAudio,
+  phase = "VOTING",
+  timerMode = "controlled",
+  chatMessages = [],
+  onSendChatMessage = () => undefined,
+  onLeaveRoom,
 }: GameHudProps) {
+  const [chatOpen, setChatOpen] = useState(false);
+  const timer = timerMode === "countdown" ? (
+    <LiveCountdownTimer
+      key={`${phase}-${round}-${seconds}`}
+      duration={seconds}
+    />
+  ) : (
+    <CountdownTimer seconds={seconds} size="pill" />
+  );
+
   return (
-    <div className="flex min-h-16 flex-col gap-4 rounded-2xl border border-[#2a2a35] bg-[#1c1c22] px-4 py-3 shadow-lg md:flex-row md:items-center md:justify-between md:px-6 md:py-1">
-      <div className="flex items-center gap-2">
-        <Zap className="size-5 fill-primary text-primary" />
-        <span className="font-display text-lg font-black tracking-[0.05em] text-white">
-          TRIVIA TRAP
-        </span>
-      </div>
-      <div className="flex items-center gap-3">
-        <div className="text-center">
-          <p className="font-display text-sm font-bold tracking-[0.05em] text-white">
-            ROUND {round} / {totalRounds}
-          </p>
-          <div className="mt-1 flex gap-1.5">
-            {Array.from({ length: totalRounds }, (_, i) => (
-              <span
-                key={i}
-                className={`h-1.5 w-4 rounded-full ${i < round - 1 ? "bg-[#34d399]" : i === round - 1 ? "bg-primary" : "bg-border"}`}
-              />
-            ))}
+    <header className="relative z-20 px-3 pt-3 sm:px-5 sm:pt-5 lg:px-8">
+      <div className="mx-auto max-w-[1280px] overflow-hidden rounded-2xl border border-white/10 bg-[#19191f]/95 shadow-[0_14px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+        <div className="flex min-h-16 items-center justify-between gap-3 px-3 py-3 sm:px-5 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-6">
+          <div className="flex min-w-0 items-center gap-3">
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+              <Zap className="size-5 fill-current" aria-hidden="true" />
+            </div>
+            <div className="min-w-0">
+              <p className="truncate font-display text-base font-black tracking-[0.06em] text-white sm:text-lg">
+                TRIVIA TRAP
+              </p>
+              <p className="hidden text-[10px] font-bold tracking-[0.12em] text-muted-foreground sm:block">
+                OUTSMART THE ROOM
+              </p>
+            </div>
+          </div>
+
+          <div className="hidden items-center gap-4 lg:flex">
+            <RoundProgress round={round} totalRounds={totalRounds} />
+            <span className="h-8 w-px bg-white/10" />
+            <PhaseIndicator phase={phase} />
+          </div>
+
+          <div className="flex items-center justify-end gap-1.5 sm:gap-2">
+            <div className="hidden items-center gap-2 sm:flex">
+              {timer}
+              <RoomCode code={roomCode} compact />
+            </div>
+            <RoomChatButton
+              open={chatOpen}
+              onOpenChange={setChatOpen}
+              messages={chatMessages}
+              onSendMessage={onSendChatMessage}
+            />
+            <GameMenu
+              roomCode={roomCode}
+              phase={phase}
+              round={round}
+              totalRounds={totalRounds}
+              onLeaveRoom={onLeaveRoom}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 items-center gap-3 border-t border-white/10 bg-black/10 px-3 py-3 sm:grid-cols-[auto_1fr_auto] sm:px-5 lg:hidden">
+          <RoundProgress round={round} totalRounds={totalRounds} />
+          <div className="justify-self-end sm:justify-self-center">
+            <PhaseIndicator phase={phase} />
+          </div>
+          <div className="col-span-2 flex items-center justify-between gap-2 sm:col-span-1 sm:justify-end">
+            <div className="sm:hidden">{timer}</div>
+            <RoomCode code={roomCode} compact className="sm:hidden" />
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap items-center gap-3">
-        <CountdownTimer seconds={seconds} size="pill" />
-        <RoomCode code={roomCode} compact />
-        <div className="flex gap-1">
-          <Button
-            variant="surface"
-            size="icon-sm"
-            onClick={onAudio}
-            aria-label="Audio"
-          >
-            <Volume2 className="size-3.5" />
-          </Button>
-          <Button
-            variant="surface"
-            size="icon-sm"
-            onClick={onSettings}
-            aria-label="Settings"
-          >
-            <Settings className="size-3.5" />
-          </Button>
-        </div>
+    </header>
+  );
+}
+
+function LiveCountdownTimer({ duration }: { duration: number }) {
+  const [seconds, setSeconds] = useState(duration);
+
+  useEffect(() => {
+    const startedAt = Date.now();
+    const interval = window.setInterval(() => {
+      const elapsed = Math.floor((Date.now() - startedAt) / 1000);
+      setSeconds(Math.max(0, duration - elapsed));
+    }, 250);
+    return () => window.clearInterval(interval);
+  }, [duration]);
+
+  return <CountdownTimer seconds={seconds} size="pill" />;
+}
+
+function RoundProgress({
+  round,
+  totalRounds,
+}: {
+  round: number;
+  totalRounds: number;
+}) {
+  return (
+    <div className="min-w-0">
+      <p className="whitespace-nowrap font-display text-[11px] font-bold tracking-[0.08em] text-white sm:text-xs">
+        ROUND {round}{" "}
+        <span className="text-muted-foreground">/ {totalRounds}</span>
+      </p>
+      <div className="mt-1.5 flex gap-1" aria-hidden="true">
+        {Array.from({ length: totalRounds }, (_, index) => (
+          <span
+            key={index}
+            className={`h-1.5 w-4 rounded-full sm:w-5 ${index < round - 1 ? "bg-[#34d399]" : index === round - 1 ? "bg-primary" : "bg-border"}`}
+          />
+        ))}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import {
   Film,
   FlaskConical,
@@ -17,6 +18,7 @@ import {
   Plane,
   PawPrint,
   Languages,
+  type LucideIcon,
 } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
@@ -41,6 +43,8 @@ export type Category =
 
 interface CategoryCardProps {
   category: Category;
+  label?: string;
+  imageUrl?: string | null;
   selected?: boolean;
   disabled?: boolean;
   variant?: "default" | "selected" | "interactive";
@@ -52,7 +56,7 @@ const categoryConfig: Record<
   Category,
   {
     label: string;
-    icon: React.ElementType;
+    icon: LucideIcon;
     color: string;
   }
 > = {
@@ -149,6 +153,8 @@ const categoryConfig: Record<
 
 export function CategoryCard({
   category,
+  label,
+  imageUrl,
   selected = false,
   disabled = false,
   variant = "default",
@@ -157,6 +163,7 @@ export function CategoryCard({
 }: CategoryCardProps) {
   const config = categoryConfig[category];
   const Icon = config.icon;
+  const [imageFailed, setImageFailed] = React.useState(false);
 
   return (
     <Card
@@ -169,7 +176,7 @@ export function CategoryCard({
           "border-primary bg-primary/10 shadow-[0_0_0_1px_rgba(255,107,53,0.28)]",
         variant === "interactive" &&
           !disabled &&
-          "cursor-pointer hover:border-primary/50",
+          "cursor-pointer hover:border-primary/50 active:scale-[0.98]",
         variant === "default" && "border-border",
         disabled && "cursor-default opacity-70",
         className,
@@ -212,7 +219,19 @@ export function CategoryCard({
                 ],
           )}
         >
-          <Icon className="size-7 drop-shadow-[0_0_8px_currentColor]" />
+          {imageUrl && !imageFailed ? (
+            <Image
+              src={imageUrl}
+              alt=""
+              width={56}
+              height={56}
+              unoptimized
+              className="size-14 rounded-xl object-cover"
+              onError={() => setImageFailed(true)}
+            />
+          ) : (
+            <Icon className="size-7 drop-shadow-[0_0_8px_currentColor]" />
+          )}
         </div>
 
         {/* Label */}
@@ -223,7 +242,7 @@ export function CategoryCard({
             selected ? "text-primary" : "text-foreground",
           )}
         >
-          {config.label}
+          {label ?? config.label}
         </span>
 
         {/* Selected indicator */}

@@ -3,8 +3,7 @@ import type { Player } from "./player";
 export type GamePhase =
   | "LOBBY"
   | "CATEGORY"
-  | "QUESTION"
-  | "BLUFF"
+  | "TRAP"
   | "VOTING"
   | "RESULTS_REVEAL"
   | "ROUND_RESULTS"
@@ -15,6 +14,7 @@ export interface GameSettings {
   bluffTime: number;
   voteTime: number;
   maxPlayers: number;
+  language?: string;
 }
 
 export interface GameState {

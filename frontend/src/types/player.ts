@@ -1,8 +1,7 @@
 export type PlayerRole = "HOST" | "PLAYER";
 
 export type PlayerStatus =
-    | "READY"
-    | "NOT_READY"
+    | "ONLINE"
     | "THINKING"
     | "SUBMITTED"
     | "VOTED"
@@ -17,4 +16,5 @@ export interface Player {
     status: PlayerStatus;
 
     isYou: boolean;
+    score?: number;
 }

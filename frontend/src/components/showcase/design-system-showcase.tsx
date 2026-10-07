@@ -2,9 +2,6 @@
 
 import {
   Copy,
-  Cpu,
-  Film,
-  Gamepad2,
   LoaderCircle,
   LockKeyhole,
   Mic,
@@ -51,10 +48,10 @@ const palette = [
 ] as const;
 
 const leaderboard = [
-  { name: "GoldStreak", points: 2350 },
-  { name: "PixelNinja", points: 1420 },
-  { name: "VaporWave", points: 1100 },
-  { name: "Alex_99", points: 850 },
+  { id: "gold-streak", name: "GoldStreak", points: 2350 },
+  { id: "pixel-ninja", name: "PixelNinja", points: 1420 },
+  { id: "vapor-wave", name: "VaporWave", points: 1100 },
+  { id: "alex-99", name: "Alex_99", points: 850 },
 ];
 
 function TokenIntro() {
@@ -73,7 +70,7 @@ function TokenIntro() {
           <StatusBadge status="ready">PRODUCTION READY</StatusBadge>
         </div>
         <h1 className="mt-6 max-w-5xl font-display text-4xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-5xl lg:text-[56px] lg:leading-[64px]">
-          TRIVIA TRAP <span className="text-primary">//</span> COMPONENT SYSTEM
+          TRIVIA TRAP <span className="text-primary">{"//"}</span> COMPONENT SYSTEM
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">
           High-voltage multiplayer arcade interface kit with tactile push

@@ -1,5 +1,6 @@
-import { TriviaTrapGame } from "@/components/game/trivia-trap-game";
+import LandingPage from "@/components/landing/landing";
 
-export default function GamePage() {
-  return <TriviaTrapGame />;
+
+export default function Page() {
+  return <LandingPage />;
 }

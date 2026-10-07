@@ -3,6 +3,9 @@
 backend:
 	@$(MAKE) -sC backend run
 
+google:
+	@python3 -m http.server 3000 --bind 127.0.0.1 --directory backend/app/authentication/docs
+
 clean:
 	@$(MAKE) -sC backend clean
 
@@ -12,4 +15,4 @@ frontend:
 fclean:
 	@$(MAKE) -sC backend fclean
 
-.PHONY: all backend clean frontend fclean
+.PHONY: all backend google clean frontend fclean

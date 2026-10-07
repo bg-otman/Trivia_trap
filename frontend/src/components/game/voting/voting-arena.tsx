@@ -1,40 +1,84 @@
 "use client";
 
-import { Check, Crosshair, Landmark, ShieldCheck, Vote } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Crosshair, Landmark, Check } from "lucide-react";
+import { motion } from "motion/react";
+import { QuestionMedia } from "@/components/game/question/question-media";
 import { cn } from "@/lib/utils";
-import type { AnswerOption, Question } from "@/types/question";
+import { animateSuccessIcon } from "@/animations/micro-interactions";
+import { createVotingEntrance } from "@/animations/voting-animations";
+import { useGsapContext } from "@/hooks/use-gsap-context";
+import type { Question, VotingOption } from "@/types/question";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { WaitingArena } from "./waiting/waiting-arena";
+import { WaitingSwap } from "./waiting/waiting-swap";
+import type { Player } from "@/types/player";
 
-interface VotingArenaProps {
+export interface VotingArenaProps {
+  players: Player[];
   question: Question;
-  selectedAnswer: AnswerOption["id"];
-  hasVoted: boolean;
-  onSelectAnswer: (answer: AnswerOption["id"]) => void;
-  onCastVote: () => void;
+  options: VotingOption[];
+  lockedOptionId: VotingOption["id"] | null;
+  votingClosed?: boolean;
+  onVote: (optionId: VotingOption["id"]) => void;
 }
 
 export function VotingArena({
+  players,
   question,
-  selectedAnswer,
-  hasVoted,
-  onSelectAnswer,
-  onCastVote,
+  options,
+  lockedOptionId,
+  votingClosed = false,
+  onVote,
 }: VotingArenaProps) {
-  const answers = question.answers;
-  const selected =
-    answers.find((answer) => answer.id === selectedAnswer) ?? answers[0];
-  const voters = hasVoted ? 5 : 4;
-  const remaining = 6 - voters;
+  const hasVoted = lockedOptionId !== null;
+  const [submittingOptionId, setSubmittingOptionId] = useState<VotingOption["id"] | null>(null);
+  const voteTimeout = useRef<number | null>(null);
+  const reducedMotion = useReducedMotion();
+  const arena = useRef<HTMLElement>(null);
+
+  useGsapContext(arena, () => {
+    if (arena.current)
+      createVotingEntrance(arena.current, Boolean(reducedMotion));
+  }, [options.length, reducedMotion]);
+
+  useEffect(() => {
+    return () => {
+      if (voteTimeout.current !== null) window.clearTimeout(voteTimeout.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!lockedOptionId) return;
+    const animation = animateSuccessIcon(
+      arena.current?.querySelector<HTMLElement>("[data-vote-lock]") ?? null,
+      Boolean(reducedMotion),
+    );
+    return () => {
+      animation?.cancel();
+    };
+  }, [lockedOptionId, reducedMotion]);
+
+  function submitVote(optionId: VotingOption["id"]) {
+    if (hasVoted || votingClosed || submittingOptionId !== null) return;
+    setSubmittingOptionId(optionId);
+    voteTimeout.current = window.setTimeout(() => {
+      onVote(optionId);
+      setSubmittingOptionId(null);
+      voteTimeout.current = null;
+    }, 400);
+  }
 
   return (
     <main
-      className="relative z-10 flex flex-1 flex-col items-center px-4 pb-5 pt-8 sm:px-6 lg:px-8 lg:pt-[58px]"
-      data-node-id="1:1809"
+      ref={arena}
+      className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 pb-6 pt-8 sm:px-6 lg:px-8 lg:pt-10"
     >
       <section
-        className="flex w-full max-w-[896px] flex-col items-center text-center"
-        aria-labelledby="trivia-question"
+        className="flex w-full max-w-[900px] flex-col items-center text-center"
+        aria-labelledby="voting-question"
       >
-        <div className="mb-2 flex items-center gap-2 rounded-full border border-[#3f4366] bg-[#1c1c22] px-4 py-1.5 shadow-sm">
+        <div className="mb-3 flex items-center gap-2 rounded-full border border-[#3f4366] bg-[#1c1c22] px-4 py-1.5 shadow-sm">
           <Landmark className="size-3.5 text-ring" aria-hidden="true" />
           <span className="font-ui text-xs font-bold tracking-[0.1em] text-ring">
             {question.category}
@@ -42,140 +86,128 @@ export function VotingArena({
         </div>
 
         <h1
-          id="trivia-question"
-          className="font-display max-w-[880px] text-balance text-2xl font-extrabold leading-tight tracking-[-0.025em] text-foreground sm:text-[30px] sm:leading-9"
+          id="voting-question"
+          className="max-w-[880px] text-balance font-display text-2xl font-extrabold leading-tight tracking-[-0.025em] text-foreground sm:text-[30px] sm:leading-9"
         >
           {question.text}
         </h1>
 
-        <div className="mt-3 flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-xl border border-[rgba(255,77,109,0.3)] bg-[rgba(255,77,109,0.1)] px-4 py-2 text-xs">
+        {question.type === "IMAGE" && (
+          <div className="mt-5 w-full max-w-[520px]">
+            <QuestionMedia question={question} />
+          </div>
+        )}
+
+        <div className="mt-4 flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-2 text-xs">
           <Crosshair
             className="size-4 shrink-0 text-destructive"
             aria-hidden="true"
           />
           <span className="font-ui font-bold tracking-[0.025em] text-destructive">
-            WHICH ANSWER IS THE BLUFF?
+            FIND THE REAL ANSWER
           </span>
           <span className="text-[#a6a6ae]">
-            — Choose the answer written by another player to expose their trap.
+            Every option is anonymous. Choose carefully because your vote locks
+            instantly.
           </span>
         </div>
       </section>
 
-      <section
-        className="mt-4 grid w-full max-w-[1020px] grid-cols-1 gap-4 md:grid-cols-2"
-        aria-label="Answer choices"
-        data-node-id="1:1828"
-      >
-        {answers.map((answer) => {
-          const isSelected = selectedAnswer === answer.id;
-
-          return (
-            <button
-              key={answer.id}
-              type="button"
-              onClick={() => !hasVoted && onSelectAnswer(answer.id)}
-              disabled={hasVoted}
-              aria-pressed={isSelected}
-              className={cn(
-                "group relative flex min-h-24 items-center gap-5 overflow-hidden rounded-2xl border-2 px-6 py-3 text-left transition duration-200",
-                isSelected
-                  ? "border-primary bg-[#1f1b1e] shadow-[0_0_0_1px_rgba(255,107,53,0.5)]"
-                  : "border-[#2d2d38] bg-[#1c1c22] shadow-[0_4px_0_0_#0d0d10] hover:-translate-y-0.5 hover:border-[#4a4953]",
-                hasVoted && !isSelected && "opacity-55",
-              )}
-            >
-              {isSelected && (
-                <span className="absolute -right-8 -top-8 size-24 rounded-full bg-[rgba(255,107,53,0.2)] blur-xl" />
-              )}
-
-              <span
-                className={cn(
-                  "relative z-10 flex size-12 shrink-0 items-center justify-center rounded-xl border font-display text-lg font-black",
-                  isSelected
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-[#2d2d38] bg-[#131316] text-[#a6a6ae]",
-                )}
-              >
-                {answer.id}
-              </span>
-
-              <span className="relative z-10 min-w-0 flex-1">
-                <span className="block font-display text-lg font-bold leading-6 text-foreground sm:text-[18px]">
-                  {answer.label}
-                </span>
-                {isSelected && (
-                  <span className="mt-1 flex items-center gap-1 font-ui text-[11px] font-bold tracking-[0.05em] text-primary">
-                    <Crosshair className="size-2.5" aria-hidden="true" />
-                    {hasVoted ? "VOTE LOCKED" : "TARGETED TRAP"}
-                  </span>
-                )}
-              </span>
-
-              <span
-                className={cn(
-                  "relative z-10 flex shrink-0 items-center justify-center rounded-full",
-                  isSelected
-                    ? "size-7 bg-primary text-white"
-                    : "size-6 border border-[#2d2d38]",
-                )}
-                aria-hidden="true"
-              >
-                {isSelected && <Check className="size-4" strokeWidth={3} />}
-              </span>
-            </button>
-          );
-        })}
-      </section>
-
-      <section
-        className="mt-4 flex w-full max-w-[1020px] flex-col items-stretch justify-between gap-4 rounded-2xl border border-[#2d2d38] bg-[rgba(28,28,34,0.8)] p-[15px] backdrop-blur-md sm:flex-row sm:items-center"
-        data-node-id="1:1868"
-      >
-        <div className="flex items-center gap-3 sm:pl-2">
-          <div className="flex size-9 shrink-0 items-center justify-center rounded-full border border-[rgba(74,222,128,0.4)] bg-[rgba(74,222,128,0.15)] text-[#4ade80]">
-            <ShieldCheck className="size-4" aria-hidden="true" />
-          </div>
-          <div className="min-w-0">
-            <div className="flex flex-wrap items-center gap-x-2 text-xs">
-              <span className="font-ui font-bold text-foreground">
-                {hasVoted ? "Vote confirmed:" : "Ready to confirm selection:"}
-              </span>
-              <span className="font-ui font-extrabold uppercase text-primary">
-                [{selected.id}] {selected.label}
-              </span>
-            </div>
-            <div className="mt-0.5 flex flex-wrap items-center gap-1.5 font-ui text-[11px]">
-              <span className="size-1.5 rounded-full bg-[#4ade80]" />
-              <span className="text-[#a6a6ae]">{voters} / 6 players voted</span>
-              <span className="text-[rgba(166,166,174,0.4)]">•</span>
-              <span className="text-muted-foreground">
-                {remaining} {remaining === 1 ? "player" : "players"} still
-                voting...
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <button
-          type="button"
-          onClick={onCastVote}
-          disabled={hasVoted}
-          className={cn(
-            "relative flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl px-8 py-3.5 font-display text-sm font-black tracking-[0.05em] text-white transition",
-            hasVoted
-              ? "cursor-default bg-[#5a3a2f] text-[#caa99d] shadow-none"
-              : "bg-primary shadow-[0_5px_0_0_#832600,0_8px_24px_-4px_rgba(255,107,53,0.55)] hover:-translate-y-0.5 hover:bg-[#ff7848] active:translate-y-1 active:shadow-none",
-          )}
+      {options.length > 0 ? (
+        <WaitingSwap
+          waiting={hasVoted || votingClosed}
+          className="mt-5 min-h-64 w-full max-w-[1120px]"
+          arena={
+            <WaitingArena
+              players={players}
+              confirmation={hasVoted ? "VOTE LOCKED" : "VOTING CLOSED"}
+              message={
+                hasVoted
+                  ? "WAITING FOR OTHER PLAYERS TO VOTE"
+                  : "WAITING FOR RESULTS"
+              }
+              detail="The truth will be revealed when everyone's done."
+            />
+          }
         >
-          {hasVoted ? (
-            <Check className="size-4" />
-          ) : (
-            <Vote className="size-4" />
-          )}
-          {hasVoted ? "VOTE LOCKED" : "CAST VOTE"}
-        </button>
-      </section>
+          <section
+            className="grid w-full grid-cols-2 items-stretch gap-2 sm:gap-3"
+            aria-label="Anonymous voting options"
+          >
+            {options.map((option) => {
+              const isSelected = lockedOptionId === option.id || submittingOptionId === option.id;
+              const isDisabled = hasVoted || votingClosed || submittingOptionId !== null;
+
+              return (
+                <div key={option.id} data-voting-option className="min-w-0">
+                  <motion.button
+                    transition={{
+                      duration: 0.2,
+                      ease: "easeInOut",
+                      opacity: { duration: 0.16, delay: hasVoted ? 0.08 : 0 },
+                    }}
+                    whileHover={
+                      !isDisabled && !reducedMotion
+                        ? { scale: 1.015, y: -2 }
+                        : undefined
+                    }
+                    whileTap={
+                      !isDisabled && !reducedMotion
+                        ? { scale: 0.97, transition: { duration: 0.14 } }
+                        : undefined
+                    }
+                    animate={{
+                      scale: isSelected && !reducedMotion ? 1.03 : 1,
+                      opacity:
+                        hasVoted && !isSelected
+                          ? 0.35
+                          : votingClosed && !hasVoted
+                            ? 0.55
+                            : 1,
+                    }}
+                    type="button"
+                    onClick={() => submitVote(option.id)}
+                    disabled={isDisabled}
+                    aria-pressed={isSelected}
+                    className={cn(
+                      "group relative flex h-full w-full items-center justify-center overflow-hidden rounded-xl border-2 px-2 py-3 text-center transition-colors duration-200 sm:rounded-2xl sm:px-5 sm:py-4",
+                      isSelected
+                        ? "border-primary bg-[#211a1c] shadow-[0_0_0_1px_rgba(255,107,53,0.45),0_12px_30px_rgba(255,107,53,0.08)]"
+                        : "border-[#2d2d38] bg-[#1c1c22] shadow-[0_4px_0_#0d0d10]",
+                      !isDisabled && !isSelected && "hover:border-[#4a4953]",
+                      votingClosed && !hasVoted && "cursor-not-allowed",
+                    )}
+                  >
+                    {isSelected && (
+                      <span className="absolute -right-8 -top-8 size-24 rounded-full bg-primary/20 blur-xl" />
+                    )}
+
+                    <span className="relative z-10 min-w-0 flex-1 px-2 sm:px-4">
+                      <span className="block whitespace-normal break-words font-display text-sm font-bold leading-5 text-foreground sm:text-base sm:leading-6">
+                        {option.text}
+                      </span>
+                      {isSelected && (
+                        <span className="mt-1 flex items-center gap-1 font-ui text-[10px] font-bold tracking-[0.08em] text-primary">
+                          <span data-vote-lock>
+                            <Check className="size-3" aria-hidden="true" />
+                          </span>
+                          {submittingOptionId === option.id ? "LOCKING VOTE..." : "VOTE LOCKED"}
+                        </span>
+                      )}
+                    </span>
+                  </motion.button>
+                </div>
+              );
+            })}
+          </section>
+        </WaitingSwap>
+      ) : (
+        <WaitingArena
+          players={players}
+          message="WAITING FOR SUBMITTED ANSWERS"
+          className="mt-6 max-w-[1120px]"
+        />
+      )}
     </main>
   );
 }

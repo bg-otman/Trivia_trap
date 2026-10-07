@@ -1,5 +1,7 @@
 import { Crown, Skull, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Blobatar } from "@blobatar/react";
+import "blobatar/motion.css";
 
 export type PlayerAvatarStatus =
   | "default"
@@ -7,9 +9,10 @@ export type PlayerAvatarStatus =
   | "host"
   | "targeted"
   | "eliminated";
-export type PlayerAvatarSize = 32 | 40 | 48 | 56 | 64 | 80 | 96;
+export type PlayerAvatarSize = 24 | 32 | 40 | 48 | 56 | 64 | 80 | 96;
 
 const sizes: Record<PlayerAvatarSize, string> = {
+  24: "size-6 text-[8px]",
   32: "size-8 text-[10px]",
   40: "size-10 text-xs",
   48: "size-12 text-sm",
@@ -24,6 +27,7 @@ interface PlayerAvatarProps {
   src?: string;
   size?: PlayerAvatarSize;
   status?: PlayerAvatarStatus;
+  animated?: boolean;
   className?: string;
 }
 
@@ -32,14 +36,16 @@ export function PlayerAvatar({
   src,
   size = 48,
   status = "default",
+  animated = true,
   className,
 }: PlayerAvatarProps) {
-  const initials = name
-    .split(/[\s_]+/)
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
+  // Blobatar hashes this value: preserve the existing 40px roster identity at every size.
+  const avatarSource =
+    src ??
+    `https://blobatar.dev/avatar/${encodeURIComponent(
+      name.trim().toLowerCase(),
+    )}?size=40&background=none&gen=2`;
+
 
   return (
     <span
@@ -70,11 +76,14 @@ export function PlayerAvatar({
             "ring-4 ring-[#131316] outline outline-[8px] outline-primary shadow-[0_10px_24px_rgba(255,107,53,0.2)]",
         )}
       >
-        {src ? (
-          <img src={src} alt="" className="size-full object-cover" />
-        ) : (
-          initials
-        )}
+        {/* Keep the same avatar seed in both the static and animated render modes. */}
+        <Blobatar
+          name={avatarSource}
+          animate={animated ? "always" : undefined}
+          width={size}
+          height={size}
+          className="size-full object-cover"
+        />
       </span>
 
       {status === "ready" ? (
