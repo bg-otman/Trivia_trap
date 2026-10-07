@@ -5,6 +5,7 @@ from .utils import GameError, lobby_update
 from .room_models import Room
 from .events import join_room, process_event
 from json import JSONDecodeError
+import traceback
 
 router = APIRouter(prefix="/room", tags=["Room"])
 
@@ -127,5 +128,5 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
             await manager.send_to_player(e.to_dict(), room_id, user_id)
     except Exception as e:
         print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
+        traceback.print_exc()
         await manager.remove_connection(ws.state.user_id, room_id)
-

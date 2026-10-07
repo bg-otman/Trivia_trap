@@ -197,7 +197,6 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
         resetToken.current = "";
         setPassword("");
         setConfirmPassword("");
-        clearAccessToken();
         window.location.replace("/login?passwordReset=success");
       } else if (mode === "login") {
         const data = (await response.json()) as { access_token?: string; token_type?: string };

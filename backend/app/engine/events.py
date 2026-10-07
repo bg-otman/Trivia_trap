@@ -251,12 +251,14 @@ async def submit_bluff(manager: RoomManager, context: Context):
     if len(room.meta_data.sumbitted_bluffs) >= len(room.players):
         await to_next_phase(manager, context)
     else:
-        await manager.send_to_player({ 
+        await manager.broadcast({
             "event": "BLUFF_SUBMITTED",
             "data": {
                 "player_id": context.user_id,
             }
-        }, context.room_id, context.user_id)
+        }, context.room_id, None)
+
+
 
 
 
@@ -283,12 +285,14 @@ async def submit_vote(manager: RoomManager, context: Context):
     if len(room.meta_data.voting_results) >= len(room.players):
         await to_next_phase(manager, context)
     else:
-        await manager.send_to_player({ 
+        await manager.broadcast({
             "event": "VOTE_SUBMITTED",
             "data": {
                 "player_id": context.user_id,
             }
-        }, context.room_id, context.user_id)
+        }, context.room_id, None)
+
+
 
 
 
@@ -325,6 +329,33 @@ async def update_settings(manager: RoomManager, context: Context):
         raise GameError("INVALID_PAYLOAD", "Invalid settings in request")
 
 
+async def return_to_lobby(manager: RoomManager, context: Context):
+    """Reset match progress and return every player to the existing lobby."""
+    room = manager.rooms.get(context.room_id)
+    if context.user_id != room.meta_data.host_id:
+        raise GameError("FORBIDDEN", "Only the host can return to the lobby")
+    if room.meta_data.phase.current_state == RoomPhase.PODIUM:
+        room.meta_data.phase.end()
+    elif room.meta_data.phase.current_state != RoomPhase.LOBBY:
+        raise GameError("INVALID_PHASE", "The game has not finished yet")
+
+    if room.meta_data.timer_task and not room.meta_data.timer_task.done():
+        room.meta_data.timer_task.cancel()
+    room.meta_data.timer_task = None
+    room.meta_data.current_round = 1
+    room.meta_data.fallback_category = {}
+    room.meta_data.podium = []
+    clear_data(room)
+    for player in room.players.values():
+        player.score = 0
+
+    update = lobby_update(room)
+    await manager.broadcast({
+        "event": "RETURNED_TO_LOBBY",
+        "data": update["data"],
+    }, context.room_id, None)
+
+
 
 async def handle_chat_message(manager: RoomManager, context: Context):
     """
@@ -357,6 +388,7 @@ event_handlers = {
     "LEAVE_ROOM" : leave_room,
     "KICK_PLAYER" : kick_player,
     "UPDATE_SETTINGS" : update_settings,
+    "RETURN_TO_LOBBY" : return_to_lobby,
     "CHAT_MESSAGE" : handle_chat_message,
 }
 

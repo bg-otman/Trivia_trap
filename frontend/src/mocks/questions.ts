@@ -1,0 +1,62 @@
+import type { Question } from "@/types/question";
+
+export const mockQuestions: Question[] = [
+  {
+    id: "history-printing",
+    category: "history",
+    type: "TEXT",
+    text: "Which civilization built the city of Machu Picchu?",
+    answers: [],
+    correctAnswerId: "hidden",
+  },
+  {
+    id: "science-element",
+    category: "science",
+    type: "TEXT",
+    text: "Which element has the chemical symbol W?",
+    answers: [],
+    correctAnswerId: "hidden",
+  },
+  {
+    id: "geography-capital",
+    category: "geography",
+    type: "IMAGE",
+    text: "Which country is home to this ancient landmark?",
+    image: "/avatars/avatar.png",
+    imageAlt: "An ancient landmark",
+    answers: [],
+    correctAnswerId: "hidden",
+  },
+  {
+    id: "sports-trophy",
+    category: "sports",
+    type: "TEXT",
+    text: "Which nation won the first FIFA World Cup in 1930?",
+    answers: [],
+    correctAnswerId: "hidden",
+  },
+  {
+    id: "gaming-character",
+    category: "gaming",
+    type: "TEXT",
+    text: "What was the original name of Mario before he was called Mario?",
+    answers: [],
+    correctAnswerId: "hidden",
+  },
+  {
+    id: "movies-award",
+    category: "movies",
+    type: "TEXT",
+    text: "Which film was the first to win the Academy Award for Best Picture?",
+    answers: [],
+    correctAnswerId: "hidden",
+  },
+  {
+    id: "music-instrument",
+    category: "music",
+    type: "TEXT",
+    text: "Which instrument has the widest standard orchestral pitch range?",
+    answers: [],
+    correctAnswerId: "hidden",
+  },
+];
