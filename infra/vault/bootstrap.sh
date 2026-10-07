@@ -8,12 +8,14 @@ export VAULT_ADDR="${VAULT_ADDR:-http://vault:8200}"
 BOOTSTRAP_DIR=/vault/bootstrap
 BACKEND_APPROLE_DIR=/vault/backend-approle
 POSTGRES_APPROLE_DIR=/vault/postgres-approle
+MONITORING_APPROLE_DIR=/vault/monitoring-approle
 UNSEAL_FILE="$BOOTSTRAP_DIR/unseal-key"
 POLICY_FILE=/vault/policies/database-policy.hcl
+MONITORING_POLICY_FILE=/vault/policies/monitoring-policy.hcl
 
 # Create private directories for sensitive Vault credentials.
-mkdir -p "$BOOTSTRAP_DIR" "$BACKEND_APPROLE_DIR" "$POSTGRES_APPROLE_DIR"
-chmod 700 "$BOOTSTRAP_DIR" "$BACKEND_APPROLE_DIR" "$POSTGRES_APPROLE_DIR"
+mkdir -p "$BOOTSTRAP_DIR" "$BACKEND_APPROLE_DIR" "$POSTGRES_APPROLE_DIR" "$MONITORING_APPROLE_DIR"
+chmod 700 "$BOOTSTRAP_DIR" "$BACKEND_APPROLE_DIR" "$POSTGRES_APPROLE_DIR" "$MONITORING_APPROLE_DIR"
 
 # Wait until the Vault API is reachable.
 # Compose already waits for the Vault healthcheck. This loop also makes the
@@ -99,19 +101,28 @@ if [ "$NEW_INSTALL" -eq 1 ]; then
   # Store the database password in Vault, then remove it from shell variables.
   [ -n "$DB_PASSWORD" ] || { echo "Vault failed to obtain a database password" >&2; exit 1; }
   vault kv put secret/trivia/postgres password="$DB_PASSWORD" >/dev/null
-  unset DB_PASSWORD 
+  unset DB_PASSWORD
 
-  # Give applications only the policy needed to read the database secret.
+  # Grafana gets its own generated admin credential. It is stored in Vault and
+  # never hard-coded in compose.yaml or committed to the repository.
+  GRAFANA_PASSWORD="$(vault write -field=random_bytes sys/tools/random/18 format=hex)"
+  [ -n "$GRAFANA_PASSWORD" ] || { echo "Vault failed to obtain a Grafana password" >&2; exit 1; }
+  vault kv put secret/trivia/grafana password="$GRAFANA_PASSWORD" >/dev/null
+  unset GRAFANA_PASSWORD
+
+  # Application and monitoring identities receive only the paths they need.
   vault policy write trivia-database-read "$POLICY_FILE" >/dev/null
+  vault policy write trivia-monitoring-read "$MONITORING_POLICY_FILE" >/dev/null
   vault auth enable approle >/dev/null
 
   # Create a restricted machine identity and save its AppRole credentials.
   create_approle() {
     role_name="$1"
     target_dir="$2"
+    policy_name="$3"
 
     vault write "auth/approle/role/$role_name" \
-      token_policies="trivia-database-read" \
+      token_policies="$policy_name" \
       token_no_default_policy=true \
       token_ttl="1h" \
       token_max_ttl="4h" \
@@ -127,8 +138,9 @@ if [ "$NEW_INSTALL" -eq 1 ]; then
 
   # Separate machine identities make backend and database access auditable and
   # prevent either container from receiving a reusable Vault root credential.
-  create_approle trivia-backend "$BACKEND_APPROLE_DIR"
-  create_approle trivia-postgres "$POSTGRES_APPROLE_DIR"
+  create_approle trivia-backend "$BACKEND_APPROLE_DIR" trivia-database-read
+  create_approle trivia-postgres "$POSTGRES_APPROLE_DIR" trivia-database-read
+  create_approle trivia-monitoring "$MONITORING_APPROLE_DIR" trivia-monitoring-read
 
   # Root is bootstrap-only. Policies and AppRoles are now sufficient for the
   # running services, so we do not leave a persistent root token behind.
@@ -136,7 +148,7 @@ if [ "$NEW_INSTALL" -eq 1 ]; then
   unset VAULT_TOKEN ROOT_TOKEN
 else
   # On later starts, verify that the previously created AppRoles still exist.
-  for dir in "$BACKEND_APPROLE_DIR" "$POSTGRES_APPROLE_DIR"; do
+  for dir in "$BACKEND_APPROLE_DIR" "$POSTGRES_APPROLE_DIR" "$MONITORING_APPROLE_DIR"; do
     [ -s "$dir/role-id" ] && [ -s "$dir/secret-id" ] || {
       echo "Vault AppRole credentials are missing from $dir." >&2
       echo "Restore the matching volume or intentionally reset Vault." >&2
