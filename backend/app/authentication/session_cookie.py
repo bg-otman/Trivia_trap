@@ -27,3 +27,12 @@ def set_access_cookie(response: Response, request: Request, token: str) -> None:
         samesite="lax",
         path="/",
     )
+
+
+def clear_access_cookie(response: Response) -> None:
+    response.delete_cookie(
+        key=COOKIE_NAME,
+        httponly=True,
+        samesite="lax",
+        path="/",
+    )

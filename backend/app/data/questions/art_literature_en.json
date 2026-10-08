@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who painted The Starry Night?",
+    "correct_answer": "Vincent van Gogh",
+    "decoys": [
+      "Claude Monet",
+      "Paul Cézanne",
+      "Paul Gauguin"
+    ],
+    "image_url": null,
+    "source_url": "https://www.moma.org/collection/works/79802"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which year did Salvador Dalí paint The Persistence of Memory?",
+    "correct_answer": "1931",
+    "decoys": [
+      "1921",
+      "1941",
+      "1951"
+    ],
+    "image_url": null,
+    "source_url": "https://www.moma.org/collection/works/79018"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which event inspired Pablo Picasso to paint Guernica?",
+    "correct_answer": "The bombing of Guernica",
+    "decoys": [
+      "The fall of Madrid",
+      "The siege of Barcelona",
+      "The liberation of Paris"
+    ],
+    "image_url": null,
+    "source_url": "https://guernica.museoreinasofia.es/en"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who painted the Mona Lisa?",
+    "correct_answer": "Leonardo da Vinci",
+    "decoys": [
+      "Raphael",
+      "Titian",
+      "Michelangelo"
+    ],
+    "image_url": null,
+    "source_url": "https://collections.louvre.fr/ark:/53355/cl010062370"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who painted Girl with a Pearl Earring?",
+    "correct_answer": "Johannes Vermeer",
+    "decoys": [
+      "Frans Hals",
+      "Pieter de Hooch",
+      "Jan Steen"
+    ],
+    "image_url": null,
+    "source_url": "https://tour.mauritshuis.nl/-johannes-vermeer/girl-with-a-pearl-earring/en_GB/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which year was Diego Velázquez's Las Meninas painted?",
+    "correct_answer": "1656",
+    "decoys": [
+      "1556",
+      "1606",
+      "1706"
+    ],
+    "image_url": null,
+    "source_url": "https://www.museodelprado.es/en/the-collection/art-work/las-meninas/9fdc7800-9ade-48b0-ab8b-edee94ea877f"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who painted The Night Watch?",
+    "correct_answer": "Rembrandt van Rijn",
+    "decoys": [
+      "Johannes Vermeer",
+      "Peter Paul Rubens",
+      "Anthony van Dyck"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rijksmuseum.nl/en/collection/object/The-Night-Watch--3137deb45cd7765f9a76084a16c99544"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which medium did Sandro Botticelli use for The Birth of Venus?",
+    "correct_answer": "Tempera on canvas",
+    "decoys": [
+      "Oil on oak panel",
+      "Fresco on plaster",
+      "Watercolour on paper"
+    ],
+    "image_url": null,
+    "source_url": "https://www.uffizi.it/en/artworks/birth-of-venus"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who painted American Gothic?",
+    "correct_answer": "Grant Wood",
+    "decoys": [
+      "Edward Hopper",
+      "Thomas Hart Benton",
+      "Andrew Wyeth"
+    ],
+    "image_url": null,
+    "source_url": "https://www.artic.edu/artworks/6565/american-gothic"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What type of place is shown in Edward Hopper's Nighthawks?",
+    "correct_answer": "An all-night diner",
+    "decoys": [
+      "A railway station",
+      "A hotel lobby",
+      "A theatre foyer"
+    ],
+    "image_url": null,
+    "source_url": "https://archive.artic.edu/hopper/artwork/111628"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who painted A Sunday on La Grande Jatte—1884?",
+    "correct_answer": "Georges Seurat",
+    "decoys": [
+      "Paul Signac",
+      "Camille Pissarro",
+      "Pierre-Auguste Renoir"
+    ],
+    "image_url": null,
+    "source_url": "https://archive.artic.edu/seurat/seurat_themes.html"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who painted The Kiss held by the Belvedere in Vienna?",
+    "correct_answer": "Gustav Klimt",
+    "decoys": [
+      "Egon Schiele",
+      "Oskar Kokoschka",
+      "Alphonse Mucha"
+    ],
+    "image_url": null,
+    "source_url": "https://www.belvedere.at/en/permanent-collection"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What is the formal title of the painting commonly called Whistler's Mother?",
+    "correct_answer": "Arrangement in Grey and Black No. 1",
+    "decoys": [
+      "Symphony in White No. 1",
+      "Nocturne in Black and Gold",
+      "Harmony in Blue and Silver"
+    ],
+    "image_url": null,
+    "source_url": "https://www.musee-orsay.fr/en/artworks/arrangement-en-gris-et-noir-ndeg1-974"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "The Great Wave off Kanagawa belongs to which Hokusai series?",
+    "correct_answer": "Thirty-six Views of Mount Fuji",
+    "decoys": [
+      "One Hundred Famous Views of Edo",
+      "Fifty-three Stations of the Tōkaidō",
+      "Thirty-six Immortal Poets"
+    ],
+    "image_url": null,
+    "source_url": "https://www.metmuseum.org/art/collection/search/45434"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which year did Jan van Eyck paint The Arnolfini Portrait?",
+    "correct_answer": "1434",
+    "decoys": [
+      "1384",
+      "1484",
+      "1534"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nationalgallery.org.uk/paintings/jan-van-eyck-the-arnolfini-portrait"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who painted The Hay Wain?",
+    "correct_answer": "John Constable",
+    "decoys": [
+      "J. M. W. Turner",
+      "Thomas Gainsborough",
+      "George Stubbs"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nationalgallery.org.uk/paintings/john-constable-the-hay-wain"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who painted The Sleeping Gypsy?",
+    "correct_answer": "Henri Rousseau",
+    "decoys": [
+      "Henri Matisse",
+      "Paul Gauguin",
+      "Georges Braque"
+    ],
+    "image_url": null,
+    "source_url": "https://www.moma.org/collection/works/80172"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which year did Pablo Picasso complete Les Demoiselles d'Avignon?",
+    "correct_answer": "1907",
+    "decoys": [
+      "1897",
+      "1917",
+      "1927"
+    ],
+    "image_url": null,
+    "source_url": "https://www.moma.org/calendar/galleries/5696"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "How many canvases make up Andy Warhol's Campbell's Soup Cans?",
+    "correct_answer": "32",
+    "decoys": [
+      "12",
+      "24",
+      "40"
+    ],
+    "image_url": null,
+    "source_url": "https://www.moma.org/collection/works/79809"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which museum displays Claude Monet's monumental Water Lilies ensemble?",
+    "correct_answer": "Musée de l'Orangerie",
+    "decoys": [
+      "Musée Rodin",
+      "Musée Picasso",
+      "Musée de Cluny"
+    ],
+    "image_url": null,
+    "source_url": "https://www.musee-orangerie.fr/en/node/197502"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which material was used for Michelangelo's David in Florence?",
+    "correct_answer": "White marble",
+    "decoys": [
+      "Bronze",
+      "Terracotta",
+      "Limestone"
+    ],
+    "image_url": null,
+    "source_url": "https://www.galleriaaccademiafirenze.it/en/artworks/david-michelangelo/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Whom did Rodin's figure The Thinker originally represent?",
+    "correct_answer": "Dante",
+    "decoys": [
+      "Virgil",
+      "Homer",
+      "Ovid"
+    ],
+    "image_url": null,
+    "source_url": "https://www.musee-rodin.fr/en/musee/collections/oeuvres/penseur-meudon"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who was the sculptor of the Statue of Liberty?",
+    "correct_answer": "Frédéric-Auguste Bartholdi",
+    "decoys": [
+      "Auguste Rodin",
+      "Daniel Chester French",
+      "Gutzon Borglum"
+    ],
+    "image_url": null,
+    "source_url": "https://home.nps.gov/stli/learn/statue-of-liberty-facts.htm"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which architect took over the Sagrada Família project in 1883?",
+    "correct_answer": "Antoni Gaudí",
+    "decoys": [
+      "Lluís Domènech i Montaner",
+      "Josep Puig i Cadafalch",
+      "Santiago Calatrava"
+    ],
+    "image_url": null,
+    "source_url": "https://sagradafamilia.org/en/history-of-the-temple"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who designed the Guggenheim Museum Bilbao building?",
+    "correct_answer": "Frank Gehry",
+    "decoys": [
+      "Norman Foster",
+      "Renzo Piano",
+      "Richard Meier"
+    ],
+    "image_url": null,
+    "source_url": "https://www.guggenheim-bilbao.eus/en/the-building"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which architect won the competition to design the Sydney Opera House?",
+    "correct_answer": "Jørn Utzon",
+    "decoys": [
+      "Alvar Aalto",
+      "Eero Saarinen",
+      "Arne Jacobsen"
+    ],
+    "image_url": null,
+    "source_url": "https://www.sydneyoperahouse.com/our-story/jorn-utzon"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who designed the Gateway Arch in St. Louis?",
+    "correct_answer": "Eero Saarinen",
+    "decoys": [
+      "I. M. Pei",
+      "Philip Johnson",
+      "Louis Kahn"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/jeff/faqs.htm"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who designed the glass Pyramid at the Louvre?",
+    "correct_answer": "I. M. Pei",
+    "decoys": [
+      "Le Corbusier",
+      "Jean Nouvel",
+      "Richard Rogers"
+    ],
+    "image_url": null,
+    "source_url": "https://www.louvre.fr/en/explore/the-palace/a-pyramid-for-a-symbol"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which Mughal emperor ordered the construction of the Taj Mahal?",
+    "correct_answer": "Shah Jahan",
+    "decoys": [
+      "Akbar",
+      "Babur",
+      "Aurangzeb"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/252"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who designed Brasília's principal public buildings?",
+    "correct_answer": "Oscar Niemeyer",
+    "decoys": [
+      "Lúcio Costa",
+      "Roberto Burle Marx",
+      "Affonso Eduardo Reidy"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/445"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which painting gave Impressionism its name?",
+    "correct_answer": "Impression, Sunrise",
+    "decoys": [
+      "The Luncheon on the Grass",
+      "Dance at Le Moulin de la Galette",
+      "The Boulevard Montmartre"
+    ],
+    "image_url": null,
+    "source_url": "https://www.musee-orangerie.fr/en/articles/claude-monet-105461"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which pair of artists pioneered Cubism?",
+    "correct_answer": "Pablo Picasso and Georges Braque",
+    "decoys": [
+      "Claude Monet and Pierre-Auguste Renoir",
+      "Henri Matisse and André Derain",
+      "Salvador Dalí and René Magritte"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tate.org.uk/art/art-terms/c/cubism"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who wrote the first Surrealist Manifesto?",
+    "correct_answer": "André Breton",
+    "decoys": [
+      "Tristan Tzara",
+      "Filippo Tommaso Marinetti",
+      "Guillaume Apollinaire"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tate.org.uk/art/art-terms/s/surrealism"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who founded the Bauhaus school?",
+    "correct_answer": "Walter Gropius",
+    "decoys": [
+      "Ludwig Mies van der Rohe",
+      "Paul Klee",
+      "Wassily Kandinsky"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bauhaus.de/en/bauhaus-archiv/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which year was the Bauhaus founded in Weimar?",
+    "correct_answer": "1919",
+    "decoys": [
+      "1909",
+      "1929",
+      "1939"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bauhaus.de/en/bauhaus-archiv/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which source of imagery is especially associated with Pop Art?",
+    "correct_answer": "Mass media and consumer culture",
+    "decoys": [
+      "Medieval illuminated manuscripts",
+      "Classical funerary sculpture",
+      "Neolithic cave painting"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tate.org.uk/art/art-terms/p/pop-art"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which city became the principal centre of Abstract Expressionism after World War II?",
+    "correct_answer": "New York",
+    "decoys": [
+      "Rome",
+      "Vienna",
+      "Madrid"
+    ],
+    "image_url": null,
+    "source_url": "https://www.metmuseum.org/essays/abstract-expressionism"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What visual method defines Pointillism?",
+    "correct_answer": "Small distinct dots of colour",
+    "decoys": [
+      "Broad monochrome washes",
+      "Incised geometric lines",
+      "Thick sculpted plaster"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nationalgallery.org.uk/upload/pdf/kirby_stonor_roy_burnstock_grout_white2003.pdf"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which city did the Dada movement begin in 1916?",
+    "correct_answer": "Zurich",
+    "decoys": [
+      "Berlin",
+      "Paris",
+      "Milan"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tate.org.uk/art/art-terms/d/dada"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which country did De Stijl originate?",
+    "correct_answer": "The Netherlands",
+    "decoys": [
+      "Belgium",
+      "Germany",
+      "Switzerland"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tate.org.uk/art/art-terms/d/de-stijl"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which feature is most characteristic of Fauvist painting?",
+    "correct_answer": "Bold non-naturalistic colour",
+    "decoys": [
+      "Strict one-point perspective",
+      "Photographic monochrome detail",
+      "Unpainted carved stone"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tate.org.uk/art/art-terms/f/fauvism"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "During which century did Baroque art first flourish in Europe?",
+    "correct_answer": "17th century",
+    "decoys": [
+      "13th century",
+      "15th century",
+      "19th century"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tate.org.uk/art/art-terms/b/baroque"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which forms commonly inspired Art Nouveau design?",
+    "correct_answer": "Organic plant-like forms",
+    "decoys": [
+      "Military insignia",
+      "Industrial warning signs",
+      "Cartesian graphs"
+    ],
+    "image_url": null,
+    "source_url": "https://www.vam.ac.uk/articles/art-nouveau-an-international-style"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What does the Japanese term ukiyo-e mean?",
+    "correct_answer": "Pictures of the floating world",
+    "decoys": [
+      "Paintings of the imperial court",
+      "Images of sacred mountains",
+      "Scrolls of the four seasons"
+    ],
+    "image_url": null,
+    "source_url": "https://www.metmuseum.org/essays/woodblock-prints-in-the-ukiyo-e-style"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which New York neighbourhood gave the Harlem Renaissance its name?",
+    "correct_answer": "Harlem",
+    "decoys": [
+      "Greenwich Village",
+      "SoHo",
+      "Tribeca"
+    ],
+    "image_url": null,
+    "source_url": "https://www.loc.gov/exhibits/harlem/harlem.html"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who is the central character of Chinua Achebe's Things Fall Apart?",
+    "correct_answer": "Okonkwo",
+    "decoys": [
+      "Obi Okonkwo",
+      "Ezeulu",
+      "Ikem Osodi"
+    ],
+    "image_url": null,
+    "source_url": "https://www.loc.gov/loc/lcib/0812/achebe.html"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who is the central character of Albert Camus's The Stranger?",
+    "correct_answer": "Meursault",
+    "decoys": [
+      "Clamence",
+      "Rieux",
+      "Caligula"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1957/camus/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which Japanese novelist wrote Snow Country?",
+    "correct_answer": "Yasunari Kawabata",
+    "decoys": [
+      "Kenzaburō Ōe",
+      "Jun'ichirō Tanizaki",
+      "Natsume Sōseki"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1968/kawabata/facts/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which trilogy made Naguib Mahfouz famous throughout the Arab world?",
+    "correct_answer": "The Cairo Trilogy",
+    "decoys": [
+      "The Balkan Trilogy",
+      "The Deptford Trilogy",
+      "The New York Trilogy"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1988/mahfouz/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which novel by Gabriel García Márquez follows the Buendía family?",
+    "correct_answer": "One Hundred Years of Solitude",
+    "decoys": [
+      "Love in the Time of Cholera",
+      "The Autumn of the Patriarch",
+      "Chronicle of a Death Foretold"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1982/marquez/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which poetry collection is most closely associated with Rabindranath Tagore's 1913 Nobel Prize?",
+    "correct_answer": "Gitanjali",
+    "decoys": [
+      "The Gardener",
+      "Fruit-Gathering",
+      "The Fugitive"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1913/tagore/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which novel by José Saramago depicts an epidemic of sight loss?",
+    "correct_answer": "Blindness",
+    "decoys": [
+      "The Stone Raft",
+      "All the Names",
+      "The Double"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1998/saramago/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which novel by Orhan Pamuk centres on Ottoman miniaturists?",
+    "correct_answer": "My Name Is Red",
+    "decoys": [
+      "Snow",
+      "The Black Book",
+      "The White Castle"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/2006/pamuk/lecture/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which author wrote the novel Disgrace?",
+    "correct_answer": "J. M. Coetzee",
+    "decoys": [
+      "Nadine Gordimer",
+      "Doris Lessing",
+      "André Brink"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/2003/coetzee/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which Toni Morrison novel tells the story of Sethe and her family?",
+    "correct_answer": "Beloved",
+    "decoys": [
+      "Jazz",
+      "Sula",
+      "Paradise"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1993/press-release/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which novel follows a group of schoolboys stranded on an island?",
+    "correct_answer": "Lord of the Flies",
+    "decoys": [
+      "The Inheritors",
+      "Pincher Martin",
+      "Free Fall"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1983/golding/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which Ernest Hemingway novella does Santiago battle a marlin?",
+    "correct_answer": "The Old Man and the Sea",
+    "decoys": [
+      "The Sun Also Rises",
+      "A Farewell to Arms",
+      "For Whom the Bell Tolls"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1954/hemingway/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which John Steinbeck novel follows the Joad family?",
+    "correct_answer": "The Grapes of Wrath",
+    "decoys": [
+      "East of Eden",
+      "Of Mice and Men",
+      "The Pearl"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1962/steinbeck/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who wrote the novel Siddhartha?",
+    "correct_answer": "Hermann Hesse",
+    "decoys": [
+      "Thomas Mann",
+      "Stefan Zweig",
+      "Robert Musil"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1946/hesse/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which novel is narrated by Oskar Matzerath?",
+    "correct_answer": "The Tin Drum",
+    "decoys": [
+      "Cat and Mouse",
+      "Dog Years",
+      "The Flounder"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1999/press-release/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which Doris Lessing novel features the writer Anna Wulf?",
+    "correct_answer": "The Golden Notebook",
+    "decoys": [
+      "The Grass Is Singing",
+      "The Summer Before the Dark",
+      "The Fifth Child"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/2007/lessing/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which Kazuo Ishiguro novel is narrated by the butler Stevens?",
+    "correct_answer": "The Remains of the Day",
+    "decoys": [
+      "Never Let Me Go",
+      "An Artist of the Floating World",
+      "The Unconsoled"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/2017/ishiguro/lecture/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which book by Olga Tokarczuk won the 2018 Man Booker International Prize?",
+    "correct_answer": "Flights",
+    "decoys": [
+      "Drive Your Plow Over the Bones of the Dead",
+      "Primeval and Other Times",
+      "The Books of Jacob"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/2018/tokarczuk/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which Selma Lagerlöf book follows a boy travelling with wild geese?",
+    "correct_answer": "The Wonderful Adventures of Nils",
+    "decoys": [
+      "Gösta Berling's Saga",
+      "Jerusalem",
+      "The Emperor of Portugallia"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1909/lagerlof/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What is the first name of the scientist in Mary Shelley's Frankenstein?",
+    "correct_answer": "Victor",
+    "decoys": [
+      "Henry",
+      "Robert",
+      "Edward"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bl.uk/stories/blogs/posts/spine-tingling-stories-in-the-blood-curdling-british-library"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which English town was William Shakespeare born?",
+    "correct_answer": "Stratford-upon-Avon",
+    "decoys": [
+      "Canterbury",
+      "Bath",
+      "York"
+    ],
+    "image_url": null,
+    "source_url": "https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/william-shakespeare/william-shakespeare-biography/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which novel did Jane Austen first publish under the credit 'By a Lady'?",
+    "correct_answer": "Sense and Sensibility",
+    "decoys": [
+      "Pride and Prejudice",
+      "Mansfield Park",
+      "Emma"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bl.uk/collection-items/sense-and-sensibility-by-jane-austen-1811"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What was George Orwell's birth name?",
+    "correct_answer": "Eric Arthur Blair",
+    "decoys": [
+      "Charles Lutwidge Dodgson",
+      "Samuel Langhorne Clemens",
+      "William Sydney Porter"
+    ],
+    "image_url": null,
+    "source_url": "https://www.orwellfoundation.com/the-orwell-foundation/orwell/biography/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which Massachusetts town was Emily Dickinson born?",
+    "correct_answer": "Amherst",
+    "decoys": [
+      "Concord",
+      "Salem",
+      "Plymouth"
+    ],
+    "image_url": null,
+    "source_url": "https://www.emilydickinsonmuseum.org/emily-dickinson/biography/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which language did Jalal al-Din Rumi write most of his poetry?",
+    "correct_answer": "Persian",
+    "decoys": [
+      "Arabic",
+      "Turkish",
+      "Urdu"
+    ],
+    "image_url": null,
+    "source_url": "https://en.unesco.org/silkroad/silk-road-themes/intangible-cultural-heritage/mevlana-jalal-al-din-rumi"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "From which country was novelist Chinua Achebe?",
+    "correct_answer": "Nigeria",
+    "decoys": [
+      "Ghana",
+      "Kenya",
+      "Uganda"
+    ],
+    "image_url": null,
+    "source_url": "https://www.loc.gov/loc/lcib/0812/achebe.html"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who was the first Arabic-language writer to win the Nobel Prize in Literature?",
+    "correct_answer": "Naguib Mahfouz",
+    "decoys": [
+      "Taha Hussein",
+      "Tawfiq al-Hakim",
+      "Adonis"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1988/press-release/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which year did Wole Soyinka receive the Nobel Prize in Literature?",
+    "correct_answer": "1986",
+    "decoys": [
+      "1976",
+      "1996",
+      "2006"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1986/soyinka/facts/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which country was poet Pablo Neruda from?",
+    "correct_answer": "Chile",
+    "decoys": [
+      "Peru",
+      "Argentina",
+      "Uruguay"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1971/neruda/facts/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which year did Rabindranath Tagore win the Nobel Prize in Literature?",
+    "correct_answer": "1913",
+    "decoys": [
+      "1903",
+      "1923",
+      "1933"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1913/tagore/facts/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which year did Toni Morrison win the Nobel Prize in Literature?",
+    "correct_answer": "1993",
+    "decoys": [
+      "1983",
+      "2003",
+      "2013"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1993/morrison/facts/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "On which Caribbean island was poet Derek Walcott born?",
+    "correct_answer": "Saint Lucia",
+    "decoys": [
+      "Barbados",
+      "Jamaica",
+      "Trinidad"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1992/walcott/facts/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which poet wrote the collection Death of a Naturalist?",
+    "correct_answer": "Seamus Heaney",
+    "decoys": [
+      "Ted Hughes",
+      "Philip Larkin",
+      "Dylan Thomas"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1995/heaney/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In which language did Wisława Szymborska write?",
+    "correct_answer": "Polish",
+    "decoys": [
+      "Czech",
+      "Hungarian",
+      "Romanian"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1996/szymborska/facts/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "From which country was novelist Gabriel García Márquez?",
+    "correct_answer": "Colombia",
+    "decoys": [
+      "Mexico",
+      "Cuba",
+      "Venezuela"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1982/marquez/facts/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who rules Denmark during most of Hamlet?",
+    "correct_answer": "Claudius",
+    "decoys": [
+      "Polonius",
+      "Horatio",
+      "Laertes"
+    ],
+    "image_url": null,
+    "source_url": "https://www.folger.edu/explore/shakespeares-works/hamlet/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "How many Weird Sisters deliver prophecies in Macbeth?",
+    "correct_answer": "Three",
+    "decoys": [
+      "Two",
+      "Four",
+      "Five"
+    ],
+    "image_url": null,
+    "source_url": "https://shakespeare.folger.edu/downloads/pdf/macbeth_PDF_FolgerShakespeare.pdf"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which two families are feuding in Romeo and Juliet?",
+    "correct_answer": "The Montagues and the Capulets",
+    "decoys": [
+      "The York and Lancaster families",
+      "The Percy and Douglas families",
+      "The Clifford and Neville families"
+    ],
+    "image_url": null,
+    "source_url": "https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/read/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who wrote Waiting for Godot?",
+    "correct_answer": "Samuel Beckett",
+    "decoys": [
+      "Eugène Ionesco",
+      "Harold Pinter",
+      "Jean Genet"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1969/beckett/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What is the first name of the central wife in A Doll's House?",
+    "correct_answer": "Nora",
+    "decoys": [
+      "Hedda",
+      "Ellida",
+      "Hilda"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/A-Dolls-House"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who wrote The Cherry Orchard?",
+    "correct_answer": "Anton Chekhov",
+    "decoys": [
+      "Maxim Gorky",
+      "Nikolai Gogol",
+      "Ivan Turgenev"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Cherry-Orchard"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who is the central salesman in Death of a Salesman?",
+    "correct_answer": "Willy Loman",
+    "decoys": [
+      "Biff Loman",
+      "Happy Loman",
+      "Charley"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Death-of-a-Salesman"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who wrote The Importance of Being Earnest?",
+    "correct_answer": "Oscar Wilde",
+    "decoys": [
+      "George Bernard Shaw",
+      "Noël Coward",
+      "J. M. Barrie"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Importance-of-Being-Earnest"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who wrote A Raisin in the Sun?",
+    "correct_answer": "Lorraine Hansberry",
+    "decoys": [
+      "Alice Childress",
+      "Lillian Hellman",
+      "Ntozake Shange"
+    ],
+    "image_url": null,
+    "source_url": "https://nmaahc.si.edu/lorraine-hansberry"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Who wrote Six Characters in Search of an Author?",
+    "correct_answer": "Luigi Pirandello",
+    "decoys": [
+      "Dario Fo",
+      "Eduardo De Filippo",
+      "Ugo Betti"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1934/pirandello/biographical/"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "How many lines does a traditional sonnet have?",
+    "correct_answer": "14",
+    "decoys": [
+      "10",
+      "12",
+      "16"
+    ],
+    "image_url": null,
+    "source_url": "https://www.poetryfoundation.org/education/glossary/sonnet"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "How many lines does a haiku conventionally contain?",
+    "correct_answer": "Three",
+    "decoys": [
+      "Two",
+      "Four",
+      "Five"
+    ],
+    "image_url": null,
+    "source_url": "https://www.poetryfoundation.org/education/glossary/haiku"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What does alliteration repeat?",
+    "correct_answer": "Initial consonant sounds",
+    "decoys": [
+      "Final vowel sounds",
+      "Whole sentences",
+      "Stanza lengths"
+    ],
+    "image_url": null,
+    "source_url": "https://www.poetryfoundation.org/education/glossary/alliteration"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What is blank verse?",
+    "correct_answer": "Unrhymed iambic pentameter",
+    "decoys": [
+      "Rhymed trochaic tetrameter",
+      "Unrhymed prose paragraphs",
+      "Rhymed free verse"
+    ],
+    "image_url": null,
+    "source_url": "https://www.poetryfoundation.org/education/glossary/blank-verse"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What is enjambment?",
+    "correct_answer": "A sentence continuing beyond a line break",
+    "decoys": [
+      "A repeated opening phrase",
+      "A pause in the middle of a line",
+      "A rhyme within one line"
+    ],
+    "image_url": null,
+    "source_url": "https://www.poetryfoundation.org/education/glossary/enjambment"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "In true fresco painting, pigment is applied to what surface?",
+    "correct_answer": "Wet plaster",
+    "decoys": [
+      "Dry canvas",
+      "Polished wood",
+      "Fired clay"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tate.org.uk/art/art-terms/f/fresco"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What does chiaroscuro describe?",
+    "correct_answer": "Strong contrast between light and dark",
+    "decoys": [
+      "Blending adjacent complementary colours",
+      "Carving directly into stone",
+      "Arranging figures in strict symmetry"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tate.org.uk/art/art-terms/c/chiaroscuro"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "How many panels does a triptych have?",
+    "correct_answer": "Three",
+    "decoys": [
+      "Two",
+      "Four",
+      "Five"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nationalgallery.org.uk/paintings/glossary/triptych"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "Which principle makes traditional lithography work?",
+    "correct_answer": "Oil and water repel each other",
+    "decoys": [
+      "Acid dissolves raised wood",
+      "Heat fuses pigment to glass",
+      "Light hardens wet plaster"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tate.org.uk/art/art-terms/l/lithography"
+  },
+  {
+    "category_id": 5,
+    "language_code": "en",
+    "question_text": "What is ekphrasis in literature?",
+    "correct_answer": "A vivid description of a work of art",
+    "decoys": [
+      "A poem without a fixed metre",
+      "A story told in reverse order",
+      "A speech by a single actor"
+    ],
+    "image_url": null,
+    "source_url": "https://www.poetryfoundation.org/education/glossary/ekphrasis"
+  }
+]

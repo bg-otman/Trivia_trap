@@ -91,6 +91,15 @@ async def get_incoming_requests(db: AsyncSession, user_id: int) -> list[dict[str
     return [{"id": str(user.id), "username": user.username} for user in users]
 
 
+async def get_sent_requests(db: AsyncSession, user_id: int) -> list[dict[str, str]]:
+    users = await db.scalars(select(User).join(
+        Friendship, Friendship.receiver_id == User.id,
+    ).where(
+        Friendship.requester_id == user_id, Friendship.status == "pending",
+    ).order_by(User.id))
+    return [{"id": str(user.id), "username": user.username} for user in users]
+
+
 async def reject_request(db: AsyncSession, receiver_id: int, sender_id: int):
     # Preserve the previous behavior: rejecting removes the request and allows
     # either player to send a new one later.

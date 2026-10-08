@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, Path
 from authentication.current_user import get_current_user
 from dataProcessing.models import User
 from authentication.repository import DbSession
-from friendship.repository import get_friends, send_friend, accept_request, get_incoming_requests, reject_request, cancel_request, remove_friend as delete_friend
+from friendship.repository import get_friends, send_friend, accept_request, get_incoming_requests, get_sent_requests, reject_request, cancel_request, remove_friend as delete_friend
 
 friends_router = APIRouter(prefix="/friends", tags=["Friendship"])
 
@@ -39,6 +39,11 @@ async def accept_friend_request(sender_id: UserId, current_user: CurrentUser, db
 @friends_router.get("/requests")
 async def list_incoming_requests(current_user: CurrentUser, db: DbSession):
     return await get_incoming_requests(db, current_user.id)
+
+
+@friends_router.get("/requests/sent")
+async def list_sent_requests(current_user: CurrentUser, db: DbSession):
+    return await get_sent_requests(db, current_user.id)
 
 
 @friends_router.post("/reject/{sender_id}")

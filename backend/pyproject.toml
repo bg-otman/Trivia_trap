@@ -3,6 +3,8 @@ name = "backend"
 version = "0.1.0"
 requires-python = ">=3.13"
 dependencies = [
+    "websockets>=17.0.1",
+    "python-statemachine>=3.2.1",
     "alembic>=1.20.0",
     "asyncpg>=0.31.0",
     "fastapi[standard]>=0.141.1",
@@ -13,4 +15,9 @@ dependencies = [
     "pyjwt>=2.14.0",
     "requests>=2.34.2",
     "sqlalchemy[asyncio]>=2.1.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
 ]

@@ -4,6 +4,7 @@ from datetime import datetime
 from uuid import UUID, uuid4
 
 from sqlalchemy import (
+    Boolean,
     CheckConstraint,
     DateTime,
     ForeignKey,
@@ -389,6 +390,10 @@ class GamePlayerCategoryResult(Base):
         nullable=False,
         server_default=text("0"),
     )
+    bluff_votes_received: Mapped[int] = mapped_column(
+        nullable=False,
+        server_default=text("0"),
+    )
 
     game_player_result: Mapped["GamePlayerResult"] = relationship(
         back_populates="category_results",
@@ -462,10 +467,17 @@ class UserAchievement(Base):
         String(50),
         primary_key=True,
     )
-    unlocked_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True),
+    description: Mapped[str] = mapped_column(
+        Text,
         nullable=False,
-        server_default=func.now(),
+    )
+    img: Mapped[str] = mapped_column(
+        String(50),
+    )
+    unlocked: Mapped[bool] = mapped_column(
+        Boolean,
+        default=False,
+        nullable=False,
     )
 
     user: Mapped["User"] = relationship(

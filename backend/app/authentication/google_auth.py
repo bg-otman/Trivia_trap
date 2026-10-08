@@ -1,5 +1,6 @@
 import os
-from uuid import uuid4
+import re
+import unicodedata
 from fastapi import APIRouter, HTTPException, Request, Response, status
 from pydantic import BaseModel, Field, SecretStr
 
@@ -22,10 +23,35 @@ from google.oauth2 import id_token
 from fastapi.concurrency import run_in_threadpool
 
 google_router = APIRouter(route_class=AuthRoute)
+LEGACY_GOOGLE_USERNAME = re.compile(r"^Player[0-9a-f]{9}$")
 
 
 class GoogleLoginData(BaseModel):
     credential: SecretStr = Field(min_length=1)
+
+
+def google_username_base(claims: dict) -> str:
+    """Build a valid account name from Google's verified profile claims."""
+    candidate = claims.get("name") or claims.get("given_name") or ""
+    normalized = unicodedata.normalize("NFKD", candidate)
+    ascii_name = normalized.encode("ascii", "ignore").decode("ascii")
+    username = "".join(character for character in ascii_name if character.isalnum())
+    if not username or not username[0].isalpha():
+        username = "Player"
+    return username[:15]
+
+
+async def unique_google_username(db: DbSession, claims: dict, *, current_user_id: int | None = None) -> str:
+    base = google_username_base(claims)
+    candidate = base
+    suffix = 1
+    while True:
+        existing = await find_user_by_username(db, candidate)
+        if existing is None or existing.id == current_user_id:
+            return candidate
+        suffix_text = str(suffix)
+        candidate = f"{base[:15 - len(suffix_text)]}{suffix_text}"
+        suffix += 1
 
 
 @google_router.post("/google", response_model=TokenResponse)
@@ -51,10 +77,7 @@ async def google_login(data: GoogleLoginData, db: DbSession, request: Request, r
                 detail="An account with this email already exists. Sign in with your existing method.",
             )
 
-        # Generate a valid, unique username within the existing 15-character limit.
-        username = "Player" + uuid4().hex[:9]
-        while await find_user_by_username(db, username) is not None:
-            username = "Player" + uuid4().hex[:9]
+        username = await unique_google_username(db, claims)
 
         try:
             user = await create_user(db, username, email, None, google_sub=google_sub)
@@ -63,6 +86,11 @@ async def google_login(data: GoogleLoginData, db: DbSession, request: Request, r
                 status_code=status.HTTP_409_CONFLICT,
                 detail="An ac count with this identity already exists.",
             ) from None
+    elif LEGACY_GOOGLE_USERNAME.fullmatch(user.username):
+        # Accounts created by the old flow had random Playerxxxxxxxxx names.
+        # Replace that placeholder once with the verified Google profile name.
+        user.username = await unique_google_username(db, claims, current_user_id=user.id)
+        await db.commit()
 
     access_token = create_access_token(user.id, user.auth_version)
     set_access_cookie(response, request, access_token)

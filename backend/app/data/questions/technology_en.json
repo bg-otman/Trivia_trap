@@ -1,0 +1,902 @@
+[
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What does CPU stand for in computing?",
+    "correct_answer": "Central Processing Unit",
+    "decoys": ["Computer Processing Utility", "Central Program Unit", "Core Processing Utility"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/central_processing_unit"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What does RAM stand for in computing?",
+    "correct_answer": "Random Access Memory",
+    "decoys": ["Read Access Memory", "Rapid Allocation Module", "Remote Address Memory"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/random_access_memory"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What is the smallest unit of information in a digital computer?",
+    "correct_answer": "Bit",
+    "decoys": ["Byte", "Word", "Block"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/bit"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "How many bits make up one byte?",
+    "correct_answer": "8",
+    "decoys": ["4", "16", "32"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/byte"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which pair lists the two possible values of a binary bit?",
+    "correct_answer": "0 and 1",
+    "decoys": ["1 and 2", "0 and 2", "A and B"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/bit"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What does ASCII stand for?",
+    "correct_answer": "American Standard Code for Information Interchange",
+    "decoys": ["Automated Standard Code for Internet Information", "American System Code for Integrated Interfaces", "Advanced Symbol Code for Information Input"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/american_standard_code_for_information_interchange"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What does URL stand for?",
+    "correct_answer": "Uniform Resource Locator",
+    "decoys": ["Universal Routing Link", "Unified Resource Language", "Uniform Reference Link"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc3986.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "In Unicode, what is the numerical value assigned to an abstract character called?",
+    "correct_answer": "Code point",
+    "decoys": ["Byte mark", "Glyph index", "Character block"],
+    "image_url": null,
+    "source_url": "https://www.unicode.org/glossary/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which type of memory is designed to retain its contents when power is removed?",
+    "correct_answer": "Read-only memory",
+    "decoys": ["Random-access memory", "Processor cache", "CPU register"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/read_only_memory"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What term describes programs and data stored in hardware for low-level device control?",
+    "correct_answer": "Firmware",
+    "decoys": ["Middleware", "Shareware", "Groupware"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/firmware"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What does GUI stand for?",
+    "correct_answer": "Graphical User Interface",
+    "decoys": ["General Utility Interface", "Graphical Unit Integration", "Guided User Input"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/graphical_user_interface"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which software controls program execution and manages a computer's resources?",
+    "correct_answer": "Operating system",
+    "decoys": ["Text editor", "Web browser", "Spreadsheet"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/operating_system"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What technology simulates computing environments or resources on a physical system?",
+    "correct_answer": "Virtualization",
+    "decoys": ["Compression", "Compilation", "Indexing"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/virtualization"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Under the Open Source Definition, what form of a program must be available?",
+    "correct_answer": "Source code",
+    "decoys": ["Machine code only", "Encrypted code only", "Printed code only"],
+    "image_url": null,
+    "source_url": "https://opensource.org/osd"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which data format defined by RFC 8259 represents structured data with objects and arrays?",
+    "correct_answer": "JSON",
+    "decoys": ["JPEG", "MP3", "PNG"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc8259.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which system translates domain names into host addresses?",
+    "correct_answer": "DNS",
+    "decoys": ["DHCP", "SMTP", "NTP"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc1034.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "How long is an IPv4 address?",
+    "correct_answer": "32 bits",
+    "decoys": ["16 bits", "64 bits", "128 bits"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc791.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "How long is an IPv6 address?",
+    "correct_answer": "128 bits",
+    "decoys": ["32 bits", "64 bits", "256 bits"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc4291.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which transport protocol provides a reliable, in-order byte-stream service?",
+    "correct_answer": "TCP",
+    "decoys": ["UDP", "ICMP", "ARP"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc9293.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which transport protocol does not guarantee delivery or duplicate protection?",
+    "correct_answer": "UDP",
+    "decoys": ["TCP", "SCTP", "TLS"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc768.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which protocol is primarily used to transfer email between mail servers?",
+    "correct_answer": "SMTP",
+    "decoys": ["IMAP", "HTTP", "SNMP"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc5321.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which protocol lets a client access and manage email messages on a server?",
+    "correct_answer": "IMAP",
+    "decoys": ["SMTP", "TFTP", "NTP"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc9051.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which protocol dynamically allocates network addresses and supplies configuration parameters to hosts?",
+    "correct_answer": "DHCP",
+    "decoys": ["DNS", "FTP", "SSH"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc2131.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which protocol carries HTTP traffic over TLS for secure web communication?",
+    "correct_answer": "HTTPS",
+    "decoys": ["FTP", "Telnet", "SMTP"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc2818.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which HTTP method requests transfer of a current representation of a target resource?",
+    "correct_answer": "GET",
+    "decoys": ["POST", "DELETE", "CONNECT"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html#name-get"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which HTTP status code means Not Found?",
+    "correct_answer": "404",
+    "decoys": ["200", "301", "500"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html#name-404-not-found"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What does a basic Network Address Translator map between?",
+    "correct_answer": "IP address groups",
+    "decoys": ["Domain name groups", "Email mailbox groups", "File permission groups"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc3022.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "In a URI, which component appears before the first colon?",
+    "correct_answer": "Scheme",
+    "decoys": ["Fragment", "Query", "Path"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc3986.html#section-3.1"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which IEEE standards family specifies Ethernet?",
+    "correct_answer": "IEEE 802.3",
+    "decoys": ["IEEE 802.1", "IEEE 802.11", "IEEE 802.15"],
+    "image_url": null,
+    "source_url": "https://grouper.ieee.org/groups/802/3/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which IEEE standards family specifies wireless local area networks?",
+    "correct_answer": "IEEE 802.11",
+    "decoys": ["IEEE 802.3", "IEEE 802.5", "IEEE 802.16"],
+    "image_url": null,
+    "source_url": "https://grouper.ieee.org/groups/802/11/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Who created the Python programming language?",
+    "correct_answer": "Guido van Rossum",
+    "decoys": ["James Gosling", "Bjarne Stroustrup", "Brendan Eich"],
+    "image_url": null,
+    "source_url": "https://docs.python.org/3/faq/general.html#who-created-python"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "In which year was Git born?",
+    "correct_answer": "2005",
+    "decoys": ["1995", "2000", "2010"],
+    "image_url": null,
+    "source_url": "https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What does JSON stand for?",
+    "correct_answer": "JavaScript Object Notation",
+    "decoys": ["Java Source Object Network", "Joined Standard Output Notation", "JavaScript Ordered Naming"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc8259.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What does HTML stand for?",
+    "correct_answer": "Hypertext Markup Language",
+    "decoys": ["High-level Text Management Language", "Hyperlink Transfer Markup Logic", "Home Tool Markup Language"],
+    "image_url": null,
+    "source_url": "https://html.spec.whatwg.org/multipage/introduction.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which web technology is primarily used to style the presentation of documents?",
+    "correct_answer": "CSS",
+    "decoys": ["HTML", "SQL", "SMTP"],
+    "image_url": null,
+    "source_url": "https://www.w3.org/Style/CSS/Overview.en.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which Python keyword begins a function definition?",
+    "correct_answer": "def",
+    "decoys": ["class", "import", "return"],
+    "image_url": null,
+    "source_url": "https://docs.python.org/3/reference/compound_stmts.html#function-definitions"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which pair contains Python's two Boolean constant values?",
+    "correct_answer": "True and False",
+    "decoys": ["Yes and No", "On and Off", "One and Zero"],
+    "image_url": null,
+    "source_url": "https://docs.python.org/3/library/stdtypes.html#boolean-type-bool"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which data structure normally removes items in first-in, first-out order?",
+    "correct_answer": "Queue",
+    "decoys": ["Stack", "Tree", "Heap"],
+    "image_url": null,
+    "source_url": "https://xlinux.nist.gov/dads/HTML/queue.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which data structure normally removes items in last-in, first-out order?",
+    "correct_answer": "Stack",
+    "decoys": ["Queue", "Graph", "Trie"],
+    "image_url": null,
+    "source_url": "https://xlinux.nist.gov/dads/HTML/stack.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What ordering must data have before standard binary search can be applied?",
+    "correct_answer": "Sorted order",
+    "decoys": ["Random order", "Reverse insertion order", "No required order"],
+    "image_url": null,
+    "source_url": "https://xlinux.nist.gov/dads/HTML/binarySearch.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which graph problem is Dijkstra's algorithm designed to solve?",
+    "correct_answer": "Single-source shortest paths",
+    "decoys": ["Maximum bipartite matching", "Minimum graph coloring", "Topological cycle counting"],
+    "image_url": null,
+    "source_url": "https://xlinux.nist.gov/dads/HTML/dijkstraalgo.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What programming technique solves a problem by a routine calling itself?",
+    "correct_answer": "Recursion",
+    "decoys": ["Iteration", "Compilation", "Tokenization"],
+    "image_url": null,
+    "source_url": "https://xlinux.nist.gov/dads/HTML/recursion.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which description best defines an algorithm?",
+    "correct_answer": "A finite set of steps for solving a problem",
+    "decoys": ["A physical component for storing files", "A network address assigned to a host", "A visual style applied to a document"],
+    "image_url": null,
+    "source_url": "https://xlinux.nist.gov/dads/HTML/algorithm.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Who led the team that developed the Java programming language?",
+    "correct_answer": "James Gosling",
+    "decoys": ["Guido van Rossum", "Dennis Ritchie", "Bjarne Stroustrup"],
+    "image_url": null,
+    "source_url": "https://www.oracle.com/java/technologies/introduction-to-java.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Who created JavaScript while working at Netscape?",
+    "correct_answer": "Brendan Eich",
+    "decoys": ["James Gosling", "Ken Thompson", "Niklaus Wirth"],
+    "image_url": null,
+    "source_url": "https://developer.mozilla.org/en-US/docs/Glossary/JavaScript"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Who originally wrote the Linux kernel?",
+    "correct_answer": "Linus Torvalds",
+    "decoys": ["Richard Stallman", "Ken Thompson", "Andrew Tanenbaum"],
+    "image_url": null,
+    "source_url": "https://www.kernel.org/linux.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which kernel forms the foundation of the Android platform?",
+    "correct_answer": "Linux kernel",
+    "decoys": ["XNU kernel", "NT kernel", "Solaris kernel"],
+    "image_url": null,
+    "source_url": "https://source.android.com/docs/core/architecture/kernel"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What does POSIX stand for?",
+    "correct_answer": "Portable Operating System Interface",
+    "decoys": ["Programmed Operating System Integration", "Portable Open Software Index", "Process-Oriented System Interface Extension"],
+    "image_url": null,
+    "source_url": "https://pubs.opengroup.org/onlinepubs/9699919799/frontmatter/preface.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "In Windows terminology, what does each process contain at minimum?",
+    "correct_answer": "One thread",
+    "decoys": ["One socket", "One printer", "One database"],
+    "image_url": null,
+    "source_url": "https://learn.microsoft.com/en-us/windows/win32/procthread/processes-and-threads"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What is the basic unit to which Windows allocates processor time?",
+    "correct_answer": "Thread",
+    "decoys": ["File", "Window", "Socket"],
+    "image_url": null,
+    "source_url": "https://learn.microsoft.com/en-us/windows/win32/procthread/processes-and-threads"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What memory abstraction gives each Windows user-mode process a private virtual address space?",
+    "correct_answer": "Virtual memory",
+    "decoys": ["Optical memory", "Cache-only memory", "Read-only firmware"],
+    "image_url": null,
+    "source_url": "https://learn.microsoft.com/en-us/windows/win32/memory/virtual-address-space"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which GNU Coreutils command prints the current working directory?",
+    "correct_answer": "pwd",
+    "decoys": ["ls", "mkdir", "whoami"],
+    "image_url": null,
+    "source_url": "https://pubs.opengroup.org/onlinepubs/9699919799/utilities/pwd.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which POSIX function creates a new process by duplicating the calling process?",
+    "correct_answer": "fork()",
+    "decoys": ["open()", "read()", "sleep()"],
+    "image_url": null,
+    "source_url": "https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which SPDX identifier states the Linux kernel's preferred license expression?",
+    "correct_answer": "GPL-2.0-only",
+    "decoys": ["MIT", "Apache-2.0", "BSD-3-Clause"],
+    "image_url": null,
+    "source_url": "https://docs.kernel.org/process/license-rules.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which identifier is returned by the Linux getpid() system call?",
+    "correct_answer": "Process ID",
+    "decoys": ["User ID", "Group ID", "Session ID"],
+    "image_url": null,
+    "source_url": "https://man7.org/linux/man-pages/man2/getpid.2.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which SQL command retrieves rows from a table?",
+    "correct_answer": "SELECT",
+    "decoys": ["INSERT", "UPDATE", "DELETE"],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-select.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which SQL command creates new rows in a table?",
+    "correct_answer": "INSERT",
+    "decoys": ["SELECT", "UPDATE", "DELETE"],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-insert.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which SQL command changes values in existing rows?",
+    "correct_answer": "UPDATE",
+    "decoys": ["SELECT", "INSERT", "DELETE"],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-update.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which SQL command removes rows from a table?",
+    "correct_answer": "DELETE",
+    "decoys": ["SELECT", "INSERT", "UPDATE"],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-delete.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which database constraint uniquely identifies each row and disallows null values?",
+    "correct_answer": "Primary key",
+    "decoys": ["Foreign key", "Check constraint", "Default constraint"],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-PRIMARY-KEYS"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which database constraint maintains referential integrity between related tables?",
+    "correct_answer": "Foreign key",
+    "decoys": ["Primary key", "Not-null constraint", "Check constraint"],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FK"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which SQL command makes the current transaction's changes permanent?",
+    "correct_answer": "COMMIT",
+    "decoys": ["ROLLBACK", "SAVEPOINT", "BEGIN"],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-commit.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which SQL command discards the current transaction's changes?",
+    "correct_answer": "ROLLBACK",
+    "decoys": ["COMMIT", "ANALYZE", "GRANT"],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-rollback.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which transaction property means an operation happens completely or not at all?",
+    "correct_answer": "Atomicity",
+    "decoys": ["Consistency", "Isolation", "Durability"],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which database structure can speed up locating rows but adds maintenance overhead?",
+    "correct_answer": "Index",
+    "decoys": ["Trigger", "Sequence", "Schema"],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/indexes-intro.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What attack uses deceptive messages to trick people into revealing sensitive information?",
+    "correct_answer": "Phishing",
+    "decoys": ["Port scanning", "Packet routing", "Load balancing"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/phishing"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What authentication method requires factors from two or more distinct categories?",
+    "correct_answer": "Multi-factor authentication",
+    "decoys": ["Single sign-on", "Anonymous authentication", "Password-only authentication"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/multi_factor_authentication"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which security principle grants only the minimum permissions needed to perform a task?",
+    "correct_answer": "Least privilege",
+    "decoys": ["Open access", "Shared administration", "Implicit trust"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/least_privilege"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which process transforms plaintext into ciphertext using a cryptographic algorithm and key?",
+    "correct_answer": "Encryption",
+    "decoys": ["Compression", "Indexing", "Tokenization"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/encryption"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which function maps data of arbitrary length to a fixed-length value and is designed to be one-way?",
+    "correct_answer": "Cryptographic hash function",
+    "decoys": ["Lossless compression function", "Routing function", "Sorting function"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/Cryptographic_hash_function"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which mechanism uses a private key to sign data and a public key to verify it?",
+    "correct_answer": "Digital signature",
+    "decoys": ["Digital watermark", "Password hash", "Session cookie"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/digital_signature"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What non-secret value is combined with a password before hashing to hinder precomputed attacks?",
+    "correct_answer": "Salt",
+    "decoys": ["Nonce", "Token", "Certificate"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/salt"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which protocol is designed to provide confidentiality and integrity between communicating applications?",
+    "correct_answer": "TLS",
+    "decoys": ["DNS", "ARP", "DHCP"],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc8446.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which security device or program controls network traffic between networks or hosts under a policy?",
+    "correct_answer": "Firewall",
+    "decoys": ["Compiler", "Hypervisor", "Text editor"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/firewall"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which injection attack alters an application's database query through untrusted input?",
+    "correct_answer": "SQL injection",
+    "decoys": ["Cross-site request forgery", "Session fixation", "Path traversal"],
+    "image_url": null,
+    "source_url": "https://owasp.org/www-community/attacks/SQL_Injection"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Who invented the World Wide Web while working at CERN?",
+    "correct_answer": "Tim Berners-Lee",
+    "decoys": ["Vint Cerf", "Douglas Engelbart", "Robert Noyce"],
+    "image_url": null,
+    "source_url": "https://home.cern/science/computing/the-birth-of-the-web/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "In which year was the World Wide Web invented at CERN?",
+    "correct_answer": "1989",
+    "decoys": ["1979", "1993", "1999"],
+    "image_url": null,
+    "source_url": "https://home.cern/science/computing/the-birth-of-the-web/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "On what type of computer was the world's first website hosted?",
+    "correct_answer": "NeXT computer",
+    "decoys": ["IBM PC", "Apple II", "Commodore 64"],
+    "image_url": null,
+    "source_url": "https://home.cern/science/computing/the-birth-of-the-web/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "In which year was Intel's 4004 microprocessor released?",
+    "correct_answer": "1971",
+    "decoys": ["1961", "1981", "1991"],
+    "image_url": null,
+    "source_url": "https://timeline.intel.com/1971/the-first-programmable-microprocessor-the-4004"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which personal computer did IBM introduce in August 1981?",
+    "correct_answer": "IBM 5150",
+    "decoys": ["IBM 1401", "IBM System/360", "IBM ThinkPad 700C"],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/history/personal-computer"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "In which year did Apple introduce the original iPhone?",
+    "correct_answer": "2007",
+    "decoys": ["2001", "2004", "2010"],
+    "image_url": null,
+    "source_url": "https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "At which university was ENIAC built and launched in 1946?",
+    "correct_answer": "University of Pennsylvania",
+    "decoys": ["Harvard University", "Stanford University", "University of Cambridge"],
+    "image_url": null,
+    "source_url": "https://www.seas.upenn.edu/about/history-heritage/eniac/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What were the first two letters sent in the first ARPANET host-to-host message in 1969?",
+    "correct_answer": "LO",
+    "decoys": ["HI", "OK", "GO"],
+    "image_url": null,
+    "source_url": "https://newsroom.ucla.edu/releases/internet-50-symposium-ucla"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "At which laboratory was the first working transistor developed in 1947?",
+    "correct_answer": "Bell Telephone Laboratories",
+    "decoys": ["Los Alamos Laboratory", "Cavendish Laboratory", "MIT Lincoln Laboratory"],
+    "image_url": null,
+    "source_url": "https://ethw.org/Milestones%3AInvention_of_the_First_Transistor_at_Bell_Telephone_Laboratories%2C_Inc.%2C_1947"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Who was named as the inventor on the original computer mouse patent?",
+    "correct_answer": "Douglas Engelbart",
+    "decoys": ["Alan Kay", "Steve Wozniak", "Ivan Sutherland"],
+    "image_url": null,
+    "source_url": "https://www.sri.com/hoi/computer-mouse-and-interactive-computing/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which storage device uses flash memory and has no moving parts?",
+    "correct_answer": "Solid-state drive",
+    "decoys": ["Hard disk drive", "Magnetic tape drive", "Optical disc drive"],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/hard-disk-drive-vs-solid-state-drive"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which storage device records data on spinning magnetic platters?",
+    "correct_answer": "Hard disk drive",
+    "decoys": ["Solid-state drive", "USB flash drive", "SD memory card"],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/hard-disk-drive-vs-solid-state-drive"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which processor type is designed to execute thousands of threads in parallel?",
+    "correct_answer": "GPU",
+    "decoys": ["CPU", "Microcontroller", "Digital signal controller"],
+    "image_url": null,
+    "source_url": "https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/introduction.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which semiconductor component allows current to flow predominantly in one direction?",
+    "correct_answer": "Diode",
+    "decoys": ["Resistor", "Capacitor", "Inductor"],
+    "image_url": null,
+    "source_url": "https://technav.ieee.org/topic/diodes/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What is the SI unit of electrical resistance?",
+    "correct_answer": "Ohm",
+    "decoys": ["Farad", "Henry", "Tesla"],
+    "image_url": null,
+    "source_url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What is the SI unit of capacitance?",
+    "correct_answer": "Farad",
+    "decoys": ["Ohm", "Weber", "Siemens"],
+    "image_url": null,
+    "source_url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What is the SI base unit of electric current?",
+    "correct_answer": "Ampere",
+    "decoys": ["Volt", "Watt", "Coulomb"],
+    "image_url": null,
+    "source_url": "https://www.nist.gov/pml/owm/metric-si/si-units"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What is the SI unit of frequency?",
+    "correct_answer": "Hertz",
+    "decoys": ["Joule", "Pascal", "Newton"],
+    "image_url": null,
+    "source_url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What does USB stand for?",
+    "correct_answer": "Universal Serial Bus",
+    "decoys": ["Unified System Bus", "Universal Storage Bridge", "User Serial Band"],
+    "image_url": null,
+    "source_url": "https://www.usb.org/compliance"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which interface carries digital video and audio between consumer electronics devices?",
+    "correct_answer": "HDMI",
+    "decoys": ["PS/2", "RS-232", "PATA"],
+    "image_url": null,
+    "source_url": "https://www.hdmi.org/spec/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which relationship best describes machine learning?",
+    "correct_answer": "It is a branch of artificial intelligence",
+    "decoys": ["It is a branch of electrical power engineering", "It is a branch of mechanical manufacturing", "It is a branch of analog broadcasting"],
+    "image_url": null,
+    "source_url": "https://www.nist.gov/system/files/documents/2021/08/20/ai-rmf-rif-0025-attachment2.pdf"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What kind of training data is used in supervised machine learning?",
+    "correct_answer": "Labeled data",
+    "decoys": ["Unlabeled data only", "Encrypted data only", "Random bytes only"],
+    "image_url": null,
+    "source_url": "https://www.nist.gov/system/files/documents/2021/08/20/ai-rmf-rif-0025-attachment2.pdf"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "Which outputs are characteristic examples of an artificial intelligence system in the NIST definition?",
+    "correct_answer": "Predictions, recommendations, or decisions",
+    "decoys": ["Only electrical voltages", "Only compressed archives", "Only database indexes"],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/AI"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What mechanism forms the sole architectural basis of the Transformer introduced in Attention Is All You Need?",
+    "correct_answer": "Attention",
+    "decoys": ["Recurrence", "Convolution", "Decision trees"],
+    "image_url": null,
+    "source_url": "https://research.google/pubs/attention-is-all-you-need/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "en",
+    "question_text": "What is generative AI designed to produce?",
+    "correct_answer": "Synthetic content",
+    "decoys": ["Physical electrical current", "Network cable signals", "Database storage sectors"],
+    "image_url": null,
+    "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
+  }
+]

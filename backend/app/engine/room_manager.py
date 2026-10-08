@@ -1,0 +1,186 @@
+from fastapi import APIRouter, Depends, HTTPException, WebSocket, WebSocketDisconnect, Query, status
+from typing import Annotated
+from pydantic import BaseModel, Field, ValidationError
+import secrets
+import string
+from authentication.current_user import get_current_user
+from dataProcessing.models import User
+from .utils import GameError, lobby_update
+from .room_models import Room, RoomMetaData, RoomPhase, RoomSettings
+from .events import join_room, process_event, sync_current_phase
+from json import JSONDecodeError
+
+router = APIRouter(prefix="/room", tags=["Room"])
+
+class RoomManager():
+    def __init__(self):
+        self.rooms : Annotated[dict[str, Room], Field(description="Dictionary of rooms with room_id as key and Room object as value")] = {}
+
+    async def connect(self, ws: WebSocket, room_id: str):
+        await ws.accept()
+        if not ws.state.user_id or not ws.state.user_name:
+            raise GameError("INVALID_PAYLOAD", "Missing user_id or user_name in WebSocket state")
+        join_room(self.rooms, ws, room_id, ws.state.user_id, ws.state.user_name)
+        await self.broadcast(lobby_update(self.rooms[room_id]), room_id, None)
+        await sync_current_phase(self, room_id, ws.state.user_id)
+
+    async def broadcast(self, data: Annotated[str | dict, Field(description="Data in JSON format")], room_id: str,
+                        exclude : Annotated[str, Field(description="Player ID to exclude from broadcast")] = None):
+        if room_id not in self.rooms:
+            return
+        for id, player in self.rooms.get(room_id).players.copy().items():
+            if id == exclude:
+                continue
+            try:
+                if player.is_present:
+                    await player.ws.send_json(data)
+            except Exception:
+                self.mark_disconnected(id, room_id)
+
+    async def send_to_player(self, data: Annotated[str | dict, Field(description="Data in JSON format")], room_id: str, player_id: str):
+        if room_id not in self.rooms:
+            return
+        player = self.rooms.get(room_id).players.get(player_id)
+        if player is None or not player.is_present:
+            return
+        try:
+            await player.ws.send_json(data)
+        except Exception:
+            self.mark_disconnected(player_id, room_id)
+
+    async def remove_connection(self, player_id: str, room_id: str):
+        """
+            remove disconnected user from the list of active rooms
+        """
+        if room_id not in self.rooms:
+            return
+        player = self.rooms.get(room_id).players.get(player_id)
+        try:
+            if player is not None:
+                await player.ws.close()
+        except Exception:
+            pass
+        if player is not None:
+            del self.rooms[room_id].players[player_id]
+        if room_id in self.rooms and not self.rooms[room_id].players:
+            del self.rooms[room_id]
+
+    def mark_disconnected(self, player_id: str, room_id: str):
+        """
+            Mark a user as disconnected in the room, but keep them in the room for a while in case they reconnect.
+        """
+        if room_id not in self.rooms:
+            return
+        player = self.rooms.get(room_id).players.get(player_id)
+        if player is not None:
+            player.is_present = False
+            # if the last player in the room disconnected, we remove the room from the list of active rooms
+            if not any(p.is_present for p in self.rooms[room_id].players.values()):
+                del self.rooms[room_id]
+
+manager = RoomManager()
+
+ROOM_CODE_ALPHABET = string.ascii_uppercase + string.digits
+
+
+class RoomResponse(BaseModel):
+    room_id: str
+
+
+class RoomStatusResponse(BaseModel):
+    room_id: str
+    status: str
+
+
+@router.post("", response_model=RoomResponse, status_code=status.HTTP_201_CREATED)
+async def create_room(
+    current_user: Annotated[User, Depends(get_current_user)],
+) -> RoomResponse:
+    for _ in range(20):
+        room_id = "".join(secrets.choice(ROOM_CODE_ALPHABET) for _ in range(6))
+        if room_id not in manager.rooms:
+            manager.rooms[room_id] = Room(
+                meta_data=RoomMetaData(
+                    host_id=str(current_user.id),
+                    settings=RoomSettings(),
+                ),
+                players={},
+            )
+            return RoomResponse(room_id=room_id)
+    raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Could not allocate a room code")
+
+
+@router.get("/{room_id}", response_model=RoomStatusResponse)
+async def get_room_status(
+    room_id: str,
+    _current_user: Annotated[User, Depends(get_current_user)],
+) -> RoomStatusResponse:
+    normalized = room_id.strip().upper()
+    room = manager.rooms.get(normalized)
+    if room is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Room not found")
+    if len(room.players) >= room.meta_data.settings.max_players:
+        room_status = "full"
+    elif room.meta_data.phase.current_state != RoomPhase.LOBBY:
+        room_status = "in_progress"
+    else:
+        room_status = "open"
+    return RoomStatusResponse(room_id=normalized, status=room_status)
+
+def get_available_rooms(manager: RoomManager = manager) -> dict[str, Room]:
+    """
+        Get available rooms with their player count and settings.
+    """
+    return {
+        room_id: {
+            "player_count": len(room.players),
+            "settings": room.meta_data.settings.model_dump(),
+        } for room_id, room in manager.rooms.items()
+    }
+
+@router.websocket("/{room_id}")
+async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], user_name : Annotated[str, Query()]):
+
+    # here i need to retrieve user_id, user_name form JWT... To be implemented by Auth responsible
+    # for now i will use query params.
+
+    ws.state.user_id = user_id
+    ws.state.user_name = user_name
+
+    try:
+        await manager.connect(ws, room_id)
+        while True:
+            try:
+                if (
+                    room_id not in manager.rooms
+                    or user_id not in manager.rooms[room_id].players
+                    or manager.rooms[room_id].players[user_id].ws is not ws
+                ): 
+                    break  # The room, player, or connection is no longer active
+                request = await ws.receive_json()
+                event_name = request.get("event")
+                data = request.get("data")
+                await process_event(manager, room_id, user_id, user_name, event_name, data)
+            except GameError as e:
+                await manager.send_to_player(e.to_dict(), room_id, user_id)
+            except JSONDecodeError:
+                await manager.send_to_player({"event": "ERROR", "data": {"code": "INVALID_PAYLOAD", "message": "Invalid JSON format"}}, room_id, user_id)
+            except ValidationError:
+                await manager.send_to_player({"event": "ERROR", "data": {"code": "INVALID_PAYLOAD", "message": "Invalid Data"}}, room_id, user_id)
+    except WebSocketDisconnect:
+        manager.mark_disconnected(user_id, room_id)
+        if room_id in manager.rooms:
+            await manager.broadcast(lobby_update(manager.rooms[room_id]), room_id, user_id)
+    except GameError as e:
+        if e.error_code == "FULL_ROOM":
+            # send manually without using send_to_player because the player is not in the room yet
+            try:
+                await ws.send_json(e.to_dict())
+                await ws.close(code=1008, reason=e.message)
+            except Exception:
+                print(f"An unexpected error occurred while sending FULL_ROOM error. Type: {type(e).__name__} | Message: {e}")
+        else:
+            await manager.send_to_player(e.to_dict(), room_id, user_id)
+    except Exception as e:
+        print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
+        await manager.remove_connection(ws.state.user_id, room_id)

@@ -1,0 +1,902 @@
+[
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the capital of Canada?",
+    "correct_answer": "Ottawa",
+    "decoys": ["Canberra", "Wellington", "Dublin"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Canada"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the capital of Australia?",
+    "correct_answer": "Canberra",
+    "decoys": ["Ottawa", "Wellington", "Pretoria"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Australia"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the capital of Japan?",
+    "correct_answer": "Tokyo",
+    "decoys": ["Seoul", "Bangkok", "Manila"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Japan"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the capital of New Zealand?",
+    "correct_answer": "Wellington",
+    "decoys": ["Canberra", "Suva", "Apia"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/New-Zealand"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the capital of Norway?",
+    "correct_answer": "Oslo",
+    "decoys": ["Stockholm", "Helsinki", "Copenhagen"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Norway"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the capital of Argentina?",
+    "correct_answer": "Buenos Aires",
+    "decoys": ["Montevideo", "Santiago", "Lima"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Argentina"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the capital of Kenya?",
+    "correct_answer": "Nairobi",
+    "decoys": ["Kampala", "Dodoma", "Kigali"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Kenya"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the capital of Thailand?",
+    "correct_answer": "Bangkok",
+    "decoys": ["Hanoi", "Phnom Penh", "Vientiane"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Thailand"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the capital of Portugal?",
+    "correct_answer": "Lisbon",
+    "decoys": ["Madrid", "Rome", "Athens"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Portugal"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the capital of South Korea?",
+    "correct_answer": "Seoul",
+    "decoys": ["Tokyo", "Beijing", "Ulaanbaatar"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/South-Korea"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which is the largest ocean basin by surface area?",
+    "correct_answer": "Pacific Ocean",
+    "decoys": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/biggestocean.html"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which is the smallest of the world's five ocean basins?",
+    "correct_answer": "Arctic Ocean",
+    "decoys": ["Indian Ocean", "Atlantic Ocean", "Southern Ocean"],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/smallestocean.html"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which is the world's second-largest ocean basin?",
+    "correct_answer": "Atlantic Ocean",
+    "decoys": ["Indian Ocean", "Southern Ocean", "Arctic Ocean"],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/atlantic.html"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which named ocean extends from Antarctica's coast to 60 degrees south latitude under the U.S. definition?",
+    "correct_answer": "Southern Ocean",
+    "decoys": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/howmanyoceans.html"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which is the largest continent by area?",
+    "correct_answer": "Asia",
+    "decoys": ["Africa", "North America", "South America"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Asia"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which is the smallest continent by area?",
+    "correct_answer": "Australia",
+    "decoys": ["Europe", "Antarctica", "South America"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Australia"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "On which continent is the geographic South Pole located?",
+    "correct_answer": "Antarctica",
+    "decoys": ["Australia", "South America", "Africa"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Antarctica"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which continent is crossed by the Equator and both the Tropic of Cancer and the Tropic of Capricorn?",
+    "correct_answer": "Africa",
+    "decoys": ["Asia", "South America", "North America"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Africa"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which ocean lies between Africa, Asia, Australia, and the Southern Ocean?",
+    "correct_answer": "Indian Ocean",
+    "decoys": ["Atlantic Ocean", "Pacific Ocean", "Arctic Ocean"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Indian-Ocean"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which continent is bordered by the Arctic, Atlantic, and Pacific oceans?",
+    "correct_answer": "North America",
+    "decoys": ["Africa", "Europe", "South America"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/North-America"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Mount Everest belongs to which mountain system?",
+    "correct_answer": "Himalayas",
+    "decoys": ["Andes", "Alps", "Rocky Mountains"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Mount-Everest"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "K2 belongs to which mountain range?",
+    "correct_answer": "Karakoram Range",
+    "decoys": ["Hindu Kush", "Alps", "Ural Mountains"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/K2"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which country is Mount Kilimanjaro located?",
+    "correct_answer": "Tanzania",
+    "decoys": ["Kenya", "Uganda", "Ethiopia"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Kilimanjaro"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Aconcagua is part of which mountain system?",
+    "correct_answer": "Andes",
+    "decoys": ["Alps", "Himalayas", "Atlas Mountains"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Aconcagua"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Denali belongs to which mountain range?",
+    "correct_answer": "Alaska Range",
+    "decoys": ["Cascade Range", "Brooks Range", "Sierra Nevada"],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/dena/learn/nature/denali.htm"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "On which continent is the Plateau of Tibet located?",
+    "correct_answer": "Asia",
+    "decoys": ["Africa", "Europe", "South America"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Plateau-of-Tibet"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "On which continent is the Sahara located?",
+    "correct_answer": "Africa",
+    "decoys": ["Asia", "Australia", "South America"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Sahara-desert-Africa"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which country is the Atacama Desert chiefly located?",
+    "correct_answer": "Chile",
+    "decoys": ["Peru", "Argentina", "Bolivia"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Atacama-Desert"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Across which two countries does the Gobi extend?",
+    "correct_answer": "Mongolia and China",
+    "decoys": ["India and Pakistan", "Iran and Afghanistan", "Kazakhstan and Uzbekistan"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Gobi"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which country is the Great Victoria Desert located?",
+    "correct_answer": "Australia",
+    "decoys": ["Namibia", "Chile", "Mongolia"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Great-Victoria-Desert"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Into which sea does the Danube River flow?",
+    "correct_answer": "Black Sea",
+    "decoys": ["Baltic Sea", "Adriatic Sea", "Aegean Sea"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Danube-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Into which sea does the Nile River empty?",
+    "correct_answer": "Mediterranean Sea",
+    "decoys": ["Red Sea", "Arabian Sea", "Black Sea"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Nile-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Into which ocean does the Amazon River discharge?",
+    "correct_answer": "Atlantic Ocean",
+    "decoys": ["Pacific Ocean", "Indian Ocean", "Southern Ocean"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Amazon-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Into which sea does the Rhine River flow?",
+    "correct_answer": "North Sea",
+    "decoys": ["Baltic Sea", "Black Sea", "Adriatic Sea"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Rhine-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which country is Lake Baikal located?",
+    "correct_answer": "Russia",
+    "decoys": ["Canada", "Kazakhstan", "Mongolia"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/754/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which two countries share Lake Titicaca?",
+    "correct_answer": "Peru and Bolivia",
+    "decoys": ["Chile and Argentina", "Ecuador and Colombia", "Brazil and Paraguay"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Lake-Titicaca"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which is the world's largest inland body of water by surface area?",
+    "correct_answer": "Caspian Sea",
+    "decoys": ["Lake Superior", "Lake Victoria", "Aral Sea"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Caspian-Sea"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which lake is the source of the Blue Nile?",
+    "correct_answer": "Lake Tana",
+    "decoys": ["Lake Turkana", "Lake Albert", "Lake Kivu"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Lake-Tana"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which of the five Great Lakes lies entirely within the United States?",
+    "correct_answer": "Lake Michigan",
+    "decoys": ["Lake Superior", "Lake Huron", "Lake Erie"],
+    "image_url": null,
+    "source_url": "https://www.epa.gov/sites/default/files/2018-10/documents/water-quality-great-lakes-sid.pdf"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which river flows through Paris?",
+    "correct_answer": "Seine River",
+    "decoys": ["Rhine River", "Loire River", "Rhone River"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Seine-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which is the world's largest island when continents are excluded?",
+    "correct_answer": "Greenland",
+    "decoys": ["New Guinea", "Borneo", "Madagascar"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Greenland"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Sicily is an island of which country?",
+    "correct_answer": "Italy",
+    "decoys": ["Greece", "Spain", "Croatia"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Sicily-island-Italy"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Java is an island of which country?",
+    "correct_answer": "Indonesia",
+    "decoys": ["Philippines", "Malaysia", "Papua New Guinea"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Java-island-Indonesia"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which ocean is Madagascar located?",
+    "correct_answer": "Indian Ocean",
+    "decoys": ["Atlantic Ocean", "Pacific Ocean", "Southern Ocean"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Madagascar"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "The Galapagos Islands are part of which country?",
+    "correct_answer": "Ecuador",
+    "decoys": ["Peru", "Colombia", "Chile"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/1/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "The Canary Islands are an autonomous community of which country?",
+    "correct_answer": "Spain",
+    "decoys": ["Portugal", "Morocco", "France"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Canary-Islands"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "The Aleutian Islands are part of which U.S. state?",
+    "correct_answer": "Alaska",
+    "decoys": ["Hawaii", "Washington", "California"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Aleutian-Islands"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which is the largest of Japan's four main islands?",
+    "correct_answer": "Honshu",
+    "decoys": ["Hokkaido", "Kyushu", "Shikoku"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Honshu"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which three countries share the island of Borneo?",
+    "correct_answer": "Indonesia, Malaysia, and Brunei",
+    "decoys": ["Indonesia, Malaysia, and Singapore", "Malaysia, Brunei, and Thailand", "Indonesia, Brunei, and the Philippines"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Borneo-island-Pacific-Ocean"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Corsica is a territorial collectivity of which country?",
+    "correct_answer": "France",
+    "decoys": ["Italy", "Spain", "Greece"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Corsica"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which country is Portugal's only land neighbor?",
+    "correct_answer": "Spain",
+    "decoys": ["France", "Italy", "Andorra"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Portugal"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which country completely surrounds Lesotho?",
+    "correct_answer": "South Africa",
+    "decoys": ["Botswana", "Eswatini", "Namibia"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Lesotho"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which country surrounds The Gambia on every landward side?",
+    "correct_answer": "Senegal",
+    "decoys": ["Guinea", "Mali", "Mauritania"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/The-Gambia"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which country completely surrounds Vatican City?",
+    "correct_answer": "Italy",
+    "decoys": ["France", "Switzerland", "Austria"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Vatican-City"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Between which two countries is Nepal located?",
+    "correct_answer": "India and China",
+    "decoys": ["India and Bhutan", "China and Pakistan", "Bangladesh and Bhutan"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Nepal"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which two countries share land borders with Uruguay?",
+    "correct_answer": "Argentina and Brazil",
+    "decoys": ["Chile and Argentina", "Brazil and Paraguay", "Paraguay and Bolivia"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Uruguay"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which country occupies the isthmus that forms the land bridge between North America and South America?",
+    "correct_answer": "Panama",
+    "decoys": ["Costa Rica", "Colombia", "Nicaragua"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Panama"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which of these Southeast Asian countries is landlocked?",
+    "correct_answer": "Laos",
+    "decoys": ["Thailand", "Vietnam", "Malaysia"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Laos"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which of these South American countries is landlocked?",
+    "correct_answer": "Bolivia",
+    "decoys": ["Ecuador", "Guyana", "Uruguay"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Bolivia"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which country shares Denmark's only land boundary on the Jutland Peninsula?",
+    "correct_answer": "Germany",
+    "decoys": ["Sweden", "Norway", "Netherlands"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Denmark"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which river carved the Grand Canyon?",
+    "correct_answer": "Colorado River",
+    "decoys": ["Columbia River", "Rio Grande", "Missouri River"],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/grca/learn/nature/geologicformations.htm"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "On which river are Victoria Falls located?",
+    "correct_answer": "Zambezi River",
+    "decoys": ["Congo River", "Limpopo River", "Orange River"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/509/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which two Great Lakes are connected by the Niagara River?",
+    "correct_answer": "Lake Erie and Lake Ontario",
+    "decoys": ["Lake Huron and Lake Erie", "Lake Michigan and Lake Huron", "Lake Superior and Lake Huron"],
+    "image_url": null,
+    "source_url": "https://npgallery.nps.gov/GetAsset/a177b303-6c93-45ef-9412-2bb19b34ec6d/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which country is Angel Falls located?",
+    "correct_answer": "Venezuela",
+    "decoys": ["Colombia", "Guyana", "Brazil"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Angel-Falls"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Iguazu Falls lie on the border between which two countries?",
+    "correct_answer": "Argentina and Brazil",
+    "decoys": ["Brazil and Paraguay", "Argentina and Uruguay", "Paraguay and Bolivia"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/303/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which part of the United Kingdom is the Giant's Causeway located?",
+    "correct_answer": "Northern Ireland",
+    "decoys": ["Scotland", "Wales", "England"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/369/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Off the coast of which country is the Great Barrier Reef located?",
+    "correct_answer": "Australia",
+    "decoys": ["Indonesia", "Philippines", "New Zealand"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/154/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which country is the Ngorongoro Conservation Area located?",
+    "correct_answer": "Tanzania",
+    "decoys": ["Kenya", "Uganda", "Rwanda"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/39/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which country is the Salar de Uyuni salt flat located?",
+    "correct_answer": "Bolivia",
+    "decoys": ["Chile", "Argentina", "Peru"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Uyuni-Salt-Flat"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which country is Ha Long Bay located?",
+    "correct_answer": "Vietnam",
+    "decoys": ["Thailand", "Malaysia", "Philippines"],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/672/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which biome is characterized by dense vegetation, warm conditions, and abundant year-round rainfall?",
+    "correct_answer": "Tropical rainforest",
+    "decoys": ["Temperate grassland", "Boreal forest", "Polar desert"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/tropical-rainforest"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which biome is a treeless cold region found mainly north of the Arctic Circle?",
+    "correct_answer": "Tundra",
+    "decoys": ["Savanna", "Chaparral", "Temperate rainforest"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/tundra"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which biome is also called the boreal forest and is dominated by conifers?",
+    "correct_answer": "Taiga",
+    "decoys": ["Tundra", "Savanna", "Steppe"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/taiga"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which biome is typically grassland with scattered trees in tropical and subtropical regions?",
+    "correct_answer": "Savanna",
+    "decoys": ["Taiga", "Tundra", "Temperate rainforest"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/savanna"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which climate type generally has hot, dry summers and cool, wet winters?",
+    "correct_answer": "Mediterranean climate",
+    "decoys": ["Tundra climate", "Tropical monsoon climate", "Humid continental climate"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/Mediterranean-climate"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What climate term describes a major seasonal reversal of prevailing winds?",
+    "correct_answer": "Monsoon",
+    "decoys": ["Chinook", "Mistral", "Sirocco"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/monsoon"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the dry area on the sheltered side of a mountain range called?",
+    "correct_answer": "Rain shadow",
+    "decoys": ["Floodplain", "Watershed", "Thermal belt"],
+    "image_url": null,
+    "source_url": "https://prod-01-asg-www-climate.woc.noaa.gov/news-features/featured-images/rain-shadows-summits-hawaii"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What term means ground that remains at or below freezing for at least two consecutive years?",
+    "correct_answer": "Permafrost",
+    "decoys": ["Glacier", "Sea ice", "Snowfield"],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/news/featured-story/disappearing-act-alaska"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which cold ocean current contributes to the Atacama Desert's aridity?",
+    "correct_answer": "Humboldt Current",
+    "decoys": ["Benguela Current", "Canary Current", "California Current"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Atacama-Desert"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which coastal ecosystem is dominated by salt-tolerant trees and shrubs in tropical and subtropical regions?",
+    "correct_answer": "Mangrove forest",
+    "decoys": ["Kelp forest", "Salt marsh", "Seagrass meadow"],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/mangroves.html"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which city is the main headquarters of the United Nations?",
+    "correct_answer": "New York City",
+    "decoys": ["Geneva", "Vienna", "The Hague"],
+    "image_url": null,
+    "source_url": "https://www.un.org/en/our-work"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which city is UNESCO headquartered?",
+    "correct_answer": "Paris",
+    "decoys": ["Rome", "Geneva", "Brussels"],
+    "image_url": null,
+    "source_url": "https://www.unesco.org/en/house"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which city is the International Court of Justice seated?",
+    "correct_answer": "The Hague",
+    "decoys": ["Geneva", "Brussels", "Vienna"],
+    "image_url": null,
+    "source_url": "https://www.icj-cij.org/court"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which city is the headquarters of the African Union?",
+    "correct_answer": "Addis Ababa",
+    "decoys": ["Nairobi", "Kigali", "Accra"],
+    "image_url": null,
+    "source_url": "https://www.au.int/en/visit-au-headquarters"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "In which city is the ASEAN Secretariat located?",
+    "correct_answer": "Jakarta",
+    "decoys": ["Bangkok", "Manila", "Singapore"],
+    "image_url": null,
+    "source_url": "https://asean.org/contact-detail/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the official language of Brazil?",
+    "correct_answer": "Portuguese",
+    "decoys": ["Spanish", "French", "Italian"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Brazil"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which language is spoken by nearly all Argentines?",
+    "correct_answer": "Spanish",
+    "decoys": ["Portuguese", "French", "Italian"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Argentina/Language-and-religion"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the official language of Austria?",
+    "correct_answer": "German",
+    "decoys": ["Dutch", "French", "Italian"],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Austria"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which two languages are Canada's official languages?",
+    "correct_answer": "English and French",
+    "decoys": ["English and Spanish", "French and German", "English and Dutch"],
+    "image_url": null,
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/language-skills.html"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which set lists all four national languages of Switzerland?",
+    "correct_answer": "German, French, Italian, and Romansh",
+    "decoys": ["German, French, Italian, and Dutch", "German, French, Romansh, and Spanish", "French, Italian, Romansh, and Portuguese"],
+    "image_url": null,
+    "source_url": "https://www.aboutswitzerland.eda.admin.ch/en/languages-and-dialects"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the latitude of the Equator?",
+    "correct_answer": "0 degrees latitude",
+    "decoys": ["23.5 degrees north", "66.5 degrees north", "90 degrees south"],
+    "image_url": null,
+    "source_url": "https://education.nationalgeographic.org/resource/latitude/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What is the longitude of the prime meridian?",
+    "correct_answer": "0 degrees longitude",
+    "decoys": ["90 degrees east", "90 degrees west", "180 degrees longitude"],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/longitude.html"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which latitude identifies the geographic North Pole?",
+    "correct_answer": "90 degrees north",
+    "decoys": ["66.5 degrees north", "23.5 degrees north", "0 degrees latitude"],
+    "image_url": null,
+    "source_url": "https://education.nationalgeographic.org/resource/latitude/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which latitude identifies the geographic South Pole?",
+    "correct_answer": "90 degrees south",
+    "decoys": ["66.5 degrees south", "23.5 degrees south", "0 degrees latitude"],
+    "image_url": null,
+    "source_url": "https://education.nationalgeographic.org/resource/latitude/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which cardinal direction is opposite east?",
+    "correct_answer": "West",
+    "decoys": ["North", "South", "East"],
+    "image_url": null,
+    "source_url": "https://education.nationalgeographic.org/resource/sun-earth-and-cardinal-directions/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "Which intercardinal direction is opposite northeast?",
+    "correct_answer": "Southwest",
+    "decoys": ["Southeast", "Northwest", "Northeast"],
+    "image_url": null,
+    "source_url": "https://repository.library.noaa.gov/view/noaa/42218/noaa_42218_DS1.pdf"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What do contour lines on a topographic map connect?",
+    "correct_answer": "Points of equal elevation",
+    "decoys": ["Points of equal latitude", "Points of equal rainfall", "Points of equal temperature"],
+    "image_url": null,
+    "source_url": "https://pubs.usgs.gov/gip/TopographicMapSymbols/topomapsymbols.pdf"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "On a conventional map, which direction does the top usually represent?",
+    "correct_answer": "North",
+    "decoys": ["South", "East", "West"],
+    "image_url": null,
+    "source_url": "https://natural-resources.canada.ca/maps-tools-publications/maps/topographic-maps/orienting-topographic-map"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What does longitude measure?",
+    "correct_answer": "Distance east or west of the prime meridian",
+    "decoys": ["Distance north or south of the Equator", "Height above mean sea level", "Distance from Earth's center"],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/longitude.html"
+  },
+  {
+    "category_id": 3,
+    "language_code": "en",
+    "question_text": "What does latitude measure?",
+    "correct_answer": "Distance north or south of the Equator",
+    "decoys": ["Distance east or west of the prime meridian", "Height above mean sea level", "Distance from Earth's center"],
+    "image_url": null,
+    "source_url": "https://education.nationalgeographic.org/resource/latitude/"
+  }
+]
