@@ -15,6 +15,8 @@ RUN uv sync --frozen --no-dev --no-install-project
 COPY app ./app
 COPY alembic ./alembic
 COPY alembic.ini ./
+COPY scripts/start_backend.sh /app/scripts/start_backend.sh
+
 
 EXPOSE 8000
 

@@ -30,17 +30,7 @@ env_template "DATABASE_URL" {
 }
 
 exec {
-  command = [
-    "/usr/local/bin/uv",
-    "run",
-    "fastapi",
-    "run",
-    "app/main.py",
-    "--host",
-    "0.0.0.0",
-    "--port",
-    "8000",
-  ]
+  command = ["/bin/sh", "/app/scripts/start_backend.sh"]
 
   # Changing the PostgreSQL superuser password requires a coordinated database
   # rotation, not merely restarting FastAPI with a different environment value.

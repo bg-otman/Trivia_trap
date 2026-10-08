@@ -40,8 +40,10 @@ export class GameWebSocketClient {
     this.roomId = roomId;
     this.handlers.onStateChange("CONNECTING");
     log("Connecting...");
-    const baseUrl =
-      process.env.NEXT_PUBLIC_WEBSOCKET_URL ?? "ws://localhost:8000";
+
+    const protocol = window.location.protocol === "https:" ? "wss" : "ws";
+    const baseUrl = `${protocol}://${window.location.host}/ws`;
+      
     const sessionUser = getSessionUser();
     const url = new URL(
       `${baseUrl.replace(/\/$/, "")}/room/${encodeURIComponent(roomId)}`,
