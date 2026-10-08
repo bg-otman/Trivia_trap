@@ -1,24 +1,18 @@
-import ProfilePage from "@/components/Profile/ProfilePage";
-import { getUser, UserApiError } from "@/lib/getUser";
-import { redirect } from "next/navigation";
-import type { UserData } from "@/types/userData";
+import type { Metadata } from "next";
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+import { ProfileView } from "@/components/profile/profile-view";
+import { requireUser } from "@/lib/require-user";
 
+export const metadata: Metadata = {
+  title: "Profile | Trivia Trap",
+  description: "Your Trivia Trap player identity, stats, achievements, and recent games.",
+};
 
-export default async function Profile() {
-    let user: UserData;
-
-    try {
-        user = await getUser({ username: undefined });
-    } catch (error) {
-        if (!(error instanceof UserApiError) || error.status !== 401) {
-            throw error;
-        }
-        redirect("/login?next=/profile");
-    }
-
-    return (
-        <div>
-            <ProfilePage user={user} isOwner={true} />
-        </div>
-    );
+export default async function ProfilePage() {
+  await requireUser("/profile");
+  return (
+    <DashboardShell>
+      <ProfileView />
+    </DashboardShell>
+  );
 }

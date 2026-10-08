@@ -58,8 +58,8 @@ function AllAchievements({ achievements, toggleAchievements, onAchievementClick 
 
 export default function PlayerAchievements({ achievements }: { achievements: UserAchievements[] }) {
 
-    const achievements_count: Number = achievements.length;
-    const unlocked_achievements: Number = achievements.filter(a => a.unlocked === true).length;
+    const achievements_count: number = achievements.length;
+    const unlocked_achievements: number = achievements.filter(a => a.unlocked === true).length;
 
     const [displayAll, toggleAchievements] = useState(false);
     const [selectedAchievement, setSelectedAchievement] = useState<UserAchievements | null>(null);

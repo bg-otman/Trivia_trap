@@ -107,15 +107,14 @@ export function ChartBarDemoLegend({ chartData }: { chartData: CategoryAnalytics
         <ChartLegend
         glyphName={"category"}
         className="m-2"
-        content={(props: any) => (
-          <ChartLegendContent 
-            {...props} 
+        content={(
+          <ChartLegendContent
             payload={[
               { value: "knowledge_accuracy", type: "square", color: "var(--secondary)" },
               { value: "bluff_efficiency", type: "square", color: "var(--accent)" }
             ]}
           />
-        )} 
+        )}
       />
 
         <Bar xAxisId="bottom" dataKey="knowledge_accuracy" fill="url(#colorKnowledge)" radius={[6, 6, 0, 0]}>

@@ -1,15 +1,11 @@
 "use client";
 import { useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import { GameWebSocketClient } from "@/lib/websocket/websocket-client";
-import { createUuid, getSessionUser } from "@/lib/websocket/session-user";
+import { createUuid, type SessionUser } from "@/lib/websocket/session-user";
 import { createGameStore, initialGameStoreState } from "@/stores/game-store";
-export function useGameWebSocket(roomId?: string) {
+export function useGameWebSocket(roomId: string | undefined, sessionUser: SessionUser) {
   const store = useMemo(() => createGameStore(), []);
   const disconnectTimer = useRef<number | null>(null);
-  const sessionUser = useMemo(
-    () => typeof window === "undefined" ? null : getSessionUser(),
-    [],
-  );
   const client = useMemo(() => new GameWebSocketClient({
     onStateChange: store.setConnectionState,
     onMessage: (message) => {
@@ -57,7 +53,7 @@ export function useGameWebSocket(roomId?: string) {
         console.warn("[WS] Ignored malformed server event.");
       }
     },
-  }), [store, sessionUser?.id]);
+  }, sessionUser), [store, sessionUser]);
   const state = useSyncExternalStore(store.subscribe, store.getSnapshot, () => initialGameStoreState);
   const updateSettings = useMemo(() => client.updateSettings.bind(client), [client]);
   const sendChatMessage = useMemo(() => client.sendChatMessage.bind(client), [client]);

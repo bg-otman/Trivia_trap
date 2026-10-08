@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "Enter a room code and join your Trivia Trap game.",
 };
 
-export default function JoinPage() {
-  return <JoinRoom />;
+export default async function JoinPage({ searchParams }: {
+  searchParams: Promise<{ code?: string }>;
+}) {
+  const { code } = await searchParams;
+  return <JoinRoom initialCode={code} />;
 }

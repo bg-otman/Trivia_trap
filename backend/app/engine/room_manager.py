@@ -1,8 +1,12 @@
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Query
+from fastapi import APIRouter, Depends, HTTPException, WebSocket, WebSocketDisconnect, Query, status
 from typing import Annotated
-from pydantic import Field, ValidationError
+from pydantic import BaseModel, Field, ValidationError
+import secrets
+import string
+from authentication.current_user import get_current_user
+from dataProcessing.models import User
 from .utils import GameError, lobby_update
-from .room_models import Room
+from .room_models import Room, RoomMetaData, RoomPhase, RoomSettings
 from .events import join_room, process_event, sync_current_phase
 from json import JSONDecodeError
 
@@ -75,6 +79,53 @@ class RoomManager():
                 del self.rooms[room_id]
 
 manager = RoomManager()
+
+ROOM_CODE_ALPHABET = string.ascii_uppercase + string.digits
+
+
+class RoomResponse(BaseModel):
+    room_id: str
+
+
+class RoomStatusResponse(BaseModel):
+    room_id: str
+    status: str
+
+
+@router.post("", response_model=RoomResponse, status_code=status.HTTP_201_CREATED)
+async def create_room(
+    current_user: Annotated[User, Depends(get_current_user)],
+) -> RoomResponse:
+    for _ in range(20):
+        room_id = "".join(secrets.choice(ROOM_CODE_ALPHABET) for _ in range(6))
+        if room_id not in manager.rooms:
+            manager.rooms[room_id] = Room(
+                meta_data=RoomMetaData(
+                    host_id=str(current_user.id),
+                    settings=RoomSettings(),
+                ),
+                players={},
+            )
+            return RoomResponse(room_id=room_id)
+    raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Could not allocate a room code")
+
+
+@router.get("/{room_id}", response_model=RoomStatusResponse)
+async def get_room_status(
+    room_id: str,
+    _current_user: Annotated[User, Depends(get_current_user)],
+) -> RoomStatusResponse:
+    normalized = room_id.strip().upper()
+    room = manager.rooms.get(normalized)
+    if room is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Room not found")
+    if len(room.players) >= room.meta_data.settings.max_players:
+        room_status = "full"
+    elif room.meta_data.phase.current_state != RoomPhase.LOBBY:
+        room_status = "in_progress"
+    else:
+        room_status = "open"
+    return RoomStatusResponse(room_id=normalized, status=room_status)
 
 def get_available_rooms(manager: RoomManager = manager) -> dict[str, Room]:
     """
