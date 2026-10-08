@@ -1,9 +1,8 @@
 import { ArrowUpRight, Users } from "lucide-react";
-import { Avatar, AvatarBadge, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PlayerAvatar } from "@/components/game/players/player-avatar";
 import { onlineFriends } from "@/mocks/dashboard";
-import { cn } from "@/lib/utils";
 
 export function FriendsOnline() {
   return (
@@ -18,14 +17,19 @@ export function FriendsOnline() {
       <CardContent className="px-0">
         <div className="divide-y divide-white/[0.055]">
           {onlineFriends.map((friend) => (
-            <div key={friend.name} className="flex items-center gap-3 px-4 py-3.5">
-              <Avatar size="lg">
-                <AvatarFallback className={cn("text-xs font-black text-white", friend.color)}>{friend.initials}</AvatarFallback>
-                <AvatarBadge className="bg-trap-success ring-trap-surface" />
-              </Avatar>
+            <div key={friend.name} className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-white/[0.025]">
+              <span className="relative">
+                <PlayerAvatar
+                  name={friend.name}
+                  src={`https://blobatar.dev/?via=dailydev&user=${encodeURIComponent(friend.name)}`}
+                  size={40}
+                  animated
+                />
+                <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-trap-success ring-2 ring-trap-surface" aria-label="Online" />
+              </span>
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-extrabold text-white">{friend.name}</p>
-                <p className="mt-0.5 truncate text-[10px] text-[#777782]">{friend.status}</p>
+                <p className="mt-0.5 truncate text-[10px] font-semibold text-[#777782]">@{friend.username}</p>
               </div>
               <span className="size-2 rounded-full bg-trap-success shadow-[0_0_10px_rgba(74,222,128,0.45)]" aria-label="Online" />
             </div>
