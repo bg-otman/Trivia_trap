@@ -25,13 +25,10 @@ def validate_password_encoding(value: SecretStr) -> SecretStr:
 Password = Annotated[SecretStr, AfterValidator(validate_password_encoding)]
 
 
-class RegisterData(BaseModel):
-    email: EmailStr = Field(max_length=255)
+class UsernameData(BaseModel):
     # Match the room player's maximum name length.
     username: str = Field(min_length=3, max_length=15)
-    password: Password = Field(min_length=15, max_length=128)
 
-    # validate the username start with character and only contain letters and numbers
     @field_validator("username")
     @classmethod
     def validate_username(cls, username: str) -> str:
@@ -40,6 +37,11 @@ class RegisterData(BaseModel):
                 "Username must start with a letter and contain only letters and numbers."
             )
         return username
+
+
+class RegisterData(UsernameData):
+    email: EmailStr = Field(max_length=255)
+    password: Password = Field(min_length=15, max_length=128)
 
     @field_validator("password")
     @classmethod

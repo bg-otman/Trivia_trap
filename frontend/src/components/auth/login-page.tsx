@@ -80,6 +80,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
   const finishSignIn = useCallback(async () => {
     // Remove tokens left by the previous Local Storage implementation.
     localStorage.removeItem("access_token");
+    sessionStorage.removeItem("google_signup_credential");
     const session = await apiFetch("/auth/me");
     if (!session.ok) {
       setMessage("Sign-in succeeded, but the browser could not save your session. Check that the site and API use the same hostname.");
@@ -109,7 +110,12 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
         }
         return;
       }
-      const data = (await response.json()) as { access_token?: string; token_type?: string };
+      const data = (await response.json()) as { requires_username?: boolean; access_token?: string; token_type?: string };
+      if (data.requires_username === true) {
+        sessionStorage.setItem("google_signup_credential", credential);
+        router.replace("/choose-username");
+        return;
+      }
       if (!data.access_token || data.token_type !== "bearer") {
         setMessage("The server did not return a valid login session. Please try again.");
         return;
@@ -121,7 +127,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
       requestInFlight.current = false;
       setPending(false);
     }
-  }, [finishSignIn]);
+  }, [finishSignIn, router]);
 
   function changeMode(next: Mode, afterRequest = false) {
     if (pending && !afterRequest) return;
