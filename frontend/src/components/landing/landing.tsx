@@ -164,7 +164,7 @@ export default function LandingPage() {
                     </nav>
                     <div className="hidden gap-2 sm:flex">
                         <Button asChild className="min-h-9 px-4 " variant="outline"><Link href="/join">Join room</Link></Button>
-                        <Button asChild className="min-h-9 px-4 " variant="flame"><Link href="/room/X7K9P2"><Gamepad2 size={13} /> Create room</Link></Button>
+                        <Button asChild className="min-h-9 px-4 " variant="flame"><Link href="/create-room"><Gamepad2 size={13} /> Create room</Link></Button>
                     </div>
                     <Button
                         className="rounded-lg p-2 lg:hidden"
@@ -188,7 +188,7 @@ export default function LandingPage() {
                             </a>
                         ))}
                         <Button asChild className="text-left text-sm font-display uppercase text-primary"><Link href="/join" onClick={() => setMobileMenu(false)}>Join room</Link></Button>
-                        <Button asChild className="text-left text-sm font-display uppercase text-primary"><Link href="/room/X7K9P2" onClick={() => setMobileMenu(false)}>Create room</Link></Button>
+                        <Button asChild className="text-left text-sm font-display uppercase text-primary"><Link href="/create-room" onClick={() => setMobileMenu(false)}>Create room</Link></Button>
                     </nav>
                 )}
             </motion.header>
@@ -218,7 +218,7 @@ export default function LandingPage() {
                             the decoys before your friends fool the whole room.
                         </p>
                         <div className="mt-8 flex flex-wrap gap-3">
-                            <Button asChild><Link href="/room/X7K9P2"><Gamepad2 size={16} /> Create room</Link></Button>
+                            <Button asChild><Link href="/create-room"><Gamepad2 size={16} /> Create room</Link></Button>
                             <Button asChild variant="outline"><Link href="/join">Enter room code <span className="rounded bg-[#4a4a50] px-2 py-1 text-[10px]">JOIN</span></Link></Button>
                         </div>
                         <p className="mt-7 flex items-center gap-2 text-xs text-[#c1b5bb]">
@@ -488,7 +488,7 @@ export default function LandingPage() {
                                 </div>
                             ))}
                         </div>
-                        <Button asChild className="mt-5 w-full"><Link href="/room/X7K9P2"><Play size={14} fill="currentColor" /> Open game lobby</Link></Button>
+                        <Button asChild className="mt-5 w-full"><Link href="/create-room"><Play size={14} fill="currentColor" /> Open game lobby</Link></Button>
                     </div>
                 </div>
             </section>
@@ -552,7 +552,7 @@ export default function LandingPage() {
                         Create a room, share the code, and start a fast round of trivia deception with your group.
                     </p>
                     <div className="mt-8 flex flex-wrap justify-center gap-3 ">
-                        <Button asChild><Link href="/room/X7K9P2"><Zap size={15} /> Create a room now</Link></Button>
+                        <Button asChild><Link href="/create-room"><Zap size={15} /> Create a room now</Link></Button>
                         <Button asChild variant="outline"><Link href="/join"><Link2 size={15} /> Enter room code</Link></Button>
                     </div>
                     <p className="mt-6 text-[11px] text-[#ac999e]">

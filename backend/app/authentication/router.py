@@ -6,7 +6,7 @@ from authentication.security import hash_password
 from authentication.validation_route import AuthRoute
 from authentication.schemas import LoginData, TokenResponse
 from authentication.security import create_access_token, authenticate_user
-from authentication.session_cookie import set_access_cookie
+from authentication.session_cookie import clear_access_cookie, set_access_cookie
 from typing import Annotated
 
 from authentication.current_user import get_current_user
@@ -74,3 +74,8 @@ async def me(user: Annotated[User, Depends(get_current_user)],) -> UserResponse:
         username=user.username,
         email=user.email,
     )
+
+
+@auth_router.post("/logout", status_code=status.HTTP_204_NO_CONTENT)
+async def logout(response: Response) -> None:
+    clear_access_cookie(response)

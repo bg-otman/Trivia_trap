@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -8,6 +9,8 @@ import {
   Gamepad2,
   History,
   LayoutDashboard,
+  LoaderCircle,
+  LogOut,
   Medal,
   MoreHorizontal,
   Settings,
@@ -17,6 +20,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlayerAvatar } from "@/components/game/players/player-avatar";
+import { apiFetch } from "@/lib/api";
 import { cn } from "@/lib/utils";
 
 const navigation = [
@@ -25,7 +29,7 @@ const navigation = [
     icon: LayoutDashboard,
     href: "/dashboard",
   },
-  { label: "Play / Create Room", icon: Gamepad2, href: "/room/X7K9P2" },
+  { label: "Play / Create Room", icon: Gamepad2, href: "/create-room" },
   { label: "Profile", icon: UserRound, href: "/profile" },
   { label: "Friends", icon: Users },
   { label: "Game History", icon: History },
@@ -57,6 +61,25 @@ export function DashboardSidebar({
   className?: string;
 }) {
   const pathname = usePathname();
+  const [loggingOut, setLoggingOut] = useState(false);
+  const [logoutError, setLogoutError] = useState("");
+
+  async function logout() {
+    if (loggingOut) return;
+    setLoggingOut(true);
+    setLogoutError("");
+
+    try {
+      const response = await apiFetch("/auth/logout", { method: "POST" });
+      if (!response.ok) {
+        throw new Error("Logout failed");
+      }
+      window.location.replace("/");
+    } catch {
+      setLogoutError("Could not log out. Please try again.");
+      setLoggingOut(false);
+    }
+  }
 
   return (
     <aside className={cn("flex h-full flex-col bg-[#151519]", className)}>
@@ -136,6 +159,17 @@ export function DashboardSidebar({
             <MoreHorizontal className="size-4" />
           </Button>
         </div>
+        <Button
+          type="button"
+          variant="ghost"
+          onClick={logout}
+          disabled={loggingOut}
+          className="mt-2 w-full justify-start gap-3 text-[#8f8f99] hover:bg-trap-danger/10 hover:text-trap-danger"
+        >
+          {loggingOut ? <LoaderCircle className="size-4 animate-spin" /> : <LogOut className="size-4" />}
+          {loggingOut ? "Logging out…" : "Log out"}
+        </Button>
+        {logoutError && <p role="alert" className="px-3 pt-2 text-xs text-trap-danger">{logoutError}</p>}
       </div>
     </aside>
   );

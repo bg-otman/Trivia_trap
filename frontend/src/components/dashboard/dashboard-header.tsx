@@ -19,7 +19,7 @@ export function DashboardHeader() {
             <Link href="/join">Join room <ArrowRight className="size-4" /></Link>
           </Button>
           <Button asChild className="h-11 px-4 text-xs">
-            <Link href="/room/X7K9P2"><Plus className="size-4" /> Create room</Link>
+            <Link href="/create-room"><Plus className="size-4" /> Create room</Link>
           </Button>
         </div>
         <Link href="/profile" aria-label="Open Mehdi's profile" className="relative rounded-full transition-transform hover:scale-105">

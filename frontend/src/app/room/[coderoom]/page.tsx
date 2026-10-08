@@ -11,12 +11,12 @@ interface GamePageProps {
 export default async function GamePage({ params, searchParams }: GamePageProps) {
   const [{ coderoom }, query] = await Promise.all([params, searchParams]);
   const roomCode = decodeURIComponent(coderoom).trim().toUpperCase();
-  await requireUser(`/room/${encodeURIComponent(roomCode)}`);
+  const currentUser = await requireUser(`/room/${encodeURIComponent(roomCode)}`);
   if (process.env.NODE_ENV === "development" && query.state) {
     const room = findMockRoom(roomCode);
     if (!room || room.status !== "open") notFound();
-    return <TriviaTrapGame roomCode={room.code} mockState={query.state} />;
+    return <TriviaTrapGame roomCode={room.code} mockState={query.state} currentUser={{ id: String(currentUser.id), name: currentUser.username }} />;
   }
 
-  return <TriviaTrapGame roomCode={roomCode} roomId={roomCode} />;
+  return <TriviaTrapGame roomCode={roomCode} roomId={roomCode} currentUser={{ id: String(currentUser.id), name: currentUser.username }} />;
 }

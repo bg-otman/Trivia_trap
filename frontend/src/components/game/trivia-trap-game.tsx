@@ -32,6 +32,7 @@ import type { Question, VotingOption } from "@/types/question";
 import type { AnswerReveal, FinalResults, RoundResults } from "@/types/results";
 import { useGameWebSocket } from "@/hooks/use-game-websocket";
 import { ErrorState } from "@/components/ui/error-state";
+import type { SessionUser } from "@/lib/websocket/session-user";
 
 interface MockGameFlowState {
   currentPhase: GamePhase;
@@ -74,11 +75,12 @@ interface TriviaTrapGameProps {
   roomCode: string;
   roomId?: string;
   mockState?: string;
+  currentUser: SessionUser;
 }
 
-export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGameProps) {
+export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: TriviaTrapGameProps) {
   const router = useRouter();
-  const websocket = useGameWebSocket(roomId);
+  const websocket = useGameWebSocket(roomId, currentUser);
   const [game, setGame] = useState<MockGameFlowState>(() =>
     createInitialState(roomCode, undefined, mockState),
   );
@@ -475,7 +477,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState }: TriviaTrapGamePr
     if (roomId && !websocket.leaveRoom()) return;
     leavingRoomRef.current = true;
     setShowGameIntro(false);
-    router.push("/");
+    router.push("/dashboard");
   }
 
   function retryServerAction() {

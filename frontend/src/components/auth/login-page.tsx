@@ -2,6 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ArrowRight,
@@ -21,16 +22,11 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { apiFetch } from "@/lib/api";
-import { safeReturnPath } from "@/lib/auth-routing";
 
 type Mode = "login" | "register" | "reset" | "new-password";
 
-function safeNextPath() {
-  const value = new URLSearchParams(window.location.search).get("next");
-  return safeReturnPath(value);
-}
-
 export function LoginPage({ initialMode = "login", initialMessage = "" }: { initialMode?: Mode; initialMessage?: string }) {
+  const router = useRouter();
   const reducedMotion = useReducedMotion();
   const [mode, setMode] = useState<Mode>(initialMode);
   const [showPassword, setShowPassword] = useState(false);
@@ -54,7 +50,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
       .then(response => {
         if (!active) return;
         if (response.ok) {
-          window.location.replace(safeNextPath());
+          router.replace("/dashboard");
         } else {
           setCheckingSession(false);
         }
@@ -64,7 +60,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
       });
 
     return () => { active = false; };
-  }, [initialMode]);
+  }, [initialMode, router]);
 
   useEffect(() => {
     if (initialMode !== "new-password") return;
@@ -89,8 +85,8 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
       setMessage("Sign-in succeeded, but the browser could not save your session. Check that the site and API use the same hostname.");
       return;
     }
-    window.location.assign(safeNextPath());
-  }, []);
+    router.replace("/dashboard");
+  }, [router]);
 
   const handleGoogleCredential = useCallback(async (credential: string) => {
     if (requestInFlight.current) return;

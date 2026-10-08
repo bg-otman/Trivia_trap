@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { LoginPage } from "@/components/auth/login-page";
 import { getCurrentUser, UserApiError } from "@/lib/getUser";
-import { safeReturnPath } from "@/lib/auth-routing";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
@@ -14,11 +13,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Page({ searchParams }: {
-  searchParams: Promise<{ mode?: string; passwordReset?: string; next?: string }>;
+  searchParams: Promise<{ mode?: string; passwordReset?: string }>;
 }) {
-  const { mode, passwordReset, next } = await searchParams;
+  const { mode, passwordReset } = await searchParams;
   try {
-    if (await getCurrentUser()) redirect(safeReturnPath(next));
+    if (await getCurrentUser()) redirect("/dashboard");
   } catch (error) {
     if (!(error instanceof UserApiError) || error.status !== 401) throw error;
   }
