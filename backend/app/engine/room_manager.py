@@ -3,9 +3,8 @@ from typing import Annotated
 from pydantic import Field, ValidationError
 from .utils import GameError, lobby_update
 from .room_models import Room
-from .events import join_room, process_event
+from .events import join_room, process_event, sync_current_phase
 from json import JSONDecodeError
-import traceback
 
 router = APIRouter(prefix="/room", tags=["Room"])
 
@@ -19,6 +18,7 @@ class RoomManager():
             raise GameError("INVALID_PAYLOAD", "Missing user_id or user_name in WebSocket state")
         join_room(self.rooms, ws, room_id, ws.state.user_id, ws.state.user_name)
         await self.broadcast(lobby_update(self.rooms[room_id]), room_id, None)
+        await sync_current_phase(self, room_id, ws.state.user_id)
 
     async def broadcast(self, data: Annotated[str | dict, Field(description="Data in JSON format")], room_id: str,
                         exclude : Annotated[str, Field(description="Player ID to exclude from broadcast")] = None):
@@ -100,8 +100,12 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
         await manager.connect(ws, room_id)
         while True:
             try:
-                if room_id not in manager.rooms or user_id not in manager.rooms[room_id].players:
-                    break # if player left the room
+                if (
+                    room_id not in manager.rooms
+                    or user_id not in manager.rooms[room_id].players
+                    or manager.rooms[room_id].players[user_id].ws is not ws
+                ): 
+                    break  # The room, player, or connection is no longer active
                 request = await ws.receive_json()
                 event_name = request.get("event")
                 data = request.get("data")
@@ -128,5 +132,4 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
             await manager.send_to_player(e.to_dict(), room_id, user_id)
     except Exception as e:
         print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
-        traceback.print_exc()
         await manager.remove_connection(ws.state.user_id, room_id)

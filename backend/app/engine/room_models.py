@@ -1,5 +1,5 @@
 from fastapi import WebSocket
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field
 from typing import Annotated
 from statemachine import StateMachine, State
 import asyncio
@@ -26,8 +26,7 @@ class RoomPhase(StateMachine):
         PODIUM.to(CATEGORY)
     )
 
-class PlayerInfo(BaseModel):
-    model_config = ConfigDict(arbitrary_types_allowed=True) # Allow WebSocket type in Pydantic model
+class PlayerInfo(BaseModel, arbitrary_types_allowed=True):
     ws: WebSocket
     name: Annotated[str, Field(min_length=1, max_length=15)]
     score: Annotated[int, Field(ge=0)] = 0
@@ -41,18 +40,19 @@ class RoomSettings(BaseModel):
     max_players: Annotated[int, Field(ge=2, description="Maximum number of players in the room")] = 10
     language: Annotated[str, Field(description="Language code for the game questions")] = "en"
 
-class RoomMetaData(BaseModel):
-    model_config = ConfigDict(arbitrary_types_allowed=True) # Allow RoomPhase type in Pydantic model
+class RoomMetaData(BaseModel, arbitrary_types_allowed=True):
     host_id: str
     settings: RoomSettings
-    phase: Annotated[RoomPhase, Field(description="Access to the room phase state machine by phase.current_state")] = RoomPhase()
+    phase: Annotated[RoomPhase, Field(description="Access to the room phase state machine by phase.current_state")] = Field(default_factory=RoomPhase)
     timer_task: Annotated[asyncio.Task | None, Field(description="Timer task to trigger next phase when timeout")] = None
+    phase_payload: dict | None = None
+    phase_deadline: float | None = None
     current_round: int = 1
     active_question: Annotated[str | None, Field(description="The current question being asked in the room")] = None
     fallback_category: Annotated[dict[str, str], Field(description="The fallback category if no category is selected")] = Field(default_factory=dict)
     image_url: Annotated[str | None, Field(description="The image URL associated with the current question, if any")] = None
     correct_answer: Annotated[str | None, Field(description="The correct answer for the current question")] = None
-    sumbitted_bluffs: Annotated[dict[str, str], Field(description="Map of player_id to their submitted bluff answer")] = Field(default_factory=dict)
+    submitted_bluffs: Annotated[dict[str, str], Field(description="Map of player_id to their submitted bluff answer")] = Field(default_factory=dict)
     fake_answers: Annotated[list[str], Field(description="Additional fake answers for the current question")] = Field(default_factory=list)
     voting_choices: Annotated[list[dict], Field(description="The answer choices broadcast during the voting phase")] = Field(default_factory=list)
     voting_results: Annotated[dict[str, str], Field(description="Map of player_id to the answer they voted for")] = Field(default_factory=dict)

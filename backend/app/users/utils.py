@@ -1,4 +1,5 @@
 from dataProcessing.models import User
+from authentication.repository import find_user_by_username
 from sqlalchemy.orm import Session
 from sqlalchemy import select, func, case
 from typing import Annotated
@@ -112,8 +113,7 @@ async def build_user_profile(session: Annotated[Session, Depends(get_db)],
         if user_id is not None:
             user = await session.get(User, user_id)
         elif username is not None:
-            statement = select(User).where(User.username == username)
-            user = await session.scalar(statement)
+            user = await find_user_by_username(session, username)
     except Exception:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

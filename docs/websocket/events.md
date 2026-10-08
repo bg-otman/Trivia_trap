@@ -335,3 +335,58 @@ Purpose: notify room that a player has submitted their vote.
 10. Server sends PHASE_REVEAL.
 11. Server sends PHASE_PODIUM.
 12. Repeat question loop or send LOBBY_UPDATE.
+
+
+## Reconnection and Refresh
+
+When a player reconnects, the server restores the player to the existing room and
+sends the state needed to rebuild the current screen. The client does not need to
+restart the game or request the current phase manually.
+
+### Server flow
+
+1. The client opens a new WebSocket connection for the same `room_id` and user.
+2. The server replaces the player's previous WebSocket with the new connection
+  and marks the player as present.
+3. The server sends a `LOBBY_UPDATE` to the room.
+4. The server sends the last saved phase event directly to the reconnecting player.
+5. The `duration` in the phase event is replaced with the remaining time. The
+  client should use this value to restart its local countdown.
+6. During `PHASE_QUESTION`, the server sends one `BLUFF_SUBMITTED` event for
+  each player who has already submitted a bluff.
+7. During `PHASE_VOTING`, the server sends one `VOTE_SUBMITTED` event for each
+  player who has already submitted a vote.
+
+The replayed phase event is sent only to the reconnecting player. The server does
+not run the phase handler again and does not create a new question, voting list,
+or timer.
+
+### Reconnection examples
+
+If a player reconnects during the question phase, the client receives:
+
+```text
+PHASE_QUESTION
+BLUFF_SUBMITTED for each player who already submitted
+```
+
+If a player reconnects during the voting phase, the client receives:
+
+```text
+PHASE_VOTING
+VOTE_SUBMITTED for each player who already voted
+```
+
+For `PHASE_CATEGORY`, `RESULTS_REVEALED`, and `PHASE_PODIUM`, only the saved
+phase event is replayed because those phases do not track submission progress.
+
+The `BLUFF_SUBMITTED` and `VOTE_SUBMITTED` messages are normally broadcasts, but
+when they are sent during reconnection they are direct messages for the returning
+player only.
+
+### Old connections
+
+If the same user opens a second connection, the first connection becomes stale.
+The server compares the WebSocket handling the message with the WebSocket stored
+for that player. A stale connection is stopped and cannot continue processing
+events after the newer connection becomes active.
