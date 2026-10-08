@@ -100,6 +100,7 @@ services:
       # actual PostgreSQL password into DATABASE_URL at process start.
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY} # to be intergated with Vault in the future
     depends_on:
       vault-bootstrap:
         condition: service_completed_successfully
