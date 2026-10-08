@@ -162,7 +162,7 @@ export class GameWebSocketClient {
   submitBluff(answer: string) {
     const bluffAnswer = answer.trim();
     if (
-      bluffAnswer.length < 2 ||
+      bluffAnswer.length < 1 ||
       !this.socket ||
       this.socket.readyState !== WebSocket.OPEN
     ) {
