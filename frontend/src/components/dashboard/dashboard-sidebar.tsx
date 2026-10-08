@@ -31,7 +31,7 @@ const navigation = [
   },
   { label: "Play / Create Room", icon: Gamepad2, href: "/create-room" },
   { label: "Profile", icon: UserRound, href: "/profile" },
-  { label: "Friends", icon: Users },
+  { label: "Friends", icon: Users, href: "/friends" },
   { label: "Game History", icon: History },
   { label: "Statistics", icon: BarChart3 },
   { label: "Achievements", icon: Medal },

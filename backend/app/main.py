@@ -5,7 +5,7 @@ from users.router import router as user_router
 from fastapi.middleware.cors import CORSMiddleware
 from authentication.router import auth_router
 from authentication.session_cookie import ALLOWED_BROWSER_ORIGINS
-# from friendship.router import friends_router
+from friendship.router import friends_router
 
 
 app = FastAPI()
@@ -21,7 +21,7 @@ app.add_middleware(
 app.include_router(room_router)
 app.include_router(user_router)
 app.include_router(auth_router)
-# app.include_router(friends_router)
+app.include_router(friends_router)
 
 
 @app.get("/rooms")
