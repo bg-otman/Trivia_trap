@@ -1,9 +1,9 @@
-from fastapi import APIRouter, Depends, HTTPException, WebSocket, WebSocketDisconnect, Query, status
+from fastapi import APIRouter, Depends, HTTPException, WebSocket, WebSocketDisconnect, status
 from typing import Annotated
 from pydantic import BaseModel, Field, ValidationError
 import secrets
 import string
-from authentication.current_user import get_current_user
+from authentication.current_user import get_current_user, get_current_user_ws
 from dataProcessing.models import User
 from .utils import GameError, lobby_update
 from .room_models import Room, RoomMetaData, RoomPhase, RoomSettings
@@ -139,13 +139,12 @@ def get_available_rooms(manager: RoomManager = manager) -> dict[str, Room]:
     }
 
 @router.websocket("/{room_id}")
-async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], user_name : Annotated[str, Query()]):
+async def room(ws: WebSocket, room_id: str, user: Annotated[User, Depends(get_current_user_ws)]):
 
-    # here i need to retrieve user_id, user_name form JWT... To be implemented by Auth responsible
-    # for now i will use query params.
-
+    user_id = str(user.id)
+    room_id = room_id.strip().upper()
     ws.state.user_id = user_id
-    ws.state.user_name = user_name
+    ws.state.user_name = user.username
 
     try:
         await manager.connect(ws, room_id)
@@ -160,7 +159,7 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
                 request = await ws.receive_json()
                 event_name = request.get("event")
                 data = request.get("data")
-                await process_event(manager, room_id, user_id, user_name, event_name, data)
+                await process_event(manager, room_id, user_id, user.username, event_name, data)
             except GameError as e:
                 await manager.send_to_player(e.to_dict(), room_id, user_id)
             except JSONDecodeError:
@@ -183,4 +182,4 @@ async def room(ws: WebSocket, room_id: str, user_id : Annotated[str, Query()], u
             await manager.send_to_player(e.to_dict(), room_id, user_id)
     except Exception as e:
         print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
-        await manager.remove_connection(ws.state.user_id, room_id)
+        await manager.remove_connection(user_id, room_id)
