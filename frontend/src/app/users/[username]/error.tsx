@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 
-export default function Error({ error, reset }: { error: Error; reset: () => void }) {
+export default function Error({ error }: { error: Error; reset: () => void }) {
     return (
         <div className="flex flex-col items-center justify-center h-screen">
             <h1 className="text-4xl font-bold mb-4">Something went wrong!</h1>
