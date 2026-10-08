@@ -45,8 +45,6 @@ export class GameWebSocketClient {
     const url = new URL(
       `${baseUrl.replace(/\/$/, "")}/room/${encodeURIComponent(roomId)}`,
     );
-    url.searchParams.set("user_id", this.sessionUser.id);
-    url.searchParams.set("user_name", this.sessionUser.name);
     const socket = new WebSocket(url);
     this.socket = socket;
     socket.onopen = () => {
