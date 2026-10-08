@@ -16,14 +16,11 @@ import { Button } from "@/components/ui/button";
 import { ErrorState } from "@/components/ui/error-state";
 import { LoadingState } from "@/components/ui/loading-state";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import { findMockRoom } from "@/mocks/rooms";
 import { RoomCodeInput } from "./room-code-input";
 import { apiFetch } from "@/lib/api";
 import { loginPathFor } from "@/lib/auth-routing";
 
-type JoinState = "idle" | "loading" | "invalid" | "full" | "error";
-
-const mockDelayMs = 850;
+type JoinState = "idle" | "loading" | "invalid" | "full" | "started" | "error";
 
 export function JoinRoom({ initialCode = "" }: { initialCode?: string }) {
   const router = useRouter();
@@ -37,6 +34,8 @@ export function JoinRoom({ initialCode = "" }: { initialCode?: string }) {
     ? { title: "ROOM NOT FOUND", message: "We couldn't find a room with that code.", action: "TRY AGAIN" }
     : state === "full"
       ? { title: "ROOM FULL", message: "This room has reached its maximum number of players.", action: "TRY ANOTHER ROOM" }
+      : state === "started"
+        ? { title: "GAME IN PROGRESS", message: "This room has already started its game.", action: "TRY ANOTHER ROOM" }
       : state === "error"
         ? { title: "UNABLE TO JOIN", message: "Something went wrong while joining the room.", action: "TRY AGAIN" }
         : null;
@@ -53,32 +52,47 @@ export function JoinRoom({ initialCode = "" }: { initialCode?: string }) {
   const join = useCallback(async (roomCode: string) => {
     if (roomCode.length !== 6) return;
     setState("loading");
-    await new Promise(resolve => window.setTimeout(resolve, mockDelayMs));
-    if (roomCode === "ERROR1") {
-        setState("error");
-        return;
-    }
-    const room = findMockRoom(roomCode);
-    if (!room) {
-        setState("invalid");
-        return;
-    }
-    if (room.status === "full") {
-        setState("full");
-        return;
-    }
+    const normalizedCode = roomCode.trim().toUpperCase();
 
     try {
       const session = await apiFetch("/auth/me");
       if (session.status === 401) {
-        window.location.assign(loginPathFor(`/join?code=${encodeURIComponent(room.code)}`));
+        window.location.assign(loginPathFor(`/join?code=${encodeURIComponent(normalizedCode)}`));
         return;
       }
       if (!session.ok) {
         setState("error");
         return;
       }
-      router.push(`/room/${encodeURIComponent(room.code)}`);
+
+      const response = await apiFetch(`/room/${encodeURIComponent(normalizedCode)}`);
+      if (response.status === 404) {
+        setState("invalid");
+        return;
+      }
+      if (response.status === 401) {
+        window.location.assign(loginPathFor(`/join?code=${encodeURIComponent(normalizedCode)}`));
+        return;
+      }
+      if (!response.ok) {
+        setState("error");
+        return;
+      }
+
+      const room = await response.json() as { room_id?: string; status?: string };
+      if (room.status === "full") {
+        setState("full");
+        return;
+      }
+      if (room.status === "in_progress") {
+        setState("started");
+        return;
+      }
+      if (room.status !== "open" || !room.room_id) {
+        setState("error");
+        return;
+      }
+      router.push(`/room/${encodeURIComponent(room.room_id)}`);
     } catch {
       setState("error");
     }
@@ -183,9 +197,6 @@ export function JoinRoom({ initialCode = "" }: { initialCode?: string }) {
               </form>
             </div>
 
-            <p className="mt-5 text-center text-[11px] leading-5 text-[#777782]">
-              Mock rooms: <button type="button" onClick={() => updateCode("X7K9P2")} className="font-bold text-[#c0c1ff] hover:text-white">X7K9P2</button> is open · <button type="button" onClick={() => updateCode("FULL42")} className="font-bold text-accent hover:text-white">FULL42</button> is full
-            </p>
           </motion.section>
         </div>
       </div>
