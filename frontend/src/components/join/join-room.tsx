@@ -111,7 +111,7 @@ export function JoinRoom({ initialCode = "" }: { initialCode?: string }) {
             TRIVIA TRAP
           </Link>
           <Button asChild variant="ghost" size="sm" className="text-[#a6a6ae] hover:text-white">
-            <Link href="/"><ArrowLeft className="size-4" /> Back home</Link>
+            <Link href="/dashboard"><ArrowLeft className="size-4" /> Back home</Link>
           </Button>
         </header>
 
