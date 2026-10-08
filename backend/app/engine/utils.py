@@ -38,8 +38,6 @@ def validate_phase(current_phase: str, event_name: str) -> None:
         Validate if the current phase is valid for the requested action.
     """
     game_phases = ["GET_QUESTION", "SUBMIT_BLUFF", "SUBMIT_VOTE"]
-    # Room-level interactions remain available throughout the match and do
-    # not advance or otherwise mutate the active game phase.
     if event_name in {"LEAVE_ROOM", "KICK_PLAYER", "CHAT_MESSAGE", "RETURN_TO_LOBBY"}:
         return
     if current_phase == RoomPhase.LOBBY and event_name in game_phases:
@@ -83,7 +81,9 @@ def clear_data(room: Room):
     room.meta_data.active_question = None
     room.meta_data.image_url = None
     room.meta_data.correct_answer = None
-    room.meta_data.sumbitted_bluffs.clear()
+    room.meta_data.phase_payload = None
+    room.meta_data.phase_deadline = None
+    room.meta_data.submitted_bluffs.clear()
     room.meta_data.fake_answers.clear()
     room.meta_data.voting_choices.clear()
     room.meta_data.voting_results.clear()

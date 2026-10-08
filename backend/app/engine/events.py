@@ -8,9 +8,46 @@ from dataProcessing.services import load_categories, load_question
 from .utils import GameError, Context, clear_data, validate_phase, lobby_update
 import asyncio
 import random
+import math
+from time import monotonic
+from copy import deepcopy
 
 if TYPE_CHECKING: # it evaluates to False at runtime, so the import is only for type checking and avoids circular imports
     from .room_manager import RoomManager
+
+async def publish_phase_payload(manager: RoomManager, payload: dict, room_id: str):
+    """Save the public phase event before broadcasting it for later reconnects."""
+    metadata = manager.rooms[room_id].meta_data
+    metadata.phase_payload = deepcopy(payload)
+    duration = payload["data"].get("duration")
+    metadata.phase_deadline = monotonic() + duration if duration is not None else None
+    await manager.broadcast(payload, room_id, None)
+
+
+async def sync_current_phase(manager: RoomManager, room_id: str, player_id: str):
+    """sync the current phase to a player who just joined the room or reconnected after a disconnect."""
+    metadata = manager.rooms[room_id].meta_data
+    if metadata.phase_payload is None:
+        return
+    payload = deepcopy(metadata.phase_payload)
+    if metadata.phase_deadline is not None:
+        payload["data"]["duration"] = max(0, math.ceil(metadata.phase_deadline - monotonic()))
+    await manager.send_to_player(payload, room_id, player_id)
+
+    # this part is to notify the player of the other players who have already submitted their bluffs or votes, 
+    # so that they can see the progress of the game
+    submissions = {
+        "PHASE_QUESTION": ("BLUFF_SUBMITTED", metadata.submitted_bluffs),
+        "PHASE_VOTING": ("VOTE_SUBMITTED", metadata.voting_results),
+    }.get(payload["event"])
+    if submissions is not None:
+        event, submitted = submissions
+        for submitted_player in list(submitted):
+            await manager.send_to_player(
+                {"event": event, "data": {"player_id": submitted_player}},
+                room_id, player_id,
+            )
+
 
 async def phase_timer(manager: RoomManager, context: Context, duration: int):
     """
@@ -37,6 +74,8 @@ def join_room(rooms: dict, ws: WebSocket, room_id: str, player_id: str, name: st
     if  player_id not in room.players and len(room.players) >= room.meta_data.settings.max_players:
         raise GameError("FULL_ROOM", "Room is full")
     if player_id not in room.players:
+        if room.meta_data.phase.current_state != RoomPhase.LOBBY:
+            raise GameError("GAME_IN_PROGRESS", "Game is already in progress")
         room.players[player_id] = PlayerInfo(ws=ws, name=name)
     else:
         room.players[player_id].ws = ws
@@ -69,7 +108,7 @@ async def get_categories(manager: RoomManager, context: Context):
     if not categories:
         raise GameError("ERROR", "Something went wrong while fetching categories")
     room.meta_data.fallback_category = random.choice(categories)
-    await manager.broadcast({
+    await publish_phase_payload(manager, {
         "event": "PHASE_CATEGORY",
         "data": {
             "round": room.meta_data.current_round,
@@ -77,7 +116,7 @@ async def get_categories(manager: RoomManager, context: Context):
             "duration": room.meta_data.settings.vote_time,
             "categories": categories
             }
-        }, context.room_id, None)
+        }, context.room_id)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.vote_time))
 
 
@@ -109,7 +148,7 @@ async def get_question(manager: RoomManager, context: Context):
     room.meta_data.image_url = question.get("image_url")
     room.meta_data.correct_answer = question.get("correct_answer")
     room.meta_data.fake_answers = question.get("fake_answers", [])
-    await manager.broadcast({
+    await publish_phase_payload(manager, {
         "event": "PHASE_QUESTION",
         "data": { 
             "category": category.get("name"),
@@ -120,7 +159,7 @@ async def get_question(manager: RoomManager, context: Context):
             "total_rounds": room.meta_data.settings.total_rounds,
             "duration": room.meta_data.settings.bluff_time
             } 
-        }, context.room_id, None)
+        }, context.room_id)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.bluff_time))
 
 
@@ -132,7 +171,7 @@ async def get_vote_choices(manager: RoomManager, context: Context):
     room = manager.rooms.get(context.room_id)
     room.meta_data.voting_choices = build_voting_choices(
         len(room.players),
-        room.meta_data.sumbitted_bluffs,
+        room.meta_data.submitted_bluffs,
         room.meta_data.correct_answer,
         room.meta_data.fake_answers,
     )
@@ -143,7 +182,7 @@ async def get_vote_choices(manager: RoomManager, context: Context):
         }
         for choice in room.meta_data.voting_choices
     ]
-    await manager.broadcast({
+    await publish_phase_payload(manager, {
         "event": "PHASE_VOTING",
         "data": { 
             "round": room.meta_data.current_round,
@@ -155,7 +194,7 @@ async def get_vote_choices(manager: RoomManager, context: Context):
             },
             "choices": public_choices
             } 
-        }, context.room_id, None)
+        }, context.room_id)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.vote_time))
 
 
@@ -174,10 +213,10 @@ async def reveal_results(manager: RoomManager, context: Context):
     results["round"] = room.meta_data.current_round
     results["total_rounds"] = room.meta_data.settings.total_rounds
     room.meta_data.current_round += 1
-    await manager.broadcast({
+    await publish_phase_payload(manager, {
         "event": "RESULTS_REVEALED",
         "data": results
-    }, context.room_id, None)
+    }, context.room_id)
 
 
 
@@ -192,14 +231,14 @@ async def podium(manager: RoomManager, context: Context):
         and len(room.meta_data.podium) > 1 
         and room.meta_data.podium[0]["score"] != room.meta_data.podium[1]["score"]):
         room.meta_data.phase.end()
-    await manager.broadcast({
+    await publish_phase_payload(manager, {
         "event": "PHASE_PODIUM",
         "data": {
             "round": room.meta_data.current_round,
             "total_rounds": room.meta_data.settings.total_rounds,
             "leaderboard": room.meta_data.podium
         }
-    }, context.room_id, None)
+    }, context.room_id)
 
 
 game_phases = {
@@ -247,8 +286,8 @@ async def submit_bluff(manager: RoomManager, context: Context):
     validate_bluff = validate_bluff_answer(bluff_answer, room.meta_data.correct_answer)
     if not validate_bluff.get("is_valid"):
         raise GameError("BLUFF_REJECTED", validate_bluff.get("reason", "EXACT_TRUTH"))
-    room.meta_data.sumbitted_bluffs[context.user_id] = bluff_answer
-    if len(room.meta_data.sumbitted_bluffs) >= len(room.players):
+    room.meta_data.submitted_bluffs[context.user_id] = bluff_answer
+    if len(room.meta_data.submitted_bluffs) >= len(room.players):
         await to_next_phase(manager, context)
     else:
         await manager.broadcast({
@@ -342,6 +381,8 @@ async def return_to_lobby(manager: RoomManager, context: Context):
     if room.meta_data.timer_task and not room.meta_data.timer_task.done():
         room.meta_data.timer_task.cancel()
     room.meta_data.timer_task = None
+    room.meta_data.phase_payload = None
+    room.meta_data.phase_deadline = None
     room.meta_data.current_round = 1
     room.meta_data.fallback_category = {}
     room.meta_data.podium = []

@@ -10,15 +10,15 @@ export default async function UserProfile({
     params: Promise<{ username: string }>;
 }) {
     const { username } = await params;
+    let user;
+    let isOwner = false;
 
     try {
-        const user = await getUser({ username });
-        let isOwner = false;
+        user = await getUser({ username });
         const currentUser = await getCurrentUser();
-        if (currentUser && currentUser.username === username) {
+        if (currentUser && currentUser.id === user.id) {
             isOwner = true;
         }
-        return <ProfilePage user={user} isOwner={isOwner} />;
     } catch (error) 
     {
         if (error instanceof UserApiError && error.status === 404) 
@@ -30,4 +30,5 @@ export default async function UserProfile({
             redirect("/login?next=/profile");
         }
     }
+    return <ProfilePage user={user} isOwner={isOwner} />;
 }
