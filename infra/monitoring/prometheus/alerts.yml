@@ -1,0 +1,26 @@
+groups:
+  - name: trivia-trap
+    rules:
+      - alert: WebEndpointDown
+        expr: probe_success{job=~"web|gateway"} == 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "{{ $labels.instance }} is unavailable"
+
+      - alert: PostgreSQLDown
+        expr: pg_up{job="postgres"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "PostgreSQL cannot be scraped"
+
+      - alert: MonitoringExporterDown
+        expr: up{job=~"postgres|blackbox-exporter"} == 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Monitoring target {{ $labels.job }} is down"
