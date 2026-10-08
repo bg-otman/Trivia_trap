@@ -12,7 +12,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="min-h-screen overflow-hidden bg-background text-foreground lg:grid lg:grid-cols-[260px_minmax(0,1fr)]">
+    <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[260px_minmax(0,1fr)]">
       <DashboardSidebar className="sticky top-0 hidden h-screen border-r border-white/[0.07] lg:flex" />
 
       <header className="sticky top-0 z-40 flex h-16 items-center justify-between border-b border-white/[0.07] bg-[#111114]/95 px-4 backdrop-blur-md lg:hidden">
