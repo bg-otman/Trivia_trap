@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
@@ -18,16 +18,20 @@ import { LoadingState } from "@/components/ui/loading-state";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { findMockRoom } from "@/mocks/rooms";
 import { RoomCodeInput } from "./room-code-input";
+import { apiFetch } from "@/lib/api";
+import { loginPathFor } from "@/lib/auth-routing";
 
 type JoinState = "idle" | "loading" | "invalid" | "full" | "error";
 
 const mockDelayMs = 850;
 
-export function JoinRoom() {
+export function JoinRoom({ initialCode = "" }: { initialCode?: string }) {
   const router = useRouter();
   const reducedMotion = useReducedMotion();
-  const [code, setCode] = useState("");
+  const normalizedInitialCode = initialCode.trim().toUpperCase().slice(0, 6);
+  const [code, setCode] = useState(normalizedInitialCode);
   const [state, setState] = useState<JoinState>("idle");
+  const restoredIntentStarted = useRef(false);
 
   const error = state === "invalid"
     ? { title: "ROOM NOT FOUND", message: "We couldn't find a room with that code.", action: "TRY AGAIN" }
@@ -46,27 +50,50 @@ export function JoinRoom() {
     if (state !== "loading") setState("idle");
   }
 
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (code.length !== 6 || state === "loading") return;
-
+  const join = useCallback(async (roomCode: string) => {
+    if (roomCode.length !== 6) return;
     setState("loading");
-    window.setTimeout(() => {
-      if (code === "ERROR1") {
+    await new Promise(resolve => window.setTimeout(resolve, mockDelayMs));
+    if (roomCode === "ERROR1") {
+        setState("error");
+        return;
+    }
+    const room = findMockRoom(roomCode);
+    if (!room) {
+        setState("invalid");
+        return;
+    }
+    if (room.status === "full") {
+        setState("full");
+        return;
+    }
+
+    try {
+      const session = await apiFetch("/auth/me");
+      if (session.status === 401) {
+        window.location.assign(loginPathFor(`/join?code=${encodeURIComponent(room.code)}`));
+        return;
+      }
+      if (!session.ok) {
         setState("error");
         return;
       }
-      const room = findMockRoom(code);
-      if (!room) {
-        setState("invalid");
-        return;
-      }
-      if (room.status === "full") {
-        setState("full");
-        return;
-      }
       router.push(`/room/${encodeURIComponent(room.code)}`);
-    }, mockDelayMs);
+    } catch {
+      setState("error");
+    }
+  }, [router]);
+
+  useEffect(() => {
+    if (normalizedInitialCode.length !== 6 || restoredIntentStarted.current) return;
+    restoredIntentStarted.current = true;
+    void join(normalizedInitialCode);
+  }, [join, normalizedInitialCode]);
+
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (state === "loading") return;
+    void join(code);
   }
 
   return (

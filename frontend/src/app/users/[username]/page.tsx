@@ -1,6 +1,7 @@
 import ProfilePage from "@/components/Profile/ProfilePage";
 import { getUser, UserApiError, getCurrentUser } from "@/lib/getUser";
 import { notFound, redirect } from "next/navigation";
+import { loginPathFor } from "@/lib/auth-routing";
 
 
 
@@ -27,7 +28,7 @@ export default async function UserProfile({
         {
             if (!(error instanceof UserApiError) || error.status !== 401)
                 throw error;
-            redirect("/login?next=/profile");
+            redirect(loginPathFor(`/users/${encodeURIComponent(username)}`));
         }
     }
     return <ProfilePage user={user} isOwner={isOwner} />;

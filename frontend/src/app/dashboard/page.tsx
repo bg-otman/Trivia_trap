@@ -5,13 +5,15 @@ import { FriendsOnline } from "@/components/dashboard/friends-online";
 import { QuickStats } from "@/components/dashboard/quick-stats";
 import { RecentActivity } from "@/components/dashboard/recent-activity";
 import { RecentGames } from "@/components/dashboard/recent-games";
+import { requireUser } from "@/lib/require-user";
 
 export const metadata: Metadata = {
   title: "Dashboard | Trivia Trap",
   description: "Your Trivia Trap games, friends, scores, and recent activity.",
 };
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  await requireUser("/dashboard");
   return (
     <DashboardShell>
       <DashboardHeader />

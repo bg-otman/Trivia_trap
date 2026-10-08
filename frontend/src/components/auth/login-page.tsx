@@ -21,14 +21,13 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { apiFetch } from "@/lib/api";
+import { safeReturnPath } from "@/lib/auth-routing";
 
 type Mode = "login" | "register" | "reset" | "new-password";
 
 function safeNextPath() {
   const value = new URLSearchParams(window.location.search).get("next");
-  return value && value.startsWith("/") && !value.startsWith("//") && !value.startsWith("/\\")
-    ? value
-    : "/profile";
+  return safeReturnPath(value);
 }
 
 export function LoginPage({ initialMode = "login", initialMessage = "" }: { initialMode?: Mode; initialMessage?: string }) {
@@ -128,8 +127,8 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
     }
   }, [finishSignIn]);
 
-  function changeMode(next: Mode) {
-    if (pending) return;
+  function changeMode(next: Mode, afterRequest = false) {
+    if (pending && !afterRequest) return;
     setMode(next);
     setMessage("");
     setPassword("");
@@ -206,7 +205,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
         }
         await finishSignIn();
       } else if (mode === "register") {
-        changeMode("login");
+        changeMode("login", true);
         setMessage("Account created. You can sign in now.");
       } else {
         setMessage("If that email has an account, a reset link is on its way.");
