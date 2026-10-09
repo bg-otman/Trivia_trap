@@ -1,5 +1,6 @@
 from dataProcessing.models import User
 from authentication.repository import find_user_by_username
+from authentication.schemas import validate_username
 from sqlalchemy.orm import Session
 from sqlalchemy import select, func, case
 from typing import Annotated
@@ -136,3 +137,30 @@ async def build_user_profile(session: Annotated[Session, Depends(get_db)],
         achievements=await get_user_achievements(session, user.id),
         analytics=await get_user_category_analytics(session, user.id, language)
     )
+
+
+async def update_user_profile(
+        session: Annotated[Session, Depends(get_db)], 
+        user_id: int, 
+        avatar_url: str, 
+        username: str
+    ) -> None:
+    """
+        Updates the avatar URL of a user in the database.
+    """
+    try:
+        user = await session.get(User, user_id)
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="User not found",
+            )
+        user.avatar_url = avatar_url
+        user.username = validate_username(username)
+        await session.commit()
+    except Exception as e:
+        await session.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to update user profile: {str(e)}",
+        )

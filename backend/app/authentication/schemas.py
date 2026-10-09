@@ -1,7 +1,7 @@
 from typing import Annotated
 
 from password_validator import PasswordValidator
-from pydantic import AfterValidator, BaseModel, EmailStr, Field, SecretStr, field_validator
+from pydantic import AfterValidator, BaseModel, EmailStr, Field, SecretStr, field_validator, BeforeValidator
 
 
 password_policy = (
@@ -25,21 +25,18 @@ def validate_password_encoding(value: SecretStr) -> SecretStr:
 Password = Annotated[SecretStr, AfterValidator(validate_password_encoding)]
 
 
-class RegisterData(BaseModel):
-    email: EmailStr = Field(max_length=255)
-    # Match the room player's maximum name length.
-    username: str = Field(min_length=3, max_length=15)
-    password: Password = Field(min_length=15, max_length=128)
+def validate_username(username: str) -> str:
+    if not username or not username[0].isalpha() or not username.isalnum():
+        raise ValueError(
+            "Username must start with a letter and contain only letters and numbers."
+        )
+    return username
 
-    # validate the username start with character and only contain letters and numbers
-    @field_validator("username")
-    @classmethod
-    def validate_username(cls, username: str) -> str:
-        if not username[0].isalpha() or not username.isalnum():
-            raise ValueError(
-                "Username must start with a letter and contain only letters and numbers."
-            )
-        return username
+class RegisterData(BaseModel):
+    username: Annotated[str, BeforeValidator(validate_username)] = Field(min_length=3, max_length=15)
+    email: EmailStr = Field(max_length=255)
+    password: str = Field(min_length=15, max_length=128)
+    
 
     @field_validator("password")
     @classmethod
