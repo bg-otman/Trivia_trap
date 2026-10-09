@@ -73,6 +73,48 @@ CATEGORY_SEEDS: dict[int, dict[str, Any]] = {
             "ar": "التكنولوجيا",
         },
     },
+    7: {
+        "image_url": "/images/animals-nature.png",
+        "translations": {
+            "en": "Animals & Nature",
+            "ar": "الحيوانات والطبيعة",
+        },
+    },
+    8: {
+        "image_url": "/images/anime.png",
+        "translations": {
+            "en": "Anime",
+            "ar": "الأنمي",
+        },
+    },
+    9: {
+        "image_url": "/images/movies-tv.png",
+        "translations": {
+            "en": "Movies & TV",
+            "ar": "الأفلام والتلفزيون",
+        },
+    },
+    10: {
+        "image_url": "/images/gaming.png",
+        "translations": {
+            "en": "Gaming",
+            "ar": "ألعاب الفيديو",
+        },
+    },
+    11: {
+        "image_url": "/images/weird-facts.png",
+        "translations": {
+            "en": "Weird Facts",
+            "ar": "حقائق غريبة",
+        },
+    },
+    12: {
+        "image_url": "/images/islamic-knowledge.png",
+        "translations": {
+            "en": "Islamic Knowledge",
+            "ar": "الثقافة الإسلامية",
+        },
+    },
 }
 
 LANGUAGE_CODE_MAX_LENGTH = Question.__table__.c.language_code.type.length

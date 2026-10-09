@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the name of Mario's cap companion in Super Mario Odyssey?",
+    "correct_answer": "Cappy",
+    "decoys": [
+      "Tippy",
+      "Fludd",
+      "Luma"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/us/store/products/super-mario-odyssey-105879/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who does Bowser kidnap at the start of Super Mario Odyssey?",
+    "correct_answer": "Princess Peach",
+    "decoys": [
+      "Princess Daisy",
+      "Pauline",
+      "Rosalina"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/us/store/products/super-mario-odyssey-105879/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What device gives Link a map and runes in Breath of the Wild?",
+    "correct_answer": "Sheikah Slate",
+    "decoys": [
+      "Purah Pad",
+      "Ocarina of Time",
+      "Pictobox"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-breath-of-the-wild-us/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "How long has Link slept before Breath of the Wild begins?",
+    "correct_answer": "100 years",
+    "decoys": [
+      "10 years",
+      "50 years",
+      "1,000 years"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-breath-of-the-wild-us/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which region is the setting of Pokémon Scarlet and Violet?",
+    "correct_answer": "Paldea",
+    "decoys": [
+      "Galar",
+      "Kalos",
+      "Alola"
+    ],
+    "image_url": null,
+    "source_url": "https://parents.pokemon.com/en-us/video-games-and-apps/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which troublesome trainer group do players battle in Pokémon Scarlet and Violet?",
+    "correct_answer": "Team Star",
+    "decoys": [
+      "Team Rocket",
+      "Team Plasma",
+      "Team Skull"
+    ],
+    "image_url": null,
+    "source_url": "https://parents.pokemon.com/en-us/video-games-and-apps/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which Minecraft mode gives players unlimited building materials?",
+    "correct_answer": "Creative mode",
+    "decoys": [
+      "Survival mode",
+      "Adventure mode",
+      "Spectator mode"
+    ],
+    "image_url": null,
+    "source_url": "https://www.minecraft.net/en-us/article/what-minecraft"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which Minecraft mob approaches players and explodes?",
+    "correct_answer": "Creeper",
+    "decoys": [
+      "Enderman",
+      "Zombie",
+      "Skeleton"
+    ],
+    "image_url": null,
+    "source_url": "https://www.minecraft.net/en-us/article/minecraft-mobs"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which city is the main urban setting of Grand Theft Auto V?",
+    "correct_answer": "Los Santos",
+    "decoys": [
+      "Liberty City",
+      "Vice City",
+      "San Fierro"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rockstargames.com/newswire/article/o349k552514927/worldwide-grand-theft-auto-v-previews.html"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "How many protagonists can you switch between in Grand Theft Auto V's story?",
+    "correct_answer": "Three",
+    "decoys": [
+      "Two",
+      "Four",
+      "Five"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rockstargames.com/newswire/article/o349k552514927/worldwide-grand-theft-auto-v-previews.html"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who is the playable outlaw in Red Dead Redemption 2's main story?",
+    "correct_answer": "Arthur Morgan",
+    "decoys": [
+      "John Marston",
+      "Jack Marston",
+      "Dutch van der Linde"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rockstargames.com/newswire/article/1748koo9o13491/Red-Dead-Redemption-2-Launch-Trailer"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which town's failed robbery sends the gang on the run in Red Dead Redemption 2?",
+    "correct_answer": "Blackwater",
+    "decoys": [
+      "Valentine",
+      "Rhodes",
+      "Saint Denis"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rockstargames.com/newswire/article/1748koo9o13491/Red-Dead-Redemption-2-Launch-Trailer"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which Spartan returns as the main hero of Halo Infinite?",
+    "correct_answer": "Master Chief",
+    "decoys": [
+      "Spartan Locke",
+      "Noble Six",
+      "Sarah Palmer"
+    ],
+    "image_url": null,
+    "source_url": "https://www.halowaypoint.com/news/welcome-to-halo-infinite"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which Halo ring is the main setting of Halo Infinite?",
+    "correct_answer": "Zeta Halo",
+    "decoys": [
+      "Alpha Halo",
+      "Delta Halo",
+      "Installation 05"
+    ],
+    "image_url": null,
+    "source_url": "https://www.halowaypoint.com/news/welcome-to-halo-infinite"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the name of Kratos's son in God of War (2018)?",
+    "correct_answer": "Atreus",
+    "decoys": [
+      "Deimos",
+      "Baldur",
+      "Mimir"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/god-of-war/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which axe does Kratos wield in God of War Ragnarök?",
+    "correct_answer": "Leviathan Axe",
+    "decoys": [
+      "Dawnguard Axe",
+      "Labrys",
+      "Stormbreaker"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/games/god-of-war-ragnarok/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who escorts Ellie across the country in The Last of Us Part I?",
+    "correct_answer": "Joel",
+    "decoys": [
+      "Tommy",
+      "Bill",
+      "Sam"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/games/the-last-of-us-part-i/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the name of the prequel chapter included in The Last of Us Part I?",
+    "correct_answer": "Left Behind",
+    "decoys": [
+      "Lost Legacy",
+      "Grounded",
+      "No Return"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/games/the-last-of-us-part-i/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who is the playable lead in Uncharted: The Lost Legacy?",
+    "correct_answer": "Chloe Frazer",
+    "decoys": [
+      "Elena Fisher",
+      "Nadine Ross",
+      "Cassie Drake"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/games/uncharted-legacy-of-thieves-collection/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which Uncharted game is paired with The Lost Legacy in the Legacy of Thieves Collection?",
+    "correct_answer": "Uncharted 4: A Thief's End",
+    "decoys": [
+      "Uncharted 3: Drake's Deception",
+      "Uncharted 2: Among Thieves",
+      "Uncharted: Drake's Fortune"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/games/uncharted-legacy-of-thieves-collection/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which civilization is the setting of Assassin's Creed Odyssey?",
+    "correct_answer": "Ancient Greece",
+    "decoys": [
+      "Ancient Egypt",
+      "Ancient Rome",
+      "Feudal Japan"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ubisoft.com/en-us/game/assassins-creed/news/1oUCeEdfDQawAUMpkSg5fh/assassins-creed-odyssey-available-now-on-ps4-xbox-one-and-pc"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who can players choose as their hero instead of Alexios in Assassin's Creed Odyssey?",
+    "correct_answer": "Kassandra",
+    "decoys": [
+      "Aya",
+      "Eivor",
+      "Evie"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ubisoft.com/en-us/game/assassins-creed/news/1oUCeEdfDQawAUMpkSg5fh/assassins-creed-odyssey-available-now-on-ps4-xbox-one-and-pc"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which agent is sent to rescue the president's daughter in Resident Evil 4?",
+    "correct_answer": "Leon S. Kennedy",
+    "decoys": [
+      "Chris Redfield",
+      "Ethan Winters",
+      "Carlos Oliveira"
+    ],
+    "image_url": null,
+    "source_url": "https://news.capcomusa.com/2023/03/24/resident-evil-4-is-out-now/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "In the 2023 Resident Evil 4 remake, what can Leon use to parry attacks?",
+    "correct_answer": "Knife",
+    "decoys": [
+      "Handgun",
+      "Shotgun",
+      "Grenade"
+    ],
+    "image_url": null,
+    "source_url": "https://news.capcomusa.com/2023/03/24/resident-evil-4-is-out-now/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who leads the playable party at the start of Final Fantasy VII Rebirth?",
+    "correct_answer": "Cloud Strife",
+    "decoys": [
+      "Squall Leonhart",
+      "Noctis Lucis Caelum",
+      "Tidus"
+    ],
+    "image_url": null,
+    "source_url": "https://gb.store.square-enix-games.com/final-fantasy-vii-rebirth"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which city does Cloud's party leave at the start of Final Fantasy VII Rebirth?",
+    "correct_answer": "Midgar",
+    "decoys": [
+      "Nibelheim",
+      "Junon",
+      "Gold Saucer"
+    ],
+    "image_url": null,
+    "source_url": "https://gb.store.square-enix-games.com/final-fantasy-vii-rebirth"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the name of the spectral steed in Elden Ring?",
+    "correct_answer": "Torrent",
+    "decoys": [
+      "Roach",
+      "Arvak",
+      "Epona"
+    ],
+    "image_url": null,
+    "source_url": "https://en.bandainamcoent.eu/elden-ring/news/elden-ring-enter-the-lands-between-101-trailer"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What title do Elden Ring players bear?",
+    "correct_answer": "Tarnished",
+    "decoys": [
+      "Hollows",
+      "Ashen Ones",
+      "Undead"
+    ],
+    "image_url": null,
+    "source_url": "https://en.bandainamcoent.eu/elden-ring/news/elden-ring-enter-the-lands-between-101-trailer"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What title is given to the player character in Skyrim?",
+    "correct_answer": "Dragonborn",
+    "decoys": [
+      "Nerevarine",
+      "Hero of Kvatch",
+      "Vestige"
+    ],
+    "image_url": null,
+    "source_url": "https://bethesda.net/en-US/news/the-elder-scrolls-v-skyrim-welcome"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which Skyrim shout is spoken as 'Fus Ro Dah'?",
+    "correct_answer": "Unrelenting Force",
+    "decoys": [
+      "Whirlwind Sprint",
+      "Fire Breath",
+      "Become Ethereal"
+    ],
+    "image_url": null,
+    "source_url": "https://elderscrolls.bethesda.net/en-AU/news/1rL4bCScN6RYXaXQb4ownj/how-bethesda-game-studios-made-skyrims-dragon-language"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which vault does the player leave in Fallout 4?",
+    "correct_answer": "Vault 111",
+    "decoys": [
+      "Vault 101",
+      "Vault 13",
+      "Vault 76"
+    ],
+    "image_url": null,
+    "source_url": "https://fallout.bethesda.net/en-US/news/fallout-4-anniversary-edition-nintendo-switch-2-launch"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the name of the region explored in Fallout 4?",
+    "correct_answer": "The Commonwealth",
+    "decoys": [
+      "The Capital Wasteland",
+      "The Mojave",
+      "Appalachia"
+    ],
+    "image_url": null,
+    "source_url": "https://fallout.bethesda.net/en/games/fallout-4/your-journey-continues"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which city is the main setting of Cyberpunk 2077?",
+    "correct_answer": "Night City",
+    "decoys": [
+      "Liberty City",
+      "New Atlantis",
+      "City 17"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cyberpunk.net/en/cyberpunk-2077"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which rock musician appears in V's mind in Cyberpunk 2077?",
+    "correct_answer": "Johnny Silverhand",
+    "decoys": [
+      "Kerry Eurodyne",
+      "Jackie Welles",
+      "Adam Smasher"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cyberpunk.net/en/cyberpunk-2077"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "How many players entered a match in Fortnite Battle Royale at its 2017 launch?",
+    "correct_answer": "100",
+    "decoys": [
+      "50",
+      "64",
+      "150"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fortnite.com/news/patch-v-1-6-fortnite-battle-royale?lang=en-US"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What must a player do to win a Fortnite Battle Royale match?",
+    "correct_answer": "Be the last player standing",
+    "decoys": [
+      "Capture every flag",
+      "Defeat the final boss",
+      "Score the most goals"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fortnite.com/news/patch-v-1-6-fortnite-battle-royale?lang=en-US"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which structure must a team destroy to win a League of Legends match?",
+    "correct_answer": "The Nexus",
+    "decoys": [
+      "The Ancient",
+      "The Core",
+      "The Citadel"
+    ],
+    "image_url": null,
+    "source_url": "https://www.leagueoflegends.com/en-us/how-to-play/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which neutral monster in League of Legends grants a powerful team buff?",
+    "correct_answer": "Baron Nashor",
+    "decoys": [
+      "Rift Herald",
+      "Gromp",
+      "Blue Sentinel"
+    ],
+    "image_url": null,
+    "source_url": "https://www.leagueoflegends.com/en-us/how-to-play/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What structure must a Dota 2 team destroy to win?",
+    "correct_answer": "The Ancient",
+    "decoys": [
+      "The Nexus",
+      "The Core",
+      "The Citadel"
+    ],
+    "image_url": null,
+    "source_url": "https://www.dota2.com/home"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "How many players are on each team in a standard Dota 2 match?",
+    "correct_answer": "Five",
+    "decoys": [
+      "Three",
+      "Four",
+      "Six"
+    ],
+    "image_url": null,
+    "source_url": "https://www.dota2.com/home"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which game did Counter-Strike 2 replace as a free upgrade?",
+    "correct_answer": "Counter-Strike: Global Offensive",
+    "decoys": [
+      "Counter-Strike: Source",
+      "Counter-Strike: Condition Zero",
+      "Counter-Strike 1.6"
+    ],
+    "image_url": null,
+    "source_url": "https://www.counter-strike.net/cs2"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which type of grenade gained dynamic, volumetric smoke in Counter-Strike 2?",
+    "correct_answer": "Smoke grenade",
+    "decoys": [
+      "Flashbang",
+      "Decoy grenade",
+      "Incendiary grenade"
+    ],
+    "image_url": null,
+    "source_url": "https://www.counter-strike.net/cs2"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What are the playable characters called in Valorant?",
+    "correct_answer": "Agents",
+    "decoys": [
+      "Champions",
+      "Operators",
+      "Legends"
+    ],
+    "image_url": null,
+    "source_url": "https://playvalorant.com/en-us/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the device attackers plant in Valorant's standard mode called?",
+    "correct_answer": "The Spike",
+    "decoys": [
+      "The C4",
+      "The Beacon",
+      "The Core"
+    ],
+    "image_url": null,
+    "source_url": "https://playvalorant.com/en-us/news/game-updates/spike-rush-new-game-modes/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which Overwatch role focuses on absorbing damage and leading the attack?",
+    "correct_answer": "Tank",
+    "decoys": [
+      "Support",
+      "Damage",
+      "Scout"
+    ],
+    "image_url": null,
+    "source_url": "https://overwatch.blizzard.com/en-us/heroes/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is Mercy's real name in Overwatch?",
+    "correct_answer": "Angela Ziegler",
+    "decoys": [
+      "Amélie Lacroix",
+      "Ana Amari",
+      "Moira O'Deorain"
+    ],
+    "image_url": null,
+    "source_url": "https://overwatch.blizzard.com/en-us/heroes/mercy/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which character remade the universe in Mortal Kombat 1 (2023)?",
+    "correct_answer": "Liu Kang",
+    "decoys": [
+      "Raiden",
+      "Shang Tsung",
+      "Shao Kahn"
+    ],
+    "image_url": null,
+    "source_url": "https://www.mortalkombat.com/en-us/faq?s=09"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which studio developed the PS5 and Xbox Series X|S versions of Mortal Kombat 1 (2023)?",
+    "correct_answer": "NetherRealm Studios",
+    "decoys": [
+      "QLOC",
+      "Shiver Entertainment",
+      "Saber Interactive"
+    ],
+    "image_url": null,
+    "source_url": "https://www.mortalkombat.com/en-us/faq?s=09"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the name of Street Fighter 6's single-player story mode?",
+    "correct_answer": "World Tour",
+    "decoys": [
+      "Arcade Quest",
+      "Konquest",
+      "Story Towers"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/games/street-fighter-6/everything-you-need-to-know-about-street-fighter-6/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which Street Fighter 6 fighter is a former ICPO agent?",
+    "correct_answer": "Chun-Li",
+    "decoys": [
+      "Cammy",
+      "Juri",
+      "Kimberly"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/games/street-fighter-6/everything-you-need-to-know-about-street-fighter-6/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who is Jin Kazama's father in Tekken 8?",
+    "correct_answer": "Kazuya Mishima",
+    "decoys": [
+      "Heihachi Mishima",
+      "Lars Alexandersson",
+      "Lee Chaolan"
+    ],
+    "image_url": null,
+    "source_url": "https://en.bandainamcoent.eu/tekken/tekken-8"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is Tekken 8's new aggressive combat mechanic called?",
+    "correct_answer": "Heat System",
+    "decoys": [
+      "Drive System",
+      "Rage Art",
+      "Focus Attack"
+    ],
+    "image_url": null,
+    "source_url": "https://en.bandainamcoent.eu/tekken/tekken-8"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which islands does Sonic explore in Sonic Frontiers?",
+    "correct_answer": "Starfall Islands",
+    "decoys": [
+      "Angel Island",
+      "South Island",
+      "Seaside Island"
+    ],
+    "image_url": null,
+    "source_url": "https://asia.sega.com/SonicFrontiers/en/prologue/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which gems draw Sonic and his friends to the islands in Sonic Frontiers?",
+    "correct_answer": "Chaos Emeralds",
+    "decoys": [
+      "Infinity Stones",
+      "Power Stars",
+      "Dragon Stones"
+    ],
+    "image_url": null,
+    "source_url": "https://asia.sega.com/SonicFrontiers/en/prologue/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the playable operative called in Metal Gear Solid Delta: Snake Eater?",
+    "correct_answer": "Naked Snake",
+    "decoys": [
+      "Solid Snake",
+      "Venom Snake",
+      "Liquid Snake"
+    ],
+    "image_url": null,
+    "source_url": "https://www.konami.com/games/us/en/topics/2980/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which era is the setting of Metal Gear Solid Delta: Snake Eater?",
+    "correct_answer": "The Cold War",
+    "decoys": [
+      "World War I",
+      "The Napoleonic Wars",
+      "The Space Age"
+    ],
+    "image_url": null,
+    "source_url": "https://www.konami.com/games/us/en/topics/2980/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is Lara Croft's profession in Tomb Raider?",
+    "correct_answer": "Archaeologist",
+    "decoys": [
+      "Astronaut",
+      "Journalist",
+      "Marine biologist"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tombraider.com/lara-croft"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which artifact does Lara seek in the original 1996 Tomb Raider?",
+    "correct_answer": "The Scion",
+    "decoys": [
+      "The Dagger of Xian",
+      "The Iris",
+      "The Atlantean Spear"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tombraider.com/lara-croft"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who is the playable commander in the original Mass Effect trilogy?",
+    "correct_answer": "Commander Shepard",
+    "decoys": [
+      "Commander Ryder",
+      "Commander Anderson",
+      "Commander Vakarian"
+    ],
+    "image_url": null,
+    "source_url": "https://help.ea.com/en/articles/mass-effect/mass-effect-legendary-edition/get-help/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which machine race threatens the galaxy in the original Mass Effect trilogy?",
+    "correct_answer": "The Reapers",
+    "decoys": [
+      "The Collectors",
+      "The Geth",
+      "The Protheans"
+    ],
+    "image_url": null,
+    "source_url": "https://help.ea.com/en/articles/mass-effect/mass-effect-legendary-edition/get-help/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the underwater city in the original BioShock called?",
+    "correct_answer": "Rapture",
+    "decoys": [
+      "Columbia",
+      "Atlantis",
+      "Eden"
+    ],
+    "image_url": null,
+    "source_url": "https://store.2k.com/game/buy-bioshock?drm=Nintendo+Switch"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which armored figures protect the Little Sisters in BioShock?",
+    "correct_answer": "Big Daddies",
+    "decoys": [
+      "Splicers",
+      "Handymen",
+      "Patriots"
+    ],
+    "image_url": null,
+    "source_url": "https://store.2k.com/game/buy-bioshock?drm=Nintendo+Switch"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which research company built the test chambers in Portal 2?",
+    "correct_answer": "Aperture Science",
+    "decoys": [
+      "Black Mesa",
+      "Abstergo Industries",
+      "Weyland-Yutani"
+    ],
+    "image_url": null,
+    "source_url": "https://store.steampowered.com/app/620/Portal_2/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the name of the AI that oversees Portal's test chambers?",
+    "correct_answer": "GLaDOS",
+    "decoys": [
+      "SHODAN",
+      "Cortana",
+      "EDI"
+    ],
+    "image_url": null,
+    "source_url": "https://store.steampowered.com/app/620/Portal_2/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which city is Gordon Freeman sent to at the start of Half-Life 2?",
+    "correct_answer": "City 17",
+    "decoys": [
+      "Night City",
+      "Rapture",
+      "New Mombasa"
+    ],
+    "image_url": null,
+    "source_url": "https://store.steampowered.com/app/220/HalfLife_2/?l=english"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who joins Gordon Freeman in Half-Life 2?",
+    "correct_answer": "Alyx Vance",
+    "decoys": [
+      "Judith Mossman",
+      "Eli Vance",
+      "Zoey"
+    ],
+    "image_url": null,
+    "source_url": "https://store.steampowered.com/app/220/HalfLife_2/?l=english"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "On which planet is the Union Aerospace facility in DOOM (2016)?",
+    "correct_answer": "Mars",
+    "decoys": [
+      "Venus",
+      "Jupiter",
+      "Mercury"
+    ],
+    "image_url": null,
+    "source_url": "https://bethesda.net/en-US/news/the-art-of-doom-from-mars-to-hell"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which weapon first appeared in DOOM II?",
+    "correct_answer": "Super Shotgun",
+    "decoys": [
+      "BFG 9000",
+      "Chainsaw",
+      "Rocket Launcher"
+    ],
+    "image_url": null,
+    "source_url": "https://international.gear.bethesda.net/en-eu/products/doom-anthology"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who is the monster-hunting protagonist of The Witcher 3?",
+    "correct_answer": "Geralt of Rivia",
+    "decoys": [
+      "Vesemir",
+      "Lambert",
+      "Eskel"
+    ],
+    "image_url": null,
+    "source_url": "https://www.thewitcher.com/us/en/witcher3"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Whom does Geralt search for in The Witcher 3's main story?",
+    "correct_answer": "Ciri",
+    "decoys": [
+      "Yennefer",
+      "Triss",
+      "Keira"
+    ],
+    "image_url": null,
+    "source_url": "https://www.thewitcher.com/us/en/witcher3"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "From which relative does the player inherit a farm in Stardew Valley?",
+    "correct_answer": "Grandfather",
+    "decoys": [
+      "Father",
+      "Uncle",
+      "Brother"
+    ],
+    "image_url": null,
+    "source_url": "https://store.steampowered.com/app/413150/Stardew_Valley/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which solo developer created Stardew Valley?",
+    "correct_answer": "ConcernedApe",
+    "decoys": [
+      "Toby Fox",
+      "Lucas Pope",
+      "Jonathan Blow"
+    ],
+    "image_url": null,
+    "source_url": "https://store.steampowered.com/app/413150/Stardew_Valley/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which realm does the player try to escape in Hades?",
+    "correct_answer": "The Underworld",
+    "decoys": [
+      "Mount Olympus",
+      "The mortal world",
+      "The heavens"
+    ],
+    "image_url": null,
+    "source_url": "https://www.supergiantgames.com/blog/hades-faq/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which prince tries to escape the Underworld in Hades?",
+    "correct_answer": "Zagreus",
+    "decoys": [
+      "Thanatos",
+      "Hypnos",
+      "Achilles"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/games/hades/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which owl runs the museum in Animal Crossing: New Horizons?",
+    "correct_answer": "Blathers",
+    "decoys": [
+      "Celeste",
+      "Brewster",
+      "Gulliver"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/us/store/products/animal-crossing-new-horizons-switch/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the name of the shop run by Timmy and Tommy in Animal Crossing: New Horizons?",
+    "correct_answer": "Nook's Cranny",
+    "decoys": [
+      "Able Sisters",
+      "The Roost",
+      "Resident Services"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/us/store/products/animal-crossing-new-horizons-switch/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Who created the original Tetris?",
+    "correct_answer": "Alexey Pajitnov",
+    "decoys": [
+      "Shigeru Miyamoto",
+      "Gunpei Yokoi",
+      "Toru Iwatani"
+    ],
+    "image_url": null,
+    "source_url": "https://play.tetris.com/about"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "How many squares make up each standard Tetris piece?",
+    "correct_answer": "Four",
+    "decoys": [
+      "Three",
+      "Five",
+      "Six"
+    ],
+    "image_url": null,
+    "source_url": "https://play.tetris.com/about"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which studio created Rocket League?",
+    "correct_answer": "Psyonix",
+    "decoys": [
+      "Respawn Entertainment",
+      "Playground Games",
+      "Criterion Games"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rocketleague.com/news/rocket-league-coming-to-ps4--playstation-experience?lang=en"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which sport inspired Rocket League's car-based matches?",
+    "correct_answer": "Soccer",
+    "decoys": [
+      "Basketball",
+      "Baseball",
+      "Hockey"
+    ],
+    "image_url": null,
+    "source_url": "https://store.epicgames.com/p/rocket-league"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What are the detachable controllers of the original Nintendo Switch called?",
+    "correct_answer": "Joy-Con",
+    "decoys": [
+      "Wii Remotes",
+      "DualSense",
+      "Nunchuks"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/en-gb/Support/Troubleshooting/How-to-Attach-Detach-the-Joy-Con-Controllers-from-the-Nintendo-Switch-Console-1379043.html"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which Nintendo controller was designed around motion sensing for the Wii?",
+    "correct_answer": "Wii Remote",
+    "decoys": [
+      "GameCube Controller",
+      "Joy-Con Grip",
+      "Wii U GamePad"
+    ],
+    "image_url": null,
+    "source_url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/2924/~/wii-remote-is-not-accurately-detecting-motion"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which Nintendo handheld is known for having two screens?",
+    "correct_answer": "Nintendo DS",
+    "decoys": [
+      "Game Boy Advance",
+      "Game Boy Color",
+      "Virtual Boy"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/en-gb/Nintendo-DS/Nintendo-DS/Nintendo-DS-116439.html"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which screen of the original Nintendo DS is touch-sensitive?",
+    "correct_answer": "The lower screen",
+    "decoys": [
+      "The upper screen",
+      "Both screens",
+      "Neither screen"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/en-gb/Nintendo-DS/Nintendo-DS/Nintendo-DS-116439.html"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "How many built-in controller ports does the Nintendo 64 have?",
+    "correct_answer": "Four",
+    "decoys": [
+      "Two",
+      "Three",
+      "Six"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-64/Nintendo-64-625959.html"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which color handheld could also play original Game Boy cartridges?",
+    "correct_answer": "Game Boy Color",
+    "decoys": [
+      "Game Boy Micro",
+      "Nintendo DSi",
+      "Nintendo 3DS"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Game-Boy-Color/Game-Boy-Color-627137.html"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which handheld did Nintendo introduce in Japan alongside Tetris in 1989?",
+    "correct_answer": "Game Boy",
+    "decoys": [
+      "Nintendo DS",
+      "Game Boy Color",
+      "Game Gear"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the standard wireless controller for PlayStation 5 called?",
+    "correct_answer": "DualSense",
+    "decoys": [
+      "DualShock 4",
+      "Sixaxis",
+      "PlayStation Move"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/accessories/dualsense-wireless-controller/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What physical format did original PlayStation games use?",
+    "correct_answer": "CD-ROM discs",
+    "decoys": [
+      "DVD discs",
+      "Blu-ray discs",
+      "Cartridges"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/playstation-history/1994-ps-one/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which movie-disc format could the PlayStation 2 play?",
+    "correct_answer": "DVD",
+    "decoys": [
+      "Blu-ray",
+      "HD DVD",
+      "LaserDisc"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-ph/playstation-history/2000-ps2-psp/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What disc format did physical PSP games use?",
+    "correct_answer": "UMD",
+    "decoys": [
+      "DVD",
+      "Blu-ray",
+      "MiniDisc"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-ph/playstation-history/2000-ps2-psp/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What was the name of the Xbox 360's camera-based motion sensor?",
+    "correct_answer": "Kinect",
+    "decoys": [
+      "PlayStation Eye",
+      "Wii MotionPlus",
+      "Leap Motion"
+    ],
+    "image_url": null,
+    "source_url": "https://news.xbox.com/en-us/2012/02/28/announcing-the-the-xbox-360-special-edition-4gb-kinect-family-bundle/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What removable format did the Atari 2600 use for its games?",
+    "correct_answer": "Cartridges",
+    "decoys": [
+      "CD-ROM discs",
+      "Floppy disks",
+      "UMD discs"
+    ],
+    "image_url": null,
+    "source_url": "https://support.atari.com/hc/en-us/articles/17485416080539-Atari-XP-FAQ"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is Valve's handheld PC gaming device called?",
+    "correct_answer": "Steam Deck",
+    "decoys": [
+      "ROG Ally",
+      "PlayStation Portal",
+      "Nintendo Switch"
+    ],
+    "image_url": null,
+    "source_url": "https://www.steamdeck.com/en/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which company created the Xbox brand?",
+    "correct_answer": "Microsoft",
+    "decoys": [
+      "Sony",
+      "Nintendo",
+      "Sega"
+    ],
+    "image_url": null,
+    "source_url": "https://news.xbox.com/en-us/2016/11/15/celebrating-15-years-xbox/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which mobile Pokémon game uses real-world locations to find Pokémon?",
+    "correct_answer": "Pokémon GO",
+    "decoys": [
+      "Pokémon Masters EX",
+      "Pokémon Sleep",
+      "Pokémon Unite"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/us/pokemon-video-games/pokemon-go/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which animals are the main targets in Angry Birds?",
+    "correct_answer": "Pigs",
+    "decoys": [
+      "Cats",
+      "Monkeys",
+      "Rabbits"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rovio.com/games/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "What is the central settlement players defend in Clash of Clans called?",
+    "correct_answer": "Village",
+    "decoys": [
+      "City",
+      "Colony",
+      "Kingdom"
+    ],
+    "image_url": null,
+    "source_url": "https://supercell.com/en/games/clashofclans/index.html"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which princess do players guide through Monument Valley?",
+    "correct_answer": "Ida",
+    "decoys": [
+      "Zelda",
+      "Peach",
+      "Aurora"
+    ],
+    "image_url": null,
+    "source_url": "https://ustwogames.co.uk/our-games/monument-valley/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "en",
+    "question_text": "Which objects should players avoid slicing in Fruit Ninja?",
+    "correct_answer": "Bombs",
+    "decoys": [
+      "Bananas",
+      "Watermelons",
+      "Apples"
+    ],
+    "image_url": null,
+    "source_url": "https://www.halfbrick.com/games/fruit-ninja-classic"
+  }
+]

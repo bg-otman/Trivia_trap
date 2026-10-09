@@ -1,0 +1,1302 @@
+[
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي حيوان يُعد أثقل وأكبر كائن حي على وجه الأرض من حيث الكتلة والحجم؟",
+        "correct_answer": "الحوت الأزرق",
+        "decoys": [
+            "الفيل الأفريقي",
+            "حوت العنبر",
+            "الحوت الأحدب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/blue-whale"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي حيوان ثديي بري يُعرف بأنه الأسرع في الجري في العالم وتصل سرعته لنحو 100 كم/ساعة؟",
+        "correct_answer": "الفهد (الشيتا)",
+        "decoys": [
+            "النمر المرقط",
+            "الأسد الإفريقي",
+            "الغزال الشائك"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/cheetah"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أطول حيوان ثديي بري قامة على قيد الحياة بفضل عنقه وأرجله الطويلة؟",
+        "correct_answer": "الزرافة",
+        "decoys": [
+            "الفيل الإفريقي",
+            "الموظ",
+            "الجمل العربي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/giraffe"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو الحيوان الثديي الوحيد القادر على الطيران الحقيقي والفعلي بواسطة أجنحة غشائية؟",
+        "correct_answer": "الخفاش",
+        "decoys": [
+            "السنجاب الطائر",
+            "الليمور الطائر",
+            "الكولوغو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/bat-mammal"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "إلى أي فصيلة من الحيوانات ينتمي حيوان الكوالا الشهير في أستراليا؟",
+        "correct_answer": "الجرابيات",
+        "decoys": [
+            "الرئيسيات",
+            "القوارض",
+            "آكلات الحشرات"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/koala"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو الغذاء الأساسي الذي يشكل أكثر من 99% من حمية دب الباندا العملاق في البرية؟",
+        "correct_answer": "نبات الخيزران (البامبو)",
+        "decoys": [
+            "ثمار التوت",
+            "أوراق الأوكالبتوس",
+            "جذور السرخس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/giant-panda"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي حيوان ثديي يمتلك قشوراً قرنية صلبة تغطي كامل جسمه ويلتف على شكل كرة عند الخطر؟",
+        "correct_answer": "البنغولين (آكل النمل الحرشفي)",
+        "decoys": [
+            "المدرع",
+            "القنفذ الشوكي",
+            "خنزير الأرض"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/pangolin"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي نوع من الفيلة يتميز بأذنيه الأكبر حجماً وظهره المقعر وعاجين لدى الذكور والإناث؟",
+        "correct_answer": "الفيل الأفريقي",
+        "decoys": [
+            "الفيل الآسيوي",
+            "فيل الغابات القزم",
+            "الفيل الهندي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/African-elephant"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أكبر حيوان مفترس لاحم يعيش على اليابسة في المناطق القطبية الشمالية المتجمدة؟",
+        "correct_answer": "الدب القطبي",
+        "decoys": [
+            "الذئب القطبي",
+            "الفقمة الملتحية",
+            "الفظ"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/polar-bear"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي من الثدييات البدائية يضع البيض بدلاً من أن يلد صغاراً حية ويستوطن أستراليا؟",
+        "correct_answer": "خلد الماء (بلاتيبوس)",
+        "decoys": [
+            "الومبت",
+            "الولب",
+            "الكنغر الشجري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/platypus"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أكبر أنواع فصيلة السنوريات (القطط الكبيرة) حجماً ووزناً في البرية؟",
+        "correct_answer": "النمر السيبيري",
+        "decoys": [
+            "الأسد الإفريقي",
+            "اليغور",
+            "الفهد"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/tiger"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي حيوان ثديي بحري ينتمي لرتبة الخيلانيات ويرعى الأعشاب البحرية ويُلقب بـ \"بقرة البحر\"؟",
+        "correct_answer": "خروف البحر (الماناتي)",
+        "decoys": [
+            "سبع البحر",
+            "الفظ",
+            "ثعلب الماء البحري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/manatee"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو الموطن الجغرافي البري الوحيد في العالم الذي تعيش فيه حيوانات الليمور الطبيعية؟",
+        "correct_answer": "جزيرة مدغشقر",
+        "decoys": [
+            "جزيرة بورنيو",
+            "غابات الأمازون",
+            "جزيرة غينيا الجديدة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/lemur-primate"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي حيوان ثديي صحراوي يتميز بآذانه الكبيرة جداً التي تساعده على تبريد جسمه وتحديد الفرائس؟",
+        "correct_answer": "ثعلب الفنك",
+        "decoys": [
+            "ابن آوى",
+            "الضبع المخطط",
+            "القط الرملي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/fennec-fox"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أكبر قرد من فصيلة الرئيسيات حجماً ويعيش في الغابات الاستوائية بوسط إفريقيا؟",
+        "correct_answer": "الغوريلا",
+        "decoys": [
+            "الشمبانزي",
+            "إنسان الغاب",
+            "البابون"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/gorilla-primate"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أكبر طائر حي في العالم من حيث الحجم والوزن ولا يستطيع الطيران؟",
+        "correct_answer": "النعامة",
+        "decoys": [
+            "الإيمو",
+            "الكاسواري",
+            "البطريق الإمبراطوري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/ostrich"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أصغر طائر في العالم ويتميز بقدرته على الطيران للخلف والرفرفة بسرعة هائلة؟",
+        "correct_answer": "طائر الطنان",
+        "decoys": [
+            "الصعو",
+            "الحسون الذهبي",
+            "الهازجة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/hummingbird"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أكبر أنواع طيور البطريق حجماً ويعيش في البرد القارس للقارة القطبية الجنوبية؟",
+        "correct_answer": "البطريق الإمبراطوري",
+        "decoys": [
+            "بطريق الجنتو",
+            "بطريق آديلي",
+            "البطريق الملكي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/emperor-penguin"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي طائر جارح يُعد الأسرع انقضاضاً في العالم حيث تتجاوز سرعته 300 كم/ساعة؟",
+        "correct_answer": "صقر الشاهين",
+        "decoys": [
+            "العقاب الذهبي",
+            "الباز الشمالي",
+            "حدأة الصيد"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/peregrine-falcon"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما الطائر البحري ذو الجناحين الأطول امتداداً بين جميع الطيور الحية بباع يصل لنحو 3.5 أمتار؟",
+        "correct_answer": "طائر القطرس الجوال",
+        "decoys": [
+            "البجع الأبيض",
+            "النورس الكبير",
+            "طائر الأطيش"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/wandering-albatross"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي طائر يتميز بلونه الوردي الزاهي الناتج عن نظامه الغذائي الغني بالكاروتين في البحيرات المالحة؟",
+        "correct_answer": "طائر النحام (الفلامنغو)",
+        "decoys": [
+            "طائر أبو منجل",
+            "البلشون الأبيض",
+            "مالك الحزين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/flamingo-bird"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما الطائر الذي لا يبني أعشاشاً لنفسه بل يضع بيضه في أعشاش طيور أخرى لتربي صغاره؟",
+        "correct_answer": "طائر الوقواق",
+        "decoys": [
+            "طائر السنونو",
+            "طائر الدوري",
+            "الهدهد"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/cuckoo"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي طائر ليلي جارح يتميز بقدرة عنقه على الالتفاف بزاوية تصل إلى 270 درجة وريش للطيران الصامت؟",
+        "correct_answer": "البومة",
+        "decoys": [
+            "الغراب الأسود",
+            "الحدأة",
+            "الصقر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/owl"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو الطائر الاستوائي الشهير بمنقاره الملون الضخم وخفيف الوزن ويعيش في غابات أمريكا الجنوبية؟",
+        "correct_answer": "طائر الطوقان",
+        "decoys": [
+            "طائر الكوكاتو",
+            "المكاو القرمزي",
+            "أبو قرن"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/toucan"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو الطائر الوطني الوحيد الذي لا يطير ويستوطن نيوزيلندا وله منقار طويل بفتحات أنف عند طرفه؟",
+        "correct_answer": "طائر الكيوي",
+        "decoys": [
+            "التاكاهي",
+            "الكاكابو",
+            "الويكا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/kiwi-bird"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أكبر نوع من السحالي الحية في العالم ويستوطن جزر إندونيسيا الشرقية؟",
+        "correct_answer": "تنين كومودو",
+        "decoys": [
+            "الورل النيلي",
+            "الإغوانا الخضراء",
+            "السحلية المطوقة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/Komodo-dragon"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي أطول أفعى سامة في العالم وتستطيع رفع ثلث طول جسمها عن الأرض عند التهديد؟",
+        "correct_answer": "الكوبرا الملكية",
+        "decoys": [
+            "المامبا السوداء",
+            "الأفعى المجلجلة",
+            "أفعى الطريشة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/king-cobra"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي زاحف بحري يمتلك قوقعة مرنة مغطاة بالجلد بدلاً من العظام الصلبة ويعد أكبر السلاحف البحرية؟",
+        "correct_answer": "السلحفاة جلدية الظهر",
+        "decoys": [
+            "السلحفاة الخضراء",
+            "سلحفاة منقار الصقر",
+            "سلحفاة لجأة كمب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/leatherback-sea-turtle"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي السحلية الشهيرة بقدرتها الفائقة على تغيير لون جلدها وعينيها اللتين تتحركان بشكل مستقل؟",
+        "correct_answer": "الحرباء",
+        "decoys": [
+            "أبو بريص",
+            "السقنقور",
+            "الضب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/chameleon-reptile"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو العضو الحسي الموجود في سقف فم الأفاعي وتستخدمه لتحليل الروائح بمساعدة لسانها المشقوق؟",
+        "correct_answer": "عضو جاكوبسون",
+        "decoys": [
+            "الغدة النكفية",
+            "الحويصلة الشمية",
+            "عضو كروكنبرغ"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/Jacobson-organ"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أكبر الزواحف الحية حجماً ويعيش في المياه الساحلية ومصبات الأنهار بالمحيطين الهندي والهادئ؟",
+        "correct_answer": "تمساح المياه المالحة",
+        "decoys": [
+            "تمساح النيل",
+            "القاطور الأمريكي",
+            "الكيمن الأسود"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/saltwater-crocodile"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي البرمائيات الملونة بألوان تحذيرية في غابات الأمازون وتفرز سماً فتاكاً عبر جلدها؟",
+        "correct_answer": "ضفادع السهام السامة",
+        "decoys": [
+            "ضفادع الأشجار الخضراء",
+            "علجوم القصب",
+            "ضفدع الثور"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/poison-frog"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو البرمائي المكسيكي النادر الذي يحتفظ بخياشيمه الخارجية طوال حياته دون أن يمر بالتحول المعتاد؟",
+        "correct_answer": "قنفذ البحر المكسيكي (الأكسولوتل)",
+        "decoys": [
+            "سمندل النمر",
+            "سمندل الكهوف",
+            "الضفدع الزجاجي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/axolotl"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي السمة الحيوية التي تميز البرمائيات البالغة عن معظم الفقاريات في تنفسها التكميلي؟",
+        "correct_answer": "التنفس الجلدي عبر الجلد الرطب",
+        "decoys": [
+            "التنفس بالقشور القرنية",
+            "التنفس بالخياشيم العظمية",
+            "التنفس الهوائي العظمي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/amphibian"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي زاحف بدائي يعيش فقط في نيوزيلندا ويمتلك ما يُعرف تشريحياً بـ \"العين الثالثة\" الجدارية؟",
+        "correct_answer": "التواتارا",
+        "decoys": [
+            "الإغوانا البحرية",
+            "سحلية البازيليسك",
+            "سمندل الجبل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/tuatara"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أكبر أنواع الأسماك الحية حجماً في العالم ويتغذى على العوالق بالترشيح؟",
+        "correct_answer": "القرش الحوتي",
+        "decoys": [
+            "القرش الأبيض الكبير",
+            "قرش المطرقة",
+            "القرش النمر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/whale-shark"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي حيوان بحري رخوي يمتلك ثمانية أذرع وثلاثة قلوب ودماً أزرق وقدرة مذهلة على التمويه؟",
+        "correct_answer": "الأخطبوط",
+        "decoys": [
+            "الحبار",
+            "النوتي",
+            "السبيط"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/octopus-mollusk"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو الكائن البحري الفريد الذي يقوم الذكر فيه بحمل البيض ورعايته في كيس خاص حتى يفقس؟",
+        "correct_answer": "فرس البحر",
+        "decoys": [
+            "سمكة المهرج",
+            "سمكة التونة",
+            "شقائق النعمان"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/seahorse"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي كائن بحري لافقاري شفاف يمتلك مجسات ذات خلايا لاسعة ومنه النوع الصندوقي شديد السمية؟",
+        "correct_answer": "قنديل البحر",
+        "decoys": [
+            "نجم البحر",
+            "قنفذ البحر",
+            "خيار البحر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/jellyfish"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي الأسماك العظمية الأثقل وزناً في المحيط وتتميز بجسمها الدائري المفلطح وغياب الزعنفة الذيلية المعتادة؟",
+        "correct_answer": "سمكة شمس المحيط (مولا مولا)",
+        "decoys": [
+            "سمكة التونة الزرقاء",
+            "سمكة السيف",
+            "المارلين الأزرق"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/ocean-sunfish"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو الرخوي البحري الذي يمتلك أكبر عينين في المملكة الحيوانية للرؤية في أعماق المحيط المظلمة؟",
+        "correct_answer": "الحبار العملاق",
+        "decoys": [
+            "الأخطبوط العملاق",
+            "الحبار الضخم",
+            "الحوت القاتل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/giant-squid"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي سمكة تعيش في تكافل آمن بين مجسات شقائق النعمان البحرية السامة بفضل طبقة مخاطية واقية؟",
+        "correct_answer": "سمكة المهرج",
+        "decoys": [
+            "سمكة الببغاء",
+            "سمكة الملاك",
+            "سمكة الفراشة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/clown-fish"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما المادة التي يتكون منها الهيكل الداخلي لأسماك القرش وأسماك الشفنين بدلاً من العظام الصلبة؟",
+        "correct_answer": "الغضروف",
+        "decoys": [
+            "الكيراتين",
+            "الكالسيوم النقي",
+            "الكولاجين الصلب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/chondrichthian"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما الحيوان البحري الشوكي الجلد الذي يستطيع تجديد أذرعه المفقودة إذا تعرض للهجوم من المفترسات؟",
+        "correct_answer": "نجم البحر",
+        "decoys": [
+            "خيار البحر",
+            "سرطان البحر",
+            "إسفنج البحر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/starfish"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو المفترس البحري الأعلى في قمة السلسلة الغذائية البحرية وينتمي لفصيلة الدلافين؟",
+        "correct_answer": "الحوت القاتل (الأوركا)",
+        "decoys": [
+            "القرش الأبيض الكبير",
+            "الحوت الأزرق",
+            "الفقمة النمرية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/killer-whale"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي الفراشة الشهيرة التي تقوم بهجرة جماعية سنوية تقطع خلالها آلاف الكيلومترات إلى المكسيك؟",
+        "correct_answer": "الفراشة الملكية",
+        "decoys": [
+            "فراشة الطاووس",
+            "فراشة السنونو",
+            "فراشة الأدميرال"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/monarch-butterfly"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "كم زوجاً من الأرجل يمتلك العنكبوت البالغ مما يميزه تشريحياً عن الحشرات؟",
+        "correct_answer": "أربعة أزواج",
+        "decoys": [
+            "ثلاثة أزواج",
+            "خمسة أزواج",
+            "ستة أزواج"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/spider-arachnid"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي الحشرة الاجتماعية التي تعيش في مستعمرات وتبني تلالاً ترابية ضخمة وتتغذى على الخشب؟",
+        "correct_answer": "النمل الأبيض (الأرضة)",
+        "decoys": [
+            "النمل النجار",
+            "الدبور الآسيوي",
+            "فرس النبي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/termite"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما اسم الظاهرة الحيوية التي تنتج فيها بعض الحشرات كاليراعات ضوءاً بارداً في الظلام؟",
+        "correct_answer": "التلألؤ الحيوي",
+        "decoys": [
+            "التألق الفسفوري",
+            "التمثيل الضوئي",
+            "التناضح الحراري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/bioluminescence"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما الحشرة المفترسة التي تشتهر بطي أطرافها الأمامية في وضعية تشبه الصلاة وتدوير رأسها بحرية؟",
+        "correct_answer": "فرس النبي (السرعوف)",
+        "decoys": [
+            "اليعسوب",
+            "حشرة العود",
+            "الجندب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/mantis-insect"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي الحشرة الطائرة السريعة التي تعيش يرقاتها في الماء وتتميز بعيون مركبة ضخمة تغطي معظم رأسها؟",
+        "correct_answer": "اليعسوب",
+        "decoys": [
+            "ذبابة مايو",
+            "الزنبور",
+            "حشرة البق"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/dragonfly"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما المادة الطبيعية البروتينية التي تنتجها دودة القز لبناء شرنقتها قبل تحولها لفراشة؟",
+        "correct_answer": "الحرير",
+        "decoys": [
+            "الكيتين",
+            "الصوف",
+            "السيليلوز"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/silkworm"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما الحيوان الرخوي البطيء الذي يحمل صدفة كلسية حلزونية على ظهره ويفرز مادة لزجة للتنقل؟",
+        "correct_answer": "الحلزون",
+        "decoys": [
+            "البزاقة",
+            "المحار",
+            "القريدس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/snail"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي قشري مائي شهير يتميز بوجود كماشتين كبيرتين وهيكل خارجي صلب يتجدد بالانسلاخ؟",
+        "correct_answer": "جراد البحر (الاستاكوزا)",
+        "decoys": [
+            "الحبار",
+            "قنديل البحر",
+            "إسفنج البحر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/crayfish"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما اسم الكائنات البحرية الدقيقة التي تبني بهياكلها الكلسية الصخرية بيئة الشعاب المرجانية؟",
+        "correct_answer": "البوليبات المرجانية",
+        "decoys": [
+            "الإسفنجيات",
+            "الديدان الحلقية",
+            "قنافذ البحر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/coral"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي أطول أنواع الأشجار الحية قامة على كوكب الأرض وتنمو على سواحل كاليفورنيا؟",
+        "correct_answer": "شجرة السيكويا الساحلية",
+        "decoys": [
+            "شجرة الكينا",
+            "شجرة الصنوبر البري",
+            "شجرة السرو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/redwood-conifer"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما الشجرة الأفريقية الضخمة المميزة بجذعها العريض جداً الذي يخزن كميات هائلة من الماء؟",
+        "correct_answer": "شجرة الباوباب",
+        "decoys": [
+            "شجرة الأكاسيا",
+            "شجرة النيم",
+            "شجرة الأبنوس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/baobab"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي الشجرة النادرة المستوطنة في جزيرة سقطرى وتشتهر بإفراز راتنج أحمر يشبه الدم عند جرحها؟",
+        "correct_answer": "شجرة دم الأخوين",
+        "decoys": [
+            "شجرة الصندل",
+            "شجرة البخور",
+            "شجرة المر"
+        ],
+        "image_url": null,
+        "source_url": "https://whc.unesco.org/en/list/1263/"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي الشجرة الفريدة المستوطنة بالمغرب وتستخرج من ثمارها زيوت غذائية وتجميلية ثمينة؟",
+        "correct_answer": "شجرة الأركان",
+        "decoys": [
+            "شجرة الأرز الأطلسي",
+            "شجرة الخروب",
+            "شجرة الزيتون البري"
+        ],
+        "image_url": null,
+        "source_url": "https://whc.unesco.org/en/list/1482/"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي أضخم وأثقل زهرة مفردة في العالم وتنمو في غابات جنوب شرق آسيا وتفرز رائحة قوية؟",
+        "correct_answer": "زهرة الرافليسيا",
+        "decoys": [
+            "زهرة التيتان أروم",
+            "زهرة اللوتس",
+            "زهرة الأوركيد"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/Rafflesia-arnoldii"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي النبتة اللاحمة التي تمتلك أوراقاً بمصائد تنغلق بسرعة عند ملامسة الحشرات لشعيراتها؟",
+        "correct_answer": "خناق الذباب (فينوس)",
+        "decoys": [
+            "نبات الإبريق",
+            "نبات حامول الماء",
+            "نبات التنين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/Venus-flytrap"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي الشجرة الصنوبرية الشاهقة التي تُعد رمزاً وطنياً وتتوسط علم دولة لبنان؟",
+        "correct_answer": "شجرة الأرز",
+        "decoys": [
+            "شجرة السرو",
+            "شجرة البلوط",
+            "شجرة الغار"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/cedar"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما اسم الأشجار الساحلية المقاومة للملوحة وتنمو في المناطق المدارية بجذور داعمة بارزة في الماء؟",
+        "correct_answer": "أشجار القرم (المانغروف)",
+        "decoys": [
+            "أشجار الصفصاف",
+            "أشجار النخيل",
+            "أشجار القصب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/mangrove"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي نبات سريع النمو يُعد في الواقع من أطول الأعشاب الحبيبية وليس شجرة خشبية حقيقية؟",
+        "correct_answer": "الخيزران (البامبو)",
+        "decoys": [
+            "نخيل التمر",
+            "الصبار",
+            "البابيروس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/bamboo"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو التكيف الرئيسي الذي يمكّن نباتات الصبار من تقليل فقدان الماء في الصحراء الجافة؟",
+        "correct_answer": "تحور الأوراق إلى أشواك",
+        "decoys": [
+            "زيادة مساحة الأوراق",
+            "إسقاط الجذور العميقة",
+            "إفراز الزيوت السائلة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/cactus"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي المادة البوليمرية العضوية التي تمنح جدران خلايا جذوع الأشجار صلابتها وقوتها الخشبية؟",
+        "correct_answer": "اللغنين (الخشبين)",
+        "decoys": [
+            "الكولاجين",
+            "الجليكوجين",
+            "الكيراتين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/lignin"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي الشجرة المعمرة المتميزة بقدرتها على العيش لآلاف السنين وأوراقها الفضية بحوض المتوسط؟",
+        "correct_answer": "شجرة الزيتون",
+        "decoys": [
+            "شجرة التين",
+            "شجرة اللوز",
+            "شجرة الرمان"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/olive-plant"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما النبات المائي الذي استخدمه قدماء المصريين في وادي النيل لصناعة الورق التراثي للكتابة؟",
+        "correct_answer": "نبات البردي (البابيروس)",
+        "decoys": [
+            "نبات الكتان",
+            "زهرة اللوتس",
+            "نبات القصب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/papyrus-plant"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما اسم الصبغة الخضراء في النباتات التي تمتص الطاقة الضوئية للقيام بالبناء الضوئي؟",
+        "correct_answer": "الكلوروفيل",
+        "decoys": [
+            "الكاروتين",
+            "الأنثوسيانين",
+            "الزانثوفيل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/chlorophyll"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "أي من النباتات التالية تُعد نباتات لا بذرية وتتكاثر عبر الأبواغ ولها أوراق ريشية خضراء؟",
+        "correct_answer": "السرخسيات (الخنشار)",
+        "decoys": [
+            "الصنوبريات",
+            "كاسيات البذور",
+            "النجيليات"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/plant/fern"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي أكبر غابة استوائية مطيرة في العالم وتضم أعلى تنوع بيولوجي على اليابسة؟",
+        "correct_answer": "غابات الأمازون",
+        "decoys": [
+            "غابات حوض الكونغو",
+            "غابات بورنيو المطيرة",
+            "غابات التايغا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Amazon-Rainforest"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي الغابات الصنوبرية الشاسعة الواقعة في سيبيريا وكندا وتعد أكبر موطن بري للغابات في العالم؟",
+        "correct_answer": "غابات التايغا",
+        "decoys": [
+            "غابات البحر المتوسط",
+            "غابات السافانا",
+            "الغابات النفضية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/taiga"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو النظام البيئي القطبي البارد الخالي من الأشجار والمتميز بتربته المتجمدة دائماً؟",
+        "correct_answer": "التندرا",
+        "decoys": [
+            "السافانا",
+            "السهوب",
+            "المروج المعتدلة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/tundra"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي السهول العشبية المدارية المفتوحة ذات الأشجار المتفرقة في إفريقيا وتضم حيوانات عاشبة كبرى؟",
+        "correct_answer": "السافانا",
+        "decoys": [
+            "البامباس",
+            "السهوب",
+            "التايغا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/savanna"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أكبر نظام للشعاب المرجانية الحية في العالم ويقع قبالة سواحل أستراليا؟",
+        "correct_answer": "الحيد المرجاني العظيم",
+        "decoys": [
+            "حيد بليز المرجاني",
+            "شعاب البحر الأحمر",
+            "الحيد الكاريبي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Great-Barrier-Reef"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي أكبر صحراء حارة في العالم وتمتد عبر شمال قارة إفريقيا؟",
+        "correct_answer": "الصحراء الكبرى",
+        "decoys": [
+            "صحراء غوبي",
+            "صحراء كالاهاري",
+            "صحراء أتاكاما"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Sahara-desert-Africa"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي أشد الصحاري غير القطبية جفافاً على وجه الأرض وتقع في شمال دولة تشيلي؟",
+        "correct_answer": "صحراء أتاكاما",
+        "decoys": [
+            "صحراء ناميب",
+            "صحراء موهافي",
+            "صحراء لوط"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Atacama-Desert"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أعمق منخفض محيطي معروف في محيطات الأرض ويقع في غرب المحيط الهادئ؟",
+        "correct_answer": "خندق ماريانا",
+        "decoys": [
+            "خندق بورتوريكو",
+            "خندق تونغا",
+            "خندق جاوة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Mariana-Trench"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما اسم البيئة المائية الانتقالية التي يلتقي فيها مصب النهر العذب بمياه البحر المالحة؟",
+        "correct_answer": "مصب النهر (الإستواري)",
+        "decoys": [
+            "البحيرة المغلقة",
+            "الواحة الصحراوية",
+            "المستنقع الجبلي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/estuary"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي البحيرة العذبة الأعمق والأكبر حجماً من حيث مخزون المياه السطحية في العالم وتقع في روسيا؟",
+        "correct_answer": "بحيرة بايكال",
+        "decoys": [
+            "بحيرة سوبيريور",
+            "بحيرة فيكتوريا",
+            "بحيرة تنجانيقا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Lake-Baikal"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما الموطن الطبيعي للأراضي الرطبة العشبية المغمورة بالمياه والتي تعمل كمرشحات طبيعية للمياه؟",
+        "correct_answer": "المستنقعات والأهوار",
+        "decoys": [
+            "الكثبان الرملية",
+            "الهضاب البازلتية",
+            "الوديان الجافة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/wetland"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي السهول العشبية الخصبة الشاسعة التي تمتد في الأرجنتين والأوروغواي في أمريكا الجنوبية؟",
+        "correct_answer": "سهول البامباس",
+        "decoys": [
+            "السافانا الإفريقية",
+            "السهوب السيبيرية",
+            "البراري الكندية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/the-Pampas"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما اسم الطبقة المحيطية العميقة التي تعيش في ظلام دامس تام تحت عمق 1000 متر؟",
+        "correct_answer": "المنطقة غير الضوئية (الأفوتية)",
+        "decoys": [
+            "المنطقة الضوئية السطحية",
+            "المنطقة المدية",
+            "الرصيف القاري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/aphotic-zone"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو الأرخبيل البركاني المعزول التابع للإكوادور والذي ساهمت عزلته في تطور كائنات فريدة؟",
+        "correct_answer": "جزر غالاباغوس",
+        "decoys": [
+            "جزر هاواي",
+            "جزر الكناري",
+            "جزر المالديف"
+        ],
+        "image_url": null,
+        "source_url": "https://whc.unesco.org/en/list/1/"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي البيئة الشجيرية المميزة لحوض البحر الأبيض المتوسط بغاباتها القصيرة ونباتاتها العطرية؟",
+        "correct_answer": "بيئة أجمات الماكيا",
+        "decoys": [
+            "بيئة التايغا",
+            "بيئة التندرا",
+            "بيئة البامبو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/maquis"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما اسم حالة الخمول وانخفاض معدل الأيض التي تلجأ إليها حيوانات لقضاء فصل الشتاء القارس؟",
+        "correct_answer": "السبات الشتوي",
+        "decoys": [
+            "البيات الصيفي",
+            "الهجرة الموسمية",
+            "الانسلاخ الدوري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/hibernation"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو المصطلح البيئي الذي يصف العلاقة التكافلية التي يستفيد فيها كلا الكائنين الحيين معاً؟",
+        "correct_answer": "التقايض (تبادل المنفعة)",
+        "decoys": [
+            "التطفل",
+            "الافتراس",
+            "التنافس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/mutualism-biology"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو المصطلح العلمي لتشابه كائن غير مؤذٍ مع كائن سام لتخويف المفترسات وإبعادها؟",
+        "correct_answer": "المحاكاة الحيوية",
+        "decoys": [
+            "الإضاءة الحيوية",
+            "التلألؤ الضوئي",
+            "الإشعاع التكيفي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/mimicry"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو أضخم حيوان ثديي بري يقوم بهجرة دائرية سنوية ضخمة تزيد عن مليوني رأس في إفريقيا؟",
+        "correct_answer": "النو الأزرق (الثيتل)",
+        "decoys": [
+            "الفيل الإفريقي",
+            "وحيد القرن الأبيض",
+            "الزرافة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/gnu"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما اسم النظام الحسي الحيوي الذي تستخدمه الخفافيش والدلافين للملاحة وتحديد مكان الفرائس بالموجات الصوتية؟",
+        "correct_answer": "تحديد الموقع بالصدى",
+        "decoys": [
+            "الاستقبال الكهربائي",
+            "الرؤية الحرارية",
+            "الاستقبال المغناطيسي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/echolocation"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو المستوى الغذائي الذي يشكل قاعدة السلسلة الغذائية في أي نظام بيئي وينتج الطاقة العضوية؟",
+        "correct_answer": "المنتجات (ذاتية التغذية)",
+        "decoys": [
+            "المستهلكات الأولية",
+            "المحللات",
+            "المستهلكات العليا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/trophic-level"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو النوع الحيوي الذي يؤثر وجوده أو اختفاؤه تأثيراً كبيراً وحاسماً على توازن مجتمعه البيئي؟",
+        "correct_answer": "النوع المفتاحي",
+        "decoys": [
+            "النوع الدخيل",
+            "النوع العابر",
+            "النوع الهامشي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/keystone-species"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو التكيف السلوكي الذي تلجأ إليه الأسماك بالتجمع في مجموعات ضخمة منسقة لتقليل خطر الافتراس؟",
+        "correct_answer": "التجمع في أسراب (السرب)",
+        "decoys": [
+            "السلوك الانفرادي",
+            "التنافس الإقليمي",
+            "التغذية الليلية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/shoaling-and-schooling"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما اسم العملية البيئية التي تعود فيها الأنواع تدريجياً لتعمير بيئة تضررت بفعل حريق أو ثوران بركان؟",
+        "correct_answer": "التعاقب البيئي",
+        "decoys": [
+            "التنوع الحيوي",
+            "التكيف المورفولوجي",
+            "الانجراف الوراثي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/ecological-succession"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي سمكة المحيطات التي تهاجر رحلة شاقة عكس التيار من البحر إلى مسقط رأسها في الأنهار للتكاثر؟",
+        "correct_answer": "سمك السلمون",
+        "decoys": [
+            "سمك القد",
+            "سمك الرنجة",
+            "سمك الماكريل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/salmon-fish"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو التكيف الذي يتيح لحيوان كالأرنب القطبي التخفي بالتحول إلى الفراء الأبيض في الشتاء؟",
+        "correct_answer": "التمويه اللوني الموسمي",
+        "decoys": [
+            "التحذير اللوني",
+            "التلألؤ الحيوي",
+            "التمايز الجيني"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/camouflage-protective-colouration"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو الكائن الذي ينشأ من تعايش وشراكة تكافلية وثيقة بين فطر وطحلب؟",
+        "correct_answer": "الأشنات (الأشنة)",
+        "decoys": [
+            "الحزازيات",
+            "فطر عيش الغراب",
+            "الخمائر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/lichen-plant-like-organism"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هو التكيف الفسيولوجي الذي تلجأ إليه الجمال لتخزين الطاقة وتحمل فترات الجفاف الطويلة؟",
+        "correct_answer": "تخزين الدهون في السنام",
+        "decoys": [
+            "تخزين الماء في المعدة",
+            "إفراز العرق الغزير",
+            "تقليل ضربات القلب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/animal/camel-mammal"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما اسم الصمغ النباتي القديم المتحجر الذي حفظ حشرات وكائنات صغيرة لملايين السنين؟",
+        "correct_answer": "الكهرمان (العنبر الأحفوري)",
+        "decoys": [
+            "الفحم الحجري",
+            "الصوان",
+            "الأوبال"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/science/amber"
+    },
+    {
+        "category_id": 7,
+        "language_code": "ar",
+        "question_text": "ما هي المنظمة الدولية الرائدة التي تصدر \"القائمة الحمراء\" لتقييم وتصنيف الأنواع المهددة بالانقراض؟",
+        "correct_answer": "الاتحاد الدولي لحفظ الطبيعة (IUCN)",
+        "decoys": [
+            "منظمة الأغذية والزراعة",
+            "برنامج الأمم المتحدة للبيئة",
+            "الهيئة الدولية للطاقة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.iucn.org/"
+    }
+]

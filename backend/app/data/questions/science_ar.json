@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما أكبر قمر طبيعي في المجموعة الشمسية؟",
+    "correct_answer": "غانيميد",
+    "decoys": [
+      "تيتان",
+      "كاليستو",
+      "أوروبا"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/jupiter/jupiter-moons/ganymede/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي كوكب يُكمل دورته حول الشمس في أقصر مدة؟",
+    "correct_answer": "عطارد",
+    "decoys": [
+      "الزهرة",
+      "الأرض",
+      "المريخ"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/mercury/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي كوكب يبدو كأنه يدور على جانبه بسبب ميل محوره الشديد؟",
+    "correct_answer": "أورانوس",
+    "decoys": [
+      "نبتون",
+      "زحل",
+      "المشتري"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/uranus/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي قمر للمشتري يُعد أكثر أجرام المجموعة الشمسية نشاطًا بركانيًا؟",
+    "correct_answer": "آيو",
+    "decoys": [
+      "أوروبا",
+      "غانيميد",
+      "كاليستو"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/jupiter/jupiter-moons/io/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي قمري المريخ أقرب إليه؟",
+    "correct_answer": "فوبوس",
+    "decoys": [
+      "ديموس",
+      "تيتان",
+      "تريتون"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/mars/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "على أي كوكب تقع البقعة الحمراء العظيمة؟",
+    "correct_answer": "المشتري",
+    "decoys": [
+      "زحل",
+      "نبتون",
+      "أورانوس"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/jupiter/jupiter-facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما المادة التي تُشكّل معظم حلقات زحل؟",
+    "correct_answer": "الجليد المائي",
+    "decoys": [
+      "الصخور",
+      "الغازات",
+      "الحديد"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/mission/cassini/science/rings/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم الطبقة المرئية من الشمس؟",
+    "correct_answer": "الغلاف الضوئي",
+    "decoys": [
+      "الهالة الشمسية",
+      "منطقة الحمل",
+      "النواة"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/sun/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما سبب رؤية الوجه نفسه من القمر دائمًا تقريبًا؟",
+    "correct_answer": "الدوران المتزامن",
+    "decoys": [
+      "توقف القمر عن الدوران",
+      "ظل الأرض الدائم",
+      "ثبات الشمس في السماء"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/moon/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "بين أي كوكبين يقع حزام الكويكبات الرئيسي؟",
+    "correct_answer": "المريخ والمشتري",
+    "decoys": [
+      "الأرض والمريخ",
+      "المشتري وزحل",
+      "الزهرة والأرض"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/asset/webb/asteroid-belts-illustration/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "في أي منطقة تقع مدارات بلوتو وأجرام جليدية أخرى وراء نبتون؟",
+    "correct_answer": "حزام كايبر",
+    "decoys": [
+      "حزام الكويكبات",
+      "القرص المتناثر",
+      "سحابة أورت"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي كوكب يشتهر بأسرع رياح مُسجّلة في المجموعة الشمسية؟",
+    "correct_answer": "نبتون",
+    "decoys": [
+      "زحل",
+      "المشتري",
+      "أورانوس"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/neptune/neptune-facts/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي جزء من العين يتحكم في كمية الضوء التي تدخلها؟",
+    "correct_answer": "القزحية",
+    "decoys": [
+      "العدسة",
+      "الشبكية",
+      "القرنية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/how-eyes-work"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي عضو يرشّح الدم ويُنتج البول؟",
+    "correct_answer": "الكلية",
+    "decoys": [
+      "الكبد",
+      "الطحال",
+      "البنكرياس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما أكبر عضو في جسم الإنسان؟",
+    "correct_answer": "الجلد",
+    "decoys": [
+      "الكبد",
+      "الرئة",
+      "القلب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.medlineplus.gov/ency/anatomyvideos/000029.htm"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما أطول عظمة في جسم الإنسان؟",
+    "correct_answer": "عظم الفخذ",
+    "decoys": [
+      "عظم العضد",
+      "عظم الساق",
+      "عظم الزند"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK532982/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "في أي جزء من الجهاز الهضمي يحدث امتصاص معظم المغذيات؟",
+    "correct_answer": "الأمعاء الدقيقة",
+    "decoys": [
+      "المعدة",
+      "الأمعاء الغليظة",
+      "المريء"
+    ],
+    "image_url": null,
+    "source_url": "https://medlineplus.gov/ency/article/002943.htm"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما العضلة الرئيسية التي تنقبض عند الشهيق؟",
+    "correct_answer": "الحجاب الحاجز",
+    "decoys": [
+      "عضلة القلب",
+      "العضلة ذات الرأسين",
+      "عضلة الفك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nhlbi.nih.gov/health/lungs/body-controls-breathing"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي جزء من الدماغ ينسّق الحركة ويساعد على حفظ التوازن؟",
+    "correct_answer": "المخيخ",
+    "decoys": [
+      "الوطاء",
+      "النخاع المستطيل",
+      "الفص الصدغي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ninds.nih.gov/sites/default/files/2025-05/know-your-brain-brian-basics.pdf"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم الأكياس الهوائية الصغيرة التي يتم فيها تبادل الغازات في الرئتين؟",
+    "correct_answer": "الحويصلات الهوائية",
+    "decoys": [
+      "القصيبات الهوائية",
+      "الشعب الهوائية",
+      "غشاء الجنب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nhlbi.nih.gov/health/lungs/respiratory-system"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما أجزاء الدم التي تتجمع عند الجرح لبدء تكوّن الجلطة؟",
+    "correct_answer": "الصفائح الدموية",
+    "decoys": [
+      "خلايا الدم الحمراء",
+      "خلايا الدم البيضاء",
+      "بلازما الدم"
+    ],
+    "image_url": null,
+    "source_url": "https://medlineplus.gov/bloodclots.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الجزء الحلزوني في الأذن الداخلية الذي يحوّل اهتزازات الصوت إلى إشارات عصبية؟",
+    "correct_answer": "القوقعة",
+    "decoys": [
+      "طبلة الأذن",
+      "قناة استاكيوس",
+      "صيوان الأذن"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nidcd.nih.gov/health/how-do-we-hear"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "كم عظمة يتكوّن منها الهيكل العظمي المعتاد للإنسان البالغ؟",
+    "correct_answer": "206",
+    "decoys": [
+      "186",
+      "216",
+      "226"
+    ],
+    "image_url": null,
+    "source_url": "https://medlineplus.gov/ency/imagepages/9065.htm"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي فص من الدماغ يعالج المعلومات البصرية أساسًا؟",
+    "correct_answer": "الفص القذالي",
+    "decoys": [
+      "الفص الجبهي",
+      "الفص الصدغي",
+      "الفص الجداري"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK575742/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الثديي الذي يضع البيض وله منقار يشبه منقار البط؟",
+    "correct_answer": "خلد الماء",
+    "decoys": [
+      "آكل النمل الشوكي",
+      "القندس",
+      "ثعلب الماء"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/29-6-mammals"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما أكبر أنواع البطاريق الحية حجمًا؟",
+    "correct_answer": "البطريق الإمبراطور",
+    "decoys": [
+      "البطريق الملك",
+      "بطريق أديلي",
+      "البطريق الصغير"
+    ],
+    "image_url": null,
+    "source_url": "https://ocean.si.edu/ocean-life/seabirds/penguins"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "كم قلبًا للأخطبوط؟",
+    "correct_answer": "ثلاثة",
+    "decoys": [
+      "واحد",
+      "اثنان",
+      "أربعة"
+    ],
+    "image_url": null,
+    "source_url": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ماذا تُسمّى يرقة الضفدع التي تعيش في الماء؟",
+    "correct_answer": "الشرغوف",
+    "decoys": [
+      "اليسروع",
+      "الحورية",
+      "العذراء"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/29-3-amphibians"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما المرحلة التي تلي اليرقة في تحوّل الفراشة الكامل؟",
+    "correct_answer": "العذراء",
+    "decoys": [
+      "البيضة",
+      "الحورية",
+      "الفراشة البالغة"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/27-1-features-of-the-animal-kingdom"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما أكبر أنواع السلاحف البحرية الحية؟",
+    "correct_answer": "السلحفاة جلدية الظهر",
+    "decoys": [
+      "السلحفاة الخضراء",
+      "السلحفاة ضخمة الرأس",
+      "السلحفاة صقرية المنقار"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fisheries.noaa.gov/species/leatherback-turtle"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي تراكيب خلوية تصنع البروتينات؟",
+    "correct_answer": "الريبوسومات",
+    "decoys": [
+      "الليسوسومات",
+      "الفجوات",
+      "الجسيمات المركزية"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/15-5-ribosomes-and-protein-synthesis"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما التركيب الذي يحيط بالخلية النباتية ويمنحها الدعامة؟",
+    "correct_answer": "الجدار الخلوي",
+    "decoys": [
+      "الغشاء البلازمي",
+      "النواة",
+      "الفجوة العصارية"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما نوع الانقسام الذي ينتج عادةً خليتين متماثلتين وراثيًا؟",
+    "correct_answer": "الانقسام المتساوي",
+    "decoys": [
+      "الانقسام المنصف",
+      "الإخصاب",
+      "التبرعم"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/10-2-the-cell-cycle"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي مجموعة من الفقاريات تُرضع صغارها الحليب؟",
+    "correct_answer": "الثدييات",
+    "decoys": [
+      "الطيور",
+      "الزواحف",
+      "البرمائيات"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/29-6-mammals"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ماذا تُسمّى الكائنات التي تفكك بقايا الكائنات الميتة؟",
+    "correct_answer": "المحللات",
+    "decoys": [
+      "المنتجات",
+      "المفترسات",
+      "الطفيليات"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/6-1-energy-and-metabolism"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "كم زوجًا من الأرجل للحشرة البالغة؟",
+    "correct_answer": "ثلاثة أزواج",
+    "decoys": [
+      "زوجان",
+      "أربعة أزواج",
+      "خمسة أزواج"
+    ],
+    "image_url": null,
+    "source_url": "https://naturalhistory.si.edu/education/teaching-resources/life-science/what-insect"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم فقدان النبات للماء على هيئة بخار عبر أوراقه؟",
+    "correct_answer": "النتح",
+    "decoys": [
+      "البناء الضوئي",
+      "التنفس",
+      "الإنبات"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/water-science-school/science/evapotranspiration-and-water-cycle"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي نسيج في النبات ينقل الماء من الجذور إلى الأوراق؟",
+    "correct_answer": "النسيج الخشبي",
+    "decoys": [
+      "النسيج اللحائي",
+      "البشرة",
+      "الكامبيوم"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/30-1-the-plant-body"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي هرمون نباتي يساعد على نضج الثمار؟",
+    "correct_answer": "الإيثيلين",
+    "decoys": [
+      "الأوكسين",
+      "الجبرلين",
+      "السيتوكينين"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/30-6-plant-sensory-systems-and-responses"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم الفتحات الصغيرة في الأوراق التي تنظّم تبادل الغازات؟",
+    "correct_answer": "الثغور",
+    "decoys": [
+      "الجذور",
+      "العروق",
+      "البذور"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/8-1-overview-of-photosynthesis"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم انتقال حبوب اللقاح إلى ميسم الزهرة؟",
+    "correct_answer": "التلقيح",
+    "decoys": [
+      "الإنبات",
+      "النتح",
+      "الإخصاب"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/32-2-pollination-and-fertilization"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي جزء من النبات يمتص الماء من التربة؟",
+    "correct_answer": "الجذور",
+    "decoys": [
+      "الأوراق",
+      "الأزهار",
+      "الثمار"
+    ],
+    "image_url": null,
+    "source_url": "https://aglab.ars.usda.gov/let-s-get-to-work/plant-growth-and-osmosis"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "في أي جزء من الزهرة تتكوّن البذور بعد الإخصاب؟",
+    "correct_answer": "المبيض",
+    "decoys": [
+      "المتك",
+      "الميسم",
+      "البتلات"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/26-3-angiosperms"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ماذا تُسمّى النباتات التي تكون بذورها داخل الثمار؟",
+    "correct_answer": "كاسيات البذور",
+    "decoys": [
+      "عاريات البذور",
+      "الحزازيات",
+      "السرخسيات"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/26-3-angiosperms"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما جزء الجنين في البذرة الذي ينمو ليكوّن الجذر الأول؟",
+    "correct_answer": "الجذير",
+    "decoys": [
+      "الريشة",
+      "الفلقة",
+      "غلاف البذرة"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/30-3-roots"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الغاز الذي تطلقه النباتات خلال البناء الضوئي؟",
+    "correct_answer": "الأكسجين",
+    "decoys": [
+      "ثاني أكسيد الكربون",
+      "النيتروجين",
+      "الميثان"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/8-1-overview-of-photosynthesis"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الحمض الرئيسي في عصير الليمون؟",
+    "correct_answer": "حمض الستريك",
+    "decoys": [
+      "حمض الخليك",
+      "حمض اللبنيك",
+      "حمض الكربونيك"
+    ],
+    "image_url": null,
+    "source_url": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/2708"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "كم تبلغ قيمة الرقم الهيدروجيني للماء النقي عند 25 درجة مئوية؟",
+    "correct_answer": "7",
+    "decoys": [
+      "3",
+      "5",
+      "9"
+    ],
+    "image_url": null,
+    "source_url": "https://pubs.usgs.gov/twri/twri9a6/twri9a64/twri9a_Section6.4_ver1.2.pdf"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الصيغة الكيميائية لملح الطعام؟",
+    "correct_answer": "NaCl",
+    "decoys": [
+      "KCl",
+      "NaHCO3",
+      "CaCO3"
+    ],
+    "image_url": null,
+    "source_url": "https://pubchem.ncbi.nlm.nih.gov/compound/Sodium-Chloride"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الغاز الذي يكوّن الفقاعات في المشروبات الغازية؟",
+    "correct_answer": "ثاني أكسيد الكربون",
+    "decoys": [
+      "الأكسجين",
+      "النيتروجين",
+      "الهيدروجين"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/chemistry-2e/pages/13-3-shifting-equilibria-le-chateliers-principle"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي فلز يكون سائلًا عند درجة حرارة الغرفة المعتادة؟",
+    "correct_answer": "الزئبق",
+    "decoys": [
+      "الحديد",
+      "النحاس",
+      "الألومنيوم"
+    ],
+    "image_url": null,
+    "source_url": "https://pubchem.ncbi.nlm.nih.gov/element/80"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الجسيم ذو الشحنة السالبة في الذرة؟",
+    "correct_answer": "الإلكترون",
+    "decoys": [
+      "البروتون",
+      "النيوترون",
+      "البوزيترون"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/chemistry-2e/pages/2-2-evolution-of-atomic-theory"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ماذا تُسمّى المادة التي تُسرّع تفاعلًا كيميائيًا دون أن تُستهلك فيه؟",
+    "correct_answer": "المحفّز",
+    "decoys": [
+      "المذيب",
+      "الناتج",
+      "المترسّب"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/chemistry-2e/pages/12-7-catalysis"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم التفاعل الذي ينتج عنه ملح وماء عند مزج حمض وقاعدة مناسبين؟",
+    "correct_answer": "التعادل",
+    "decoys": [
+      "الاحتراق",
+      "التحلل",
+      "التبلمر"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/chemistry-2e/pages/4-key-terms"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ماذا تُسمّى ذرات العنصر نفسه إذا اختلف عدد النيوترونات فيها؟",
+    "correct_answer": "النظائر",
+    "decoys": [
+      "الأيونات",
+      "الجزيئات",
+      "المركبات"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/chemistry-2e/pages/2-summary"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم العملية التي تفقد فيها الذرة إلكترونات؟",
+    "correct_answer": "الأكسدة",
+    "decoys": [
+      "الاختزال",
+      "التعادل",
+      "التكثف"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "كم بروتونًا في نواة ذرة الكربون؟",
+    "correct_answer": "ستة",
+    "decoys": [
+      "أربعة",
+      "خمسة",
+      "ثمانية"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/chemistry-atoms-first-2e/pages/2-3-atomic-structure-and-symbolism"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم المادة النقية المكوّنة من نوع واحد من الذرات؟",
+    "correct_answer": "عنصر",
+    "decoys": [
+      "مركب",
+      "محلول",
+      "مخلوط"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/chemistry-2e/pages/1-2-phases-and-classification-of-matter"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما القوة الناتجة عن تلامس سطحين وتعاكس انزلاقهما؟",
+    "correct_answer": "الاحتكاك",
+    "decoys": [
+      "الجاذبية",
+      "الطفو",
+      "الشد"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/college-physics-2e/pages/5-1-friction"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم تحوّل المادة من الحالة الصلبة إلى الغازية مباشرة؟",
+    "correct_answer": "التسامي",
+    "decoys": [
+      "التبخر",
+      "التكاثف",
+      "الانصهار"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/chemistry-2e/pages/10-3-phase-transitions"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي نوع من الموجات لا يستطيع الانتقال في الفراغ؟",
+    "correct_answer": "الموجات الصوتية",
+    "decoys": [
+      "موجات الراديو",
+      "الضوء المرئي",
+      "الأشعة السينية"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/physics/pages/13-1-types-of-waves"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم ارتداد الضوء عن سطح مرآة؟",
+    "correct_answer": "الانعكاس",
+    "decoys": [
+      "الانكسار",
+      "الامتصاص",
+      "التشتت"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/college-physics-2e/pages/25-1-the-ray-aspect-of-light"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الأداة الزجاجية التي تفصل الضوء الأبيض إلى ألوانه؟",
+    "correct_answer": "المنشور",
+    "decoys": [
+      "العدسة المحدبة",
+      "المرآة المقعرة",
+      "المرشح الضوئي"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/physics/pages/16-2-refraction"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي عدسة تجمع أشعة الضوء المتوازية نحو نقطة؟",
+    "correct_answer": "العدسة المحدبة",
+    "decoys": [
+      "العدسة المقعرة",
+      "اللوح الزجاجي المستوي",
+      "المرشح الضوئي"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/physics/pages/16-3-lenses"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ماذا يحدث عند تقريب قطبين مغناطيسيين مختلفين؟",
+    "correct_answer": "يتجاذبان",
+    "decoys": [
+      "يتنافران",
+      "لا يؤثر أحدهما في الآخر",
+      "يفقدان مغناطيسيتهما"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/physics/pages/20-1-magnetic-fields-field-lines-and-force"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم الطاقة التي يمتلكها جسم بسبب حركته؟",
+    "correct_answer": "الطاقة الحركية",
+    "decoys": [
+      "طاقة الوضع",
+      "الطاقة الكيميائية",
+      "الطاقة النووية"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/physics/pages/9-1-work-power-and-the-work-energy-theorem"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما وحدة قياس القوة في النظام الدولي؟",
+    "correct_answer": "النيوتن",
+    "decoys": [
+      "الجول",
+      "الواط",
+      "الباسكال"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما القوة التي يدفع بها السائل جسمًا مغمورًا إلى أعلى؟",
+    "correct_answer": "قوة الطفو",
+    "decoys": [
+      "قوة الاحتكاك",
+      "قوة الشد",
+      "القوة المغناطيسية"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/college-physics/pages/11-7-archimedes-principle"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم تغيّر اتجاه الضوء عند انتقاله من الهواء إلى الماء؟",
+    "correct_answer": "الانكسار",
+    "decoys": [
+      "الانعكاس",
+      "الحيود",
+      "الامتصاص"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/physics/pages/16-2-refraction"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ماذا يحدث لسرعة جسم إذا كانت محصلة القوى المؤثرة عليه تساوي صفرًا؟",
+    "correct_answer": "تبقى ثابتة",
+    "decoys": [
+      "تزداد",
+      "تتناقص",
+      "تنعدم دائمًا"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/physics/pages/4-2-newtons-first-law-of-motion-inertia"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ماذا تُسمّى الصخور المنصهرة بعد خروجها إلى سطح الأرض؟",
+    "correct_answer": "الحمم البركانية",
+    "decoys": [
+      "الصهارة",
+      "الرماد البركاني",
+      "الخفاف"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/faqs/what-difference-between-magma-and-lava?page=1"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم الكسر في الصخور الذي تتحرك على جانبيه كتلتان وقد يسبب زلزالًا؟",
+    "correct_answer": "الصدع",
+    "decoys": [
+      "الطية",
+      "الفوهة",
+      "الكثيب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي جزء من لب الأرض يكون سائلًا؟",
+    "correct_answer": "اللب الخارجي",
+    "decoys": [
+      "اللب الداخلي",
+      "القشرة",
+      "الوشاح العلوي"
+    ],
+    "image_url": null,
+    "source_url": "https://pubs.usgs.gov/gip/dynamic/inside.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما نوع الصخور الناتجة من تراكم الرواسب وتماسكها؟",
+    "correct_answer": "الصخور الرسوبية",
+    "decoys": [
+      "الصخور النارية",
+      "الصخور المتحولة",
+      "الصخور البركانية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/faqs/what-are-sedimentary-rocks?qt-news_science_products=0"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "في طبقات رسوبية لم تنقلب، أين توجد الطبقة الأقدم؟",
+    "correct_answer": "في الأسفل",
+    "decoys": [
+      "في الأعلى",
+      "في الوسط دائمًا",
+      "في الجانب الشرقي"
+    ],
+    "image_url": null,
+    "source_url": "https://pubs.usgs.gov/gip/fossils/rocks-layers.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم دخول ماء المطر من سطح الأرض إلى مسام التربة؟",
+    "correct_answer": "التسرّب",
+    "decoys": [
+      "التبخر",
+      "التكاثف",
+      "الجريان السطحي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم المنطقة التي تتكوّن من رواسب النهر عند مصبّه؟",
+    "correct_answer": "الدلتا",
+    "decoys": [
+      "الهضبة",
+      "الكثيب",
+      "الفوهة"
+    ],
+    "image_url": null,
+    "source_url": "https://water.usgs.gov/nwsum/WSP2425/glossary.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم تفتت الصخور في مكانها بفعل العوامل الطبيعية؟",
+    "correct_answer": "التجوية",
+    "decoys": [
+      "التعرية",
+      "الترسيب",
+      "التحول"
+    ],
+    "image_url": null,
+    "source_url": "https://pubs.usgs.gov/bul/2195/b2195.pdf"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الصخر الذي يتكوّن من حبيبات رمل متماسكة؟",
+    "correct_answer": "الحجر الرملي",
+    "decoys": [
+      "الحجر الجيري",
+      "الرخام",
+      "البازلت"
+    ],
+    "image_url": null,
+    "source_url": "https://pubs.usgs.gov/gip/fossils/rocks-layers.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم الموجات التي تنقل طاقة الزلزال عبر الأرض؟",
+    "correct_answer": "الموجات الزلزالية",
+    "decoys": [
+      "الموجات الضوئية",
+      "الموجات الراديوية",
+      "موجات المد والجزر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي عنصرين يشكّلان معظم لب الأرض؟",
+    "correct_answer": "الحديد والنيكل",
+    "decoys": [
+      "السيليكون والأكسجين",
+      "الكربون والكبريت",
+      "الصوديوم والكلور"
+    ],
+    "image_url": null,
+    "source_url": "https://pubs.usgs.gov/gip/dynamic/inside.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما نوع البركان الذي له قاعدة واسعة ومنحدرات لطيفة؟",
+    "correct_answer": "البركان الدرعي",
+    "decoys": [
+      "البركان الطبقي",
+      "مخروط الرماد",
+      "قبة الحمم"
+    ],
+    "image_url": null,
+    "source_url": "https://pubs.usgs.gov/gip/volc/types.html"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الغاز الأكثر وفرة في الغلاف الجوي للأرض؟",
+    "correct_answer": "النيتروجين",
+    "decoys": [
+      "الأكسجين",
+      "الأرجون",
+      "ثاني أكسيد الكربون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.noaa.gov/jetstream/atmosphere"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "في أي طبقة من الغلاف الجوي يوجد معظم الأوزون الواقي من الأشعة فوق البنفسجية؟",
+    "correct_answer": "الستراتوسفير",
+    "decoys": [
+      "التروبوسفير",
+      "الميزوسفير",
+      "الثرموسفير"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/earth/earth-observatory/a-violent-sun-affects-the-earths-ozone/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما نوع السحب الذي تتكوّن فيه العواصف الرعدية عادةً؟",
+    "correct_answer": "الركامية المزنية",
+    "decoys": [
+      "السحب الريشية",
+      "السحب الطبقية",
+      "السحب السمحاقية الطبقية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/otx/Full_Weather_Glossary"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم السحب العالية الرقيقة التي تبدو كخيوط بيضاء؟",
+    "correct_answer": "السحب الريشية",
+    "decoys": [
+      "السحب الركامية",
+      "السحب الطبقية",
+      "السحب الركامية المزنية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/otx/Full_Weather_Glossary"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم تحوّل بخار الماء في الجو إلى قطرات سائلة؟",
+    "correct_answer": "التكاثف",
+    "decoys": [
+      "التبخر",
+      "التسامي",
+      "الانصهار"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/jkl/education"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم الرياح التي تهب من المناطق شبه المدارية نحو خط الاستواء؟",
+    "correct_answer": "الرياح التجارية",
+    "decoys": [
+      "الرياح القطبية",
+      "الرياح الغربية",
+      "نسيم البحر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/otx/Full_Weather_Glossary"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم تأثير دوران الأرض الذي يغيّر اتجاه حركة الرياح؟",
+    "correct_answer": "تأثير كوريوليس",
+    "decoys": [
+      "تأثير دوبلر",
+      "الاحتباس الحراري",
+      "الانعكاس الحراري"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/otx/Full_Weather_Glossary"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ماذا يُسمّى الهطول الذي يسقط على شكل كرات من الجليد؟",
+    "correct_answer": "البَرَد",
+    "decoys": [
+      "الثلج",
+      "المطر",
+      "الضباب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/pdt/glossary"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم الحد الفاصل بين كتلتين هوائيتين مختلفتين؟",
+    "correct_answer": "الجبهة الهوائية",
+    "decoys": [
+      "التيار النفاث",
+      "الضغط الجوي",
+      "النسيم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/lmk/basic-fronts"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما اسم الرياح التي تهب من البحر إلى اليابسة نهارًا؟",
+    "correct_answer": "نسيم البحر",
+    "decoys": [
+      "نسيم البر",
+      "الرياح التجارية",
+      "الرياح القطبية"
+    ],
+    "image_url": null,
+    "source_url": "https://forecast.weather.gov/glossary.php?word=sea+breeze"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الجهاز الذي يسجّل اهتزازات الأرض أثناء الزلزال؟",
+    "correct_answer": "راسم الزلازل",
+    "decoys": [
+      "مقياس الضغط الجوي",
+      "مقياس سرعة الرياح",
+      "مقياس الحرارة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/programs/earthquake-hazards/seismographs-keeping-track-earthquakes"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "بأي جهاز يُقاس الضغط الجوي؟",
+    "correct_answer": "البارومتر",
+    "decoys": [
+      "الترمومتر",
+      "الأنيمومتر",
+      "الهيغرومتر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.noaa.gov/education/resource-collections/weather-atmosphere/weather-observations"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الجهاز الذي يقيس سرعة الرياح؟",
+    "correct_answer": "الأنيمومتر",
+    "decoys": [
+      "البارومتر",
+      "الهيغرومتر",
+      "مقياس المطر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.noaa.gov/education/resource-collections/weather-atmosphere/weather-observations"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي جهاز يُستخدم لقياس رطوبة الهواء؟",
+    "correct_answer": "الهيغرومتر",
+    "decoys": [
+      "الأنيمومتر",
+      "البارومتر",
+      "الترمومتر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/ggw/GlossaryH"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الأداة التي تكبّر الخلايا الصغيرة لرؤيتها؟",
+    "correct_answer": "المجهر",
+    "decoys": [
+      "المنظار الفلكي",
+      "المنشور",
+      "المطياف"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/biology-2e/pages/4-1-studying-cells"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الأداة التي تجمع ضوء الأجرام السماوية البعيدة لرصدها؟",
+    "correct_answer": "المنظار الفلكي",
+    "decoys": [
+      "المجهر",
+      "المنشور",
+      "المطياف"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/universe/telescopes-101/"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "أي جهاز يقيس فرق الجهد الكهربائي بين نقطتين؟",
+    "correct_answer": "الفولتميتر",
+    "decoys": [
+      "الأميتر",
+      "الأوميتر",
+      "الواطميتر"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/university-physics-volume-2/pages/10-4-electrical-measuring-instruments"
+  },
+  {
+    "category_id": 1,
+    "language_code": "ar",
+    "question_text": "ما الجهاز الذي يعطي قراءة رقمية لدرجة حموضة محلول مائي؟",
+    "correct_answer": "مقياس الرقم الهيدروجيني",
+    "decoys": [
+      "مقياس التوصيل الكهربائي",
+      "مقياس الحرارة",
+      "مقياس الضغط"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/water-science-school/science/ph-and-water"
+  }
+]

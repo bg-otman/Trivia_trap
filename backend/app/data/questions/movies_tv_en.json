@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor played the young Luke Skywalker in the original 1977 Star Wars film?",
+    "correct_answer": "Mark Hamill",
+    "decoys": [
+      "Harrison Ford",
+      "Carrie Fisher",
+      "Alec Guinness"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/films/star-wars-episode-iv-a-new-hope"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What color is Mace Windu's signature lightsaber blade in the Star Wars prequel trilogy?",
+    "correct_answer": "Purple",
+    "decoys": [
+      "Blue",
+      "Green",
+      "Red"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/databank/mace-windu"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which bounty hunter wears Mandalorian armor and tracks the Millennium Falcon in The Empire Strikes Back?",
+    "correct_answer": "Boba Fett",
+    "decoys": [
+      "Jango Fett",
+      "Bossk",
+      "Dengar"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/databank/boba-fett"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What is the name of Han Solo's iconic freighter starship?",
+    "correct_answer": "Millennium Falcon",
+    "decoys": [
+      "Slave I",
+      "Ghost",
+      "TIE Fighter"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/databank/millennium-falcon"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which Hogwarts house is Harry Potter sorted into in Harry Potter and the Philosopher's Stone?",
+    "correct_answer": "Gryffindor",
+    "decoys": [
+      "Slytherin",
+      "Ravenclaw",
+      "Hufflepuff"
+    ],
+    "image_url": null,
+    "source_url": "https://www.wizardingworld.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What position does Harry Potter play on Gryffindor's Quidditch team?",
+    "correct_answer": "Seeker",
+    "decoys": [
+      "Chaser",
+      "Keeper",
+      "Beater"
+    ],
+    "image_url": null,
+    "source_url": "https://www.wizardingworld.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actress portrays Hermione Granger across the Harry Potter film series?",
+    "correct_answer": "Emma Watson",
+    "decoys": [
+      "Bonnie Wright",
+      "Evanna Lynch",
+      "Katie Leung"
+    ],
+    "image_url": null,
+    "source_url": "https://www.wizardingworld.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What magical creature serves as Albus Dumbledore's loyal avian pet and companion?",
+    "correct_answer": "Fawkes the Phoenix",
+    "decoys": [
+      "Hedwig the Owl",
+      "Crookshanks the Cat",
+      "Trevor the Toad"
+    ],
+    "image_url": null,
+    "source_url": "https://www.wizardingworld.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who directed The Lord of the Rings cinematic trilogy?",
+    "correct_answer": "Peter Jackson",
+    "decoys": [
+      "George Lucas",
+      "Steven Spielberg",
+      "Guillermo del Toro"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Lord-of-the-Rings-film-trilogy"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which Hobbit serves as Frodo Baggins's most steadfast companion on the journey from the Shire?",
+    "correct_answer": "Samwise Gamgee",
+    "decoys": [
+      "Meriadoc Brandybuck",
+      "Peregrin Took",
+      "Faramir"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Lord-of-the-Rings-film-trilogy"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What is the name of the elven dagger-sword carried by Frodo that glows blue near orcs?",
+    "correct_answer": "Sting",
+    "decoys": [
+      "Glamdring",
+      "Narsil",
+      "Andúril"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Lord-of-the-Rings-film-trilogy"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "In which country was the entirety of The Lord of the Rings film trilogy shot on location?",
+    "correct_answer": "New Zealand",
+    "decoys": [
+      "Australia",
+      "Ireland",
+      "Scotland"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Lord-of-the-Rings-film-trilogy"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor portrayed Tony Stark in Iron Man (2008), launching the Marvel Cinematic Universe?",
+    "correct_answer": "Robert Downey Jr.",
+    "decoys": [
+      "Chris Evans",
+      "Mark Ruffalo",
+      "Chris Hemsworth"
+    ],
+    "image_url": null,
+    "source_url": "https://www.marvel.com/movies/iron-man"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What fictional metal from Wakanda composes Captain America's round shield in the MCU?",
+    "correct_answer": "Vibranium",
+    "decoys": [
+      "Adamantium",
+      "Uru",
+      "Promethium"
+    ],
+    "image_url": null,
+    "source_url": "https://www.marvel.com/characters/captain-america-steve-rogers"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which filmmaker directed Marvel Studios' Guardians of the Galaxy (2014)?",
+    "correct_answer": "James Gunn",
+    "decoys": [
+      "Joss Whedon",
+      "Taika Waititi",
+      "Anthony Russo"
+    ],
+    "image_url": null,
+    "source_url": "https://www.marvel.com/movies/guardians-of-the-galaxy"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What realm is the cosmic home of Thor and Odin in the Marvel Cinematic Universe?",
+    "correct_answer": "Asgard",
+    "decoys": [
+      "Midgard",
+      "Jotunheim",
+      "Vormir"
+    ],
+    "image_url": null,
+    "source_url": "https://www.marvel.com/characters/thor-thor-odinson"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who directed the acclaimed Dark Knight trilogy starring Christian Bale as Bruce Wayne?",
+    "correct_answer": "Christopher Nolan",
+    "decoys": [
+      "Zack Snyder",
+      "Tim Burton",
+      "Matt Reeves"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Christopher-Nolan"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor won a posthumous Academy Award for playing the Joker in The Dark Knight (2008)?",
+    "correct_answer": "Heath Ledger",
+    "decoys": [
+      "Jack Nicholson",
+      "Joaquin Phoenix",
+      "Jared Leto"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What is the name of Bruce Wayne's faithful English butler and mentor?",
+    "correct_answer": "Alfred Pennyworth",
+    "decoys": [
+      "Lucius Fox",
+      "Jim Gordon",
+      "Harvey Bullock"
+    ],
+    "image_url": null,
+    "source_url": "https://www.dc.com/characters/alfred-pennyworth"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who directed the groundbreaking 1993 science-fiction film Jurassic Park?",
+    "correct_answer": "Steven Spielberg",
+    "decoys": [
+      "James Cameron",
+      "George Lucas",
+      "Robert Zemeckis"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Jurassic-Park-film-by-Spielberg"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What fossilized tree resin preserved the prehistoric mosquitoes in Jurassic Park?",
+    "correct_answer": "Amber",
+    "decoys": [
+      "Tar",
+      "Obsidian",
+      "Copal"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Jurassic-Park-film-by-Spielberg"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "On which fictional island off Costa Rica is the original Jurassic Park theme park located?",
+    "correct_answer": "Isla Nublar",
+    "decoys": [
+      "Isla Sorna",
+      "Isla Muerta",
+      "Isla Pena"
+    ],
+    "image_url": null,
+    "source_url": "https://www.jurassicworld.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What signature weapon and tool does archaeologist Indiana Jones carry at his side?",
+    "correct_answer": "A bullwhip",
+    "decoys": [
+      "A boomerang",
+      "A lasso",
+      "A machete"
+    ],
+    "image_url": null,
+    "source_url": "https://www.lucasfilm.com/franchises/indiana-jones/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which sacred biblical artifact is Indiana Jones searching for in Raiders of the Lost Ark (1981)?",
+    "correct_answer": "The Ark of the Covenant",
+    "decoys": [
+      "The Holy Grail",
+      "The Cross of Coronado",
+      "The Spear of Destiny"
+    ],
+    "image_url": null,
+    "source_url": "https://www.lucasfilm.com/franchises/indiana-jones/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which creature is Indiana Jones notoriously phobic of throughout the franchise?",
+    "correct_answer": "Snakes",
+    "decoys": [
+      "Spiders",
+      "Rats",
+      "Bats"
+    ],
+    "image_url": null,
+    "source_url": "https://www.lucasfilm.com/franchises/indiana-jones/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What is the name of Captain Jack Sparrow's beloved pirate vessel?",
+    "correct_answer": "The Black Pearl",
+    "decoys": [
+      "The Flying Dutchman",
+      "Queen Anne's Revenge",
+      "The Interceptor"
+    ],
+    "image_url": null,
+    "source_url": "https://movies.disney.com/pirates-of-the-caribbean-the-curse-of-the-black-pearl"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor stars as Captain Jack Sparrow in the Pirates of the Caribbean franchise?",
+    "correct_answer": "Johnny Depp",
+    "decoys": [
+      "Orlando Bloom",
+      "Geoffrey Rush",
+      "Javier Bardem"
+    ],
+    "image_url": null,
+    "source_url": "https://movies.disney.com/pirates-of-the-caribbean-the-curse-of-the-black-pearl"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What cursed treasure transforms Hector Barbossa's crew into undead skeletons under moonlight?",
+    "correct_answer": "Aztec gold",
+    "decoys": [
+      "The Trident of Poseidon",
+      "Davy Jones's chest",
+      "The Fountain of Youth"
+    ],
+    "image_url": null,
+    "source_url": "https://movies.disney.com/pirates-of-the-caribbean-the-curse-of-the-black-pearl"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What is British secret agent James Bond's famous MI6 code number?",
+    "correct_answer": "007",
+    "decoys": [
+      "006",
+      "008",
+      "009"
+    ],
+    "image_url": null,
+    "source_url": "https://www.007.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which British luxury car manufacturer is most famously associated with James Bond?",
+    "correct_answer": "Aston Martin",
+    "decoys": [
+      "Jaguar",
+      "Bentley",
+      "Rolls-Royce"
+    ],
+    "image_url": null,
+    "source_url": "https://www.007.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor debuted as James Bond in Casino Royale (2006) and concluded his run in No Time to Die (2021)?",
+    "correct_answer": "Daniel Craig",
+    "decoys": [
+      "Pierce Brosnan",
+      "Timothy Dalton",
+      "Roger Moore"
+    ],
+    "image_url": null,
+    "source_url": "https://www.007.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which 1995 film was the first feature-length film produced entirely using computer animation?",
+    "correct_answer": "Toy Story",
+    "decoys": [
+      "A Bug's Life",
+      "Monsters, Inc.",
+      "Finding Nemo"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pixar.com/feature-films/toy-story"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor provides the voice of the pull-string cowboy doll Woody in Pixar's Toy Story series?",
+    "correct_answer": "Tom Hanks",
+    "decoys": [
+      "Tim Allen",
+      "Billy Crystal",
+      "John Goodman"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pixar.com/feature-films/toy-story"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What kind of animal is Simba in Disney's classic 1994 animated feature?",
+    "correct_answer": "A lion",
+    "decoys": [
+      "A tiger",
+      "A leopard",
+      "A cheetah"
+    ],
+    "image_url": null,
+    "source_url": "https://movies.disney.com/the-lion-king"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What species of fish is Nemo in Pixar's 2003 animated adventure Finding Nemo?",
+    "correct_answer": "Clownfish",
+    "decoys": [
+      "Blue tang",
+      "Angelfish",
+      "Goldfish"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pixar.com/feature-films/finding-nemo"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who directed the 1972 crime epic The Godfather?",
+    "correct_answer": "Francis Ford Coppola",
+    "decoys": [
+      "Martin Scorsese",
+      "Stanley Kubrick",
+      "Brian De Palma"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Godfather-film-by-Coppola"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which legendary actor played Don Vito Corleone in the 1972 film The Godfather?",
+    "correct_answer": "Marlon Brando",
+    "decoys": [
+      "Al Pacino",
+      "Robert De Niro",
+      "James Caan"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Godfather-film-by-Coppola"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What color are Dorothy's magical slippers in the 1939 musical fantasy The Wizard of Oz?",
+    "correct_answer": "Ruby",
+    "decoys": [
+      "Silver",
+      "Golden",
+      "Emerald"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Wizard-of-Oz-film-1939"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who directed the 1960 psychological thriller Psycho, famous for its shower scene?",
+    "correct_answer": "Alfred Hitchcock",
+    "decoys": [
+      "Orson Welles",
+      "Billy Wilder",
+      "John Huston"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Psycho-film-1960"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which sentient computer controls the Discovery One spacecraft in Stanley Kubrick's 2001: A Space Odyssey?",
+    "correct_answer": "HAL 9000",
+    "decoys": [
+      "Skynet",
+      "GORT",
+      "WOPR"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/2001-A-Space-Odyssey-film-1968"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What model of sports car serves as Doc Brown's time machine in Back to the Future (1985)?",
+    "correct_answer": "DeLorean DMC-12",
+    "decoys": [
+      "Chevrolet Corvette",
+      "Ford Mustang",
+      "Pontiac Firebird"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Back-to-the-Future"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who directed the 1997 disaster romance epic Titanic?",
+    "correct_answer": "James Cameron",
+    "decoys": [
+      "Steven Spielberg",
+      "Ridley Scott",
+      "Ron Howard"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Titanic-film-by-Cameron"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "In The Matrix (1999), which color pill does Morpheus offer Neo to reveal the true reality?",
+    "correct_answer": "The red pill",
+    "decoys": [
+      "The blue pill",
+      "The green pill",
+      "The yellow pill"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/movies/matrix"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor won the Academy Award for Best Actor for playing the titular hero in Forrest Gump (1994)?",
+    "correct_answer": "Tom Hanks",
+    "decoys": [
+      "Robin Williams",
+      "Kevin Costner",
+      "John Travolta"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Forrest-Gump"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who directed the 1994 nonlinear crime film Pulp Fiction?",
+    "correct_answer": "Quentin Tarantino",
+    "decoys": [
+      "Martin Scorsese",
+      "Guy Ritchie",
+      "David Fincher"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Pulp-Fiction"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "In Christopher Nolan's Inception (2010), what small object is Dom Cobb's personal totem?",
+    "correct_answer": "A spinning top",
+    "decoys": [
+      "A loaded die",
+      "A chess pawn",
+      "A silver coin"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/movies/inception"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor portrayed Roman general Maximus Decimus Meridius in Ridley Scott's Gladiator (2000)?",
+    "correct_answer": "Russell Crowe",
+    "decoys": [
+      "Joaquin Phoenix",
+      "Gerard Butler",
+      "Mel Gibson"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Gladiator-film-by-Scott"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which author wrote the novella on which the 1994 prison drama The Shawshank Redemption was based?",
+    "correct_answer": "Stephen King",
+    "decoys": [
+      "John Grisham",
+      "Michael Crichton",
+      "Tom Clancy"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Shawshank-Redemption"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who directed the 2019 South Korean black comedy thriller Parasite?",
+    "correct_answer": "Bong Joon-ho",
+    "decoys": [
+      "Park Chan-wook",
+      "Lee Chang-dong",
+      "Kim Jee-woon"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which Studio Ghibli film won the Academy Award for Best Animated Feature at the 2003 ceremony?",
+    "correct_answer": "Spirited Away",
+    "decoys": [
+      "Princess Mononoke",
+      "Howl's Moving Castle",
+      "My Neighbor Totoro"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which film won the Academy Award for Best Picture at the 2020 Oscars ceremony, becoming the first non-English winner?",
+    "correct_answer": "Parasite",
+    "decoys": [
+      "1917",
+      "Once Upon a Time in Hollywood",
+      "The Irishman"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which historical biopic directed by Christopher Nolan won the Academy Award for Best Picture at the 2024 ceremony?",
+    "correct_answer": "Oppenheimer",
+    "decoys": [
+      "Barbie",
+      "Poor Things",
+      "Killers of the Flower Moon"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who won the Academy Award for Best Director for helming the 2015 wilderness drama The Revenant?",
+    "correct_answer": "Alejandro González Iñárritu",
+    "decoys": [
+      "George Miller",
+      "Tom McCarthy",
+      "Adam McKay"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which 1959 historical epic was the first film to win 11 Academy Awards in a single ceremony?",
+    "correct_answer": "Ben-Hur",
+    "decoys": [
+      "Spartacus",
+      "Lawrence of Arabia",
+      "Cleopatra"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which 1991 Disney animated classic was the first full-length animated film nominated for Best Picture at the Oscars?",
+    "correct_answer": "Beauty and the Beast",
+    "decoys": [
+      "The Lion King",
+      "Aladdin",
+      "Snow White and the Seven Dwarfs"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What high school science subject does Walter White teach at the start of Breaking Bad?",
+    "correct_answer": "Chemistry",
+    "decoys": [
+      "Physics",
+      "Biology",
+      "Earth Science"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amc.com/shows/breaking-bad"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What scientific pseudonym does Walter White adopt as his criminal kingpin alter-ego?",
+    "correct_answer": "Heisenberg",
+    "decoys": [
+      "Oppenheimer",
+      "Schrödinger",
+      "Fermi"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amc.com/shows/breaking-bad"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor portrays Walter White's young accomplice Jesse Pinkman in Breaking Bad?",
+    "correct_answer": "Aaron Paul",
+    "decoys": [
+      "Bryan Cranston",
+      "Dean Norris",
+      "Bob Odenkirk"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amc.com/shows/breaking-bad"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What is the birth name of the lawyer Saul Goodman in Better Call Saul?",
+    "correct_answer": "Jimmy McGill",
+    "decoys": [
+      "Chuck McGill",
+      "Howard Hamlin",
+      "Kim Wexler"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amc.com/shows/better-call-saul"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What is the ancestral castle stronghold of House Stark in Game of Thrones?",
+    "correct_answer": "Winterfell",
+    "decoys": [
+      "King's Landing",
+      "Casterly Rock",
+      "Dragonstone"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/game-of-thrones"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What metal is the primary material of the royal throne contested in Game of Thrones?",
+    "correct_answer": "Iron",
+    "decoys": [
+      "Valyrian steel",
+      "Gold",
+      "Dragonstone"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/game-of-thrones"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who authored the A Song of Ice and Fire fantasy novels adapted into Game of Thrones?",
+    "correct_answer": "George R. R. Martin",
+    "decoys": [
+      "J. R. R. Tolkien",
+      "Brandon Sanderson",
+      "Robert Jordan"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/game-of-thrones"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which royal dynasty is the central focus of the HBO prequel series House of the Dragon?",
+    "correct_answer": "House Targaryen",
+    "decoys": [
+      "House Lannister",
+      "House Baratheon",
+      "House Hightower"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/house-of-the-dragon"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "In which fictional Indiana town is Netflix's sci-fi drama Stranger Things set?",
+    "correct_answer": "Hawkins",
+    "decoys": [
+      "Riverdale",
+      "Twin Peaks",
+      "Springfield"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/80057281"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What is the dark alternate dimension mirroring reality called in Stranger Things?",
+    "correct_answer": "The Upside Down",
+    "decoys": [
+      "The Nether",
+      "The Shadow Realm",
+      "The Void"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/80057281"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which tabletop role-playing game do the young protagonists play in the opening episode of Stranger Things?",
+    "correct_answer": "Dungeons & Dragons",
+    "decoys": [
+      "Call of Cthulhu",
+      "Warhammer",
+      "Magic: The Gathering"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/80057281"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What is the name of the Manhattan coffeehouse where the friends regularly gather in Friends?",
+    "correct_answer": "Central Perk",
+    "decoys": [
+      "Monk's Diner",
+      "MacLaren's Pub",
+      "Luke's Diner"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/tv/friends"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What academic profession does Ross Geller practice at the museum and university in Friends?",
+    "correct_answer": "Paleontologist",
+    "decoys": [
+      "Archeologist",
+      "Geologist",
+      "Anthropologist"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/tv/friends"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actress played Rachel Green throughout all 10 seasons of the sitcom Friends?",
+    "correct_answer": "Jennifer Aniston",
+    "decoys": [
+      "Courteney Cox",
+      "Lisa Kudrow",
+      "Julia Roberts"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/tv/friends"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which paper company serves as the workplace setting in the American version of The Office?",
+    "correct_answer": "Dunder Mifflin",
+    "decoys": [
+      "Initech",
+      "Wernham Hogg",
+      "Sabre Supplies"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nbc.com/the-office"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "In which Pennsylvania city is the main branch of Dunder Mifflin located in The Office?",
+    "correct_answer": "Scranton",
+    "decoys": [
+      "Allentown",
+      "Harrisburg",
+      "Pittsburgh"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nbc.com/the-office"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor portrayed regional manager Michael Scott in the US adaptation of The Office?",
+    "correct_answer": "Steve Carell",
+    "decoys": [
+      "Rainn Wilson",
+      "John Krasinski",
+      "Ed Helms"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nbc.com/the-office"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What fictional American town is home to Homer and his family in animated sitcom The Simpsons?",
+    "correct_answer": "Springfield",
+    "decoys": [
+      "Shelbyville",
+      "Quahog",
+      "South Park"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fox.com/the-simpsons/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Where does Homer Simpson work as a safety inspector in The Simpsons?",
+    "correct_answer": "Springfield Nuclear Power Plant",
+    "decoys": [
+      "Springfield Brewery",
+      "Kwik-E-Mart",
+      "Springfield Elementary"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fox.com/the-simpsons/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who created the long-running animated comedy television series The Simpsons?",
+    "correct_answer": "Matt Groening",
+    "decoys": [
+      "Seth MacFarlane",
+      "Mike Judge",
+      "Trey Parker"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fox.com/the-simpsons/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor starred as contemporary detective Sherlock Holmes in the BBC drama Sherlock?",
+    "correct_answer": "Benedict Cumberbatch",
+    "decoys": [
+      "Martin Freeman",
+      "Andrew Scott",
+      "Mark Gatiss"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bbc.co.uk/programmes/b018ttws"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "At which London street address do Sherlock Holmes and John Watson share lodgings?",
+    "correct_answer": "221B Baker Street",
+    "decoys": [
+      "10 Downing Street",
+      "4 Privet Drive",
+      "22 Fleet Street"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bbc.co.uk/programmes/b018ttws"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who is the calculating consulting criminal who serves as Sherlock Holmes's primary nemesis in BBC's Sherlock?",
+    "correct_answer": "Jim Moriarty",
+    "decoys": [
+      "Charles Augustus Magnussen",
+      "Irene Adler",
+      "Eurus Holmes"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bbc.co.uk/programmes/b018ttws"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What is the canonical name of the Force-sensitive child commonly nicknamed Baby Yoda in The Mandalorian?",
+    "correct_answer": "Grogu",
+    "decoys": [
+      "Din Djarin",
+      "Greef Karga",
+      "Boba Fett"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/series/the-mandalorian"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What rare, blaster-resistant iron alloy is forged into Mandalorian armor plates?",
+    "correct_answer": "Beskar",
+    "decoys": [
+      "Durasteel",
+      "Cortosis",
+      "Vibranium"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/series/the-mandalorian"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor voices and stars as the helmeted bounty hunter Din Djarin in The Mandalorian?",
+    "correct_answer": "Pedro Pascal",
+    "decoys": [
+      "Carl Weathers",
+      "Giancarlo Esposito",
+      "Temuera Morrison"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/series/the-mandalorian"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What multinational media conglomerate is controlled by the Roy family in HBO's drama series Succession?",
+    "correct_answer": "Waystar RoyCo",
+    "decoys": [
+      "Pierce Media Group",
+      "Eflame Global",
+      "GoJo Tech"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/succession"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which Scottish actor portrayed company founder and family patriarch Logan Roy in Succession?",
+    "correct_answer": "Brian Cox",
+    "decoys": [
+      "Jeremy Strong",
+      "Kieran Culkin",
+      "Matthew Macfadyen"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/succession"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who created the acclaimed HBO corporate drama series Succession?",
+    "correct_answer": "Jesse Armstrong",
+    "decoys": [
+      "David Simon",
+      "Damon Lindelof",
+      "Noah Hawley"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/succession"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "In which US state is Tony Soprano's suburban criminal organization based?",
+    "correct_answer": "New Jersey",
+    "decoys": [
+      "New York",
+      "Illinois",
+      "Florida"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/the-sopranos"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor portrayed Italian-American mob leader Tony Soprano in HBO's drama The Sopranos?",
+    "correct_answer": "James Gandolfini",
+    "decoys": [
+      "Michael Imperioli",
+      "Edie Falco",
+      "Tony Sirico"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/the-sopranos"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who is Tony Soprano's psychiatrist with whom he conducts therapy sessions throughout The Sopranos?",
+    "correct_answer": "Dr. Jennifer Melfi",
+    "decoys": [
+      "Dr. Elliot Kupferberg",
+      "Carmela Soprano",
+      "Meadow Soprano"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/the-sopranos"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What classic playground game serves as the lethal first round of competition in Squid Game?",
+    "correct_answer": "Red Light, Green Light",
+    "decoys": [
+      "Tug of War",
+      "Hopscotch",
+      "Musical Chairs"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/81040344"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What fragile Korean sugar candy must contestants carve shapes out of in round two of Squid Game?",
+    "correct_answer": "Dalgona candy",
+    "decoys": [
+      "Rice cake",
+      "Bungeoppang",
+      "Tteok"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/81040344"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What three-digit contestant number does main protagonist Seong Gi-hun wear in Squid Game?",
+    "correct_answer": "456",
+    "decoys": [
+      "001",
+      "218",
+      "067"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/81040344"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What parasitic fungus genus causes the apocalyptic pandemic in HBO's series The Last of Us?",
+    "correct_answer": "Cordyceps",
+    "decoys": [
+      "Aspergillus",
+      "Candida",
+      "Penicillium"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/the-last-of-us"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which two actors portray lead survivors Joel and Ellie in HBO's television adaptation of The Last of Us?",
+    "correct_answer": "Pedro Pascal and Bella Ramsey",
+    "decoys": [
+      "Troy Baker and Ashley Johnson",
+      "David Harbour and Millie Bobby Brown",
+      "Timothy Olyphant and Kaitlyn Dever"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/the-last-of-us"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What revolutionary militia organization opposes military rule in The Last of Us?",
+    "correct_answer": "The Fireflies",
+    "decoys": [
+      "The Seraphites",
+      "The Wolves",
+      "The Rattlers"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/the-last-of-us"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Who created the satirical speculative fiction anthology series Black Mirror?",
+    "correct_answer": "Charlie Brooker",
+    "decoys": [
+      "Alex Garland",
+      "Jonathan Nolan",
+      "Rod Serling"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/70264888"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which interactive 2018 Black Mirror film allowed viewers to make decisions directing the protagonist's story?",
+    "correct_answer": "Bandersnatch",
+    "decoys": [
+      "White Christmas",
+      "San Junipero",
+      "Nosedive"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/80988062"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What four elements can the Avatar master and manipulate in Avatar: The Last Airbender?",
+    "correct_answer": "Water, Earth, Fire, and Air",
+    "decoys": [
+      "Wood, Metal, Fire, and Water",
+      "Light, Darkness, Lightning, and Earth",
+      "Ice, Thunder, Wind, and Stone"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nick.com/shows/avatar-the-last-airbender"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "What species of creature is Aang's loyal giant mount Appa in Avatar: The Last Airbender?",
+    "correct_answer": "A flying bison",
+    "decoys": [
+      "A winged lemur",
+      "A dragon",
+      "A polar bear dog"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nick.com/shows/avatar-the-last-airbender"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which nation's aggressive expansion sparked the hundred-year war in Avatar: The Last Airbender?",
+    "correct_answer": "The Fire Nation",
+    "decoys": [
+      "The Earth Kingdom",
+      "The Water Tribe",
+      "The Air Nomads"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nick.com/shows/avatar-the-last-airbender"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which actor co-created and stars as the optimistic American football coach in sports comedy Ted Lasso?",
+    "correct_answer": "Jason Sudeikis",
+    "decoys": [
+      "Brett Goldstein",
+      "Bill Lawrence",
+      "Brendan Hunt"
+    ],
+    "image_url": null,
+    "source_url": "https://tv.apple.com/show/ted-lasso"
+  },
+  {
+    "category_id": 9,
+    "language_code": "en",
+    "question_text": "Which British royal monarch's reign is dramatized across the historical series The Crown?",
+    "correct_answer": "Queen Elizabeth II",
+    "decoys": [
+      "Queen Victoria",
+      "King George VI",
+      "Queen Mary"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/80025678"
+  }
+]

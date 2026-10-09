@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who meets Goku at the start of Dragon Ball while searching for the Dragon Balls?",
+    "correct_answer": "Bulma",
+    "decoys": [
+      "Chi-Chi",
+      "Launch",
+      "Videl"
+    ],
+    "image_url": null,
+    "source_url": "https://en.dragon-ball-official.com/news/01_3850.html"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "How many Dragon Balls are needed to summon Shenron?",
+    "correct_answer": "Seven",
+    "decoys": [
+      "Five",
+      "Six",
+      "Eight"
+    ],
+    "image_url": null,
+    "source_url": "https://en.dragon-ball-official.com/news/01_3850.html"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which Dragon Ball did Goku keep as a memento of his grandfather?",
+    "correct_answer": "The Four-Star Ball",
+    "decoys": [
+      "The One-Star Ball",
+      "The Two-Star Ball",
+      "The Seven-Star Ball"
+    ],
+    "image_url": null,
+    "source_url": "https://en.dragon-ball-official.com/news/01_3850.html"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who trains both Goku and Krillin in Dragon Ball?",
+    "correct_answer": "Master Roshi",
+    "decoys": [
+      "Master Shen",
+      "Korin",
+      "King Kai"
+    ],
+    "image_url": null,
+    "source_url": "https://en.dragon-ball-official.com/news/01_141.html"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What title does Naruto Uzumaki dream of earning?",
+    "correct_answer": "Hokage",
+    "decoys": [
+      "Kazekage",
+      "Mizukage",
+      "Raikage"
+    ],
+    "image_url": null,
+    "source_url": "https://naruto-official.com/en/news/01_1327"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who leads Naruto, Sasuke and Sakura's Team Seven?",
+    "correct_answer": "Kakashi Hatake",
+    "decoys": [
+      "Might Guy",
+      "Asuma Sarutobi",
+      "Kurenai Yuhi"
+    ],
+    "image_url": null,
+    "source_url": "https://naruto-official.com/en/news/01_1610"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which mentor teaches Naruto the Rasengan?",
+    "correct_answer": "Jiraiya",
+    "decoys": [
+      "Orochimaru",
+      "Tsunade",
+      "Iruka Umino"
+    ],
+    "image_url": null,
+    "source_url": "https://naruto-official.com/en/news/01_1610"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is Team Seven's first mission destination outside its village?",
+    "correct_answer": "The Land of Waves",
+    "decoys": [
+      "The Land of Wind",
+      "The Land of Water",
+      "The Land of Earth"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/hi/news/guides/2023/10/3/naruto-arcs-order-shippuden-boruto"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What title does Luffy hope to earn in One Piece?",
+    "correct_answer": "Pirate King",
+    "decoys": [
+      "Fleet Admiral",
+      "World's Greatest Swordsman",
+      "King of the Sea"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/id/news/guides/2023/9/2/the-history-of-one-pieces-best-pirates-a-straw-hat-crew-character-guide"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who is the Straw Hat Pirates' navigator?",
+    "correct_answer": "Nami",
+    "decoys": [
+      "Robin",
+      "Vivi",
+      "Perona"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/id/news/guides/2023/9/2/the-history-of-one-pieces-best-pirates-a-straw-hat-crew-character-guide"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "How many swords does Zoro wield in his signature fighting style?",
+    "correct_answer": "Three",
+    "decoys": [
+      "One",
+      "Two",
+      "Four"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/id/news/guides/2023/9/2/the-history-of-one-pieces-best-pirates-a-straw-hat-crew-character-guide"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who cooks for the Straw Hat Pirates?",
+    "correct_answer": "Sanji",
+    "decoys": [
+      "Usopp",
+      "Franky",
+      "Brook"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/id/news/guides/2023/9/2/the-history-of-one-pieces-best-pirates-a-straw-hat-crew-character-guide"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which is the outermost wall at the start of Attack on Titan?",
+    "correct_answer": "Wall Maria",
+    "decoys": [
+      "Wall Rose",
+      "Wall Sina",
+      "Wall Trost"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/id/news/guides/2023/3/4/guide-attack-on-titan-explained-for-beginners"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which military branch ventures beyond the walls in Attack on Titan?",
+    "correct_answer": "Survey Corps",
+    "decoys": [
+      "Military Police",
+      "Garrison Regiment",
+      "Training Corps"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/id/news/guides/2023/3/4/guide-attack-on-titan-explained-for-beginners"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What gear lets Attack on Titan soldiers maneuver through the air?",
+    "correct_answer": "ODM gear",
+    "decoys": [
+      "Thunder Spears",
+      "Anti-personnel gear",
+      "Signal flares"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/id/news/guides/2023/3/4/guide-attack-on-titan-explained-for-beginners"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who created Attack on Titan?",
+    "correct_answer": "Hajime Isayama",
+    "decoys": [
+      "Tite Kubo",
+      "Yoshihiro Togashi",
+      "Hirohiko Araki"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/id/news/guides/2023/3/4/guide-attack-on-titan-explained-for-beginners"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which student finds the Death Note?",
+    "correct_answer": "Light Yagami",
+    "decoys": [
+      "L Lawliet",
+      "Near",
+      "Mello"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/death-note"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which Shinigami drops the notebook that Light finds?",
+    "correct_answer": "Ryuk",
+    "decoys": [
+      "Rem",
+      "Sidoh",
+      "Gelus"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/blog/posts/death-note-all-in-one-edition"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is the first detective opposing Light Yagami called?",
+    "correct_answer": "L",
+    "decoys": [
+      "Near",
+      "Mello",
+      "Watari"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/death-note"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who wrote the original Death Note manga?",
+    "correct_answer": "Tsugumi Ohba",
+    "decoys": [
+      "Takeshi Obata",
+      "Tite Kubo",
+      "Naoki Urasawa"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/death-note"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which Soul Reaper first gives Ichigo her powers in Bleach?",
+    "correct_answer": "Rukia Kuchiki",
+    "decoys": [
+      "Rangiku Matsumoto",
+      "Yoruichi Shihoin",
+      "Soi Fon"
+    ],
+    "image_url": null,
+    "source_url": "https://cpg.viz.com/brands/bleach"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What are the hostile spirits Ichigo fights in Bleach called?",
+    "correct_answer": "Hollows",
+    "decoys": [
+      "Curses",
+      "Titans",
+      "Devils"
+    ],
+    "image_url": null,
+    "source_url": "https://cpg.viz.com/brands/bleach"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What role does Ichigo take on after meeting Rukia?",
+    "correct_answer": "Substitute Soul Reaper",
+    "decoys": [
+      "State Alchemist",
+      "Devil Hunter",
+      "Jujutsu Sorcerer"
+    ],
+    "image_url": null,
+    "source_url": "https://cpg.viz.com/brands/bleach"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who created Bleach?",
+    "correct_answer": "Tite Kubo",
+    "decoys": [
+      "Masashi Kishimoto",
+      "Eiichiro Oda",
+      "Yoshihiro Togashi"
+    ],
+    "image_url": null,
+    "source_url": "https://cpg.viz.com/brands/bleach"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is Tanjiro's sister called in Demon Slayer?",
+    "correct_answer": "Nezuko",
+    "decoys": [
+      "Kanao",
+      "Shinobu",
+      "Mitsuri"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/demon-slayer-kimetsu-no-yaiba"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "During which Japanese era is Demon Slayer set?",
+    "correct_answer": "Taisho",
+    "decoys": [
+      "Edo",
+      "Meiji",
+      "Heian"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/demon-slayer-kimetsu-no-yaiba"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What did Tanjiro sell before joining the Demon Slayer Corps?",
+    "correct_answer": "Charcoal",
+    "decoys": [
+      "Rice",
+      "Tea",
+      "Silk"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/demon-slayer-kimetsu-no-yaiba"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who created Demon Slayer: Kimetsu no Yaiba?",
+    "correct_answer": "Koyoharu Gotouge",
+    "decoys": [
+      "Gege Akutami",
+      "Hajime Isayama",
+      "Yuki Tabata"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/demon-slayer-kimetsu-no-yaiba"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What cursed object does Yuji swallow in Jujutsu Kaisen?",
+    "correct_answer": "Sukuna's finger",
+    "decoys": [
+      "A cursed eye",
+      "A sealed scroll",
+      "A demon mask"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/guides/2025/12/19/jujutsu-kaisen-watch-order"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which school does Yuji join to learn jujutsu?",
+    "correct_answer": "Tokyo Jujutsu High",
+    "decoys": [
+      "U.A. High School",
+      "Eden Academy",
+      "Karasuno High"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/guides/2023/8/31/jujutsu-kaisen-characters"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who teaches Yuji, Megumi and Nobara?",
+    "correct_answer": "Satoru Gojo",
+    "decoys": [
+      "Kento Nanami",
+      "Suguru Geto",
+      "Aoi Todo"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/guides/2023/8/31/jujutsu-kaisen-characters"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What does Megumi Fushiguro summon in battle?",
+    "correct_answer": "Shikigami",
+    "decoys": [
+      "Homunculi",
+      "Hollows",
+      "Pokémon"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/guides/2023/8/31/jujutsu-kaisen-characters"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who is Gon Freecss searching for in Hunter x Hunter?",
+    "correct_answer": "His father",
+    "decoys": [
+      "His brother",
+      "His grandfather",
+      "His teacher"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/blog/posts/welcome-to-hunter-x-hunter"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which friend of Gon comes from a family of assassins?",
+    "correct_answer": "Killua Zoldyck",
+    "decoys": [
+      "Leorio Paradinight",
+      "Kurapika",
+      "Biscuit Krueger"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/blog/posts/welcome-to-hunter-x-hunter"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which clan does Kurapika belong to?",
+    "correct_answer": "Kurta Clan",
+    "decoys": [
+      "Uchiha Clan",
+      "Hyuga Clan",
+      "Uzumaki Clan"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/blog/posts/welcome-to-hunter-x-hunter"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is the aura-based power system in Hunter x Hunter called?",
+    "correct_answer": "Nen",
+    "decoys": [
+      "Chakra",
+      "Haki",
+      "Reiatsu"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/blog/posts/welcome-to-hunter-x-hunter"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What material replaces Edward Elric's lost arm and leg?",
+    "correct_answer": "Automail",
+    "decoys": [
+      "Adamantium",
+      "Cyberware",
+      "Prosthetic stone"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/fullmetal-alchemist"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Where is Alphonse Elric's soul bound?",
+    "correct_answer": "A suit of armor",
+    "decoys": [
+      "A pocket watch",
+      "A stone statue",
+      "A sword"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/fullmetal-alchemist"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What legendary object do the Elric brothers seek?",
+    "correct_answer": "The Philosopher's Stone",
+    "decoys": [
+      "The Silver Crystal",
+      "The Dragon Balls",
+      "The Death Note"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/fullmetal-alchemist"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who created Fullmetal Alchemist?",
+    "correct_answer": "Hiromu Arakawa",
+    "decoys": [
+      "Rumiko Takahashi",
+      "Hiro Mashima",
+      "Kazue Kato"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/fullmetal-alchemist"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What are superpowers called in My Hero Academia?",
+    "correct_answer": "Quirks",
+    "decoys": [
+      "Stands",
+      "Nen",
+      "Geass"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/my-hero-academia"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which school trains aspiring heroes in My Hero Academia?",
+    "correct_answer": "U.A. High School",
+    "decoys": [
+      "Tokyo Jujutsu High",
+      "Eden Academy",
+      "Shiketsu University"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/my-hero-academia"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which hero passes One For All to Izuku Midoriya?",
+    "correct_answer": "All Might",
+    "decoys": [
+      "Endeavor",
+      "Hawks",
+      "Best Jeanist"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/blog/posts/2505"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who created My Hero Academia?",
+    "correct_answer": "Kohei Horikoshi",
+    "decoys": [
+      "Hirohiko Araki",
+      "Yuki Tabata",
+      "Koyoharu Gotouge"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/my-hero-academia"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who is the JoJo of Phantom Blood?",
+    "correct_answer": "Jonathan Joestar",
+    "decoys": [
+      "Joseph Joestar",
+      "Jotaro Kujo",
+      "Josuke Higashikata"
+    ],
+    "image_url": null,
+    "source_url": "https://jojo-portal.com/en/about/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who is Jonathan Joestar's rival in Phantom Blood?",
+    "correct_answer": "Dio Brando",
+    "decoys": [
+      "Yoshikage Kira",
+      "Diavolo",
+      "Kars"
+    ],
+    "image_url": null,
+    "source_url": "https://jojo-portal.com/en/about/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who is the JoJo of Stardust Crusaders?",
+    "correct_answer": "Jotaro Kujo",
+    "decoys": [
+      "Jonathan Joestar",
+      "Giorno Giovanna",
+      "Jolyne Cujoh"
+    ],
+    "image_url": null,
+    "source_url": "https://jojo-portal.com/en/about/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is Jotaro Kujo's Stand called?",
+    "correct_answer": "Star Platinum",
+    "decoys": [
+      "The World",
+      "Crazy Diamond",
+      "Gold Experience"
+    ],
+    "image_url": null,
+    "source_url": "https://jojo-portal.com/en/anime/so/character/07/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is the name of Denji's devil-dog companion?",
+    "correct_answer": "Pochita",
+    "decoys": [
+      "Power",
+      "Beam",
+      "Meowy"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/chainsaw-man"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What kind of devil is Pochita?",
+    "correct_answer": "Chainsaw Devil",
+    "decoys": [
+      "Blood Devil",
+      "Bat Devil",
+      "Ghost Devil"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/chainsaw-man"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What work does Denji do at the start of Chainsaw Man?",
+    "correct_answer": "Devil hunting",
+    "decoys": [
+      "Bounty hunting",
+      "Exorcism",
+      "Treasure hunting"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/chainsaw-man"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who created Chainsaw Man?",
+    "correct_answer": "Tatsuki Fujimoto",
+    "decoys": [
+      "Gege Akutami",
+      "Tite Kubo",
+      "Hajime Isayama"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/chainsaw-man"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is Loid Forger's spy codename?",
+    "correct_answer": "Twilight",
+    "decoys": [
+      "Nightfall",
+      "Thorn Princess",
+      "Daybreak"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/guides/2024/4/18/spy-x-family-characters"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What ability lets Anya Forger hear people's thoughts?",
+    "correct_answer": "Telepathy",
+    "decoys": [
+      "Precognition",
+      "Telekinesis",
+      "Invisibility"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/guides/2024/4/18/spy-x-family-characters"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What secret job does Yor Forger have?",
+    "correct_answer": "Assassin",
+    "decoys": [
+      "Spy",
+      "Detective",
+      "Journalist"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/guides/2024/4/18/spy-x-family-characters"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which school does Anya attend in Spy x Family?",
+    "correct_answer": "Eden Academy",
+    "decoys": [
+      "U.A. High School",
+      "Karasuno High",
+      "Tokyo Jujutsu High"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/blog/posts/a-family-full-of-secrets"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which Pokémon travels with Ash throughout his original anime journey?",
+    "correct_answer": "Pikachu",
+    "decoys": [
+      "Eevee",
+      "Meowth",
+      "Charizard"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/us/animation/seasons/25/episode-53-the-rainbow-and-the-pokemon-master"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which town is Ash Ketchum from?",
+    "correct_answer": "Pallet Town",
+    "decoys": [
+      "Viridian City",
+      "Cerulean City",
+      "Lavender Town"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/us/animation/seasons/25/episode-53-the-rainbow-and-the-pokemon-master"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What does Ash aspire to become in the Pokémon anime?",
+    "correct_answer": "A Pokémon Master",
+    "decoys": [
+      "A Gym Leader",
+      "A Pokémon Professor",
+      "A Champion Coordinator"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/us/animation/seasons/25/episode-53-the-rainbow-and-the-pokemon-master"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which Pokémon works with Jessie and James?",
+    "correct_answer": "Meowth",
+    "decoys": [
+      "Pikachu",
+      "Psyduck",
+      "Wobbuffet"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/us/animation/seasons/1/episode-12-here-comes-the-squirtle-squad"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who is the human lead of Digimon Ghost Game?",
+    "correct_answer": "Hiro Amanokawa",
+    "decoys": [
+      "Taichi Yagami",
+      "Takato Matsuki",
+      "Takuya Kanbara"
+    ],
+    "image_url": null,
+    "source_url": "https://www.toei-animation.com/catalog/digimon-ghost-game/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which Digimon becomes Hiro's partner in Digimon Ghost Game?",
+    "correct_answer": "Gammamon",
+    "decoys": [
+      "Agumon",
+      "Guilmon",
+      "Patamon"
+    ],
+    "image_url": null,
+    "source_url": "https://www.toei-animation.com/catalog/digimon-ghost-game/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which company does Seto Kaiba run in Yu-Gi-Oh!?",
+    "correct_answer": "KaibaCorp",
+    "decoys": [
+      "Industrial Illusions",
+      "SOL Technologies",
+      "G Corporation"
+    ],
+    "image_url": null,
+    "source_url": "https://www.yugioh.com/characters/seto-kaiba"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which dragon is Seto Kaiba's signature monster?",
+    "correct_answer": "Blue-Eyes White Dragon",
+    "decoys": [
+      "Red-Eyes Black Dragon",
+      "Slifer the Sky Dragon",
+      "Stardust Dragon"
+    ],
+    "image_url": null,
+    "source_url": "https://www.yugioh.com/characters/seto-kaiba"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which spellcaster card does Yami Yugi use in the first Yu-Gi-Oh! episode?",
+    "correct_answer": "Dark Magician",
+    "decoys": [
+      "Dark Magician Girl",
+      "Silent Magician",
+      "Magician of Black Chaos"
+    ],
+    "image_url": null,
+    "source_url": "https://www.yugioh.com/characters/yami-yugi"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which ancient item does Yugi Muto solve?",
+    "correct_answer": "Millennium Puzzle",
+    "decoys": [
+      "Millennium Rod",
+      "Millennium Ring",
+      "Millennium Eye"
+    ],
+    "image_url": null,
+    "source_url": "https://www.yugioh.com/characters/yugi-muto"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is Sailor Moon's civilian name?",
+    "correct_answer": "Usagi Tsukino",
+    "decoys": [
+      "Ami Mizuno",
+      "Rei Hino",
+      "Minako Aino"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/sailormoon"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What treasure do the Sailor Guardians seek in Sailor Moon Crystal?",
+    "correct_answer": "Legendary Silver Crystal",
+    "decoys": [
+      "Philosopher's Stone",
+      "Millennium Puzzle",
+      "Dragon Balls"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/sailormoon"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which group threatens Earth in Sailor Moon Crystal's opening story?",
+    "correct_answer": "Dark Kingdom",
+    "decoys": [
+      "Death Busters",
+      "Black Moon Clan",
+      "Shadow Galactica"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/sailormoon"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which masked figure also seeks the Silver Crystal?",
+    "correct_answer": "Tuxedo Mask",
+    "decoys": [
+      "Moonlight Knight",
+      "Sailor Uranus",
+      "Sailor Pluto"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/sailormoon"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which bounty hunter is at the center of Cowboy Bebop?",
+    "correct_answer": "Spike",
+    "decoys": [
+      "Jet",
+      "Vicious",
+      "Andy"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/series/GYVNXMVP6/cowboy-bebop"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who pilots the Bebop and works alongside Spike?",
+    "correct_answer": "Jet",
+    "decoys": [
+      "Ed",
+      "Ein",
+      "Vicious"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/features/2018/4/11/youre-gonna-carry-that-weight-20-years-of-cowboy-bebop"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which young hacker joins the Bebop crew?",
+    "correct_answer": "Ed",
+    "decoys": [
+      "Faye",
+      "Julia",
+      "Katerina"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/series/GYVNXMVP6/cowboy-bebop"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is the name of the Bebop crew's corgi?",
+    "correct_answer": "Ein",
+    "decoys": [
+      "Ed",
+      "Jet",
+      "Andy"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/series/GYVNXMVP6/cowboy-bebop"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who pilots EVA-01 in Evangelion: 1.11 You Are (Not) Alone?",
+    "correct_answer": "Shinji Ikari",
+    "decoys": [
+      "Rei Ayanami",
+      "Asuka Langley",
+      "Kaworu Nagisa"
+    ],
+    "image_url": null,
+    "source_url": "https://gkids.com/films/evangelion111/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which organization recruits Shinji in Evangelion: 1.11?",
+    "correct_answer": "NERV",
+    "decoys": [
+      "SEELE",
+      "WILLE",
+      "UN"
+    ],
+    "image_url": null,
+    "source_url": "https://gkids.com/films/evangelion111/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who grants Lelouch his Geass in Code Geass?",
+    "correct_answer": "C.C.",
+    "decoys": [
+      "Kallen",
+      "Euphemia",
+      "Nunnally"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/series/GY2P9ED0Y/code-geass"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What masked name does Lelouch use in Code Geass?",
+    "correct_answer": "Zero",
+    "decoys": [
+      "One",
+      "Knight",
+      "Phoenix"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/series/GY2P9ED0Y/code-geass"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is the name of Zero's resistance group?",
+    "correct_answer": "Black Knights",
+    "decoys": [
+      "White Knights",
+      "Red Knights",
+      "Blue Knights"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/watch/GEVUZMEK4/code-geass-lelouch-of-the-rebellion-i-initiation"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which empire rules Area 11 in Code Geass?",
+    "correct_answer": "Britannia",
+    "decoys": [
+      "Eurasia",
+      "Gallia",
+      "Athens"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/series/GY2P9ED0Y/code-geass"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What can the Steins;Gate group send to the past?",
+    "correct_answer": "Text messages",
+    "decoys": [
+      "People",
+      "Books",
+      "Photographs"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/series/GYWE7W5GY/steinsgate"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which organization pursues the Steins;Gate group over time travel?",
+    "correct_answer": "SERN",
+    "decoys": [
+      "NERV",
+      "WISE",
+      "WILLE"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/series/GYWE7W5GY/steinsgate"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who leads the Future Gadget Laboratory in Steins;Gate?",
+    "correct_answer": "Rintaro Okabe",
+    "decoys": [
+      "Itaru Hashida",
+      "Mayuri Shiina",
+      "Kurisu Makise"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/guides/2018/4/5/what-you-need-to-know-before-you-start-steinsgate-0"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is Okabe's experimental appliance called in Steins;Gate?",
+    "correct_answer": "Phone Microwave",
+    "decoys": [
+      "Time Leap Machine",
+      "Divergence Meter",
+      "Microwave Camera"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/guides/2023/6/20/essential-sci-fi-anime-on-crunchyroll"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which sport is played in Haikyu!!?",
+    "correct_answer": "Volleyball",
+    "decoys": [
+      "Basketball",
+      "Soccer",
+      "Tennis"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/haikyu"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who becomes Shoyo Hinata's teammate after their first match as rivals?",
+    "correct_answer": "Tobio Kageyama",
+    "decoys": [
+      "Tetsuro Kuroo",
+      "Kenma Kozume",
+      "Toru Oikawa"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/haikyu"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What nickname inspires Hinata to pursue volleyball?",
+    "correct_answer": "The Little Giant",
+    "decoys": [
+      "The King of the Court",
+      "The Iron Wall",
+      "The Guardian Deity"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/haikyu"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who created Haikyu!!?",
+    "correct_answer": "Haruichi Furudate",
+    "decoys": [
+      "Takehiko Inoue",
+      "Muneyuki Kaneshiro",
+      "Tadatoshi Fujimaki"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/haikyu"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which soccer position does the Blue Lock program aim to develop?",
+    "correct_answer": "Striker",
+    "decoys": [
+      "Goalkeeper",
+      "Defender",
+      "Fullback"
+    ],
+    "image_url": null,
+    "source_url": "https://kodansha.us/bluelockdiamonds/about"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "How many young players enter the Blue Lock program at its start?",
+    "correct_answer": "300",
+    "decoys": [
+      "100",
+      "200",
+      "400"
+    ],
+    "image_url": null,
+    "source_url": "https://kodansha.us/bluelockdiamonds/about"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who runs the Blue Lock training program?",
+    "correct_answer": "Jinpachi Ego",
+    "decoys": [
+      "Noel Noa",
+      "Seishiro Nagi",
+      "Yoichi Isagi"
+    ],
+    "image_url": null,
+    "source_url": "https://kodansha.us/bluelockdiamonds/about"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Which Blue Lock player is known for his speed after overcoming a leg injury?",
+    "correct_answer": "Hyoma Chigiri",
+    "decoys": [
+      "Meguru Bachira",
+      "Rensuke Kunigami",
+      "Reo Mikage"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/guides/2024/11/15/blue-lock-characters"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "Who rules the bathhouse where Chihiro works in Spirited Away?",
+    "correct_answer": "Yubaba",
+    "decoys": [
+      "Zeniba",
+      "Lin",
+      "No-Face"
+    ],
+    "image_url": null,
+    "source_url": "https://gkids.com/films/spirited-away/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What unusual vehicle carries the children in My Neighbor Totoro?",
+    "correct_answer": "Cat Bus",
+    "decoys": [
+      "Flying train",
+      "Dragon cart",
+      "Fox taxi"
+    ],
+    "image_url": null,
+    "source_url": "https://gkids.com/films/my-neighbor-totoro/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What animals raised San in Princess Mononoke?",
+    "correct_answer": "Wolves",
+    "decoys": [
+      "Boars",
+      "Deer",
+      "Foxes"
+    ],
+    "image_url": null,
+    "source_url": "https://gkids.com/films/princess-mononoke/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is Kiki's black cat called?",
+    "correct_answer": "Jiji",
+    "decoys": [
+      "Luna",
+      "Artemis",
+      "Moro"
+    ],
+    "image_url": null,
+    "source_url": "https://gkids.com/films/kikis-delivery-service/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What is Sophie's job before she is cursed in Howl's Moving Castle?",
+    "correct_answer": "Hat maker",
+    "decoys": [
+      "Baker",
+      "Florist",
+      "Librarian"
+    ],
+    "image_url": null,
+    "source_url": "https://gkids.com/films/howls-moving-castle/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What kind of creature is Ponyo when Sosuke finds her?",
+    "correct_answer": "Goldfish",
+    "decoys": [
+      "Seahorse",
+      "Dolphin",
+      "Octopus"
+    ],
+    "image_url": null,
+    "source_url": "https://gkids.com/films/ponyo/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What happens to Taki and Mitsuha in Your Name?",
+    "correct_answer": "They swap bodies",
+    "decoys": [
+      "They trade voices",
+      "They lose their memories",
+      "They travel to space"
+    ],
+    "image_url": null,
+    "source_url": "https://gkids.com/films/your-name/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "en",
+    "question_text": "What does Suzume travel across Japan to close in Suzume?",
+    "correct_answer": "Mysterious doors",
+    "decoys": [
+      "Magic mirrors",
+      "Ancient wells",
+      "Hidden tunnels"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crunchyroll.com/news/announcements/2023/11/13/makoto-shinkai-suzume-crunchyroll-exclusive-november-16"
+  }
+]

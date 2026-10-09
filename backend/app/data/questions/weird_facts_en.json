@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which Australian marsupial is famous for producing distinctly cube-shaped feces?",
+    "correct_answer": "Wombat",
+    "decoys": [
+      "Koala",
+      "Tasmanian devil",
+      "Quokka"
+    ],
+    "image_url": null,
+    "source_url": "https://www.smithsonianmag.com/smart-news/scientists-have-solved-mystery-how-wombats-poop-cubes-180976898/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What behavior do sea otters exhibit while resting or sleeping in kelp beds to keep from drifting apart?",
+    "correct_answer": "Holding hands",
+    "decoys": [
+      "Hooking tails",
+      "Locking teeth",
+      "Biting kelp roots"
+    ],
+    "image_url": null,
+    "source_url": "https://www.montereybayaquarium.org/animals/animals-a-to-z/southern-sea-otter"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "How many hearts does an octopus possess to pump blood through its gills and body?",
+    "correct_answer": "Three",
+    "decoys": [
+      "Two",
+      "Four",
+      "Five"
+    ],
+    "image_url": null,
+    "source_url": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-have-three-hearts"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What color is the blood of an octopus due to the copper-rich protein hemocyanin?",
+    "correct_answer": "Blue",
+    "decoys": [
+      "Green",
+      "Purple",
+      "Yellow"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nhm.ac.uk/discover/octopuses-and-squid-have-blue-blood.html"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which marine creature is considered biologically immortal because it can revert its mature cells back into a polyp colony?",
+    "correct_answer": "Turritopsis dohrnii",
+    "decoys": [
+      "Aurelia aurita",
+      "Chironex fleckeri",
+      "Physalia physalis"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amnh.org/explore/news-blogs/on-exhibit-posts/the-immortal-jellyfish"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What optical glow effect was discovered in platypus fur when illuminated under ultraviolet light?",
+    "correct_answer": "Biofluorescence",
+    "decoys": [
+      "Phosphorescence",
+      "Bioluminescence",
+      "Infrared reflection"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nationalgeographic.com/animals/article/glowing-platypus"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which anatomical appendages do butterflies use to taste dissolved plant sugars and chemicals?",
+    "correct_answer": "Feet",
+    "decoys": [
+      "Antennae",
+      "Wingtips",
+      "Proboscis tip"
+    ],
+    "image_url": null,
+    "source_url": "https://www.si.edu/spotlight/buginfo/butterfly-taste"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Why do the continuously growing incisor teeth of beavers have a prominent orange coloration?",
+    "correct_answer": "Iron-rich enamel",
+    "decoys": [
+      "Tannin stains",
+      "Copper deposits",
+      "Carotenoid pigments"
+    ],
+    "image_url": null,
+    "source_url": "https://www.sciencedaily.com/releases/2015/02/150212154407.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "How do frogs typically utilize their eyeballs to assist in swallowing large prey items?",
+    "correct_answer": "Pushing eyeballs downward into the mouth",
+    "decoys": [
+      "Rolling eyeballs backward into the skull",
+      "Bulging eyeballs outward",
+      "Blinking to generate suction"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/story/why-do-frogs-swallow-with-their-eyes"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which non-human mammal has friction ridge fingerprints so similar to human prints that they can confuse forensic experts?",
+    "correct_answer": "Koala",
+    "decoys": [
+      "Chimpanzee",
+      "Raccoon",
+      "Squirrel monkey"
+    ],
+    "image_url": null,
+    "source_url": "https://www.science.org/content/article/koalas-have-fingerprints-us"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What striking eye color change occurs in Arctic reindeer between summer and winter to improve twilight vision?",
+    "correct_answer": "Gold to blue",
+    "decoys": [
+      "Brown to yellow",
+      "Black to red",
+      "Green to silver"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nationalgeographic.com/animals/article/reindeer-eyes-turn-blue-in-winter-here-is-why"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What anatomical bone structure wraps around the skull of a woodpecker to cushion its brain during high-impact drilling?",
+    "correct_answer": "Hyoid apparatus",
+    "decoys": [
+      "Cervical tendon",
+      "Cranial cartilage",
+      "Occipital ligament"
+    ],
+    "image_url": null,
+    "source_url": "https://www.audubon.org/news/how-woodpeckers-protect-their-brains"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "In seahorses, which parent broods the fertilized eggs in a pouch and undergoes labor to give birth?",
+    "correct_answer": "Male",
+    "decoys": [
+      "Female",
+      "Both parents alternately",
+      "Neither parent"
+    ],
+    "image_url": null,
+    "source_url": "https://ocean.si.edu/ocean-life/fish/male-seahorse-pregnancy"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "How does a pufferfish primarily inflate its body into a rigid, spiny sphere when threatened?",
+    "correct_answer": "Pumping water into its stomach",
+    "decoys": [
+      "Inhaling air into its lungs",
+      "Filling its swim bladder",
+      "Secreting gas into subcutaneous pockets"
+    ],
+    "image_url": null,
+    "source_url": "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/diodon-hystrix/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Where is the heart of a shrimp anatomically situated within its body structure?",
+    "correct_answer": "In its head",
+    "decoys": [
+      "In its abdomen",
+      "In its tail",
+      "In its thorax base"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/animal/shrimp"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What physical phenomenon occurs when a mantis shrimp strikes, generating a brief flash of heat and underwater shockwave?",
+    "correct_answer": "Cavitation bubble collapse",
+    "decoys": [
+      "Chemical bioluminescence",
+      "Piezoelectric sparks",
+      "Friction combustion"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nature.com/articles/428819a"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which family of birds possesses ball-and-socket wing joints that enable sustained backward flight and inverted hovering?",
+    "correct_answer": "Hummingbird",
+    "decoys": [
+      "Swift",
+      "Kingfisher",
+      "Kestrel"
+    ],
+    "image_url": null,
+    "source_url": "https://www.audubon.org/news/why-can-hummingbirds-fly-backwards"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Counting both its central cerebral ring and the independent nerve cord in each arm, how many brains does an octopus have?",
+    "correct_answer": "Nine",
+    "decoys": [
+      "Five",
+      "Seven",
+      "Eleven"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nhm.ac.uk/discover/octopuses-have-nine-brains.html"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What specialized nutrient-rich fluid, produced in the esophagus lining of both male and female pigeons, is fed to hatchlings?",
+    "correct_answer": "Crop milk",
+    "decoys": [
+      "Bile nectar",
+      "Glandular albumen",
+      "Chyme puree"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/crop-milk"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which Mexican salamander possesses the remarkable ability to regrow severed limbs, spinal cord segments, and parts of its heart?",
+    "correct_answer": "Axolotl",
+    "decoys": [
+      "Bullfrog",
+      "Fire salamander",
+      "Cane toad"
+    ],
+    "image_url": null,
+    "source_url": "https://www.genome.gov/research-at-nhgri/spotlight/axolotl-genome"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Why can open-skull neurosurgeries be safely performed on conscious patients without anesthesia on the brain itself?",
+    "correct_answer": "The brain lacks pain receptors",
+    "decoys": [
+      "Brain tissue regenerates instantly",
+      "Cerebrospinal fluid numbs nerve endings",
+      "Blood vessels block sensory signals"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/awake-craniotomy"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which transparent tissue in the human eye contains zero blood vessels and absorbs its oxygen directly from ambient air?",
+    "correct_answer": "Cornea",
+    "decoys": [
+      "Tooth enamel",
+      "Eardrum",
+      "Nail bed"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/corneal-conditions"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What potent chemical in human gastric juice gives the stomach a low pH capable of dissolving soft metals?",
+    "correct_answer": "Hydrochloric acid",
+    "decoys": [
+      "Sulfuric acid",
+      "Acetic acid",
+      "Phosphoric acid"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/gastric-juice"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What evolutionary purpose did goosebumps serve in early human ancestors through the contraction of arrector pili muscles?",
+    "correct_answer": "Raising hair to trap heat or appear larger",
+    "decoys": [
+      "Cooling the skin through pore constriction",
+      "Pumping adrenaline into sweat glands",
+      "Tightening collagen against predators"
+    ],
+    "image_url": null,
+    "source_url": "https://www.scientificamerican.com/article/why-do-humans-get-goosebumps/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What is the medical term for the smooth anatomical region of forehead skin situated directly between the eyebrows?",
+    "correct_answer": "Glabella",
+    "decoys": [
+      "Philtrum",
+      "Tragus",
+      "Canthus"
+    ],
+    "image_url": null,
+    "source_url": "https://www.merriam-webster.com/dictionary/glabella"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What is the anatomical name for the shallow vertical groove running down the center of the upper lip?",
+    "correct_answer": "Philtrum",
+    "decoys": [
+      "Columella",
+      "Frenulum",
+      "Vermilion border"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/philtrum"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Approximately what total length would the arteries, veins, and capillaries of an adult human measure if laid out end-to-end?",
+    "correct_answer": "100,000 kilometers",
+    "decoys": [
+      "1,000 kilometers",
+      "10,000 kilometers",
+      "1,000,000 kilometers"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fi.edu/en/science-and-education/human-body/circulatory-system"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Approximately how many distinct olfactory receptor gene types do humans have to detect countless odors?",
+    "correct_answer": "About 400",
+    "decoys": [
+      "About 50",
+      "About 2,000",
+      "About 10,000"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nih.gov/news-events/nih-research-matters/human-nose-can-detect-trillion-smells"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What percentage of the body's total basal metabolic energy does the human brain consume despite being roughly 2 percent of body weight?",
+    "correct_answer": "About 20%",
+    "decoys": [
+      "About 5%",
+      "About 40%",
+      "About 60%"
+    ],
+    "image_url": null,
+    "source_url": "https://www.scientificamerican.com/article/thinking-hard-calories/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which tiny stirrup-shaped auditory ossicle in the middle ear is the smallest and lightest bone in the human skeleton?",
+    "correct_answer": "Stapes",
+    "decoys": [
+      "Malleus",
+      "Incus",
+      "Hyoid"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/stapes"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What is the official scientific term for the distinctive earthy scent produced when rain falls onto warm, dry soil?",
+    "correct_answer": "Petrichor",
+    "decoys": [
+      "Geosmin",
+      "Humusol",
+      "Ozone mist"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nature.com/articles/201993a0"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What group of airborne chemical distress compounds is responsible for the scent released by fresh grass clippings?",
+    "correct_answer": "Green leaf volatiles",
+    "decoys": [
+      "Terpenoid resins",
+      "Lignin esters",
+      "Tannic acids"
+    ],
+    "image_url": null,
+    "source_url": "https://www.sciencedaily.com/releases/2014/09/140922110444.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which fast-growing giant woody grass holds the world record for plant growth velocity, surging up to 91 centimeters in 24 hours?",
+    "correct_answer": "Bamboo",
+    "decoys": [
+      "Kudzu",
+      "Giant kelp",
+      "Sugar cane"
+    ],
+    "image_url": null,
+    "source_url": "https://www.guinnessworldrecords.com/world-records/fastest-growing-plant/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "How many consecutive trigger hair stimulations within 20 seconds cause the carnivorous trap of a Venus flytrap to snap shut?",
+    "correct_answer": "Two",
+    "decoys": [
+      "One",
+      "Three",
+      "Five"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nature.com/articles/nature.2016.19200"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Defined by extremely low annual precipitation rather than high temperature, what is the largest desert on Earth by surface area?",
+    "correct_answer": "Antarctica",
+    "decoys": [
+      "Sahara",
+      "Arabian Desert",
+      "Gobi Desert"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/faqs/what-largest-desert-world"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Approximately how much does an ordinary medium-sized white cumulus cloud weigh in suspended water droplets?",
+    "correct_answer": "500,000 kilograms",
+    "decoys": [
+      "500 kilograms",
+      "5,000 kilograms",
+      "50,000,000 kilograms"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/special-topics/water-science-school/science/how-much-does-a-cloud-weigh"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Why do giant sequoia trees rely on naturally occurring forest fires to propagate new generations?",
+    "correct_answer": "Heat melts cone resin to release seeds",
+    "decoys": [
+      "Smoke neutralizes fungal spores in needles",
+      "Ash provides carbon for photosynthesis",
+      "Flames stimulate subterranean taproots"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/seki/learn/nature/fic.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which Siberian lake is the oldest and deepest in the world, containing roughly 20 percent of unfrozen surface freshwater?",
+    "correct_answer": "Lake Baikal",
+    "decoys": [
+      "Lake Superior",
+      "Lake Victoria",
+      "Lake Tanganyika"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/754/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What physical process triggers the booming acoustic shockwave heard as thunder during a storm?",
+    "correct_answer": "Rapid thermal expansion of superheated air",
+    "decoys": [
+      "Collision of charged electrical ions",
+      "Sudden vacuum collapse in clouds",
+      "Friction between falling ice pellets"
+    ],
+    "image_url": null,
+    "source_url": "https://www.noaa.gov/jetstream/lightning/thunder"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What brief optical phenomenon can sometimes be spotted along a clear sea horizon just as the upper rim of the sun sets?",
+    "correct_answer": "Green flash",
+    "decoys": [
+      "Blue ray",
+      "Crimson fringe",
+      "Violet halo"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/green-flash"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "How do boreal conifers in freezing taiga forests prevent intracellular ice crystals from piercing cell membranes in winter?",
+    "correct_answer": "Supercooling and extracellular freezing",
+    "decoys": [
+      "Constant internal metabolic heating",
+      "Pumping saline brine into bark",
+      "Storing dormant steam in xylem"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fs.usda.gov/research/treesearch/55486"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What soluble mineral composes the vast glistening white dunes of White Sands National Park instead of standard quartz sand?",
+    "correct_answer": "Gypsum",
+    "decoys": [
+      "Calcium carbonate",
+      "Pumice",
+      "Dolomite"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/whsa/learn/nature/geology.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "According to global botanical surveys, how does the number of trees on Earth compare to stars in the Milky Way galaxy?",
+    "correct_answer": "Earth has significantly more trees than Milky Way stars",
+    "decoys": [
+      "Earth has roughly the same number",
+      "Milky Way stars outnumber trees by 10 to 1",
+      "Milky Way stars outnumber trees by 1,000 to 1"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nature.com/articles/nature14967"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What microscopic organisms give Australia's famous Lake Hillier its permanent vibrant bubblegum-pink water hue?",
+    "correct_answer": "Halophilic algae and bacteria",
+    "decoys": [
+      "Dissolved copper sulfates",
+      "Iron oxide sediments",
+      "Pink coral silt"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Lake-Hillier"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Due to ongoing collision between the Indian and Eurasian tectonic plates, how does Mount Everest change each year?",
+    "correct_answer": "It rises by about 4 millimeters per year",
+    "decoys": [
+      "It sinks by about 1 centimeter per year",
+      "It tilts east without vertical change",
+      "Its elevation remains completely frozen"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nationalgeographic.com/science/article/mount-everest-height-geology"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Why is a single rotational day on the planet Venus longer than its entire orbital year around the Sun?",
+    "correct_answer": "It rotates slower than it completes an orbit",
+    "decoys": [
+      "Its elliptical orbit speeds up near perihelion",
+      "Tidal locking keeps one hemisphere permanently sunny",
+      "Solar wind arrests its axial momentum"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/venus/venus-facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which microscopic invertebrate organism survived exposure to the vacuum and lethal cosmic radiation of outer space during an ESA mission?",
+    "correct_answer": "Tardigrade",
+    "decoys": [
+      "Nematode",
+      "Rotifer",
+      "Hydra"
+    ],
+    "image_url": null,
+    "source_url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Research/Tardigrades_in_space"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which naturally occurring radioisotope found in potassium makes common bananas faintly radioactive?",
+    "correct_answer": "Potassium-40",
+    "decoys": [
+      "Carbon-14",
+      "Radon-222",
+      "Uranium-238"
+    ],
+    "image_url": null,
+    "source_url": "https://www.epa.gov/radtown/natural-radioactivity-food"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Under high atmospheric heat and immense pressures, what mineral is hypothesized to precipitate as rain inside Neptune?",
+    "correct_answer": "Diamond",
+    "decoys": [
+      "Sapphire",
+      "Emerald",
+      "Ruby"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nature.com/articles/s41467-017-00147-3"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What percentage of the entire collective mass of the Solar System is contained within the Sun alone?",
+    "correct_answer": "About 99.86%",
+    "decoys": [
+      "About 85.0%",
+      "About 92.5%",
+      "About 96.0%"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/sun/facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Why are astronaut bootprints left in lunar soil expected to remain essentially undisturbed for millions of years?",
+    "correct_answer": "The Moon lacks wind and atmospheric erosion",
+    "decoys": [
+      "Lunar regolith turns into glass under sunlight",
+      "Micrometeorites seal the boot prints in resin",
+      "Static electricity binds dust particles permanently"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nasa.gov/mission/apollo-11/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "On Earth, approximately how much would a single teaspoon of super-compressed degenerate matter from a neutron star weigh?",
+    "correct_answer": "Billions of tons",
+    "decoys": [
+      "A few kilograms",
+      "Several hundred pounds",
+      "About 50 tons"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nasa.gov/universe/neutron-stars/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Due to constant scattering in the solar radiative zone, how long can a photon take to migrate from the Sun's core to its surface?",
+    "correct_answer": "Tens of thousands of years",
+    "decoys": [
+      "Exactly 8 minutes",
+      "Around 3 days",
+      "Approximately 1 year"
+    ],
+    "image_url": null,
+    "source_url": "https://sunearthday.nasa.gov/2007/locations/ttt_sunlight.php"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "How hot can the plasma channel of a terrestrial lightning strike reach compared to the surface of the Sun?",
+    "correct_answer": "Up to five times hotter",
+    "decoys": [
+      "Exactly the same temperature",
+      "Half as hot",
+      "Ten times cooler"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/safety/lightning-science-overview"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Due to low atmospheric pressure at the summit of Mount Everest, what happens to the boiling temperature of pure water?",
+    "correct_answer": "It drops to around 68 degrees Celsius",
+    "decoys": [
+      "It rises to around 120 degrees Celsius",
+      "It remains fixed at exactly 100 degrees Celsius",
+      "Water decomposes into hydrogen gas"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/boiling-point"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What unique physical property causes liquid water to expand and decrease in density as it freezes into solid ice?",
+    "correct_answer": "Hexagonal hydrogen-bonded crystalline lattice",
+    "decoys": [
+      "Trapping atmospheric oxygen bubbles",
+      "Thermal contraction of oxygen nuclei",
+      "Dissolving ambient nitrogen ions"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/special-topics/water-science-school/science/water-density"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Why did Pluto fail to complete even one full revolution around the Sun between its discovery in 1930 and its 2006 reclassification?",
+    "correct_answer": "Its orbit takes 248 Earth years",
+    "decoys": [
+      "Its orbit takes 500 Earth years",
+      "Its orbit takes 1,000 Earth years",
+      "Its orbit takes 84 Earth years"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "In human calendar terms, what is the comparative difference between one million seconds and one billion seconds?",
+    "correct_answer": "About 11.5 days versus 31.7 years",
+    "decoys": [
+      "About 1 day versus 100 days",
+      "About 1 month versus 12 months",
+      "About 1 year versus 10 years"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/second-unit-of-measurement"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What physical phenomenon in space causes clean, unoxidized pieces of identical metal to fuse together instantly upon contact?",
+    "correct_answer": "Cold welding",
+    "decoys": [
+      "Static magnetism",
+      "Vacuum suction",
+      "Capillary sintering"
+    ],
+    "image_url": null,
+    "source_url": "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Cold_welding"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which inert noble gas gets its name from the ancient Greek word for 'inactive' or 'lazy'?",
+    "correct_answer": "Argon",
+    "decoys": [
+      "Neon",
+      "Xenon",
+      "Krypton"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/argon-chemical-element"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "For which surgical operation did two Scottish doctors originally invent the hand-cranked mechanical chainsaw in the 18th century?",
+    "correct_answer": "Assisting in difficult childbirth",
+    "decoys": [
+      "Amputating crushed battlefield limbs",
+      "Trepanning skulls to relieve pressure",
+      "Splitting fractured pelvic casts"
+    ],
+    "image_url": null,
+    "source_url": "https://www.snopes.com/fact-check/chainsaw-invented-childbirth/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What decorative interior home product was Bubble Wrap originally invented to serve as in 1957?",
+    "correct_answer": "Textured wallpaper",
+    "decoys": [
+      "Greenhouse insulation",
+      "Buoyant life jackets",
+      "Soundproof flooring"
+    ],
+    "image_url": null,
+    "source_url": "https://www.smithsonianmag.com/innovation/accidental-invention-bubble-wrap-180971325/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Before gaining international fame as a children's modeling clay, what practical product was Play-Doh originally invented as?",
+    "correct_answer": "Wallpaper soot cleaner",
+    "decoys": [
+      "Bread dough preservative",
+      "Window pane putty",
+      "Shoe sole filler"
+    ],
+    "image_url": null,
+    "source_url": "https://www.smithsonianmag.com/innovation/accidental-invention-play-doh-180973405/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which fire-starting invention was successfully developed and commercialized before the modern friction match?",
+    "correct_answer": "Döbereiner's lamp lighter",
+    "decoys": [
+      "Safety matchbook",
+      "Flint striker wheel",
+      "Zippo fluid lighter"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/technology/lighter"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What was the total duration of the shortest recorded military conflict in history, the 1896 Anglo-Zanzibar War?",
+    "correct_answer": "Between 38 and 45 minutes",
+    "decoys": [
+      "Roughly 4 hours",
+      "Exactly 12 hours",
+      "Nearly 2 days"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Anglo-Zanzibar-War"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "In 1932, the Australian military was deployed armed with machine guns in a notorious failed campaign against which native bird?",
+    "correct_answer": "Emu",
+    "decoys": [
+      "Cassowary",
+      "Ostrich",
+      "Kiwi"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Great-Emu-War"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "In 1919, a massive industrial storage rupture in Boston unleashed a deadly 25-foot wave of what viscous syrup through city streets?",
+    "correct_answer": "Molasses",
+    "decoys": [
+      "Maple syrup",
+      "Industrial tar",
+      "Corn syrup"
+    ],
+    "image_url": null,
+    "source_url": "https://www.scientificamerican.com/article/the-great-boston-molasses-disaster/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Before English engineer Edward Nairne commercialized rubber erasers in 1770, what food item did draftsmen use to lift pencil marks?",
+    "correct_answer": "Rolled-up breadcrumbs",
+    "decoys": [
+      "Beeswax pellets",
+      "Chalk dust pads",
+      "Sheep wool swatches"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/technology/eraser"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "In 1897, which healthcare professional co-invented the centrifugal spinning machine that created cotton candy?",
+    "correct_answer": "Dentist",
+    "decoys": [
+      "Pharmacist",
+      "Blacksmith",
+      "Watchmaker"
+    ],
+    "image_url": null,
+    "source_url": "https://www.smithsonianmag.com/smart-news/cotton-candy-was-invented-dentist-180953495/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What serendipitous event led Percy Spencer to invent the microwave oven while testing military radar vacuum tubes in 1945?",
+    "correct_answer": "A candy bar melted in his pocket",
+    "decoys": [
+      "An egg exploded on his workbench",
+      "A cup of coffee boiled without fire",
+      "His sandwich wrapper caught fire"
+    ],
+    "image_url": null,
+    "source_url": "https://www.smithsonianmag.com/innovation/accidental-invention-microwave-180973428/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "When James Naismith established the rules of basketball in 1891, what items were nailed to gym walls to serve as targets?",
+    "correct_answer": "Peach baskets",
+    "decoys": [
+      "Apple crates",
+      "Wire laundry bins",
+      "Fishing nets"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/sports/basketball"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What material was used by Douglas Engelbart in 1964 to craft the exterior shell of the world's very first computer mouse?",
+    "correct_answer": "Wood",
+    "decoys": [
+      "Bakelite",
+      "Aluminum",
+      "Porcelain"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/revolution/input-output/14/350"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which historic academic institution was already actively holding collegiate classes well before the Aztec Empire was founded in 1428?",
+    "correct_answer": "University of Oxford",
+    "decoys": [
+      "Sorbonne University",
+      "University of Cambridge",
+      "University of Salamanca"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ox.ac.uk/about/organisation/history"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "In chronological history, did Egyptian pharaoh Cleopatra VII live closer to the construction of the Great Pyramid or the Apollo Moon landing?",
+    "correct_answer": "The Apollo 11 Moon landing",
+    "decoys": [
+      "The construction of the Great Pyramid",
+      "Exactly halfway between both events",
+      "The reign of King Tutankhamun"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Cleopatra-queen-of-Egypt"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which gaming giant was established in Kyoto in 1889 as a manufacturer of artisanal Japanese Hanafuda playing cards?",
+    "correct_answer": "Nintendo",
+    "decoys": [
+      "Sega",
+      "Bandai",
+      "Taito"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Nintendo-Company-Ltd"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Why was pure honey discovered in ancient Egyptian burial tombs thousands of years old still completely unspoiled and safe to eat?",
+    "correct_answer": "Extremely low moisture and natural acidity",
+    "decoys": [
+      "High concentration of lead preservatives",
+      "Airtight embalming waxes",
+      "Natural alcohol content"
+    ],
+    "image_url": null,
+    "source_url": "https://www.smithsonianmag.com/science-nature/the-science-behind-honeys-eternal-shelf-life-1218690/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Where does the shelled cashew nut physically develop on the cashew tree relative to the fleshy pseudo-fruit?",
+    "correct_answer": "Hanging outside the bottom of a cashew apple",
+    "decoys": [
+      "Buried beneath the root system",
+      "Clustered inside a fleshy pod",
+      "Floating inside the seed blossom"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/plant/cashew"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Botanically speaking, which of these everyday supermarket items is a true berry derived from a single flower with one ovary?",
+    "correct_answer": "Banana",
+    "decoys": [
+      "Strawberry",
+      "Raspberry",
+      "Blackberry"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/science/berry-plant-reproductive-body"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Why do fresh whole apples bob and float when placed in a tub of water?",
+    "correct_answer": "They are approximately 25 percent air by volume",
+    "decoys": [
+      "Their waxy peel repels water tension",
+      "They contain low-density hydrogen pockets",
+      "Their seeds act as miniature air chambers"
+    ],
+    "image_url": null,
+    "source_url": "https://www.sciencedaily.com/releases/2007/04/070423185347.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What predominant colors were domestic carrots in Europe before Dutch growers cultivated sweet orange varieties in the 17th century?",
+    "correct_answer": "Purple and yellow",
+    "decoys": [
+      "Bright red and pink",
+      "Pure white and black",
+      "Emerald green and brown"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/plant/carrot"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Why does genuine saffron rank as the most expensive culinary spice in the world per gram?",
+    "correct_answer": "Each flower yields only three delicate hand-harvested stigmas",
+    "decoys": [
+      "The plant only blooms once every ten years",
+      "The bulbs can only grow in volcanic ash",
+      "It requires distillation in pure silver vats"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/saffron"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Under Swiss animal welfare law, why is it illegal to keep a single pet guinea pig without a companion of its own kind?",
+    "correct_answer": "They are social herd animals that suffer from loneliness",
+    "decoys": [
+      "They produce excess dander when isolated",
+      "Solitary rodents develop aggressive dental diseases",
+      "Single cages encourage viral breeding"
+    ],
+    "image_url": null,
+    "source_url": "https://www.loc.gov/item/global-legal-monitor/2008-09-08/switzerland-social-animals-must-not-be-kept-in-isolation/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which legendary mythical beast has officially served as the national heraldic animal of Scotland since the Middle Ages?",
+    "correct_answer": "Unicorn",
+    "decoys": [
+      "Dragon",
+      "Phoenix",
+      "Griffin"
+    ],
+    "image_url": null,
+    "source_url": "https://www.visitscotland.com/about/uniquely-scottish/national-animal-unicorn"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "In 1904, how did runner Fred Lorz cross the finish line first in the bizarre St. Louis Olympic marathon before being disqualified?",
+    "correct_answer": "He rode in a car for 11 miles",
+    "decoys": [
+      "He took a shortcut through a train tunnel",
+      "He swapped places with his identical twin",
+      "He rode a spectator's bicycle"
+    ],
+    "image_url": null,
+    "source_url": "https://olympics.com/en/news/st-louis-1904-olympic-marathon-bizarre-stories"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What ingredients actually make up the pungent green condiment served as 'wasabi' in most sushi bars outside Japan?",
+    "correct_answer": "Horseradish colored with food dye and mustard",
+    "decoys": [
+      "Fermented matcha tea powder",
+      "Pureed spinach and ginger",
+      "Seaweed gel flavored with wasabi root extracts"
+    ],
+    "image_url": null,
+    "source_url": "https://www.smithsonianmag.com/science-nature/real-wasabi-is-hard-to-find-180975618/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which US state spans far enough across meridians to be simultaneously the northernmost, westernmost, and easternmost state?",
+    "correct_answer": "Alaska",
+    "decoys": [
+      "Hawaii",
+      "Maine",
+      "Washington"
+    ],
+    "image_url": null,
+    "source_url": "https://www.noaa.gov/jetstream/ocean/alaska-extremes"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "In the open waters of the South Pacific Ocean, what unique geographic status designates the coordinates known as 'Point Nemo'?",
+    "correct_answer": "Oceanic pole of inaccessibility furthest from any land",
+    "decoys": [
+      "Deepest underwater trench on the planet",
+      "Center of the Pacific volcanic ring of fire",
+      "Calmest weather zone with zero recorded wind"
+    ],
+    "image_url": null,
+    "source_url": "https://www.noaa.gov/oceanic-pole-of-inaccessibility"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "How does the total land area of New York City's Central Park compare with the entire sovereign Principality of Monaco?",
+    "correct_answer": "Central Park is larger than Monaco",
+    "decoys": [
+      "Central Park is roughly half the size of Monaco",
+      "Monaco is ten times larger than Central Park",
+      "Both have identical acreage"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Monaco"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Perched at an elevation exceeding 3,600 meters in the Andes mountains, which city serves as the world's highest seat of government?",
+    "correct_answer": "La Paz",
+    "decoys": [
+      "Quito",
+      "Bogota",
+      "Sucre"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/La-Paz-Bolivia"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Why is the hyper-arid Atacama Desert in northern Chile recognized as the driest non-polar region on the globe?",
+    "correct_answer": "Some areas have never recorded rainfall in modern history",
+    "decoys": [
+      "Volcanic vents boil away all atmospheric moisture",
+      "High winds evaporate humidity before it forms clouds",
+      "Ground temperatures stay above 60 degrees Celsius year-round"
+    ],
+    "image_url": null,
+    "source_url": "https://earthobservatory.nasa.gov/images/87720/atacama-desert"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "How long does the world's shortest scheduled commercial flight between the Scottish islands of Westray and Papa Westray last in favorable winds?",
+    "correct_answer": "Under two minutes",
+    "decoys": [
+      "Around 15 minutes",
+      "Exactly 30 minutes",
+      "Roughly 45 minutes"
+    ],
+    "image_url": null,
+    "source_url": "https://www.guinnessworldrecords.com/world-records/shortest-scheduled-airline-service"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which independent sovereign enclave is completely surrounded by the city boundaries of Rome, Italy?",
+    "correct_answer": "Vatican City",
+    "decoys": [
+      "San Marino",
+      "Monaco",
+      "Liechtenstein"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Vatican-City"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Which Scandinavian capital city is constructed across an archipelago of 14 islands interconnected by over 50 bridges?",
+    "correct_answer": "Stockholm",
+    "decoys": [
+      "Amsterdam",
+      "Copenhagen",
+      "Helsinki"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Stockholm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "Spanning from the Baltic Sea in the west to the Bering Strait in the east, how many contiguous time zones does Russia encompass?",
+    "correct_answer": "11",
+    "decoys": [
+      "7",
+      "9",
+      "14"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Russia"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What physical characteristic of the hypersaline Dead Sea permits bathers to float on the water's surface without swimming?",
+    "correct_answer": "High mineral salt concentration of roughly 34 percent",
+    "decoys": [
+      "Subterranean gas plumes creating upward buoyancy",
+      "High thermal density from underground geysers",
+      "Abundant dissolved sulfur bubbles"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Dead-Sea"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What is the specific English term for the small plastic or metal sheath crimped onto the end of a shoelace?",
+    "correct_answer": "Aglet",
+    "decoys": [
+      "Eyelet",
+      "Ferrule",
+      "Grommet"
+    ],
+    "image_url": null,
+    "source_url": "https://www.merriam-webster.com/dictionary/aglet"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "What is the typographical name for the small superscript dot positioned over the lowercase letters 'i' and 'j'?",
+    "correct_answer": "Tittle",
+    "decoys": [
+      "Serif",
+      "Breve",
+      "Cedilla"
+    ],
+    "image_url": null,
+    "source_url": "https://www.merriam-webster.com/dictionary/tittle"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "How many total alphabet letters, consisting of five vowels and eight consonants, comprise the modern written Hawaiian alphabet?",
+    "correct_answer": "13",
+    "decoys": [
+      "18",
+      "22",
+      "26"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Hawaiian-language"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "From which Central European language was the word 'robot' popularized, originating from a term for forced feudal labor?",
+    "correct_answer": "Czech",
+    "decoys": [
+      "Polish",
+      "Russian",
+      "Hungarian"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/robot-technology"
+  },
+  {
+    "category_id": 11,
+    "language_code": "en",
+    "question_text": "In 19th-century English schoolbooks reciting alphabet primers, what typographical symbol was commonly recited as the 27th letter?",
+    "correct_answer": "The ampersand symbol &",
+    "decoys": [
+      "The section sign §",
+      "The pilcrow mark ¶",
+      "The dagger symbol †"
+    ],
+    "image_url": null,
+    "source_url": "https://www.merriam-webster.com/wordplay/the-history-of-ampersand"
+  }
+]

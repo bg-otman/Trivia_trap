@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "إلى أي سلالة محاربة فضائية ينتمي غوكو في سلسلة دراغون بول؟",
+    "correct_answer": "السايان",
+    "decoys": [
+      "الناميكيون",
+      "الفريزا",
+      "التسوفورو"
+    ],
+    "image_url": null,
+    "source_url": "https://en.dragon-ball-official.com/news/01_3850.html"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي موجة الطاقة القتالية الشهيرة التي ابتكرها موتن روشي وتعلمها غوكو؟",
+    "correct_answer": "كاميهاميها",
+    "decoys": [
+      "غاليك غن",
+      "فينال فلاش",
+      "ماكانكوسابو"
+    ],
+    "image_url": null,
+    "source_url": "https://en.dragon-ball-official.com/news/01_141.html"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو أمير سلالة السايان الفخور الذي أصبح المنافس الأبدي لغوكو؟",
+    "correct_answer": "فيجيتا",
+    "decoys": [
+      "راديتز",
+      "نابا",
+      "برولي"
+    ],
+    "image_url": null,
+    "source_url": "https://en.dragon-ball-official.com/news/01_3850.html"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو المؤلف ورسام المانغا الياباني الشهير الذي ابتكر عالم دراغون بول؟",
+    "correct_answer": "أكيرا تورياما",
+    "decoys": [
+      "إييتشيرو أودا",
+      "ماساشي كيشيموتو",
+      "تايت كوبو"
+    ],
+    "image_url": null,
+    "source_url": "https://en.dragon-ball-official.com/news/01_3850.html"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الوحش الأسطوري ذو الذيول المختوم داخل ناروتو أوزوماكي منذ ولادته؟",
+    "correct_answer": "الثعلب ذو الذيول التسعة (الكيوبي)",
+    "decoys": [
+      "الهاتشيبي (الأخطبوط)",
+      "الشوكاكو (كلب الراكون)",
+      "الماتاتابي (القط الشبح)"
+    ],
+    "image_url": null,
+    "source_url": "https://naruto-official.com/en/characters"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو اسم التقنية البصرية الوراثية الشهيرة الخاصة بعشيرة الأوتشيها في ناروتو؟",
+    "correct_answer": "الشارينغان",
+    "decoys": [
+      "البياكوغان",
+      "الرينغان",
+      "التنسيغان"
+    ],
+    "image_url": null,
+    "source_url": "https://naruto-official.com/en/characters"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي قرية النينجا التي ينتمي إليها ناروتو وساسكي وساكورا؟",
+    "correct_answer": "قرية الورق المخفية (كونوها)",
+    "decoys": [
+      "قرية الرمل المخفية",
+      "قرية الضباب المخفية",
+      "قرية السحاب المخفية"
+    ],
+    "image_url": null,
+    "source_url": "https://naruto-official.com/en/characters"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو مؤلف ورسام مانغا نينجا ناروتو العالمية؟",
+    "correct_answer": "ماساشي كيشيموتو",
+    "decoys": [
+      "أكيرا تورياما",
+      "يوشيهيرو توغاشي",
+      "تاكيهيكو إينوي"
+    ],
+    "image_url": null,
+    "source_url": "https://naruto-official.com/en/about"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما نوع فاكهة الشيطان التي أكلها لوفي ومنحته جسداً مطاطياً؟",
+    "correct_answer": "فاكهة غوم غوم (المطاط)",
+    "decoys": [
+      "فاكهة ميرا ميرا (اللهب)",
+      "فاكهة هيي هيي (الجليد)",
+      "فاكهة غورا غورا (الزلازل)"
+    ],
+    "image_url": null,
+    "source_url": "https://one-piece.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم أول سفينة شراعية رئيسية أبحرت بها فرقة قبعة القش في ون بيس؟",
+    "correct_answer": "غوينغ ميري",
+    "decoys": [
+      "ثاوزند صاني",
+      "الريد فورس",
+      "الموبي ديك"
+    ],
+    "image_url": null,
+    "source_url": "https://one-piece.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو طبيب طاقم قبعة القش وهو غزال رنة بقدرات إنسانية متكلمة؟",
+    "correct_answer": "توني توني تشوبر",
+    "decoys": [
+      "ترافلغار لو",
+      "بروك",
+      "فرانكي"
+    ],
+    "image_url": null,
+    "source_url": "https://one-piece.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو مؤلف ورسام مانغا القراصنة الملحمية ون بيس؟",
+    "correct_answer": "إييتشيرو أودا",
+    "decoys": [
+      "ماساشي كيشيموتو",
+      "تايت كوبو",
+      "هاجيمي إيساياما"
+    ],
+    "image_url": null,
+    "source_url": "https://one-piece.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هي صديقة طفولة إيرين ييغر التي تصدرت خريجي فيلق التدريب رقم 104 في هجوم العمالقة؟",
+    "correct_answer": "ميكاسا أكرمان",
+    "decoys": [
+      "ساشا براوس",
+      "آني ليونهارت",
+      "هيستوريا ريس"
+    ],
+    "image_url": null,
+    "source_url": "https://shingeki.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "أي عملاق فتح فجوة مدمرة في بوابة جدار ماريا عند بداية أحداث هجوم العمالقة؟",
+    "correct_answer": "العملاق الضخم",
+    "decoys": [
+      "العملاق المدرع",
+      "العملاق المهاجم",
+      "العملاق الوحش"
+    ],
+    "image_url": null,
+    "source_url": "https://shingeki.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو قائد فرقة العمليات الخاصة في فيلق الاستطلاع الملقب بأقوى جندي للبشرية؟",
+    "correct_answer": "ليفاي أكرمان",
+    "decoys": [
+      "إروين سميث",
+      "جان كيرنشتاين",
+      "كوني سبرينغر"
+    ],
+    "image_url": null,
+    "source_url": "https://shingeki.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الاستوديو الياباني الذي أنتج المواسم الثلاثة الأولى من أنمي هجوم العمالقة؟",
+    "correct_answer": "استوديو ويت (Wit Studio)",
+    "decoys": [
+      "استوديو مابا",
+      "استوديو بونز",
+      "استوديو بيرو"
+    ],
+    "image_url": null,
+    "source_url": "https://shingeki.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الطعام المفضل الذي يدمنه إله الموت (الشينيغامي) ريوك في مذكرة الموت؟",
+    "correct_answer": "التفاح",
+    "decoys": [
+      "الشوكولاتة",
+      "الكرز",
+      "الفراولة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/death-note"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما الاسم المستعار الذي أطلقه العامة على لايت ياغامي أثناء معاقبته للمجرمين؟",
+    "correct_answer": "كيرا",
+    "decoys": [
+      "إل",
+      "زيرو",
+      "نير"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/death-note"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "وفقاً لقواعد المذكرة، ماذا يجب على الكاتب استحضاره في ذهنه مع اسم الضحية لتنفيذ القتل؟",
+    "correct_answer": "وجه الضحية",
+    "decoys": [
+      "تاريخ ميلاد الضحية",
+      "فصيلة دم الضحية",
+      "عنوان سكن الضحية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/death-note"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو الفنان الذي رسم مانغا مذكرة الموت الشهيرة إلى جانب الكاتب تسوغومي أوبا؟",
+    "correct_answer": "تاكيشي أوباتا",
+    "decoys": [
+      "يوسوكي موراتا",
+      "ناوكي أوراساوا",
+      "كينتارو ميورا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.viz.com/death-note"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو اسم سيف الزانباكتو الروحي الخاص بإيتشيغو كوروساكي في بليتش؟",
+    "correct_answer": "زانغيتسو",
+    "decoys": [
+      "سينبونزاكورا",
+      "هيورينمارو",
+      "وابيسوكي"
+    ],
+    "image_url": null,
+    "source_url": "https://bleach-anime.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما الاسم الذي يُطلق على المرحلة الثانية والقصوى من تحرير سيف الزانباكتو؟",
+    "correct_answer": "بانكاي",
+    "decoys": [
+      "شيكاي",
+      "ريسيريكسيون",
+      "سيرو"
+    ],
+    "image_url": null,
+    "source_url": "https://bleach-anime.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو التنظيم العسكري الرئيسي لحماية مجتمع الأرواح المكون من 13 فرقة؟",
+    "correct_answer": "الغوتي 13",
+    "decoys": [
+      "الإسبادا",
+      "الفاندرينريتش",
+      "الفايزارد"
+    ],
+    "image_url": null,
+    "source_url": "https://bleach-anime.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو المصطلح الياباني للطاقة والضغط الروحي المستخدم في معارك بليتش؟",
+    "correct_answer": "الرياتسو",
+    "decoys": [
+      "التشاكرا",
+      "النين",
+      "الكي"
+    ],
+    "image_url": null,
+    "source_url": "https://bleach-anime.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو أسلوب التنفس الأول والأساسي الذي تعلمه تانجيرو كامادو على يد المعلم أوروكوداكي؟",
+    "correct_answer": "تنفس الماء",
+    "decoys": [
+      "تنفس اللهب",
+      "تنفس الرعد",
+      "تنفس الرياح"
+    ],
+    "image_url": null,
+    "source_url": "https://demonslayer-anime.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي الزينة الأيقونية التي يرتديها تانجيرو كامادو في أذنيه والمتوارثة عن والده؟",
+    "correct_answer": "أقراط الهانافودا",
+    "decoys": [
+      "قناع الثعلب",
+      "وشاح أحمر",
+      "قلادة ذهبية"
+    ],
+    "image_url": null,
+    "source_url": "https://demonslayer-anime.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو أصل جميع الشياطين والزعيم الشرير الرئيسي في أنمي قاتل الشياطين؟",
+    "correct_answer": "موزان كيبوتسوجي",
+    "decoys": [
+      "أكازا",
+      "دوما",
+      "كوكوشيبو"
+    ],
+    "image_url": null,
+    "source_url": "https://demonslayer-anime.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الاستوديو الياباني المعروف بجودة التحريك المذهلة الذي أنتج أنمي قاتل الشياطين؟",
+    "correct_answer": "استوديو يوفوتيبل (ufotable)",
+    "decoys": [
+      "استوديو مابا",
+      "كيوتو أنيميشن",
+      "كلوفر ووركس"
+    ],
+    "image_url": null,
+    "source_url": "https://demonslayer-anime.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم الكامل لملك اللعنات الأسطوري الذي حبست روحه داخل جسد يوجي إيتادوري؟",
+    "correct_answer": "ريومين سوكونا",
+    "decoys": [
+      "كينجاكو",
+      "ماهيتو",
+      "جوغو"
+    ],
+    "image_url": null,
+    "source_url": "https://jujutsukaisen.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي القدرة البصرية الوراثية النادرة التي يتميز بها ساتورو غوجو إلى جانب تقنية اللانهائية؟",
+    "correct_answer": "العيون الست",
+    "decoys": [
+      "الشارينغان",
+      "عين الحقيقة",
+      "البياكوغان"
+    ],
+    "image_url": null,
+    "source_url": "https://jujutsukaisen.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي الأداة التي تستخدمها نوبارا كوجيساكي لإطلاق تقنيتها الملعونة (تقنية دمية القش)؟",
+    "correct_answer": "المطرقة والمسامير",
+    "decoys": [
+      "السيف القصير",
+      "القوس والنشاب",
+      "الرمح الطويل"
+    ],
+    "image_url": null,
+    "source_url": "https://jujutsukaisen.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو مؤلف ورسام مانغا جوجوتسو كايسن ذات الشعبية الضخمة؟",
+    "correct_answer": "غيغي أكوتامي",
+    "decoys": [
+      "تاتسوكي فوجيموتو",
+      "كويوهارو غوتوغي",
+      "كوهي هوريكوشي"
+    ],
+    "image_url": null,
+    "source_url": "https://jujutsukaisen.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما الأداة التي استخدمها غون فريكس ببراعة كسلاح في المراحل الأولى من امتحان الصيادين؟",
+    "correct_answer": "سنارة الصيد",
+    "decoys": [
+      "اليويو الفولاذي",
+      "السكاكين المزدوجة",
+      "القوس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.vap.co.jp/hunterhunter/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "إلى أي فئة من فئات طاقة النين الست ينتمي البطل غون فريكس؟",
+    "correct_answer": "التعزيز",
+    "decoys": [
+      "التحويل",
+      "التجسيد",
+      "التلاعب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.vap.co.jp/hunterhunter/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي العصابة الخطيرة التي يسعى كورابيكا للانتقام منها بسبب إبادة قبيلته؟",
+    "correct_answer": "عصابة العناكب (غينريودان)",
+    "decoys": [
+      "عائلة زولديك",
+      "جمعية الصيادين",
+      "حرس النمل الملكي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.vap.co.jp/hunterhunter/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو مبتكر ومانغاكا سلسلة القناص (Hunter x Hunter) وسلسلة يويو هاكوشو؟",
+    "correct_answer": "يوشيهيرو توغاشي",
+    "decoys": [
+      "كينتارو ميورا",
+      "ماساشي كيشيموتو",
+      "أكيرا تورياما"
+    ],
+    "image_url": null,
+    "source_url": "https://www.vap.co.jp/hunterhunter/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو القانون الأساسي والمطلق للخيمياء في أنمي الخيميائي الفولاذي؟",
+    "correct_answer": "التبادل المتكافئ",
+    "decoys": [
+      "حفظ الطاقة",
+      "التحول الشامل",
+      "التوازن الروحي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hagaren.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو اللقب العسكري الذي مُنح لإدوارد إلريك عند انضمامه لخيميائيي الولاية؟",
+    "correct_answer": "الخيميائي الفولاذي",
+    "decoys": [
+      "خيميائي اللهب",
+      "خيميائي الدم",
+      "خيميائي الكريستال"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hagaren.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو ضابط جيش الولاية الملقب بخيميائي اللهب والذي يطمح لمنصب قيادة الدولة؟",
+    "correct_answer": "روي موستانغ",
+    "decoys": [
+      "مايس هيوز",
+      "أليكس لويس أرمسترونغ",
+      "كينغ برادلي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hagaren.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم والد إدوارد وألفونس إلريك الذي يرتبط بأصول الخيمياء القديمة؟",
+    "correct_answer": "فان هوهنهايم",
+    "decoys": [
+      "كينغ برادلي",
+      "سكار",
+      "كورنيلو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hagaren.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم البطولي الذي اختاره إيزوكو ميدوريا بعد أن كان يُطلق عليه للتقليل منه؟",
+    "correct_answer": "ديكو",
+    "decoys": [
+      "داينامايت",
+      "شوتو",
+      "رد ريوت"
+    ],
+    "image_url": null,
+    "source_url": "https://heroaca.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هما العنصران المتضادان اللذان تجمع ميزة (كويرك) شوتو تودوروكي بينهما؟",
+    "correct_answer": "النار والجليد",
+    "decoys": [
+      "البرق والأرض",
+      "الرياح والماء",
+      "الضوء والظلام"
+    ],
+    "image_url": null,
+    "source_url": "https://heroaca.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو الطالب المتفجر ومنافس طفولة ميدوريا ذو القدرة على إطلاق الانفجارات من يديه؟",
+    "correct_answer": "كاتسوكي باكوغو",
+    "decoys": [
+      "إيجيرو كيريشيما",
+      "دينكي كاميناري",
+      "تينيا إيدا"
+    ],
+    "image_url": null,
+    "source_url": "https://heroaca.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم التحالف الشرير الرئيسي الذي يقوده تومورا شيغاراكي ضد مجتمع الأبطال؟",
+    "correct_answer": "تحالف الأشرار",
+    "decoys": [
+      "جبهة الظلام",
+      "نقابة الجريمة",
+      "جيش التحرير الأسطوري"
+    ],
+    "image_url": null,
+    "source_url": "https://heroaca.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي طاقة التنفس القتالية التي استُخدمت في الجزأين الأول والثاني قبل ظهور قوى الستاند؟",
+    "correct_answer": "الهامون (طاقة التموج)",
+    "decoys": [
+      "النين",
+      "التشاكرا",
+      "الريكي"
+    ],
+    "image_url": null,
+    "source_url": "https://jojo-portal.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو بطل الجزء الخامس (الرياح الذهبية / Golden Wind) من سلسلة مغامرات جوجو العجيبة؟",
+    "correct_answer": "جورنو جوفانا",
+    "decoys": [
+      "جوسكي هيغاشيكاتا",
+      "جولين كوجو",
+      "جوني جوستار"
+    ],
+    "image_url": null,
+    "source_url": "https://jojo-portal.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم الستاند الخارق التابع للشرير ديو براندو والذي يمتلك القدرة على إيقاف الزمن؟",
+    "correct_answer": "ذا وورلد (العالم)",
+    "decoys": [
+      "ستار بلاتينوم",
+      "كينغ كريمسون",
+      "كيلر كوين"
+    ],
+    "image_url": null,
+    "source_url": "https://jojo-portal.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو مبتكر ومانغاكا سلسلة مغامرات جوجو العجيبة (JoJo's Bizarre Adventure)؟",
+    "correct_answer": "هيروهيكو أراكي",
+    "decoys": [
+      "ناوكي أوراساوا",
+      "تايت كوبو",
+      "كينتارو ميورا"
+    ],
+    "image_url": null,
+    "source_url": "https://jojo-portal.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي الهوية الحقيقية للمحقق الصغير كونان إيدوغاوا قبل أن يتقلص جسده؟",
+    "correct_answer": "سينشي كودو",
+    "decoys": [
+      "هيجي هاتوري",
+      "كايتو كيد",
+      "ري فورويا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ytv.co.jp/conan/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الرمز الكيميائي للعقار السام الذي أطعمته المنظمة السوداء لسينشي فتسبب في تقلصه؟",
+    "correct_answer": "عقار APTX 4869",
+    "decoys": [
+      "مصل تيترودوتوكسين",
+      "عقار بورتوكس",
+      "سم ريكسين 7"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ytv.co.jp/conan/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو المخترع العجوز وجار سينشي الذي يبتكر أدوات كونان الذكية كربطة العنق والساعة المخدرة؟",
+    "correct_answer": "الدكتور أغاسا",
+    "decoys": [
+      "كوغورو موري",
+      "يوساكو كودو",
+      "المفتش ميغوري"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ytv.co.jp/conan/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو مؤلف ورسام سلسلة مانغا المحقق كونان الشهيرة؟",
+    "correct_answer": "غوشو أوياما",
+    "decoys": [
+      "ناوكي أوراساوا",
+      "تاكاشي روميكو",
+      "ماساشي كيشيموتو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ytv.co.jp/conan/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم فتاة الدم والقرون الشيطانية التي تصبح شريكة دينجي في السكن والعمل؟",
+    "correct_answer": "باور",
+    "decoys": [
+      "ماكيما",
+      "ريزي",
+      "كوبيني"
+    ],
+    "image_url": null,
+    "source_url": "https://chainsawman.dog/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هي المشرفة الغامضة في جهاز السلامة العامة التي احتضنت دينجي في البداية؟",
+    "correct_answer": "ماكيما",
+    "decoys": [
+      "هيمينو",
+      "كوانكسي",
+      "أكاني"
+    ],
+    "image_url": null,
+    "source_url": "https://chainsawman.dog/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الشيطان الذي عقد معه آكي هاياكاوا عقداً أولياً لاستدعاء رأسه ضد الأعداء؟",
+    "correct_answer": "شيطان الثعلب",
+    "decoys": [
+      "شيطان الشبح",
+      "شيطان المستقبل",
+      "شيطان الثعبان"
+    ],
+    "image_url": null,
+    "source_url": "https://chainsawman.dog/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الاستوديو الياباني الذي أنتج مسلسل أنمي رجل المنشار بجودة إنتاجية سينمائية؟",
+    "correct_answer": "استوديو مابا (MAPPA)",
+    "decoys": [
+      "استوديو ويت",
+      "استوديو بونز",
+      "استوديو بيرو"
+    ],
+    "image_url": null,
+    "source_url": "https://chainsawman.dog/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم الكلب الأبيض الكبير الذي تتبناه عائلة فورجر ويمتلك موهبة رؤية المستقبل؟",
+    "correct_answer": "بوند",
+    "decoys": [
+      "فرانكي",
+      "داميان",
+      "آرثر"
+    ],
+    "image_url": null,
+    "source_url": "https://spy-family.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو ابن المستهدف الرئيسي دونوفان ديزموند الذي تسعى آنيا لمصادقته في أكاديمية إيدن؟",
+    "correct_answer": "داميان ديزموند",
+    "decoys": [
+      "بيكي بلاكبيل",
+      "جورج غلومان",
+      "إميل إلمان"
+    ],
+    "image_url": null,
+    "source_url": "https://spy-family.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو اللقب الحركي الذي تحمله يور في عملها السري كقاتلة مأجورة؟",
+    "correct_answer": "أميرة الأشواك",
+    "decoys": [
+      "الشفق",
+      "نايتفول",
+      "الوردة الحمراء"
+    ],
+    "image_url": null,
+    "source_url": "https://spy-family.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو مؤلف ورسام مانغا عائلة التجسس (Spy x Family) الناجحة عالمياً؟",
+    "correct_answer": "تاتسويا إندو",
+    "decoys": [
+      "تاتسوكي فوجيموتو",
+      "كويوهارو غوتوغي",
+      "غيغي أكوتامي"
+    ],
+    "image_url": null,
+    "source_url": "https://spy-family.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "إلى أي صنف أو عنصر ينتمي البوكيمون الزاحف الشهير تشارمندر؟",
+    "correct_answer": "النوع الناري",
+    "decoys": [
+      "النوع المائي",
+      "النوع العشبي",
+      "النوع الكهربائي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي البوكيمونات الابتدائية الثلاثة المعروضة على المدربين في مختبر البروفيسور أوك بمنطقة كانتو؟",
+    "correct_answer": "بولباسور وتشارمندر وسكويرتل",
+    "decoys": [
+      "شيكوريتا وسينداكويل وتوتودايل",
+      "تريكو وتورتويج وبيدوف",
+      "إيفي وبيكاتشو وميوث"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم العصابة الشريرة التي يرتدي عناصرها أزياء مزينة بالحرف الأحمر الكبير R؟",
+    "correct_answer": "فريق الصاروخ (Team Rocket)",
+    "decoys": [
+      "فريق ماغما",
+      "فريق أكوا",
+      "فريق بلازما"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو البوكيمون النفسي الأسطوري المخلق وراثياً في المختبر من الحمض النووي للبوكيمون ميو؟",
+    "correct_answer": "ميوثو",
+    "decoys": [
+      "لوغيا",
+      "رايكو",
+      "أرتيكونور"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "في الجزء الأول من أبطال الديجيتال (Digimon Adventure)، من هو المرافق الرقمي للبطل تايتشي (أمجد)؟",
+    "correct_answer": "أغومون (رعد)",
+    "decoys": [
+      "غابومون (كاسر)",
+      "باتامون (صدى)",
+      "بالمون (زهرة)"
+    ],
+    "image_url": null,
+    "source_url": "https://digimon-adventure.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي شارة القلادة الرمزية الخاصة بالبطل تايتشي (أمجد) في مغامرة الديجيتال الأولى؟",
+    "correct_answer": "شارة الشجاعة",
+    "decoys": [
+      "شارة الصداقة",
+      "شارة الأمل",
+      "شارة المحبة"
+    ],
+    "image_url": null,
+    "source_url": "https://digimon-adventure.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو المرافق الرقمي للبطل ياماتو (يامن) والذي يتطور في مرحلته المتقدمة إلى غارورومون؟",
+    "correct_answer": "غابومون (كاسر)",
+    "decoys": [
+      "أغومون",
+      "تيلمون",
+      "غومامون"
+    ],
+    "image_url": null,
+    "source_url": "https://digimon-adventure.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو اسم البعد الموازي الذي ينتقل إليه الأطفال المختارون في سلسلة ديجيمون؟",
+    "correct_answer": "العالم الرقمي",
+    "decoys": [
+      "عالم الظلال",
+      "البعد السيبراني الخارجي",
+      "عالم الأرواح"
+    ],
+    "image_url": null,
+    "source_url": "https://digimon-adventure.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم روح الفرعون المصري القديم التي تسكن داخل أحجية الألفية إلى جانب يوغي موتو؟",
+    "correct_answer": "أتيم",
+    "decoys": [
+      "سيتو",
+      "بكورا",
+      "ميريك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.yugioh.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي بطاقات وحوش الآلهة المصرية الثلاث الأسطورية في عالم يوغي يو للمبارزة؟",
+    "correct_answer": "سلايفر وأوبيليسك ورع",
+    "decoys": [
+      "التنين الأبيض والتنين الأسود والتنين الذهبي",
+      "إكسوديا وأوزيريس وأنوبيس",
+      "كوريبو وفارس الظلام وماجيشيان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.yugioh.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الوحش الأسطوري المحروم الذي يمنح المبارز الفوز الفوري بمجرد تجميع أجزائه الخمسة في يده؟",
+    "correct_answer": "إكسوديا",
+    "decoys": [
+      "سلايفر",
+      "فارس الظلام",
+      "تنين القمة الأزرق"
+    ],
+    "image_url": null,
+    "source_url": "https://www.yugioh.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو مؤلف ومانغاكا سلسلة يوغي يو اليابانية الشهيرة للمبارزة؟",
+    "correct_answer": "كازوكي تاكاهاشي",
+    "decoys": [
+      "هيروهيكو أراكي",
+      "أكيرا تورياما",
+      "ماساشي كيشيموتو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.yugioh.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم سفينة الفضاء الرئيسية التي يعيش عليها طاقم صائدي الجوائز بقيادة جيت وسبايك؟",
+    "correct_answer": "بيبوب (Bebop)",
+    "decoys": [
+      "سوردفيش",
+      "ريد تيل",
+      "همربيد"
+    ],
+    "image_url": null,
+    "source_url": "https://cowboy-bebop.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم المركبة الفضائية المقاتلة الحمراء السريعة الخاصة بسبايك شبيغل؟",
+    "correct_answer": "سوردفيش الثاني (Swordfish II)",
+    "decoys": [
+      "بيبوب",
+      "فالكون 1",
+      "إيغل سترايك"
+    ],
+    "image_url": null,
+    "source_url": "https://cowboy-bebop.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو العدو القديم اللدود لسبايك شبيغل وخصمه في نقابة التنين الأحمر؟",
+    "correct_answer": "فيشوس (Vicious)",
+    "decoys": [
+      "لين",
+      "غوردون",
+      "أساموف"
+    ],
+    "image_url": null,
+    "source_url": "https://cowboy-bebop.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو مخرج مسلسل الخيال العلمي والموسيقى الكلاسيكي كاوبوي بيبوب؟",
+    "correct_answer": "شينيتشيرو واتانابي",
+    "decoys": [
+      "هيدياكي أنو",
+      "هاياو ميازاكي",
+      "ساتوشي كون"
+    ],
+    "image_url": null,
+    "source_url": "https://cowboy-bebop.net/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم المعطى للكائنات العملاقة الغامضة التي تشن هجمات متكررة على طوكيو-3؟",
+    "correct_answer": "الملائكة (Angels)",
+    "decoys": [
+      "العمالقة",
+      "الشياطين",
+      "الهولو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.evangelion.co.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هي الفتاة التي تقود مركبة الإيفانجيليون الحمراء الوحدة-02؟",
+    "correct_answer": "أسكا لانغلي سوريو",
+    "decoys": [
+      "ري أيانامي",
+      "ميساتو كاتسوراغي",
+      "ريتسوكو أكاغي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.evangelion.co.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو مبتكر ومخرج تحفة الخيال العلمي النفسي نيون جينيسيس إيفانجيليون؟",
+    "correct_answer": "هيدياكي أنو",
+    "decoys": [
+      "شينيتشيرو واتانابي",
+      "مامورو أوشي",
+      "كاتسوهيرو أوتومو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.evangelion.co.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الاستوديو الياباني الذي أنتج السلسلة التلفزيونية الأصلية لإيفانجيليون عام 1995؟",
+    "correct_answer": "استوديو غايناكس (Gainax)",
+    "decoys": [
+      "توي أنيميشن",
+      "مادهاوس",
+      "استوديو بونز"
+    ],
+    "image_url": null,
+    "source_url": "https://www.evangelion.co.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي القدرة الخاصة المطلقة التي تمنحها عين الغياس للولوش لامبيروج عند تفعيلها؟",
+    "correct_answer": "الطاعة المطلقة",
+    "decoys": [
+      "قراءة الأفكار",
+      "توقيف الزمن",
+      "التنبؤ بالحركات"
+    ],
+    "image_url": null,
+    "source_url": "https://geass.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو صديق طفولة لولوش الياباني الذي يلتحق بجيش بريطانيا العظمى كفارس نظامي؟",
+    "correct_answer": "سوزاكو كوروروغي",
+    "decoys": [
+      "كانامي أوهغي",
+      "شينيتشيرو تاموكي",
+      "جيريميا غوتبالد"
+    ],
+    "image_url": null,
+    "source_url": "https://geass.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم والرقم الإداري الذي أطلقته إمبراطورية بريطانيا على اليابان بعد احتلالها؟",
+    "correct_answer": "المنطقة 11",
+    "decoys": [
+      "المنطقة 7",
+      "المنطقة 13",
+      "المنطقة 1"
+    ],
+    "image_url": null,
+    "source_url": "https://geass.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو المسمى الذي يُطلق على آليات القتال الحربية المتطورة (الميكا) في عالم كود غياس؟",
+    "correct_answer": "نايت مير فريم (Knightmare Frames)",
+    "decoys": [
+      "غاندام",
+      "إيفانجيليون",
+      "فالكيري"
+    ],
+    "image_url": null,
+    "source_url": "https://geass.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم المستعار لشخصية العالم المجنون التي ينتحلها رينتارو أوكابي؟",
+    "correct_answer": "كيوما هووين",
+    "decoys": [
+      "جون تيتور",
+      "سوبر هاكر",
+      "كرايست"
+    ],
+    "image_url": null,
+    "source_url": "https://steinsgate.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم عالمة الأعصاب والفيزياء العبقرية التي تلتحق بمختبر أدوات المستقبل مع أوكابي؟",
+    "correct_answer": "كوريسو ماكيسي",
+    "decoys": [
+      "مايوري شينا",
+      "سوزوها أماني",
+      "رومي هو"
+    ],
+    "image_url": null,
+    "source_url": "https://steinsgate.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي العبارة الشفرية الختامية التي يرددها أوكابي في نهاية مكالماته التظاهرية؟",
+    "correct_answer": "إل بساي كونغرو (El Psy Kongroo)",
+    "decoys": [
+      "ديفيرجنس ون",
+      "لا فيتا تيتور",
+      "ستايل غيت"
+    ],
+    "image_url": null,
+    "source_url": "https://steinsgate.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "في أي حي شهير للإلكترونيات والألعاب في طوكيو يقع مختبر أجهزة المستقبل؟",
+    "correct_answer": "أكيهابارا",
+    "decoys": [
+      "شينجوكو",
+      "شيبويا",
+      "هاراجوكو"
+    ],
+    "image_url": null,
+    "source_url": "https://steinsgate.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم المدرسة الثانوية التي ينضم إليها هيناتا وكاغياما لتمثيل فريقها للكرة الطائرة؟",
+    "correct_answer": "ثانوية كاراسونو",
+    "decoys": [
+      "ثانوية أوبا جوساي",
+      "ثانوية نيكوما",
+      "ثانوية فوكوروداني"
+    ],
+    "image_url": null,
+    "source_url": "https://haikyu.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو الحيوان والرمز الممثل لشعار فريق كاراسونو للكرة الطائرة؟",
+    "correct_answer": "الغراب",
+    "decoys": [
+      "البومة",
+      "النسر",
+      "الصقر"
+    ],
+    "image_url": null,
+    "source_url": "https://haikyu.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هو المركز الأساسي الذي يلعبه توبيو كاغياما بمهارة فائقة على أرضية الملعب؟",
+    "correct_answer": "المُعد (Setter)",
+    "decoys": [
+      "الضارب الخارجي",
+      "الليبرو (المدافع الحر)",
+      "حائط الصد الأوسط"
+    ],
+    "image_url": null,
+    "source_url": "https://haikyu.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو قائد فريق أوبا جوساي وصانع الألعاب البارع الملقب بـ 'الملك العظيم'؟",
+    "correct_answer": "تورو أويكاوا",
+    "decoys": [
+      "تيتسورو كورو",
+      "كوتارو بوكوتو",
+      "واكاتوشي أوشيجيما"
+    ],
+    "image_url": null,
+    "source_url": "https://haikyu.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو الطالب ذو الشعر الأحمر الذي انضم لفريق كرة السلة بالثانوية ليثير إعجاب الفتاة التي يحبها؟",
+    "correct_answer": "هاناميتشي ساكوراغي (حسان)",
+    "decoys": [
+      "كايدي روكاوا (فادي)",
+      "تاكينوري أكاغي (سعد)",
+      "ريوتا مياغي (بدر)"
+    ],
+    "image_url": null,
+    "source_url": "https://slamdunk-movie.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما اسم المدرسة الثانوية التي يمثلها فريق الصقور في أنمي سلام دانك؟",
+    "correct_answer": "ثانوية شوهوكو",
+    "decoys": [
+      "ثانوية ريونان",
+      "ثانوية كاينان",
+      "ثانوية شوهو"
+    ],
+    "image_url": null,
+    "source_url": "https://slamdunk-movie.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو اللاعب الموهوب صاحب القميص رقم 11 ومنافس ساكوراغي الدائم في فريق شوهوكو؟",
+    "correct_answer": "كايدي روكاوا (فادي)",
+    "decoys": [
+      "هيساشي ميتسوي (جواد)",
+      "كينجي فوجيما",
+      "أكيرا سيندو"
+    ],
+    "image_url": null,
+    "source_url": "https://slamdunk-movie.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو المؤلف ومانغاكا سلسلة سلام دانك الرياضية الخالدة وسلسلة فاجابوند؟",
+    "correct_answer": "تاكيهيكو إينوي",
+    "decoys": [
+      "هارويتشي فوروداتي",
+      "تاداتوشي فوجيماكي",
+      "تسوكاسا هوجو"
+    ],
+    "image_url": null,
+    "source_url": "https://slamdunk-movie.jp/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو المهاجم الشاب بطل قصة بلو لوك الذي يسعى ليكون الهداف الأول عالمياً؟",
+    "correct_answer": "يويتشي إيساغي",
+    "decoys": [
+      "ميغورو باتشيرا",
+      "رين إيتوشي",
+      "سيشيرو ناغي"
+    ],
+    "image_url": null,
+    "source_url": "https://bluelock-pr.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "ما هي الميزة الكروية الأبرز التي يعتمد عليها يويتشي إيساغي في قراءة تحركات الخصوم؟",
+    "correct_answer": "الوعي المكاني وقراءة مسار اللعب",
+    "decoys": [
+      "السرعة القصوى الخارقة",
+      "القفزات الرأسية العالية",
+      "التسديدات اللولبية البعيدة"
+    ],
+    "image_url": null,
+    "source_url": "https://bluelock-pr.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو المهاجم المتصدر للتصنيف في بلو لوك وهو الشقيق الأصغر لصانع الألعاب ساي؟",
+    "correct_answer": "رين إيتوشي",
+    "decoys": [
+      "شويتشي بارو",
+      "ريوسوكي كونيغامي",
+      "هييوما تشيغيري"
+    ],
+    "image_url": null,
+    "source_url": "https://bluelock-pr.com/"
+  },
+  {
+    "category_id": 8,
+    "language_code": "ar",
+    "question_text": "من هو اللاعب العبقري الهادئ الذي بدأ ممارسة كرة القدم بدعوة وتشجيع من زميله ريو ميكاجي؟",
+    "correct_answer": "سيشيرو ناغي",
+    "decoys": [
+      "ميغورو باتشيرا",
+      "يويتشي إيساغي",
+      "جينباتشي إيغو"
+    ],
+    "image_url": null,
+    "source_url": "https://bluelock-pr.com/"
+  }
+]
