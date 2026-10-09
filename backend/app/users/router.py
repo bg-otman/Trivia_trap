@@ -9,6 +9,7 @@ from .schemas import UserProfile, GameHistoryResponse
 from users.utils import get_user_game_history
 from typing import Literal
 from pathlib import Path
+from presence import mark_user_offline, mark_user_online
 
 
 router = APIRouter(prefix="/users", tags=["users"], dependencies=[Depends(get_current_user)])
@@ -41,6 +42,20 @@ async def get_my_game_history(
     return await get_user_game_history(
         db, current_user.id, limit=limit, offset=offset, result_filter=result
     )
+
+
+@router.post("/me/presence", status_code=status.HTTP_204_NO_CONTENT)
+async def update_my_presence(
+    current_user: Annotated[User, Depends(get_current_user)],
+) -> None:
+    mark_user_online(current_user.id)
+
+
+@router.delete("/me/presence", status_code=status.HTTP_204_NO_CONTENT)
+async def clear_my_presence(
+    current_user: Annotated[User, Depends(get_current_user)],
+) -> None:
+    mark_user_offline(current_user.id)
     
 
 

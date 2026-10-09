@@ -5,6 +5,7 @@ from authentication.current_user import get_current_user
 from dataProcessing.models import User
 from authentication.repository import DbSession
 from friendship.repository import get_friends, search_players, send_friend, accept_request, get_incoming_requests, get_sent_requests, reject_request, cancel_request, remove_friend as delete_friend
+from friendship.schemas import FriendResponse, IncomingFriendRequest
 
 friends_router = APIRouter(prefix="/friends", tags=["Friendship"])
 
@@ -12,8 +13,8 @@ CurrentUser = Annotated[User, Depends(get_current_user)]
 UserId = Annotated[int, Path(ge=1, le=2147483647)]
 
 
-@friends_router.get("/")
-async def list_friends(current_user: CurrentUser, db: DbSession):
+@friends_router.get("/", response_model=list[FriendResponse])
+async def list_friends(current_user: CurrentUser, db: DbSession) -> list[FriendResponse]:
     return await get_friends(db, current_user.id)
 
 
@@ -47,8 +48,8 @@ async def accept_friend_request(sender_id: UserId, current_user: CurrentUser, db
     return {"message": "Friend request accepted"}
 
 
-@friends_router.get("/requests")
-async def list_incoming_requests(current_user: CurrentUser, db: DbSession):
+@friends_router.get("/requests", response_model=list[IncomingFriendRequest])
+async def list_incoming_requests(current_user: CurrentUser, db: DbSession) -> list[IncomingFriendRequest]:
     return await get_incoming_requests(db, current_user.id)
 
 

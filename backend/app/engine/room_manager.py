@@ -9,6 +9,8 @@ from .utils import GameError, lobby_update
 from .room_models import Room, RoomMetaData, RoomPhase, RoomSettings
 from .events import join_room, process_event, sync_current_phase
 from json import JSONDecodeError
+from presence import mark_user_online
+import asyncio
 
 router = APIRouter(prefix="/room", tags=["Room"])
 
@@ -21,6 +23,7 @@ class RoomManager():
         if not ws.state.user_id or not ws.state.user_name or not ws.state.db_user_id:
             raise GameError("INVALID_PAYLOAD", "Missing user_id or user_name in WebSocket state")
         join_room(self.rooms, ws, room_id, ws.state.user_id, ws.state.user_name, ws.state.db_user_id)
+        mark_user_online(ws.state.db_user_id)
         await self.broadcast(lobby_update(self.rooms[room_id]), room_id, None)
         await sync_current_phase(self, room_id, ws.state.user_id)
 
@@ -81,6 +84,15 @@ class RoomManager():
 manager = RoomManager()
 
 ROOM_CODE_ALPHABET = string.ascii_uppercase + string.digits
+
+
+async def keep_presence_alive(user_id: int) -> None:
+    try:
+        while True:
+            mark_user_online(user_id)
+            await asyncio.sleep(30)
+    except asyncio.CancelledError:
+        pass
 
 
 class RoomResponse(BaseModel):
@@ -146,6 +158,7 @@ async def room(ws: WebSocket, room_id: str, user: Annotated[User, Depends(get_cu
     ws.state.user_id = user_id
     ws.state.user_name = user.username
     ws.state.db_user_id = user.id
+    presence_task = asyncio.create_task(keep_presence_alive(user.id))
 
     try:
         await manager.connect(ws, room_id)
@@ -184,3 +197,5 @@ async def room(ws: WebSocket, room_id: str, user: Annotated[User, Depends(get_cu
     except Exception as e:
         print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
         await manager.remove_connection(user_id, room_id)
+    finally:
+        presence_task.cancel()

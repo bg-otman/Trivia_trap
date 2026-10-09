@@ -6,6 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from authentication.repository import find_user_by_id
 from dataProcessing.models import Friendship, User
+from presence import is_user_online
 
 
 def user_pair(first: int, second: int):
@@ -26,7 +27,7 @@ async def search_players(db: AsyncSession, current_user_id: int, prefix: str) ->
     return [{"id": str(user_id), "username": username, "avatar_url": avatar_url} for user_id, username, avatar_url in rows]
 
 
-async def get_friends(db: AsyncSession, user_id: int) -> list[dict[str, str | None]]:
+async def get_friends(db: AsyncSession, user_id: int) -> list[dict[str, str | bool | None]]:
     other_id = case(
         (Friendship.requester_id == user_id, Friendship.receiver_id),
         else_=Friendship.requester_id,
@@ -37,7 +38,12 @@ async def get_friends(db: AsyncSession, user_id: int) -> list[dict[str, str | No
             or_(Friendship.requester_id == user_id, Friendship.receiver_id == user_id),
         ).order_by(User.id)
     )
-    return [{"id": str(user.id), "username": user.username, "avatar_url": user.avatar_url} for user in users]
+    return [{
+        "id": str(user.id),
+        "username": user.username,
+        "avatar_url": user.avatar_url,
+        "is_online": is_user_online(user.id),
+    } for user in users]
 
 
 async def send_friend(db: AsyncSession, from_user_id: int, to_user_id: int):
@@ -94,12 +100,19 @@ async def accept_request(db: AsyncSession, receiver_id: int, sender_id: int):
 
 
 async def get_incoming_requests(db: AsyncSession, user_id: int) -> list[dict[str, str | None]]:
-    users = await db.scalars(select(User).join(
+    rows = (await db.execute(select(
+        User.id, User.username, User.avatar_url, Friendship.created_at,
+    ).join(
         Friendship, Friendship.requester_id == User.id,
     ).where(
         Friendship.receiver_id == user_id, Friendship.status == "pending",
-    ).order_by(User.id))
-    return [{"id": str(user.id), "username": user.username, "avatar_url": user.avatar_url} for user in users]
+    ).order_by(Friendship.created_at.desc(), User.id))).all()
+    return [{
+        "id": str(user_id),
+        "username": username,
+        "avatar_url": avatar_url,
+        "created_at": created_at.isoformat(),
+    } for user_id, username, avatar_url, created_at in rows]
 
 
 async def get_sent_requests(db: AsyncSession, user_id: int) -> list[dict[str, str | None]]:
