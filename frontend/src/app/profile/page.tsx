@@ -25,7 +25,7 @@ export default async function ProfilePage() {
 
   return (
     <DashboardShell user={user}>
-      <ProfileView user={user} />
+      <ProfileView user={user} isOwner />
     </DashboardShell>
   );
 }

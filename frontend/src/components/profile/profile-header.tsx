@@ -7,9 +7,11 @@ import { ProfileBanner } from "./profile-banner";
 export function ProfileHeader({
   user,
   onEdit,
+  isOwner,
 }: {
   user: UserData;
   onEdit: () => void;
+  isOwner: boolean;
 }) {
   const joinedDate = user.join_date.toLocaleDateString(undefined, {
     year: "numeric",
@@ -30,19 +32,23 @@ export function ProfileHeader({
             imageUrl={user.avatar}
             size={96}
           />
-          <span
-            className="absolute bottom-1 right-1 size-4 rounded-full bg-trap-success ring-[3px] ring-trap-surface"
-            aria-label="Online"
-          />
+          {isOwner ? (
+            <span
+              className="absolute bottom-1 right-1 size-4 rounded-full bg-trap-success ring-[3px] ring-trap-surface"
+              aria-label="Online"
+            />
+          ) : null}
         </span>
         <div className="min-w-0 flex-1">
           <div className="flex flex-col items-center gap-2 sm:flex-row">
             <h1 className="font-secondary text-3xl uppercase tracking-[-0.03em] text-white">
               {user.username}
             </h1>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-trap-success/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.12em] text-trap-success">
-              <span className="size-1.5 rounded-full bg-current" /> Online
-            </span>
+            {isOwner ? (
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-trap-success/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.12em] text-trap-success">
+                <span className="size-1.5 rounded-full bg-current" /> Online
+              </span>
+            ) : null}
           </div>
           <p className="mt-1 text-sm font-semibold text-[#9295ff]">
             @{user.username}
@@ -63,15 +69,17 @@ export function ProfileHeader({
             </span>
           </div>
         </div>
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          onClick={onEdit}
-          className="w-full text-[10px] sm:w-auto"
-        >
-          <Pencil className="size-3.5" /> Update avatar
-        </Button>
+        {isOwner ? (
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={onEdit}
+            className="w-full text-[10px] sm:w-auto"
+          >
+            <Pencil className="size-3.5" /> Update avatar
+          </Button>
+        ) : null}
       </div>
     </header>
   );

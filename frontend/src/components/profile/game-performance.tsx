@@ -13,7 +13,7 @@ export function GamePerformance({ analytics }: { analytics: CategoryAnalytics[] 
         </CardHeader>
         <CardContent className="space-y-3">
           {analytics.length === 0 ? (
-            <p className="py-8 text-center text-sm text-[#85858f]">Your game performance will appear here after you play.</p>
+            <p className="py-8 text-center text-sm text-[#85858f]">Game performance will appear here after matches are played.</p>
           ) : analytics.map((item) => (
             <div key={item.category} className="rounded-xl border border-white/[0.06] bg-black/10 p-3">
               <div className="flex items-center justify-between gap-3">

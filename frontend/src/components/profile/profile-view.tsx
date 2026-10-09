@@ -10,7 +10,7 @@ import { ProfileHeader } from "./profile-header";
 import { ProfileStats } from "./profile-stats";
 import { EditProfileDialog } from "./edit-profile-dialog";
 
-export function ProfileView({ user }: { user: UserData }) {
+export function ProfileView({ user, isOwner = false }: { user: UserData; isOwner?: boolean }) {
   const reducedMotion = useReducedMotion();
   const [editing, setEditing] = useState(false);
 
@@ -21,13 +21,13 @@ export function ProfileView({ user }: { user: UserData }) {
       transition={{ duration: reducedMotion ? 0.01 : 0.45 }}
       className="space-y-4 sm:space-y-5"
     >
-      <ProfileHeader user={user} onEdit={() => setEditing(true)} />
+      <ProfileHeader user={user} isOwner={isOwner} onEdit={() => setEditing(true)} />
       <div className="grid items-stretch gap-4 xl:grid-cols-[minmax(0,1.45fr)_minmax(300px,0.72fr)]">
         <ProfileStats user={user} />
         <GamePerformance analytics={user.analytics} />
       </div>
       <ProfileAchievements achievements={user.achievements} />
-      <EditProfileDialog open={editing} onOpenChange={setEditing} user={user} />
+      {isOwner ? <EditProfileDialog open={editing} onOpenChange={setEditing} user={user} /> : null}
     </motion.div>
   );
 }
