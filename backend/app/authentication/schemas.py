@@ -41,7 +41,7 @@ class UsernameData(BaseModel):
 
 class RegisterData(UsernameData):
     email: EmailStr = Field(max_length=255)
-    password: Password = Field(min_length=15, max_length=128)
+    password: Password = Field(min_length=7, max_length=128)
 
     @field_validator("password")
     @classmethod
