@@ -25,6 +25,33 @@ import { apiFetch } from "@/lib/api";
 
 type Mode = "login" | "register" | "reset" | "new-password";
 
+type ValidationIssue = { loc?: (string | number)[]; type?: string; msg?: string };
+
+function registrationValidationMessage(detail: unknown): string {
+  if (!Array.isArray(detail)) return "Please check your registration details.";
+
+  for (const field of ["username", "email", "password"]) {
+    const issue = detail.find((entry: ValidationIssue) =>
+      entry && Array.isArray(entry.loc) && entry.loc[entry.loc.length - 1] === field
+    ) as ValidationIssue | undefined;
+    if (!issue) continue;
+
+    if (field === "username") {
+      if (issue.type === "missing") return "Enter a username.";
+      if (issue.type === "string_too_short") return "Username must be at least 3 characters.";
+      if (issue.type === "string_too_long") return "Username must be at most 15 characters.";
+      return issue.msg?.replace(/^Value error, /, "") ?? "Check your username.";
+    }
+    if (field === "email") return "Enter a valid email address.";
+    if (issue.type === "missing") return "Enter a password.";
+    if (issue.type === "too_short" || issue.type === "string_too_short") return "Password must be at least 7 characters.";
+    if (issue.type === "too_long" || issue.type === "string_too_long") return "Password must be at most 128 characters.";
+    return issue.msg?.replace(/^Value error, /, "") ?? "Check your password.";
+  }
+
+  return "Please check your registration details.";
+}
+
 export function LoginPage({ initialMode = "login", initialMessage = "" }: { initialMode?: Mode; initialMessage?: string }) {
   const router = useRouter();
   const reducedMotion = useReducedMotion();
@@ -186,6 +213,16 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
           setMessage("If that email has an account, a reset link is on its way.");
           return;
         }
+        if (mode === "register" && response.status === 422) {
+          const data = await response.json() as { detail?: unknown };
+          setMessage(registrationValidationMessage(data.detail));
+          return;
+        }
+        if (mode === "register" && response.status === 409) {
+          const data = await response.json() as { detail?: unknown };
+          setMessage(typeof data.detail === "string" ? data.detail : "This username or email is already registered.");
+          return;
+        }
         let detail = "Something went wrong. Please try again.";
         if (mode === "login" && response.status === 409) detail = "This account uses Google sign-in. Select Continue with Google above.";
         else if (response.status === 401 || response.status === 400) detail = "Check your details and try again.";
@@ -295,7 +332,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
                 <div className="my-6 flex items-center gap-4 text-[11px] text-trap-text-dim"><span className="h-px flex-1 bg-border" /> or use your email <span className="h-px flex-1 bg-border" /></div>
               </>}
 
-              <form onSubmit={handleSubmit} aria-busy={pending}>
+              <form onSubmit={handleSubmit} noValidate={mode === "register"} aria-busy={pending}>
                 <fieldset disabled={pending} className="min-w-0 space-y-4">
                   {mode === "register" && <div>
                     <label htmlFor="username" className="mb-2 block text-xs font-bold text-trap-text-soft">Player name</label>

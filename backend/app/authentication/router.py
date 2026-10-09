@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from fastapi.concurrency import run_in_threadpool
-from authentication.repository import DuplicateUserError, create_user, find_existing_user_id, find_user_by_email
+from authentication.repository import DuplicateUserError, create_user, find_user_by_email, find_user_by_username
 from authentication.schemas import RegisterData, UserResponse
 from authentication.security import hash_password
 from authentication.validation_route import AuthRoute
@@ -13,14 +13,22 @@ from authentication.current_user import get_current_user
 from authentication.google_auth import google_router
 from authentication.password_reset import reset_router
 from dataProcessing.models import User
+from sqlalchemy.ext.asyncio import AsyncSession
 from authentication.repository import DbSession
 
 
 auth_router = APIRouter(prefix="/auth", tags=["AUTH"], route_class=AuthRoute)
-DUPLICATE_USER_MESSAGE = "Username or email is already registered."
-
 auth_router.include_router(google_router)
 auth_router.include_router(reset_router)
+
+
+async def registration_conflict(db: AsyncSession, username: str, email: str) -> str | None:
+    if await find_user_by_username(db, username) is not None:
+        return "This username is already taken."
+    if await find_user_by_email(db, email) is not None:
+        return "This email is already registered."
+    return None
+
 
 @auth_router.post(
     "/register",
@@ -28,8 +36,9 @@ auth_router.include_router(reset_router)
     response_model=UserResponse,
 )
 async def register(data: RegisterData, db: DbSession) -> UserResponse:
-    if await find_existing_user_id(db, data.username, data.email) is not None:
-        raise HTTPException(status.HTTP_409_CONFLICT, DUPLICATE_USER_MESSAGE)
+    conflict = await registration_conflict(db, data.username, data.email)
+    if conflict is not None:
+        raise HTTPException(status.HTTP_409_CONFLICT, conflict)
 
     password_hash = await run_in_threadpool(
         hash_password,
@@ -38,7 +47,12 @@ async def register(data: RegisterData, db: DbSession) -> UserResponse:
     try:
         user = await create_user(db, data.username, data.email, password_hash)
     except DuplicateUserError:
-        raise HTTPException(status.HTTP_409_CONFLICT, DUPLICATE_USER_MESSAGE) from None
+        # Another registration can claim a name or email after the first check.
+        conflict = await registration_conflict(db, data.username, data.email)
+        raise HTTPException(
+            status.HTTP_409_CONFLICT,
+            conflict or "This username or email is already registered.",
+        ) from None
 
     return UserResponse(
         id=str(user.id),
