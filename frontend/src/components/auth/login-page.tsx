@@ -2,6 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ArrowRight,
@@ -24,14 +25,8 @@ import { apiFetch } from "@/lib/api";
 
 type Mode = "login" | "register" | "reset" | "new-password";
 
-function safeNextPath() {
-  const value = new URLSearchParams(window.location.search).get("next");
-  return value && value.startsWith("/") && !value.startsWith("//") && !value.startsWith("/\\")
-    ? value
-    : "/profile";
-}
-
 export function LoginPage({ initialMode = "login", initialMessage = "" }: { initialMode?: Mode; initialMessage?: string }) {
+  const router = useRouter();
   const reducedMotion = useReducedMotion();
   const [mode, setMode] = useState<Mode>(initialMode);
   const [showPassword, setShowPassword] = useState(false);
@@ -55,7 +50,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
       .then(response => {
         if (!active) return;
         if (response.ok) {
-          window.location.replace(safeNextPath());
+          router.replace("/dashboard");
         } else {
           setCheckingSession(false);
         }
@@ -65,7 +60,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
       });
 
     return () => { active = false; };
-  }, [initialMode]);
+  }, [initialMode, router]);
 
   useEffect(() => {
     if (initialMode !== "new-password") return;
@@ -90,8 +85,8 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
       setMessage("Sign-in succeeded, but the browser could not save your session. Check that the site and API use the same hostname.");
       return;
     }
-    window.location.assign(safeNextPath());
-  }, []);
+    router.replace("/dashboard");
+  }, [router]);
 
   const handleGoogleCredential = useCallback(async (credential: string) => {
     if (requestInFlight.current) return;
@@ -128,8 +123,8 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
     }
   }, [finishSignIn]);
 
-  function changeMode(next: Mode) {
-    if (pending) return;
+  function changeMode(next: Mode, afterRequest = false) {
+    if (pending && !afterRequest) return;
     setMode(next);
     setMessage("");
     setPassword("");
@@ -206,7 +201,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
         }
         await finishSignIn();
       } else if (mode === "register") {
-        changeMode("login");
+        changeMode("login", true);
         setMessage("Account created. You can sign in now.");
       } else {
         setMessage("If that email has an account, a reset link is on its way.");

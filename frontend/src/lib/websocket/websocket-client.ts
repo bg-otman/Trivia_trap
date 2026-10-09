@@ -1,5 +1,5 @@
 import { parseLobbyMessage } from "./websocket-events";
-import { getSessionUser } from "./session-user";
+import type { SessionUser } from "./session-user";
 import type {
   GameConnectionState,
   GetQuestionCategoryData,
@@ -26,7 +26,7 @@ export class GameWebSocketClient {
   private socket: WebSocket | null = null;
   private roomId: string | null = null;
   private generation = 0;
-  constructor(private readonly handlers: Handlers) {}
+  constructor(private readonly handlers: Handlers, private readonly sessionUser: SessionUser) {}
   connect(roomId: string) {
     if (
       !roomId ||
@@ -42,12 +42,9 @@ export class GameWebSocketClient {
     log("Connecting...");
     const baseUrl =
       process.env.NEXT_PUBLIC_WEBSOCKET_URL ?? "ws://localhost:8000";
-    const sessionUser = getSessionUser();
     const url = new URL(
       `${baseUrl.replace(/\/$/, "")}/room/${encodeURIComponent(roomId)}`,
     );
-    url.searchParams.set("user_id", sessionUser.id);
-    url.searchParams.set("user_name", sessionUser.name);
     const socket = new WebSocket(url);
     this.socket = socket;
     socket.onopen = () => {
