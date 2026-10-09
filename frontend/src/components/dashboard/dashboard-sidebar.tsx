@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -12,7 +12,6 @@ import {
   LoaderCircle,
   LogOut,
   Medal,
-  MoreHorizontal,
   Settings,
   UserRound,
   Users,
@@ -20,7 +19,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlayerAvatar } from "@/components/game/players/player-avatar";
-import { apiFetch } from "@/lib/api";
+import { apiFetch, apiMediaUrl } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import type { UserData } from "@/types/userData";
 
@@ -64,8 +63,45 @@ export function DashboardSidebar({
   user?: UserData;
 }) {
   const pathname = usePathname();
+  const [fetchedUser, setFetchedUser] = useState<Pick<UserData, "username" | "avatar"> | null>(null);
+  const [loadingFallbackUser, setLoadingFallbackUser] = useState(!user);
   const [loggingOut, setLoggingOut] = useState(false);
   const [logoutError, setLogoutError] = useState("");
+
+  useEffect(() => {
+    if (user) return;
+
+    const controller = new AbortController();
+    async function loadSidebarUser() {
+      try {
+        const response = await apiFetch("/users/me", { signal: controller.signal });
+        if (response.status === 401) {
+          window.location.replace(`/login?next=${encodeURIComponent(pathname)}`);
+          return;
+        }
+        if (!response.ok) throw new Error("Could not load user");
+        const profile = await response.json() as { username: string; avatar: string | null };
+        setFetchedUser({
+          username: profile.username,
+          avatar: apiMediaUrl(profile.avatar) ?? null,
+        });
+      } catch (error) {
+        if (!(error instanceof DOMException && error.name === "AbortError")) {
+          setFetchedUser(null);
+        }
+      } finally {
+        if (!controller.signal.aborted) setLoadingFallbackUser(false);
+      }
+    }
+
+    void loadSidebarUser();
+    return () => controller.abort();
+  }, [pathname, user]);
+
+  const sidebarUser = user
+    ? { username: user.username, avatar: user.avatar }
+    : fetchedUser;
+  const loadingUser = !user && loadingFallbackUser;
 
   async function logout() {
     if (loggingOut) return;
@@ -77,7 +113,7 @@ export function DashboardSidebar({
       if (!response.ok) {
         throw new Error("Logout failed");
       }
-      window.location.replace("/");
+      window.location.replace("/login");
     } catch {
       setLogoutError("Could not log out. Please try again.");
       setLoggingOut(false);
@@ -139,39 +175,37 @@ export function DashboardSidebar({
         <div className="flex items-center gap-3 rounded-2xl bg-white/[0.035] p-3">
           <span className="relative">
             <PlayerAvatar
-              name={user?.username ?? "Player"}
-              src={user?.avatar ?? undefined}
+              name={sidebarUser?.username ?? "Loading user"}
+              src={sidebarUser?.avatar ?? undefined}
               size={40}
-              animated
+              animated={!loadingUser}
             />
             <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-trap-success ring-2 ring-[#202026]" aria-label="Online" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-extrabold text-white">{user?.username ?? "Player"}</p>
-            <p className="flex items-center gap-1.5 text-[10px] font-semibold text-trap-success">
-              <span className="size-1.5 rounded-full bg-current" /> Online
-            </p>
+            <p className={cn("truncate text-sm font-extrabold text-white", loadingUser && "animate-pulse text-[#777782]")}>{loadingUser ? "Loading…" : sidebarUser?.username ?? "Account unavailable"}</p>
+            {!loadingUser && sidebarUser ? (
+              <p className="flex items-center gap-1.5 text-[10px] font-semibold text-trap-success">
+                <span className="size-1.5 rounded-full bg-current" /> Online
+              </p>
+            ) : null}
           </div>
           <Button
             type="button"
             variant="ghost"
             size="icon-sm"
-            aria-label="Open user menu"
-            className="text-[#8f8f99]"
+            aria-label="Log out"
+            onClick={logout}
+            disabled={loggingOut}
+            className="text-[#8f8f99] hover:bg-trap-danger/10 hover:text-trap-danger"
           >
-            <MoreHorizontal className="size-4" />
+            {loggingOut ? (
+              <LoaderCircle className="size-4 animate-spin" />
+            ) : (
+              <LogOut className="size-4" />
+            )}
           </Button>
         </div>
-        <Button
-          type="button"
-          variant="ghost"
-          onClick={logout}
-          disabled={loggingOut}
-          className="mt-2 w-full justify-start gap-3 text-[#8f8f99] hover:bg-trap-danger/10 hover:text-trap-danger"
-        >
-          {loggingOut ? <LoaderCircle className="size-4 animate-spin" /> : <LogOut className="size-4" />}
-          {loggingOut ? "Logging out…" : "Log out"}
-        </Button>
         {logoutError && <p role="alert" className="px-3 pt-2 text-xs text-trap-danger">{logoutError}</p>}
       </div>
     </aside>
