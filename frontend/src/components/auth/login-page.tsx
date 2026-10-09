@@ -27,10 +27,11 @@ type Mode = "login" | "register" | "reset" | "new-password";
 
 type ValidationIssue = { loc?: (string | number)[]; type?: string; msg?: string };
 
-function registrationValidationMessage(detail: unknown): string {
-  if (!Array.isArray(detail)) return "Please check your registration details.";
+function authValidationMessage(detail: unknown, mode: "login" | "register"): string {
+  if (!Array.isArray(detail)) return "Please check your details.";
 
-  for (const field of ["username", "email", "password"]) {
+  const fields = mode === "register" ? ["username", "email", "password"] : ["email", "password"];
+  for (const field of fields) {
     const issue = detail.find((entry: ValidationIssue) =>
       entry && Array.isArray(entry.loc) && entry.loc[entry.loc.length - 1] === field
     ) as ValidationIssue | undefined;
@@ -44,12 +45,14 @@ function registrationValidationMessage(detail: unknown): string {
     }
     if (field === "email") return "Enter a valid email address.";
     if (issue.type === "missing") return "Enter a password.";
-    if (issue.type === "too_short" || issue.type === "string_too_short") return "Password must be at least 7 characters.";
+    if (issue.type === "too_short" || issue.type === "string_too_short") {
+      return mode === "login" ? "Enter your password." : "Password must be at least 7 characters.";
+    }
     if (issue.type === "too_long" || issue.type === "string_too_long") return "Password must be at most 128 characters.";
     return issue.msg?.replace(/^Value error, /, "") ?? "Check your password.";
   }
 
-  return "Please check your registration details.";
+  return "Please check your details.";
 }
 
 export function LoginPage({ initialMode = "login", initialMessage = "" }: { initialMode?: Mode; initialMessage?: string }) {
@@ -213,9 +216,9 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
           setMessage("If that email has an account, a reset link is on its way.");
           return;
         }
-        if (mode === "register" && response.status === 422) {
+        if ((mode === "login" || mode === "register") && response.status === 422) {
           const data = await response.json() as { detail?: unknown };
-          setMessage(registrationValidationMessage(data.detail));
+          setMessage(authValidationMessage(data.detail, mode));
           return;
         }
         if (mode === "register" && response.status === 409) {
@@ -225,6 +228,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
         }
         let detail = "Something went wrong. Please try again.";
         if (mode === "login" && response.status === 409) detail = "This account uses Google sign-in. Select Continue with Google above.";
+        else if (mode === "login" && response.status === 401) detail = "Incorrect email or password.";
         else if (response.status === 401 || response.status === 400) detail = "Check your details and try again.";
         else if (response.status === 409) detail = "That account already exists. Try signing in.";
         else if (response.status === 404) detail = "This sign-in option is not available yet.";
@@ -332,7 +336,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
                 <div className="my-6 flex items-center gap-4 text-[11px] text-trap-text-dim"><span className="h-px flex-1 bg-border" /> or use your email <span className="h-px flex-1 bg-border" /></div>
               </>}
 
-              <form onSubmit={handleSubmit} noValidate={mode === "register"} aria-busy={pending}>
+              <form onSubmit={handleSubmit} noValidate={mode === "login" || mode === "register"} aria-busy={pending}>
                 <fieldset disabled={pending} className="min-w-0 space-y-4">
                   {mode === "register" && <div>
                     <label htmlFor="username" className="mb-2 block text-xs font-bold text-trap-text-soft">Player name</label>
