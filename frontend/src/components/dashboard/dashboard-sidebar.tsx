@@ -34,7 +34,7 @@ const navigation = [
   { label: "Friends", icon: Users, href: "/friends" },
   { label: "Game History", icon: History, href: "/history" },
   { label: "Statistics", icon: BarChart3 },
-  { label: "Achievements", icon: Medal },
+  { label: "Achievements", icon: Medal, href: "/achievements" },
   { label: "Notifications", icon: Bell },
   { label: "Settings", icon: Settings },
 ];
