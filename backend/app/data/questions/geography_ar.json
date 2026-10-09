@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة المغرب؟",
+    "correct_answer": "الرباط",
+    "decoys": [
+      "تونس",
+      "الجزائر",
+      "القاهرة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Morocco"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة الجزائر؟",
+    "correct_answer": "الجزائر العاصمة",
+    "decoys": [
+      "طرابلس",
+      "تونس",
+      "الرباط"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Algeria"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة مصر؟",
+    "correct_answer": "القاهرة",
+    "decoys": [
+      "عمّان",
+      "الخرطوم",
+      "تونس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Egypt"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة نيجيريا؟",
+    "correct_answer": "أبوجا",
+    "decoys": [
+      "أكرا",
+      "داكار",
+      "كامبالا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Nigeria"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة إثيوبيا؟",
+    "correct_answer": "أديس أبابا",
+    "decoys": [
+      "أسمرة",
+      "نيروبي",
+      "جيبوتي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Ethiopia"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة تركيا؟",
+    "correct_answer": "أنقرة",
+    "decoys": [
+      "باكو",
+      "أثينا",
+      "يريفان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Turkey"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة اليونان؟",
+    "correct_answer": "أثينا",
+    "decoys": [
+      "صوفيا",
+      "بلغراد",
+      "سكوبيه"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Greece"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة فنلندا؟",
+    "correct_answer": "هلسنكي",
+    "decoys": [
+      "ستوكهولم",
+      "أوسلو",
+      "كوبنهاغن"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Finland"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة التشيك؟",
+    "correct_answer": "براغ",
+    "decoys": [
+      "براتيسلافا",
+      "وارسو",
+      "بودابست"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Czech-Republic"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة الهند؟",
+    "correct_answer": "نيودلهي",
+    "decoys": [
+      "إسلام آباد",
+      "دكا",
+      "كاتماندو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/India"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة المكسيك؟",
+    "correct_answer": "مكسيكو سيتي",
+    "decoys": [
+      "غواتيمالا سيتي",
+      "سان خوسيه",
+      "بوغوتا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Mexico"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما عاصمة تشيلي؟",
+    "correct_answer": "سانتياغو",
+    "decoys": [
+      "ليما",
+      "بوينس آيرس",
+      "مونتيفيديو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Chile"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما المضيق الذي يفصل المغرب عن إسبانيا؟",
+    "correct_answer": "مضيق جبل طارق",
+    "decoys": [
+      "مضيق هرمز",
+      "مضيق البوسفور",
+      "مضيق باب المندب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Strait-of-Gibraltar"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي سلسلة جبلية تمتد عبر المغرب والجزائر وتونس؟",
+    "correct_answer": "جبال الأطلس",
+    "decoys": [
+      "جبال الريف",
+      "جبال الهقار",
+      "جبال تيبستي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Atlas-Mountains"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي مدينة مغربية يقع مسجد الحسن الثاني؟",
+    "correct_answer": "الدار البيضاء",
+    "decoys": [
+      "الرباط",
+      "طنجة",
+      "فاس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fmh2.ma/en/contact"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي مدينة مغربية تقع جامعة القرويين؟",
+    "correct_answer": "فاس",
+    "decoys": [
+      "مراكش",
+      "مكناس",
+      "الرباط"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/170/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي مدينة مغربية تقع ساحة جامع الفنا؟",
+    "correct_answer": "مراكش",
+    "decoys": [
+      "فاس",
+      "الصويرة",
+      "مكناس"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/331/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي مدينة مغربية تشتهر بأزقتها المطلية باللون الأزرق؟",
+    "correct_answer": "شفشاون",
+    "decoys": [
+      "تطوان",
+      "الصويرة",
+      "أصيلة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.visitmorocco.com/en/travel/chefchaouen-the-beautiful-blue/medina"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي بحر يحد شمال المغرب؟",
+    "correct_answer": "البحر الأبيض المتوسط",
+    "decoys": [
+      "البحر الأحمر",
+      "بحر العرب",
+      "البحر الأسود"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Morocco"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما الدولة التي تحد المغرب من الشرق؟",
+    "correct_answer": "الجزائر",
+    "decoys": [
+      "تونس",
+      "ليبيا",
+      "موريتانيا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Morocco"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما الخليج الواقع شرقي شبه جزيرة سيناء؟",
+    "correct_answer": "خليج العقبة",
+    "decoys": [
+      "خليج السويس",
+      "خليج عدن",
+      "خليج عُمان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Gulf-of-Aqaba"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي بحر يفصل شبه الجزيرة العربية عن شمال شرقي أفريقيا؟",
+    "correct_answer": "البحر الأحمر",
+    "decoys": [
+      "بحر العرب",
+      "البحر الأسود",
+      "بحر قزوين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Red-Sea"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يمر بمدينة بغداد؟",
+    "correct_answer": "دجلة",
+    "decoys": [
+      "الفرات",
+      "الأردن",
+      "النيل"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Tigris-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع مدينة البتراء الأثرية؟",
+    "correct_answer": "الأردن",
+    "decoys": [
+      "سوريا",
+      "لبنان",
+      "العراق"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/326/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة يقع رأس الرجاء الصالح؟",
+    "correct_answer": "جنوب أفريقيا",
+    "decoys": [
+      "ناميبيا",
+      "موزمبيق",
+      "بوتسوانا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Cape-of-Good-Hope"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي بحيرة تتقاسمها كينيا وأوغندا وتنزانيا؟",
+    "correct_answer": "بحيرة فيكتوريا",
+    "decoys": [
+      "بحيرة ملاوي",
+      "بحيرة تنجانيقا",
+      "بحيرة توركانا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Lake-Victoria"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يمر بمدينة كينشاسا؟",
+    "correct_answer": "نهر الكونغو",
+    "decoys": [
+      "نهر النيجر",
+      "نهر الزامبيزي",
+      "نهر النيل"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Congo-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما الصحراء الممتدة بمحاذاة ساحل ناميبيا الأطلسي؟",
+    "correct_answer": "صحراء ناميب",
+    "decoys": [
+      "صحراء كالاهاري",
+      "الصحراء الكبرى",
+      "صحراء داناكيل"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Namib"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع مدينة تمبكتو؟",
+    "correct_answer": "مالي",
+    "decoys": [
+      "النيجر",
+      "تشاد",
+      "موريتانيا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Timbuktu-Mali"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع الكنائس المنحوتة في صخر لاليبيلا؟",
+    "correct_answer": "إثيوبيا",
+    "decoys": [
+      "إريتريا",
+      "السودان",
+      "كينيا"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/18/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما الجبل المسطح الشهير الذي يطل على كيب تاون؟",
+    "correct_answer": "جبل الطاولة",
+    "decoys": [
+      "جبل توبقال",
+      "جبل كينيا",
+      "جبل كلمنجارو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Table-Mountain"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يمر بمدينة القاهرة؟",
+    "correct_answer": "نهر النيل",
+    "decoys": [
+      "نهر الكونغو",
+      "نهر النيجر",
+      "نهر دجلة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Nile-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع دلتا أوكافانغو الداخلية؟",
+    "correct_answer": "بوتسوانا",
+    "decoys": [
+      "ناميبيا",
+      "زامبيا",
+      "زيمبابوي"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/1432/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما الممر المائي الذي يفصل مدغشقر عن موزمبيق؟",
+    "correct_answer": "قناة موزمبيق",
+    "decoys": [
+      "مضيق جبل طارق",
+      "مضيق بالك",
+      "مضيق كوك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Mozambique-Channel"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي محيط يلامس الساحل الجنوبي لغانا؟",
+    "correct_answer": "المحيط الأطلسي",
+    "decoys": [
+      "المحيط الهندي",
+      "المحيط الهادئ",
+      "المحيط الجنوبي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Ghana"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما المضيق الواقع بين اليمن وجيبوتي؟",
+    "correct_answer": "مضيق باب المندب",
+    "decoys": [
+      "مضيق جبل طارق",
+      "مضيق هرمز",
+      "مضيق البوسفور"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Bab-el-Mandeb"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي جبال تفصل بين فرنسا وإسبانيا؟",
+    "correct_answer": "جبال البرانس",
+    "decoys": [
+      "جبال الألب",
+      "جبال الكاربات",
+      "جبال الأبينيني"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Pyrenees"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يمر وسط لندن؟",
+    "correct_answer": "نهر التايمز",
+    "decoys": [
+      "نهر السين",
+      "نهر الراين",
+      "نهر الدانوب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/River-Thames"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يمر بمدينة روما؟",
+    "correct_answer": "نهر التيبر",
+    "decoys": [
+      "نهر بو",
+      "نهر أرنو",
+      "نهر أديجه"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Tiber-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي بحر يمتد بمحاذاة الساحل الشرقي لإيطاليا؟",
+    "correct_answer": "البحر الأدرياتيكي",
+    "decoys": [
+      "البحر التيراني",
+      "البحر الليغوري",
+      "البحر الأيوني"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Adriatic-Sea"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع منطقة ترانسيلفانيا؟",
+    "correct_answer": "رومانيا",
+    "decoys": [
+      "المجر",
+      "بلغاريا",
+      "سلوفاكيا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Transylvania"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي دولتين تتقاسمان جزيرة أيرلندا؟",
+    "correct_answer": "أيرلندا والمملكة المتحدة",
+    "decoys": [
+      "أيرلندا وفرنسا",
+      "المملكة المتحدة وفرنسا",
+      "المملكة المتحدة وآيسلندا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Ireland-island-Europe"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة يقع فيورد غيرانغير؟",
+    "correct_answer": "النرويج",
+    "decoys": [
+      "السويد",
+      "فنلندا",
+      "آيسلندا"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/1195/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "بين أي دولتين تقع بحيرة جنيف؟",
+    "correct_answer": "سويسرا وفرنسا",
+    "decoys": [
+      "سويسرا والنمسا",
+      "فرنسا وبلجيكا",
+      "ألمانيا وسويسرا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Lake-Geneva"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما الخليج الذي يفصل السويد عن فنلندا؟",
+    "correct_answer": "خليج بوثنيا",
+    "decoys": [
+      "خليج فنلندا",
+      "خليج ريغا",
+      "خليج ليون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Gulf-of-Bothnia"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة يقع بركان إتنا؟",
+    "correct_answer": "إيطاليا",
+    "decoys": [
+      "اليونان",
+      "إسبانيا",
+      "فرنسا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Mount-Etna"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما شبه الجزيرة التي تضم إسبانيا والبرتغال؟",
+    "correct_answer": "شبه الجزيرة الإيبيرية",
+    "decoys": [
+      "شبه الجزيرة الإيطالية",
+      "شبه جزيرة البلقان",
+      "شبه الجزيرة الإسكندنافية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Iberian-Peninsula"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يمر بمدينة بودابست؟",
+    "correct_answer": "نهر الدانوب",
+    "decoys": [
+      "نهر الراين",
+      "نهر إلبه",
+      "نهر فيستولا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Danube-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع معابد أنغكور وات؟",
+    "correct_answer": "كمبوديا",
+    "decoys": [
+      "لاوس",
+      "تايلاند",
+      "فيتنام"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/668/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي بحر يقع بين الهند وشبه الجزيرة العربية؟",
+    "correct_answer": "بحر العرب",
+    "decoys": [
+      "بحر أندامان",
+      "البحر الأحمر",
+      "بحر الصين الجنوبي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Arabian-Sea"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يمر بمدينة بانكوك؟",
+    "correct_answer": "نهر تشاو فرايا",
+    "decoys": [
+      "نهر الميكونغ",
+      "نهر إيراوادي",
+      "نهر سالوين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Chao-Phraya-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع معابد باغان؟",
+    "correct_answer": "ميانمار",
+    "decoys": [
+      "تايلاند",
+      "كمبوديا",
+      "لاوس"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/1588/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما أعلى جبل في اليابان؟",
+    "correct_answer": "جبل فوجي",
+    "decoys": [
+      "جبل كيتاداكي",
+      "جبل أينوداكي",
+      "جبل هاكوسان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Mount-Fuji"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة يقع جبل كينابالو؟",
+    "correct_answer": "ماليزيا",
+    "decoys": [
+      "إندونيسيا",
+      "بروناي",
+      "الفلبين"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/1012/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي شبه جزيرة تقع صحراء الربع الخالي؟",
+    "correct_answer": "شبه الجزيرة العربية",
+    "decoys": [
+      "شبه جزيرة سيناء",
+      "شبه الجزيرة الهندية",
+      "شبه جزيرة الأناضول"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Rub-al-Khali"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي مضيق يصل البحر الأسود ببحر مرمرة؟",
+    "correct_answer": "مضيق البوسفور",
+    "decoys": [
+      "مضيق الدردنيل",
+      "مضيق جبل طارق",
+      "مضيق هرمز"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Bosporus"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي مضيق يفصل الهند عن سريلانكا؟",
+    "correct_answer": "مضيق بالك",
+    "decoys": [
+      "مضيق ملقا",
+      "مضيق كوك",
+      "مضيق توريس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Palk-Strait"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يمر بمدينة سيول؟",
+    "correct_answer": "نهر الهان",
+    "decoys": [
+      "نهر ناكدونغ",
+      "نهر الميكونغ",
+      "نهر تشاو فرايا"
+    ],
+    "image_url": null,
+    "source_url": "https://english.seoul.go.kr/seoul-views/meaning-of-seoul/2-location/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع مدينة سمرقند؟",
+    "correct_answer": "أوزبكستان",
+    "decoys": [
+      "كازاخستان",
+      "قيرغيزستان",
+      "طاجيكستان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Samarkand"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع مدينة لاهور؟",
+    "correct_answer": "باكستان",
+    "decoys": [
+      "الهند",
+      "أفغانستان",
+      "بنغلاديش"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Lahore"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يمر بالعاصمة الأمريكية واشنطن؟",
+    "correct_answer": "نهر بوتوماك",
+    "decoys": [
+      "نهر هدسون",
+      "نهر أوهايو",
+      "نهر سسكويهانا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Potomac-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي ولاية أمريكية تقع حديقة يوسيميتي الوطنية؟",
+    "correct_answer": "كاليفورنيا",
+    "decoys": [
+      "أوريغون",
+      "نيفادا",
+      "أريزونا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/yose/index.htm"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "بين أي دولتين تمتد منطقة باتاغونيا؟",
+    "correct_answer": "الأرجنتين وتشيلي",
+    "decoys": [
+      "تشيلي وبيرو",
+      "الأرجنتين وأوروغواي",
+      "البرازيل وبوليفيا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Patagonia-region-Argentina-and-Chile"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يحد جزيرة مانهاتن من الغرب؟",
+    "correct_answer": "نهر هدسون",
+    "decoys": [
+      "نهر ديلاوير",
+      "نهر بوتوماك",
+      "نهر كونيتيكت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Hudson-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما الدولة الكاريبية التي عاصمتها كينغستون؟",
+    "correct_answer": "جامايكا",
+    "decoys": [
+      "جزر البهاما",
+      "بربادوس",
+      "ترينيداد وتوباغو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Jamaica"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع مدينة ماتشو بيتشو الأثرية؟",
+    "correct_answer": "بيرو",
+    "decoys": [
+      "بوليفيا",
+      "الإكوادور",
+      "كولومبيا"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/274/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما السلسلة الجبلية الممتدة من كندا إلى ولاية نيو مكسيكو الأمريكية؟",
+    "correct_answer": "جبال الروكي",
+    "decoys": [
+      "جبال الأبلاش",
+      "جبال كاسكيد",
+      "جبال سييرا نيفادا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Rocky-Mountains"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي بحر يقع بين أمريكا الوسطى وجزر الأنتيل؟",
+    "correct_answer": "البحر الكاريبي",
+    "decoys": [
+      "بحر سارغاسو",
+      "بحر لابرادور",
+      "بحر بيرينغ"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع بحيرة ماراكايبو؟",
+    "correct_answer": "فنزويلا",
+    "decoys": [
+      "كولومبيا",
+      "البرازيل",
+      "غيانا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Lake-Maracaibo"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي دولة تقع مدينة تشيتشن إيتزا الأثرية؟",
+    "correct_answer": "المكسيك",
+    "decoys": [
+      "غواتيمالا",
+      "هندوراس",
+      "بليز"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/483/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي قناة مائية تصل المحيط الأطلسي بالمحيط الهادئ؟",
+    "correct_answer": "قناة بنما",
+    "decoys": [
+      "قناة السويس",
+      "قناة كيل",
+      "قناة كورنث"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Panama-Canal"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "بين أي مقاطعتين كنديتين يقع خليج فندي؟",
+    "correct_answer": "نوفا سكوشا ونيو برونزويك",
+    "decoys": [
+      "نوفا سكوشا وكيبيك",
+      "أونتاريو ونيو برونزويك",
+      "كيبيك وأونتاريو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nationalgeographic.com/travel/article/bay-of-fundy-new-brunswick-nova-scotia"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي محيط تقع جزر فيجي؟",
+    "correct_answer": "المحيط الهادئ",
+    "decoys": [
+      "المحيط الهندي",
+      "المحيط الأطلسي",
+      "المحيط الجنوبي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Fiji"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما الدولة التي تُعرف جزيرتاها الرئيسيتان باسم الشمالية والجنوبية؟",
+    "correct_answer": "نيوزيلندا",
+    "decoys": [
+      "أستراليا",
+      "الفلبين",
+      "فيجي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/New-Zealand"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي ولاية أسترالية تقع مدينة سيدني؟",
+    "correct_answer": "نيو ساوث ويلز",
+    "decoys": [
+      "كوينزلاند",
+      "فيكتوريا",
+      "تسمانيا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nsw.gov.au/about-nsw"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "إلى أي أرخبيل تنتمي جزيرة تاهيتي؟",
+    "correct_answer": "جزر المجتمع",
+    "decoys": [
+      "جزر فيجي",
+      "جزر كوك",
+      "جزر ساموا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Society-Islands"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما الدولة التي عاصمتها بورت مورسبي؟",
+    "correct_answer": "بابوا غينيا الجديدة",
+    "decoys": [
+      "جزر سليمان",
+      "فانواتو",
+      "فيجي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Papua-New-Guinea"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "إلى أي دولة تنتمي جزيرة تسمانيا؟",
+    "correct_answer": "أستراليا",
+    "decoys": [
+      "نيوزيلندا",
+      "إندونيسيا",
+      "بابوا غينيا الجديدة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Tasmania"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي بحر يقع بين أستراليا ونيوزيلندا؟",
+    "correct_answer": "بحر تسمان",
+    "decoys": [
+      "بحر المرجان",
+      "بحر أرافورا",
+      "بحر تيمور"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Tasman-Sea"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما المضيق الذي يفصل جزيرتي نيوزيلندا الرئيسيتين؟",
+    "correct_answer": "مضيق كوك",
+    "decoys": [
+      "مضيق توريس",
+      "مضيق باس",
+      "مضيق فوفو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Cook-Strait"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي مدينة يقع مبنى دار الأوبرا الشهير في أستراليا؟",
+    "correct_answer": "سيدني",
+    "decoys": [
+      "ملبورن",
+      "بريزبن",
+      "بيرث"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/166/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما الدولة الجزرية التي تضم جزيرة غوادالكانال؟",
+    "correct_answer": "جزر سليمان",
+    "decoys": [
+      "فانواتو",
+      "فيجي",
+      "كيريباتي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Solomon-Islands"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي بحيرة تتقاسمها ملاوي وموزمبيق وتنزانيا؟",
+    "correct_answer": "بحيرة ملاوي",
+    "decoys": [
+      "بحيرة فيكتوريا",
+      "بحيرة تنجانيقا",
+      "بحيرة توركانا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Lake-Malawi"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "بين أي دولتين تقع شلالات نياغرا؟",
+    "correct_answer": "كندا والولايات المتحدة",
+    "decoys": [
+      "المكسيك والولايات المتحدة",
+      "البرازيل والأرجنتين",
+      "كندا والمكسيك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Niagara-Falls"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي سلسلة جبلية تمتد على طول غربي أمريكا الجنوبية؟",
+    "correct_answer": "جبال الأنديز",
+    "decoys": [
+      "جبال الروكي",
+      "جبال الألب",
+      "جبال الأطلس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Andes-Mountains"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "في أي محيط تقع جزر المالديف؟",
+    "correct_answer": "المحيط الهندي",
+    "decoys": [
+      "المحيط الهادئ",
+      "المحيط الأطلسي",
+      "المحيط المتجمد الشمالي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Maldives"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يشكّل جزءًا من الحدود بين المكسيك والولايات المتحدة؟",
+    "correct_answer": "نهر ريو غراندي",
+    "decoys": [
+      "نهر كولورادو",
+      "نهر كولومبيا",
+      "نهر ميسوري"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي بحر يحد تركيا من الشمال؟",
+    "correct_answer": "البحر الأسود",
+    "decoys": [
+      "بحر إيجة",
+      "البحر الأبيض المتوسط",
+      "بحر قزوين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Black-Sea"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي قناة تصل البحر الأبيض المتوسط بالبحر الأحمر؟",
+    "correct_answer": "قناة السويس",
+    "decoys": [
+      "قناة بنما",
+      "قناة كيل",
+      "قناة كورنث"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Suez-Canal"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي جبال تشكل حدًا جغرافيًا شائعًا بين أوروبا وآسيا؟",
+    "correct_answer": "جبال الأورال",
+    "decoys": [
+      "جبال الألب",
+      "جبال الأنديز",
+      "جبال الهيمالايا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Ural-Mountains"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي نهر يمر بمدينة براغ؟",
+    "correct_answer": "نهر فلتافا",
+    "decoys": [
+      "نهر إلبه",
+      "نهر أودر",
+      "نهر الدانوب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Vltava-River"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي محيط يحد الساحل الشرقي لأمريكا الجنوبية؟",
+    "correct_answer": "المحيط الأطلسي",
+    "decoys": [
+      "المحيط الهادئ",
+      "المحيط الهندي",
+      "المحيط المتجمد الشمالي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Atlantic-Ocean"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "أي مدار يمر عبر وسط أستراليا؟",
+    "correct_answer": "مدار الجدي",
+    "decoys": [
+      "مدار السرطان",
+      "الدائرة القطبية الشمالية",
+      "خط الاستواء"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ga.gov.au/bigobj/GA20890.pdf"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما المناخ الذي يتميز بندرة الأمطار وقلّة الغطاء النباتي؟",
+    "correct_answer": "المناخ الصحراوي",
+    "decoys": [
+      "المناخ الاستوائي",
+      "المناخ المحيطي",
+      "المناخ الموسمي"
+    ],
+    "image_url": null,
+    "source_url": "https://education.nationalgeographic.org/resource/desert/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما اسم دائرة العرض الواقعة عند نحو 23.5 درجة شمالًا؟",
+    "correct_answer": "مدار السرطان",
+    "decoys": [
+      "مدار الجدي",
+      "الدائرة القطبية الشمالية",
+      "خط الاستواء"
+    ],
+    "image_url": null,
+    "source_url": "https://education.nationalgeographic.org/resource/tropic-cancer/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما اسم النسبة بين المسافة على الخريطة والمسافة الحقيقية؟",
+    "correct_answer": "مقياس الرسم",
+    "decoys": [
+      "خطوط الطول",
+      "مفتاح الخريطة",
+      "خطوط الارتفاع"
+    ],
+    "image_url": null,
+    "source_url": "https://education.nationalgeographic.org/resource/map-scale/"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما اسم الرياح السائدة في العروض الوسطى من الأرض؟",
+    "correct_answer": "الرياح الغربية",
+    "decoys": [
+      "الرياح التجارية",
+      "الرياح القطبية الشرقية",
+      "نسيم البحر"
+    ],
+    "image_url": null,
+    "source_url": "https://nsidc.org/learn/cryosphere-glossary/westerlies"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما اسم الشريط الساحلي الذي تغمره المياه ثم ينكشف دوريًا؟",
+    "correct_answer": "منطقة المد والجزر",
+    "decoys": [
+      "الجرف القاري",
+      "مصب النهر",
+      "بحيرة ساحلية"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/intertidal-zone.html"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما اسم الخطوط التي تصل نقاط الضغط الجوي المتساوي على خريطة الطقس؟",
+    "correct_answer": "خطوط تساوي الضغط",
+    "decoys": [
+      "خطوط الكنتور",
+      "خطوط الطول",
+      "خطوط تساوي الحرارة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/jkl/education"
+  },
+  {
+    "category_id": 3,
+    "language_code": "ar",
+    "question_text": "ما اسم الخط القريب من خط طول 180 درجة الذي يتغير التاريخ عند عبوره؟",
+    "correct_answer": "خط التاريخ الدولي",
+    "decoys": [
+      "خط غرينتش",
+      "خط الاستواء",
+      "مدار الجدي"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/international-date-line.html"
+  }
+]

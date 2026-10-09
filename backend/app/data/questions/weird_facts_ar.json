@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي حيوان جرابي يخرج فضلات مكعبة الشكل؟",
+    "correct_answer": "الومبت",
+    "decoys": [
+      "الكنغر",
+      "الكوالا",
+      "الشيطان التسماني"
+    ],
+    "image_url": null,
+    "source_url": "https://www.smithsonianmag.com/smart-news/scientists-have-solved-mystery-how-wombats-poop-cubes-180976898/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الذي يمنح فراء بعض حيوانات الكسلان لونًا أخضر؟",
+    "correct_answer": "الطحالب",
+    "decoys": [
+      "التراب",
+      "حبوب اللقاح",
+      "العفن الأسود"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/two-toed-sloth"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "بماذا يطحن آكل النمل الشوكي طعامه رغم افتقاره للأسنان؟",
+    "correct_answer": "نتوءات قرنية في فمه",
+    "decoys": [
+      "حصى في معدته",
+      "عظام فكيه",
+      "أشواك ظهره"
+    ],
+    "image_url": null,
+    "source_url": "https://animaldiversity.org/accounts/Tachyglossidae/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي حيوان يمتد لسانه الطويل من عمق جسمه قرب رجليه الخلفيتين؟",
+    "correct_answer": "آكل النمل الحرشفي",
+    "decoys": [
+      "القنفذ",
+      "الومبت",
+      "الكوالا"
+    ],
+    "image_url": null,
+    "source_url": "https://qrius.si.edu/taxonomy/term/12162"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي حيوان يستخدم عظمة رسغ معدلة كأنها إبهام للإمساك بالخيزران؟",
+    "correct_answer": "الباندا الأحمر",
+    "decoys": [
+      "الليمور",
+      "الكسلان",
+      "الراكون"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/red-panda"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "بماذا تُطعم إناث بعض ضفادع السهام صغارها المائية؟",
+    "correct_answer": "بيض غير مخصب",
+    "decoys": [
+      "أوراق طحالب",
+      "حبوب لقاح",
+      "يرقات بعوض"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/poison-frogs"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي سمكة تصطاد حشرات فوق الماء بنفث الماء نحوها؟",
+    "correct_answer": "سمكة الرامي",
+    "decoys": [
+      "سمكة المهرج",
+      "سمكة النيص",
+      "سمكة القرش"
+    ],
+    "image_url": null,
+    "source_url": "https://storage.montereybayaquarium.org/storage/pressroom/presskit/pdf/wild%20about%20otters%20press%20kit.pdf"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "على ماذا يتغذى الحبار مصاص الدماء في أعماق البحر غالبًا؟",
+    "correct_answer": "الثلج البحري",
+    "decoys": [
+      "الشعاب المرجانية",
+      "الأعشاب البحرية",
+      "الأسماك الكبيرة"
+    ],
+    "image_url": null,
+    "source_url": "https://sanctuaries.noaa.gov/news/oct23/odd-ocean-critters.html"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي سمكة تسير على قاع البحر بأشعة زعانفها الصدرية؟",
+    "correct_answer": "ديك البحر المدرع",
+    "decoys": [
+      "سمكة الشمس",
+      "سمكة التونة",
+      "سمكة الفراشة"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanexplorer.noaa.gov/explainers/marine-life/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي حيوان بحري يتنفس عبر أعضاء تُسمى أشجارًا تنفسية؟",
+    "correct_answer": "خيار البحر",
+    "decoys": [
+      "قنفذ البحر",
+      "نجم البحر",
+      "شقائق النعمان"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanexplorer.noaa.gov/explainers/marine-life/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "بأي جزء من جسمها ترصد الفقمة اهتزازات فرائسها في الماء؟",
+    "correct_answer": "شواربها",
+    "decoys": [
+      "أنيابها",
+      "زعانفها",
+      "ذيلها"
+    ],
+    "image_url": null,
+    "source_url": "https://oceantoday.noaa.gov/sealanatomy/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي جزء من السمكة يفحصه العلماء لعد حلقات عمرها؟",
+    "correct_answer": "عظيمات أذنها",
+    "decoys": [
+      "خياشيمها",
+      "مثانتها الهوائية",
+      "معدتها"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fisheries.noaa.gov/west-coast/population-assessments/ageing-groundfish-west-coast"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي سمكة تساهم في تكوين رمال بيضاء بعد طحن المرجان؟",
+    "correct_answer": "سمكة الببغاء",
+    "decoys": [
+      "سمكة الأنقليس",
+      "سمكة أبو سيف",
+      "سمكة التونة"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/sand.html"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الأداة التي يستخدمها قضاعة البحر لكسر أصداف فرائسها؟",
+    "correct_answer": "الحجارة",
+    "decoys": [
+      "الأغصان",
+      "الأشواك",
+      "الأوراق"
+    ],
+    "image_url": null,
+    "source_url": "https://www.montereybayaquarium.org/wallpaper/southern-sea-otter-enrichment-wallpaper"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي طائر يستطيع حمل عدة أسماك صغيرة مصطفة في منقاره دفعة واحدة؟",
+    "correct_answer": "البفن الأطلسي",
+    "decoys": [
+      "النورس",
+      "البجع",
+      "القطرس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.audubon.org/field-guide/bird/atlantic-puffin?nid=4861&site=hogisland"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "كم مرة تقريبًا ينزل الكسلان من شجرته لقضاء حاجته؟",
+    "correct_answer": "مرة في الأسبوع",
+    "decoys": [
+      "مرة كل ساعة",
+      "مرة في الشهر",
+      "مرة في اليوم"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/news/why-are-sloths-so-slow-and-other-sloth-facts"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي جزء من جسم الباندا الأحمر يساعده على اختبار الروائح؟",
+    "correct_answer": "أسفل لسانه",
+    "decoys": [
+      "طرف ذيله",
+      "باطن قدمه",
+      "حافة أذنه"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/red-panda"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي جزء من جسم الفقمة الحقيقية يدفعها أساسًا أثناء السباحة؟",
+    "correct_answer": "زعانفها الخلفية",
+    "decoys": [
+      "زعانفها الأمامية",
+      "ذيلها",
+      "شواربها"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fisheries.noaa.gov/feature-story/14-seal-secrets"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "لماذا تبدو بعض الحيوانات الحمراء داكنة في أعماق البحر؟",
+    "correct_answer": "لأن الضوء الأحمر لا يصل إليها",
+    "decoys": [
+      "لأنها تمتص الملح",
+      "لأنها تغير جلدها",
+      "لأن الماء يصبغها"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanexplorer.noaa.gov/explainers/marine-life/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "بأي جزء يستشعر خلد الماء الإشارات الكهربائية الصادرة عن فرائسه؟",
+    "correct_answer": "منقاره",
+    "decoys": [
+      "ذيله",
+      "مخالبه",
+      "أذنيه"
+    ],
+    "image_url": null,
+    "source_url": "https://naturalhistory.si.edu/education/teaching-resources/life-science/webinar-natural-history-home-home-habitat"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي رئة لها فصان فقط لإفساح مكان للقلب؟",
+    "correct_answer": "اليسرى",
+    "decoys": [
+      "اليمنى",
+      "كلتاهما",
+      "لا واحدة منهما"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nhlbi.nih.gov/health/lungs/respiratory-system"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي عظمة في العنق لا تتصل مباشرة بعظمة أخرى؟",
+    "correct_answer": "العظم اللامي",
+    "decoys": [
+      "الترقوة",
+      "الفك السفلي",
+      "عظم القص"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK539726/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أين توجد براعم تذوق لدى الإنسان إضافة إلى اللسان؟",
+    "correct_answer": "الحلق",
+    "decoys": [
+      "الأذن",
+      "القصبة الهوائية",
+      "الأنف"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nidcd.nih.gov/health/taste-disorders"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي حاسة تسهم بقوة في إدراك نكهة الطعام بجانب التذوق؟",
+    "correct_answer": "الشم",
+    "decoys": [
+      "السمع",
+      "التوازن",
+      "البصر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nidcd.nih.gov/health/taste-disorders"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الذي ينقبض في الجلد فيسبب القشعريرة؟",
+    "correct_answer": "عضلات صغيرة حول الشعر",
+    "decoys": [
+      "أوعية الرئة",
+      "أوتار الأصابع",
+      "عضلات الأذن"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nih.gov/news-events/nih-research-matters/what-goosebumps-are"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي بطانة في الجسم تتجدد خلاياها خلال نحو خمسة أيام؟",
+    "correct_answer": "بطانة الأمعاء",
+    "decoys": [
+      "بطانة القرنية",
+      "بطانة المثانة",
+      "بطانة الأذن"
+    ],
+    "image_url": null,
+    "source_url": "https://www.niddk.nih.gov/news/archive/2017/story-discovery-intestinal-stem-cells"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي جزء من الجسم توجد عظمة الركاب الصغيرة؟",
+    "correct_answer": "الأذن الوسطى",
+    "decoys": [
+      "طرف الأنف",
+      "الرسغ",
+      "الحلق"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK482338/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي نسيج داخل العظام ينتج خلايا الدم؟",
+    "correct_answer": "نخاع العظم",
+    "decoys": [
+      "الغضروف",
+      "المينا",
+      "الأربطة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.niams.nih.gov/health-topics/what-bone"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي مادة يرتبط بها طعم «أومامي» في الطعام؟",
+    "correct_answer": "الغلوتامات",
+    "decoys": [
+      "حمض الستريك",
+      "السكروز",
+      "المنثول"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nidcd.nih.gov/health/taste-disorders"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي جزء شفاف في العين يخلو عادةً من الأوعية الدموية؟",
+    "correct_answer": "القرنية",
+    "decoys": [
+      "الشبكية",
+      "القزحية",
+      "الملتحمة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nei.nih.gov/research-and-training/research-news/nei-funded-research-shows-promise-healing-damage-dry-eye-surgery-and-toxin-exposure"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الذي يدفع صخور وادي الموت فتترك مسارات على الطين؟",
+    "correct_answer": "ألواح جليد تحركها الرياح",
+    "decoys": [
+      "جذور الأشجار",
+      "المد والجزر",
+      "حمم بركانية"
+    ],
+    "image_url": null,
+    "source_url": "https://home.nps.gov/deva/planyourvisit/the-racetrack.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الذي قد يلون الثلج بالوردي في بعض الجبال؟",
+    "correct_answer": "طحالب ثلجية",
+    "decoys": [
+      "حبوب رملية",
+      "رماد بركاني",
+      "أملاح بحرية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/dena/learn/nature/glaciers.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي معدن يشكل معظم الخشب المتحجر في حديقة الغابة المتحجرة الأمريكية؟",
+    "correct_answer": "الكوارتز",
+    "decoys": [
+      "الجبس",
+      "الهاليت",
+      "الفحم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/pefo/learn/nature/petrified-wood.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أين قد يظهر البرق خلال ثوران بركاني انفجاري؟",
+    "correct_answer": "داخل سحابة الرماد",
+    "decoys": [
+      "داخل مجرى الحمم",
+      "في باطن الصخر",
+      "تحت قاع البحر"
+    ],
+    "image_url": null,
+    "source_url": "https://volcanoes.usgs.gov/volcanic_ash/lightning.html"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما اسم السحب التي تبدو كالأطباق قرب الجبال؟",
+    "correct_answer": "السحب العدسية",
+    "decoys": [
+      "السحب الركامية",
+      "السحب الريشية",
+      "السحب الطبقية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/owlie/weird-weather"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الذي يكسر ضوء الشمس في الجو ليظهر شمسين وهميتين قربها؟",
+    "correct_answer": "بلورات الجليد",
+    "decoys": [
+      "حبات الرمل",
+      "قطرات الحمم",
+      "ذرات الملح"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/arx/why_halos_sundogs_pillars?os=io."
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما اسم الوهج العمودي الذي قد يبدو صاعدًا من الشمس عند وجود بلورات جليد؟",
+    "correct_answer": "عمود الشمس",
+    "decoys": [
+      "قوس المطر",
+      "الشفق القطبي",
+      "السراب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.weather.gov/owlie/weird-weather"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما اسم إنتاج الكائنات البحرية للضوء بتفاعل كيميائي؟",
+    "correct_answer": "التلألؤ الحيوي",
+    "decoys": [
+      "التبخر",
+      "الفسفرة الصخرية",
+      "الانكسار"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/biolum.html?lv=true"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الكائنات التي قد تجعل مياه البحر حمراء عند تكاثرها بكثرة؟",
+    "correct_answer": "الطحالب المجهرية",
+    "decoys": [
+      "قناديل البحر",
+      "المرجان",
+      "الإسفنج"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nesdis.noaa.gov/about/k-12-education/oceans-coasts/what-red-tide"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الذي يترسب حول حبات الرمل ليكوّن «لآلئ الكهوف»؟",
+    "correct_answer": "معادن كربوناتية",
+    "decoys": [
+      "زجاج بركاني",
+      "جليد نقي",
+      "ملح الطعام"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/subjects/caves/speleothems.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما مصدر الماء الذي يثور من نوافير يلوستون الحارة؟",
+    "correct_answer": "المطر والثلج المتسربان",
+    "decoys": [
+      "مياه البحر",
+      "مياه الأنهار الجليدية فقط",
+      "السحب مباشرة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/yell/learn/kidsyouth/hydrothermal.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "لماذا تطلق نبتة تيتان أروم رائحة تشبه اللحم الفاسد؟",
+    "correct_answer": "لجذب حشرات التلقيح",
+    "decoys": [
+      "لطرد الماء",
+      "لتبريد أوراقها",
+      "لتخزين الغذاء"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/read-and-watch/the-giant-pongy-plant-titan-arum"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الظاهرة التي تنتج بها نبتة تيتان أروم حرارة أثناء إزهارها؟",
+    "correct_answer": "التوليد الحراري",
+    "decoys": [
+      "البناء الضوئي",
+      "التناضح",
+      "التحلل الجليدي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/read-and-watch/the-giant-pongy-plant-titan-arum"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "بماذا تستفيد بعض نباتات الإبريق من الخفافيش التي تزورها؟",
+    "correct_answer": "بفضلاتها كمصدر غذاء",
+    "decoys": [
+      "بريشها",
+      "بلعابها كماء",
+      "بعظامها"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/read-and-watch/extraordinary-plants-at-kew"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الذي يسبب تنوع ألوان الخشب المتحجر الغني بالكوارتز؟",
+    "correct_answer": "شوائب معدنية",
+    "decoys": [
+      "اختلاف حجم الأوراق",
+      "ضوء القمر",
+      "عمر الحشرات"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/pefo/learn/nature/petrified-wood.htm"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "على أي كوكب تستغرق دورة واحدة حول محوره وقتًا أطول من دورته حول الشمس؟",
+    "correct_answer": "الزهرة",
+    "decoys": [
+      "عطارد",
+      "المريخ",
+      "الأرض"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/venus/venus-facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "من أي جهة تشرق الشمس على كوكب الزهرة بسبب دورانه العكسي؟",
+    "correct_answer": "الغرب",
+    "decoys": [
+      "الشرق",
+      "الشمال",
+      "الجنوب"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/venus/venus-facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أين عُثر على جليد مائي على عطارد رغم قربه من الشمس؟",
+    "correct_answer": "في فوهات قطبية مظللة",
+    "decoys": [
+      "عند خط الاستواء",
+      "على قمم براكينه",
+      "في غلافه الجوي"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/mission/messenger/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما اللون المميز لغروب الشمس قرب قرصها على المريخ؟",
+    "correct_answer": "الأزرق",
+    "decoys": [
+      "الأخضر",
+      "البنفسجي",
+      "الأصفر"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/resource/mastcam-zs-first-martian-sunset/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما نوع السوائل التي تملأ بحيرات قمر زحل «تيتان»؟",
+    "correct_answer": "هيدروكربونات سائلة",
+    "decoys": [
+      "ماء سائل",
+      "معادن منصهرة",
+      "نيتروجين سائل"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/saturn/moons/titan/facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي قمر لزحل يقذف بخار ماء وجزيئات جليد من شقوق قرب قطبه الجنوبي؟",
+    "correct_answer": "إنسيلادوس",
+    "decoys": [
+      "تيتان",
+      "ميماس",
+      "ريا"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/mission/cassini/science/enceladus/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "على أي قمر لنبتون رصدت «فوياجر 2» نوافير نشطة؟",
+    "correct_answer": "تريتون",
+    "decoys": [
+      "نيريد",
+      "بروتيوس",
+      "لاريسا"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/neptune/moons/triton/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي كوكب تقل كثافته المتوسطة عن كثافة الماء؟",
+    "correct_answer": "زحل",
+    "decoys": [
+      "المشتري",
+      "نبتون",
+      "الأرض"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/saturn/facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "على أي جرم يظهر سطح جليدي واسع يشبه القلب؟",
+    "correct_answer": "بلوتو",
+    "decoys": [
+      "المريخ",
+      "عطارد",
+      "قمر الأرض"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/resource/zooming-in-on-plutos-pattern-of-pits/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "إلى أي جهة يشير ذيل الغبار اللامع للمذنب قرب الشمس عادةً؟",
+    "correct_answer": "بعيدًا عن الشمس",
+    "decoys": [
+      "نحو الشمس",
+      "نحو الأرض دائمًا",
+      "نحو القطب الشمالي"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/solar-system/comets/nov2024-night-sky-notes/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "تحت أي مادة يُرجح وجود محيط مالح على قمر المشتري «أوروبا»؟",
+    "correct_answer": "طبقة جليد",
+    "decoys": [
+      "طبقة رمال",
+      "طبقة غيوم",
+      "طبقة رماد"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/jupiter/jupiter-moons/europa/europa-facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "كم شروقًا للشمس تقريبًا يراه طاقم محطة الفضاء الدولية خلال يوم أرضي؟",
+    "correct_answer": "16",
+    "decoys": [
+      "2",
+      "8",
+      "24"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nasa.gov/international-space-station/space-station-facts-and-figures/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الحمض الذي يوجد في سحب كوكب الزهرة؟",
+    "correct_answer": "حمض الكبريتيك",
+    "decoys": [
+      "حمض الخليك",
+      "حمض الستريك",
+      "حمض اللبنيك"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/venus/venus-facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي غاز يشكل معظم الغلاف الجوي لقمر زحل «تيتان»؟",
+    "correct_answer": "النيتروجين",
+    "decoys": [
+      "الأكسجين",
+      "الهيدروجين",
+      "الهيليوم"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/saturn/moons/titan/facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي غاز يمنح أورانوس لونه الأزرق المخضر بامتصاص الضوء الأحمر؟",
+    "correct_answer": "الميثان",
+    "decoys": [
+      "النيتروجين",
+      "الأكسجين",
+      "ثاني أكسيد الكربون"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/uranus/facts/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الغرض الذي حاول مخترعا ورق الفقاعات تحقيقه أولًا؟",
+    "correct_answer": "ورق جدران بارز",
+    "decoys": [
+      "ستارة مطر",
+      "عازل أسلاك",
+      "حافظة طعام"
+    ],
+    "image_url": null,
+    "source_url": "https://www.smithsonianmag.com/innovation/accidental-invention-bubble-wrap-180971325/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الحاجة التي ألهمت استخدام لاصق أوراق «بوست إت»؟",
+    "correct_answer": "علامة كتاب لا تتلف الصفحات",
+    "decoys": [
+      "إغلاق علبة معدنية",
+      "إصلاح حذاء",
+      "تثبيت زجاج نافذة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.uspto.gov/learning-and-resources/uspto-videos/sticking-it"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الشيء الذي راقبته كاميرا جامعة كامبريدج التي صارت أول كاميرا ويب؟",
+    "correct_answer": "إبريق قهوة",
+    "decoys": [
+      "ساعة حائط",
+      "باب مختبر",
+      "طابعة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cl.cam.ac.uk/coffee/qsf/timeline.html"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "من أي مادة صُنعت ألعاب ليغو الأولى قبل مكعباتها البلاستيكية؟",
+    "correct_answer": "الخشب",
+    "decoys": [
+      "الزجاج",
+      "الحديد",
+      "الورق"
+    ],
+    "image_url": null,
+    "source_url": "https://www.lego.com/en-us/history/articles/b-the-beginning-of-the-lego-group"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "من أي لغة جاءت عبارة «ليغ غودت» التي اشتق منها اسم ليغو؟",
+    "correct_answer": "الدنماركية",
+    "decoys": [
+      "السويدية",
+      "الهولندية",
+      "الألمانية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.lego.com/en-us/history/articles/b-the-beginning-of-the-lego-group"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "من أي مادة صُنِع النموذج الأول لفأرة الحاسوب في مختبر SRI؟",
+    "correct_answer": "خشب السيكويا",
+    "decoys": [
+      "الألومنيوم",
+      "البلاستيك",
+      "المطاط"
+    ],
+    "image_url": null,
+    "source_url": "https://computerhistory.org/sri-mouse-mn052024/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما المنتج الذي حمل أول رمز UPC ممسوح عند صندوق متجر عام 1974؟",
+    "correct_answer": "علكة",
+    "decoys": [
+      "علبة حليب",
+      "كتاب",
+      "علبة قهوة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.si.edu/exhibitions/behind-lines-universal-product-code-upc-25%3Aevent-exhib-4211"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الحشرة التي وُجدت عالقة في مرحّل حاسوب «هارفارد مارك 2» عام 1947؟",
+    "correct_answer": "عثة",
+    "decoys": [
+      "نحلة",
+      "نملة",
+      "يعسوب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/tdih/september/9/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الشيء الطبيعي الذي ألهم اختراع شريط الفيلكرو؟",
+    "correct_answer": "بذور شوكية تتعلق بالملابس",
+    "decoys": [
+      "أصداف بحرية",
+      "ريش الطيور",
+      "خيوط العنكبوت"
+    ],
+    "image_url": null,
+    "source_url": "https://invention.si.edu/invention-stories/george-de-mestral-velcror-inventor"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما المشروب الذي تجمد حول عود خشبي فقاد إلى اختراع المثلجات على عود؟",
+    "correct_answer": "شراب محلى",
+    "decoys": [
+      "حليب",
+      "قهوة",
+      "عصير طماطم"
+    ],
+    "image_url": null,
+    "source_url": "https://invention.si.edu/invention-stories/beat-heat-cool-treat"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الشيء الذي كان يقذفه طلاب قبل انتشار أقراص الفريسبي البلاستيكية؟",
+    "correct_answer": "قوالب فطائر معدنية",
+    "decoys": [
+      "أغطية زجاجات",
+      "أطباق خشبية",
+      "علب حبر"
+    ],
+    "image_url": null,
+    "source_url": "https://siarchives.si.edu/sites/default/files/pdfs/torch/Torch%201978/SIA_000371_1978_08.pdf"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما السائل الذي صُممت آلة هيرون الإسكندري لتوزيعه في المعابد؟",
+    "correct_answer": "الماء المقدس",
+    "decoys": [
+      "العطر",
+      "الحليب",
+      "الزيت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.smithsonianmag.com/science-nature/old-world-high-tech-141284744/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي منتج استُخدمت أسنان السحاب المعدني أولًا قبل الملابس اليومية؟",
+    "correct_answer": "الأحذية",
+    "decoys": [
+      "المظلات",
+      "حقائب السفر",
+      "الستائر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.si.edu/object/sundbacks-modern-slide-zipper-patent-model-1915%3Anmah_860486"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الذي لاحظ بيرسي سبنسر ذوبانه وهو يعمل على جهاز رادار؟",
+    "correct_answer": "قطعة حلوى",
+    "decoys": [
+      "قطعة ثلج",
+      "صابون",
+      "شمع شمعة"
+    ],
+    "image_url": null,
+    "source_url": "https://invention.si.edu/invention-stories/devil-details-researching-inventors-biography"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي جهاز عُدّل عام 1971 لتحضير مشروب مارغريتا مثلج في مطعم؟",
+    "correct_answer": "آلة آيس كريم طري",
+    "decoys": [
+      "آلة غزل البنات",
+      "مطحنة قهوة",
+      "آلة فشار"
+    ],
+    "image_url": null,
+    "source_url": "https://invention.si.edu/invention-stories/beat-heat-cool-treat"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي جزء من الشجرة يُجفف للحصول على القرفة؟",
+    "correct_answer": "اللحاء الداخلي",
+    "decoys": [
+      "الأزهار",
+      "الجذور",
+      "البذور"
+    ],
+    "image_url": null,
+    "source_url": "https://www.iranicaonline.org/articles/cinnamon/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "من أي فصيلة نباتية تأتي قرون الفانيليا الطبيعية؟",
+    "correct_answer": "الأوركيد",
+    "decoys": [
+      "النعناع",
+      "الورد",
+      "الصنوبر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/plants/vanilla"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "من اندماج ثمار نحو مئة إلى مئتي زهرة يتكون أي نوع من الفاكهة؟",
+    "correct_answer": "الأناناس",
+    "decoys": [
+      "التفاح",
+      "المشمش",
+      "الكرز"
+    ],
+    "image_url": null,
+    "source_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A12322-2/general-information"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الاسم الشائع للجزء اللحمي الذي تتصل به ثمرة الكاجو؟",
+    "correct_answer": "تفاحة الكاجو",
+    "decoys": [
+      "قلب الأناناس",
+      "قشرة الجوز",
+      "قرن الفانيليا"
+    ],
+    "image_url": null,
+    "source_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A319068-2/general-information"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ماذا تكون حبوب القهوة قبل تحميصها من الناحية النباتية؟",
+    "correct_answer": "بذورًا",
+    "decoys": [
+      "جذورًا",
+      "أوراقًا",
+      "أزهارًا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/plants/arabica-coffee"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي جزء من شجرة الكاكاو تنمو الحبوب التي تُصنع منها الشوكولاتة؟",
+    "correct_answer": "داخل الثمار",
+    "decoys": [
+      "داخل الجذور",
+      "على الأوراق",
+      "في اللحاء"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/plants/cacao-tree"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "بماذا يتراشق المشاركون في مهرجان «لا توماتينا» الإسباني؟",
+    "correct_answer": "الطماطم",
+    "decoys": [
+      "البرتقال",
+      "البيض",
+      "الزهور"
+    ],
+    "image_url": null,
+    "source_url": "https://www.spain.info/en/destination/bunol/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الفاكهة التي تؤكل منها 12 حبة عند منتصف ليلة رأس السنة في إسبانيا؟",
+    "correct_answer": "العنب",
+    "decoys": [
+      "الكرز",
+      "الزيتون",
+      "التين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.spain.info/en/discover-spain/new-years-eve-spain/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ماذا يحمل المشاركون في موكب عيد لوسيا السويدي رمزًا للنور؟",
+    "correct_answer": "الشموع",
+    "decoys": [
+      "المرايا",
+      "الأجراس",
+      "المراوح"
+    ],
+    "image_url": null,
+    "source_url": "https://visitsweden.com/what-to-do/culture-history-and-art/swedish-traditions/christmas/lucia/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما العملية التي تُجرى يدويًا لأزهار الفانيليا المزروعة خارج موطنها لإنتاج القرون؟",
+    "correct_answer": "التلقيح",
+    "decoys": [
+      "التقليم",
+      "التجفيف",
+      "التحميص"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/plants/vanilla"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "قرب سواحل أي دولة نشأت جزيرة سورتسي البركانية في ستينيات القرن العشرين؟",
+    "correct_answer": "آيسلندا",
+    "decoys": [
+      "اليابان",
+      "إندونيسيا",
+      "نيوزيلندا"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/1267"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي بلد تقع مدينة ديرينكويو المحفورة تحت الأرض؟",
+    "correct_answer": "تركيا",
+    "decoys": [
+      "اليونان",
+      "الأردن",
+      "إيطاليا"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/357/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي بلد تقع كهوف وايتومو المضيئة بيرقات الحشرات؟",
+    "correct_answer": "نيوزيلندا",
+    "decoys": [
+      "أستراليا",
+      "آيسلندا",
+      "الفلبين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.newzealand.com/us/plan/business/waitomo-glowworm-caves/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما اسم البلدة الأسترالية التي تشتهر بمساكنها المحفورة تحت الأرض؟",
+    "correct_answer": "كوبر بيدي",
+    "decoys": [
+      "أليس سبرينغز",
+      "بروكن هيل",
+      "كالغورلي"
+    ],
+    "image_url": null,
+    "source_url": "https://southaustralia.com/destinations/flinders-ranges-and-outback/places/coober-pedy"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي بلد تقع بحيرة ناترون ذات المياه الوردية المالحة أحيانًا؟",
+    "correct_answer": "تنزانيا",
+    "decoys": [
+      "كينيا",
+      "أوغندا",
+      "رواندا"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/earth/earth-observatory/lake-natron-tanzania-90191/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي بلد تقع مصاطب باموكالي البيضاء التي صنعتها ينابيع معدنية؟",
+    "correct_answer": "تركيا",
+    "decoys": [
+      "إيطاليا",
+      "المغرب",
+      "إثيوبيا"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/485"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي بلد يقع تكوين الريشات الدائري الملقب بـ«عين الصحراء»؟",
+    "correct_answer": "موريتانيا",
+    "decoys": [
+      "الجزائر",
+      "مصر",
+      "النيجر"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/earth/earth-observatory/the-eye-of-sahara-150060/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي قارة يوجد «شلال الدم» الأحمر الخارج من نهر تايلور الجليدي؟",
+    "correct_answer": "القارة القطبية الجنوبية",
+    "decoys": [
+      "آسيا",
+      "أوروبا",
+      "أمريكا الجنوبية"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/earth/earth-observatory/blood-falls-antarcticas-dry-valleys-35535/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما الذي يجعل سطح سالار دي أويوني يبدو كمرآة في موسم الأمطار؟",
+    "correct_answer": "طبقة رقيقة من الماء",
+    "decoys": [
+      "بلورات جليد",
+      "زجاج بركاني",
+      "رمال بيضاء"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/earth/earth-observatory/a-salt-bath-in-bolivia-149502/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي بلد تقع بحيرة مانيكواغان الحلقية داخل فوهة اصطدام قديمة؟",
+    "correct_answer": "كندا",
+    "decoys": [
+      "فنلندا",
+      "روسيا",
+      "النرويج"
+    ],
+    "image_url": null,
+    "source_url": "https://science.nasa.gov/earth/earth-observatory/a-modern-lake-in-an-ancient-crater-149414/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "لإدارة إنتاج أي منتجات استُخدمت رموز QR أولًا؟",
+    "correct_answer": "قطع السيارات",
+    "decoys": [
+      "الأدوية",
+      "الكتب",
+      "الألعاب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.denso-wave.com/en/system/qr/qr30th/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "أي رمز اختاره راي توملينسون للفصل بين المستخدم والحاسوب في عنوان البريد؟",
+    "correct_answer": "علامة آت @",
+    "decoys": [
+      "علامة المربع #",
+      "علامة العطف &",
+      "علامة النسبة %"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/internethistory/1970s/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "في أي مسرحية ظهرت كلمة «روبوت» وانتشرت عالميًا؟",
+    "correct_answer": "R.U.R.",
+    "decoys": [
+      "هاملت",
+      "فاوست",
+      "في انتظار غودو"
+    ],
+    "image_url": null,
+    "source_url": "https://ncsml.org/exhibit/a-century-of-robots-from-capek-to-now/"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "من أي كلمة لاتينية تطور شكل رمز «&»؟",
+    "correct_answer": "et",
+    "decoys": [
+      "non",
+      "est",
+      "aut"
+    ],
+    "image_url": null,
+    "source_url": "https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Ampersands/faq0002.html"
+  },
+  {
+    "category_id": 11,
+    "language_code": "ar",
+    "question_text": "ما تسلسل الرموز الذي اقترحه سكوت فالمان عام 1982 لتمييز المزاح في الرسائل؟",
+    "correct_answer": "الوجه المبتسم :-)",
+    "decoys": [
+      "الوجه الحزين :-(",
+      "الوجه المتفاجئ :-O",
+      "الوجه الغامز ;-)"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cs.cmu.edu/~sef/Orig-Smiley.htm"
+  }
+]

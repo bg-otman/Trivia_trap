@@ -208,7 +208,11 @@ async def get_vote_choices(manager: RoomManager, context: Context):
     public_choices = [
         {
             "id": choice["id"],
-            "text": choice["text"],
+            "text": (
+                choice["text"].lower()
+                if room.meta_data.settings.language == "en"
+                else choice["text"]
+            ),
         }
         for choice in room.meta_data.voting_choices
     ]

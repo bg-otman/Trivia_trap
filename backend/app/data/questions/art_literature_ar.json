@@ -1,0 +1,1302 @@
+[
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر الجاهلي صاحب المعلقة الشهيرة التي مطلعها \"قِفَا نَبْكِ مِنْ ذِكْرَى حَبِيبٍ وَمَنْزِلِ\"؟",
+        "correct_answer": "امرؤ القيس",
+        "decoys": [
+            "طرفة بن العبد",
+            "زهير بن أبي سلمى",
+            "عنترة بن شداد"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Imru-al-Qays"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما هو اللقب الشهير للشاعر العباسي أحمد بن الحسين الجعفي صاحب ديوان الشعر الأشهر في الأدب العربي؟",
+        "correct_answer": "المتنبي",
+        "decoys": [
+            "البحتري",
+            "أبو تمام",
+            "ديك الجن"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/al-Mutanabbi"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر والفيلسوف العباسي الملقب بـ \"رهين المحبسين\" وصاحب كتاب \"رسالة الغفران\"؟",
+        "correct_answer": "أبو العلاء المعري",
+        "decoys": [
+            "أبو حيان التوحيدي",
+            "ابن الرومي",
+            "ابن الفارض"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Abu-al-Ala-al-Maarri"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر العباسي الذي جمع كتاب \"ديوان الحماسة\" واشتهر بقصيدة فتح عمورية؟",
+        "correct_answer": "أبو تمام",
+        "decoys": [
+            "البحتري",
+            "ابن المعتز",
+            "دعبل الخزاعي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Abu-Tammam"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر الجاهلي الفارس صاحب المعلقة التي تبدأ بـ \"هَلْ غَادَرَ الشُّعَرَاءُ مِنْ مُتَرَدَّمِ\"؟",
+        "correct_answer": "عنترة بن شداد",
+        "decoys": [
+            "عمرو بن كلثوم",
+            "الحارث بن حلزة",
+            "النابغة الذبياني"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Antarah-ibn-Shaddad"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر الأندلسي القرطبي صاحب النونية الشهيرة في الحنين والوفاء إلى ولادة بنت المستكفي؟",
+        "correct_answer": "ابن زيدون",
+        "decoys": [
+            "لسان الدين بن الخطيب",
+            "ابن هانئ الأندلسي",
+            "ابن دراج القسطلي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Ibn-Zaydun"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر المصري الذي لُقب بـ \"أمير الشعراء\" وألف مسرحيات شعرية منها \"مجنون ليلى\"؟",
+        "correct_answer": "أحمد شوقي",
+        "decoys": [
+            "حافظ إبراهيم",
+            "خليل مطران",
+            "معروف الرصافي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Ahmad-Shawqi"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر المصري المعروف بلقب \"شاعر النيل\" والمعاصر لأحمد شوقي؟",
+        "correct_answer": "حافظ إبراهيم",
+        "decoys": [
+            "محمود سامي البارودي",
+            "إسماعيل صبري",
+            "عبد الرحمن شكري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Hafiz-Ibrahim"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر التونسي صاحب البيت الشهير: \"إذا الشَّعْبُ يَوْمَاً أرَادَ الْحَيَاةَ .. فَلا بُدَّ أنْ يَسْتَجِيبَ القَدَر\"؟",
+        "correct_answer": "أبو القاسم الشابي",
+        "decoys": [
+            "علي الدوعاجي",
+            "منور صمادح",
+            "مصطفى خريف"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Abu-al-Qasim-al-Shabbi"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الأديب والشاعر اللبناني المهجري صاحب كتاب \"النبي\" (The Prophet) ومؤسس الرابطة القلمية؟",
+        "correct_answer": "جبران خليل جبران",
+        "decoys": [
+            "ميخائيل نعيمة",
+            "إيليا أبو ماضي",
+            "أمين الريحاني"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Khalil-Gibran"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر الطبيب المصري صاحب قصيدة \"الأطلال\" الشهيرة التي غنتها أم كلثوم؟",
+        "correct_answer": "إبراهيم ناجي",
+        "decoys": [
+            "أحمد رامي",
+            "علي محمود طه",
+            "محمود حسن إسماعيل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Ibrahim-Naji"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر الصحابي الذي أنشد قصيدته الشهيرة \"بانت سعاد\" أمام النبي محمد ﷺ فكساه بردته الشريفة؟",
+        "correct_answer": "كعب بن زهير",
+        "decoys": [
+            "حسان بن ثابت",
+            "عبد الله بن رواحة",
+            "الحطيئة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Bant-Suad"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الوزير والشاعر الأندلسي الغرناطي صاحب الموشحة الخالدة \"جادك الغيث إذا الغيث هما\"؟",
+        "correct_answer": "لسان الدين بن الخطيب",
+        "decoys": [
+            "ابن زمرك",
+            "ابن سهل الأندلسي",
+            "ابن خاتمة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Ibn-al-Khatib"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر العباسي البارز في بغداد الذي اشتهر بشعر الغزل الصريح والخمريات والتجديد في الأسلوب؟",
+        "correct_answer": "أبو نواس",
+        "decoys": [
+            "بشار بن برد",
+            "مسلم بن الوليد",
+            "العباس بن الأحنف"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Abu-Nuwas"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو المتصوف والشاعر الأندلسي الملقب بـ \"الشيخ الأكبر\" وصاحب ديوان \"ترجمان الأشواق\"؟",
+        "correct_answer": "محيي الدين بن عربي",
+        "decoys": [
+            "ابن الفارض",
+            "جلال الدين الرومي",
+            "عبد الكريم الجيلي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Ibn-Arabi"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الأديب العباسي الذي ترجم كتاب الحكايات الرمزية الشهير \"كليلة ودمنة\" إلى العربية من الفهلوية؟",
+        "correct_answer": "عبد الله بن المقفع",
+        "decoys": [
+            "ابن قتيبة",
+            "سهل بن هارون",
+            "عمرو بن مسعدة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Ibn-al-Muqaffa"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو أديب البصرة الشهير في العصر العباسي وصاحب كتاب \"البخلاء\" وكتاب \"الحيوان\"؟",
+        "correct_answer": "الجاحظ",
+        "decoys": [
+            "أبو حيان التوحيدي",
+            "المبرد",
+            "ابن عبد ربه"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/al-Jahiz"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما هو الفن الأدبي النثري الذي ابتكره بديع الزمان الهمذاني وجعل بطله أبا الفتح الإسكندري؟",
+        "correct_answer": "المقامات",
+        "decoys": [
+            "الموشحات",
+            "السير الشعبية",
+            "الرباعيات"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Badi-al-Zaman-al-Hamadhani"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب المصري الملقب بـ \"عميد الأدب العربي\" وصاحب السيرة الذاتية الشهيرة \"الأيام\"؟",
+        "correct_answer": "طه حسين",
+        "decoys": [
+            "عباس محمود العقاد",
+            "أحمد أمين",
+            "مصطفى صادق الرافعي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Taha-Hussein"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب والمسرحي المصري الرائد الذي اشتهر بـ \"المسرح الذهني\" ومسرحية \"أهل الكهف\"؟",
+        "correct_answer": "توفيق الحكيم",
+        "decoys": [
+            "يوسف إدريس",
+            "ألفريد فرج",
+            "سعد الله ونوس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Tawfiq-al-Hakim"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الروائي السوداني صاحب الرواية الشهيرة \"موسم الهجرة إلى الشمال\" وبطلها مصطفى سعيد؟",
+        "correct_answer": "الطيب صالح",
+        "decoys": [
+            "إبراهيم الكوني",
+            "جمال الغيطاني",
+            "صنع الله إبراهيم"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/al-Tayyib-Salih"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب الفلسطيني صاحب الروايتين البارزتين \"رجال في الشمس\" و\"عائد إلى حيفا\"؟",
+        "correct_answer": "غسان كنفاني",
+        "decoys": [
+            "إميل حبيبي",
+            "جبرا إبراهيم جبرا",
+            "محمود شقير"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Ghassan-Kanafani"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما اسم الخماسية الروائية الضخمة التي ألفها عبد الرحمن منيف وتناولت أثر النفط والتحولات الاجتماعية؟",
+        "correct_answer": "مدن الملح",
+        "decoys": [
+            "أرض السواد",
+            "مدارات الشرق",
+            "ثلاثية غرناطة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Abd-al-Rahman-Munif"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب المغربي صاحب السيرة الروائية الشهيرة \"الخبز الحافي\" التي تدور أحداثها في طنجة؟",
+        "correct_answer": "محمد شكري",
+        "decoys": [
+            "محمد برادة",
+            "محمد زفزاف",
+            "إدريس الشرايبي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Mohamed-Choukri"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب المغربي الذي نال جائزة غونكور (Prix Goncourt) الفرنسية عام 1987 عن روايته \"ليلة القدر\"؟",
+        "correct_answer": "الطاهر بن جلون",
+        "decoys": [
+            "عبد اللطيف اللعبي",
+            "إدريس الشرايبي",
+            "فؤاد العروي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Tahar-Ben-Jelloun"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الروائي المغربي الفرنكوفوني الرائد صاحب رواية \"الماضي البسيط\" (Le Passé simple) الصادرة عام 1954؟",
+        "correct_answer": "إدريس الشرايبي",
+        "decoys": [
+            "عبد الكبير الخطيبي",
+            "أحمد الصفريوي",
+            "محمد خير الدين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Driss-Chraibi"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هي الكاتبة المصرية صاحبة الرواية التاريخية \"ثلاثية غرناطة\" التي تناولت سقوط الأندلس ومصير الموريسكيين؟",
+        "correct_answer": "رضوى عاشور",
+        "decoys": [
+            "لطيفة الزيات",
+            "سحر خليفة",
+            "هدى بركات"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Granada-Spain"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو مؤلف الموسوعة الأدبية التراثية الضخمة \"كتاب الأغاني\" في العصر العباسي؟",
+        "correct_answer": "أبو الفرج الأصفهاني",
+        "decoys": [
+            "ابن عبد ربه",
+            "ياقوت الحموي",
+            "ابن النديم"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Kitab-al-aghani"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما اسم الراوية الأسطورية في حكايات \"ألف ليلة وليلة\" التي كانت تسرد الحكايات للملك شهريار؟",
+        "correct_answer": "شهرزاد",
+        "decoys": [
+            "دنيازاد",
+            "زمردة",
+            "قوت القلوب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/The-Thousand-and-One-Nights"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الأديب المغربي الملقب بـ \"شاعر القصة القصيرة والرواية\" وصاحب رواية \"المرأة والوردة\"؟",
+        "correct_answer": "محمد زفزاف",
+        "decoys": [
+            "أحمد بوزفور",
+            "عبد الجبار السحيمي",
+            "مبارك ربيع"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Morocco"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر الإغريقي القديم الذي تُنسب إليه ملحمتا \"الإلياذة\" و\"الأوديسة\"؟",
+        "correct_answer": "هوميروس",
+        "decoys": [
+            "هسيودوس",
+            "بيندار",
+            "فرجيل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Homer-Greek-poet"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الشاعر الإيطالي صاحب ملحمة \"الكوميديا الإلهية\" بأقسامها: الجحيم والمطهر والفردوس؟",
+        "correct_answer": "دانتي أليغييري",
+        "decoys": [
+            "فرانشيسكو بتراركا",
+            "جيوفاني بوكاتشيو",
+            "توركواتو تاسو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Dante-Alighieri"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب الإسباني الذي ألف رواية الفارس المتجول الشهيرة \"دون كيخوته\" (Don Quixote) عام 1605؟",
+        "correct_answer": "ميغيل دي ثيربانتس",
+        "decoys": [
+            "لوبي دي فيغا",
+            "بيدرو كالديرون",
+            "فيديريكو غارسيا لوركا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Miguel-de-Cervantes"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب الروسي صاحب الملحمتين الروائيتين الخالدتين \"الحرب والسلام\" و\"آنا كارينينا\"؟",
+        "correct_answer": "ليو تولستوي",
+        "decoys": [
+            "فيودور دوستويفسكي",
+            "إيفان تورغينيف",
+            "نيكولاي غوغول"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Leo-Tolstoy"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب الروسي الذي صور الصراع النفسي لشخصية راسكولنيكوف في رواية \"الجريمة والعقاب\"؟",
+        "correct_answer": "فيودور دوستويفسكي",
+        "decoys": [
+            "ليو تولستوي",
+            "مكسيم غوركي",
+            "أنطون تشيخوف"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Fyodor-Dostoyevsky"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب والطيار الفرنسي الذي كتب الحكاية الفلسفية الشهيرة \"الأمير الصغير\" (Le Petit Prince)؟",
+        "correct_answer": "أنطوان دو سانت إكزوبيري",
+        "decoys": [
+            "أندريه جيد",
+            "جان بول سارتر",
+            "مارسيل بروست"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Antoine-de-Saint-Exupery"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الروائي الفرنسي صاحب روايتي \"البؤساء\" (Les Misérables) و\"أحدب نوتردام\"؟",
+        "correct_answer": "فيكتور هيغو",
+        "decoys": [
+            "ألكسندر دوما",
+            "أونوريه دي بلزاك",
+            "إميل زولا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Victor-Hugo"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الروائي الفرنسي الذي كتب رواية المغامرات التاريخية \"الفرسان الثلاثة\" و\"الكونت دي مونت كريستو\"؟",
+        "correct_answer": "ألكسندر دوما",
+        "decoys": [
+            "فيكتور هيغو",
+            "جول فيرن",
+            "غي دو موباسان"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Alexandre-Dumas-pere"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هي الكاتبة الإنجليزية صاحبة الرواية الرومانسية الكلاسيكية \"مرتفعات وذرنغ\" (Wuthering Heights)؟",
+        "correct_answer": "إميلي برونتي",
+        "decoys": [
+            "شارلوت برونتي",
+            "آن برونتي",
+            "ماري شيلي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Emily-Bronte"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الروائي الإنجليزي الفيكتوري صاحب روايات \"أوليفر تويست\" و\"قصة مدينتين\" و\"ديفيد كوبرفيلد\"؟",
+        "correct_answer": "تشارلز ديكنز",
+        "decoys": [
+            "ويليام ثاكري",
+            "توماس هاردي",
+            "جورج إليوت"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Charles-Dickens-British-novelist"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب الذي ألف رواية \"المسخ\" (The Metamorphosis) التي يستيقظ فيها بطلها متحولاً إلى حشرة؟",
+        "correct_answer": "فرانتس كافكا",
+        "decoys": [
+            "ميلان كونديرا",
+            "ستيفان تسفايغ",
+            "راينر ماريا ريلكه"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Franz-Kafka"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الأديب والشاعر الألماني العظيم صاحب المسرحية الشعرية \"فاوست\" ورواية \"آلام الشاب فرتر\"؟",
+        "correct_answer": "يوهان فولفغانغ فون غوته",
+        "decoys": [
+            "فريدريش شيلر",
+            "هاينريش هاينه",
+            "غوتهولد ليسنغ"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Johann-Wolfgang-von-Goethe"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب المسرحي الكوميدي الفرنسي البارز في القرن السابع عشر صاحب مسرحيات \"البخيل\" و\"طرطوف\"؟",
+        "correct_answer": "موليير",
+        "decoys": [
+            "بيير كورني",
+            "جان راسين",
+            "بومارشيه"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Moliere"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما اسم رواية الخيال السياسي الديستوبي التي نشرها جورج أورويل عام 1949 وقدمت شخصية \"الأخ الأكبر\"؟",
+        "correct_answer": "1984",
+        "decoys": [
+            "عالم جديد شجاع",
+            "فهرنهايت 451",
+            "مزرعة الحيوان"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Nineteen-Eighty-four"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الكاتب الأرجنتيني الرائد في القصة القصيرة والواقعية السحرية وصاحب مجموعة \"الألف\" (El Aleph)؟",
+        "correct_answer": "خورخي لويس بورخيس",
+        "decoys": [
+            "خوليو كورتاسار",
+            "إيزابيل الليندي",
+            "ماريو فارغاس يوسا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Jorge-Luis-Borges"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الروائي التشيكي الفرنسي صاحب رواية \"كائن لا تحتمل خفته\" (The Unbearable Lightness of Being)؟",
+        "correct_answer": "ميلان كونديرا",
+        "decoys": [
+            "بوهوميل هرابال",
+            "إيفان كليما",
+            "فاتسلاف هافيل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Milan-Kundera"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الروائي الفرنسي صاحب رواية \"مدام بوفاري\" الواقعية التي أحدثت ضجة أدبية كبرى عام 1857؟",
+        "correct_answer": "غوستاف فلوبير",
+        "decoys": [
+            "ستندال",
+            "أونوريه دي بلزاك",
+            "إميل زولا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Gustave-Flaubert"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هي الروائية الإنجليزية الحداثية رائدة أسلوب تيار الوعي وصاحبة روايتي \"السيدة دالواي\" و\"إلى المنارة\"؟",
+        "correct_answer": "فيرجينيا وولف",
+        "decoys": [
+            "سيلفيا بلاث",
+            "أجاثا كريستي",
+            "ماري ويلستونكرافت"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Virginia-Woolf"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الروائي الإيطالي البارز صاحب رواية \"مدن لا مرئية\" ورواية \"بارون فوق الشجر\"؟",
+        "correct_answer": "إيتالو كالفينو",
+        "decoys": [
+            "أومبرتو إيكو",
+            "ألبرتو مورافيا",
+            "بريمو ليفي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Italo-Calvino"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الروائي الإيرلندي صاحب رواية \"عوليس\" (Ulysses) الصادرة عام 1922 وتعد علامة في الأدب الحداثي؟",
+        "correct_answer": "جيمس جويس",
+        "decoys": [
+            "برام ستوكر",
+            "أوسكار وايلد",
+            "ويليام بتلر ييتس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/James-Joyce"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الفنان الإيطالي الذي رسم لوحة \"العشاء الأخير\" الجدارية في دير سانتا ماريا ديلي غراتسي بميلانو؟",
+        "correct_answer": "ليوناردو دا فينشي",
+        "decoys": [
+            "مايكل أنجلو",
+            "رفائيل",
+            "ساندرو بوتيتشيلي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Last-Supper-fresco-by-Leonardo-da-Vinci"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو فنان عصر النهضة الإيطالي الذي رسم لوحة \"خلق آدم\" على سقف كنيسة سيستينا في الفاتيكان؟",
+        "correct_answer": "مايكل أنجلو",
+        "decoys": [
+            "دوناتيلو",
+            "تيتيان",
+            "جوتو دي بوندوني"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Creation-of-Adam"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو فنان عصر النهضة الذي رسم لوحة \"مدرسة أثينا\" الجدارية في الفاتيكان وتضم كبار فلاسفة اليونان؟",
+        "correct_answer": "رفائيل",
+        "decoys": [
+            "ليوناردو دا فينشي",
+            "مايكل أنجلو",
+            "تينتوريتو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/School-of-Athens"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الإسباني الرومانسي صاحب اللوحة الشهيرة \"الثالث من مايو 1808\" في متحف برادو؟",
+        "correct_answer": "فرانثيسكو غويا",
+        "decoys": [
+            "دييغو فيلازكيز",
+            "بارتولومي إستيبان موريللو",
+            "إل غريكو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/The-Third-of-May-1808"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الفرنسي الرومانسي الذي رسم لوحة \"الحرية تقود الشعب\" لتخليد ثورة يوليو 1830؟",
+        "correct_answer": "يوجين ديلاكروا",
+        "decoys": [
+            "تيودور جيريكو",
+            "جاك لوي دافيد",
+            "جان أونوريه فراغونار"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Liberty-Leading-the-People"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الفرنسي الذي رسم اللوحة الدرامية التاريخية الضخمة \"طوافة قنديل البحر\" (The Raft of the Medusa)؟",
+        "correct_answer": "تيودور جيريكو",
+        "decoys": [
+            "يوجين ديلاكروا",
+            "غوستاف كوربيه",
+            "بول ديلاروش"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/The-Raft-of-the-Medusa"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الهولندي في القرن الخامس عشر صاحب الثلاثية الفنية الشهيرة \"حديقة المباهج الأرضية\"؟",
+        "correct_answer": "هيرونيموس بوش",
+        "decoys": [
+            "بيتر برويغيل الأكبر",
+            "لوكاس فان ليدن",
+            "يان برويغيل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/The-Garden-of-Earthly-Delights-by-Bosch"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الإيطالي الباروكي الذي اشتهر بتوظيف التباين الشديد بين الضوء والظلام والواقعية في لوحاته؟",
+        "correct_answer": "كارافاجيو",
+        "decoys": [
+            "أرتيميسيا جينتيليسكي",
+            "أنيبالي كاراتشي",
+            "غيدو ريني"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Caravaggio"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الألماني الرومانسي صاحب اللوحة الشهيرة \"رحالة فوق بحر من الضباب\" (Wanderer above the Sea of Fog)؟",
+        "correct_answer": "كاسبر دافيد فريدريش",
+        "decoys": [
+            "فيليب أوتو رونغه",
+            "ألبرشت دورر",
+            "لوكاس كراناخ"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Caspar-David-Friedrich"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الفرنسي الكلاسيكي المحدث صاحب اللوحة الشهيرة \"قسم الإخوة هوراس\" ورسام نابليون بونابرت؟",
+        "correct_answer": "جاك لوي دافيد",
+        "decoys": [
+            "جان أوغست دومينيك آنغر",
+            "فرانسوا جيرار",
+            "أنطوان غرو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Jacques-Louis-David-French-painter"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الفرنسي الذي يُعتبر \"أبو الفن الحديث\" وصاحب سلسلة لوحات \"جبل سانت فيكتوار\"؟",
+        "correct_answer": "بول سيزان",
+        "decoys": [
+            "بول غوغان",
+            "إدغار ديغا",
+            "كاميل بيسارو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Paul-Cezanne"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الفلمنكي الباروكي الشهير بأعماله الدينية المفعمة بالحركة ولوحة \"نزول المسيح عن الصليب\"؟",
+        "correct_answer": "بيتر بول روبنز",
+        "decoys": [
+            "أنطوني فان ديك",
+            "ياكوب يوردانس",
+            "فرانس هالس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Peter-Paul-Rubens"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام اليوناني الأصل الذي عاش وأبدع في طليطلة الإسبانية ورسم تحفة \"دفن الكونت أورغاز\"؟",
+        "correct_answer": "إل غريكو",
+        "decoys": [
+            "فرانثيسكو دي زورباران",
+            "فيلازكيز",
+            "خوسيه دي ريبيرا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/El-Greco"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو رائد المدرسة الواقعية الفرنسية في الرسم وصاحب لوحتي \"مرسم الفنان\" و\"دفن في أورنان\"؟",
+        "correct_answer": "غوستاف كوربيه",
+        "decoys": [
+            "جان فرانسوا ميليه",
+            "أونوريه دومييه",
+            "إدوار مانيه"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Gustave-Courbet"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الفرنسي الذي أثارت لوحته \"غداء على العشب\" (Le Déjeuner sur l'herbe) ضجة في صالون المرفوضات عام 1863؟",
+        "correct_answer": "إدوار مانيه",
+        "decoys": [
+            "كلود مونيه",
+            "بيير أوجست رينوار",
+            "إدغار ديغا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Luncheon-on-the-Grass-by-Manet"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام التعبيري النرويجي الذي رسم اللوحة الأيقونية الشهيرة \"الصرخة\" (The Scream) عام 1893؟",
+        "correct_answer": "إدوارد مونك",
+        "decoys": [
+            "إيغون شيلي",
+            "غوستاف كليمت",
+            "أوسكار كوكوشكا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Edvard-Munch"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الفنان الروسي الذي يُعد رائد الفن التجريدي البحت وأحد مؤسسي جماعة \"الفارس الأزرق\"؟",
+        "correct_answer": "فاسيلي كاندينسكي",
+        "decoys": [
+            "كازيمير ماليفيتش",
+            "إل ليسيتزكي",
+            "فلاديمير تاتلين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Wassily-Kandinsky"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الهولندي رائد حركة \"النيوبلاستيسيزم\" الذي اشتهر بشبكات الخطوط السوداء والمربعات ذات الألوان الأولية؟",
+        "correct_answer": "بييت موندريان",
+        "decoys": [
+            "ثيو فان دوزبرغ",
+            "بارت فان دير ليك",
+            "خيريت ريتفيلد"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Piet-Mondrian"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هي الرسامة المكسيكية الشهيرة التي تميزت بلوحاتها الذاتية الصادقة وثقافتها الشعبية وأزيائها التقليدية؟",
+        "correct_answer": "فريدا كاهلو",
+        "decoys": [
+            "ماريا إزكويردو",
+            "ليونورا كارينغتون",
+            "ريميديوس فارو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Frida-Kahlo"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو فنان الجداريات المكسيكي الرائد وزوج فريدا كاهلو الذي اشتهر بجدارياته السياسية والتاريخية الكبرى؟",
+        "correct_answer": "دييغو ريفيرا",
+        "decoys": [
+            "ديفيد ألفارو سيكيروس",
+            "خوسيه كليمنتي أوروزكو",
+            "روفينو تامايو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Diego-Rivera"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الفرنسي ما بعد الانطباعي الذي غادر إلى جزيرة تاهيتي في بولينيزيا ليرسم ألوانها وحياتها؟",
+        "correct_answer": "بول غوغان",
+        "decoys": [
+            "بول سيزان",
+            "هنري دي تولوز لوتريك",
+            "جورج سورا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Paul-Gauguin"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام السريالي البلجيكي صاحب اللوحة الشهيرة لغليون يعلو عبارة \"هذا ليس غليوناً\"؟",
+        "correct_answer": "رينيه ماغريت",
+        "decoys": [
+            "بول ديلفو",
+            "ماكس إرنست",
+            "إيف تانغي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Rene-Magritte"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الروسي الطليعي الذي أسس حركة \"التفوقية\" ورسم اللوحة الهندسية الشهيرة \"المربع الأسود\" عام 1915؟",
+        "correct_answer": "كازيمير ماليفيتش",
+        "decoys": [
+            "فاسيلي كاندينسكي",
+            "ألكسندر رودتشينكو",
+            "ميخائيل لاريونوف"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Kazimir-Malevich"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما اسم العمل الفني الجاهز المثير للجدل الذي قدمه مارسيل دوشامب عام 1917 وكان عبارة عن مبولة موقعة؟",
+        "correct_answer": "النافورة",
+        "decoys": [
+            "عجلة الدراجة",
+            "مجرفة الثلج",
+            "قارورة العطر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Fountain-ready-made-by-Duchamp"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الفنان الأمريكي رائد التعبيرية التجريدية الذي اشتهر بأسلوب \"الرسم بالتنقيط\" والحركي على القماش؟",
+        "correct_answer": "جاكسون بولوك",
+        "decoys": [
+            "مارك روثكو",
+            "ويليم دي كونيغ",
+            "فرانز كلاين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Jackson-Pollock"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الفنان الكتالوني السريالي الذي تميزت لوحاته بالأشكال الحيوية والرموز النجمية والألوان الصافية؟",
+        "correct_answer": "خوان ميرو",
+        "decoys": [
+            "سالفادور دالي",
+            "أنطوني تابيس",
+            "خوان غريس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Joan-Miro"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الفنان الروسي الفرنسي صاحب الأسلوب الحالم الشاعري الذي رسم سقف قصر غارنييه (أوبرا باريس)؟",
+        "correct_answer": "مارك شاغال",
+        "decoys": [
+            "حاييم سوتين",
+            "أميديو موديلياني",
+            "أوسيب زادكين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Marc-Chagall"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو النحات السويسري الوجودي الشهير بتماثيله البرونزية النحيلة والمتطاولة للشخصيات الإنسانية السائرة؟",
+        "correct_answer": "ألبرتو جياكوميتي",
+        "decoys": [
+            "هنري مور",
+            "كونستانتين برانكوشي",
+            "ألكسندر كالدر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Alberto-Giacometti"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو النحات الأمريكي الذي اشتهر بابتكار \"المنحوتات المتحركة\" (Mobiles) المتوازنة والمعلقة في الهواء؟",
+        "correct_answer": "ألكسندر كالدر",
+        "decoys": [
+            "ديفيد سميث",
+            "إيسامو نوغوتشي",
+            "ريتشارد سيرا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Alexander-Calder"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الرسام الأمريكي رائد \"فن حقول الألوان\" (Color Field) الذي تميز بمستطيلاته اللونية التأملية المتدرجة؟",
+        "correct_answer": "مارك روثكو",
+        "decoys": [
+            "بارنيت نيومان",
+            "كليفورد ستيل",
+            "روبرت مذرويل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Mark-Rothko"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما اسم تمثال الرخام الشهير الذي نحته مايكل أنجلو ويصور مريم العذراء تحتضن جثمان المسيح في كنيسة القديس بطرس؟",
+        "correct_answer": "البييتا (Pietà)",
+        "decoys": [
+            "موسى",
+            "باخوس",
+            "العبد المحتضر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Pieta-sculpture-by-Michelangelo"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو النحات والمعماري الباروكي الإيطالي الذي صمم ساحة القديس بطرس ونحت تمثال \"نشوة القديسة تيريزا\"؟",
+        "correct_answer": "جان لورينزو برنيني",
+        "decoys": [
+            "فرانشيسكو بوروميني",
+            "أليساندرو ألغاردي",
+            "بالماسولو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Gian-Lorenzo-Bernini"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو المعماري العثماني البارز الذي صمم جامع السليمانية في إسطنبول وجامع السليمية في أدرنة في القرن السادس عشر؟",
+        "correct_answer": "المعمار سنان",
+        "decoys": [
+            "داود أغا",
+            "صدفكار محمد أغا",
+            "معمار كمال الدين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Sinan"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو المعماري السويسري الفرنسي رائد العمارة الوظيفية الحديثة ومصمم مبنى \"فيلا سافوي\"؟",
+        "correct_answer": "لو كوربوزييه",
+        "decoys": [
+            "لودفيغ ميس فان دير روه",
+            "ألفار آلتو",
+            "لويس كان"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Le-Corbusier"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو المعماري الأمريكي رائد \"العمارة العضوية\" الذي صمم التحفة المعمارية الشهيرة \"بيت الشلال\" (Fallingwater)؟",
+        "correct_answer": "فرانك لويد رايت",
+        "decoys": [
+            "لويس سوليفان",
+            "ريتشارد نويترا",
+            "فيليب جونسون"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Frank-Lloyd-Wright"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هي المعمارية العراقية البريطانية الملقبة بـ \"ملكة المنحنيات\" وأول امرأة تفوز بجائزة بريتزكر للعمارة عام 2004؟",
+        "correct_answer": "زها حديد",
+        "decoys": [
+            "ريم كولهاس",
+            "كازويو سيجيما",
+            "غاي أولينتي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Zaha-Hadid"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو المهندس الفرنسي الذي صمم البرج الحديدي الأيقوني في باريس لمعرض إكسبو الدولي عام 1889؟",
+        "correct_answer": "غوستاف إيفل",
+        "decoys": [
+            "إتيان لويس بوليه",
+            "أوجين فيوليه لو دوك",
+            "هنري لابروست"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Eiffel-Tower-Paris-France"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "في أي مدينة روسية يقع متحف \"الإرميتاج\" الشهير الذي كان مقراً شتوياً لأباطرة وقياصرة روسيا؟",
+        "correct_answer": "سانت بطرسبرغ",
+        "decoys": [
+            "موسكو",
+            "قازان",
+            "فلاديفوستوك"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Hermitage-museum-Saint-Petersburg-Russia"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "في أي عاصمة أوروبية يقع متحف \"ديل برادو\" الشهير الذي يضم روائع فيلازكيز وغويا وإل غريكو؟",
+        "correct_answer": "مدريد",
+        "decoys": [
+            "برشلونة",
+            "إشبيلية",
+            "لشبونة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Prado-Museum"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو النحات الروماني الحداثي الرائد صاحب تمثال \"طائر في الفضاء\" (Bird in Space)؟",
+        "correct_answer": "كونستانتين برانكوشي",
+        "decoys": [
+            "هنري مور",
+            "جاك ليبشيتز",
+            "جان آرب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Constantin-Brancusi"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما هو الخط العربي التقليدي ذو الحروف المهيبة والمنحنيات الواسعة الذي يُلقب بـ \"أم الخطوط العربية\"؟",
+        "correct_answer": "خط الثلث",
+        "decoys": [
+            "خط الرقعة",
+            "خط النسخ",
+            "خط الإجازة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/thuluth-script"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما هو أقدم الخطوط العربية نشأة والذي تميز بحروفه الهندسية الصارمة وزينت به أوائل المصاحف والنقوش الصخرية؟",
+        "correct_answer": "الخط الكوفي",
+        "decoys": [
+            "الخط الديواني",
+            "الخط الفارسي",
+            "الخط المغربي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Kufic-script"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما هو الاسم الذي يُطلق على الفسيفساء الخزفية الهندسية الملونة التي تميز العمارة والقصور في المغرب والأندلس؟",
+        "correct_answer": "الزليج",
+        "decoys": [
+            "المقرنصات",
+            "النقش على الجبس",
+            "المشربية"
+        ],
+        "image_url": null,
+        "source_url": "https://whc.unesco.org/en/list/836/"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما هي العبارة والشعار المنقوش بكثرة في زخارف قصر الحمراء في غرناطة وشعار سلاطين بني نصر؟",
+        "correct_answer": "ولا غالب إلا الله",
+        "decoys": [
+            "العزة لله جميعاً",
+            "الملك لله الواحد القهار",
+            "لا إله إلا الله"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Alhambra-palace-Granada-Spain"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "أي معلم إسلامي أموي في القدس بناه عبد الملك بن مروان ويتميز بقبته الذهبية وأقدم النقوش الفسيفسائية المؤرخة لعام 691 م؟",
+        "correct_answer": "قبة الصخرة",
+        "decoys": [
+            "المسجد القبلي",
+            "المصلى المرواني",
+            "مسجد عمر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Dome-of-the-Rock"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما هي السمة المعمارية الفريدة في قاعة الصلاة بجامع قرطبة الكبير في الأندلس؟",
+        "correct_answer": "الأقواس المتراكبة ذات اللونين الأبيض والأحمر",
+        "decoys": [
+            "القباب الزجاجية الشفافة",
+            "الأعمدة الخرسانية المسلحة",
+            "النوافذ القوطية المدببة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Mosque-Cathedral-of-Cordoba"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو النحات المصري الرائد في مطلع القرن العشرين وصاحب تمثال \"نهضة مصر\" الغرانيتي الشهير؟",
+        "correct_answer": "محمود مختار",
+        "decoys": [
+            "محمود سعيد",
+            "جمال السجيني",
+            "آدم حنين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Mahmoud-Mokhtar"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الفنان التشكيلي المغربي الرائد الذي جمع بين التجريد الحداثي واستلهام العلامات والرموز التراثية والوشم؟",
+        "correct_answer": "أحمد الشرقاوي",
+        "decoys": [
+            "الجيلالي الغرباوي",
+            "محمد القاسمي",
+            "فريد بلكاهية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Morocco"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "من هو الفنان التشكيلي المغربي الذي يعتبر رائد \"التجريد الغنائي\" والحركي في المحترف الفني المغربي؟",
+        "correct_answer": "الجيلالي الغرباوي",
+        "decoys": [
+            "أحمد الشرقاوي",
+            "الشعيبية طلال",
+            "محمد المليحي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Morocco"
+    },
+    {
+        "category_id": 5,
+        "language_code": "ar",
+        "question_text": "ما هو نوع الخزف الإسلامي المميز ببريقه المعدني الذهبي أو النحاسي الذي ابتكره الخزافون في العصر العباسي؟",
+        "correct_answer": "الخزف ذو البريق المعدني",
+        "decoys": [
+            "الخزف الصيني الأزرق",
+            "الخزف الإغريقي الأحمر",
+            "الخزف المايوليكا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/art/lusterware"
+    }
+]

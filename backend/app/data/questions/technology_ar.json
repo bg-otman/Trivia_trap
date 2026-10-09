@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي ذاكرة صغيرة وسريعة تحتفظ بالبيانات التي يستخدمها المعالج كثيرًا؟",
+    "correct_answer": "ذاكرة التخزين المؤقت",
+    "decoys": [
+      "ذاكرة القراءة فقط",
+      "القرص الضوئي",
+      "شريط التخزين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/primary-storage"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي نوع من ذاكرة الحاسوب يحتاج إلى تحديث شحنته دوريًا؟",
+    "correct_answer": "DRAM",
+    "decoys": [
+      "SRAM",
+      "ROM",
+      "ذاكرة فلاش"
+    ],
+    "image_url": null,
+    "source_url": "https://www.micron.com/products/memory/dram-components/ddr5-sdram"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما القطعة التي تربط المعالج والذاكرة وبقية مكونات الحاسوب؟",
+    "correct_answer": "اللوحة الأم",
+    "decoys": [
+      "بطاقة الصوت",
+      "مزود الطاقة",
+      "وحدة التبريد"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/hardware"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي جهاز يحوّل المستند الورقي إلى صورة رقمية؟",
+    "correct_answer": "الماسح الضوئي",
+    "decoys": [
+      "الطابعة",
+      "عارض البيانات",
+      "السماعة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/hardware"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي مكوّن يعرض الرسوم والصور على شاشة الحاسوب؟",
+    "correct_answer": "معالج الرسوميات",
+    "decoys": [
+      "بطاقة الشبكة",
+      "بطاقة الصوت",
+      "مزود الطاقة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/hardware"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي جهاز يُخرج النصوص والصور على الورق؟",
+    "correct_answer": "الطابعة",
+    "decoys": [
+      "الماسح الضوئي",
+      "الميكروفون",
+      "لوحة المفاتيح"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/hardware"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما نوع الوسيط الذي يقرأه محرك الأقراص باستخدام الليزر؟",
+    "correct_answer": "القرص الضوئي",
+    "decoys": [
+      "الشريط المغناطيسي",
+      "القرص المرن",
+      "بطاقة الذاكرة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/history/optical-storage"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي ناقل تستخدمه وحدات NVMe لنقل البيانات عادةً؟",
+    "correct_answer": "PCIe",
+    "decoys": [
+      "SATA",
+      "IDE",
+      "SCSI"
+    ],
+    "image_url": null,
+    "source_url": "https://nvmexpress.org/specification/nvme-over-pcie-transport-specification/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي جهاز يُستخدم عادةً لإدخال الصوت إلى الحاسوب؟",
+    "correct_answer": "الميكروفون",
+    "decoys": [
+      "السماعة",
+      "الشاشة",
+      "الطابعة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/hardware"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الجزء المركزي من نظام التشغيل الذي يتعامل مباشرة مع موارد الجهاز؟",
+    "correct_answer": "النواة",
+    "decoys": [
+      "محمّل الإقلاع",
+      "برنامج التشغيل",
+      "واجهة المستخدم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/operating-systems"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما اسم البرنامج الذي يتيح لنظام التشغيل التعامل مع قطعة عتاد محددة؟",
+    "correct_answer": "برنامج التشغيل",
+    "decoys": [
+      "النواة",
+      "محمّل الإقلاع",
+      "مدير الملفات"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/operating-systems"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما اسم تنظيم الملفات والمجلدات على وسيط التخزين؟",
+    "correct_answer": "نظام الملفات",
+    "decoys": [
+      "مدير الملفات",
+      "جدول الأقسام",
+      "نظام الأذونات"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/operating-systems"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي أمر يعرض محتويات المجلد في أنظمة يونكس؟",
+    "correct_answer": "ls",
+    "decoys": [
+      "cp",
+      "mv",
+      "rm"
+    ],
+    "image_url": null,
+    "source_url": "https://www.gnu.org/s/coreutils/manual/html_node/ls-invocation.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي أمر ينسخ ملفًا في أدوات GNU الأساسية؟",
+    "correct_answer": "cp",
+    "decoys": [
+      "mv",
+      "rm",
+      "mkdir"
+    ],
+    "image_url": null,
+    "source_url": "https://www.gnu.org/software/coreutils/manual/html_node/Basic-operations.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي أمر يغيّر صلاحيات ملف في أنظمة يونكس؟",
+    "correct_answer": "chmod",
+    "decoys": [
+      "chown",
+      "touch",
+      "pwd"
+    ],
+    "image_url": null,
+    "source_url": "https://www.gnu.org/software/coreutils/manual/html_node/Setting-Permissions.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي أمر يرسل إشارة إلى عملية في أنظمة يونكس؟",
+    "correct_answer": "kill",
+    "decoys": [
+      "find",
+      "sort",
+      "head"
+    ],
+    "image_url": null,
+    "source_url": "https://www.gnu.org/s/coreutils/manual/html_node/kill-invocation.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما نظام الملفات الشائع لأقراص ويندوز؟",
+    "correct_answer": "NTFS",
+    "decoys": [
+      "ext4",
+      "APFS",
+      "HFS+"
+    ],
+    "image_url": null,
+    "source_url": "https://learn.microsoft.com/en-us/windows/win32/fileio/basic-and-dynamic-disks"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ماذا يُسمّى تشغيل أكثر من برنامج في الوقت نفسه على نظام واحد؟",
+    "correct_answer": "تعدد المهام",
+    "decoys": [
+      "تعدد المستخدمين",
+      "تعدد المعالجات",
+      "تجزئة الذاكرة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/operating-systems"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما العملية التي تبدأ عند تشغيل الحاسوب وتحمّل نظام التشغيل؟",
+    "correct_answer": "الإقلاع",
+    "decoys": [
+      "الأرشفة",
+      "الفهرسة",
+      "التنسيق"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/docs/en/aix/7.3.0?topic=startup-boot-process"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي نوع في بايثون يخزن أزواجًا من المفاتيح والقيم؟",
+    "correct_answer": "القاموس",
+    "decoys": [
+      "القائمة",
+      "المجموعة",
+      "الصف"
+    ],
+    "image_url": null,
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي نوع في بايثون يمنع تكرار عناصره؟",
+    "correct_answer": "المجموعة",
+    "decoys": [
+      "القائمة",
+      "الصف",
+      "السلسلة النصية"
+    ],
+    "image_url": null,
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي دالة في بايثون تعيد عدد عناصر تسلسل؟",
+    "correct_answer": "len()",
+    "decoys": [
+      "sum()",
+      "print()",
+      "type()"
+    ],
+    "image_url": null,
+    "source_url": "https://docs.python.org/3/tutorial/datastructures.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي تعليمة في بايثون تعالج الاستثناءات المحتملة؟",
+    "correct_answer": "try",
+    "decoys": [
+      "for",
+      "import",
+      "pass"
+    ],
+    "image_url": null,
+    "source_url": "https://docs.python.org/3/tutorial/errors.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ماذا تعني القيمة None في بايثون؟",
+    "correct_answer": "غياب قيمة",
+    "decoys": [
+      "قيمة صحيحة",
+      "العدد صفر",
+      "سلسلة فارغة"
+    ],
+    "image_url": null,
+    "source_url": "https://docs.python.org/3/library/constants.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي بيئة تنفذ الشفرة الوسيطة لبرامج جافا؟",
+    "correct_answer": "آلة جافا الافتراضية",
+    "decoys": [
+      "بيئة Node.js",
+      "مترجم بايثون",
+      ".NET CLR"
+    ],
+    "image_url": null,
+    "source_url": "https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-1.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "بماذا تُسمّى المهمة الخفيفة التي تُستخدم للتزامن في لغة Go؟",
+    "correct_answer": "goroutine",
+    "decoys": [
+      "thread pool",
+      "promise",
+      "iterator"
+    ],
+    "image_url": null,
+    "source_url": "https://go.dev/tour/concurrency/1"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الفكرة التي تستخدمها Rust لإدارة الذاكرة دون جامع قمامة تقليدي؟",
+    "correct_answer": "الملكية",
+    "decoys": [
+      "جمع القمامة",
+      "العد المرجعي",
+      "الحجز اليدوي"
+    ],
+    "image_url": null,
+    "source_url": "https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي لغة تضيف نظام أنواع ثابتة إلى جافاسكريبت؟",
+    "correct_answer": "TypeScript",
+    "decoys": [
+      "PHP",
+      "Ruby",
+      "Lua"
+    ],
+    "image_url": null,
+    "source_url": "https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما اللغة التي طوّرها دينيس ريتشي في مختبرات بيل؟",
+    "correct_answer": "C",
+    "decoys": [
+      "Java",
+      "Pascal",
+      "Python"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/timeline/software-languages/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي دالة في بايثون تنشئ نطاقًا من الأعداد؟",
+    "correct_answer": "range()",
+    "decoys": [
+      "slice()",
+      "enumerate()",
+      "filter()"
+    ],
+    "image_url": null,
+    "source_url": "https://docs.python.org/3/tutorial/controlflow.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي تعليمة في بايثون تُستخدم للخروج من الحلقة فورًا؟",
+    "correct_answer": "break",
+    "decoys": [
+      "continue",
+      "pass",
+      "yield"
+    ],
+    "image_url": null,
+    "source_url": "https://docs.python.org/3/tutorial/controlflow.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما رمز HTTP الذي يعني نجاح إنشاء مورد جديد؟",
+    "correct_answer": "201",
+    "decoys": [
+      "200",
+      "204",
+      "304"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما رمز HTTP الذي يعني أن الخادم يرفض الوصول إلى المورد؟",
+    "correct_answer": "403",
+    "decoys": [
+      "301",
+      "201",
+      "503"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي ترويسة HTTP تحدد نوع محتوى الاستجابة؟",
+    "correct_answer": "Content-Type",
+    "decoys": [
+      "User-Agent",
+      "Accept-Language",
+      "Cache-Control"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Type"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما البيانات الصغيرة التي يرسلها المتصفح عادةً مع طلباته لتذكّر جلسة الموقع؟",
+    "correct_answer": "ملفات تعريف الارتباط",
+    "decoys": [
+      "التخزين المحلي",
+      "تخزين الجلسة",
+      "ذاكرة التخزين المؤقت"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي مساحة تخزين ويب تبقي البيانات بعد إغلاق المتصفح عادةً؟",
+    "correct_answer": "localStorage",
+    "decoys": [
+      "sessionStorage",
+      "ذاكرة JavaScript",
+      "حالة الصفحة المؤقتة"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "في نموذج صندوق CSS، ما المنطقة الواقعة بين المحتوى والحد؟",
+    "correct_answer": "الحشو",
+    "decoys": [
+      "الهامش",
+      "الظل",
+      "العنوان"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي عنصر HTML يُستخدم لإنشاء رابط؟",
+    "correct_answer": "<a>",
+    "decoys": [
+      "<p>",
+      "<img>",
+      "<div>"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي عنصر HTML يُستخدم لإدراج صورة في الصفحة؟",
+    "correct_answer": "<img>",
+    "decoys": [
+      "<audio>",
+      "<form>",
+      "<table>"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي نوع من سجلات DNS يحدد خادم البريد الخاص بالنطاق؟",
+    "correct_answer": "MX",
+    "decoys": [
+      "A",
+      "CNAME",
+      "TXT"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cloudflare.com/learning/dns/dns-records/dns-mx-record/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي نوع من سجلات DNS يُستخدم لعنوان IPv6؟",
+    "correct_answer": "AAAA",
+    "decoys": [
+      "A",
+      "MX",
+      "NS"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cloudflare.com/learning/dns/dns-records/dns-aaaa-record/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الجهاز الذي يوجّه البيانات بين شبكات مختلفة؟",
+    "correct_answer": "الموجّه",
+    "decoys": [
+      "المبدّل",
+      "المكرّر",
+      "الموزّع"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-routing.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الرسالة التي يرسلها أمر ping لاختبار الوصول عادةً؟",
+    "correct_answer": "طلب صدى ICMP",
+    "decoys": [
+      "طلب HTTP",
+      "استعلام DNS",
+      "رسالة SMTP"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc792"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي عبارة في SQL تُرشّح الصفوف وفق شرط؟",
+    "correct_answer": "WHERE",
+    "decoys": [
+      "ORDER BY",
+      "GROUP BY",
+      "LIMIT"
+    ],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-select.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي عبارة في SQL ترتّب الصفوف الناتجة؟",
+    "correct_answer": "ORDER BY",
+    "decoys": [
+      "GROUP BY",
+      "HAVING",
+      "WHERE"
+    ],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-select.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي عبارة في SQL تجمع الصفوف التي تشترك في قيمة محددة؟",
+    "correct_answer": "GROUP BY",
+    "decoys": [
+      "ORDER BY",
+      "LIMIT",
+      "OFFSET"
+    ],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-select.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي دالة في SQL تُحصي الصفوف؟",
+    "correct_answer": "COUNT()",
+    "decoys": [
+      "SUM()",
+      "AVG()",
+      "MAX()"
+    ],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-select.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي عملية في SQL تجمع بيانات من جدولين مرتبطين؟",
+    "correct_answer": "JOIN",
+    "decoys": [
+      "UNION",
+      "DISTINCT",
+      "ORDER BY"
+    ],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-select.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي كلمة في SQL تزيل الصفوف المتطابقة من النتيجة؟",
+    "correct_answer": "DISTINCT",
+    "decoys": [
+      "ALL",
+      "OFFSET",
+      "HAVING"
+    ],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-select.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الكائن الذي يعرض نتيجة استعلام محفوظ كما لو كانت جدولًا؟",
+    "correct_answer": "العرض (View)",
+    "decoys": [
+      "الفهرس",
+      "المشغّل",
+      "الجدول المؤقت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/sql-createview.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي قيد يمنع تكرار القيم غير الفارغة في عمود أو مجموعة أعمدة؟",
+    "correct_answer": "UNIQUE",
+    "decoys": [
+      "CHECK",
+      "DEFAULT",
+      "NOT NULL"
+    ],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/ddl-constraints.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما القيمة التي تشير عادةً إلى غياب معلومة في جدول SQL؟",
+    "correct_answer": "NULL",
+    "decoys": [
+      "FALSE",
+      "صفر",
+      "سلسلة فارغة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.postgresql.org/docs/current/functions-comparison.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي نوع من قواعد البيانات ينظّم المعلومات في جداول مترابطة؟",
+    "correct_answer": "قاعدة البيانات العلائقية",
+    "decoys": [
+      "قاعدة البيانات المستندية",
+      "قاعدة البيانات الرسومية",
+      "قاعدة بيانات المفتاح والقيمة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/relational-databases"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما نوع البرمجيات الخبيثة التي قد تشفّر الملفات وتطالب بالدفع لفتحها؟",
+    "correct_answer": "برمجيات الفدية",
+    "decoys": [
+      "برمجيات التجسس",
+      "البرمجيات الإعلانية",
+      "الدودة الحاسوبية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nist.gov/itl/smallbusinesscyber/training/glossary"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما اسم محاولة تخمين كلمة المرور بتجربة احتمالات كثيرة؟",
+    "correct_answer": "هجوم القوة الغاشمة",
+    "decoys": [
+      "التصيد",
+      "التنصت",
+      "انتحال النطاق"
+    ],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/brute_force_password_attack"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الأداة التي تحفظ كلمات المرور وتساعد على إنشاء كلمات قوية؟",
+    "correct_answer": "مدير كلمات المرور",
+    "decoys": [
+      "جدار الحماية",
+      "الماسح الضوئي",
+      "موازن الحمل"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cisa.gov/secure-our-world"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الوثيقة الرقمية التي تربط مفتاحًا عامًا بهوية صاحبه؟",
+    "correct_answer": "الشهادة الرقمية",
+    "decoys": [
+      "ملف تعريف الارتباط",
+      "رمز الجلسة",
+      "بصمة الملف"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc5280"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الجهة الموثوقة التي تُصدر شهادات المواقع الرقمية وتوقّعها؟",
+    "correct_answer": "سلطة التصديق",
+    "decoys": [
+      "خادم البريد",
+      "مسجّل النطاقات",
+      "موفّر الإنترنت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rfc-editor.org/rfc/rfc5280"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما التقنية التي تنشئ اتصالًا خاصًا عبر شبكة عامة؟",
+    "correct_answer": "VPN",
+    "decoys": [
+      "DNS",
+      "FTP",
+      "SMTP"
+    ],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/virtual_private_network"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي عملية تتحقق من هوية المستخدم قبل السماح له بالدخول؟",
+    "correct_answer": "المصادقة",
+    "decoys": [
+      "التفويض",
+      "التشفير",
+      "التسجيل"
+    ],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/authentication"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي هجوم يدفع متصفح مستخدم مسجّل الدخول إلى إرسال طلب لم يقصده؟",
+    "correct_answer": "تزوير الطلبات عبر المواقع",
+    "decoys": [
+      "حقن SQL",
+      "التصيد الصوتي",
+      "هجوم الحرمان من الخدمة"
+    ],
+    "image_url": null,
+    "source_url": "https://owasp.org/www-community/attacks/csrf"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي هجوم يحقن شيفرة في صفحة ويب لتعمل في متصفحات زوارها؟",
+    "correct_answer": "البرمجة النصية عبر المواقع",
+    "decoys": [
+      "حقن SQL",
+      "تخمين كلمة المرور",
+      "انتحال عنوان IP"
+    ],
+    "image_url": null,
+    "source_url": "https://owasp.org/www-community/attacks/xss/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الإجراء الذي يتيح استعادة الملفات بعد عطل أو هجوم فدية؟",
+    "correct_answer": "استعادة نسخة احتياطية",
+    "decoys": [
+      "إعادة تثبيت النظام",
+      "فحص الجهاز من الفيروسات",
+      "تحديث نظام التشغيل"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cisa.gov/stopransomware/ransomware-guide"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما اسم تحديث برمجي مخصص لإصلاح ثغرة أمنية؟",
+    "correct_answer": "رقعة أمنية",
+    "decoys": [
+      "تحديث واجهة المستخدم",
+      "إصدار تجريبي",
+      "إضافة برمجية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cisa.gov/secure-our-world"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الاسم العام لبرنامج صُمم لإلحاق الضرر بجهاز أو سرقة بياناته؟",
+    "correct_answer": "برمجية خبيثة",
+    "decoys": [
+      "برنامج تشغيل",
+      "نظام ملفات",
+      "مترجم برمجي"
+    ],
+    "image_url": null,
+    "source_url": "https://csrc.nist.gov/glossary/term/malware"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي مهمة في تعلم الآلة تُسند البيانات إلى فئات محددة؟",
+    "correct_answer": "التصنيف",
+    "decoys": [
+      "الانحدار",
+      "التجميع",
+      "الضغط"
+    ],
+    "image_url": null,
+    "source_url": "https://developers.google.com/machine-learning/crash-course/classification"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي مهمة في تعلم الآلة تتنبأ بقيمة عددية مستمرة؟",
+    "correct_answer": "الانحدار",
+    "decoys": [
+      "التصنيف",
+      "التجميع",
+      "الفهرسة"
+    ],
+    "image_url": null,
+    "source_url": "https://developers.google.com/machine-learning/crash-course/linear-regression"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي أسلوب يجمع أمثلة متشابهة دون تسميات مسبقة؟",
+    "correct_answer": "التجميع",
+    "decoys": [
+      "التصنيف الخاضع للإشراف",
+      "الانحدار الخطي",
+      "الترميز"
+    ],
+    "image_url": null,
+    "source_url": "https://developers.google.com/machine-learning/clustering/overview"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي مجموعة بيانات يستخدمها النموذج لتعلم أنماط المهمة؟",
+    "correct_answer": "مجموعة التدريب",
+    "decoys": [
+      "مجموعة الاختبار",
+      "مجموعة التحقق",
+      "مجموعة الأرشفة"
+    ],
+    "image_url": null,
+    "source_url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي مجموعة تُستخدم للتقييم النهائي على أمثلة لم يرها النموذج؟",
+    "correct_answer": "مجموعة الاختبار",
+    "decoys": [
+      "مجموعة التدريب",
+      "مجموعة التحقق",
+      "مجموعة الوسوم"
+    ],
+    "image_url": null,
+    "source_url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ماذا يُسمّى تعلّم النموذج تفاصيل بيانات التدريب لدرجة تضعف أداءه على بيانات جديدة؟",
+    "correct_answer": "فرط التكيّف",
+    "decoys": [
+      "نقص التكيّف",
+      "التكميم",
+      "التجميع"
+    ],
+    "image_url": null,
+    "source_url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما اسم استخدام نموذج مدرّب لإنتاج نتيجة لمدخل جديد؟",
+    "correct_answer": "الاستدلال",
+    "decoys": [
+      "التدريب",
+      "الترميز",
+      "التوسيم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/ai-inference"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الأداة التي تتبع تغييرات ملفات المشروع عبر الزمن؟",
+    "correct_answer": "نظام التحكم بالإصدارات",
+    "decoys": [
+      "مدير النوافذ",
+      "موازن الحمل",
+      "جدار الحماية"
+    ],
+    "image_url": null,
+    "source_url": "https://git-scm.com/docs/user-manual"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي نوع من الاختبارات يفحص دالة أو مكوّنًا صغيرًا بمعزل عن بقية النظام؟",
+    "correct_answer": "اختبار الوحدة",
+    "decoys": [
+      "اختبار التكامل",
+      "اختبار القبول",
+      "اختبار الحمل"
+    ],
+    "image_url": null,
+    "source_url": "https://martinfowler.com/bliki/UnitTest.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي نوع من الاختبارات يتحقق من عمل مكوّنات مختلفة معًا؟",
+    "correct_answer": "اختبار التكامل",
+    "decoys": [
+      "اختبار الوحدة",
+      "اختبار الواجهة",
+      "اختبار الأداء"
+    ],
+    "image_url": null,
+    "source_url": "https://martinfowler.com/bliki/IntegrationTest.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما نوع الخدمة الذي يوفر موارد حوسبة عند الطلب عبر الإنترنت؟",
+    "correct_answer": "الحوسبة السحابية",
+    "decoys": [
+      "الحوسبة المحلية",
+      "الحوسبة المضمنة",
+      "الحوسبة الطرفية"
+    ],
+    "image_url": null,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/what-is-cloud-computing.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي نموذج تخزين سحابي يحفظ الملفات بوصفها كائنات ذات بيانات وصفية؟",
+    "correct_answer": "تخزين الكائنات",
+    "decoys": [
+      "تخزين الكتل",
+      "تخزين الملفات",
+      "التخزين المؤقت"
+    ],
+    "image_url": null,
+    "source_url": "https://aws.amazon.com/what-is/cloud-storage/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الشبكة التي تقرّب نسخ المحتوى من مستخدمي المواقع لتسريع وصوله؟",
+    "correct_answer": "شبكة توصيل المحتوى",
+    "decoys": [
+      "شبكة محلية خاصة",
+      "شبكة نظير إلى نظير",
+      "شبكة هاتفية"
+    ],
+    "image_url": null,
+    "source_url": "https://aws.amazon.com/what-is/cdn/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما التقنية التي تجمع التطبيق واعتماداته في وحدة خفيفة تشارك نواة نظام التشغيل؟",
+    "correct_answer": "الحاوية",
+    "decoys": [
+      "الآلة الافتراضية",
+      "عملية النظام",
+      "القرص الافتراضي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.docker.com/resources/what-container/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما نموذج تشغيل الشيفرة الذي يتولى فيه مزود السحابة إدارة الخوادم؟",
+    "correct_answer": "الحوسبة دون خوادم",
+    "decoys": [
+      "الاستضافة المنزلية",
+      "الحوسبة الطرفية",
+      "التشغيل المحلي"
+    ],
+    "image_url": null,
+    "source_url": "https://aws.amazon.com/what-is/serverless-computing/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الآلية التي يستخدمها أندرويد لطلب فتح شاشة من تطبيق آخر؟",
+    "correct_answer": "Intent",
+    "decoys": [
+      "Widget",
+      "Service",
+      "Fragment"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.android.com/training/basics/intents/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما امتداد حزمة تطبيق أندرويد القابلة للتثبيت؟",
+    "correct_answer": "APK",
+    "decoys": [
+      "EXE",
+      "DMG",
+      "ISO"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.android.com/guide/components/fundamentals.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الذي يطلبه تطبيق أندرويد قبل الوصول المباشر إلى كاميرا الهاتف؟",
+    "correct_answer": "إذن المستخدم",
+    "decoys": [
+      "مفتاح API",
+      "شهادة رقمية",
+      "حساب مطوّر"
+    ],
+    "image_url": null,
+    "source_url": "https://developer.android.com/training/permissions/explaining-access"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما التقنية اللاسلكية قصيرة المدى المستخدمة في الدفع بالهاتف عند نقطة البيع؟",
+    "correct_answer": "NFC",
+    "decoys": [
+      "GPS",
+      "LTE",
+      "Wi-Fi"
+    ],
+    "image_url": null,
+    "source_url": "https://nfc-forum.org/learn/nfc-technology/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما الرمز المربّع الذي يخزن معلومات يمكن قراءتها بكاميرا الهاتف؟",
+    "correct_answer": "رمز QR",
+    "decoys": [
+      "الباركود الخطي",
+      "الرمز البريدي",
+      "رقم IMEI"
+    ],
+    "image_url": null,
+    "source_url": "https://www.denso-wave.com/en/technology/vol1.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي أمر في Git ينشئ نسخة محلية من مستودع موجود؟",
+    "correct_answer": "git clone",
+    "decoys": [
+      "git status",
+      "git diff",
+      "git log"
+    ],
+    "image_url": null,
+    "source_url": "https://git-scm.com/docs/user-manual"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما اسم المسار المستقل لتطوير تغييرات في Git؟",
+    "correct_answer": "الفرع",
+    "decoys": [
+      "الوسم",
+      "الالتزام",
+      "الملف"
+    ],
+    "image_url": null,
+    "source_url": "https://git-scm.com/docs/user-manual"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي رخصة مفتوحة المصدر تشترط إبقاء النسخ المعدّلة تحت الرخصة نفسها عند توزيعها؟",
+    "correct_answer": "GPL",
+    "decoys": [
+      "MIT",
+      "BSD-3-Clause",
+      "Apache-2.0"
+    ],
+    "image_url": null,
+    "source_url": "https://www.gnu.org/licenses/gpl-3.0.html"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي أمر في Git يسجّل لقطة من التغييرات في تاريخ المستودع؟",
+    "correct_answer": "git commit",
+    "decoys": [
+      "git fetch",
+      "git status",
+      "git diff"
+    ],
+    "image_url": null,
+    "source_url": "https://git-scm.com/docs/user-manual"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي حاسوب بحثي من زيروكس جمع واجهة رسومية وفأرة وشبكة محلية؟",
+    "correct_answer": "زيروكس ألتو",
+    "decoys": [
+      "آبل 2",
+      "كومودور 64",
+      "آي بي إم 5150"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/revolution/story/348"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "من ارتبط اسمه بابتكار إيثرنت في مركز زيروكس للأبحاث؟",
+    "correct_answer": "روبرت ميتكالف",
+    "decoys": [
+      "دينيس ريتشي",
+      "جون باكوس",
+      "تيم بيرنرز لي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/timeline/networking-the-web/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما اسم الحاسوب الميكانيكي الذي صممه تشارلز باباج لتنفيذ برامج عامة؟",
+    "correct_answer": "الآلة التحليلية",
+    "decoys": [
+      "آلة التلغراف",
+      "آلة باسكال",
+      "آلة إنغما"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/babbage/engines/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما أول برنامج جداول بيانات حقق نجاحًا واسعًا للحواسيب الشخصية؟",
+    "correct_answer": "VisiCalc",
+    "decoys": [
+      "Lotus 1-2-3",
+      "Excel",
+      "Calc"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/revolution/personal-computers/17/305"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "في أي شركة طُوّرت لغة FORTRAN لأول مرة؟",
+    "correct_answer": "IBM",
+    "decoys": [
+      "Xerox",
+      "Apple",
+      "Intel"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/timeline/software-languages/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي جامعة استضافت أول عقدة لشبكة ARPANET عام 1969؟",
+    "correct_answer": "جامعة كاليفورنيا في لوس أنجلوس",
+    "decoys": [
+      "جامعة أكسفورد",
+      "جامعة طوكيو",
+      "جامعة تورنتو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/internethistory/1960s/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي مكوّن إلكتروني يحد من مرور التيار في الدائرة؟",
+    "correct_answer": "المقاومة",
+    "decoys": [
+      "المكثّف",
+      "الملف",
+      "المفتاح"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/college-physics-2e/pages/20-2-ohms-law-resistance-and-simple-circuits"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "أي مكوّن إلكتروني يخزن شحنة كهربائية مؤقتًا؟",
+    "correct_answer": "المكثّف",
+    "decoys": [
+      "المقاومة",
+      "الصمام الثنائي",
+      "الملف"
+    ],
+    "image_url": null,
+    "source_url": "https://openstax.org/books/college-physics-2e/pages/19-5-capacitors-and-dielectrics"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما اسم الشريحة التي تجمع مكوّنات إلكترونية عديدة في قطعة واحدة؟",
+    "correct_answer": "الدائرة المتكاملة",
+    "decoys": [
+      "الترانزستور",
+      "المكثّف",
+      "المقاومة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.computerhistory.org/siliconengine/"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "في بوابة AND المنطقية، متى يكون الخرج 1؟",
+    "correct_answer": "عندما يكون المدخلان 1",
+    "decoys": [
+      "عندما يكون المدخلان 0",
+      "عندما يكون الأول 1 والثاني 0",
+      "عندما يكون الأول 0 والثاني 1"
+    ],
+    "image_url": null,
+    "source_url": "https://learn.sparkfun.com/tutorials/digital-logic/combinational-logic"
+  },
+  {
+    "category_id": 6,
+    "language_code": "ar",
+    "question_text": "ما نوع الذاكرة الذي يحتفظ بالبيانات دون طاقة ويُستخدم في بطاقات الذاكرة؟",
+    "correct_answer": "ذاكرة فلاش",
+    "decoys": [
+      "DRAM",
+      "SRAM",
+      "ذاكرة المعالج المخبئية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ibm.com/think/topics/flash-memory"
+  }
+]
