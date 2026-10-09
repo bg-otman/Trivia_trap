@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 
 const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+let initialized = false;
+let activeCredentialHandler: ((credential: string) => void) | null = null;
 
 type GoogleIdentity = {
   initialize: (options: {
@@ -40,12 +42,16 @@ export function GoogleSignIn({ disabled, onCredential }: {
     const identity = window.google?.accounts.id;
     if (!ready || !clientId || !element || !identity) return;
 
-    identity.initialize({
-      client_id: clientId,
-      callback: ({ credential }) => onCredential(credential),
-      ux_mode: "popup",
-      auto_select: false,
-    });
+    activeCredentialHandler = onCredential;
+    if (!initialized) {
+      identity.initialize({
+        client_id: clientId,
+        callback: ({ credential }) => activeCredentialHandler?.(credential),
+        ux_mode: "popup",
+        auto_select: false,
+      });
+      initialized = true;
+    }
     identity.renderButton(element, {
       theme: "outline",
       size: "large",
@@ -53,7 +59,10 @@ export function GoogleSignIn({ disabled, onCredential }: {
       shape: "pill",
       width: Math.min(element.clientWidth, 400),
     });
-    return () => element.replaceChildren();
+    return () => {
+      if (activeCredentialHandler === onCredential) activeCredentialHandler = null;
+      element.replaceChildren();
+    };
   }, [ready, onCredential]);
 
   if (!clientId) {
@@ -68,7 +77,7 @@ export function GoogleSignIn({ disabled, onCredential }: {
         onError={() => setFailed(true)}
       />
       <div inert={disabled} aria-busy={disabled} className={disabled ? "opacity-50" : undefined}>
-        <div ref={container} className="flex min-h-10 w-full justify-center" />
+        <div ref={container} className="flex min-h-10 w-full justify-center overflow-hidden rounded-full" />
       </div>
       {(!ready || failed) && <p role="status" className="text-center text-sm text-trap-text-dim">
         {failed ? "Could not load Google sign-in. Reload the page or use email." : "Loading Google sign-in…"}

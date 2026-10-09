@@ -31,7 +31,7 @@ class ForgotPasswordData(BaseModel):
 
 class ResetPasswordData(BaseModel):
     token: SecretStr = Field(min_length=43, max_length=43)
-    password: Password = Field(min_length=15, max_length=128)
+    password: Password = Field(min_length=7, max_length=128)
 
     @field_validator("token")
     @classmethod

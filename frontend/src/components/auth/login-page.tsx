@@ -25,6 +25,36 @@ import { apiFetch } from "@/lib/api";
 
 type Mode = "login" | "register" | "reset" | "new-password";
 
+type ValidationIssue = { loc?: (string | number)[]; type?: string; msg?: string };
+
+function authValidationMessage(detail: unknown, mode: "login" | "register"): string {
+  if (!Array.isArray(detail)) return "Please check your details.";
+
+  const fields = mode === "register" ? ["username", "email", "password"] : ["email", "password"];
+  for (const field of fields) {
+    const issue = detail.find((entry: ValidationIssue) =>
+      entry && Array.isArray(entry.loc) && entry.loc[entry.loc.length - 1] === field
+    ) as ValidationIssue | undefined;
+    if (!issue) continue;
+
+    if (field === "username") {
+      if (issue.type === "missing") return "Enter a username.";
+      if (issue.type === "string_too_short") return "Username must be at least 3 characters.";
+      if (issue.type === "string_too_long") return "Username must be at most 15 characters.";
+      return issue.msg?.replace(/^Value error, /, "") ?? "Check your username.";
+    }
+    if (field === "email") return "Enter a valid email address.";
+    if (issue.type === "missing") return "Enter a password.";
+    if (issue.type === "too_short" || issue.type === "string_too_short") {
+      return mode === "login" ? "Enter your password." : "Password must be at least 7 characters.";
+    }
+    if (issue.type === "too_long" || issue.type === "string_too_long") return "Password must be at most 128 characters.";
+    return issue.msg?.replace(/^Value error, /, "") ?? "Check your password.";
+  }
+
+  return "Please check your details.";
+}
+
 export function LoginPage({ initialMode = "login", initialMessage = "" }: { initialMode?: Mode; initialMessage?: string }) {
   const router = useRouter();
   const reducedMotion = useReducedMotion();
@@ -80,6 +110,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
   const finishSignIn = useCallback(async () => {
     // Remove tokens left by the previous Local Storage implementation.
     localStorage.removeItem("access_token");
+    sessionStorage.removeItem("google_signup_credential");
     const session = await apiFetch("/auth/me");
     if (!session.ok) {
       setMessage("Sign-in succeeded, but the browser could not save your session. Check that the site and API use the same hostname.");
@@ -109,7 +140,12 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
         }
         return;
       }
-      const data = (await response.json()) as { access_token?: string; token_type?: string };
+      const data = (await response.json()) as { requires_username?: boolean; access_token?: string; token_type?: string };
+      if (data.requires_username === true) {
+        sessionStorage.setItem("google_signup_credential", credential);
+        router.replace("/choose-username");
+        return;
+      }
       if (!data.access_token || data.token_type !== "bearer") {
         setMessage("The server did not return a valid login session. Please try again.");
         return;
@@ -121,7 +157,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
       requestInFlight.current = false;
       setPending(false);
     }
-  }, [finishSignIn]);
+  }, [finishSignIn, router]);
 
   function changeMode(next: Mode, afterRequest = false) {
     if (pending && !afterRequest) return;
@@ -180,8 +216,20 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
           setMessage("If that email has an account, a reset link is on its way.");
           return;
         }
+        if ((mode === "login" || mode === "register") && response.status === 422) {
+          const data = await response.json() as { detail?: unknown };
+          setMessage(authValidationMessage(data.detail, mode));
+          return;
+        }
+        if (mode === "register" && response.status === 409) {
+          const data = await response.json() as { detail?: unknown };
+          setMessage(typeof data.detail === "string" ? data.detail : "This username or email is already registered.");
+          return;
+        }
         let detail = "Something went wrong. Please try again.";
-        if (response.status === 401 || response.status === 400) detail = "Check your details and try again.";
+        if (mode === "login" && response.status === 409) detail = "This account uses Google sign-in. Select Continue with Google above.";
+        else if (mode === "login" && response.status === 401) detail = "Incorrect email or password.";
+        else if (response.status === 401 || response.status === 400) detail = "Check your details and try again.";
         else if (response.status === 409) detail = "That account already exists. Try signing in.";
         else if (response.status === 404) detail = "This sign-in option is not available yet.";
         setMessage(detail);
@@ -288,7 +336,7 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
                 <div className="my-6 flex items-center gap-4 text-[11px] text-trap-text-dim"><span className="h-px flex-1 bg-border" /> or use your email <span className="h-px flex-1 bg-border" /></div>
               </>}
 
-              <form onSubmit={handleSubmit} aria-busy={pending}>
+              <form onSubmit={handleSubmit} noValidate={mode === "login" || mode === "register"} aria-busy={pending}>
                 <fieldset disabled={pending} className="min-w-0 space-y-4">
                   {mode === "register" && <div>
                     <label htmlFor="username" className="mb-2 block text-xs font-bold text-trap-text-soft">Player name</label>
@@ -300,8 +348,8 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
                   </div>}
                   {mode !== "reset" && <div>
                     <div className="mb-2 flex items-center justify-between gap-3"><label htmlFor="password" className="text-xs font-bold text-trap-text-soft">Password</label>{mode === "login" && <button type="button" onClick={() => changeMode("reset")} className="text-xs font-semibold text-trap-text-dim transition hover:text-trap-primary-soft">Forgot password?</button>}</div>
-                    <div className="relative"><Input id="password" name="password" type={showPassword ? "text" : "password"} required minLength={createsPassword ? 15 : undefined} maxLength={createsPassword ? 128 : undefined} autoComplete={createsPassword ? "new-password" : "current-password"} aria-describedby={createsPassword ? "password-help" : undefined} value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter your password" className="pl-11 pr-12" /><LockKeyhole size={16} className="auth-input-icon" aria-hidden="true" /><Button type="button" variant="ghost" size="icon-sm" onClick={() => setShowPassword(!showPassword)} aria-label={showPassword ? "Hide password" : "Show password"} aria-pressed={showPassword} className="absolute right-2 top-1/2 -translate-y-1/2 text-trap-text-dim">{showPassword ? <EyeOff size={17} /> : <Eye size={17} />}</Button></div>
-                    {createsPassword && <p id="password-help" className="mt-2 text-[11px] leading-5 text-trap-text-dim">15–128 characters with uppercase, lowercase, a number and a symbol; no spaces.</p>}
+                    <div className="relative"><Input id="password" name="password" type={showPassword ? "text" : "password"} required minLength={createsPassword ? 7 : undefined} maxLength={createsPassword ? 128 : undefined} autoComplete={createsPassword ? "new-password" : "current-password"} aria-describedby={createsPassword ? "password-help" : undefined} value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter your password" className="pl-11 pr-12" /><LockKeyhole size={16} className="auth-input-icon" aria-hidden="true" /><Button type="button" variant="ghost" size="icon-sm" onClick={() => setShowPassword(!showPassword)} aria-label={showPassword ? "Hide password" : "Show password"} aria-pressed={showPassword} className="absolute right-2 top-1/2 -translate-y-1/2 text-trap-text-dim">{showPassword ? <EyeOff size={17} /> : <Eye size={17} />}</Button></div>
+                    {createsPassword && <p id="password-help" className="mt-2 text-[11px] leading-5 text-trap-text-dim">7–128 characters with uppercase, lowercase, a number and a symbol; no spaces.</p>}
                   </div>}
                   {createsPassword && <div>
                     <label htmlFor="confirm-password" className="mb-2 block text-xs font-bold text-trap-text-soft">Confirm password</label>
