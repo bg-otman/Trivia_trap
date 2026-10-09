@@ -1,16 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { DashboardBrand, DashboardSidebar } from "./dashboard-sidebar";
 import type { UserData } from "@/types/userData";
+import { apiFetch } from "@/lib/api";
 
 export function DashboardShell({ children, user }: { children: React.ReactNode; user?: UserData }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const reducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (!user) return;
+    const updatePresence = () => {
+      void apiFetch("/users/me/presence", { method: "POST" }).catch(() => {
+        // Presence is best-effort and must not interrupt the authenticated UI.
+      });
+    };
+    updatePresence();
+    const interval = window.setInterval(updatePresence, 30_000);
+    return () => window.clearInterval(interval);
+  }, [user]);
 
   return (
     <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[260px_minmax(0,1fr)]">

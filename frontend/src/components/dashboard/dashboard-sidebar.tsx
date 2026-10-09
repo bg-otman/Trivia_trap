@@ -109,6 +109,7 @@ export function DashboardSidebar({
     setLogoutError("");
 
     try {
+      await apiFetch("/users/me/presence", { method: "DELETE" }).catch(() => undefined);
       const response = await apiFetch("/auth/logout", { method: "POST" });
       if (!response.ok) {
         throw new Error("Logout failed");

@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlayerAvatar } from "@/components/game/players/player-avatar";
 import { apiFetch, apiMediaUrl } from "@/lib/api";
 
-type Friend = { id: string; username: string; avatar_url: string | null };
+type Friend = { id: string; username: string; avatar_url: string | null; is_online: boolean };
 
 export function FriendsOnline() {
   const [friends, setFriends] = useState<Friend[]>([]);
@@ -18,7 +18,7 @@ export function FriendsOnline() {
     const controller = new AbortController();
     apiFetch("/friends/", { signal: controller.signal })
       .then((response) => response.ok ? response.json() as Promise<Friend[]> : [])
-      .then((data) => { if (!controller.signal.aborted) setFriends(data); })
+      .then((data) => { if (!controller.signal.aborted) setFriends(data.sort((a, b) => Number(b.is_online) - Number(a.is_online))); })
       .catch(() => { /* The friends page provides the full error and sign-in states. */ })
       .finally(() => { if (!controller.signal.aborted) setLoaded(true); });
     return () => controller.abort();
@@ -38,10 +38,13 @@ export function FriendsOnline() {
           <div className="divide-y divide-white/[0.055]">
             {friends.slice(0, 4).map((friend) => (
               <Link key={friend.id} href={`/users/${encodeURIComponent(friend.username)}`} className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-white/[0.025]">
-                <PlayerAvatar name={friend.username} src={apiMediaUrl(friend.avatar_url)} size={40} animated />
+                <span className="relative shrink-0">
+                  <PlayerAvatar name={friend.username} src={apiMediaUrl(friend.avatar_url)} size={40} animated />
+                  <span className={`absolute bottom-0 right-0 size-2.5 rounded-full ring-2 ring-trap-surface ${friend.is_online ? "bg-trap-success" : "bg-[#62626b]"}`} aria-label={friend.is_online ? "Online" : "Offline"} />
+                </span>
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-extrabold text-white">{friend.username}</p>
-                  <p className="mt-0.5 truncate text-[10px] font-semibold text-[#777782]">@{friend.username}</p>
+                  <p className={`mt-0.5 truncate text-[10px] font-semibold ${friend.is_online ? "text-trap-success" : "text-[#777782]"}`}>{friend.is_online ? "Online" : "Offline"}</p>
                 </div>
               </Link>
             ))}
