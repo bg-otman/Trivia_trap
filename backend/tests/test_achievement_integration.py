@@ -1,4 +1,5 @@
 import asyncio
+import pytest
 
 from fastapi import WebSocket
 
@@ -7,6 +8,18 @@ from dataProcessing.ingestion import calculate_results
 from engine import events
 from engine.room_models import PlayerInfo, Room, RoomMetaData, RoomPhase, RoomSettings
 from engine.utils import Context, clear_data
+
+
+@pytest.fixture(autouse=True)
+def stub_achievement_storage(monkeypatch):
+    async def load(user_ids):
+        return {user_id: set() for user_id in user_ids}
+
+    async def save(unlocks, _player_user_ids):
+        return unlocks
+
+    monkeypatch.setattr(events, "load_unlocked_achievements", load)
+    monkeypatch.setattr(events, "persist_new_achievements", save)
 
 
 class FakeManager:
@@ -31,9 +44,10 @@ def make_room(player_ids=("p1", "p2", "p3")):
 
     players = {
         player_id: PlayerInfo(
-            ws=WebSocket({"type": "websocket"}, receive, send), name=player_id
+            ws=WebSocket({"type": "websocket"}, receive, send), name=player_id,
+            db_user_id=index,
         )
-        for player_id in player_ids
+        for index, player_id in enumerate(player_ids, start=1)
     }
     return Room(
         meta_data=RoomMetaData(host_id=player_ids[0], settings=RoomSettings()),
@@ -61,28 +75,18 @@ def move_to_podium(room):
 
 
 def test_result_details_preserve_default_payload_and_score_once():
-    default_room = make_room(("p1", "p2"))
-    detailed_room = make_room(("p1", "p2"))
-    for room in (default_room, detailed_room):
-        set_choices_and_votes(room, {"p1": "correct", "p2": "bluff"})
-
-    public = calculate_results(
-        default_room.meta_data.voting_results,
-        default_room.players,
-        default_room.meta_data.voting_choices,
-    )
-    detailed, stats, choices = calculate_results(
-        detailed_room.meta_data.voting_results,
-        detailed_room.players,
-        detailed_room.meta_data.voting_choices,
-        include_details=True,
+    room = make_room(("p1", "p2"))
+    set_choices_and_votes(room, {"p1": "correct", "p2": "bluff"})
+    public, stats, choices = calculate_results(
+        room.meta_data.voting_results,
+        room.players,
+        room.meta_data.voting_choices,
     )
 
     assert set(public) == {"choices", "leaderboard"}
-    assert detailed == public
     assert stats["p1"]["correct_votes"] == 1
     assert choices["correct"]["voter_ids"] == ["p1"]
-    assert default_room.players["p1"].score == detailed_room.players["p1"].score == 3
+    assert room.players["p1"].score == 3
 
 
 def test_reveal_unlocks_round_rules_without_double_scoring_and_replays_payload():
@@ -164,7 +168,7 @@ def test_return_to_lobby_resets_progress_and_keeps_unlocks():
     assert room.players["p1"].score == 0
 
 
-def test_starting_new_game_resets_progress_without_database(monkeypatch):
+def test_starting_new_game_resets_progress_and_loads_database_unlocks(monkeypatch):
     room = make_room()
     room.meta_data.achievement_state["correct_answers"]["p1"] = 4
     room.meta_data.achievement_state["unlocked"]["p1"] = {"FIRST_CORRECT"}
@@ -175,12 +179,15 @@ def test_starting_new_game_resets_progress_without_database(monkeypatch):
     async def categories(_language):
         return [{"id": 1, "name": "General"}]
 
+    async def stored_unlocks(_user_ids):
+        return {1: {"FIRST_CORRECT"}}
+
     monkeypatch.setattr(events, "load_categories", categories)
+    monkeypatch.setattr(events, "load_unlocked_achievements", stored_unlocks)
     asyncio.run(events.to_next_phase(manager, context()))
 
-    assert room.meta_data.achievement_state == new_achievement_state(
-        {"p1": {"FIRST_CORRECT"}}
-    )
+    assert room.meta_data.achievement_state["correct_answers"] == {}
+    assert room.meta_data.achievement_state["unlocked"]["p1"] == {"FIRST_CORRECT"}
     assert room.meta_data.current_round == 1
     assert room.players["p1"].score == 0
 

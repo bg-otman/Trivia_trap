@@ -6,9 +6,11 @@ This file defines the current achievement rules for Trivia Trap.
 
 Each achievement can unlock only once for each player.
 
-Unlocks and current-game progress live in room memory. They are lost when the
-room is deleted or the backend restarts. New games clear progress but keep
-unlocks while the room exists.
+New unlocks are saved in PostgreSQL before they are announced. At game start,
+stored unlocks are loaded into room state, so later games and server restarts
+do not announce them again. Current-game progress stays in room memory and
+resets when a new game starts. A failed save is logged and the unlock is not
+announced or marked as permanent in room state.
 
 ---
 

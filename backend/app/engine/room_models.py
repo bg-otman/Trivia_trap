@@ -30,6 +30,7 @@ class RoomPhase(StateMachine):
 class PlayerInfo(BaseModel, arbitrary_types_allowed=True):
     ws: WebSocket
     name: Annotated[str, Field(min_length=1, max_length=15)]
+    db_user_id: Annotated[int, Field(strict=True, gt=0)]
     score: Annotated[int, Field(ge=0)] = 0
     is_present: Annotated[bool, Field(description="Indicates if the player is currently connected to the room")] = True
     avatar_url: Annotated[str | None, Field(description="URL to the player's avatar image")] = None
