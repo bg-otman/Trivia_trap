@@ -1,6 +1,8 @@
 from fastapi import WebSocket
 from pydantic import BaseModel, Field
 from typing import Annotated
+from datetime import datetime
+from uuid import UUID
 from statemachine import StateMachine, State
 import asyncio
 from dataProcessing.achievement import new_achievement_state
@@ -60,6 +62,11 @@ class RoomMetaData(BaseModel, arbitrary_types_allowed=True):
     voting_results: Annotated[dict[str, str], Field(description="Map of player_id to the answer they voted for")] = Field(default_factory=dict)
     podium: Annotated[list[dict[str, str]], Field(description="List of players and their scores for the current round")] = Field(default_factory=list)
     achievement_state: dict[str, dict] = Field(default_factory=new_achievement_state)
+    game_id: UUID | None = None
+    game_started_at: datetime | None = None
+    bluff_votes_received: dict[str, int] = Field(default_factory=dict)
+    game_results_saved: bool = False
+    game_results_saving: bool = False
 
 class Room(BaseModel):
     meta_data: RoomMetaData

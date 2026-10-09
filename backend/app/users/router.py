@@ -5,8 +5,10 @@ from dataProcessing.models import User
 from sqlalchemy.orm import Session
 from typing import Annotated
 from users.utils import build_user_profile, update_user_profile
-from .schemas import UserProfile
-import os
+from .schemas import UserProfile, GameHistoryResponse
+from users.utils import get_user_game_history
+from typing import Literal
+from pathlib import Path
 
 
 router = APIRouter(prefix="/users", tags=["users"], dependencies=[Depends(get_current_user)])
@@ -26,6 +28,19 @@ async def get_profile(db: Annotated[Session, Depends(get_db)],
             user_id=current_user.id,
             language=language
         )
+
+
+@router.get("/me/history", response_model=GameHistoryResponse)
+async def get_my_game_history(
+    db: Annotated[Session, Depends(get_db)],
+    current_user: Annotated[User, Depends(get_current_user)],
+    limit: Annotated[int, Query(ge=1, le=50)] = 10,
+    offset: Annotated[int, Query(ge=0)] = 0,
+    result: Literal["all", "wins", "losses", "draws"] = "all",
+) -> GameHistoryResponse:
+    return await get_user_game_history(
+        db, current_user.id, limit=limit, offset=offset, result_filter=result
+    )
     
 
 
@@ -41,11 +56,12 @@ async def get_user_profile(username: str,
 
 
 
-UPLOAD_DIR = "uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
+UPLOAD_DIR = Path(__file__).resolve().parents[2] / "uploads"
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024  # 5 MB
 ALLOWED_MIME_TYPES = {"image/jpeg", "image/png", "image/webp"}
+FILE_EXTENSIONS = {"image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp"}
 
 @router.post("/me/upload")
 async def upload_profile(
@@ -72,18 +88,18 @@ async def upload_profile(
         )
 
     prefix = "".join(c for c in str(user.id) if c.isalnum() or c in ("-", "_")).strip()
-    file_extension = os.path.splitext(file.filename)[1]
+    file_extension = FILE_EXTENSIONS[file.content_type]
     safe_filename = f"{prefix}_avatar{file_extension}"
     
-    file_path = os.path.join(UPLOAD_DIR, safe_filename)
+    file_path = UPLOAD_DIR / safe_filename
 
     try:
-        with open(file_path, "wb") as buffer:
+        with file_path.open("wb") as buffer:
             while chunk := await file.read(1024 * 1024):  # Read in chunks of 1MB
                 buffer.write(chunk)
     finally:
         await file.close()
-    await update_user_profile(db, user.id, file_path, username)
+    await update_user_profile(db, user.id, f"/uploads/{safe_filename}", username)
     return {
         "status": "success",
         "username": username,

@@ -6,9 +6,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from authentication.router import auth_router
 from authentication.session_cookie import ALLOWED_BROWSER_ORIGINS
 from friendship.router import friends_router
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 
 
 app = FastAPI()
+uploads_dir = Path(__file__).resolve().parents[1] / "uploads"
+uploads_dir.mkdir(parents=True, exist_ok=True)
+app.mount("/uploads", StaticFiles(directory=uploads_dir), name="uploads")
 
 app.add_middleware(
     CORSMiddleware,

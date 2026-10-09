@@ -14,9 +14,9 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { ErrorState } from "@/components/ui/error-state";
 import { Input } from "@/components/ui/input";
 import { LoadingState } from "@/components/ui/loading-state";
-import { apiFetch } from "@/lib/api";
+import { apiFetch, apiMediaUrl } from "@/lib/api";
 
-type Friend = { id: string; username: string };
+type Friend = { id: string; username: string; avatar_url: string | null };
 type FriendshipAction = "request" | "accept" | "reject" | "cancel" | "remove";
 
 const actionRoutes: Record<FriendshipAction, (id: string) => string> = {
@@ -46,7 +46,7 @@ async function responseError(response: Response): Promise<string> {
 function PlayerIdentity({ player, detail }: { player: Friend; detail?: string }) {
   return (
     <div className="flex min-w-0 items-center gap-3">
-      <PlayerAvatar name={player.username} size={40} animated />
+      <PlayerAvatar name={player.username} src={apiMediaUrl(player.avatar_url)} size={40} animated />
       <div className="min-w-0">
         <Link href={`/users/${encodeURIComponent(player.username)}`} className="block truncate text-sm font-extrabold text-white hover:text-primary">
           {player.username}

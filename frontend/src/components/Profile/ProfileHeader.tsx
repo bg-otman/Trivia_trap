@@ -2,12 +2,7 @@
 import Image from "next/image";
 import { CameraIcon, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  Avatar,
-  AvatarBadge,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
+import { PlayerAvatar } from "@/components/game/players/player-avatar"
 
 type BannerProps = {
     username: string;
@@ -19,18 +14,17 @@ type BannerProps = {
 
 
 
-export function AvatarWithBadge({ avatar_url, isOwner }: { avatar_url: string | null; isOwner: boolean }) {
+export function AvatarWithBadge({ username, avatar_url, isOwner }: { username: string; avatar_url: string | null; isOwner: boolean }) {
   return (
-    <Avatar className="relative h-[100px] w-[100px] border-2 border-trap-primary bg-trap-panel shadow-[0_0_0_5px_rgba(17,17,20,.8),0_0_28px_rgba(255,107,53,.28)] md:h-[130px] md:w-[130px]">
+    <div className="relative rounded-full shadow-[0_0_0_5px_rgba(17,17,20,.8),0_0_28px_rgba(255,107,53,.28)]">
         {isOwner && (
             <Button className="absolute cursor-pointer z-10 top-0 w-full h-full rounded-full opacity-0 hover:opacity-50  transition-opacity duration-300 bg-black">
                 <CameraIcon className="h-10 w-10 font-bold text-trap-primary-soft" />
             </Button>
         )}
-      {avatar_url && <AvatarImage src={avatar_url} alt="Player avatar" />}
-      <AvatarFallback>AV</AvatarFallback>
-      <AvatarBadge className="absolute bottom-2 right-5 bg-trap-success ring-2 ring-trap-panel" />
-    </Avatar>
+      <PlayerAvatar name={username} src={avatar_url ?? undefined} size={96} animated />
+      <span className="absolute bottom-2 right-2 size-3 rounded-full bg-trap-success ring-2 ring-trap-panel" />
+    </div>
   )
 }
 
@@ -66,7 +60,7 @@ function AvatarSection({ username, avatar_url, join_date, isOwner }: { username:
 {
     return (
         <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[200px] sm:w-[220px] md:w-[240px] flex flex-col items-center gap-2">
-            <AvatarWithBadge avatar_url={avatar_url} isOwner={isOwner} />
+            <AvatarWithBadge username={username} avatar_url={avatar_url} isOwner={isOwner} />
             <div className="flex flex-col items-center gap-1 w-full px-2">
             <span className="font-blackops text-sm tracking-wide text-white sm:text-lg">{username}</span>
             <div className="flex flex-wrap items-center justify-center gap-1 rounded-full border border-white/10 bg-trap-bg/75 px-3 py-1 text-xs font-semibold text-trap-text-soft sm:text-sm">

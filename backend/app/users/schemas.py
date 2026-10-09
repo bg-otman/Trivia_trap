@@ -1,6 +1,7 @@
 from datetime import datetime
 from pydantic import BaseModel, Field
-from typing import Annotated
+from typing import Annotated, Literal
+from uuid import UUID
 
 
 class UserStatistics(BaseModel):
@@ -30,3 +31,38 @@ class UserProfile(BaseModel, arbitrary_types_allowed=True):
     stats: UserStatistics
     achievements: list[UserAchievements]
     analytics: list[UserCategoryAnalytics]
+
+
+class HistoryParticipant(BaseModel):
+    username: str
+    avatar_url: str | None = None
+    final_score: int = Field(ge=0)
+    final_rank: int = Field(ge=1)
+    is_current_user: bool = False
+
+
+class GameHistoryItem(BaseModel):
+    match_id: UUID
+    finished_at: datetime
+    placement: int = Field(ge=1)
+    final_score: int = Field(ge=0)
+    result: Literal["WIN", "LOSS", "DRAW"]
+    participant_count: int = Field(ge=1)
+    participants: list[HistoryParticipant]
+    total_rounds: int = Field(ge=1)
+    status: Literal["COMPLETED"] = "COMPLETED"
+
+
+class GameHistorySummary(BaseModel):
+    games_played: int = Field(ge=0)
+    wins: int = Field(ge=0)
+    win_rate: float = Field(ge=0, le=100)
+    total_points: int = Field(ge=0)
+
+
+class GameHistoryResponse(BaseModel):
+    items: list[GameHistoryItem]
+    total: int = Field(ge=0)
+    limit: int = Field(ge=1)
+    offset: int = Field(ge=0)
+    summary: GameHistorySummary

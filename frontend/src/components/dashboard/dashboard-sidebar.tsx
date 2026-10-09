@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { PlayerAvatar } from "@/components/game/players/player-avatar";
 import { apiFetch } from "@/lib/api";
 import { cn } from "@/lib/utils";
+import type { UserData } from "@/types/userData";
 
 const navigation = [
   {
@@ -32,7 +33,7 @@ const navigation = [
   { label: "Play / Create Room", icon: Gamepad2, href: "/create-room" },
   { label: "Profile", icon: UserRound, href: "/profile" },
   { label: "Friends", icon: Users, href: "/friends" },
-  { label: "Game History", icon: History },
+  { label: "Game History", icon: History, href: "/history" },
   { label: "Statistics", icon: BarChart3 },
   { label: "Achievements", icon: Medal },
   { label: "Notifications", icon: Bell },
@@ -56,9 +57,11 @@ export function DashboardBrand({ compact = false }: { compact?: boolean }) {
 export function DashboardSidebar({
   onNavigate,
   className,
+  user,
 }: {
   onNavigate?: () => void;
   className?: string;
+  user?: UserData;
 }) {
   const pathname = usePathname();
   const [loggingOut, setLoggingOut] = useState(false);
@@ -136,15 +139,15 @@ export function DashboardSidebar({
         <div className="flex items-center gap-3 rounded-2xl bg-white/[0.035] p-3">
           <span className="relative">
             <PlayerAvatar
-              name="Mehdi"
-              src="https://blobatar.dev/?via=dailydev"
+              name={user?.username ?? "Player"}
+              src={user?.avatar ?? undefined}
               size={40}
               animated
             />
             <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-trap-success ring-2 ring-[#202026]" aria-label="Online" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-extrabold text-white">Mehdi</p>
+            <p className="truncate text-sm font-extrabold text-white">{user?.username ?? "Player"}</p>
             <p className="flex items-center gap-1.5 text-[10px] font-semibold text-trap-success">
               <span className="size-1.5 rounded-full bg-current" /> Online
             </p>

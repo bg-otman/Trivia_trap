@@ -17,6 +17,13 @@ function apiBaseUrl(): string {
   return (configured ?? "http://localhost:8000").replace(/\/$/, "");
 }
 
+export function apiMediaUrl(value: string | null | undefined): string | undefined {
+  if (!value) return undefined;
+  if (/^(https?:|blob:|data:)/i.test(value)) return value;
+  const path = value.startsWith("/") ? value : `/${value}`;
+  return `${apiBaseUrl()}${path}`;
+}
+
 /** Browser requests include the HttpOnly login cookie automatically. */
 export function apiFetch(path: string, options: RequestInit = {}): Promise<Response> {
   if (!path.startsWith("/") || path.startsWith("//")) {

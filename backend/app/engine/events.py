@@ -9,7 +9,7 @@ from dataProcessing.achievement import (
     process_round_achievements,
     reset_game_progress,
 )
-from dataProcessing.services import load_categories, load_question
+from dataProcessing.services import load_categories, load_question, save_game_results
 from dataProcessing.achievement_persistence import load_unlocked_achievements, persist_new_achievements
 from .utils import GameError, Context, clear_data, validate_phase, lobby_update
 import asyncio
@@ -18,6 +18,8 @@ import math
 import logging
 from time import monotonic
 from copy import deepcopy
+from datetime import datetime, timezone
+from uuid import uuid4
 
 if TYPE_CHECKING: # it evaluates to False at runtime, so the import is only for type checking and avoids circular imports
     from .room_manager import RoomManager
@@ -243,6 +245,11 @@ async def reveal_results(manager: RoomManager, context: Context):
         players=room.players,
         voting_choices=room.meta_data.voting_choices,
     )
+    for player_id, stats in player_stats.items():
+        room.meta_data.bluff_votes_received[player_id] = (
+            room.meta_data.bluff_votes_received.get(player_id, 0)
+            + stats["bluff_votes_received"]
+        )
     updated_state, newly_unlocked = process_round_achievements(
         player_stats,
         choices_by_id,
@@ -281,6 +288,31 @@ async def podium(manager: RoomManager, context: Context):
             game_finished=True,
         )
         newly_unlocked = await save_achievement_candidates(room, updated_state, newly_unlocked)
+        if not room.meta_data.game_results_saved and not room.meta_data.game_results_saving:
+            room.meta_data.game_results_saving = True
+            try:
+                await save_game_results(
+                    game_id=room.meta_data.game_id,
+                    host_user_id=room.players[room.meta_data.host_id].db_user_id,
+                    language_code=room.meta_data.settings.language,
+                    total_rounds=room.meta_data.current_round - 1,
+                    started_at=room.meta_data.game_started_at,
+                    player_results=[
+                        {
+                            "user_id": room.players[entry["player_id"]].db_user_id,
+                            "final_score": entry["score"],
+                            "final_rank": entry["rank"],
+                            "bluff_votes_received": room.meta_data.bluff_votes_received.get(entry["player_id"], 0),
+                        }
+                        for entry in room.meta_data.podium
+                    ],
+                    category_results=[],
+                )
+                room.meta_data.game_results_saved = True
+            except Exception:
+                logger.exception("Could not persist completed game %s", room.meta_data.game_id)
+            finally:
+                room.meta_data.game_results_saving = False
         room.meta_data.phase.end()
     await publish_phase_payload(manager, {
         "event": "PHASE_PODIUM",
@@ -321,6 +353,11 @@ async def to_next_phase(manager: RoomManager, context: Context):
             for player_id, user_id in player_user_ids.items()
         }
         room.meta_data.current_round = 1
+        room.meta_data.game_id = uuid4()
+        room.meta_data.game_started_at = datetime.now(timezone.utc)
+        room.meta_data.bluff_votes_received = {}
+        room.meta_data.game_results_saved = False
+        room.meta_data.game_results_saving = False
         clear_data(room)
         for player in room.players.values():
             player.score = 0

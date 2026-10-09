@@ -24,7 +24,7 @@ export default async function ProfilePage() {
   }
 
   return (
-    <DashboardShell>
+    <DashboardShell user={user}>
       <ProfileView user={user} />
     </DashboardShell>
   );

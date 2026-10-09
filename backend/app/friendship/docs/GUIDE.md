@@ -20,7 +20,7 @@ Authorization bearer header. The authenticated user ID comes from the database-b
 | DELETE | `/friends/request/{receiver_id}` | Cancel a pending request you sent |
 | DELETE | `/friends/{friend_id}` | Remove an accepted friendship in either direction |
 
-List and search responses contain `{ "id": "123", "username": "Player" }` objects. Search requires a 1–15 character prefix containing only letters and numbers, and matches without regard to case. Other characters return 422.
+List and search responses contain `{ "id": "123", "username": "Player", "avatar_url": "/uploads/123_avatar.png" }` objects. `avatar_url` is nullable. Search requires a 1–15 character prefix containing only letters and numbers, and matches without regard to case. Other characters return 422.
 IDs in responses remain strings; path parameters must be positive database integers.
 Existing success messages are preserved. Invalid friendship actions return 400,
 invalid path IDs return 422, and missing/invalid authentication returns 401.

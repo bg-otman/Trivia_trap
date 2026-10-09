@@ -15,18 +15,18 @@ def user_pair(first: int, second: int):
     )
 
 
-async def search_players(db: AsyncSession, current_user_id: int, prefix: str) -> list[dict[str, str]]:
+async def search_players(db: AsyncSession, current_user_id: int, prefix: str) -> list[dict[str, str | None]]:
     normalized_prefix = prefix.casefold()
     rows = (await db.execute(
-        select(User.id, User.username).where(
+        select(User.id, User.username, User.avatar_url).where(
             User.id != current_user_id,
             User.username_key.like(f"{normalized_prefix}%"),
         ).order_by(User.username_key, User.id).limit(10)
     )).all()
-    return [{"id": str(user_id), "username": username} for user_id, username in rows]
+    return [{"id": str(user_id), "username": username, "avatar_url": avatar_url} for user_id, username, avatar_url in rows]
 
 
-async def get_friends(db: AsyncSession, user_id: int) -> list[dict[str, str]]:
+async def get_friends(db: AsyncSession, user_id: int) -> list[dict[str, str | None]]:
     other_id = case(
         (Friendship.requester_id == user_id, Friendship.receiver_id),
         else_=Friendship.requester_id,
@@ -37,7 +37,7 @@ async def get_friends(db: AsyncSession, user_id: int) -> list[dict[str, str]]:
             or_(Friendship.requester_id == user_id, Friendship.receiver_id == user_id),
         ).order_by(User.id)
     )
-    return [{"id": str(user.id), "username": user.username} for user in users]
+    return [{"id": str(user.id), "username": user.username, "avatar_url": user.avatar_url} for user in users]
 
 
 async def send_friend(db: AsyncSession, from_user_id: int, to_user_id: int):
@@ -93,22 +93,22 @@ async def accept_request(db: AsyncSession, receiver_id: int, sender_id: int):
     await db.commit()
 
 
-async def get_incoming_requests(db: AsyncSession, user_id: int) -> list[dict[str, str]]:
+async def get_incoming_requests(db: AsyncSession, user_id: int) -> list[dict[str, str | None]]:
     users = await db.scalars(select(User).join(
         Friendship, Friendship.requester_id == User.id,
     ).where(
         Friendship.receiver_id == user_id, Friendship.status == "pending",
     ).order_by(User.id))
-    return [{"id": str(user.id), "username": user.username} for user in users]
+    return [{"id": str(user.id), "username": user.username, "avatar_url": user.avatar_url} for user in users]
 
 
-async def get_sent_requests(db: AsyncSession, user_id: int) -> list[dict[str, str]]:
+async def get_sent_requests(db: AsyncSession, user_id: int) -> list[dict[str, str | None]]:
     users = await db.scalars(select(User).join(
         Friendship, Friendship.receiver_id == User.id,
     ).where(
         Friendship.requester_id == user_id, Friendship.status == "pending",
     ).order_by(User.id))
-    return [{"id": str(user.id), "username": user.username} for user in users]
+    return [{"id": str(user.id), "username": user.username, "avatar_url": user.avatar_url} for user in users]
 
 
 async def reject_request(db: AsyncSession, receiver_id: int, sender_id: int):

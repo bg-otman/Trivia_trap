@@ -6,14 +6,15 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { DashboardBrand, DashboardSidebar } from "./dashboard-sidebar";
+import type { UserData } from "@/types/userData";
 
-export function DashboardShell({ children }: { children: React.ReactNode }) {
+export function DashboardShell({ children, user }: { children: React.ReactNode; user?: UserData }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const reducedMotion = useReducedMotion();
 
   return (
     <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[260px_minmax(0,1fr)]">
-      <DashboardSidebar className="sticky top-0 hidden h-screen border-r border-white/[0.07] lg:flex" />
+      <DashboardSidebar user={user} className="sticky top-0 hidden h-screen border-r border-white/[0.07] lg:flex" />
 
       <header className="sticky top-0 z-40 flex h-16 items-center justify-between border-b border-white/[0.07] bg-[#111114]/95 px-4 backdrop-blur-md lg:hidden">
         <DashboardBrand />
@@ -44,7 +45,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
               exit={{ x: reducedMotion ? 0 : "-100%" }}
               transition={{ duration: reducedMotion ? 0.01 : 0.24, ease: [0.22, 1, 0.36, 1] }}
             >
-              <DashboardSidebar onNavigate={() => setMenuOpen(false)} />
+              <DashboardSidebar user={user} onNavigate={() => setMenuOpen(false)} />
               <Button type="button" variant="surface" size="icon-sm" onClick={() => setMenuOpen(false)} aria-label="Close navigation" className="absolute right-4 top-6">
                 <X className="size-4" />
               </Button>

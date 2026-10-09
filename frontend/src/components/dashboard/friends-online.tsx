@@ -6,9 +6,9 @@ import { ArrowUpRight, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlayerAvatar } from "@/components/game/players/player-avatar";
-import { apiFetch } from "@/lib/api";
+import { apiFetch, apiMediaUrl } from "@/lib/api";
 
-type Friend = { id: string; username: string };
+type Friend = { id: string; username: string; avatar_url: string | null };
 
 export function FriendsOnline() {
   const [friends, setFriends] = useState<Friend[]>([]);
@@ -38,7 +38,7 @@ export function FriendsOnline() {
           <div className="divide-y divide-white/[0.055]">
             {friends.slice(0, 4).map((friend) => (
               <Link key={friend.id} href={`/users/${encodeURIComponent(friend.username)}`} className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-white/[0.025]">
-                <PlayerAvatar name={friend.username} size={40} animated />
+                <PlayerAvatar name={friend.username} src={apiMediaUrl(friend.avatar_url)} size={40} animated />
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-extrabold text-white">{friend.username}</p>
                   <p className="mt-0.5 truncate text-[10px] font-semibold text-[#777782]">@{friend.username}</p>

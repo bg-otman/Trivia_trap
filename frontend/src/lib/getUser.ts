@@ -3,6 +3,13 @@ import type { UserData, CurrentUser } from "@/types/userData";
 
 const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000").replace(/\/$/, "");
 
+function profileMediaUrl(value: string | null): string | null {
+    if (!value) return null;
+    if (/^(https?:|blob:|data:)/i.test(value)) return value;
+    const path = value.startsWith("/") ? value : `/${value}`;
+    return `${apiBase}${path}`;
+}
+
 type UserProfileResponse = Omit<UserData, "id" | "join_date"> & {
     id: number;
     joined_date: string;
@@ -46,6 +53,8 @@ export async function getUser({ username }: { username?: string }): Promise<User
     const profile = body as UserProfileResponse;
     return {
         ...profile,
+        avatar: profileMediaUrl(profile.avatar),
+        banner: profileMediaUrl(profile.banner),
         join_date: new Date(profile.joined_date),
     };
 }
