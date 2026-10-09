@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from fastapi.concurrency import run_in_threadpool
-from authentication.repository import DuplicateUserError, create_user, find_existing_user_id
+from authentication.repository import DuplicateUserError, create_user, find_existing_user_id, find_user_by_email
 from authentication.schemas import RegisterData, UserResponse
 from authentication.security import hash_password
 from authentication.validation_route import AuthRoute
@@ -55,6 +55,12 @@ async def login(data: LoginData, db: DbSession, request: Request, response: Resp
     )
 
     if user is None:
+        account = await find_user_by_email(db, data.email)
+        if account is not None and account.google_sub is not None and account.password_hash is None:
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail="This account uses Google sign-in. Continue with Google instead.",
+            )
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid email or password",

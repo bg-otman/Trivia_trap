@@ -187,7 +187,8 @@ export function LoginPage({ initialMode = "login", initialMessage = "" }: { init
           return;
         }
         let detail = "Something went wrong. Please try again.";
-        if (response.status === 401 || response.status === 400) detail = "Check your details and try again.";
+        if (mode === "login" && response.status === 409) detail = "This account uses Google sign-in. Select Continue with Google above.";
+        else if (response.status === 401 || response.status === 400) detail = "Check your details and try again.";
         else if (response.status === 409) detail = "That account already exists. Try signing in.";
         else if (response.status === 404) detail = "This sign-in option is not available yet.";
         setMessage(detail);
