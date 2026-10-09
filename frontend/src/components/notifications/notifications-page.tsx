@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Bell, Check, LoaderCircle, RefreshCw, UserPlus, X } from "lucide-react";
+import { Bell, Check, Gamepad2, LoaderCircle, RefreshCw, UserPlus, X } from "lucide-react";
 import { PlayerAvatar } from "@/components/game/players/player-avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,7 +11,7 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { ErrorState } from "@/components/ui/error-state";
 import { Skeleton } from "@/components/ui/skeleton";
 import { apiFetch, apiMediaUrl } from "@/lib/api";
-import type { FriendRequestNotification } from "@/types/notifications";
+import type { FriendRequestNotification, RoomInvitationNotification } from "@/types/notifications";
 
 async function responseError(response: Response): Promise<string> {
   const body: unknown = await response.json().catch(() => null);
@@ -22,6 +22,7 @@ async function responseError(response: Response): Promise<string> {
 export function NotificationsPage() {
   const router = useRouter();
   const [requests, setRequests] = useState<FriendRequestNotification[]>([]);
+  const [invitations, setInvitations] = useState<RoomInvitationNotification[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState("");
@@ -33,13 +34,16 @@ export function NotificationsPage() {
     else setLoading(true);
     setError("");
     try {
-      const response = await apiFetch("/friends/requests");
-      if (response.status === 401 || response.status === 403) {
+      const [response, invitationResponse] = await Promise.all([apiFetch("/friends/requests"), apiFetch("/invitations")]);
+      if ([response, invitationResponse].some((item) => item.status === 401 || item.status === 403)) {
         router.replace(`/login?next=${encodeURIComponent("/notifications")}`);
         return;
       }
       if (!response.ok) throw new Error(await responseError(response));
-      setRequests(await response.json() as FriendRequestNotification[]);
+      if (!invitationResponse.ok) throw new Error(await responseError(invitationResponse));
+      const [friendRequests, roomInvitations] = await Promise.all([response.json(), invitationResponse.json()]) as [FriendRequestNotification[], RoomInvitationNotification[]];
+      setRequests(friendRequests);
+      setInvitations(roomInvitations);
     } catch (loadError) {
       setError(loadError instanceof Error ? loadError.message : "Could not load notifications.");
     } finally {
@@ -47,6 +51,15 @@ export function NotificationsPage() {
       setRefreshing(false);
     }
   }, [router]);
+
+  useEffect(() => {
+    const receive = (event: Event) => {
+      const invitation = (event as CustomEvent<RoomInvitationNotification>).detail;
+      setInvitations((current) => current.some((item) => item.id === invitation.id) ? current : [invitation, ...current]);
+    };
+    window.addEventListener("trivia:room-invitation", receive);
+    return () => window.removeEventListener("trivia:room-invitation", receive);
+  }, []);
 
   useEffect(() => {
     const timer = window.setTimeout(() => { void loadNotifications(); }, 0);
@@ -73,6 +86,24 @@ export function NotificationsPage() {
     }
   }
 
+  async function respondToInvitation(invitation: RoomInvitationNotification, action: "accept" | "decline") {
+    if (busyId) return;
+    setBusyId(invitation.id);
+    setActionError("");
+    try {
+      const response = await apiFetch(`/invitations/${encodeURIComponent(invitation.id)}/${action}`, { method: "POST" });
+      if (!response.ok) throw new Error(await responseError(response));
+      setInvitations((current) => current.filter((item) => item.id !== invitation.id));
+      if (action === "accept") {
+        const body = await response.json() as { room_code: string };
+        router.push(`/join?code=${encodeURIComponent(body.room_code)}`);
+      }
+    } catch (failure) {
+      setActionError(failure instanceof Error ? failure.message : "Could not update this invitation.");
+      await loadNotifications(true);
+    } finally { setBusyId(null); }
+  }
+
   return (
     <div className="space-y-6">
       <header className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -93,12 +124,23 @@ export function NotificationsPage() {
         <div className="space-y-3" aria-label="Loading notifications">
           {Array.from({ length: 4 }).map((_, index) => <Skeleton key={index} className="h-28 rounded-[20px]" />)}
         </div>
-      ) : !error && requests.length === 0 ? (
+      ) : !error && requests.length === 0 && invitations.length === 0 ? (
         <Card className="border-white/[0.07] bg-trap-surface">
           <EmptyState icon={Bell} title="You’re all caught up." description="New updates will appear here." className="py-16" />
         </Card>
       ) : !error ? (
         <section aria-label="Notifications" className="space-y-3">
+          {invitations.map((invitation) => (
+            <Card key={invitation.id} className="border-primary/25 bg-trap-surface shadow-[0_14px_34px_rgba(0,0,0,0.14)]">
+              <CardContent className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:p-5">
+                <div className="flex min-w-0 flex-1 items-center gap-3">
+                  <span className="relative shrink-0"><PlayerAvatar name={invitation.inviter_username} src={apiMediaUrl(invitation.inviter_avatar_url)} size={48} animated /><span className="absolute -bottom-1 -right-1 grid size-6 place-items-center rounded-full border-2 border-trap-surface bg-primary text-white"><Gamepad2 className="size-3" /></span></span>
+                  <div className="min-w-0"><p className="text-sm text-[#a6a6ae]"><strong className="text-white">{invitation.inviter_username}</strong> invited you to join a game.</p><p className="mt-1 font-mono text-[10px] text-accent">Room {invitation.room_code}</p><time dateTime={invitation.created_at} className="mt-1 block text-[10px] text-[#777782]">{new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(invitation.created_at))}</time></div>
+                </div>
+                <div className="flex gap-2"><Button type="button" size="sm" disabled={busyId !== null} onClick={() => { void respondToInvitation(invitation, "accept"); }}><Gamepad2 className="size-4" /> Join game</Button><Button type="button" variant="surface" size="sm" disabled={busyId !== null} onClick={() => { void respondToInvitation(invitation, "decline"); }}>Decline</Button></div>
+              </CardContent>
+            </Card>
+          ))}
           {requests.map((request) => (
             <Card key={request.id} className="border-secondary/20 bg-trap-surface shadow-[0_14px_34px_rgba(0,0,0,0.14)]">
               <CardContent className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:p-5">

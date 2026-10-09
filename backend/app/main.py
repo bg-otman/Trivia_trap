@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from authentication.router import auth_router
 from authentication.session_cookie import ALLOWED_BROWSER_ORIGINS
 from friendship.router import friends_router
+from invitations.router import router as invitations_router
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 
@@ -27,6 +28,7 @@ app.include_router(room_router)
 app.include_router(user_router)
 app.include_router(auth_router)
 app.include_router(friends_router)
+app.include_router(invitations_router)
 
 
 @app.get("/rooms")
