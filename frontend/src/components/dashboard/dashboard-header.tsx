@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { ArrowRight, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PlayerAvatar } from "@/components/game/players/player-avatar";
+import type { UserData } from "@/types/userData";
+import { ProfileAvatar } from "@/components/profile/profile-avatar";
 
-export function DashboardHeader() {
+export function DashboardHeader({ user }: { user: UserData }) {
   return (
     <header className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Good evening, Mehdi</p>
+        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Welcome back, {user.username}</p>
         <h1 className="mt-2 font-secondary text-2xl uppercase tracking-[-0.025em] text-white sm:text-3xl lg:text-[2.15rem]">
           Ready to fool your friends?
         </h1>
@@ -22,12 +23,11 @@ export function DashboardHeader() {
             <Link href="/create-room"><Plus className="size-4" /> Create room</Link>
           </Button>
         </div>
-        <Link href="/profile" aria-label="Open Mehdi's profile" className="relative rounded-full transition-transform hover:scale-105">
-          <PlayerAvatar
-            name="Mehdi"
-            src="https://blobatar.dev/?via=dailydev"
+        <Link href="/profile" aria-label={`Open ${user.username}'s profile`} className="relative rounded-full transition-transform hover:scale-105">
+          <ProfileAvatar
+            name={user.username}
+            imageUrl={user.avatar}
             size={40}
-            animated
           />
           <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-trap-success ring-2 ring-background" aria-label="Online" />
         </Link>

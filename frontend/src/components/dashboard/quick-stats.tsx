@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { dashboardStats } from "@/mocks/dashboard";
 import { cn } from "@/lib/utils";
+import type { UserStatistics } from "@/types/userData";
+import { Crown, Gamepad2, Medal, Target } from "lucide-react";
 
 const tones = {
   primary: "bg-primary/10 text-primary",
@@ -9,7 +10,14 @@ const tones = {
   success: "bg-trap-success/10 text-trap-success",
 };
 
-export function QuickStats() {
+export function QuickStats({ stats }: { stats: UserStatistics }) {
+  const winRate = stats.total_games === 0 ? 0 : Math.round((stats.total_wins / stats.total_games) * 100);
+  const dashboardStats = [
+    { label: "Games played", value: stats.total_games.toLocaleString(), detail: "All completed games", icon: Gamepad2, tone: "secondary" as const },
+    { label: "Wins", value: stats.total_wins.toLocaleString(), detail: "First-place finishes", icon: Crown, tone: "accent" as const },
+    { label: "Win rate", value: `${winRate}%`, detail: "Across completed games", icon: Target, tone: "success" as const },
+    { label: "Total score", value: stats.total_points.toLocaleString(), detail: `Best score: ${stats.high_score.toLocaleString()}`, icon: Medal, tone: "primary" as const },
+  ];
   return (
     <section aria-label="Quick statistics" className="grid grid-cols-2 gap-3 lg:grid-cols-4">
       {dashboardStats.map((stat) => (

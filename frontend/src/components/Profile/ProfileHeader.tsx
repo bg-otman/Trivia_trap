@@ -11,15 +11,15 @@ import {
 
 type BannerProps = {
     username: string;
-    banner_url: string;
-    avatar_url: string;
+    banner_url: string | null;
+    avatar_url: string | null;
     join_date: Date;
     isOwner: boolean;
 };
 
 
 
-export function AvatarWithBadge({ avatar_url, isOwner }: { avatar_url: string; isOwner: boolean }) {
+export function AvatarWithBadge({ avatar_url, isOwner }: { avatar_url: string | null; isOwner: boolean }) {
   return (
     <Avatar className="relative h-[100px] w-[100px] border-2 border-trap-primary bg-trap-panel shadow-[0_0_0_5px_rgba(17,17,20,.8),0_0_28px_rgba(255,107,53,.28)] md:h-[130px] md:w-[130px]">
         {isOwner && (
@@ -27,25 +27,25 @@ export function AvatarWithBadge({ avatar_url, isOwner }: { avatar_url: string; i
                 <CameraIcon className="h-10 w-10 font-bold text-trap-primary-soft" />
             </Button>
         )}
-      <AvatarImage src={avatar_url} alt="@shadcn" />
+      {avatar_url && <AvatarImage src={avatar_url} alt="Player avatar" />}
       <AvatarFallback>AV</AvatarFallback>
       <AvatarBadge className="absolute bottom-2 right-5 bg-trap-success ring-2 ring-trap-panel" />
     </Avatar>
   )
 }
 
-function BannerSection({ banner_url, isOwner } : { banner_url: string; isOwner: boolean })
+function BannerSection({ banner_url, isOwner } : { banner_url: string | null; isOwner: boolean })
 {
     return (
         <div className="relative h-full border-2 border-trap-secondary/60">
-            <Image
+            {banner_url && <Image
                 src={banner_url}
                 alt="banner img"
                 fill
                 priority
                 sizes="(min-width:1024px) 1024px, (min-width:640px) 768px, 100vw"
                 style={{ objectFit: 'cover' }} 
-            />
+            />}
             {isOwner && (
                 <Button
                     className="absolute right-2 top-2 h-8 w-8 cursor-pointer rounded-lg bg-trap-bg/80 p-0 text-xs font-medium text-white transition-colors hover:bg-trap-bg sm:right-4 sm:top-4 sm:h-auto sm:w-auto sm:px-3 sm:py-1.5"
@@ -62,7 +62,7 @@ function BannerSection({ banner_url, isOwner } : { banner_url: string; isOwner: 
 
 
 // this function is used to display the avatar image, username, and join date of the user. It is positioned at the bottom center of the banner image.
-function AvatarSection({ username, avatar_url, join_date, isOwner }: { username: string; avatar_url: string; join_date: Date; isOwner: boolean })
+function AvatarSection({ username, avatar_url, join_date, isOwner }: { username: string; avatar_url: string | null; join_date: Date; isOwner: boolean })
 {
     return (
         <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[200px] sm:w-[220px] md:w-[240px] flex flex-col items-center gap-2">

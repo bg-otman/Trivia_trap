@@ -36,8 +36,8 @@ export type UserStatistics = {
 export type UserData = {
     id: number;
     username: string;
-    banner: string;
-    avatar: string;
+    banner: string | null;
+    avatar: string | null;
     join_date: Date;
     stats: UserStatistics;
     achievements: UserAchievements[];

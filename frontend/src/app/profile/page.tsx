@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { ProfileView } from "@/components/profile/profile-view";
-import { requireUser } from "@/lib/require-user";
+import { getUser, UserApiError } from "@/lib/getUser";
+import { loginPathFor } from "@/lib/auth-routing";
+import { redirect } from "next/navigation";
+import { ProfileLoadError } from "@/components/profile/profile-load-error";
 
 export const metadata: Metadata = {
   title: "Profile | Trivia Trap",
@@ -9,10 +12,20 @@ export const metadata: Metadata = {
 };
 
 export default async function ProfilePage() {
-  await requireUser("/profile");
+  let user;
+  try {
+    user = await getUser({});
+  } catch (error) {
+    if (error instanceof UserApiError) {
+      if (error.status === 401) redirect(loginPathFor("/profile"));
+      return <DashboardShell><ProfileLoadError status={error.status} /></DashboardShell>;
+    }
+    throw error;
+  }
+
   return (
     <DashboardShell>
-      <ProfileView />
+      <ProfileView user={user} />
     </DashboardShell>
   );
 }

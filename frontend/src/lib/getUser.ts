@@ -46,8 +46,6 @@ export async function getUser({ username }: { username?: string }): Promise<User
     const profile = body as UserProfileResponse;
     return {
         ...profile,
-        banner: profile.banner ?? "/banners/banner2.png",
-        avatar: profile.avatar ?? "/avatars/a1.png",
         join_date: new Date(profile.joined_date),
     };
 }

@@ -1,30 +1,31 @@
-import { Target } from "lucide-react";
+import { BarChart3 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { CategoryAnalytics } from "@/types/userData";
 
-export function GamePerformance({ wins, gamesPlayed, winRate }: { wins: number; gamesPlayed: number; winRate: number }) {
-  const losses = Math.max(0, gamesPlayed - wins);
-
+export function GamePerformance({ analytics }: { analytics: CategoryAnalytics[] }) {
   return (
     <section aria-labelledby="performance-title" className="flex flex-col">
       <h2 id="performance-title" className="mb-3 font-secondary text-base uppercase text-white">Game performance</h2>
       <Card className="flex-1 rounded-[20px] border border-white/[0.07] bg-trap-surface">
         <CardHeader className="flex-row items-center justify-between">
-          <CardTitle className="text-sm font-extrabold">Season overview</CardTitle>
-          <Target className="size-4 text-primary" aria-hidden="true" />
+          <CardTitle className="text-sm font-extrabold">Category performance</CardTitle>
+          <BarChart3 className="size-4 text-primary" aria-hidden="true" />
         </CardHeader>
-        <CardContent>
-          <div className="flex items-center gap-5">
-            <div className="grid size-24 shrink-0 place-items-center rounded-full" style={{ background: `conic-gradient(#4ade80 ${winRate}%, #29292f 0)` }}>
-              <div className="grid size-[74px] place-items-center rounded-full bg-trap-surface text-center">
-                <div><strong className="font-secondary text-xl text-white">{winRate}%</strong><span className="block text-[8px] font-bold uppercase tracking-wider text-[#777782]">Win rate</span></div>
+        <CardContent className="space-y-3">
+          {analytics.length === 0 ? (
+            <p className="py-8 text-center text-sm text-[#85858f]">Your game performance will appear here after you play.</p>
+          ) : analytics.map((item) => (
+            <div key={item.category} className="rounded-xl border border-white/[0.06] bg-black/10 p-3">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="truncate text-xs font-extrabold text-white">{item.category}</h3>
+                <span className="shrink-0 text-[9px] font-bold uppercase tracking-wider text-[#777782]">{item.total_rounds} rounds</span>
               </div>
+              <dl className="mt-3 grid grid-cols-2 gap-3">
+                <div><dt className="text-[8px] font-black uppercase tracking-wider text-[#777782]">Knowledge</dt><dd className="mt-1 font-secondary text-lg text-trap-success">{item.knowledge_accuracy.toFixed(1)}%</dd></div>
+                <div><dt className="text-[8px] font-black uppercase tracking-wider text-[#777782]">Bluff efficiency</dt><dd className="mt-1 font-secondary text-lg text-accent">{item.bluff_efficiency.toFixed(1)}%</dd></div>
+              </dl>
             </div>
-            <dl className="min-w-0 flex-1 space-y-3 text-xs">
-              <div className="flex items-center justify-between"><dt className="flex items-center gap-2 text-[#a6a6ae]"><span className="size-2 rounded-full bg-trap-success" /> Wins</dt><dd className="font-black text-white">{wins}</dd></div>
-              <div className="flex items-center justify-between"><dt className="flex items-center gap-2 text-[#a6a6ae]"><span className="size-2 rounded-full bg-[#4a4a52]" /> Losses</dt><dd className="font-black text-white">{losses}</dd></div>
-              <div className="flex items-center justify-between border-t border-white/[0.06] pt-3"><dt className="text-[#a6a6ae]">Games</dt><dd className="font-black text-white">{gamesPlayed}</dd></div>
-            </dl>
-          </div>
+          ))}
         </CardContent>
       </Card>
     </section>

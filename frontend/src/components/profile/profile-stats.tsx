@@ -1,20 +1,21 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Flame, Gamepad2, Medal, Star, Target, Trophy } from "lucide-react";
+import { Gamepad2, Medal, Star, Target, Trophy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import type { ProfileUser } from "@/mocks/profile";
+import type { UserData } from "@/types/userData";
 
-export function ProfileStats({ user }: { user: ProfileUser }) {
+export function ProfileStats({ user }: { user: UserData }) {
   const reducedMotion = useReducedMotion();
+  const { total_games, total_wins, total_points, high_score } = user.stats;
+  const winRate = total_games === 0 ? 0 : Math.round((total_wins / total_games) * 100);
   const stats = [
-    { label: "Games played", value: user.gamesPlayed.toLocaleString(), icon: Gamepad2, color: "text-[#9295ff]" },
-    { label: "Wins", value: user.wins.toLocaleString(), icon: Trophy, color: "text-accent" },
-    { label: "Win rate", value: `${user.winRate}%`, icon: Target, color: "text-trap-success" },
-    { label: "Total score", value: user.totalScore.toLocaleString(), icon: Medal, color: "text-primary" },
-    { label: "Best score", value: user.bestScore.toLocaleString(), icon: Star, color: "text-accent" },
-    { label: "Current streak", value: user.currentStreak.toLocaleString(), icon: Flame, color: "text-trap-danger" },
+    { label: "Games played", value: total_games.toLocaleString(), icon: Gamepad2, color: "text-[#9295ff]" },
+    { label: "Wins", value: total_wins.toLocaleString(), icon: Trophy, color: "text-accent" },
+    { label: "Win rate", value: `${winRate}%`, icon: Target, color: "text-trap-success" },
+    { label: "Total score", value: total_points.toLocaleString(), icon: Medal, color: "text-primary" },
+    { label: "Best score", value: high_score.toLocaleString(), icon: Star, color: "text-accent" },
   ];
 
   return (
