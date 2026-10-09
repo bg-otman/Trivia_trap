@@ -18,9 +18,9 @@ class RoomManager():
 
     async def connect(self, ws: WebSocket, room_id: str):
         await ws.accept()
-        if not ws.state.user_id or not ws.state.user_name:
+        if not ws.state.user_id or not ws.state.user_name or not ws.state.db_user_id:
             raise GameError("INVALID_PAYLOAD", "Missing user_id or user_name in WebSocket state")
-        join_room(self.rooms, ws, room_id, ws.state.user_id, ws.state.user_name)
+        join_room(self.rooms, ws, room_id, ws.state.user_id, ws.state.user_name, ws.state.db_user_id)
         await self.broadcast(lobby_update(self.rooms[room_id]), room_id, None)
         await sync_current_phase(self, room_id, ws.state.user_id)
 
@@ -145,6 +145,7 @@ async def room(ws: WebSocket, room_id: str, user: Annotated[User, Depends(get_cu
     room_id = room_id.strip().upper()
     ws.state.user_id = user_id
     ws.state.user_name = user.username
+    ws.state.db_user_id = user.id
 
     try:
         await manager.connect(ws, room_id)

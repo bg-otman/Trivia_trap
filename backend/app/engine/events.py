@@ -4,16 +4,25 @@ from .room_models import PlayerInfo, RoomMetaData, RoomSettings, Room, RoomPhase
 from pydantic import Field
 from typing import TYPE_CHECKING
 from dataProcessing.ingestion import ( validate_bluff_answer, build_voting_choices, validate_vote, calculate_results ) # import demo functions until we have a proper data processing module
+from dataProcessing.achievement import (
+    evaluate_game_achievements,
+    process_round_achievements,
+    reset_game_progress,
+)
 from dataProcessing.services import load_categories, load_question
+from dataProcessing.achievement_persistence import load_unlocked_achievements, persist_new_achievements
 from .utils import GameError, Context, clear_data, validate_phase, lobby_update
 import asyncio
 import random
 import math
+import logging
 from time import monotonic
 from copy import deepcopy
 
 if TYPE_CHECKING: # it evaluates to False at runtime, so the import is only for type checking and avoids circular imports
     from .room_manager import RoomManager
+
+logger = logging.getLogger(__name__)
 
 async def publish_phase_payload(manager: RoomManager, payload: dict, room_id: str):
     """Save the public phase event before broadcasting it for later reconnects."""
@@ -64,7 +73,7 @@ async def phase_timer(manager: RoomManager, context: Context, duration: int):
         pass
 
 
-def join_room(rooms: dict, ws: WebSocket, room_id: str, player_id: str, name: str):
+def join_room(rooms: dict, ws: WebSocket, room_id: str, player_id: str, name: str, db_user_id: int):
     """
         Join or Create Room if it does not exist. If the room exists, add the player to the room. If the room is full, raise an error.
     """
@@ -76,10 +85,31 @@ def join_room(rooms: dict, ws: WebSocket, room_id: str, player_id: str, name: st
     if player_id not in room.players:
         if room.meta_data.phase.current_state != RoomPhase.LOBBY:
             raise GameError("GAME_IN_PROGRESS", "Game is already in progress")
-        room.players[player_id] = PlayerInfo(ws=ws, name=name)
+        room.players[player_id] = PlayerInfo(ws=ws, name=name, db_user_id=db_user_id)
     else:
         room.players[player_id].ws = ws
         room.players[player_id].is_present = True
+        room.players[player_id].db_user_id = db_user_id
+
+
+async def save_achievement_candidates(room: Room, updated_state: dict, newly_unlocked: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Commit unlocks before exposing them; retain round progress on a DB failure."""
+    if not newly_unlocked:
+        room.meta_data.achievement_state = updated_state
+        return {}
+    player_user_ids = {player_id: player.db_user_id for player_id, player in room.players.items()}
+    try:
+        saved = await persist_new_achievements(newly_unlocked, player_user_ids)
+    except Exception:
+        logger.exception("Could not persist achievement unlocks")
+        updated_state["unlocked"] = {
+            player_id: codes.copy()
+            for player_id, codes in room.meta_data.achievement_state["unlocked"].items()
+        }
+        room.meta_data.achievement_state = updated_state
+        return {}
+    room.meta_data.achievement_state = updated_state
+    return saved
 
 
 async def leave_room(manager: RoomManager, context: Context):
@@ -204,11 +234,18 @@ async def reveal_results(manager: RoomManager, context: Context):
         Reveal the results of the round, including the correct answer, votes, and updated scores.
     """
     room = manager.rooms.get(context.room_id)
-    results = calculate_results(
+    results, player_stats, choices_by_id = calculate_results(
         votes=room.meta_data.voting_results,
         players=room.players,
         voting_choices=room.meta_data.voting_choices,
     )
+    updated_state, newly_unlocked = process_round_achievements(
+        player_stats,
+        choices_by_id,
+        set(room.players),
+        room.meta_data.achievement_state,
+    )
+    results["achievements"] = await save_achievement_candidates(room, updated_state, newly_unlocked)
     room.meta_data.podium = results.get("leaderboard", [])
     results["round"] = room.meta_data.current_round
     results["total_rounds"] = room.meta_data.settings.total_rounds
@@ -227,16 +264,28 @@ async def podium(manager: RoomManager, context: Context):
     room = manager.rooms.get(context.room_id)
     # if the current round is greater than the total rounds, end the game and reset the room phase to LOBBY
     # but if the two top players have the same score we add a tie breaker round, so we don't end the game yet.
-    if (room.meta_data.current_round > room.meta_data.settings.total_rounds 
-        and len(room.meta_data.podium) > 1 
-        and room.meta_data.podium[0]["score"] != room.meta_data.podium[1]["score"]):
+    newly_unlocked = {}
+    game_finished = (
+        room.meta_data.current_round > room.meta_data.settings.total_rounds
+        and len(room.meta_data.podium) > 1
+        and room.meta_data.podium[0]["score"] != room.meta_data.podium[1]["score"]
+    )
+    if game_finished:
+        updated_state, newly_unlocked = evaluate_game_achievements(
+            {entry["player_id"]: entry["score"] for entry in room.meta_data.podium},
+            room.meta_data.achievement_state,
+            game_finished=True,
+        )
+        newly_unlocked = await save_achievement_candidates(room, updated_state, newly_unlocked)
         room.meta_data.phase.end()
     await publish_phase_payload(manager, {
         "event": "PHASE_PODIUM",
         "data": {
             "round": room.meta_data.current_round,
             "total_rounds": room.meta_data.settings.total_rounds,
-            "leaderboard": room.meta_data.podium
+            "leaderboard": room.meta_data.podium,
+            "achievements": newly_unlocked,
+            "game_finished": game_finished,
         }
     }, context.room_id)
 
@@ -260,6 +309,17 @@ async def to_next_phase(manager: RoomManager, context: Context):
     room = manager.rooms.get(context.room_id)
     # start game
     if room.meta_data.phase.current_state == RoomPhase.LOBBY:
+        player_user_ids = {player_id: player.db_user_id for player_id, player in room.players.items()}
+        stored = await load_unlocked_achievements(set(player_user_ids.values()))
+        room.meta_data.achievement_state = reset_game_progress(room.meta_data.achievement_state)
+        room.meta_data.achievement_state["unlocked"] = {
+            player_id: stored.get(user_id, set()).copy()
+            for player_id, user_id in player_user_ids.items()
+        }
+        room.meta_data.current_round = 1
+        clear_data(room)
+        for player in room.players.values():
+            player.score = 0
         room.meta_data.phase.start()
         await get_categories(manager, context)
         return
@@ -384,6 +444,7 @@ async def return_to_lobby(manager: RoomManager, context: Context):
     room.meta_data.phase_payload = None
     room.meta_data.phase_deadline = None
     room.meta_data.current_round = 1
+    room.meta_data.achievement_state = reset_game_progress(room.meta_data.achievement_state)
     room.meta_data.fallback_category = {}
     room.meta_data.podium = []
     clear_data(room)
