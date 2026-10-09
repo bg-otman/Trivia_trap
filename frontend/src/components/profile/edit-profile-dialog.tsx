@@ -56,10 +56,12 @@ export function EditProfileDialog({
   open,
   onOpenChange,
   user,
+  authReturnPath = "/profile",
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   user: UserData;
+  authReturnPath?: string;
 }) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -134,7 +136,7 @@ export function EditProfileDialog({
         | { detail?: string }
         | null;
       if (response.status === 401) {
-        router.replace(loginPathFor("/profile"));
+        router.replace(loginPathFor(authReturnPath));
         return;
       }
       if (!response.ok) {

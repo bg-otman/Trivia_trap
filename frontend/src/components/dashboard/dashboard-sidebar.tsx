@@ -22,6 +22,7 @@ import { PlayerAvatar } from "@/components/game/players/player-avatar";
 import { apiFetch, apiMediaUrl } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import type { UserData } from "@/types/userData";
+import { logoutSession } from "@/lib/session-actions";
 
 const navigation = [
   {
@@ -33,10 +34,9 @@ const navigation = [
   { label: "Profile", icon: UserRound, href: "/profile" },
   { label: "Friends", icon: Users, href: "/friends" },
   { label: "Game History", icon: History, href: "/history" },
-  { label: "Statistics", icon: BarChart3 },
   { label: "Achievements", icon: Medal, href: "/achievements" },
   { label: "Notifications", icon: Bell, href: "/notifications" },
-  { label: "Settings", icon: Settings },
+  { label: "Settings", icon: Settings, href: "/settings" },
 ];
 
 export function DashboardBrand({ compact = false }: { compact?: boolean }) {
@@ -109,11 +109,7 @@ export function DashboardSidebar({
     setLogoutError("");
 
     try {
-      await apiFetch("/users/me/presence", { method: "DELETE" }).catch(() => undefined);
-      const response = await apiFetch("/auth/logout", { method: "POST" });
-      if (!response.ok) {
-        throw new Error("Logout failed");
-      }
+      await logoutSession();
       window.location.replace("/login");
     } catch {
       setLogoutError("Could not log out. Please try again.");
