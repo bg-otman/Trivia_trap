@@ -77,7 +77,7 @@ export function GoogleSignIn({ disabled, onCredential }: {
         onError={() => setFailed(true)}
       />
       <div inert={disabled} aria-busy={disabled} className={disabled ? "opacity-50" : undefined}>
-        <div ref={container} className="flex min-h-10 w-full justify-center" />
+        <div ref={container} className="flex min-h-10 w-full justify-center overflow-hidden rounded-full" />
       </div>
       {(!ready || failed) && <p role="status" className="text-center text-sm text-trap-text-dim">
         {failed ? "Could not load Google sign-in. Reload the page or use email." : "Loading Google sign-in…"}
