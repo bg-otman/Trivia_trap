@@ -15,6 +15,17 @@ def user_pair(first: int, second: int):
     )
 
 
+async def search_players(db: AsyncSession, current_user_id: int, prefix: str) -> list[dict[str, str]]:
+    normalized_prefix = prefix.casefold()
+    rows = (await db.execute(
+        select(User.id, User.username).where(
+            User.id != current_user_id,
+            User.username_key.like(f"{normalized_prefix}%"),
+        ).order_by(User.username_key, User.id).limit(10)
+    )).all()
+    return [{"id": str(user_id), "username": username} for user_id, username in rows]
+
+
 async def get_friends(db: AsyncSession, user_id: int) -> list[dict[str, str]]:
     other_id = case(
         (Friendship.requester_id == user_id, Friendship.receiver_id),

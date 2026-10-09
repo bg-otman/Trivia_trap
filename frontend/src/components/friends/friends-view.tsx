@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState, type FormEvent } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -15,10 +15,8 @@ import { ErrorState } from "@/components/ui/error-state";
 import { Input } from "@/components/ui/input";
 import { LoadingState } from "@/components/ui/loading-state";
 import { apiFetch } from "@/lib/api";
-import type { CurrentUser } from "@/types/userData";
 
 type Friend = { id: string; username: string };
-type FoundPlayer = { id: number; username: string };
 type FriendshipAction = "request" | "accept" | "reject" | "cancel" | "remove";
 
 const actionRoutes: Record<FriendshipAction, (id: string) => string> = {
@@ -73,7 +71,6 @@ function SectionHeading({ eyebrow, title, count }: { eyebrow: string; title: str
 
 export function FriendsView() {
   const router = useRouter();
-  const [currentUser, setCurrentUser] = useState<CurrentUser | null>(null);
   const [friends, setFriends] = useState<Friend[]>([]);
   const [incoming, setIncoming] = useState<Friend[]>([]);
   const [sent, setSent] = useState<Friend[]>([]);
@@ -84,14 +81,13 @@ export function FriendsView() {
   const [notice, setNotice] = useState("");
   const [busyId, setBusyId] = useState<string | null>(null);
   const [username, setUsername] = useState("");
-  const [found, setFound] = useState<FoundPlayer | null>(null);
+  const [matches, setMatches] = useState<Friend[]>([]);
   const [searching, setSearching] = useState(false);
   const [searchMessage, setSearchMessage] = useState("");
 
   const loadData = useCallback(async () => {
     try {
       const responses = await Promise.all([
-        apiFetch("/auth/me"),
         apiFetch("/friends/"),
         apiFetch("/friends/requests"),
         apiFetch("/friends/requests/sent"),
@@ -102,8 +98,7 @@ export function FriendsView() {
       }
       const failed = responses.find((response) => !response.ok);
       if (failed) throw new Error(await responseError(failed));
-      const [user, friendList, incomingList, sentList] = await Promise.all(responses.map((response) => response.json())) as [CurrentUser, Friend[], Friend[], Friend[]];
-      setCurrentUser(user);
+      const [friendList, incomingList, sentList] = await Promise.all(responses.map((response) => response.json())) as [Friend[], Friend[], Friend[]];
       setFriends(friendList);
       setIncoming(incomingList);
       setSent(sentList);
@@ -121,37 +116,40 @@ export function FriendsView() {
     return () => window.clearTimeout(timer);
   }, [loadData]);
 
-  async function findPlayer(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const query = username.trim();
-    setFound(null);
-    setSearchMessage("");
-    setActionError("");
-    setNotice("");
-    if (!query) {
-      setSearchMessage("Enter a username to find a player.");
-      return;
-    }
-    setSearching(true);
-    try {
-      const response = await apiFetch(`/users/${encodeURIComponent(query)}`);
-      if (response.status === 401) {
-        setUnauthorized(true);
-        return;
+  useEffect(() => {
+    const prefix = username.trim();
+    if (!prefix) return;
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      try {
+        const response = await apiFetch(`/friends/search?prefix=${encodeURIComponent(prefix)}`, {
+          signal: controller.signal,
+        });
+        if (controller.signal.aborted) return;
+        if (response.status === 401) {
+          setUnauthorized(true);
+          return;
+        }
+        if (!response.ok) throw new Error(await responseError(response));
+        const players = await response.json() as Friend[];
+        if (controller.signal.aborted) return;
+        setMatches(players);
+        setSearchMessage(players.length ? "" : "No players found with that username prefix.");
+      } catch (error) {
+        if (controller.signal.aborted) return;
+        setMatches([]);
+        setSearchMessage(error instanceof Error ? error.message : "Could not search for players.");
+      } finally {
+        if (!controller.signal.aborted) setSearching(false);
       }
-      if (response.status === 404) {
-        setSearchMessage("No player found with that username.");
-        return;
-      }
-      if (!response.ok) throw new Error(await responseError(response));
-      const player = await response.json() as FoundPlayer;
-      setFound(player);
-    } catch (error) {
-      setSearchMessage(error instanceof Error ? error.message : "Could not search for that player.");
-    } finally {
-      setSearching(false);
-    }
-  }
+    }, 200);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [username]);
 
   async function runAction(action: FriendshipAction, player: Friend) {
     if (busyId) return;
@@ -168,7 +166,6 @@ export function FriendsView() {
         return;
       }
       if (!response.ok) throw new Error(await responseError(response));
-      if (action === "request") setFound(null);
       setNotice(actionSuccess[action]);
       await loadData();
     } catch (error) {
@@ -178,10 +175,6 @@ export function FriendsView() {
       setBusyId(null);
     }
   }
-
-  const foundFriend = found && friends.some((player) => player.id === String(found.id));
-  const foundIncoming = found && incoming.some((player) => player.id === String(found.id));
-  const foundSent = found && sent.some((player) => player.id === String(found.id));
 
   if (loading) return <LoadingState title="Loading your friends" description="Finding your crew and requests…" className="mt-8" />;
   if (unauthorized) {
@@ -236,27 +229,37 @@ export function FriendsView() {
           <Card className="rounded-[20px] border border-white/[0.07] bg-trap-surface py-0 shadow-[0_18px_42px_rgba(0,0,0,0.16)]">
             <SectionHeading eyebrow="Find a teammate" title="Add a friend" />
             <CardContent className="p-5 sm:p-6">
-              <p className="mb-4 text-xs leading-5 text-[#a6a6ae]">Search for an exact username to send a friend request.</p>
-              <form onSubmit={findPlayer} className="flex flex-col gap-2 sm:flex-row">
-                <label htmlFor="friend-username" className="sr-only">Player username</label>
-                <div className="relative min-w-0 flex-1">
-                  <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-[#85858f]" aria-hidden="true" />
-                  <Input id="friend-username" value={username} onChange={(event) => { setUsername(event.target.value); setFound(null); setSearchMessage(""); }} placeholder="Enter username" autoComplete="off" maxLength={15} className="h-11 pl-10" />
-                </div>
-                <Button type="submit" disabled={searching} className="h-11 px-5 text-xs">
-                  {searching ? <LoaderCircle className="size-4 animate-spin" /> : <Search className="size-4" />} Find player
-                </Button>
-              </form>
+              <p className="mb-4 text-xs leading-5 text-[#a6a6ae]">Type the start of a username to see up to 10 matching players.</p>
+              <label htmlFor="friend-username" className="sr-only">Player username</label>
+              <div className="relative">
+                <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-[#85858f]" aria-hidden="true" />
+                <Input id="friend-username" value={username} onChange={(event) => {
+                  const value = event.target.value;
+                  setUsername(value);
+                  setMatches([]);
+                  setSearching(Boolean(value.trim()));
+                  setSearchMessage("");
+                }} placeholder="Start typing a username" autoComplete="off" maxLength={15} className="h-11 pl-10 pr-10" />
+                {searching && <LoaderCircle className="pointer-events-none absolute right-3.5 top-1/2 size-4 -translate-y-1/2 animate-spin text-[#85858f]" aria-label="Searching" />}
+              </div>
               {searchMessage && <p role="status" className="mt-3 text-xs text-[#fca5a5]">{searchMessage}</p>}
-              {found && (
-                <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.035] p-3.5">
-                  <PlayerIdentity player={{ id: String(found.id), username: found.username }} detail="Player found" />
-                  {currentUser?.id === found.id ? <span className="text-xs text-[#a6a6ae]">That’s you</span>
-                    : foundFriend ? <span className="text-xs font-bold text-trap-success">Already friends</span>
-                    : foundIncoming ? <span className="text-xs text-[#a6a6ae]">They sent you a request below</span>
-                    : foundSent ? <span className="text-xs text-[#a6a6ae]">Request pending</span>
-                    : <Button type="button" size="sm" disabled={busyId !== null} onClick={() => { void runAction("request", { id: String(found.id), username: found.username }); }}><UserPlus className="size-4" /> Add friend</Button>}
-                </div>
+              {matches.length > 0 && (
+                <ul className="mt-4 divide-y divide-white/[0.06] overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035]">
+                  {matches.map((player) => {
+                    const isFriend = friends.some((friend) => friend.id === player.id);
+                    const hasIncoming = incoming.some((request) => request.id === player.id);
+                    const hasSent = sent.some((request) => request.id === player.id);
+                    return (
+                      <li key={player.id} className="flex flex-wrap items-center justify-between gap-3 p-3.5">
+                        <PlayerIdentity player={player} />
+                        {isFriend ? <span className="text-xs font-bold text-trap-success">Already friends</span>
+                          : hasIncoming ? <span className="text-xs text-[#a6a6ae]">They sent you a request below</span>
+                          : hasSent ? <span className="text-xs text-[#a6a6ae]">Request pending</span>
+                          : <Button type="button" size="sm" disabled={busyId !== null} onClick={() => { void runAction("request", player); }}><UserPlus className="size-4" /> Add friend</Button>}
+                      </li>
+                    );
+                  })}
+                </ul>
               )}
             </CardContent>
           </Card>

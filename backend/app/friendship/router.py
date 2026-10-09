@@ -1,10 +1,10 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, HTTPException, Path
+from fastapi import APIRouter, Depends, HTTPException, Path, Query
 from authentication.current_user import get_current_user
 from dataProcessing.models import User
 from authentication.repository import DbSession
-from friendship.repository import get_friends, send_friend, accept_request, get_incoming_requests, get_sent_requests, reject_request, cancel_request, remove_friend as delete_friend
+from friendship.repository import get_friends, search_players, send_friend, accept_request, get_incoming_requests, get_sent_requests, reject_request, cancel_request, remove_friend as delete_friend
 
 friends_router = APIRouter(prefix="/friends", tags=["Friendship"])
 
@@ -15,6 +15,17 @@ UserId = Annotated[int, Path(ge=1, le=2147483647)]
 @friends_router.get("/")
 async def list_friends(current_user: CurrentUser, db: DbSession):
     return await get_friends(db, current_user.id)
+
+
+@friends_router.get("/search")
+async def search_friend_candidates(
+    prefix: Annotated[str, Query(min_length=1, max_length=15)],
+    current_user: CurrentUser,
+    db: DbSession,
+):
+    if not prefix.isalnum():
+        raise HTTPException(status_code=422, detail="Search prefix must contain only letters and numbers.")
+    return await search_players(db, current_user.id, prefix)
 
 
 @friends_router.post("/request/{user_id}")

@@ -2,14 +2,16 @@
 
 Friend requests and accepted friendships are persisted in PostgreSQL by
 `friendship/repository.py`, using the shared `Friendship` model and per-request
-async sessions. All endpoints require an application bearer JWT. The authenticated
-user ID comes from the database-backed `get_current_user` dependency.
+async sessions. All endpoints require an application JWT from the login cookie or
+Authorization bearer header. The authenticated user ID comes from the database-backed
+`get_current_user` dependency.
 
 ## Endpoints
 
 | Method | Route | Behavior |
 | --- | --- | --- |
 | GET | `/friends/` | List accepted friends in either direction |
+| GET | `/friends/search?prefix=ham` | Return up to 10 other players whose usernames start with the prefix, sorted by normalized username |
 | POST | `/friends/request/{user_id}` | Send a request to another existing user |
 | GET | `/friends/requests` | List incoming pending requests |
 | GET | `/friends/requests/sent` | List outgoing pending requests |
@@ -18,7 +20,7 @@ user ID comes from the database-backed `get_current_user` dependency.
 | DELETE | `/friends/request/{receiver_id}` | Cancel a pending request you sent |
 | DELETE | `/friends/{friend_id}` | Remove an accepted friendship in either direction |
 
-List responses contain `{ "id": "123", "username": "Player" }` objects.
+List and search responses contain `{ "id": "123", "username": "Player" }` objects. Search requires a 1–15 character prefix containing only letters and numbers, and matches without regard to case. Other characters return 422.
 IDs in responses remain strings; path parameters must be positive database integers.
 Existing success messages are preserved. Invalid friendship actions return 400,
 invalid path IDs return 422, and missing/invalid authentication returns 401.
