@@ -7,6 +7,7 @@ from typing import Annotated
 from fastapi import Depends
 from dataProcessing.database import get_db
 from dataProcessing.models import User, GamePlayerResult, UserAchievement, CategoryTranslation, GamePlayerCategoryResult
+from dataProcessing.achievement_persistence import ACHIEVEMENT_DEFINITIONS
 from .schemas import UserStatistics, UserProfile, UserAchievements as achievements, UserCategoryAnalytics
 from fastapi import HTTPException, status
 
@@ -33,20 +34,16 @@ async def get_user_statistics(db: Annotated[Session, Depends(get_db)], user_id: 
 
 
 async def get_user_achievements(db: Annotated[Session, Depends(get_db)], user_id: int):
-    user_achievements = []
-    statement = select(UserAchievement).where(UserAchievement.user_id == user_id)
-    try:
-        trophies = (await db.execute(statement)).scalars().all()
-        for trophy in trophies:
-            user_achievements.append(achievements(
-                name=trophy.achievement_code,
-                description=trophy.description,
-                img=trophy.img,
-                unlocked=trophy.unlocked
-            ))
-    except Exception:
-        pass
-    return user_achievements
+    statement = select(UserAchievement.achievement_code).where(
+        UserAchievement.user_id == user_id,
+        UserAchievement.unlocked.is_(True),
+    )
+    unlocked_codes = set((await db.execute(statement)).scalars().all())
+    return [
+        achievements(name=code, description=description, img=img,
+                     unlocked=code in unlocked_codes)
+        for code, (description, img) in ACHIEVEMENT_DEFINITIONS.items()
+    ]
 
 
 
