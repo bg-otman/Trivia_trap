@@ -78,7 +78,7 @@ export function QuestionCard({
           <p className="mb-3 font-meta text-[11px] font-bold tracking-[0.16em] text-primary">
             THE QUESTION
           </p>
-          <h1 className="text-balance font-display text-2xl font-black leading-tight tracking-[-0.025em] text-foreground sm:text-3xl lg:text-[2.15rem] lg:leading-[1.2]">
+          <h1 dir="auto" className="text-balance font-display text-2xl font-black leading-tight tracking-[-0.025em] text-foreground sm:text-3xl lg:text-[2.15rem] lg:leading-[1.2]">
             {question.text}
           </h1>
 

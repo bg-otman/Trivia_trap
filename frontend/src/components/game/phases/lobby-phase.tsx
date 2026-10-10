@@ -4,6 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
   DoorOpen,
+  Languages,
   Pencil,
   MoreVertical,
   Play,
@@ -358,6 +359,33 @@ export function LobbyPhase({
                               />
                             </label>
                           ))}
+                          <fieldset className="sm:col-span-2">
+                            <legend className="mb-2 text-xs font-bold text-muted-foreground">
+                              QUESTION LANGUAGE
+                            </legend>
+                            <div className="grid grid-cols-2 gap-2">
+                              {([
+                                { code: "en", label: "ENGLISH" },
+                                { code: "ar", label: "العربية" },
+                              ] as const).map(({ code, label }) => (
+                                <button
+                                  key={code}
+                                  type="button"
+                                  aria-pressed={(draftSettings.language ?? "en") === code}
+                                  onClick={() => setDraftSettings((current) => ({ ...current, language: code }))}
+                                  className={cn(
+                                    "flex h-11 items-center justify-center gap-2 rounded-xl border px-3 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                                    (draftSettings.language ?? "en") === code
+                                      ? "border-primary bg-primary/15 text-white"
+                                      : "border-border bg-background text-muted-foreground hover:border-primary/50 hover:text-white",
+                                  )}
+                                >
+                                  <Languages className="size-4" aria-hidden="true" />
+                                  <span lang={code}>{label}</span>
+                                </button>
+                              ))}
+                            </div>
+                          </fieldset>
                         </div>
                         <DialogFooter className="mt-7">
                           <Button
@@ -392,6 +420,14 @@ export function LobbyPhase({
                       </p>
                     </div>
                   ))}
+                  <div className="col-span-2 flex items-center justify-between rounded-xl border border-white/[0.08] bg-black/15 p-3">
+                    <p className="text-[9px] font-black tracking-[0.1em] text-muted-foreground">
+                      QUESTION LANGUAGE
+                    </p>
+                    <p className="font-display text-sm font-black text-white" lang={settings.language === "ar" ? "ar" : "en"}>
+                      {settings.language === "ar" ? "العربية" : "ENGLISH"}
+                    </p>
+                  </div>
                 </div>
               </Card>
             </motion.div>

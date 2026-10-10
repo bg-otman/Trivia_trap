@@ -1,6 +1,6 @@
 from fastapi import WebSocket
 from pydantic import BaseModel, Field
-from typing import Annotated
+from typing import Annotated, Literal
 from datetime import datetime
 from uuid import UUID
 from statemachine import StateMachine, State
@@ -42,7 +42,7 @@ class RoomSettings(BaseModel):
     bluff_time: Annotated[int, Field(ge=10, description="Time in seconds to provide answer")] = 20
     vote_time: Annotated[int, Field(ge=10, description="Time in seconds to vote for the correct answer")] = 15
     max_players: Annotated[int, Field(ge=2, description="Maximum number of players in the room")] = 10
-    language: Annotated[str, Field(description="Language code for the game questions")] = "en"
+    language: Annotated[Literal["en", "ar"], Field(description="Language code for the game questions")] = "en"
 
 class RoomMetaData(BaseModel, arbitrary_types_allowed=True):
     host_id: str

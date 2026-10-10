@@ -87,6 +87,7 @@ export function VotingArena({
 
         <h1
           id="voting-question"
+          dir="auto"
           className="max-w-[880px] text-balance font-display text-2xl font-extrabold leading-tight tracking-[-0.025em] text-foreground sm:text-[30px] sm:leading-9"
         >
           {question.text}
@@ -183,7 +184,7 @@ export function VotingArena({
                     )}
 
                     <span className="relative z-10 min-w-0 flex-1 px-2 sm:px-4">
-                      <span className="block whitespace-normal break-words font-display text-sm font-bold leading-5 text-foreground sm:text-base sm:leading-6">
+                      <span dir="auto" className="block whitespace-normal break-words font-display text-sm font-bold leading-5 text-foreground sm:text-base sm:leading-6">
                         {option.text}
                       </span>
                       {isSelected && (

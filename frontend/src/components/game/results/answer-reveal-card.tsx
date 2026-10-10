@@ -21,7 +21,7 @@ export function CorrectAnswerCard({
         <p className="mt-4 font-meta text-[11px] font-black tracking-[0.16em] text-accent">
           THE REAL ANSWER
         </p>
-        <p className="mx-auto mt-2 max-w-3xl text-balance font-display text-2xl font-black leading-tight text-white sm:text-3xl">
+        <p dir="auto" className="mx-auto mt-2 max-w-3xl text-balance font-display text-2xl font-black leading-tight text-white sm:text-3xl">
           {answer}
         </p>
         <div className="mx-auto mt-5 max-w-3xl rounded-2xl border border-accent/25 bg-black/15 p-3 text-left sm:p-4">
@@ -85,7 +85,7 @@ export function SubmittedAnswerCard({
       </span>
 
       <div className="flex min-h-28 flex-1 items-center justify-center px-4 py-5 text-center">
-        <p className="whitespace-normal break-words font-display text-xl font-black leading-7 text-foreground sm:text-2xl">
+        <p dir="auto" className="whitespace-normal break-words font-display text-xl font-black leading-7 text-foreground sm:text-2xl">
           {submission.text}
         </p>
       </div>

@@ -236,6 +236,7 @@ export function CategoryCard({
 
         {/* Label */}
         <span
+          dir="auto"
           className={cn(
             "text-sm font-extrabold tracking-wide",
             "transition-colors duration-200",
