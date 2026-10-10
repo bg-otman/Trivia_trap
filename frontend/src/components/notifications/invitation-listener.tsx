@@ -12,7 +12,11 @@ function websocketUrl() {
   const configured = process.env.NEXT_PUBLIC_WEBSOCKET_URL;
   if (configured) return `${configured.replace(/\/$/, "")}/invitations/ws`;
   const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-  const host = ["localhost", "127.0.0.1"].includes(window.location.hostname) ? `${window.location.hostname}:8000` : window.location.host;
+  const isDevelopment = process.env.NODE_ENV === "development";
+  const isLoopback = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+  const host = isDevelopment && isLoopback
+    ? `${window.location.hostname}:8000`
+    : window.location.host;
   return `${protocol}//${host}/invitations/ws`;
 }
 

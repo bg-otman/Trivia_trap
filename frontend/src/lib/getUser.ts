@@ -2,12 +2,16 @@ import { cookies } from "next/headers";
 import type { UserData, CurrentUser } from "@/types/userData";
 
 const apiBase = (process.env.API_BASE_URL ?? process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000").replace(/\/$/, "");
+const publicApiBase = (
+    process.env.NEXT_PUBLIC_API_BASE_URL
+    ?? (process.env.NODE_ENV === "production" ? "/api" : "http://localhost:8000")
+).replace(/\/$/, "");
 
 function profileMediaUrl(value: string | null): string | null {
     if (!value) return null;
     if (/^(https?:|blob:|data:)/i.test(value)) return value;
     const path = value.startsWith("/") ? value : `/${value}`;
-    return `${apiBase}${path}`;
+    return `${publicApiBase}${path}`;
 }
 
 type UserProfileResponse = Omit<UserData, "id" | "join_date"> & {
