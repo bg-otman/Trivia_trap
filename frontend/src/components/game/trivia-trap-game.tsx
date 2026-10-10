@@ -575,7 +575,6 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
               }))
             }
             onSubmitAnswer={roomId ? websocket.submitBluff : submitTrapAnswer}
-            language={roomLanguage}
           />
         );
       case "VOTING":
