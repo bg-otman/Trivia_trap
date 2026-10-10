@@ -16,6 +16,7 @@ import asyncio
 import random
 import math
 import logging
+import string
 from time import monotonic
 from copy import deepcopy
 from datetime import datetime, timezone
@@ -79,14 +80,16 @@ def join_room(rooms: dict, ws: WebSocket, room_id: str, player_id: str, name: st
     """
         Join or Create Room if it does not exist. If the room exists, add the player to the room. If the room is full, raise an error.
     """
+    if len(room_id) != 6 or any(character not in string.ascii_uppercase + string.digits for character in room_id):
+        raise GameError("INVALID_ROOM_CODE", "The room code is invalid. Please check it and try again.")
     if rooms.get(room_id) is None:
-        rooms[room_id] = Room(meta_data=RoomMetaData(host_id=player_id, settings=RoomSettings()), players={})
+        raise GameError("ROOM_NOT_FOUND", "This room could not be found. Check the room code and try again.")
     room = rooms[room_id]
     if  player_id not in room.players and len(room.players) >= room.meta_data.settings.max_players:
-        raise GameError("FULL_ROOM", "Room is full")
+        raise GameError("FULL_ROOM", "This room is full. Try joining another room.")
     if player_id not in room.players:
         if room.meta_data.phase.current_state != RoomPhase.LOBBY:
-            raise GameError("GAME_IN_PROGRESS", "Game is already in progress")
+            raise GameError("GAME_IN_PROGRESS", "This game is already in progress. You cannot join right now.")
         room.players[player_id] = PlayerInfo(ws=ws, name=name, db_user_id=db_user_id)
     else:
         room.players[player_id].ws = ws

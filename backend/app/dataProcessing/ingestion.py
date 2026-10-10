@@ -1,5 +1,5 @@
 import unicodedata
-from sqlalchemy import func, select
+from sqlalchemy import exists, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from random import shuffle
@@ -28,6 +28,10 @@ async def get_category_list(
         )
         .where(
             CategoryTranslation.language_code == language_code,
+            exists().where(
+                Question.category_id == Category.id,
+                Question.language_code == language_code,
+            ),
         )
         .order_by(Category.id)
     )

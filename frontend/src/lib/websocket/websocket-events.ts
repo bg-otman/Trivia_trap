@@ -219,7 +219,7 @@ export function parseLobbyMessage(raw: string): LobbyServerMessage | null {
         bluff_time: settings.bluff_time,
         vote_time: settings.vote_time,
         max_players: settings.max_players,
-        language: isString(settings.language) ? settings.language : "en",
+        language: settings.language === "ar" ? "ar" : "en",
       },
     },
   };

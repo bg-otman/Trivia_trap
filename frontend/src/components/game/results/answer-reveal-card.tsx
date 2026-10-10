@@ -1,15 +1,18 @@
 import { CheckCircle2, Crown, UserRound, Vote } from "lucide-react";
 import { PlayerAvatar } from "@/components/game/players/player-avatar";
 import type { RevealedSubmission } from "@/types/results";
+import type { GameLanguage } from "@/types/game";
 
 interface CorrectAnswerCardProps {
   answer: string;
   voterNames?: string[];
+  language?: GameLanguage;
 }
 
 export function CorrectAnswerCard({
   answer,
   voterNames = [],
+  language = "en",
 }: CorrectAnswerCardProps) {
   return (
     <div className="relative overflow-hidden rounded-3xl border border-accent/50 bg-[linear-gradient(135deg,rgba(247,201,72,0.18),rgba(247,201,72,0.06))] px-5 py-6 shadow-[0_18px_55px_rgba(247,201,72,0.12)] sm:px-8 sm:py-8">
@@ -21,7 +24,7 @@ export function CorrectAnswerCard({
         <p className="mt-4 font-meta text-[11px] font-black tracking-[0.16em] text-accent">
           THE REAL ANSWER
         </p>
-        <p dir="auto" className="mx-auto mt-2 max-w-3xl text-balance font-display text-2xl font-black leading-tight text-white sm:text-3xl">
+        <p dir={language === "ar" ? "rtl" : "auto"} className="mx-auto mt-2 max-w-3xl text-balance font-display text-2xl font-black leading-tight text-white sm:text-3xl">
           {answer}
         </p>
         <div className="mx-auto mt-5 max-w-3xl rounded-2xl border border-accent/25 bg-black/15 p-3 text-left sm:p-4">
@@ -58,8 +61,10 @@ export function CorrectAnswerCard({
 
 export function SubmittedAnswerCard({
   submission,
+  language = "en",
 }: {
   submission: RevealedSubmission;
+  language?: GameLanguage;
 }) {
   return (
     <article className="relative mt-4 flex h-full min-h-52 min-w-0 flex-col rounded-[20px] border border-border bg-[#1c1c22]/95 p-4 pt-9 shadow-[0_5px_0_#0d0d10] sm:p-5 sm:pt-9">
@@ -85,7 +90,7 @@ export function SubmittedAnswerCard({
       </span>
 
       <div className="flex min-h-28 flex-1 items-center justify-center px-4 py-5 text-center">
-        <p dir="auto" className="whitespace-normal break-words font-display text-xl font-black leading-7 text-foreground sm:text-2xl">
+        <p dir={language === "ar" ? "rtl" : "auto"} className="whitespace-normal break-words font-display text-xl font-black leading-7 text-foreground sm:text-2xl">
           {submission.text}
         </p>
       </div>

@@ -13,6 +13,7 @@ import { animateSuccessIcon } from "@/animations/micro-interactions";
 import type { Question } from "@/types/question";
 import type { Player } from "@/types/player";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import type { GameLanguage } from "@/types/game";
 
 interface TrapPhaseProps {
   players: Player[];
@@ -24,6 +25,7 @@ interface TrapPhaseProps {
   submitted: boolean;
   onAnswerChange: (answer: string) => void;
   onSubmitAnswer: (answer: string) => void;
+  language?: GameLanguage;
 }
 
 export function TrapPhase({
@@ -36,6 +38,7 @@ export function TrapPhase({
   submitted,
   onAnswerChange,
   onSubmitAnswer,
+  language = "en",
 }: TrapPhaseProps) {
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -107,6 +110,7 @@ export function TrapPhase({
             question={question}
             currentRound={currentRound}
             totalRounds={totalRounds}
+            language={language}
           />
         </div>
 
@@ -189,6 +193,27 @@ export function TrapPhase({
                     className="h-12 min-w-0 flex-1 rounded-xl border border-border bg-black/25 px-4 text-sm font-semibold text-white outline-none transition placeholder:text-[#6f6f78] focus:border-primary focus:ring-2 focus:ring-primary/20"
                   />
                 )}
+<<<<<<< HEAD
+=======
+              </label>
+              <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+                <Input
+                  id="trap-answer"
+                  value={answer}
+                  disabled={submitted || submitting}
+                  onChange={(event) => {
+                    onAnswerChange(event.target.value);
+                    if (error) setError(null);
+                  }}
+                  maxLength={80}
+                  autoComplete="off"
+                  placeholder="Write an answer that could fool the other players..."
+                  aria-describedby={error ? "trap-error" : "trap-help"}
+                  dir={language === "ar" ? "rtl" : "ltr"}
+                  aria-invalid={Boolean(error)}
+                  className="h-12 min-w-0 flex-1 rounded-xl border border-border bg-black/25 px-4 text-sm font-semibold text-white outline-none transition placeholder:text-[#6f6f78] focus:border-primary focus:ring-2 focus:ring-primary/20"
+                />
+>>>>>>> origin/main
                 <Button
                   type="submit"
                   disabled={submitted || submitting}

@@ -10,6 +10,7 @@ import {
 import { gameSpring, StaggerGroup, StaggerItem } from "@/components/game/system/phase-transition";
 import { captureCategoryCard } from "@/animations/category-transition";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import type { GameLanguage } from "@/types/game";
 
 const roundCategories: Category[] = [
   "movies",
@@ -49,6 +50,7 @@ interface CategoryPhaseProps {
   chooserName?: string;
   categories?: CategoryOption[];
   duration?: number;
+  language?: GameLanguage;
 }
 
 export function CategoryPhase({
@@ -61,6 +63,7 @@ export function CategoryPhase({
   chooserName,
   categories,
   duration,
+  language = "en",
 }: CategoryPhaseProps) {
   const [selectedKey, setSelectedKey] = useState<string | number | null>(null);
   const isLocked = selectedCategory !== null || selectedKey !== null;
@@ -116,6 +119,7 @@ export function CategoryPhase({
             return (
               <StaggerItem key={key}>
                 <motion.div
+                  dir={language === "ar" ? "rtl" : "ltr"}
                   data-category-card={category}
                   animate={reducedMotion ? { opacity: selectedCategory && !selected ? 0.55 : 1 } : {
                     opacity: selectedCategory && !selected ? 0.45 : 1,

@@ -19,6 +19,7 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { RoomCodeInput } from "./room-code-input";
 import { apiFetch } from "@/lib/api";
 import { loginPathFor } from "@/lib/auth-routing";
+import { gameErrorPresentation } from "@/lib/game-error";
 
 type JoinState = "idle" | "loading" | "invalid" | "full" | "started" | "error";
 
@@ -30,15 +31,21 @@ export function JoinRoom({ initialCode = "" }: { initialCode?: string }) {
   const [state, setState] = useState<JoinState>("idle");
   const restoredIntentStarted = useRef(false);
 
-  const error = state === "invalid"
-    ? { title: "ROOM NOT FOUND", message: "We couldn't find a room with that code.", action: "TRY AGAIN" }
+  const errorCode = state === "invalid"
+    ? "ROOM_NOT_FOUND"
     : state === "full"
-      ? { title: "ROOM FULL", message: "This room has reached its maximum number of players.", action: "TRY ANOTHER ROOM" }
+      ? "FULL_ROOM"
       : state === "started"
-        ? { title: "GAME IN PROGRESS", message: "This room has already started its game.", action: "TRY ANOTHER ROOM" }
-      : state === "error"
-        ? { title: "UNABLE TO JOIN", message: "Something went wrong while joining the room.", action: "TRY AGAIN" }
-        : null;
+        ? "GAME_IN_PROGRESS"
+        : state === "error"
+          ? "ERROR"
+          : null;
+  const error = errorCode
+    ? {
+        ...gameErrorPresentation({ code: errorCode, message: "" }),
+        action: state === "full" || state === "started" ? "TRY ANOTHER ROOM" : "TRY AGAIN",
+      }
+    : null;
 
   function retry() {
     setState("idle");
