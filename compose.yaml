@@ -35,6 +35,7 @@ services:
         condition: service_healthy
     volumes:
       - ./infra/vault/bootstrap.sh:/vault/bootstrap-script/bootstrap.sh:ro
+      - ./infra/vault/backend-policy.hcl:/vault/policies/backend-policy.hcl:ro
       - ./infra/vault/database-policy.hcl:/vault/policies/database-policy.hcl:ro
       - ./infra/vault/monitoring-policy.hcl:/vault/policies/monitoring-policy.hcl:ro
       - vault_bootstrap:/vault/bootstrap
@@ -100,7 +101,7 @@ services:
       # actual PostgreSQL password into DATABASE_URL at process start.
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
-      JWT_SECRET_KEY: ${JWT_SECRET_KEY} # to be intergated with Vault in the future
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
     depends_on:
       vault-bootstrap:
         condition: service_completed_successfully
@@ -125,7 +126,13 @@ services:
       start_period: 15s
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+    environment:
+      # Server-rendered pages call the backend over the Docker network.
+      API_BASE_URL: http://backend:8000
     expose:
       - "3000"
     healthcheck:
