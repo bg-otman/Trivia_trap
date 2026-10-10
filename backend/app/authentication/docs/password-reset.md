@@ -13,7 +13,9 @@ PASSWORD_RESET_URL=https://your-frontend.example/login?mode=reset-password
 `PASSWORD_RESET_URL` is the full URL of the frontend reset form. For local development,
 set `PASSWORD_RESET_URL=http://localhost:3000/login?mode=reset-password` in `backend/.env`
 and restart the backend. The frontend API base URL is configured with
-`NEXT_PUBLIC_API_BASE_URL` (defaults to `http://localhost:8000`).
+`NEXT_PUBLIC_API_BASE_URL` (defaults to the same origin in production, or
+`http://localhost:8000` in local development). Server-rendered pages use
+`API_BASE_URL=http://backend:8000` in Docker.
 Use HTTPS in deployment. Do not include a fragment (`#...`) in this setting.
 It replaces `PUBLIC_BACKEND_URL`. No HTML pages are served by the authentication backend.
 Missing or invalid reset-page configuration returns 503 for all forgot-password requests.
