@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 import type { GameHistoryResponse, HistoryFilter } from "@/types/history";
 import { UserApiError } from "@/lib/getUser";
 
-const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000").replace(/\/$/, "");
+const apiBase = ( process.env.API_BASE_URL ?? process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000" ).replace(/\/$/, "");
 
 export async function getGameHistory({
   limit = 10,

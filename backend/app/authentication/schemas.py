@@ -35,7 +35,7 @@ class RegisterData(BaseModel):
     username: Annotated[str, BeforeValidator(validate_username)] = Field(min_length=3, max_length=15)
     email: EmailStr = Field(max_length=255)
     password: str = Field(min_length=15, max_length=128)
-    
+
 class UsernameData(BaseModel):
     # Match the room player's maximum name length.
     username: str = Field(min_length=3, max_length=15)

@@ -168,7 +168,7 @@ async def room(ws: WebSocket, room_id: str, user: Annotated[User, Depends(get_cu
                     room_id not in manager.rooms
                     or user_id not in manager.rooms[room_id].players
                     or manager.rooms[room_id].players[user_id].ws is not ws
-                ): 
+                ):
                     break  # The room, player, or connection is no longer active
                 request = await ws.receive_json()
                 event_name = request.get("event")

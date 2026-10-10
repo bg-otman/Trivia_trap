@@ -104,8 +104,8 @@ async def get_user_category_analytics(db: Annotated[Session, Depends(get_db)], u
 
 
 
-async def build_user_profile(session: Annotated[Session, Depends(get_db)], 
-                   user_id: int = None, 
+async def build_user_profile(session: Annotated[Session, Depends(get_db)],
+                   user_id: int = None,
                    username: str = None,
                    language: str = 'en') -> UserProfile:
     """
@@ -143,9 +143,9 @@ async def build_user_profile(session: Annotated[Session, Depends(get_db)],
 
 
 async def update_user_profile(
-        session: Annotated[Session, Depends(get_db)], 
-        user_id: int, 
-        avatar_url: str, 
+        session: Annotated[Session, Depends(get_db)],
+        user_id: int,
+        avatar_url: str,
         username: str
     ) -> None:
     """

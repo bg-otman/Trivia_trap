@@ -134,5 +134,3 @@ def evaluate_game_achievements(
                     newly_unlocked[player_id] = ["HIGH_SCORER"]
 
     return updated, newly_unlocked
-
-

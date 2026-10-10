@@ -21,11 +21,11 @@ def validate_language(language: str = Query('en', min_length=2, max_length=2)) -
     return language
 
 @router.get("/me")
-async def get_profile(db: Annotated[Session, Depends(get_db)], 
+async def get_profile(db: Annotated[Session, Depends(get_db)],
                     current_user: Annotated[User, Depends(get_current_user)],
                     language: Annotated[str, Depends(validate_language)]) -> UserProfile:
     return await build_user_profile(
-            db, 
+            db,
             user_id=current_user.id,
             language=language
         )
@@ -56,15 +56,15 @@ async def clear_my_presence(
     current_user: Annotated[User, Depends(get_current_user)],
 ) -> None:
     mark_user_offline(current_user.id)
-    
+
 
 
 @router.get("/{username}")
-async def get_user_profile(username: str, 
+async def get_user_profile(username: str,
                            db: Annotated[Session, Depends(get_db)],
                            language: Annotated[str, Depends(validate_language)]) -> UserProfile:
     return await build_user_profile(
-            db, 
+            db,
             username=username,
             language=language
         )
@@ -105,7 +105,7 @@ async def upload_profile(
     prefix = "".join(c for c in str(user.id) if c.isalnum() or c in ("-", "_")).strip()
     file_extension = FILE_EXTENSIONS[file.content_type]
     safe_filename = f"{prefix}_avatar{file_extension}"
-    
+
     file_path = UPLOAD_DIR / safe_filename
 
     try:

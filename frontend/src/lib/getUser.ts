@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import type { UserData, CurrentUser } from "@/types/userData";
 
-const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000").replace(/\/$/, "");
+const apiBase = (process.env.API_BASE_URL ?? process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000").replace(/\/$/, "");
 
 function profileMediaUrl(value: string | null): string | null {
     if (!value) return null;

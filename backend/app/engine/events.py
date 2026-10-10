@@ -45,7 +45,7 @@ async def sync_current_phase(manager: RoomManager, room_id: str, player_id: str)
         payload["data"]["duration"] = max(0, math.ceil(metadata.phase_deadline - monotonic()))
     await manager.send_to_player(payload, room_id, player_id)
 
-    # this part is to notify the player of the other players who have already submitted their bluffs or votes, 
+    # this part is to notify the player of the other players who have already submitted their bluffs or votes,
     # so that they can see the progress of the game
     submissions = {
         "PHASE_QUESTION": ("BLUFF_SUBMITTED", metadata.submitted_bluffs),
@@ -182,7 +182,7 @@ async def get_question(manager: RoomManager, context: Context):
     room.meta_data.fake_answers = question.get("fake_answers", [])
     await publish_phase_payload(manager, {
         "event": "PHASE_QUESTION",
-        "data": { 
+        "data": {
             "category": category.get("name"),
             "question": question.get("question"),
             "question_id": question.get("id"),
@@ -190,7 +190,7 @@ async def get_question(manager: RoomManager, context: Context):
             "round": room.meta_data.current_round,
             "total_rounds": room.meta_data.settings.total_rounds,
             "duration": room.meta_data.settings.bluff_time
-            } 
+            }
         }, context.room_id)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.bluff_time))
 
@@ -220,7 +220,7 @@ async def get_vote_choices(manager: RoomManager, context: Context):
     ]
     await publish_phase_payload(manager, {
         "event": "PHASE_VOTING",
-        "data": { 
+        "data": {
             "round": room.meta_data.current_round,
             "total_rounds": room.meta_data.settings.total_rounds,
             "duration": room.meta_data.settings.vote_time,
@@ -229,7 +229,7 @@ async def get_vote_choices(manager: RoomManager, context: Context):
                 "image_url": room.meta_data.image_url
             },
             "choices": public_choices
-            } 
+            }
         }, context.room_id)
     room.meta_data.timer_task = asyncio.create_task(phase_timer(manager, context, room.meta_data.settings.vote_time))
 
@@ -338,7 +338,7 @@ game_phases = {
 async def to_next_phase(manager: RoomManager, context: Context):
     """
         Transition to the next phase of the game.
-        This function is called when the host triggers the next phase 
+        This function is called when the host triggers the next phase
         or when all players have submitted their answers/bluffs/votes
         or when the timer for the current phase has expired.
     """
@@ -514,9 +514,9 @@ async def handle_chat_message(manager: RoomManager, context: Context):
     await manager.broadcast({
         "event": "CHAT_MESSAGE",
         "data": {
-            "player" : { 
-                "id": context.user_id, 
-                "username": player_info.name, 
+            "player" : {
+                "id": context.user_id,
+                "username": player_info.name,
                 "avatar_url": player_info.avatar_url
             },
             "message": message
@@ -539,7 +539,7 @@ event_handlers = {
 async def process_event(manager: RoomManager, room_id: str, user_id: str, user_name: str, event_name: str, data: dict
             ) -> None:
     """
-        Process incoming events from the client and return a payload to broadcast to all players in the room, 
+        Process incoming events from the client and return a payload to broadcast to all players in the room,
         or raise a GameError if the event is invalid or cannot be processed.
     """
     if event_name not in event_handlers:
