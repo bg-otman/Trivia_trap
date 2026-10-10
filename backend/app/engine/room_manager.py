@@ -86,12 +86,26 @@ manager = RoomManager()
 ROOM_CODE_ALPHABET = string.ascii_uppercase + string.digits
 
 
+def is_valid_room_code(room_id: str) -> bool:
+    return len(room_id) == 6 and all(character in ROOM_CODE_ALPHABET for character in room_id)
+
+
 async def keep_presence_alive(user_id: int) -> None:
     try:
         while True:
             mark_user_online(user_id)
             await asyncio.sleep(30)
     except asyncio.CancelledError:
+        pass
+
+
+async def send_initial_game_error(ws: WebSocket, error: GameError) -> None:
+    """Send a rejected join directly because the player is not in the room yet."""
+    try:
+        await ws.send_json(error.to_dict())
+        await ws.close(code=1008, reason=error.message[:123])
+    except Exception:
+        # The peer may disappear before the structured error can be delivered.
         pass
 
 
@@ -128,6 +142,8 @@ async def get_room_status(
     _current_user: Annotated[User, Depends(get_current_user)],
 ) -> RoomStatusResponse:
     normalized = room_id.strip().upper()
+    if not is_valid_room_code(normalized):
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, "Invalid room code")
     room = manager.rooms.get(normalized)
     if room is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Room not found")
@@ -185,15 +201,7 @@ async def room(ws: WebSocket, room_id: str, user: Annotated[User, Depends(get_cu
         if room_id in manager.rooms:
             await manager.broadcast(lobby_update(manager.rooms[room_id]), room_id, user_id)
     except GameError as e:
-        if e.error_code == "FULL_ROOM":
-            # send manually without using send_to_player because the player is not in the room yet
-            try:
-                await ws.send_json(e.to_dict())
-                await ws.close(code=1008, reason=e.message)
-            except Exception:
-                print(f"An unexpected error occurred while sending FULL_ROOM error. Type: {type(e).__name__} | Message: {e}")
-        else:
-            await manager.send_to_player(e.to_dict(), room_id, user_id)
+        await send_initial_game_error(ws, e)
     except Exception as e:
         print(f"An unexpected error occurred. Type: {type(e).__name__} | Message: {e}")
         await manager.remove_connection(user_id, room_id)

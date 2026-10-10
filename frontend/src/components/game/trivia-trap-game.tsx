@@ -34,6 +34,7 @@ import { useGameWebSocket } from "@/hooks/use-game-websocket";
 import { ErrorState } from "@/components/ui/error-state";
 import type { SessionUser } from "@/lib/websocket/session-user";
 import { InvitationListener } from "@/components/notifications/invitation-listener";
+import { gameErrorPresentation } from "@/lib/game-error";
 
 interface MockGameFlowState {
   currentPhase: GamePhase;
@@ -191,6 +192,9 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
   const playerScores = Object.fromEntries(
     game.roundStandings.players.map((player) => [player.id, player.totalScore]),
   );
+  const displayedError = websocket.error
+    ? gameErrorPresentation(websocket.error)
+    : null;
 
   useEffect(() => {
     return () => {
@@ -706,8 +710,8 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
       websocket.connectionState === "CONNECTED" ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <ErrorState
-            title={serverErrorTitle(websocket.error.code)}
-            description={websocket.error.message}
+            title={displayedError?.title ?? "GAME ERROR"}
+            description={displayedError?.message ?? "Something went wrong. Please try again."}
             actionLabel={
               activePhase === "LOBBY" && isLiveHost ? "TRY AGAIN" : "DISMISS"
             }
@@ -726,11 +730,6 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
       ) : null}
     </main>
   );
-}
-
-function serverErrorTitle(code: string) {
-  if (code === "ERROR") return "SOMETHING WENT WRONG";
-  return code.replaceAll("_", " ");
 }
 
 function playersForMockState(mockState?: string): Player[] {
