@@ -34,6 +34,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="en"
       className={`${plusJakartaSans.variable} ${bowlbyOneSC.variable} ${blackOpsOne.variable} h-full antialiased`}
     >
+      <head>
+        <title>Trivia Trap</title>
+        <meta name="description" content="Know the answer. Bluff the room." />
+        <link rel="icon" href="/images/logo_icon.png" />
+      </head>
       <body className="min-h-full flex flex-col">
         <TooltipProvider>
         {children}
