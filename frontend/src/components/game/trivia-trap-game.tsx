@@ -561,6 +561,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
             currentRound={websocket.questionPhase?.round ?? game.currentRound}
             totalRounds={websocket.questionPhase?.total_rounds ?? game.totalRounds}
             answer={roomId ? websocket.bluffAnswer : game.submittedTrapAnswer}
+            language={roomId ? roomLanguage : (game.settings.language ?? "en")}
             submitted={roomId ? websocket.bluffSubmitted : game.playerSubmitted}
             onAnswerChange={roomId ? websocket.setBluffAnswer : (answer) =>
               setGame((current) => ({
