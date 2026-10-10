@@ -77,7 +77,7 @@ interface LobbyPhaseProps {
 }
 
 const settingFields: Array<{
-  key: keyof GameSettings;
+  key: "totalRounds" | "bluffTime" | "voteTime" | "maxPlayers";
   label: string;
   suffix: string;
   min: number;

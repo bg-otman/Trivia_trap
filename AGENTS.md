@@ -23,7 +23,7 @@ This file describes the repository as checked in. Before changing behavior, conf
 
 ## Implemented game behavior
 
-- A new room defaults to 10 maximum players, 10 rounds, 20 seconds for bluffs, 15 seconds for votes, and English. `RoomSettings.max_players` has a minimum of 2 and no configured upper bound. The host alone can change settings and kick players (`room_models.py`, `events.py`).
+- A new room defaults to 10 maximum players, 10 rounds, 20 seconds for bluffs, 15 seconds for votes, and English. Room language accepts only `en` or `ar`; category and question selection use that authoritative setting, and categories without questions in the selected language are excluded. `RoomSettings.max_players` has a minimum of 2 and no configured upper bound. The host alone can change settings and kick players (`room_models.py`, `events.py`).
 - The phase machine moves through lobby, category, question/bluff, vote, reveal, and podium. `events.py` drives transitions through client events, timers, and completed submissions. A tie between the top two scores extends the match.
 - `seed_database.py` requires exactly three distinct decoys per seed question, also distinct from the correct answer after normalization. This is an import rule, not a guarantee of four live choices.
 - `ingestion.build_voting_choices` merges normalized duplicate player bluffs and retains every author ID. It adds available distinct decoys and one correct answer. Its target fake count is 4 with three players, otherwise `max(3, player_count)`. Fewer choices can result when distinct decoys are insufficient; more player bluffs are not trimmed. Do not impose an exact live choice count without changing the implementation deliberately.

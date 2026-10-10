@@ -520,7 +520,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
                 bluff_time: settings.bluffTime,
                 vote_time: settings.voteTime,
                 max_players: settings.maxPlayers,
-                language: settings.language ?? "en",
+                language: settings.language,
               });
             } : updateSettings}
             onSendMessage={roomId ? websocket.sendChatMessage : sendChatMessage}
@@ -551,6 +551,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
             onSelectCategoryOption={roomId ? requestQuestion : undefined}
             canChoose={isCategoryChooser}
             chooserName={categoryChooser?.name}
+            language={roomLanguage}
           />
         );
       case "TRAP":
@@ -569,6 +570,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
               }))
             }
             onSubmitAnswer={roomId ? websocket.submitBluff : submitTrapAnswer}
+            language={roomLanguage}
           />
         );
       case "VOTING":
@@ -581,6 +583,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
             hasVoted={roomId ? websocket.voteSubmitted : game.playerVoted}
             seconds={websocket.votingPhase?.duration ?? game.timeRemaining}
             onCastVote={roomId ? websocket.submitVote : castVote}
+            language={roomLanguage}
           />
         );
       case "RESULTS_REVEAL":
@@ -594,6 +597,7 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
                 currentPhase: "ROUND_RESULTS",
               }))
             }
+            language={roomLanguage}
           />
         ) : (
           <div className="mx-auto w-full max-w-4xl px-4 py-8">
