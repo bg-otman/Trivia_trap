@@ -11,6 +11,7 @@ POSTGRES_APPROLE_DIR=/vault/postgres-approle
 MONITORING_APPROLE_DIR=/vault/monitoring-approle
 UNSEAL_FILE="$BOOTSTRAP_DIR/unseal-key"
 POLICY_FILE=/vault/policies/database-policy.hcl
+BACKEND_POLICY_FILE=/vault/policies/backend-policy.hcl
 MONITORING_POLICY_FILE=/vault/policies/monitoring-policy.hcl
 
 # Create private directories for sensitive Vault credentials.
@@ -115,6 +116,12 @@ if [ "$NEW_INSTALL" -eq 1 ]; then
   vault kv put secret/trivia/postgres password="$DB_PASSWORD" >/dev/null
   unset DB_PASSWORD
 
+  # Generate the static JWT signing key once, during the first Vault setup.
+  JWT_SECRET_KEY="$(vault write -field=random_bytes sys/tools/random/32 format=hex)"
+  [ -n "$JWT_SECRET_KEY" ] || { echo "Vault failed to obtain a JWT signing key" >&2; exit 1; }
+  vault kv put secret/trivia/backend-auth jwt_secret_key="$JWT_SECRET_KEY" >/dev/null
+  unset JWT_SECRET_KEY
+
   # Grafana gets its own generated admin credential. It is stored in Vault and
   # never hard-coded in compose.yaml or committed to the repository.
   GRAFANA_PASSWORD="$(vault write -field=random_bytes sys/tools/random/18 format=hex)"
@@ -123,6 +130,7 @@ if [ "$NEW_INSTALL" -eq 1 ]; then
   unset GRAFANA_PASSWORD
 
   # Application and monitoring identities receive only the paths they need.
+  vault policy write trivia-backend-read "$BACKEND_POLICY_FILE" >/dev/null
   vault policy write trivia-database-read "$POLICY_FILE" >/dev/null
   vault policy write trivia-monitoring-read "$MONITORING_POLICY_FILE" >/dev/null
   vault auth enable approle >/dev/null
@@ -150,7 +158,7 @@ if [ "$NEW_INSTALL" -eq 1 ]; then
 
   # Separate machine identities make backend and database access auditable and
   # prevent either container from receiving a reusable Vault root credential.
-  create_approle trivia-backend "$BACKEND_APPROLE_DIR" trivia-database-read
+  create_approle trivia-backend "$BACKEND_APPROLE_DIR" trivia-backend-read
   create_approle trivia-postgres "$POSTGRES_APPROLE_DIR" trivia-database-read
   create_approle trivia-monitoring "$MONITORING_APPROLE_DIR" trivia-monitoring-read
 

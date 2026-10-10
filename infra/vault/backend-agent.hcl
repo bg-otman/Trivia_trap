@@ -29,11 +29,15 @@ env_template "DATABASE_URL" {
   error_on_missing_key = true
 }
 
+env_template "JWT_SECRET_KEY" {
+  contents             = "{{ with secret \"secret/data/trivia/backend-auth\" }}{{ .Data.data.jwt_secret_key }}{{ end }}"
+  error_on_missing_key = true
+}
+
 exec {
   command = ["/bin/sh", "/app/scripts/start_backend.sh"]
 
-  # Changing the PostgreSQL superuser password requires a coordinated database
-  # rotation, not merely restarting FastAPI with a different environment value.
+  # Secret rotations take effect after a controlled backend container restart.
 
   restart_on_secret_changes = "never"
   restart_stop_signal       = "SIGTERM"

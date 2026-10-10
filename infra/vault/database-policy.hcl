@@ -3,3 +3,8 @@
 path "secret/data/trivia/postgres" {
   capabilities = ["read"]
 }
+
+# Allow Vault Agent to renew its own token.
+path "auth/token/renew-self" {
+  capabilities = ["update"]
+}
