@@ -161,7 +161,9 @@ printf '%s\n' " PROMETHEUS + GRAFANA ACCEPTANCE TEST"
 printf '%s\n' "========================================"
 
 section "1. Required local configuration"
-if [ -f .env ] && grep -Eq '^POSTGRES_USER=.+$' .env && grep -Eq '^POSTGRES_DB=.+$' .env; then
+if [ -f ../../.env ] &&
+   grep -Eq '^POSTGRES_USER=.+$' ../../.env &&
+   grep -Eq '^POSTGRES_DB=.+$' ../../.env; then
   ok ".env contains POSTGRES_USER and POSTGRES_DB"
 else
   bad ".env is missing POSTGRES_USER or POSTGRES_DB"
