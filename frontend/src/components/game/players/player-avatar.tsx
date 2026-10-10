@@ -1,4 +1,7 @@
+"use client";
+
 import { Crown, Skull, Target } from "lucide-react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Blobatar } from "@blobatar/react";
 import "blobatar/motion.css";
@@ -39,13 +42,8 @@ export function PlayerAvatar({
   animated = true,
   className,
 }: PlayerAvatarProps) {
-  // Blobatar hashes this value: preserve the existing 40px roster identity at every size.
-  const avatarSource =
-    src ??
-    `https://blobatar.dev/avatar/${encodeURIComponent(
-      name.trim().toLowerCase(),
-    )}?size=40&background=none&gen=2`;
-
+  const [failedUrl, setFailedUrl] = useState<string | null>(null);
+  const showImage = Boolean(src && failedUrl !== src);
 
   return (
     <span
@@ -76,14 +74,24 @@ export function PlayerAvatar({
             "ring-4 ring-[#131316] outline outline-[8px] outline-primary shadow-[0_10px_24px_rgba(255,107,53,0.2)]",
         )}
       >
-        {/* Keep the same avatar seed in both the static and animated render modes. */}
-        <Blobatar
-          name={avatarSource}
-          animate={animated ? "always" : undefined}
-          width={size}
-          height={size}
-          className="size-full object-cover"
-        />
+        {showImage ? (
+          // User media may come from hosts outside Next.js image allowlists.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={src}
+            alt=""
+            className="size-full object-cover"
+            onError={() => setFailedUrl(src ?? null)}
+          />
+        ) : (
+          <Blobatar
+            name={name.trim().toLowerCase()}
+            animate={animated ? "always" : undefined}
+            width={size}
+            height={size}
+            className="size-full object-cover"
+          />
+        )}
       </span>
 
       {status === "ready" ? (

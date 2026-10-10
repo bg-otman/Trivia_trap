@@ -1,16 +1,15 @@
 from typing import Annotated
 
 from password_validator import PasswordValidator
-from pydantic import AfterValidator, BaseModel, EmailStr, Field, SecretStr, field_validator
+from pydantic import AfterValidator, BaseModel, EmailStr, Field, SecretStr, field_validator, BeforeValidator
 
 
-password_policy = (
-    PasswordValidator()
-    .has().uppercase()
-    .has().lowercase()
-    .has().digits()
-    .has().symbols()
-    .has().no().spaces()
+password_checks = (
+    (PasswordValidator().has().uppercase(), "Password must contain an uppercase letter."),
+    (PasswordValidator().has().lowercase(), "Password must contain a lowercase letter."),
+    (PasswordValidator().has().digits(), "Password must contain a number."),
+    (PasswordValidator().has().symbols(), "Password must contain a symbol."),
+    (PasswordValidator().has().no().spaces(), "Password must not contain spaces."),
 )
 
 
@@ -25,31 +24,42 @@ def validate_password_encoding(value: SecretStr) -> SecretStr:
 Password = Annotated[SecretStr, AfterValidator(validate_password_encoding)]
 
 
+def validate_username(username: str) -> str:
+    if not username or not username[0].isalpha() or not username.isalnum():
+        raise ValueError(
+            "Username must start with a letter and contain only letters and numbers."
+        )
+    return username
+
 class RegisterData(BaseModel):
+    username: Annotated[str, BeforeValidator(validate_username)] = Field(min_length=3, max_length=15)
     email: EmailStr = Field(max_length=255)
+    password: str = Field(min_length=15, max_length=128)
+
+class UsernameData(BaseModel):
     # Match the room player's maximum name length.
     username: str = Field(min_length=3, max_length=15)
-    password: Password = Field(min_length=15, max_length=128)
 
-    # validate the username start with character and only contain letters and numbers
     @field_validator("username")
     @classmethod
     def validate_username(cls, username: str) -> str:
-        if not username[0].isalpha() or not username.isalnum():
-            raise ValueError(
-                "Username must start with a letter and contain only letters and numbers."
-            )
+        if not username.isalnum():
+            raise ValueError("Username can contain only letters and numbers; no spaces or special characters.")
+        if not username[0].isalpha():
+            raise ValueError("Username must start with a letter.")
         return username
+
+
+class RegisterData(UsernameData):
+    email: EmailStr = Field(max_length=255)
+    password: Password = Field(min_length=7, max_length=128)
 
     @field_validator("password")
     @classmethod
     def validate_password_complexity(cls, value: SecretStr) -> SecretStr:
-        if not password_policy.validate(value.get_secret_value()):
-            raise ValueError(
-                "Password must contain at least one uppercase letter, "
-                "one lowercase letter, one digit, and one symbol, "
-                "and must not contain spaces."
-            )
+        for check, message in password_checks:
+            if not check.validate(value.get_secret_value()):
+                raise ValueError(message)
         return value
 
 

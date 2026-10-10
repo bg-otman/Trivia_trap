@@ -1,7 +1,17 @@
-import ProfilePage from "@/components/Profile/ProfilePage";
-import { getUser, UserApiError, getCurrentUser } from "@/lib/getUser";
+import type { Metadata } from "next";
+import { getUser, UserApiError } from "@/lib/getUser";
 import { notFound, redirect } from "next/navigation";
+import { loginPathFor } from "@/lib/auth-routing";
+import { ProfileView } from "@/components/profile/profile-view";
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 
+export async function generateMetadata({ params }: { params: Promise<{ username: string }> }): Promise<Metadata> {
+    const { username } = await params;
+    return {
+        title: `${username} | Trivia Trap`,
+        description: `View ${username}'s public Trivia Trap profile.`,
+    };
+}
 
 
 export default async function UserProfile({
@@ -10,24 +20,26 @@ export default async function UserProfile({
     params: Promise<{ username: string }>;
 }) {
     const { username } = await params;
+    let user;
+    let currentUser;
 
     try {
-        const user = await getUser({ username });
-        let isOwner = false;
-        const currentUser = await getCurrentUser();
-        if (currentUser && currentUser.username === username) {
-            isOwner = true;
+        currentUser = await getUser({});
+        user = currentUser.username.toLocaleLowerCase() === username.toLocaleLowerCase()
+            ? currentUser
+            : await getUser({ username });
+    } catch (error) {
+        if (error instanceof UserApiError && error.status === 404) notFound();
+        if (error instanceof UserApiError && (error.status === 401 || error.status === 403)) {
+            redirect(loginPathFor(`/users/${encodeURIComponent(username)}`));
         }
-        return <ProfilePage user={user} isOwner={isOwner} />;
-    } catch (error) 
-    {
-        if (error instanceof UserApiError && error.status === 404) 
-            notFound();  
-        else
-        {
-            if (!(error instanceof UserApiError) || error.status !== 401)
-                throw error;
-            redirect("/login?next=/profile");
-        }
+        throw error;
     }
+
+    const isOwner = currentUser.id === user.id;
+    return (
+        <DashboardShell user={currentUser}>
+            <ProfileView user={user} isOwner={isOwner} />
+        </DashboardShell>
+    );
 }

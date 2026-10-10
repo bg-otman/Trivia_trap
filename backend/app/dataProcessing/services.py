@@ -39,6 +39,7 @@ from .models import (
 
 async def save_game_results(
     *,
+    game_id: UUID,
     host_user_id: int,
     language_code: str,
     total_rounds: int,
@@ -55,7 +56,10 @@ async def save_game_results(
     finished_at = datetime.now(timezone.utc)
 
     async with AsyncSessionLocal.begin() as session:
+        if await session.get(Game, game_id) is not None:
+            return game_id
         game = Game(
+            id=game_id,
             host_user_id=host_user_id,
             language_code=language_code,
             total_rounds=total_rounds,

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
@@ -16,23 +16,26 @@ import { Button } from "@/components/ui/button";
 import { ErrorState } from "@/components/ui/error-state";
 import { LoadingState } from "@/components/ui/loading-state";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import { findMockRoom } from "@/mocks/rooms";
 import { RoomCodeInput } from "./room-code-input";
+import { apiFetch } from "@/lib/api";
+import { loginPathFor } from "@/lib/auth-routing";
 
-type JoinState = "idle" | "loading" | "invalid" | "full" | "error";
+type JoinState = "idle" | "loading" | "invalid" | "full" | "started" | "error";
 
-const mockDelayMs = 850;
-
-export function JoinRoom() {
+export function JoinRoom({ initialCode = "" }: { initialCode?: string }) {
   const router = useRouter();
   const reducedMotion = useReducedMotion();
-  const [code, setCode] = useState("");
+  const normalizedInitialCode = initialCode.trim().toUpperCase().slice(0, 6);
+  const [code, setCode] = useState(normalizedInitialCode);
   const [state, setState] = useState<JoinState>("idle");
+  const restoredIntentStarted = useRef(false);
 
   const error = state === "invalid"
     ? { title: "ROOM NOT FOUND", message: "We couldn't find a room with that code.", action: "TRY AGAIN" }
     : state === "full"
       ? { title: "ROOM FULL", message: "This room has reached its maximum number of players.", action: "TRY ANOTHER ROOM" }
+      : state === "started"
+        ? { title: "GAME IN PROGRESS", message: "This room has already started its game.", action: "TRY ANOTHER ROOM" }
       : state === "error"
         ? { title: "UNABLE TO JOIN", message: "Something went wrong while joining the room.", action: "TRY AGAIN" }
         : null;
@@ -46,27 +49,65 @@ export function JoinRoom() {
     if (state !== "loading") setState("idle");
   }
 
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (code.length !== 6 || state === "loading") return;
-
+  const join = useCallback(async (roomCode: string) => {
+    if (roomCode.length !== 6) return;
     setState("loading");
-    window.setTimeout(() => {
-      if (code === "ERROR1") {
+    const normalizedCode = roomCode.trim().toUpperCase();
+
+    try {
+      const session = await apiFetch("/auth/me");
+      if (session.status === 401) {
+        window.location.assign(loginPathFor(`/join?code=${encodeURIComponent(normalizedCode)}`));
+        return;
+      }
+      if (!session.ok) {
         setState("error");
         return;
       }
-      const room = findMockRoom(code);
-      if (!room) {
+
+      const response = await apiFetch(`/room/${encodeURIComponent(normalizedCode)}`);
+      if (response.status === 404) {
         setState("invalid");
         return;
       }
+      if (response.status === 401) {
+        window.location.assign(loginPathFor(`/join?code=${encodeURIComponent(normalizedCode)}`));
+        return;
+      }
+      if (!response.ok) {
+        setState("error");
+        return;
+      }
+
+      const room = await response.json() as { room_id?: string; status?: string };
       if (room.status === "full") {
         setState("full");
         return;
       }
-      router.push(`/room/${encodeURIComponent(room.code)}`);
-    }, mockDelayMs);
+      if (room.status === "in_progress") {
+        setState("started");
+        return;
+      }
+      if (room.status !== "open" || !room.room_id) {
+        setState("error");
+        return;
+      }
+      router.push(`/room/${encodeURIComponent(room.room_id)}`);
+    } catch {
+      setState("error");
+    }
+  }, [router]);
+
+  useEffect(() => {
+    if (normalizedInitialCode.length !== 6 || restoredIntentStarted.current) return;
+    restoredIntentStarted.current = true;
+    void join(normalizedInitialCode);
+  }, [join, normalizedInitialCode]);
+
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (state === "loading") return;
+    void join(code);
   }
 
   return (
@@ -84,7 +125,7 @@ export function JoinRoom() {
             TRIVIA TRAP
           </Link>
           <Button asChild variant="ghost" size="sm" className="text-[#a6a6ae] hover:text-white">
-            <Link href="/"><ArrowLeft className="size-4" /> Back home</Link>
+            <Link href="/dashboard"><ArrowLeft className="size-4" /> Back home</Link>
           </Button>
         </header>
 
@@ -156,9 +197,6 @@ export function JoinRoom() {
               </form>
             </div>
 
-            <p className="mt-5 text-center text-[11px] leading-5 text-[#777782]">
-              Mock rooms: <button type="button" onClick={() => updateCode("X7K9P2")} className="font-bold text-[#c0c1ff] hover:text-white">X7K9P2</button> is open · <button type="button" onClick={() => updateCode("FULL42")} className="font-bold text-accent hover:text-white">FULL42</button> is full
-            </p>
           </motion.section>
         </div>
       </div>

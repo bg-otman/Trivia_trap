@@ -1,11 +1,20 @@
 from dataProcessing.models import User
+from authentication.repository import find_user_by_username
+from authentication.schemas import validate_username
 from sqlalchemy.orm import Session
-from sqlalchemy import select, func, case
+from sqlalchemy import select, func, case, exists
+from sqlalchemy.orm import aliased, selectinload
 from typing import Annotated
 from fastapi import Depends
 from dataProcessing.database import get_db
 from dataProcessing.models import User, GamePlayerResult, UserAchievement, CategoryTranslation, GamePlayerCategoryResult
-from .schemas import UserStatistics, UserProfile, UserAchievements as achievements, UserCategoryAnalytics
+from dataProcessing.achievement_persistence import ACHIEVEMENT_DEFINITIONS
+from .schemas import (
+    UserStatistics, UserProfile, UserAchievements as achievements,
+    UserCategoryAnalytics, GameHistoryResponse, GameHistoryItem,
+    GameHistorySummary, HistoryParticipant,
+)
+from dataProcessing.models import Game
 from fastapi import HTTPException, status
 
 
@@ -31,20 +40,16 @@ async def get_user_statistics(db: Annotated[Session, Depends(get_db)], user_id: 
 
 
 async def get_user_achievements(db: Annotated[Session, Depends(get_db)], user_id: int):
-    user_achievements = []
-    statement = select(UserAchievement).where(UserAchievement.user_id == user_id)
-    try:
-        trophies = (await db.execute(statement)).scalars().all()
-        for trophy in trophies:
-            user_achievements.append(achievements(
-                name=trophy.achievement_code,
-                description=trophy.description,
-                img=trophy.img,
-                unlocked=trophy.unlocked
-            ))
-    except Exception:
-        pass
-    return user_achievements
+    statement = select(UserAchievement.achievement_code).where(
+        UserAchievement.user_id == user_id,
+        UserAchievement.unlocked.is_(True),
+    )
+    unlocked_codes = set((await db.execute(statement)).scalars().all())
+    return [
+        achievements(name=code, description=description, img=img,
+                     unlocked=code in unlocked_codes)
+        for code, (description, img) in ACHIEVEMENT_DEFINITIONS.items()
+    ]
 
 
 
@@ -99,8 +104,8 @@ async def get_user_category_analytics(db: Annotated[Session, Depends(get_db)], u
 
 
 
-async def build_user_profile(session: Annotated[Session, Depends(get_db)], 
-                   user_id: int = None, 
+async def build_user_profile(session: Annotated[Session, Depends(get_db)],
+                   user_id: int = None,
                    username: str = None,
                    language: str = 'en') -> UserProfile:
     """
@@ -112,8 +117,7 @@ async def build_user_profile(session: Annotated[Session, Depends(get_db)],
         if user_id is not None:
             user = await session.get(User, user_id)
         elif username is not None:
-            statement = select(User).where(User.username == username)
-            user = await session.scalar(statement)
+            user = await find_user_by_username(session, username)
     except Exception:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -135,4 +139,130 @@ async def build_user_profile(session: Annotated[Session, Depends(get_db)],
         stats=await get_user_statistics(session, user.id),
         achievements=await get_user_achievements(session, user.id),
         analytics=await get_user_category_analytics(session, user.id, language)
+    )
+
+
+async def update_user_profile(
+        session: Annotated[Session, Depends(get_db)],
+        user_id: int,
+        avatar_url: str,
+        username: str
+    ) -> None:
+    """
+        Updates the avatar URL of a user in the database.
+    """
+    try:
+        user = await session.get(User, user_id)
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="User not found",
+            )
+        user.avatar_url = avatar_url
+        user.username = validate_username(username)
+        await session.commit()
+    except Exception as e:
+        await session.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to update user profile: {str(e)}",
+        )
+
+
+async def get_user_game_history(
+    session,
+    user_id: int,
+    *,
+    limit: int,
+    offset: int,
+    result_filter: str,
+) -> GameHistoryResponse:
+    own_result = aliased(GamePlayerResult)
+    tied_result = aliased(GamePlayerResult)
+    has_tied_score = exists().where(
+        tied_result.game_id == own_result.game_id,
+        tied_result.user_id != own_result.user_id,
+        tied_result.final_score == own_result.final_score,
+    )
+    filters = [
+        own_result.user_id == user_id,
+        Game.finished_at.is_not(None),
+    ]
+    if result_filter == "wins":
+        filters.append(own_result.final_rank == 1)
+    elif result_filter == "draws":
+        filters.extend((own_result.final_rank != 1, has_tied_score))
+    elif result_filter == "losses":
+        filters.extend((own_result.final_rank != 1, ~has_tied_score))
+
+    total = await session.scalar(
+        select(func.count()).select_from(Game).join(
+            own_result, own_result.game_id == Game.id
+        ).where(*filters)
+    ) or 0
+    game_ids = (await session.scalars(
+        select(Game.id).join(
+            own_result, own_result.game_id == Game.id
+        ).where(*filters).order_by(Game.finished_at.desc(), Game.id).limit(limit).offset(offset)
+    )).all()
+
+    games = []
+    if game_ids:
+        loaded = (await session.scalars(
+            select(Game).where(Game.id.in_(game_ids)).options(
+                selectinload(Game.player_results).selectinload(GamePlayerResult.user)
+            )
+        )).all()
+        games_by_id = {game.id: game for game in loaded}
+        games = [games_by_id[game_id] for game_id in game_ids]
+
+    items = []
+    for game in games:
+        own = next(row for row in game.player_results if row.user_id == user_id)
+        tied = any(
+            row.user_id != user_id and row.final_score == own.final_score
+            for row in game.player_results
+        )
+        outcome = "WIN" if own.final_rank == 1 else "DRAW" if tied else "LOSS"
+        ordered_results = sorted(game.player_results, key=lambda row: row.final_rank)
+        items.append(GameHistoryItem(
+            match_id=game.id,
+            finished_at=game.finished_at,
+            placement=own.final_rank,
+            final_score=own.final_score,
+            result=outcome,
+            participant_count=len(ordered_results),
+            participants=[HistoryParticipant(
+                username=row.user.username,
+                avatar_url=row.user.avatar_url,
+                final_score=row.final_score,
+                final_rank=row.final_rank,
+                is_current_user=row.user_id == user_id,
+            ) for row in ordered_results],
+            total_rounds=game.total_rounds,
+        ))
+
+    summary_row = (await session.execute(
+        select(
+            func.count(GamePlayerResult.game_id),
+            func.sum(case((GamePlayerResult.final_rank == 1, 1), else_=0)),
+            func.sum(GamePlayerResult.final_score),
+        ).join(Game, Game.id == GamePlayerResult.game_id).where(
+            GamePlayerResult.user_id == user_id,
+            Game.finished_at.is_not(None),
+        )
+    )).one()
+    games_played = summary_row[0] or 0
+    wins = summary_row[1] or 0
+    return GameHistoryResponse(
+        items=items,
+        total=total,
+        limit=limit,
+        offset=offset,
+        summary=GameHistorySummary(
+            games_played=games_played,
+            wins=wins,
+            win_rate=(wins / games_played * 100) if games_played else 0,
+            total_points=summary_row[2] or 0,
+        ),
     )

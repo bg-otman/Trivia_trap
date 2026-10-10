@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What element gives a beaver’s front teeth their orange color?",
+    "correct_answer": "Iron",
+    "decoys": [
+      "Copper",
+      "Calcium",
+      "Zinc"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/beaver"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "A narwhal’s long tusk is an enlarged what?",
+    "correct_answer": "Tooth",
+    "decoys": [
+      "Horn",
+      "Claw",
+      "Whisker"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fisheries.noaa.gov/species/narwhal"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What can give a sloth’s fur a green tint?",
+    "correct_answer": "Algae",
+    "decoys": [
+      "Moss",
+      "Lichen",
+      "Pollen"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/two-toed-sloth"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What bone forms a giant panda’s false thumb?",
+    "correct_answer": "Wrist bone",
+    "decoys": [
+      "Finger bone",
+      "Toe bone",
+      "Rib"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/giant-panda"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which mammal can climb down tree trunks headfirst using very flexible ankles?",
+    "correct_answer": "Red panda",
+    "decoys": [
+      "Giant panda",
+      "Wombat",
+      "Capybara"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/red-panda"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which small African mammal lives in groups called mobs and posts lookouts?",
+    "correct_answer": "Meerkat",
+    "decoys": [
+      "Prairie dog",
+      "Marmot",
+      "Ground squirrel"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/meerkat"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which mammal uses rocks to crack open hard-shelled prey?",
+    "correct_answer": "Sea otter",
+    "decoys": [
+      "Harbor seal",
+      "Sea lion",
+      "Manatee"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/kefj/learn/nature/sea-otter.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which North American mammal uses its shoulder hump to help sweep snow from food?",
+    "correct_answer": "American bison",
+    "decoys": [
+      "Moose",
+      "Elk",
+      "Pronghorn"
+    ],
+    "image_url": null,
+    "source_url": "https://home.nps.gov/wica/learn/nature/bison-buffalo-bison-bison.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What is the largest living rodent?",
+    "correct_answer": "Capybara",
+    "decoys": [
+      "Beaver",
+      "Porcupine",
+      "Nutria"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/beaver"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which toothless South American mammal catches ants with a long sticky tongue?",
+    "correct_answer": "Giant anteater",
+    "decoys": [
+      "Aardvark",
+      "Pangolin",
+      "Sloth bear"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/giant-anteater"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which burrowing Australian marsupial has a pouch that opens toward the rear?",
+    "correct_answer": "Wombat",
+    "decoys": [
+      "Kangaroo",
+      "Wallaby",
+      "Quokka"
+    ],
+    "image_url": null,
+    "source_url": "https://museum-publications.australian.museum/media/dd/Uploads/Documents/38160/ANH_vXX_09_lowres.46cbf61.pdf"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which marine mammal uses sensitive whiskers to find clams on the seafloor?",
+    "correct_answer": "Walrus",
+    "decoys": [
+      "Sea lion",
+      "Dugong",
+      "Harbor seal"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fws.gov/apps/media/bivalve-mollusks"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "In a naked mole-rat colony, which female produces the young?",
+    "correct_answer": "The queen",
+    "decoys": [
+      "Every worker",
+      "The oldest worker",
+      "The largest soldier"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/naked-mole-rat"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which mammal has a protective shell made of bony plates?",
+    "correct_answer": "Armadillo",
+    "decoys": [
+      "Pangolin",
+      "Hedgehog",
+      "Porcupine"
+    ],
+    "image_url": null,
+    "source_url": "https://home.nps.gov/liri/learn/nature/mammals-nine-banded-armadillo.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which North American bear commonly eats both berries and insects?",
+    "correct_answer": "American black bear",
+    "decoys": [
+      "Polar bear",
+      "Giant panda",
+      "Sloth bear"
+    ],
+    "image_url": null,
+    "source_url": "https://home.nps.gov/biso/learn/nature/bearbiology.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which pink wading bird sweeps a spoon-shaped bill through shallow water?",
+    "correct_answer": "Roseate spoonbill",
+    "decoys": [
+      "Scarlet ibis",
+      "Pink-backed pelican",
+      "Greater flamingo"
+    ],
+    "image_url": null,
+    "source_url": "https://www.allaboutbirds.org/guide/Roseate_Spoonbill/id"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which bird uses an expandable throat pouch to scoop fish from water?",
+    "correct_answer": "Pelican",
+    "decoys": [
+      "Cormorant",
+      "Gannet",
+      "Albatross"
+    ],
+    "image_url": null,
+    "source_url": "https://www.allaboutbirds.org/guide/Brown_Pelican/id"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which bird drills many holes in trees to store food for later?",
+    "correct_answer": "Acorn woodpecker",
+    "decoys": [
+      "Northern flicker",
+      "Downy woodpecker",
+      "Pileated woodpecker"
+    ],
+    "image_url": null,
+    "source_url": "https://www.allaboutbirds.org/guide/Acorn_Woodpecker/overview"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which bird migrates between Arctic breeding grounds and Antarctica?",
+    "correct_answer": "Arctic tern",
+    "decoys": [
+      "Common tern",
+      "Atlantic puffin",
+      "Black skimmer"
+    ],
+    "image_url": null,
+    "source_url": "https://www.allaboutbirds.org/guide/Arctic_Tern"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which tall African waterbird has a massive hooked bill and waits motionless for fish?",
+    "correct_answer": "Shoebill",
+    "decoys": [
+      "Hammerkop",
+      "Marabou stork",
+      "African fish eagle"
+    ],
+    "image_url": null,
+    "source_url": "https://academy.allaboutbirds.org/bird-academys-a-to-z-glossary-of-bird-terms/"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which bird's male decorates a twig structure called a bower to attract a mate?",
+    "correct_answer": "Bowerbird",
+    "decoys": [
+      "Weaverbird",
+      "Lyrebird",
+      "Bird-of-paradise"
+    ],
+    "image_url": null,
+    "source_url": "https://academy.allaboutbirds.org/female-satin-bowerbird-visiting-bower/"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "In emus, which parent incubates the eggs?",
+    "correct_answer": "The male",
+    "decoys": [
+      "The female",
+      "Both parents",
+      "Neither parent"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/emu"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which large flightless bird has a helmet-like casque on its head?",
+    "correct_answer": "Cassowary",
+    "decoys": [
+      "Emu",
+      "Ostrich",
+      "Rhea"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/southern-cassowary"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which bird builds gourd-shaped mud nests on cliffs and bridges?",
+    "correct_answer": "Cliff swallow",
+    "decoys": [
+      "Tree swallow",
+      "Bank swallow",
+      "Purple martin"
+    ],
+    "image_url": null,
+    "source_url": "https://www.allaboutbirds.org/guide/Cliff_Swallow/lifehistory"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which bird pecks into trees and can reach insects with a long tongue?",
+    "correct_answer": "Woodpecker",
+    "decoys": [
+      "Nuthatch",
+      "Treecreeper",
+      "Kingfisher"
+    ],
+    "image_url": null,
+    "source_url": "https://academy.allaboutbirds.org/built-to-peck-how-woodpeckers-avoid-brain-injury/"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which venomous lizard of the southwestern United States has bead-like scales?",
+    "correct_answer": "Gila monster",
+    "decoys": [
+      "Chuckwalla",
+      "Desert iguana",
+      "Horned lizard"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/sagu/learn/nature/gila-monster.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which crocodilian has a long, narrow snout adapted for catching fish?",
+    "correct_answer": "Gharial",
+    "decoys": [
+      "American alligator",
+      "Nile crocodile",
+      "Black caiman"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/gharial"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which reptile uses tiny hairs on its toe pads to cling to smooth walls?",
+    "correct_answer": "Gecko",
+    "decoys": [
+      "Iguana",
+      "Chameleon",
+      "Skink"
+    ],
+    "image_url": null,
+    "source_url": "https://mci.si.edu/node/1252312"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What part of a turtle’s skeleton is fused to the upper shell?",
+    "correct_answer": "Spine",
+    "decoys": [
+      "Jaw",
+      "Tail",
+      "Shoulder blade"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amnh.org/research/science-conservation/projects/case-studies/collections-core-turtle-shells"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which sea turtle species has an adult diet mainly of seagrass and algae?",
+    "correct_answer": "Green sea turtle",
+    "decoys": [
+      "Hawksbill sea turtle",
+      "Loggerhead sea turtle",
+      "Leatherback sea turtle"
+    ],
+    "image_url": null,
+    "source_url": "https://floridakeys.noaa.gov/education/creature-feature.html"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which North American frog can freeze during winter and thaw in spring?",
+    "correct_answer": "Wood frog",
+    "decoys": [
+      "Bullfrog",
+      "Cane toad",
+      "Leopard frog"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/dena/learn/nature/amphibians.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which large North American salamander lives under rocks in cool streams?",
+    "correct_answer": "Hellbender",
+    "decoys": [
+      "Axolotl",
+      "Olm",
+      "Fire salamander"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fws.gov/node/35101"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What sense does a snake’s forked tongue mainly help it use?",
+    "correct_answer": "Smell",
+    "decoys": [
+      "Hearing",
+      "Sight",
+      "Touch"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/news/do-snakes-have-ears-and-other-sensational-serpent-questions"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which amphibian group has wormlike bodies and no legs?",
+    "correct_answer": "Caecilians",
+    "decoys": [
+      "Newts",
+      "Salamanders",
+      "Toads"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/news/featured-story/saving-salamanders-vital-ecosystem-health"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which feature makes many amphibians vulnerable to drying out?",
+    "correct_answer": "Permeable skin",
+    "decoys": [
+      "Scaly skin",
+      "A hard shell",
+      "Waterproof feathers"
+    ],
+    "image_url": null,
+    "source_url": "https://www.usgs.gov/news/featured-story/saving-salamanders-vital-ecosystem-health"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which animal shelters clownfish among its tentacles?",
+    "correct_answer": "Sea anemone",
+    "decoys": [
+      "Sea urchin",
+      "Clam",
+      "Sea cucumber"
+    ],
+    "image_url": null,
+    "source_url": "https://www.montereybayaquarium.org/animals-the-ocean/animals-a-to-z/clownfish"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which parent carries seahorse eggs in a brood pouch?",
+    "correct_answer": "The male",
+    "decoys": [
+      "The female",
+      "Both parents",
+      "Neither parent"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/seahorse.html"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which freshwater fish can breathe air using a modified swim bladder?",
+    "correct_answer": "Arapaima",
+    "decoys": [
+      "Piranha",
+      "Pacu",
+      "Rainbow trout"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/news/creature-feature-meet-freshwater-giant-arapaima"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What does a giant manta ray filter from seawater for food?",
+    "correct_answer": "Zooplankton",
+    "decoys": [
+      "Seagrass",
+      "Coral branches",
+      "Kelp"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fisheries.noaa.gov/species/giant-manta-ray/science"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which ray has a long, flat snout edged with tooth-like projections?",
+    "correct_answer": "Sawfish",
+    "decoys": [
+      "Stingray",
+      "Manta ray",
+      "Electric ray"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fisheries.noaa.gov/species/smalltooth-sawfish"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which reef fish uses a beak-like mouth to scrape algae from rocks?",
+    "correct_answer": "Parrotfish",
+    "decoys": [
+      "Clownfish",
+      "Lionfish",
+      "Butterflyfish"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fisheries.noaa.gov/science-blog/fish-shapes-reef"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which sea creature can expel internal organs to distract a predator?",
+    "correct_answer": "Sea cucumber",
+    "decoys": [
+      "Sea urchin",
+      "Sea star",
+      "Sand dollar"
+    ],
+    "image_url": null,
+    "source_url": "https://www.montereybayaquarium.org/animals-the-ocean/animals-a-to-z/johnsons-sea-cucumber"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which flattened marine animal moves across sand using its spines?",
+    "correct_answer": "Sand dollar",
+    "decoys": [
+      "Sea star",
+      "Sea cucumber",
+      "Sea anemone"
+    ],
+    "image_url": null,
+    "source_url": "https://www.montereybayaquarium.org/animals/animals-a-to-z/sand-dollar"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What are the stinging structures used by jellyfish and coral polyps called?",
+    "correct_answer": "Nematocysts",
+    "decoys": [
+      "Spinnerets",
+      "Gills",
+      "Tube feet"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/education/tutorial_corals/coral01_intro.html"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Horseshoe crabs are more closely related to which group than to true crabs?",
+    "correct_answer": "Arachnids",
+    "decoys": [
+      "Mollusks",
+      "Echinoderms",
+      "Annelids"
+    ],
+    "image_url": null,
+    "source_url": "https://ocean.si.edu/ocean-life/invertebrates/creature-feature-amazing-horseshoe-crab"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What do foraging honeybees communicate with a waggle dance?",
+    "correct_answer": "The location of food",
+    "decoys": [
+      "The age of the queen",
+      "A coming storm",
+      "The number of eggs"
+    ],
+    "image_url": null,
+    "source_url": "https://gardens.si.edu/gardens/pollinator-garden/why-what-when-where-who-how-pollination/"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which body part lets a female butterfly taste a leaf before laying eggs?",
+    "correct_answer": "Feet",
+    "decoys": [
+      "Wings",
+      "Antennae",
+      "Abdomen"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/news/8-reasons-bee-awe-pollinators"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Why do fireflies usually flash their lights?",
+    "correct_answer": "To attract mates",
+    "decoys": [
+      "To warm their wings",
+      "To grow larger",
+      "To find flowers"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/cong/learn/nature/synchronous-fireflies-at-congaree.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Where does a dragonfly spend its nymph stage?",
+    "correct_answer": "In freshwater",
+    "decoys": [
+      "In dry soil",
+      "Inside tree bark",
+      "On flower petals"
+    ],
+    "image_url": null,
+    "source_url": "https://home.nps.gov/articles/000/common-green-darner.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What do leaf-cutter ants grow on the leaves they collect?",
+    "correct_answer": "Fungus",
+    "decoys": [
+      "Moss",
+      "Algae",
+      "Lichen"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/object/yt_0KksdHHnUuQ"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which garden insect often feeds on aphids?",
+    "correct_answer": "Lady beetle",
+    "decoys": [
+      "Housefly",
+      "Mosquito",
+      "Dragonfly"
+    ],
+    "image_url": null,
+    "source_url": "https://extension.umn.edu/garden-and-home/yard-and-garden/yard-and-garden-insects/multicolored-asian-lady-beetles"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which invertebrate aerates soil by burrowing through it?",
+    "correct_answer": "Earthworm",
+    "decoys": [
+      "Snail",
+      "Slug",
+      "Spider"
+    ],
+    "image_url": null,
+    "source_url": "https://extension.umn.edu/garden-and-home/yard-and-garden/yard-and-garden-insects/nightcrawlers"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What structures release silk from a spider’s abdomen?",
+    "correct_answer": "Spinnerets",
+    "decoys": [
+      "Antennae",
+      "Mandibles",
+      "Gills"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amnh.org/research/science-conservation/projects/case-studies/spiders"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which insect's larvae trap prey in cone-shaped pits in sand?",
+    "correct_answer": "Antlion",
+    "decoys": [
+      "Dragonfly",
+      "Cicada",
+      "Lacewing"
+    ],
+    "image_url": null,
+    "source_url": "https://ask.ifas.ufl.edu/publication/IN760"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which many-legged animal has two pairs of legs on most body segments?",
+    "correct_answer": "Millipede",
+    "decoys": [
+      "Centipede",
+      "Woodlouse",
+      "Earwig"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/coro/learn/nature/insects.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which tree species includes the world’s largest trees by trunk volume?",
+    "correct_answer": "Giant sequoia",
+    "decoys": [
+      "Coast redwood",
+      "Baobab",
+      "Douglas fir"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/seki/learn/nature/largest-trees-in-world.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which tree has distinctive fan-shaped leaves that turn golden in autumn?",
+    "correct_answer": "Ginkgo",
+    "decoys": [
+      "Maple",
+      "Oak",
+      "Elm"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/plants/ginkgo-tree"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which tree produces the beans used to make chocolate?",
+    "correct_answer": "Cacao tree",
+    "decoys": [
+      "Coffee tree",
+      "Carob tree",
+      "Vanilla orchid"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/plants/cacao-tree"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which tree produces acorns?",
+    "correct_answer": "Oak",
+    "decoys": [
+      "Maple",
+      "Birch",
+      "Willow"
+    ],
+    "image_url": null,
+    "source_url": "https://research.fs.usda.gov/feis/species-reviews/quechr"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which tree commonly produces paired winged fruits called samaras?",
+    "correct_answer": "Maple",
+    "decoys": [
+      "Oak",
+      "Pine",
+      "Palm"
+    ],
+    "image_url": null,
+    "source_url": "https://research.fs.usda.gov/feis/species-reviews/acesac"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which plant folds its small leaflets when touched?",
+    "correct_answer": "Sensitive plant",
+    "decoys": [
+      "Pitcher plant",
+      "Sunflower",
+      "Water lily"
+    ],
+    "image_url": null,
+    "source_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A313242-2/general-information"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What looks like one large bloom but consists of many small flowers?",
+    "correct_answer": "Sunflower head",
+    "decoys": [
+      "Tulip flower",
+      "Rose flower",
+      "Lily flower"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/plants/sunflower"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which succulent stores water in fleshy leaves containing a clear gel?",
+    "correct_answer": "Aloe vera",
+    "decoys": [
+      "Agave",
+      "Yucca",
+      "Jade plant"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/plants/aloe-vera"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What type of roots help red mangroves stand in shallow coastal water?",
+    "correct_answer": "Prop roots",
+    "decoys": [
+      "Taproots",
+      "Bulbs",
+      "Tubers"
+    ],
+    "image_url": null,
+    "source_url": "https://floridakeys.noaa.gov/education/creature-feature.html"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which structure on a moss plant holds its reproductive spores?",
+    "correct_answer": "Capsule",
+    "decoys": [
+      "Cone",
+      "Pod",
+      "Bulb"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/acad/learn/nature/moss.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which group of trees bears seeds in cones?",
+    "correct_answer": "Conifers",
+    "decoys": [
+      "Palms",
+      "Oaks",
+      "Maples"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/subjects/fossils/plant-fossils.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "How are dandelion seeds mainly carried away from the parent plant?",
+    "correct_answer": "Wind",
+    "decoys": [
+      "Ocean currents",
+      "Ants",
+      "Gravity alone"
+    ],
+    "image_url": null,
+    "source_url": "https://endeavour.kew.org/taster-resources/ks-2/pollination-and-seed-dispersal-infographics"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which method helps coconuts disperse over long distances?",
+    "correct_answer": "Floating in water",
+    "decoys": [
+      "Clinging to fur",
+      "Exploding pods",
+      "Being carried by ants"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/sites/default/files/2020-03/LKS2%20plant%20scientists%20pre-visit.pdf"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which flowering plant can grow on tree branches without taking food from the host?",
+    "correct_answer": "Orchid",
+    "decoys": [
+      "Dodder",
+      "Mistletoe",
+      "Broomrape"
+    ],
+    "image_url": null,
+    "source_url": "https://www.kew.org/plants/leopard-orchid"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which carnivorous plant traps insects in a deep, cup-shaped leaf?",
+    "correct_answer": "Pitcher plant",
+    "decoys": [
+      "Venus flytrap",
+      "Sundew",
+      "Bladderwort"
+    ],
+    "image_url": null,
+    "source_url": "https://www.epa.gov/wetlands/classification-and-types-wetlands"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What wetland is dominated by woody plants and often has standing water?",
+    "correct_answer": "Swamp",
+    "decoys": [
+      "Marsh",
+      "Bog",
+      "Fen"
+    ],
+    "image_url": null,
+    "source_url": "https://www.epa.gov/wetlands/classification-and-types-wetlands"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What kind of large seaweed forms underwater forests in cool coastal water?",
+    "correct_answer": "Kelp",
+    "decoys": [
+      "Seagrass",
+      "Sargassum",
+      "Sea lettuce"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/kelp.html"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which shoreline habitat consists of wind-built sand ridges held by grasses?",
+    "correct_answer": "Coastal dunes",
+    "decoys": [
+      "Mudflats",
+      "Salt marshes",
+      "Rocky shores"
+    ],
+    "image_url": null,
+    "source_url": "https://home.nps.gov/guis/learn/nature/dune-communities.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which peat-forming wetland gets most of its water from rainfall?",
+    "correct_answer": "Bog",
+    "decoys": [
+      "Fen",
+      "Salt marsh",
+      "Floodplain"
+    ],
+    "image_url": null,
+    "source_url": "https://www.epa.gov/wetlands/classification-and-types-wetlands"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which shoreline zone is underwater at high tide and exposed at low tide?",
+    "correct_answer": "Intertidal zone",
+    "decoys": [
+      "Open ocean",
+      "Pelagic zone",
+      "Abyssal zone"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/subjects/oceans/intertidal.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which coastal wetland is regularly flooded by seawater at high tide?",
+    "correct_answer": "Salt marsh",
+    "decoys": [
+      "Bog",
+      "Alpine meadow",
+      "Freshwater swamp"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/education/tutorial_estuaries/est06_habitats.html"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which mountain habitat begins above the natural treeline?",
+    "correct_answer": "Alpine zone",
+    "decoys": [
+      "Montane forest",
+      "Riparian zone",
+      "Coastal plain"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/seki/learn/nature/plants.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What is a habitat alongside a river or stream called?",
+    "correct_answer": "Riparian zone",
+    "decoys": [
+      "Alpine zone",
+      "Pelagic zone",
+      "Desert dune"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/pefo/learn/nature/riparian.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which shrubland is known for drought-tolerant plants adapted to periodic fire?",
+    "correct_answer": "Chaparral",
+    "decoys": [
+      "Tundra",
+      "Salt marsh",
+      "Kelp forest"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/samo/learn/nature/chaparral.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which grassland covers parts of the Kansas Flint Hills and is shaped by fire?",
+    "correct_answer": "Tallgrass prairie",
+    "decoys": [
+      "Tundra",
+      "Alpine meadow",
+      "Mangrove forest"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/tapr/learn/nature/fire-regime.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which forest type has high rainfall and abundant mosses along cool coasts?",
+    "correct_answer": "Temperate rainforest",
+    "decoys": [
+      "Tropical dry forest",
+      "Boreal forest",
+      "Savanna"
+    ],
+    "image_url": null,
+    "source_url": "https://research.fs.usda.gov/pnw/forestsandranges/locations/heen"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which deep-ocean habitat surrounds hot, mineral-rich water emerging from the seafloor?",
+    "correct_answer": "Hydrothermal vent",
+    "decoys": [
+      "Kelp forest",
+      "Seagrass meadow",
+      "Coral reef"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/vents.html"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which underwater habitat is formed by rooted, flowering marine plants?",
+    "correct_answer": "Seagrass meadow",
+    "decoys": [
+      "Kelp forest",
+      "Coral reef",
+      "Open ocean"
+    ],
+    "image_url": null,
+    "source_url": "https://floridakeys.noaa.gov/plants/seagrass.html"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What ecosystem grows on the limestone skeletons laid down by coral animals?",
+    "correct_answer": "Coral reef",
+    "decoys": [
+      "Kelp forest",
+      "Estuary",
+      "Salt marsh"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/coralmadeof.html"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which forest habitat gets much of its moisture from frequent fog?",
+    "correct_answer": "Cloud forest",
+    "decoys": [
+      "Boreal forest",
+      "Mangrove forest",
+      "Dry woodland"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/places/cloud-forest.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which animal creates pond habitats by building dams across streams?",
+    "correct_answer": "Beaver",
+    "decoys": [
+      "Muskrat",
+      "River otter",
+      "Mink"
+    ],
+    "image_url": null,
+    "source_url": "https://nationalzoo.si.edu/animals/beaver"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which kelp-grazing animals are kept in check by sea otters?",
+    "correct_answer": "Sea urchins",
+    "decoys": [
+      "Sea cucumbers",
+      "Clams",
+      "Jellyfish"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/glba/blogs/a-keystone-species-the-sea-otter-colonizes-glacier-bay.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which fish leaves freshwater as an adult to spawn in the Sargasso Sea?",
+    "correct_answer": "American eel",
+    "decoys": [
+      "Atlantic salmon",
+      "Rainbow trout",
+      "Striped bass"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fisheries.noaa.gov/feature-story/american-unagi-farms-growing-eels-land-maine"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What plant do monarch caterpillars feed on?",
+    "correct_answer": "Milkweed",
+    "decoys": [
+      "Dandelion",
+      "Clover",
+      "Goldenrod"
+    ],
+    "image_url": null,
+    "source_url": "https://monarchjointventure.org/monarch-biology/life-cycle"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which reef fish removes parasites from larger fish at cleaning stations?",
+    "correct_answer": "Cleaner wrasse",
+    "decoys": [
+      "Parrotfish",
+      "Lionfish",
+      "Damselfish"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/kaho/learn/nature/reeffish.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What ecological relationship describes a tick feeding on a deer?",
+    "correct_answer": "Parasitism",
+    "decoys": [
+      "Mutualism",
+      "Commensalism",
+      "Predation"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/articles/000/ticks-and-tickborne-diseases.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What animal may ride on a whale’s skin to reach plankton-rich water?",
+    "correct_answer": "Barnacle",
+    "decoys": [
+      "Oyster",
+      "Clam",
+      "Mussel"
+    ],
+    "image_url": null,
+    "source_url": "https://education.nationalgeographic.org/resource/symbiosis-art-living-together/5th-grade/"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What do mycorrhizal fungi provide to plant roots in exchange for sugars?",
+    "correct_answer": "Water and nutrients",
+    "decoys": [
+      "Nectar and pollen",
+      "Seeds and fruit",
+      "Light and warmth"
+    ],
+    "image_url": null,
+    "source_url": "https://research.fs.usda.gov/treesearch/41353"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What is the whitening of coral after it expels symbiotic algae called?",
+    "correct_answer": "Coral bleaching",
+    "decoys": [
+      "Coral spawning",
+      "Bioerosion",
+      "Sedimentation"
+    ],
+    "image_url": null,
+    "source_url": "https://oceanservice.noaa.gov/facts/coral_bleach.html"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What sense lets sharks detect weak electric fields from nearby prey?",
+    "correct_answer": "Electroreception",
+    "decoys": [
+      "Echolocation",
+      "Infrared vision",
+      "Scent tracking"
+    ],
+    "image_url": null,
+    "source_url": "https://www.floridamuseum.ufl.edu/discover-fish/sharks/shark-biology/"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What role do fruit-eating birds often play for plants?",
+    "correct_answer": "Seed dispersal",
+    "decoys": [
+      "Nitrogen fixation",
+      "Nectar production",
+      "Root growth"
+    ],
+    "image_url": null,
+    "source_url": "https://research.fs.usda.gov/feis/species-reviews/pruame"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Why are many desert animals active at night?",
+    "correct_answer": "To avoid daytime heat",
+    "decoys": [
+      "To stay warmer at night",
+      "To follow sunlight",
+      "To avoid rainfall"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/moja/learn/nature/index.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which northern mammal migrates to calving grounds in spring?",
+    "correct_answer": "Caribou",
+    "decoys": [
+      "Musk ox",
+      "Polar bear",
+      "Snowshoe hare"
+    ],
+    "image_url": null,
+    "source_url": "https://home.nps.gov/articles/boumigrationclimatepests.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "Which invasive tree can crowd out native vegetation in the Everglades?",
+    "correct_answer": "Melaleuca",
+    "decoys": [
+      "Mangrove",
+      "Bald cypress",
+      "Live oak"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nps.gov/ever/learn/nature/invasivespecies.htm"
+  },
+  {
+    "category_id": 7,
+    "language_code": "en",
+    "question_text": "What term means the variety of life in an ecosystem?",
+    "correct_answer": "Biodiversity",
+    "decoys": [
+      "Biomass",
+      "Migration",
+      "Succession"
+    ],
+    "image_url": null,
+    "source_url": "https://home.nps.gov/subjects/biodiversity/what-is-biodiversity.htm"
+  }
+]

@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الأمريكي صاحب الصوت الأيقوني العميق لشخصية دارث فيدر في ثلاثية حرب النجوم الأصلية؟",
+    "correct_answer": "جيمس إيرل جونز",
+    "decoys": [
+      "ديفيد براوز",
+      "أنتوني دانيلز",
+      "بيتر مايهيو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/databank/darth-vader"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو كوكب المستنقعات النائي الذي اختبأ فيه المعلم يودا وقام بتدريب لوك سكاي ووكر؟",
+    "correct_answer": "داغوبا",
+    "decoys": [
+      "تاتوين",
+      "نابو",
+      "كوروسانت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/databank/dagobah"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو كوكب الأميرة ليا المسالم الذي دمرته محطة نجمة الموت في فيلم حرب النجوم عام 1977؟",
+    "correct_answer": "ألدران",
+    "decoys": [
+      "إندور",
+      "يافين 4",
+      "كاشيك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/databank/alderaan"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو رقم الرصيف السري في محطة كينغز كروس بلندن الذي ينطلق منه قطار هوغوورتس السريع؟",
+    "correct_answer": "رصيف 9 وثلاثة أرباع",
+    "decoys": [
+      "رصيف 7 ونصف",
+      "رصيف 10 وربع",
+      "رصيف 8 وثلثين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.wizardingworld.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو صانع العصي السحرية الشهير في حارة دياغون الذي اختار لهاري بوتر عصاه الأولى؟",
+    "correct_answer": "أوليفاندر",
+    "decoys": [
+      "غرينغوتس",
+      "بورجين",
+      "فلوريان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.wizardingworld.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو سجن السحرة الحصين المحاط بحراس الديمينتورز في عالم هاري بوتر؟",
+    "correct_answer": "أزكابان",
+    "decoys": [
+      "نورمنغارد",
+      "غودريك هولو",
+      "وزارة السحر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.wizardingworld.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو البركان الناري في أرض موردور الذي صُنع فيه الخاتم الأوحد ويجب تدميره فيه؟",
+    "correct_answer": "جبل الهلاك",
+    "decoys": [
+      "جبل غونداباد",
+      "جبل كارادراس",
+      "قمة ويذرتوب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Lord-of-the-Rings-film-trilogy"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الأمريكي الدنماركي الذي جسد شخصية أراغورن (ستريدر) في ثلاثية سيد الخواتم؟",
+    "correct_answer": "فيغو مورتينسين",
+    "decoys": [
+      "أورلاندو بلوم",
+      "إيان ماكيلين",
+      "شون بين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Lord-of-the-Rings-film-trilogy"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الساحر الحكيم الذي يقود رفقة الخاتم ويعود لاحقاً متوشحاً باللون الأبيض؟",
+    "correct_answer": "غاندالف",
+    "decoys": [
+      "سارومان",
+      "راداغاست",
+      "إلروند"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Lord-of-the-Rings-film-trilogy"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم الأسطوري لمطرقة ثور السحرية التي لا يرفعها إلا من كان جديراً بها؟",
+    "correct_answer": "ميولنير",
+    "decoys": [
+      "ستورمبريكر",
+      "غانغنير",
+      "إكسكاليبر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.marvel.com/characters/thor-thor-odinson"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي الدولة الإفريقية الخيالية الغنية بمعدن الفايبرانيوم التي يحكمها النمر الأسود في عالم مارفل؟",
+    "correct_answer": "واكاندا",
+    "decoys": [
+      "سوكوفيا",
+      "لاتفيريا",
+      "مادريبور"
+    ],
+    "image_url": null,
+    "source_url": "https://www.marvel.com/characters/black-panther-t-challa"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الذي يجسد شخصية بروس بانر (العملاق هالك) في أفلام المنتقمون من عالم مارفل؟",
+    "correct_answer": "مارك روفالو",
+    "decoys": [
+      "إدوارد نورتون",
+      "كريس هيمسوورث",
+      "جيريمي رينر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.marvel.com/characters/hulk-bruce-banner"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي المدينة الأمريكية الخيالية المليئة بالفساد التي يسهر باتمان على حمايتها ليلاً؟",
+    "correct_answer": "غوثام",
+    "decoys": [
+      "متروبوليس",
+      "سنترال سيتي",
+      "ستارلينغ سيتي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.dc.com/characters/batman"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي المصحة النفسية الشهيرة في غوثام التي يُحتجز فيها ألد أعداء باتمان كالفزاعة والجوكر؟",
+    "correct_answer": "مصحة أركام",
+    "decoys": [
+      "سجن بلاكغيت",
+      "مختبرات ستار",
+      "سجن بيل ريف"
+    ],
+    "image_url": null,
+    "source_url": "https://www.dc.com/characters/batman"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو الكوكب الفضائي الأصلي لسوبرمان الذي دُمّر قبل إرساله رضيعاً إلى كوكب الأرض؟",
+    "correct_answer": "كريبتون",
+    "decoys": [
+      "أبوكوليبس",
+      "ثانغار",
+      "داكسام"
+    ],
+    "image_url": null,
+    "source_url": "https://www.dc.com/characters/superman"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هما النجمان اللذان جسدا دوري الحبيبين جاك وروز في فيلم تيتانيك عام 1997؟",
+    "correct_answer": "ليوناردو دي كابريو وكيت وينسلت",
+    "decoys": [
+      "براد بيت وأنجلينا جولي",
+      "توم كروز ونيكول كيدمان",
+      "مات ديمون وغوينيث بالترو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Titanic-film-by-Cameron"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم المعطى للقلادة الماسية الزرقاء النادرة التي تدور حولها أحداث فيلم تيتانيك؟",
+    "correct_answer": "قلب المحيط",
+    "decoys": [
+      "نجمة الشرق",
+      "عين الصقر",
+      "ألماسة الأمل"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Titanic-film-by-Cameron"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو القمر الخيالي الغني بالطبيعة وشعب النافي الذي تدور فيه أحداث فيلم أفاتار للمخرج جيمس كاميرون؟",
+    "correct_answer": "باندورا",
+    "decoys": [
+      "تيتان",
+      "أوروبا",
+      "إنسيلادوس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Avatar-film-by-Cameron"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الأمريكي القدير الذي جسد شخصية مايكل كورليوني في ثلاثية العراب (The Godfather)؟",
+    "correct_answer": "آل باتشينو",
+    "decoys": [
+      "روبرت دي نيرو",
+      "جو بيشي",
+      "جاك نيكلسون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Godfather-film-by-Coppola"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الكاتب والروائي الأمريكي الإيطالي الذي ألف رواية العراب التي اقتُبس منها الفيلم الشهير؟",
+    "correct_answer": "ماريو بوزو",
+    "decoys": [
+      "إلينيور سميث",
+      "نيكولاس بيليغي",
+      "توماس هاريس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/The-Godfather-film-by-Coppola"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو المخرج السينمائي الشهير الذي أخرج ملحمة المافيا Goodfellas (الأصدقاء الطيبون) عام 1990؟",
+    "correct_answer": "مارتن سكورسيزي",
+    "decoys": [
+      "برايان دي بالما",
+      "سيدني لوميت",
+      "فرانسيس فورد كوبولا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/GoodFellas"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الذي لعب دور بطل الخيال العلمي نيو (توماس أندرسون) في سلسلة ذا ماتريكس؟",
+    "correct_answer": "كيانو ريفز",
+    "decoys": [
+      "براد بيت",
+      "توم كروز",
+      "نيكولاس كيج"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/movies/matrix"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو اسم سفينة الحوامة الفضائية التي يقودها مورفيوس وطاقمه في فيلم ذا ماتريكس؟",
+    "correct_answer": "نبوخذ نصر",
+    "decoys": [
+      "الإسكندر",
+      "حمورابي",
+      "أوزوريس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/movies/matrix"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم الرمزي للبرنامج الآلي الشرير والمتكرر الذي يطارد المتمردين داخل نظام الماتريكس؟",
+    "correct_answer": "العميل سميث",
+    "decoys": [
+      "العميل جونسون",
+      "العميل براون",
+      "العميل أندرسون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/movies/matrix"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الاسكتلندي الشهير الذي كان أول من أدى شخصية جيمس بوند في فيلم Dr. No عام 1962؟",
+    "correct_answer": "شون كونري",
+    "decoys": [
+      "روجر مور",
+      "تيموثي دالتون",
+      "جورج لازينبي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.007.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو الحرف الرمزي لرئيس قسم التجهيزات والأدوات التكنولوجية الذكية لجيمس بوند في المخابرات البريطانية؟",
+    "correct_answer": "كيو (Q)",
+    "decoys": [
+      "إم (M)",
+      "زيد (Z)",
+      "إكس (X)"
+    ],
+    "image_url": null,
+    "source_url": "https://www.007.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الكاتب الأمريكي الذي ألف الرواية العلمية الأصلية التي اقتُبس منها فيلم حديقة الديناصورات؟",
+    "correct_answer": "مايكل كرايتون",
+    "decoys": [
+      "ستيفن كينغ",
+      "آرثر كلارك",
+      "فيليب ك. ديك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Jurassic-Park-film-by-Spielberg"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل النيوزيلندي الذي لعب دور عالم الحفريات د. آلان غرانت في حديقة الديناصورات (1993)؟",
+    "correct_answer": "سام نيل",
+    "decoys": [
+      "جيف غولدبلوم",
+      "ريتشارد أتينبورو",
+      "بيل بومان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Jurassic-Park-film-by-Spielberg"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو الثقب الأسود الهائل والخيالي الذي يسافر بالقرب منه رواد الفضاء في فيلم Interstellar (2014)؟",
+    "correct_answer": "غارغانتوا",
+    "decoys": [
+      "سنتوروس",
+      "أندروميدا",
+      "سيروس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/movies/interstellar"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الأيرلندي الذي جسد دور الفيزيائي روبرت أوبنهايمر في فيلم Oppenheimer الحائز على أوسكار 2024؟",
+    "correct_answer": "كيليان ميرفي",
+    "decoys": [
+      "مات ديمون",
+      "روبرت داوني جونيور",
+      "كينيث براناه"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو فيلم الإثارة والغموض للمخرج كريستوفر نولان عام 2000 الذي يُروى تسلسل أحداثه بالمعكوس زمنيًا؟",
+    "correct_answer": "تذكار (Memento)",
+    "decoys": [
+      "الأرق (Insomnia)",
+      "العظمة (The Prestige)",
+      "عقيدة (Tenet)"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Christopher-Nolan"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم الذي تحمله رائدة الفضاء الدمية وصديق وودي المقرب في سلسلة حكاية لعبة (Toy Story)؟",
+    "correct_answer": "باز يطير",
+    "decoys": [
+      "ريكس",
+      "سلينكي",
+      "هام"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pixar.com/feature-films/toy-story"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم الشرير عم سيمبا الذي دبر مقتل الملك موفاسا في فيلم الرسوم المتحركة الأسد الملك؟",
+    "correct_answer": "سكار",
+    "decoys": [
+      "شينزي",
+      "بانزاي",
+      "إد"
+    ],
+    "image_url": null,
+    "source_url": "https://movies.disney.com/the-lion-king"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي السمكة الزرقاء كثيرة النسيان التي ترافق مارلين في رحلة البحث عن نيمو في فيلم Finding Nemo؟",
+    "correct_answer": "دوري",
+    "decoys": [
+      "بيتش",
+      "ديب",
+      "فلو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pixar.com/feature-films/finding-nemo"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو اسم الفأر الموهوب في الطهي الذي يحلم بأن يصبح طاهياً فرنسياً راقياً في فيلم راتاتوي (Ratatouille)؟",
+    "correct_answer": "ريمي",
+    "decoys": [
+      "إميل",
+      "لينغويني",
+      "غوستو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pixar.com/feature-films/ratatouille"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو المخرج الإيطالي الذي أخرج تحفة السينما العالمية سينما باراديزو (Cinema Paradiso) عام 1988؟",
+    "correct_answer": "جوزيبي تورناتوري",
+    "decoys": [
+      "فيديريكو فلليني",
+      "برناردو برتولوتشي",
+      "روبرتو بينيني"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Cinema-Paradiso"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي فيلم للمخرج روبرتو بينيني فاز بثلاث جوائز أوسكار عام 1999 ومنها أفضل فيلم بلغة أجنبية؟",
+    "correct_answer": "الحياة جميلة (Life Is Beautiful)",
+    "decoys": [
+      "سارق الدراجة",
+      "ساعي البريد",
+      "الحلوى المرة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي مدينة فرنسية ساحلية تستضيف أشهر مهرجان سينمائي دولي يمنح جائزة السعفة الذهبية سنويًا؟",
+    "correct_answer": "كان",
+    "decoys": [
+      "نيس",
+      "مارسيليا",
+      "ليون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.festival-cannes.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي فيلم بريطاني تاريخي أخرجه ديفيد لين منح النجم المصري عمر الشريف شهرة عالمية وترشيحاً للأوسكار؟",
+    "correct_answer": "لورنس العرب",
+    "decoys": [
+      "دكتور زيفاغو",
+      "فتاة مرحة",
+      "سقوط الإمبراطورية الرومانية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو المخرج السينمائي المصري العالمي الذي نال جائزة اليوبيل الذهبي لمهرجان كان السينمائي عام 1997؟",
+    "correct_answer": "يوسف شاهين",
+    "decoys": [
+      "صلاح أبو سيف",
+      "هنري بركات",
+      "عاطف الطيب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.festival-cannes.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو النجم الكوميدي المصري الملقب جماهيرياً بـ 'الزعيم' وصاحب أعلى الإيرادات في تاريخ السينما العربية؟",
+    "correct_answer": "عادل إمام",
+    "decoys": [
+      "سمير غانم",
+      "إسماعيل ياسين",
+      "محمد صبحي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Adel-Emam"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هي النجمة المصرية الكبيرة التي لُقبت بـ 'سيدة الشاشة العربية' وقدمت روائع مثل 'دعاء الكروان'؟",
+    "correct_answer": "فاتن حمامة",
+    "decoys": [
+      "شادية",
+      "سعاد حسني",
+      "هند رستم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Faten-Hamama"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم الفيلم المصري الكلاسيكي للمخرج شادي عبد السلام عام 1969 المصنف كأحد أعظم الأفلام العربية؟",
+    "correct_answer": "المومياء (يوم أن تحصى السنون)",
+    "decoys": [
+      "باب الحديد",
+      "الأرض",
+      "صراع في الوادي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bfi.org.uk/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي كاتب وأديب مصري حائز على نوبل تحولت ثلاثيته الروائية الشهيرة (بين القصرين، قصر الشوق، السكرية) إلى أفلام كلاسيكية؟",
+    "correct_answer": "نجيب محفوظ",
+    "decoys": [
+      "توفيق الحكيم",
+      "يوسف إدريس",
+      "طه حسين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nobelprize.org/prizes/literature/1988/mahfouz/biographical/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم الفيلم اللبناني للمخرجة نادين لبكي الذي فاز بجائزة لجنة التحكيم في كان وترشح لأوسكار 2019؟",
+    "correct_answer": "كفرناحوم",
+    "decoys": [
+      "سكر بنات",
+      "وهلأ لوين",
+      "قضية رقم 23"
+    ],
+    "image_url": null,
+    "source_url": "https://www.festival-cannes.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم الفيلم المغربي الشهير للمخرج نبيل عيوش الذي سلط الضوء على أطفال الشوارع في الدار البيضاء؟",
+    "correct_answer": "علي زاوا",
+    "decoys": [
+      "يا خيل الله",
+      "كازانيغرا",
+      "غزية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.festival-marrakech.info/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "في أي مدينة مغربية عريقة يُقام سنويًا المهرجان الدولي للفيلم الذي يمنح جائزة النجمة الذهبية؟",
+    "correct_answer": "مراكش",
+    "decoys": [
+      "الرباط",
+      "الدار البيضاء",
+      "طنجة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.festival-marrakech.info/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو النجم المصري الملقب بـ 'النمر الأسود' الذي جسد شخصيتي الرئيسين جمال عبد الناصر وأنور السادات في السينما؟",
+    "correct_answer": "أحمد زكي",
+    "decoys": [
+      "نور الشريف",
+      "محمود عبد العزيز",
+      "يحيى الفخراني"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Ahmed-Zaki"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي مخرج سينمائي فاز بجائزة الأوسكار لأفضل مخرج عن فيلم الخيال العلمي المغامر Life of Pi عام 2013؟",
+    "correct_answer": "أنغ لي",
+    "decoys": [
+      "ألفونسو كوارون",
+      "ديفيد فينشر",
+      "ستيفن سودربيرغ"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي ممثلة أسترالية فازت بأوسكار أفضل ممثلة رئيسية عن دورها في فيلم Blue Jasmine عام 2014؟",
+    "correct_answer": "كيت بلانشيت",
+    "decoys": [
+      "نيكول كيدمان",
+      "إيمي آدمز",
+      "ساندرا بولوك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي فيلم للمخرج ستيفن سبيلبرغ عن الحرب العالمية الثانية نال 7 جوائز أوسكار عام 1994 متضمناً أفضل فيلم؟",
+    "correct_answer": "قائمة تشندلر (Schindler's List)",
+    "decoys": [
+      "إنقاذ الجندي رايان",
+      "إي تي",
+      "إمبراطورية الشمس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الويلزي الحائز على أوسكار أفضل ممثل مرتين والذي اشتهر بدور د. هانيبال ليكتر؟",
+    "correct_answer": "أنتوني هوبكنز",
+    "decoys": [
+      "دانيال داي لويس",
+      "غاري أولدمان",
+      "جيريمي أيرونز"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي فيلم رعب نفسي كلاسيكي لعام 1991 كان ثالث فيلم في تاريخ السينما يفوز بجوائز الأوسكار الخمس الكبرى كاملة؟",
+    "correct_answer": "صمت الحملان (The Silence of the Lambs)",
+    "decoys": [
+      "طارد الأرواح الشريرة",
+      "البريق",
+      "طفل روزماري"
+    ],
+    "image_url": null,
+    "source_url": "https://www.oscars.org/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هي النجمة المصرية الكبيرة التي لُقبت بـ 'سندريلا الشاشة العربية' وقدمت فيلم 'خلي بالك من زوزو'؟",
+    "correct_answer": "سعاد حسني",
+    "decoys": [
+      "فاتن حمامة",
+      "شادية",
+      "ميرفت أمين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Souad-Hosny"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي رياضة المضرب التي احترفها فورست غامب ببراعة ومثل فيها الولايات المتحدة في الصين؟",
+    "correct_answer": "كرة الطاولة (بينغ بونغ)",
+    "decoys": [
+      "كرة المضرب (التنس)",
+      "الريشة الطائرة",
+      "الاسكواش"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Forrest-Gump"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم سلسلة مطاعم الدجاج المقلي السريع التي استخدمها غاس فرينغ كواجهة لعملياته في Breaking Bad؟",
+    "correct_answer": "لوس بولوس هيرمانوس",
+    "decoys": [
+      "مادريغال",
+      "إل بولو لوكو",
+      "كويك تشيكن"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amc.com/shows/breaking-bad"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الأمريكي الحائز على إيمي الذي جسد شخصية المعلم والتاجر والتر وايت في Breaking Bad؟",
+    "correct_answer": "برايان كرانستون",
+    "decoys": [
+      "آرون بول",
+      "بوب أودينكيرك",
+      "جيانكارلو إسبوزيتو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amc.com/shows/breaking-bad"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي الوكالة الفيدرالية الأمنية الأمريكية التي يعمل بها المحقق هانك شريدر صهر والتر وايت؟",
+    "correct_answer": "إدارة مكافحة المخدرات (DEA)",
+    "decoys": [
+      "مكتب التحقيقات الفيدرالي (FBI)",
+      "وكالة الاستخبارات المركزية (CIA)",
+      "جهاز الخدمة السرية (USSS)"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amc.com/shows/breaking-bad"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو البناء الجليدي الضخم الشاهق في أقصى الشمال الذي يحمي الممالك السبع من المخاطر في Game of Thrones؟",
+    "correct_answer": "الجدار (The Wall)",
+    "decoys": [
+      "برج الفرح",
+      "قلعة بايك",
+      "هارنهال"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/game-of-thrones"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الأمريكي الحائز على جوائز إيمي الذي جسد شخصية تيريون لانيستر ببراعة في صراع العروش؟",
+    "correct_answer": "بيتر دينكلاج",
+    "decoys": [
+      "نيكولاي كوستير والداو",
+      "كيت هارينغتون",
+      "تشارلز دانس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/game-of-thrones"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو اللقب الشهير الذي عُرفت به دينيريس تارغاريان بعد تفقيس بيض تنانينها الثلاثة؟",
+    "correct_answer": "أم التنانين",
+    "decoys": [
+      "ملكة الشتاء",
+      "عذراء المعركة",
+      "سيدة الجدار"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/game-of-thrones"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي ممثلة أدت دور الطاهية الماهرة المهووسة بالنظافة والترتيب مونيكا غيلر في مسلسل Friends؟",
+    "correct_answer": "كورتني كوكس",
+    "decoys": [
+      "جينيفر أنيستون",
+      "ليزا كودرو",
+      "ريز ويذرسبون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/tv/friends"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "في أي مدينة أمريكية كبرى تجري معظم أحداث وحياة الأصدقاء الستة في مسلسل Friends؟",
+    "correct_answer": "نيويورك",
+    "decoys": [
+      "شيكاغو",
+      "لوس أنجلوس",
+      "بوسطن"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/tv/friends"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الراحل الذي جسد شخصية تشاندلر بينغ الساخرة والمحبوبة في مسلسل Friends؟",
+    "correct_answer": "ماثيو بيري",
+    "decoys": [
+      "مات لو بلانك",
+      "ديفيد شويمر",
+      "بول رود"
+    ],
+    "image_url": null,
+    "source_url": "https://www.warnerbros.com/tv/friends"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل الذي لعب دور بائع الورق خفيف الظل جيم هالبيرت في النسخة الأمريكية من The Office؟",
+    "correct_answer": "جون كراسينسكي",
+    "decoys": [
+      "ستيف كاريل",
+      "رين ويلسون",
+      "بي جاي نوفاك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nbc.com/the-office"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي المزرعة الغريبة التي يديرها الموظف دوايت شروت لزراعة الشمندر في مسلسل The Office؟",
+    "correct_answer": "مزارع شروت (Schrute Farms)",
+    "decoys": [
+      "مزارع سكرانتون",
+      "مزارع دندر",
+      "مزارع بنسلفانيا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nbc.com/the-office"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم موظفة الاستقبال الرقيقة التي تقع في حب جيم هالبيرت في مسلسل The Office؟",
+    "correct_answer": "بام بيسلي",
+    "decoys": [
+      "أنجيلا مارتن",
+      "كيلي كابور",
+      "فيليس فانس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nbc.com/the-office"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هي الممثلة الشابة التي اشتهرت بدور الفتاة الخارقة 'إليفن' في مسلسل Stranger Things؟",
+    "correct_answer": "ميلي بوبي براون",
+    "decoys": [
+      "سادي سينك",
+      "مايا هوك",
+      "ناتاليا داير"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/80057281"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم الوحش المرعب المفترس بلا وجه الذي يطارد الأبطال في الموسم الأول من Stranger Things؟",
+    "correct_answer": "الديموغورغون",
+    "decoys": [
+      "مايند فلاير",
+      "فيكنا",
+      "الغورغون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/80057281"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو قائد شرطة بلدة هوكينز الشجاع الذي يتبنى الفتاة إليفن في مسلسل Stranger Things؟",
+    "correct_answer": "جيم هوبر",
+    "decoys": [
+      "بوب نيوبي",
+      "ستيف هارينغتون",
+      "بيلي هارجروف"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/80057281"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل البريطاني الذي جسد دور الطبيب المساعد د. جون واطسون في مسلسل Sherlock على بي بي سي؟",
+    "correct_answer": "مارتن فريمان",
+    "decoys": [
+      "بينديكت كامبرباتش",
+      "أندرو سكوت",
+      "روبرت غريفز"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bbc.co.uk/programmes/b018ttws"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الكاتب الاسكتلندي الشهير الذي ابتكر شخصية المحقق الأسطوري شرلوك هولمز في أواخر القرن 19؟",
+    "correct_answer": "آرثر كونان دويل",
+    "decoys": [
+      "أغاثا كريستي",
+      "إدغار آلان بو",
+      "تشارلز ديكنز"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Arthur-Conan-Doyle"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي العبارة العقائدية الشهيرة التي يرددها محاربو الماندالوريان دائمًا في المسلسل؟",
+    "correct_answer": "هذه هي الطريقة (This Is the Way)",
+    "decoys": [
+      "القوة معنا",
+      "النصر للدرع",
+      "من أجل الوطن"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/series/the-mandalorian"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم السيف الضوئي الأسود النادر الذي يرمز لسيادة وحكم شعب الماندالور؟",
+    "correct_answer": "السيف المظلم (Darksaber)",
+    "decoys": [
+      "السيف الأبيض",
+      "سيف الكريستال",
+      "سيف الظل"
+    ],
+    "image_url": null,
+    "source_url": "https://www.starwars.com/series/the-mandalorian"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم الأكاديمية الخاصة بالمنبوذين والوحوش التي تلتحق بها وينزداي آدامز في مسلسل Wednesday على نتفليكس؟",
+    "correct_answer": "أكاديمية نيفرمور",
+    "decoys": [
+      "أكاديمية هوغوورتس",
+      "أكاديمية ساليم",
+      "مدرسة إيدن"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/81231974"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي العملة النقدية المستخدمة لجائزة الـ 45.6 مليار في المسلسل الكوري الشهير لعبة الحبار (Squid Game)؟",
+    "correct_answer": "الوون الكوري الجنوبي",
+    "decoys": [
+      "الين الياباني",
+      "اليوان الصيني",
+      "الدولار الأمريكي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/81040344"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي الدمية الآلية الضخمة التي ترصد حركة اللاعبين في لعبة 'إشارة حمراء إشارة خضراء' بمسلسل لعبة الحبار؟",
+    "correct_answer": "الدمية يونغ-هي",
+    "decoys": [
+      "الدمية أنابيل",
+      "الدمية ميا",
+      "الدمية سوهي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/81040344"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم الفتاة المراهقة المحصنة ضد العدوى الفطرية التي يرافقها جول عبر أمريكا في مسلسل The Last of Us؟",
+    "correct_answer": "إيلي",
+    "decoys": [
+      "تيس",
+      "سارة",
+      "مارلين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/the-last-of-us"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم المسلسل التاريخي الإسباني الشهير عن عصابة البروفيسور التي تخطط لاقتحام دار سك العملة الملكية؟",
+    "correct_answer": "لا كاسا دي بابيل (La Casa de Papel)",
+    "decoys": [
+      "إيليت",
+      "ناركوس",
+      "لوبين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/80192098"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي وسيلة التنقل المفضلة لدى الطفل المشاغب بارت سيمبسون في مسلسل The Simpsons؟",
+    "correct_answer": "لوح التزلج",
+    "decoys": [
+      "الدراجة الهوائية",
+      "الزلاجات ذات العجلات",
+      "السكوتر الكهربائي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fox.com/the-simpsons/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هو الكائن البحري الإسفنجي الأصفر المتفائل الذي يسكن قاع الهامور ويعمل طاهياً لبرغر سلطع؟",
+    "correct_answer": "سبونج بوب سكوير بانتس",
+    "decoys": [
+      "بسيط نجم",
+      "شفيق حبار",
+      "مستر سلطع"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nick.com/shows/spongebob-squarepants"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم الحيوان المساعد والليمور المجنح الوفي لـ آنغ في مسلسل أفاتار: أسطورة أنج؟",
+    "correct_answer": "مومو",
+    "decoys": [
+      "آبا",
+      "ناغا",
+      "بابو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nick.com/shows/avatar-the-last-airbender"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي مسلسل بوليسي وجريمة أمريكي شهير من إنتاج HBO تدور أحداثه حول شبكات تجارة المخدرات في مدينة بالتيمور؟",
+    "correct_answer": "ذا واير (The Wire)",
+    "decoys": [
+      "ذا سوبرانوس",
+      "ترو ديتكتيف",
+      "فارغو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.hbo.com/the-wire"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما هي الجزيرة الغامضة والرحلة الجوية رقم 815 التي تحطمت ركابها في مسلسل الغموض والخيال العلمي Lost؟",
+    "correct_answer": "طيران أوشيانيك رحلة 815",
+    "decoys": [
+      "طيران باسيفيك رحلة 714",
+      "طيران أتلانتيك رحلة 404",
+      "طيران إير فرانس رحلة 330"
+    ],
+    "image_url": null,
+    "source_url": "https://www.abc.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم شركة الإعلانات النيويوركية في شارع ماديسون التي يعمل بها دون دريبر في مسلسل Mad Men؟",
+    "correct_answer": "ستيرلينغ كوبر (Sterling Cooper)",
+    "decoys": [
+      "ماكان إريكسون",
+      "أوغلفي آند ماذر",
+      "ديلويت ميديا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.amc.com/shows/mad-men"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم الحارة الدمشقية التاريخية الشهيرة التي تدور فيها أحداث الأجزاء الأولى من مسلسل 'باب الحارة'؟",
+    "correct_answer": "حارة الضبع",
+    "decoys": [
+      "حارة القبة",
+      "حارة الميسات",
+      "حارة الشاغور"
+    ],
+    "image_url": null,
+    "source_url": "https://www.mbc.net/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو النجم المصري الراحل الذي جسد شخصية عميل المخابرات المصرية الشهير 'رفعت الجمال' في مسلسل رأفت الهجان؟",
+    "correct_answer": "محمود عبد العزيز",
+    "decoys": [
+      "عادل إمام",
+      "أحمد زكي",
+      "يحيى الفخراني"
+    ],
+    "image_url": null,
+    "source_url": "https://www.maspero.eg/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الكاتب والسيناريست المصري الكبير مؤلف الملحمة الدرامية التاريخية 'ليالي الحلمية'؟",
+    "correct_answer": "أسامة أنور عكاشة",
+    "decoys": [
+      "وحيد حامد",
+      "يسري الجندي",
+      "محسن زايد"
+    ],
+    "image_url": null,
+    "source_url": "https://www.maspero.eg/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو المخرج السوري الراحل صاحب الروائع التاريخية الكبرى مثل 'التغريبة الفلسطينية' وثلاثية الأندلس؟",
+    "correct_answer": "حاتم علي",
+    "decoys": [
+      "نجدة أنزور",
+      "الليث حجو",
+      "باسل الخطيب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.aljazeera.net/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل السوري القدير الذي جسد شخصية عبد الرحمن الداخل في المسلسل التاريخي 'صقر قريش'؟",
+    "correct_answer": "جمال سليمان",
+    "decoys": [
+      "تيم حسن",
+      "باسم ياخور",
+      "عابد فهد"
+    ],
+    "image_url": null,
+    "source_url": "https://www.aljazeera.net/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هما النجمان السعوديان اللذان قدما معاً المسلسل الكوميدي الساخر الأشهر في الخليج 'طاش ما طاش' لسنوات طويلة؟",
+    "correct_answer": "ناصر القصبي وعبد الله السدحان",
+    "decoys": [
+      "فايز المالكي وحسن عسيري",
+      "عبد الحسين عبد الرضا وسعد الفرج",
+      "طارق العلي وداوود حسين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.mbc.net/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "من هو الممثل المصري الكبير الذي لعب دور التاجر العصامي عبد الغفور البرعي في مسلسل 'لن أعيش في جلباب أبي'؟",
+    "correct_answer": "نور الشريف",
+    "decoys": [
+      "محمود عبد العزيز",
+      "يحيى الفخراني",
+      "صلاح السعدني"
+    ],
+    "image_url": null,
+    "source_url": "https://www.maspero.eg/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم المسلسل الدرامي السوري العائلي الشهير من تأليف دلع الرحبي وريم حنا وإخراج حاتم علي عن أسرة دمشقية؟",
+    "correct_answer": "الفصول الأربعة",
+    "decoys": [
+      "أحلام كبيرة",
+      "مرايا",
+      "بقعة ضوء"
+    ],
+    "image_url": null,
+    "source_url": "https://www.aljazeera.net/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم المسلسل المغربي القروي التراثي الشهير المقتبس عن رواية 'الأرض' للكاتب إميل زولا والذي أخرجه شفيق السحيمي؟",
+    "correct_answer": "وجع التراب",
+    "decoys": [
+      "حديدان",
+      "سرب الحمام",
+      "رمانة وبرطال"
+    ],
+    "image_url": null,
+    "source_url": "https://www.snrt.ma/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "أي مسلسل درامي بوليسي لبناني سوري شهير من بطولة تيم حسن حقق نجاحاً واسعاً عبر خمسة مواسم في بلدة الهيبة؟",
+    "correct_answer": "الهيبة",
+    "decoys": [
+      "تشيللو",
+      "خمسة ونص",
+      "طريق"
+    ],
+    "image_url": null,
+    "source_url": "https://www.mbc.net/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم مسلسل الخيال العلمي والدراما البريطاني الطويل الذي يدور حول مسافر عبر الزمن في مركبة تارديس (TARDIS)؟",
+    "correct_answer": "دكتور هو (Doctor Who)",
+    "decoys": [
+      "تورشوود",
+      "ريد دوارف",
+      "برايمفال"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bbc.co.uk/programmes/b006q2x0"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم العائلة الإجرامية البريطانية الشهيرة في برمنغهام بقيادة تومي شيلبي في مسلسل Peaky Blinders؟",
+    "correct_answer": "عائلة شيلبي",
+    "decoys": [
+      "عائلة غريغوري",
+      "عائلة بيرمنغهام",
+      "عائلة كامبل"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bbc.co.uk/programmes/b045fz8r"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم القصر والمسلسل الدرامي التاريخي البريطاني الذي يروي حياة عائلة كرولي الأرستقراطية وخدمهم في أوائل القرن 20؟",
+    "correct_answer": "داونتون آبي (Downton Abbey)",
+    "decoys": [
+      "قصر بكنغهام",
+      "هاوردز إند",
+      "بريدجيرتون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.itv.com/"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم المسلسل الكوميدي الأمريكي الشهير المكون من 9 مواسم والذي وُصف بأنه 'مسلسل عن لا شيء' من ابتكار جيري وسينفيلد؟",
+    "correct_answer": "ساينفلد (Seinfeld)",
+    "decoys": [
+      "فريندز",
+      "شيرز",
+      "فرايجر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.sonypictures.com/tv/seinfeld"
+  },
+  {
+    "category_id": 9,
+    "language_code": "ar",
+    "question_text": "ما اسم مسلسل الرعب والخيال العلمي الألماني الغامض على نتفليكس الذي يدور حول السفر عبر الزمن في بلدة فيندن؟",
+    "correct_answer": "دارك (Dark)",
+    "decoys": [
+      "1899",
+      "بابل برلين",
+      "كلب الصيد"
+    ],
+    "image_url": null,
+    "source_url": "https://www.netflix.com/title/80100172"
+  }
+]

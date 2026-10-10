@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "كم عدد سور القرآن الكريم؟",
+    "correct_answer": "114",
+    "decoys": [
+      "110",
+      "112",
+      "120"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما أول سورة في ترتيب المصحف؟",
+    "correct_answer": "الفاتحة",
+    "decoys": [
+      "البقرة",
+      "الناس",
+      "الإخلاص"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/1"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما أطول سورة في القرآن الكريم؟",
+    "correct_answer": "البقرة",
+    "decoys": [
+      "آل عمران",
+      "النساء",
+      "الأعراف"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/2"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة تقع آية الكرسي؟",
+    "correct_answer": "البقرة",
+    "decoys": [
+      "النساء",
+      "المائدة",
+      "التوبة"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/2/255"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما السورة التي سُمّيت باسم معدن؟",
+    "correct_answer": "الحديد",
+    "decoys": [
+      "القمر",
+      "الرعد",
+      "الحجر"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/57"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة رُويت قصة الفتية الذين ناموا سنين ثم استيقظوا؟",
+    "correct_answer": "الكهف",
+    "decoys": [
+      "الإسراء",
+      "القصص",
+      "الأنبياء"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/18"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما السورة التي تحكي عن جيش أرسل الله عليه طيرًا أبابيل؟",
+    "correct_answer": "الفيل",
+    "decoys": [
+      "قريش",
+      "الهمزة",
+      "الماعون"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/105"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة وردت الآية «خير من ألف شهر»؟",
+    "correct_answer": "القدر",
+    "decoys": [
+      "الدخان",
+      "العلق",
+      "المدثر"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/97/3"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة ذُكر الانتقال ليلًا من المسجد الحرام إلى المسجد الأقصى؟",
+    "correct_answer": "الإسراء",
+    "decoys": [
+      "النجم",
+      "الفرقان",
+      "الفتح"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/17/1"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما السورة التي سُمّيت باسم جبل ورد ذكره في مطلعها؟",
+    "correct_answer": "الطور",
+    "decoys": [
+      "القمر",
+      "الرعد",
+      "البلد"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/52/1"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة وردت عبارة «إنما المؤمنون إخوة»؟",
+    "correct_answer": "الحجرات",
+    "decoys": [
+      "الصف",
+      "المجادلة",
+      "الممتحنة"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/49/10"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة ورد الأمر بالاستئذان قبل دخول بيوت الآخرين؟",
+    "correct_answer": "النور",
+    "decoys": [
+      "الحجرات",
+      "النساء",
+      "المجادلة"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/24/27"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة وردت وصايا رجل حكيم لابنه بالنهي عن الشرك؟",
+    "correct_answer": "لقمان",
+    "decoys": [
+      "الروم",
+      "السجدة",
+      "الأحزاب"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/31/13"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة ورد الأمر بالعدل ولو على النفس والوالدين؟",
+    "correct_answer": "النساء",
+    "decoys": [
+      "المائدة",
+      "النحل",
+      "الحجرات"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/4/135"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة وردت قصة أصحاب الأخدود؟",
+    "correct_answer": "البروج",
+    "decoys": [
+      "الطارق",
+      "الفجر",
+      "الغاشية"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/85/4"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة ورد اسم «بكة» للدلالة على موضع البيت الحرام؟",
+    "correct_answer": "آل عمران",
+    "decoys": [
+      "البقرة",
+      "النساء",
+      "المائدة"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/3/96"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما السورة التي تذكر إطعام أهل مكة من جوع وتأمينهم من خوف؟",
+    "correct_answer": "قريش",
+    "decoys": [
+      "الفيل",
+      "الماعون",
+      "الكوثر"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/106"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة ترد قصة ذي القرنين؟",
+    "correct_answer": "الكهف",
+    "decoys": [
+      "القصص",
+      "الأنبياء",
+      "سبأ"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/18/83"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما السورة التي تبدأ بذكر هزيمة البيزنطيين ثم وعد بانتصارهم؟",
+    "correct_answer": "الروم",
+    "decoys": [
+      "الدخان",
+      "الفتح",
+      "الأحزاب"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/30/2"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي سورة ذُكرت مصارف الصدقات المفروضة؟",
+    "correct_answer": "التوبة",
+    "decoys": [
+      "الأنفال",
+      "الحشر",
+      "الحديد"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/9/60"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من النبي الذي أمره الله بصنع الفلك؟",
+    "correct_answer": "نوح",
+    "decoys": [
+      "هود",
+      "صالح",
+      "لوط"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/11/37"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أي نبي قال الله للنار أن تكون عليه بردًا وسلامًا؟",
+    "correct_answer": "إبراهيم",
+    "decoys": [
+      "موسى",
+      "إسماعيل",
+      "يعقوب"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/21/69"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من النبي الذي تحولت عصاه إلى حية في القصة القرآنية؟",
+    "correct_answer": "موسى",
+    "decoys": [
+      "هارون",
+      "عيسى",
+      "داود"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/20/20"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من أم النبي عيسى عليه السلام؟",
+    "correct_answer": "مريم",
+    "decoys": [
+      "آسية",
+      "هاجر",
+      "سارة"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/3/45"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من النبي الذي ابتلعه الحوت كما يذكر القرآن؟",
+    "correct_answer": "يونس",
+    "decoys": [
+      "نوح",
+      "يوسف",
+      "أيوب"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/37/142"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من والد النبي يحيى عليه السلام في القرآن؟",
+    "correct_answer": "زكريا",
+    "decoys": [
+      "يعقوب",
+      "عمران",
+      "هارون"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/19/7"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أي نبي ألقاه إخوته في غيابة الجب؟",
+    "correct_answer": "يوسف",
+    "decoys": [
+      "إسماعيل",
+      "بنيامين",
+      "يعقوب"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/12/15"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من والد النبي يوسف عليه السلام؟",
+    "correct_answer": "يعقوب",
+    "decoys": [
+      "إسحاق",
+      "إبراهيم",
+      "إسماعيل"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/12"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أي نبي آتاه الله الزبور بحسب القرآن؟",
+    "correct_answer": "داود",
+    "decoys": [
+      "سليمان",
+      "موسى",
+      "إلياس"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/4/163"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أي نبي علّمه الله منطق الطير كما ورد في القرآن؟",
+    "correct_answer": "سليمان",
+    "decoys": [
+      "داود",
+      "إدريس",
+      "هارون"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/27/16"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من النبي الذي دعا ربه حين مسّه الضر فاستجاب له؟",
+    "correct_answer": "أيوب",
+    "decoys": [
+      "يونس",
+      "زكريا",
+      "يعقوب"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/21/83"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما اسم النبي الذي أُرسلت إلى قومه الناقة آيةً لهم؟",
+    "correct_answer": "صالح",
+    "decoys": [
+      "شعيب",
+      "هود",
+      "لوط"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/7/73"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من النبي الذي أُرسل إلى أهل مدين بحسب القرآن؟",
+    "correct_answer": "شعيب",
+    "decoys": [
+      "صالح",
+      "هود",
+      "إلياس"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/7/85"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من النبي الذي ذكر القرآن أنه رُفع مكانًا عليًا؟",
+    "correct_answer": "إدريس",
+    "decoys": [
+      "إلياس",
+      "اليسع",
+      "ذو الكفل"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/19/57"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من النبي الذي كان أخًا لموسى عليه السلام وسانده في رسالته؟",
+    "correct_answer": "هارون",
+    "decoys": [
+      "إسحاق",
+      "إلياس",
+      "إدريس"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/20/30"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما مدينة مولد النبي محمد ﷺ؟",
+    "correct_answer": "مكة المكرمة",
+    "decoys": [
+      "المدينة المنورة",
+      "الطائف",
+      "القدس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من أي قبيلة عربية كان النبي محمد ﷺ؟",
+    "correct_answer": "قريش",
+    "decoys": [
+      "تميم",
+      "هوازن",
+      "غطفان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "إلى أي بطن من قريش انتمى النبي محمد ﷺ؟",
+    "correct_answer": "بنو هاشم",
+    "decoys": [
+      "بنو أمية",
+      "بنو مخزوم",
+      "بنو زهرة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما الغزوة التي دافع فيها المسلمون عن المدينة بحفر حاجز يصدّ المهاجمين؟",
+    "correct_answer": "غزوة الخندق",
+    "decoys": [
+      "غزوة بدر",
+      "غزوة أحد",
+      "غزوة حنين"
+    ],
+    "image_url": null,
+    "source_url": "https://binzaid.gov.qa/hia-ebook/pdf/WHO-IS-HE-English.pdf"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما اسم والدة النبي محمد ﷺ؟",
+    "correct_answer": "آمنة",
+    "decoys": [
+      "حليمة",
+      "خديجة",
+      "فاطمة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي عام ميلادي هاجر النبي محمد ﷺ من مكة إلى المدينة؟",
+    "correct_answer": "622 ميلادية",
+    "decoys": [
+      "610 ميلادية",
+      "630 ميلادية",
+      "632 ميلادية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Hijrah-Islam"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من عم النبي محمد ﷺ الذي تولّى رعايته بعد وفاة جده؟",
+    "correct_answer": "أبو طالب",
+    "decoys": [
+      "العباس",
+      "حمزة",
+      "أبو لهب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من كانت أول زوجات النبي محمد ﷺ؟",
+    "correct_answer": "خديجة بنت خويلد",
+    "decoys": [
+      "عائشة بنت أبي بكر",
+      "حفصة بنت عمر",
+      "أم سلمة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي غار بدأ نزول الوحي على النبي محمد ﷺ؟",
+    "correct_answer": "غار حراء",
+    "decoys": [
+      "غار ثور",
+      "كهف جعيتا",
+      "كهف الهوتة"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما اسم المَلَك الذي جاء بالوحي إلى النبي محمد ﷺ؟",
+    "correct_answer": "جبريل",
+    "decoys": [
+      "ميكائيل",
+      "إسرافيل",
+      "مالك"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما السورة التي نزلت منها الآيات الأولى على النبي محمد ﷺ؟",
+    "correct_answer": "العلق",
+    "decoys": [
+      "الفاتحة",
+      "المدثر",
+      "القلم"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "إلى أي بلاد هاجر بعض المسلمين قبل الهجرة إلى المدينة؟",
+    "correct_answer": "الحبشة",
+    "decoys": [
+      "الشام",
+      "اليمن",
+      "البحرين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.dar-alifta.org/en/article/details/731/why-did-muslims-migrate-to-abyssinia"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "إلى أي مدينة هاجر النبي محمد ﷺ من مكة؟",
+    "correct_answer": "المدينة المنورة",
+    "decoys": [
+      "الطائف",
+      "خيبر",
+      "دمشق"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Hijrah-Islam"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من كان صاحب النبي محمد ﷺ في غار ثور خلال الهجرة؟",
+    "correct_answer": "أبو بكر الصديق",
+    "decoys": [
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "علي بن أبي طالب"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3905"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي غار اختبأ النبي محمد ﷺ وصاحبه خلال الهجرة؟",
+    "correct_answer": "غار ثور",
+    "decoys": [
+      "غار حراء",
+      "كهف جعيتا",
+      "كهف الهوتة"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3905"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "بماذا سُمّي المسلمون الذين هاجروا من مكة إلى المدينة؟",
+    "correct_answer": "المهاجرون",
+    "decoys": [
+      "الأنصار",
+      "التابعون",
+      "الأوس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Hijrah-Islam"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "بماذا سُمّي أهل المدينة الذين نصروا النبي محمد ﷺ والمهاجرين؟",
+    "correct_answer": "الأنصار",
+    "decoys": [
+      "المهاجرون",
+      "التابعون",
+      "قريش"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Hijrah-Islam"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما المعركة التي انتصر فيها المسلمون على قريش في السنة الثانية للهجرة؟",
+    "correct_answer": "بدر",
+    "decoys": [
+      "أحد",
+      "الخندق",
+      "حنين"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Battle-of-Badr"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أي معركة وقعت قرب جبل يحمل اسمها شمال المدينة؟",
+    "correct_answer": "أحد",
+    "decoys": [
+      "بدر",
+      "حنين",
+      "خيبر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.visitsaudi.com/en/madinah/attractions/uhud-martyrs-square-madinah"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما اسم الصلح الذي أبرمه النبي محمد ﷺ مع قريش قرب مكة؟",
+    "correct_answer": "صلح الحديبية",
+    "decoys": [
+      "وثيقة المدينة",
+      "بيعة الرضوان",
+      "صلح نجران"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:2731"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الصحابي الذي أمر بنسخ المصاحف وإرسالها إلى الأمصار؟",
+    "correct_answer": "عثمان بن عفان",
+    "decoys": [
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "علي بن أبي طالب"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:4987"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الصحابي الذي كُلّف بجمع القرآن في صحف في عهد أبي بكر؟",
+    "correct_answer": "زيد بن ثابت",
+    "decoys": [
+      "أبي بن كعب",
+      "عبد الله بن مسعود",
+      "معاذ بن جبل"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:4986"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الصحابي الذي اشتهر بالأذان للنبي محمد ﷺ؟",
+    "correct_answer": "بلال بن رباح",
+    "decoys": [
+      "سلمان الفارسي",
+      "أبو هريرة",
+      "خالد بن الوليد"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:603"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أي صحابي تزوج فاطمة بنت النبي محمد ﷺ؟",
+    "correct_answer": "علي بن أبي طالب",
+    "decoys": [
+      "عثمان بن عفان",
+      "الزبير بن العوام",
+      "طلحة بن عبيد الله"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من والد السيدة عائشة زوجة النبي محمد ﷺ؟",
+    "correct_answer": "أبو بكر الصديق",
+    "decoys": [
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "العباس بن عبد المطلب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Abu-Bakr"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الصحابية التي عُرفت بلقب «ذات النطاقين»؟",
+    "correct_answer": "أسماء بنت أبي بكر",
+    "decoys": [
+      "حفصة بنت عمر",
+      "أم سلمة",
+      "صفية بنت عبد المطلب"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3905"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الصحابية التي احتُفظ عندها بصحف القرآن قبل نسخها في عهد عثمان؟",
+    "correct_answer": "حفصة بنت عمر",
+    "decoys": [
+      "عائشة بنت أبي بكر",
+      "أسماء بنت أبي بكر",
+      "أم سلمة"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:4987"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الصحابي الذي حذّر عثمان من اختلاف المسلمين في قراءة القرآن؟",
+    "correct_answer": "حذيفة بن اليمان",
+    "decoys": [
+      "أبو موسى الأشعري",
+      "عبد الله بن عباس",
+      "أبو الدرداء"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:4987"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الصحابي الذي اقترح جمع القرآن بعد معركة اليمامة؟",
+    "correct_answer": "عمر بن الخطاب",
+    "decoys": [
+      "عثمان بن عفان",
+      "علي بن أبي طالب",
+      "بلال بن رباح"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:4986"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الصحابي الذي كان ينقل أخبار قريش إلى النبي محمد ﷺ خلال إقامته في غار ثور؟",
+    "correct_answer": "عبد الله بن أبي بكر",
+    "decoys": [
+      "عبد الله بن الزبير",
+      "عبد الله بن رواحة",
+      "عبد الله بن مسعود"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3905"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "كم عدد أركان الإسلام كما ورد في الحديث الصحيح؟",
+    "correct_answer": "خمسة",
+    "decoys": [
+      "ثلاثة",
+      "أربعة",
+      "ستة"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:8"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما الركن الذي يقوم على إعطاء جزء محدد من المال للمستحقين؟",
+    "correct_answer": "الزكاة",
+    "decoys": [
+      "الصيام",
+      "الحج",
+      "الصلاة"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:8"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما الركن الذي يتضمن التوجه إلى مكة لأداء مناسك مخصوصة؟",
+    "correct_answer": "الحج",
+    "decoys": [
+      "الزكاة",
+      "الصيام",
+      "الشهادة"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:8"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما العبادة المفروضة التي يؤدّيها المسلم خمس مرات في اليوم؟",
+    "correct_answer": "الصلاة",
+    "decoys": [
+      "الصيام",
+      "الحج",
+      "الزكاة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/salat"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما الشهر الذي فُرض صيامه في القرآن؟",
+    "correct_answer": "رمضان",
+    "decoys": [
+      "شعبان",
+      "شوال",
+      "محرم"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/2/185"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "متى يبدأ الإمساك عن الطعام والشراب في صيام رمضان؟",
+    "correct_answer": "طلوع الفجر",
+    "decoys": [
+      "طلوع الشمس",
+      "منتصف الليل",
+      "صلاة الظهر"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/2/187"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "متى ينتهي صيام اليوم عند دخول الليل؟",
+    "correct_answer": "غروب الشمس",
+    "decoys": [
+      "منتصف النهار",
+      "شروق الشمس",
+      "منتصف الليل"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:1954"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "إلى أي مسجد وُجّه المسلمون في القبلة المذكورة بالقرآن؟",
+    "correct_answer": "المسجد الحرام",
+    "decoys": [
+      "المسجد الأقصى",
+      "المسجد النبوي",
+      "مسجد قباء"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/2/144"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما اسم العبادة التي يدور فيها الحجاج حول الكعبة؟",
+    "correct_answer": "الطواف",
+    "decoys": [
+      "السعي",
+      "الرمي",
+      "الوقوف بعرفة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/hajj"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما الموضعان اللذان يسعى الحجاج بينهما؟",
+    "correct_answer": "الصفا والمروة",
+    "decoys": [
+      "منى ومزدلفة",
+      "عرفات ومنى",
+      "جبل النور وجبل الرحمة"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/2/158"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أين توجد الكعبة المشرفة؟",
+    "correct_answer": "مكة المكرمة",
+    "decoys": [
+      "المدينة المنورة",
+      "القدس",
+      "الطائف"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Kaaba-shrine-Mecca-Saudi-Arabia"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أي مدينة تحتضن المسجد النبوي؟",
+    "correct_answer": "المدينة المنورة",
+    "decoys": [
+      "مكة المكرمة",
+      "القدس",
+      "دمشق"
+    ],
+    "image_url": null,
+    "source_url": "https://alharamain.gov.sa/public/?page=masjid-nabawi-en"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أين يقع المسجد الأقصى؟",
+    "correct_answer": "القدس",
+    "decoys": [
+      "المدينة المنورة",
+      "مكة المكرمة",
+      "القاهرة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Al-Aqsa-Mosque"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما أول شهر في التقويم الهجري؟",
+    "correct_answer": "محرم",
+    "decoys": [
+      "صفر",
+      "رمضان",
+      "رجب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Islamic-calendar"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما الشهر الهجري الذي يأتي بعد رمضان مباشرة؟",
+    "correct_answer": "شوال",
+    "decoys": [
+      "شعبان",
+      "ذو القعدة",
+      "رجب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Islamic-calendar"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما الشهر الثاني في ترتيب السنة الهجرية؟",
+    "correct_answer": "صفر",
+    "decoys": [
+      "رجب",
+      "شوال",
+      "شعبان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Islamic-calendar"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "على أي دورة فلكية يعتمد التقويم الهجري في تحديد شهوره؟",
+    "correct_answer": "دورة القمر حول الأرض",
+    "decoys": [
+      "دوران الأرض حول محورها",
+      "دورة الأرض حول الشمس",
+      "دورة المريخ حول الشمس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Islamic-calendar"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي شهر هجري يقع موسم الحج؟",
+    "correct_answer": "ذو الحجة",
+    "decoys": [
+      "محرم",
+      "شوال",
+      "رجب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/hajj"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "في أي يوم من ذي الحجة يقف الحجاج بعرفة؟",
+    "correct_answer": "التاسع",
+    "decoys": [
+      "السابع",
+      "العاشر",
+      "الثاني عشر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.spa.gov.sa/en/N2123189"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما المشعر الذي يرمي فيه الحجاج الجمرات؟",
+    "correct_answer": "منى",
+    "decoys": [
+      "عرفات",
+      "مزدلفة",
+      "الصفا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pep.gov.sa/en/news/960"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما عاصمة الدولة الأموية في المشرق؟",
+    "correct_answer": "دمشق",
+    "decoys": [
+      "بغداد",
+      "القاهرة",
+      "المدينة المنورة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Umayyad-dynasty"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما المدينة التي جعلها العباسيون مركزًا لخلافتهم؟",
+    "correct_answer": "بغداد",
+    "decoys": [
+      "دمشق",
+      "القيروان",
+      "قرطبة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Abbasid-caliphate"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الخليفة العباسي الذي أسس مدينة بغداد المدورة؟",
+    "correct_answer": "أبو جعفر المنصور",
+    "decoys": [
+      "هارون الرشيد",
+      "المأمون",
+      "المعتصم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Baghdad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما اسم الإمبراطورية التي واجهتها الجيوش الإسلامية في معركة اليرموك؟",
+    "correct_answer": "الإمبراطورية البيزنطية",
+    "decoys": [
+      "الإمبراطورية الساسانية",
+      "إمبراطورية المغول",
+      "الإمبراطورية العثمانية"
+    ],
+    "image_url": null,
+    "source_url": "https://www.worldhistory.org/article/1563/battle-of-yarmouk/"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الخليفة الأموي الذي أشرف على بناء قبة الصخرة؟",
+    "correct_answer": "عبد الملك بن مروان",
+    "decoys": [
+      "الوليد بن عبد الملك",
+      "عمر بن عبد العزيز",
+      "معاوية بن أبي سفيان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.metmuseum.org/exhibitions/listings/2012/byzantium-and-islam/blog/characters/posts/abd-al-malik"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أي خليفة أمر ببناء الجامع الكبير في دمشق؟",
+    "correct_answer": "الوليد بن عبد الملك",
+    "decoys": [
+      "عبد الملك بن مروان",
+      "عمر بن عبد العزيز",
+      "سليمان بن عبد الملك"
+    ],
+    "image_url": null,
+    "source_url": "https://archeologie.culture.gouv.fr/en/umayyad-mosque-damascus"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أي مدينة فتحها العثمانيون سنة 1453 ميلادية؟",
+    "correct_answer": "القسطنطينية",
+    "decoys": [
+      "روما",
+      "أثينا",
+      "بلغراد"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Fall-of-Constantinople-1453"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "أي سلالة حكمت غرناطة حين بُني قصر الحمراء؟",
+    "correct_answer": "بنو نصر",
+    "decoys": [
+      "المرابطون",
+      "الموحدون",
+      "الأغالبة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.alhambra-patronato.es/en/discover/alhambra-y-generalife"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "إلى أي دولة تُنسب مدينة سامراء التي اتخذها بعض الخلفاء عاصمة؟",
+    "correct_answer": "الدولة العباسية",
+    "decoys": [
+      "الدولة الأموية",
+      "الدولة الفاطمية",
+      "الدولة العثمانية"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/276/"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "ما اسم الأسرة التي حكمت مصر بعد الأيوبيين؟",
+    "correct_answer": "المماليك",
+    "decoys": [
+      "الأمويون",
+      "المرابطون",
+      "السلاجقة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Mamluk"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من العالم الذي ارتبط اسمه بكتاب «الجبر والمقابلة»؟",
+    "correct_answer": "الخوارزمي",
+    "decoys": [
+      "ابن سينا",
+      "ابن الهيثم",
+      "البيروني"
+    ],
+    "image_url": null,
+    "source_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الطبيب الذي ألّف «القانون في الطب»؟",
+    "correct_answer": "ابن سينا",
+    "decoys": [
+      "الرازي",
+      "ابن النفيس",
+      "الزهراوي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.loc.gov/resource/gdcwdl.wdl_15440/?st=gallery"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من العالم الذي ألّف «كتاب المناظر» في علم البصريات؟",
+    "correct_answer": "ابن الهيثم",
+    "decoys": [
+      "الخوارزمي",
+      "البيروني",
+      "ابن خلدون"
+    ],
+    "image_url": null,
+    "source_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Al-Haytham/"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من الرحالة الذي اشتهرت رحلته باسم «تحفة النظار في غرائب الأمصار وعجائب الأسفار»؟",
+    "correct_answer": "ابن بطوطة",
+    "decoys": [
+      "ابن جبير",
+      "المسعودي",
+      "ياقوت الحموي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.loc.gov/resource/gdcwdl.wdl_07470/?sp=1&st=gallery"
+  },
+  {
+    "category_id": 12,
+    "language_code": "ar",
+    "question_text": "من العالم الذي ألّف كتاب «تحقيق ما للهند من مقولة مقبولة في العقل أو مرذولة»؟",
+    "correct_answer": "البيروني",
+    "decoys": [
+      "ابن سينا",
+      "الخوارزمي",
+      "ابن الهيثم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.iranicaonline.org/articles/biruni-abu-rayhan-index/biruni-abu-rayhan-i-life/"
+  }
+]

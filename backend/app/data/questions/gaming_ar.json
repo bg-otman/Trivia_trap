@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو اسم شقيق ماريو الأطول قامة والذي يرتدي قبعة وقميصاً باللون الأخضر؟",
+    "correct_answer": "لويجي",
+    "decoys": [
+      "واريو",
+      "والويجي",
+      "تود"
+    ],
+    "image_url": null,
+    "source_url": "https://mario.nintendo.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو الديناصور الأخضر الأليف الصديق لماريو الذي يستطيع ابتلاع الأعداء وإخراج بيض؟",
+    "correct_answer": "يوشي",
+    "decoys": [
+      "باوزر",
+      "دونكي كونغ",
+      "كوبا تروبا"
+    ],
+    "image_url": null,
+    "source_url": "https://mario.nintendo.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو المصمم والمطور الياباني الأسطوري في نينتندو الذي ابتكر شخصيتي ماريو ولينك؟",
+    "correct_answer": "شيغيرو مياموتو",
+    "decoys": [
+      "هيديو كوجيما",
+      "هيديكي كاميا",
+      "ماساتوشي يوشيدا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم المملكة الخيالية الأسطورية التي تدور فيها معظم أحداث سلسلة The Legend of Zelda؟",
+    "correct_answer": "هايرول (Hyrule)",
+    "decoys": [
+      "تامريل",
+      "ميدغار",
+      "ريفينديل"
+    ],
+    "image_url": null,
+    "source_url": "https://www.zelda.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم الأثر السحري المقدس المكون من ثلاثة مثلثات ذهبية تمنح القوة والحكمة والشجاعة في زيلدا؟",
+    "correct_answer": "الترايفورس (Triforce)",
+    "decoys": [
+      "حجر الفلاسفة",
+      "عين أغاموتو",
+      "بلورة الأثير"
+    ],
+    "image_url": null,
+    "source_url": "https://www.zelda.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو الشرير الرئيسي والملك المحارب الشرير الذي يمثل العدو الأبدي لـ لينك في سلسلة زيلدا؟",
+    "correct_answer": "غانوندورف",
+    "decoys": [
+      "فاتي",
+      "فايد",
+      "غيروهيم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.zelda.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي الأداة الكروية الشهيرة ذات اللونين الأحمر والأبيض المستخدمة للإمساك بالبوكيمونات وتخزينها؟",
+    "correct_answer": "كرة البوكيبول (Poké Ball)",
+    "decoys": [
+      "مستحضر الشفاء",
+      "حلوى البوكيمون",
+      "حجر التطور"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو البوكيمون الفأر الكهربائي ذو الخدين الأحمرين الذي يعد التميمة الرسمية لسلسلة بوكيمون؟",
+    "correct_answer": "بيكاتشو",
+    "decoys": [
+      "رايتشو",
+      "إيفي",
+      "باتشيريسو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pokemon.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو استوديو التطوير الياباني الذي ابتكر وطور ألعاب تقمص الأدوار الرئيسية لسلسلة بوكيمون؟",
+    "correct_answer": "غيم فريك (Game Freak)",
+    "decoys": [
+      "هال لابوراتوري",
+      "بلاتينيوم غيمز",
+      "مونوليث سوفت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.gamefreak.co.jp/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو التنين الأسود العملاق الذي يمثل الزعيم الرئيسي في بُعد النهاية (The End) بلعبة ماينكرافت؟",
+    "correct_answer": "تنين الإندر (Ender Dragon)",
+    "decoys": [
+      "الويذر",
+      "الواردن",
+      "الغيلان"
+    ],
+    "image_url": null,
+    "source_url": "https://www.minecraft.net/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو المبرمج السويدي الملقب بـ 'نوتش' الذي ابتكر لعبة ماينكرافت وأسس شركة موجانغ؟",
+    "correct_answer": "ماركوس بيرسون",
+    "decoys": [
+      "جينس بيرغنستين",
+      "تود هوارد",
+      "غابي نيويل"
+    ],
+    "image_url": null,
+    "source_url": "https://www.minecraft.net/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي المادة الحجرية البركانية الداكنة الناتجة عن التقاء الحمم بالماء واللازمة لبناء بوابة النيذر؟",
+    "correct_answer": "حجر الأوبسيديان (Obsidian)",
+    "decoys": [
+      "حجر البازلت",
+      "صخرة الأساس (Bedrock)",
+      "الديوريت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.minecraft.net/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي المدينة الساحلية المستوحاة من ميامي التي تدور فيها أحداث لعبة GTA: Vice City؟",
+    "correct_answer": "فايس سيتي",
+    "decoys": [
+      "ليبرتي سيتي",
+      "سان فييرو",
+      "لاس فينتوراس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rockstargames.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو بطل الرواية الرئيسي العائد إلى غروف ستريت في لعبة GTA: San Andreas الشهيرة؟",
+    "correct_answer": "كارل جونسون (CJ)",
+    "decoys": [
+      "تومي فيرسيتي",
+      "نيكو بيليك",
+      "فرانكلين كلينتون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rockstargames.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي شركة التطوير والنشر العالمية الشهيرة التي تقف وراء سلسلتي GTA وRed Dead Redemption؟",
+    "correct_answer": "روكستار غيمز (Rockstar Games)",
+    "decoys": [
+      "يوبي سوفت",
+      "إلكترونيك آرتس",
+      "بيثيسدا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rockstargames.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو الخارج عن القانون السابق بطل الجزء الأول من Red Dead Redemption الصادر عام 2010؟",
+    "correct_answer": "جون مارستون",
+    "decoys": [
+      "آرثر مورغان",
+      "بيل ويليامسون",
+      "خافيير إسكويلا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rockstargames.com/reddeadredemption"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم العصابة الشهيرة الخارجة عن القانون التي ينتمي إليها آرثر مورغان وجون مارستون في الغرب الأمريكي؟",
+    "correct_answer": "عصابة فان دير ليند",
+    "decoys": [
+      "عصابة أودريسكول",
+      "عصابة ميرفري",
+      "عصابة سكينر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rockstargames.com/reddeadredemption2"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم الذكاء الاصطناعي المجسم باللون الأزرق المساعد والمرافق للبطل ماستر تشيف في سلسلة هالو؟",
+    "correct_answer": "كورتانا",
+    "decoys": [
+      "سيري",
+      "أليكسا",
+      "غلادوس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.halowaypoint.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو التحالف الديني الفضائي المكون من عدة كائنات والذي يشن حرباً ضد البشرية في هالو؟",
+    "correct_answer": "الكوفينانت (The Covenant)",
+    "decoys": [
+      "الفلود (The Flood)",
+      "البروميثيان",
+      "الفوررنر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.halowaypoint.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو السلاح المقيد بالسلاسل النارية الأيقوني الذي استخدمه كريتوس في الأساطير الإغريقية؟",
+    "correct_answer": "نصال الفوضى (Blades of Chaos)",
+    "decoys": [
+      "فأس ليفياثان",
+      "رمح دروبنير",
+      "سيف أوليمبوس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/god-of-war/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو اللقب الحربي الشهير الذي أُطلق على كريتوس بسبب ماضيه القتالي في مسقط رأسه؟",
+    "correct_answer": "شبح سبارتا",
+    "decoys": [
+      "إله الحرب الأعظم",
+      "جلاد أوليمبوس",
+      "فارس طروادة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/god-of-war/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم المسطح المائي المحوري في أرض ميدغارد الذي يحيط بمعبد تير في God of War (2018)؟",
+    "correct_answer": "بحيرة التسعة (Lake of Nine)",
+    "decoys": [
+      "بحر الأشباح",
+      "نهر ستيكس",
+      "خليج الفايكنغ"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/god-of-war/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم المصابين فاقدي البصر الذين يعتمدون على صدى الصوت والفرقعة لرصد الضحايا في The Last of Us؟",
+    "correct_answer": "الكليكرز (Clickers)",
+    "decoys": [
+      "الرانرز (Runners)",
+      "البلوترز (Bloaters)",
+      "الستوكرز (Stalkers)"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/the-last-of-us/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو الاستوديو التابع لسوني الذي طور سلاسل The Last of Us وUncharted وCrash Bandicoot؟",
+    "correct_answer": "نوتي دوغ (Naughty Dog)",
+    "decoys": [
+      "إنسومنياك غيمز",
+      "سانتا مونيكا ستوديو",
+      "غيريلا غيمز"
+    ],
+    "image_url": null,
+    "source_url": "https://www.naughtydog.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو صائد الكنوز والمغامر الجريء بطل السلسلة الرباعية الشهيرة أنشارتد (Uncharted)؟",
+    "correct_answer": "ناثان دريك",
+    "decoys": [
+      "سام دريك",
+      "فيكتور سوليفان",
+      "رافي أدلر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/uncharted/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو الصديق الأكبر سناً والناصح الوفي لناثان دريك المدخن للسيجار والمساعد في مغامراته؟",
+    "correct_answer": "فيكتور سوليفان (سولي)",
+    "decoys": [
+      "إيلينا فيشر",
+      "كلوي فريزر",
+      "تشارلي كاتر"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/uncharted/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو السلاح الخفي والمميز المربوط في المعصم الذي يشتهر به مقاتلو أخوية الحشاشين في أساسنز كريد؟",
+    "correct_answer": "النصل المخفي (Hidden Blade)",
+    "decoys": [
+      "الخنجر المزدوج",
+      "القوس المصغر",
+      "السيف القصير"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ubisoft.com/en-us/game/assassins-creed"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو القاتل الإيطالي النبيل الذي يخوض رحلة انتقام خلال عصر النهضة في Assassin's Creed II؟",
+    "correct_answer": "إيتزيو أوديتوري",
+    "decoys": [
+      "الطائر ابن لا أحد",
+      "كونور كينواي",
+      "إدوارد كينواي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ubisoft.com/en-us/game/assassins-creed"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو جهاز الواقع الافتراضي المتقدم الذي يقرأ الذكريات الجينية للأسلاف في سلسلة أساسنز كريد؟",
+    "correct_answer": "الأنيموس (Animus)",
+    "decoys": [
+      "الهيليكس",
+      "الأوراكل",
+      "الماتريكس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ubisoft.com/en-us/game/assassins-creed"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي المؤسسة الصيدلانية الشريرة ذات الشعار ذي المظلة البيضاء والحمراء المسؤولة عن فيروس تي؟",
+    "correct_answer": "مؤسسة أمبريلا (Umbrella)",
+    "decoys": [
+      "ترايسيل",
+      "نيو أمبريلا",
+      "فيلماكس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.residentevil.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي المدينة الأمريكية المنكوبة التي تفشى فيها الزومبي ودُمرت في Resident Evil 2 و3؟",
+    "correct_answer": "راكون سيتي (Raccoon City)",
+    "decoys": [
+      "سايلنت هيل",
+      "فايس سيتي",
+      "غوثام سيتي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.residentevil.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي شركة الألعاب اليابانية العريقة التي طورت ونشرت سلسلتي Resident Evil وMonster Hunter؟",
+    "correct_answer": "كابكوم (Capcom)",
+    "decoys": [
+      "كونامي",
+      "سكوير إينكس",
+      "بانداي نامكو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.capcom.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم السيف الضخم العريض ذي المقبض الطويل الذي يحمله كلاود سترايف في Final Fantasy VII؟",
+    "correct_answer": "سيف باستير (Buster Sword)",
+    "decoys": [
+      "سيف ماساموني",
+      "سيف غن بليد",
+      "سيف رابير"
+    ],
+    "image_url": null,
+    "source_url": "https://ffvii-rebirth.square-enix-games.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي الطيور الصفراء الشهيرة غير القادرة على الطيران التي تُركب كوسيلة تنقل في ألعاب فاينل فانتسي؟",
+    "correct_answer": "التشوكوبو (Chocobo)",
+    "decoys": [
+      "الموغري (Moogle)",
+      "الككتوار (Cactuar)",
+      "التونبيري"
+    ],
+    "image_url": null,
+    "source_url": "https://www.square-enix-games.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو الجندي الأسطوري ذو الشعر الفضي الطويل والعدو الرئيسي في Final Fantasy VII؟",
+    "correct_answer": "سيفيروث",
+    "decoys": [
+      "جينوفا",
+      "روفوس شينرا",
+      "هوجو"
+    ],
+    "image_url": null,
+    "source_url": "https://ffvii-rebirth.square-enix-games.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم العالم الشاسع والغامض الذي تجري فيه مغامرة لعبة إلدن رينغ (Elden Ring)؟",
+    "correct_answer": "الأراضي الواقعة بين (The Lands Between)",
+    "decoys": [
+      "لورد ران",
+      "درانغليك",
+      "لوثرك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.bandainamcoent.com/games/elden-ring"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي نقاط الاستراحة الأيقونية ذات السيف المغروس في الرماد بسلسلة Dark Souls؟",
+    "correct_answer": "شعلات النار (Bonfires)",
+    "decoys": [
+      "المعابد الحجرية",
+      "الينابيع السحرية",
+      "الأبراج السلكية"
+    ],
+    "image_url": null,
+    "source_url": "https://en.bandainamcoent.eu/dark-souls"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو المخرج والرئيس التنفيذي لاستوديو FromSoftware الذي ابتكر نوع السولز وإلدن رينغ؟",
+    "correct_answer": "هيديتاكا ميازاكي",
+    "decoys": [
+      "هيديو كوجيما",
+      "شينجي ميكامي",
+      "تومونوبو إيتاغاكي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fromsoftware.jp/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم القارة الخيالية الشاملة التي تقع فيها مقاطعات ساكيريم ومورويند وسيروديل؟",
+    "correct_answer": "تامريل (Tamriel)",
+    "decoys": [
+      "هايرول",
+      "أزيروث",
+      "فالوران"
+    ],
+    "image_url": null,
+    "source_url": "https://elderscrolls.bethesda.net/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو الاستوديو التابع لمايكروسوفت المعروف بألعاب العالم المفتوح مثل Skyrim وFallout 4 وStarfield؟",
+    "correct_answer": "بيثيسدا (Bethesda Game Studios)",
+    "decoys": [
+      "بايووير",
+      "أوبسيديان",
+      "أركين"
+    ],
+    "image_url": null,
+    "source_url": "https://bethesda.net/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو الاستوديو البولندي الشهير الذي طور ثلاثية The Witcher ولعبة Cyberpunk 2077؟",
+    "correct_answer": "سي دي بروجكت رد (CD Projekt Red)",
+    "decoys": [
+      "تيك-تو",
+      "دايس",
+      "يوبي سوفت مونتريال"
+    ],
+    "image_url": null,
+    "source_url": "https://www.cdprojekt.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هما نوعا السيفين اللذين يحملهما غايرالت أوف ريفيا على ظهره في سلسلة ذا ويتشر؟",
+    "correct_answer": "سيف حديدي للبشر وسيف فضي للوحوش",
+    "decoys": [
+      "سيف ذهبي وسيف برونزي",
+      "سيف ناري وسيف جليدي",
+      "سيف سام وسيف نقي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.thewitcher.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم المحبب الذي يطلقه غايرالت أوف ريفيا على فرسه في سلسلة ذا ويتشر؟",
+    "correct_answer": "روتش (Roach)",
+    "decoys": [
+      "شادوفاكس",
+      "أغرو",
+      "إيبونا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.thewitcher.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم الحاسوب الشخصي المحمول على المعصم الذي يرتديه سكان الملاجئ في سلسلة Fallout؟",
+    "correct_answer": "بيب-بوي (Pip-Boy)",
+    "decoys": [
+      "فولت-كوم",
+      "راد-بوي",
+      "غيك-باد"
+    ],
+    "image_url": null,
+    "source_url": "https://fallout.bethesda.net/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم التميمة الكرتونية الشقراء المبتسمة التي ترفع إبهامها وتمثل شركة فولت-تيك في Fallout؟",
+    "correct_answer": "فولت بوي (Vault Boy)",
+    "decoys": [
+      "بيب بوي",
+      "نيكا بوي",
+      "أتوم بوي"
+    ],
+    "image_url": null,
+    "source_url": "https://fallout.bethesda.net/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو الاسم الحركي للجندي البريطاني ذو القناع المرسوم عليه جمجمة في سلسلة Modern Warfare؟",
+    "correct_answer": "غوست (Ghost)",
+    "decoys": [
+      "كابتن برايس",
+      "سوب ماكتافيش",
+      "روتش"
+    ],
+    "image_url": null,
+    "source_url": "https://www.callofduty.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو النمط التعاوني الشهير للبقاء ضد موجات الموتى الأحياء في سلسلة Call of Duty: Black Ops؟",
+    "correct_answer": "طور الزومبي (Zombies Mode)",
+    "decoys": [
+      "طور السيرش",
+      "طور الباتل رويال",
+      "طور الدومينيشن"
+    ],
+    "image_url": null,
+    "source_url": "https://www.callofduty.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي الشركة الأمريكية العملاقة الناشرة لسلسلة ألعاب إطلاق النار الشهيرة كول أوف ديوتي؟",
+    "correct_answer": "أكتيفيجن (Activision)",
+    "decoys": [
+      "إلكترونيك آرتس",
+      "يوبي سوفت",
+      "تيك-تو"
+    ],
+    "image_url": null,
+    "source_url": "https://www.activision.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هما الحرفان الرمزيان لموقعي زرع القنبلة وتفكيكها في خرائط لعبة كاونتر سترايك؟",
+    "correct_answer": "الموقع A والموقع B",
+    "decoys": [
+      "الموقع 1 والموقع 2",
+      "الموقع X والموقع Y",
+      "الموقع ألفا والموقع بيتا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.counter-strike.net/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي الحافلة الطائرة المعلقة بمنطاد التي تُسقط اللاعبين بالمظلات على جزيرة فورتنايت؟",
+    "correct_answer": "حافلة المعركة (Battle Bus)",
+    "decoys": [
+      "طائرة الإنزال",
+      "منطاد النصر",
+      "مروحية الشحن"
+    ],
+    "image_url": null,
+    "source_url": "https://www.fortnite.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي شركة الألعاب الأمريكية المطورة للعبة فورتنايت ومحرك الألعاب الشهير أنريل إنجن؟",
+    "correct_answer": "إيبك غيمز (Epic Games)",
+    "decoys": [
+      "فالف",
+      "بليزارد",
+      "ريوت غيمز"
+    ],
+    "image_url": null,
+    "source_url": "https://www.epicgames.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو الاستوديو المطور للعبتي الرياضات الإلكترونية الشهيرتين League of Legends وValorant؟",
+    "correct_answer": "ريوت غيمز (Riot Games)",
+    "decoys": [
+      "فالف",
+      "بليزارد",
+      "بانجي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.riotgames.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم الخريطة التنافسية الكلاسيكية المكونة من ثلاثة مسارات رئيسية في لعبة League of Legends؟",
+    "correct_answer": "صدع المستدعي (Summoner's Rift)",
+    "decoys": [
+      "الهاوية العواء",
+      "غابة الغيلان",
+      "جزيرة الظلال"
+    ],
+    "image_url": null,
+    "source_url": "https://www.leagueoflegends.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو السلاح اليدوي الحديدي الأيقوني الذي يحمله الفيزيائي غوردون فريمان في سلسلة Half-Life؟",
+    "correct_answer": "العتلة الحديدية (Crowbar)",
+    "decoys": [
+      "المفتاح الإنجليزي",
+      "المطرقة الثقيلة",
+      "الفأس المزدوجة"
+    ],
+    "image_url": null,
+    "source_url": "https://www.half-life.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم جهاز التلاعب بالفيزياء وجذب الأجسام الثقيلة وقذفها في لعبة Half-Life 2؟",
+    "correct_answer": "مدفع الجاذبية (Gravity Gun)",
+    "decoys": [
+      "بندقية البوابة",
+      "شعاع التجميد",
+      "مدفع البلازما"
+    ],
+    "image_url": null,
+    "source_url": "https://www.half-life.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم الحركة القتالية الشهيرة لقذيفة الطاقة الزرقاء التي يطلقها ريو وكين في ستريت فايتر؟",
+    "correct_answer": "هادوكين (Hadoken)",
+    "decoys": [
+      "شوريوكين",
+      "تاتسوماكي",
+      "تايغر شوبرت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.streetfighter.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما الاسم الذي يُطلق على الحركات القاضية الدموية العنيفة لإنهاء الخصم المهزوم في مورتال كومبات؟",
+    "correct_answer": "الفاتاليتي (Fatality)",
+    "decoys": [
+      "البروتاليتي",
+      "الأنيماليتي",
+      "الألتميت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.mortalkombat.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم بطولة الفنون القتالية العالمية التي تنظمها عائلة ميشيما وتدور حولها أحداث سلسلة تيكن؟",
+    "correct_answer": "بطولة قبضة الحديد (King of Iron Fist)",
+    "decoys": [
+      "بطولة محاربي العالم",
+      "بطولة التنين الذهبي",
+      "دوري المحاربين السري"
+    ],
+    "image_url": null,
+    "source_url": "https://tk8.tekken-official.jp/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو النينجا الشبح الأصفر في مورتال كومبات الذي يطلق رمحه الخاطف صائحاً 'Get over here!'؟",
+    "correct_answer": "سكوربيون (Scorpion)",
+    "decoys": [
+      "ساب-زيرو",
+      "ريبتايل",
+      "نووب سايبوت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.mortalkombat.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم الثعلب البرتقالي الصغير ذي الذيلين القادر على الطيران ومساعد القنفذ سونيك المقرب؟",
+    "correct_answer": "تيلز (Tails)",
+    "decoys": [
+      "ناكلز",
+      "شادو",
+      "سيلفر"
+    ],
+    "image_url": null,
+    "source_url": "https://sonicthehedgehog.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو العالم الشرير المهووس بصناعة الروبوتات وتحويل الحيوانات إلى آلات في ألعاب سونيك؟",
+    "correct_answer": "دكتور إيغمان (Dr. Eggman)",
+    "decoys": [
+      "دكتور وايلي",
+      "دكتور نيو كورتيكس",
+      "دكتور جيرو"
+    ],
+    "image_url": null,
+    "source_url": "https://sonicthehedgehog.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي العناصر الدائرية اللامعة التي يجمعها سونيك لحمايته من فقدان طاقته عند الاصطدام بالأعداء؟",
+    "correct_answer": "الحلقات الذهبية (Golden Rings)",
+    "decoys": [
+      "القطع النقدية",
+      "الجواهر الزرقاء",
+      "النجوم البراقة"
+    ],
+    "image_url": null,
+    "source_url": "https://sonicthehedgehog.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو المخرج والمؤلف الياباني الأسطوري مبتكر سلسلة التسلل والتجسس الشهيرة Metal Gear Solid؟",
+    "correct_answer": "هيديو كوجيما",
+    "decoys": [
+      "شينجي ميكامي",
+      "هيديتاكا ميازاكي",
+      "فوميتو أويدا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.konami.com/mg/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي الآلة الحربية الآلية الثنائية الأرجل المزودة بأسلحة نووية والتي تسعى أطراف النزاع لتطويرها في اللعبة؟",
+    "correct_answer": "ميتال جير (Metal Gear)",
+    "decoys": [
+      "الغاندام",
+      "الشينوبي",
+      "السايبورغ نينجا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.konami.com/mg/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو السلاح الناري التقليدي المزدوج الذي اشتهرت بحمله عالمة الآثار لارا كروفت في الألعاب الكلاسيكية؟",
+    "correct_answer": "المسدسان المزدوجان (Dual Pistols)",
+    "decoys": [
+      "بندقية الصيد",
+      "القوس والسهام",
+      "الرشاش الآلي الخفيف"
+    ],
+    "image_url": null,
+    "source_url": "https://www.tombraider.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو الحيوان الجرابي البرتقالي الذي يكسر الصناديق الخشبية ويدور بسرعة في منصات بلايستيشن؟",
+    "correct_answer": "كراش بانديكوت (Crash Bandicoot)",
+    "decoys": [
+      "سبايرو",
+      "سلاي كوبر",
+      "جاك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.crashbandicoot.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم المملكة الحشرية الغامضة المدفونة تحت الأرض في لعبة المغامرات والمترويدفينيا Hollow Knight؟",
+    "correct_answer": "هالونيست (Hallownest)",
+    "decoys": [
+      "ديبنيست",
+      "غرينباث",
+      "كريستال بيك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.teamcherry.com.au/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم الهيكل العظمي الهادئ والكسول الذي يلقي النكات السخيفة في لعبة تقمص الأدوار المستقلة Undertale؟",
+    "correct_answer": "سانز (Sans)",
+    "decoys": [
+      "بابايروس",
+      "أنداين",
+      "ألفيس"
+    ],
+    "image_url": null,
+    "source_url": "https://undertale.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو المطور والموسيقي المستقل الشاب الذي ابتكر ولحن بمفرده تحفة الألعاب Undertale؟",
+    "correct_answer": "توبي فوكس (Toby Fox)",
+    "decoys": [
+      "إدموند مكميلين",
+      "لوكاس بوب",
+      "جوناثان بلو"
+    ],
+    "image_url": null,
+    "source_url": "https://undertale.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو المصطلح الذي يُطلق على نمط الألعاب الذي يفقد فيه اللاعب تقدمه ويبدأ من الصفر في خرائط متجددة عشوائياً؟",
+    "correct_answer": "روغلايك (Roguelike)",
+    "decoys": [
+      "ساندبوكس (Sandbox)",
+      "مترويدفينيا",
+      "هاك أند سلاش"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/electronic-game"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "في أي عام أطلقت شركة سوني أول جهاز ألعاب منزلي بلايستيشن (PS1) في اليابان؟",
+    "correct_answer": "1994",
+    "decoys": [
+      "1991",
+      "1997",
+      "2000"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو جهاز الألعاب المنزلي الأكثر مبيعاً في تاريخ صناعة الألعاب بمبيعات تجاوزت 155 مليون وحدة عالمياً؟",
+    "correct_answer": "بلايستيشن 2 (PlayStation 2)",
+    "decoys": [
+      "نينتندو وي",
+      "إكس بوكس 360",
+      "بلايستيشن 4"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو جهاز الألعاب المنزلي ذو معالج 16 بت الذي أطلقته شركة سيغا لمنافسة نينتندو في التسعينيات؟",
+    "correct_answer": "سيغا ميغادرايف (جينيسيس)",
+    "decoys": [
+      "سيغا ساترن",
+      "سيغا دريم كاست",
+      "سيغا ماستر سيستم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.sega.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو جهاز نينتندو الهجين الصادر عام 2017 الذي يمكن استخدامه كجهاز منزلي ومحمول في آن واحد؟",
+    "correct_answer": "نينتندو سويتش (Nintendo Switch)",
+    "decoys": [
+      "نينتندو وي يو",
+      "نينتندو 3DS",
+      "نينتندو غيم كيوب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "في أي عام دخلت شركة مايكروسوفت سوق أجهزة الألعاب المنزلية بإطلاق أول جهاز إكس بوكس الأصلي؟",
+    "correct_answer": "2001",
+    "decoys": [
+      "1998",
+      "2005",
+      "1995"
+    ],
+    "image_url": null,
+    "source_url": "https://www.xbox.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو جهاز ألعاب نينتندو الكلاسيكي الصادر في منتصف الثمانينيات الذي أنعش صناعة ألعاب الفيديو عالمياً؟",
+    "correct_answer": "نينتندو إنترتينمنت سيستم (NES)",
+    "decoys": [
+      "أتاري 2600",
+      "كومودور 64",
+      "سيغا ماستر سيستم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو جهاز نينتندو المحمول الصادر عام 2011 الذي تميز بشاشة علوية تعرض مجسمات ثلاثية الأبعاد دون نظارات؟",
+    "correct_answer": "نينتندو 3DS",
+    "decoys": [
+      "نينتندو DS Lite",
+      "غيم بوي أدفانس",
+      "بلايستيشن فيتا"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو متجر التوزيع الرقمي الرائد لألعاب الكمبيوتر الشخصي الذي أطلقته شركة فالف عام 2003؟",
+    "correct_answer": "ستيم (Steam)",
+    "decoys": [
+      "إيبك غيمز ستور",
+      "أوريجين",
+      "جي أو جي (GOG)"
+    ],
+    "image_url": null,
+    "source_url": "https://store.steampowered.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم طور بناء فرق الأحلام وجمع بطاقات اللاعبين الأكثر شعبية في سلسلة ألعاب كرة القدم EA Sports FC؟",
+    "correct_answer": "ألتميت تيم (Ultimate Team)",
+    "decoys": [
+      "طور المهنة (Career Mode)",
+      "برو كلوبس (Clubs)",
+      "فولتا فوتبول"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ea.com/games/ea-sports-fc"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي لعبة سباقات وسيارات كرة القدم الشهيرة الصادرة عام 2015 من تطوير شركة بسايونيكس؟",
+    "correct_answer": "روكيت ليغ (Rocket League)",
+    "decoys": [
+      "تراك مانيا",
+      "موتورستورم",
+      "فورزا هورايزون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.rocketleague.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي سلسلة ألعاب سباقات شوارع السيارات الشهيرة الطويلة التي تنشرها شركة إلكترونيك آرتس منذ 1994؟",
+    "correct_answer": "نيد فور سبيد (Need for Speed)",
+    "decoys": [
+      "غراند توريزمو",
+      "ميدنايت كلوب",
+      "بورن آوت"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ea.com/games/need-for-speed"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم العالم الخيالي المكون من سبع دول تحكمها عناصر سحرية في لعبة تقمص الأدوار Genshin Impact؟",
+    "correct_answer": "تيفات (Teyvat)",
+    "decoys": [
+      "إينوديا",
+      "لانتاريا",
+      "أركاديا"
+    ],
+    "image_url": null,
+    "source_url": "https://genshin.hoyoverse.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "في لعبة الهاتف الشهيرة Subway Surfers، من هو الشخص الذي يطارد الفتى جيك وكلبه على سكك القطارات؟",
+    "correct_answer": "مفتش القطارات (الشرطي)",
+    "decoys": [
+      "ناظر المحطة",
+      "سائق القطار",
+      "عامل التحويلة"
+    ],
+    "image_url": null,
+    "source_url": "https://sybogames.com/subway-surfers/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم الخريطة الكلاسيكية الأولى والأشهر ذات الطابع السوفيتي الزراعي في لعبة ببجي موبايل (PUBG)؟",
+    "correct_answer": "إرانغل (Erangel)",
+    "decoys": [
+      "ميرامار",
+      "سانهوك",
+      "فيكيندي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.pubgmobile.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم المدينة الطوباوية المنهارة تحت مياه المحيط الأطلسي في الجزأين الأولين من BioShock؟",
+    "correct_answer": "رابتشر (Rapture)",
+    "decoys": [
+      "كولومبيا",
+      "ميدغار",
+      "سيتي 17"
+    ],
+    "image_url": null,
+    "source_url": "https://2k.com/en-US/game/bioshock-the-collection/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم المدينة العائمة المعلقة في الهواء بين السحب في لعبة BioShock Infinite الصادرة عام 2013؟",
+    "correct_answer": "كولومبيا (Columbia)",
+    "decoys": [
+      "رابتشر",
+      "أتلانتس",
+      "إيلوسيون"
+    ],
+    "image_url": null,
+    "source_url": "https://2k.com/en-US/game/bioshock-the-collection/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو اللقب المعطى للبطل المحارب الصامت الذي يسحق جحافل الشياطين في سلسلة ألعاب DOOM؟",
+    "correct_answer": "دوم سلاير (Doom Slayer)",
+    "decoys": [
+      "ماستر تشيف",
+      "دوك نوكيم",
+      "غوردون فريمان"
+    ],
+    "image_url": null,
+    "source_url": "https://bethesda.net/en/game/doom"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم سلاح البلازما الأخضر الأسطوري المدمر الأكبر في سلسلة ألعاب إطلاق النار DOOM؟",
+    "correct_answer": "بي إف جي 9000 (BFG 9000)",
+    "decoys": [
+      "مدفع الفوتون",
+      "رايل غان",
+      "قاذف اللهب النبضي"
+    ],
+    "image_url": null,
+    "source_url": "https://bethesda.net/en/game/doom"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم السفينة الحربية الفضائية المتقدمة التي يقودها القائد شيبرد في ثلاثية Mass Effect؟",
+    "correct_answer": "النورماندي (SSV Normandy)",
+    "decoys": [
+      "الإنتربرايز",
+      "ميلينيوم فالكون",
+      "بيبوب"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ea.com/games/mass-effect"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم المحطة الفضائية الأسطورية الضخمة التي تعد العاصمة السياسية لمجتمع المجرة في Mass Effect؟",
+    "correct_answer": "القلعة (The Citadel)",
+    "decoys": [
+      "أوميغا",
+      "إليوم",
+      "بريسيديوم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.ea.com/games/mass-effect"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو المؤسس غريب الأطوار لشركة أبحاث أبيرتشر ساينس (Aperture Science) في سلسلة Portal؟",
+    "correct_answer": "كيف جونسون (Cave Johnson)",
+    "decoys": [
+      "والاس برين",
+      "غوردون فريمان",
+      "إيلي فانس"
+    ],
+    "image_url": null,
+    "source_url": "https://www.thinkwithportals.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هما لونا البوابتين الفضائيتين المترابطتين اللتين يطلقهما جهاز البوابات في لعبة Portal؟",
+    "correct_answer": "الأزرق والبرتقالي",
+    "decoys": [
+      "الأحمر والأخضر",
+      "الأصفر والبنفسجي",
+      "الأبيض والأسود"
+    ],
+    "image_url": null,
+    "source_url": "https://www.thinkwithportals.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هي البطلة البريطانية السريعة القادرة على القفز الزمني التي ظهرت على غلاف لعبة Overwatch الأصلية؟",
+    "correct_answer": "تريسر (Tracer)",
+    "decoys": [
+      "ويدوميكر",
+      "فرح",
+      "دي فا"
+    ],
+    "image_url": null,
+    "source_url": "https://overwatch.blizzard.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو النينجا السايبورغ الآلي المسلح بالسيف والتنين الروحي وشقيق هانزو في لعبة Overwatch؟",
+    "correct_answer": "غينجي (Genji)",
+    "decoys": [
+      "ريبر",
+      "كاسيدي",
+      "رينهاردت"
+    ],
+    "image_url": null,
+    "source_url": "https://overwatch.blizzard.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم المصارع الروسي الضخم مفتول العضلات صاحب ضربات السوبلكس في سلسلة ألعاب Street Fighter؟",
+    "correct_answer": "زانغيف (Zangief)",
+    "decoys": [
+      "إي هوندا",
+      "غايل",
+      "دالسيم"
+    ],
+    "image_url": null,
+    "source_url": "https://www.streetfighter.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "من هو الملاكم الأمريكي الثقيل ذو القفازات الحمراء الذي يقاتل في صفوف شادالو بسلسلة Street Fighter؟",
+    "correct_answer": "بالروغ (Balrog)",
+    "decoys": [
+      "فيغا",
+      "ساغات",
+      "إم بايسون"
+    ],
+    "image_url": null,
+    "source_url": "https://www.streetfighter.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما اسم المدينة القوطية الفيكتورية المظلمة الموبوءة بالوحوش في لعبة Bloodborne الصادرة على PS4؟",
+    "correct_answer": "يارنام (Yharnam)",
+    "decoys": [
+      "لوثرك",
+      "لورد ران",
+      "درانغليك"
+    ],
+    "image_url": null,
+    "source_url": "https://www.playstation.com/en-us/games/bloodborne/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هو الطرف الآلي التعويضي المجهز بالخطاف والشفرات الذي يستخدمه الذئب ذو الذراع الواحدة في Sekiro؟",
+    "correct_answer": "الذراع الاصطناعية (Shinobi Prosthetic)",
+    "decoys": [
+      "درع الساموراي",
+      "القفاز الفولاذي",
+      "النصل المخفي"
+    ],
+    "image_url": null,
+    "source_url": "https://www.sekirothegame.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "ما هي الشخصية الصفراء الدائرية الأيقونية التي تلتهم النقاط وتهرب من الأشباح في لعبة الآركيد 1980؟",
+    "correct_answer": "باك-مان (Pac-Man)",
+    "decoys": [
+      "فروغر",
+      "سبيس إنفيدرز",
+      "ديغ دوغ"
+    ],
+    "image_url": null,
+    "source_url": "https://pacman.com/"
+  },
+  {
+    "category_id": 10,
+    "language_code": "ar",
+    "question_text": "في أي لعبة آركيد كلاسيكية عام 1981 ظهر ماريو لأول مرة باسم 'Jumpman' في مواجهة غوريلا يرمي البراميل؟",
+    "correct_answer": "دونكي كونغ (Donkey Kong)",
+    "decoys": [
+      "غالاغا",
+      "بونغ",
+      "أسترويدز"
+    ],
+    "image_url": null,
+    "source_url": "https://www.nintendo.com/"
+  }
+]

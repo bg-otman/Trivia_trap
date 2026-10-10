@@ -1,0 +1,1302 @@
+[
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو عالم الآثار البريطاني الذي اكتشف مقبرة الملك توت عنخ آمون في وادي الملوك عام 1922؟",
+        "correct_answer": "هوارد كارتر",
+        "decoys": [
+            "آرثر إيفانز",
+            "هاينريش شليمان",
+            "جان فرانسوا شامبليون"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Howard-Carter"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي الملكة المصرية من الأسرة الثامنة عشرة التي اشتهرت بتمثالها النصفي الملون المحفوظ في متحف برلين؟",
+        "correct_answer": "نفرتيتي",
+        "decoys": [
+            "حتشبسوت",
+            "كليوباترا السابعة",
+            "نفرتاري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Nefertiti"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المعاهدة المبرمة عام 1259 ق.م بين رمسيس الثاني والحيثيين وتعتبر أقدم معاهدة سلام مكتوبة في التاريخ؟",
+        "correct_answer": "معاهدة قادش",
+        "decoys": [
+            "معاهدة خاتوشا",
+            "معاهدة يافا",
+            "معاهدة طيبة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Kadesh"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الفرعون المصري الذي شيد معبدي أبو سمبل المنحوتين في الصخر في بلاد النوبة؟",
+        "correct_answer": "رمسيس الثاني",
+        "decoys": [
+            "تحتمس الثالث",
+            "أمنحتب الثالث",
+            "سيتي الأول"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Abu-Simbel"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "أي فيلسوف يوناني حُكم عليه بالموت بتجرع السم في أثينا عام 399 ق.م بتهمة إفساد الشباب؟",
+        "correct_answer": "سقراط",
+        "decoys": [
+            "أفلاطون",
+            "أرسطو",
+            "فيثاغورس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Socrates"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو ملك إسبرطة الذي قاد الجيش اليوناني في معركة ثرموبيل الشهيرة عام 480 ق.م ضد الفرس؟",
+        "correct_answer": "ليونيداس الأول",
+        "decoys": [
+            "ثيمستوكليس",
+            "ميلتيادس",
+            "أغيسلاوس الثاني"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Leonidas-king-of-Sparta"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي يوم من عام 44 ق.م اغتيل الحاكم الروماني يوليوس قيصر داخل مجلس الشيوخ في روما؟",
+        "correct_answer": "15 مارس",
+        "decoys": [
+            "15 يناير",
+            "15 يوليو",
+            "15 أكتوبر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من قاد ثورة العبيد والمجالدين الكبرى ضد الجمهورية الرومانية بين عامي 73 و71 ق.م؟",
+        "correct_answer": "سبارتاكوس",
+        "decoys": [
+            "كريكوس",
+            "غانيكوس",
+            "فيرسينجيتوريكس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Spartacus"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو القائد القرطاجي الذي قاد جيشه وفيلته عبر جبال الألب لغزو روما خلال الحرب البونية الثانية؟",
+        "correct_answer": "حنبعل برقا",
+        "decoys": [
+            "حملقار برقا",
+            "صدربعل برقا",
+            "ماجو برقا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Hannibal-Carthaginian-general-247-183-BC"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام ق.م دارت معركة أكتيوم البحرية التي انتهت بهزيمة ماركوس أنطونيوس وكليوباترا وصعود أوكتافيوس؟",
+        "correct_answer": "31 ق.م",
+        "decoys": [
+            "44 ق.م",
+            "27 ق.م",
+            "14 ق.م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Actium"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي الحدائق الأسطورية التي نسبت إلى الملك نبوخذ نصر الثاني واعتبرت من عجائب الدنيا السبع القديمة؟",
+        "correct_answer": "حدائق بابل المعلقة",
+        "decoys": [
+            "منارة الإسكندرية",
+            "ضريح موسولوس",
+            "تمثال رودس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Hanging-Gardens-of-Babylon"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الملك الأخميني الذي أسس الإمبراطورية الفارسية وتنسب إليه أسطوانة شهيرة بحرية المعتقدات؟",
+        "correct_answer": "قورش الكبير",
+        "decoys": [
+            "داريوس الأول",
+            "خشايارشا الأول",
+            "قمبيز الثاني"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Cyrus-the-Great"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي حضارة قديمة ازدهرت مدينتا أور وأوروك في جنوب بلاد الرافدين؟",
+        "correct_answer": "الحضارة السومرية",
+        "decoys": [
+            "الحضارة الحيثية",
+            "الحضارة الفينيقية",
+            "الحضارة العيلامية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Sumer"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هو الاسم التاريخي للمدرج الفلافي في روما الذي خُصص لنزالات المجالدين والصيد؟",
+        "correct_answer": "الكولوسيوم",
+        "decoys": [
+            "البانثيون",
+            "السيرك العظيم",
+            "المنتدى الروماني"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Colosseum"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من كان زعيم أثينا البارز في القرن الخامس ق.م الذي اقترن اسمه بعصرها الذهبي وبناء البارثينون؟",
+        "correct_answer": "بريكليس",
+        "decoys": [
+            "كليستنس",
+            "صولون",
+            "ألكبيادس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Pericles-Athenian-statesman"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "أي إمبراطور روماني أعلن مرسوم ميلانو عام 313 م الذي منح الحرية الدينية للمسيحيين في الإمبراطورية؟",
+        "correct_answer": "قسطنطين الكبير",
+        "decoys": [
+            "دقلديانوس",
+            "نيرون",
+            "تراجان"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Edict-of-Milan"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هو نظام الكتابة القديم على ألواح الطين الذي طوره السومريون في بلاد الرافدين؟",
+        "correct_answer": "الكتابة المسمارية",
+        "decoys": [
+            "الكتابة الهيروغليفية",
+            "الكتابة الفينيقية",
+            "الكتابة الأبجدية اللاتينية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/cuneiform"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من كانت آخر حكام مصر من السلالة البطلمية قبل أن تصبح مصر ولاية رومانية عام 30 ق.م؟",
+        "correct_answer": "كليوباترا السابعة",
+        "decoys": [
+            "أرسينوي الرابعة",
+            "برينيكي الرابعة",
+            "كليوباترا الأولى"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Cleopatra-queen-of-Egypt"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هي السيدة التي أسست جامع وجامعة القرويين في مدينة فاس المغربية عام 859 م؟",
+        "correct_answer": "فاطمة الفهرية",
+        "decoys": [
+            "مريم الفهرية",
+            "كنزة الأوربية",
+            "زينب النفزاوية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Fes"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو مؤسس الدولة الإدريسية في المغرب الذي بايعه الأمازيغ في مدينة وليلي عام 789 م؟",
+        "correct_answer": "إدريس الأول",
+        "decoys": [
+            "إدريس الثاني",
+            "يوسف بن تاشفين",
+            "يعقوب المنصور"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Morocco/The-Idrisids"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام وقعت معركة وادي المخازن (معركة الملوك الثلاثة) في شمال المغرب بين السعديين والبرتغال؟",
+        "correct_answer": "1578 م",
+        "decoys": [
+            "1515 م",
+            "1591 م",
+            "1603 م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-the-Three-Kings"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو السلطان السعدي الذي لُقب بـ \"الذهبي\" بعد معركة وادي المخازن وازدهار الدولة في عهده؟",
+        "correct_answer": "أحمد المنصور",
+        "decoys": [
+            "محمد الشيخ",
+            "عبد الملك الأول",
+            "زيدان الناصر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Ahmad-al-Mansur"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو القائد المرابطي البارز الذي بنى مدينة مراكش وجعلها عاصمة لإمبراطوريته؟",
+        "correct_answer": "يوسف بن تاشفين",
+        "decoys": [
+            "عبد الله بن ياسين",
+            "أبو بكر بن عمر",
+            "علي بن يوسف"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Marrakech"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي معركة انتصر يوسف بن تاشفين عام 1086 م على قوات قشتالة بقيادة ألفونسو السادس؟",
+        "correct_answer": "معركة الزلاقة",
+        "decoys": [
+            "معركة الأرك",
+            "معركة العقاب",
+            "معركة بلاط الشهداء"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Zallaka"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "أي خليفة موحدي شيد صومعة حسان في الرباط وجامع الكتبية في مراكش والخيرالدا في إشبيلية؟",
+        "correct_answer": "يعقوب المنصور",
+        "decoys": [
+            "عبد المؤمن بن علي",
+            "محمد الناصر",
+            "يوسف بن عبد المؤمن"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Abu-Yaqub-Yusuf"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من قاد المقاومة الريفية في المغرب وحقق نصراً تاريخياً على الجيش الإسباني في معركة أنوال عام 1921؟",
+        "correct_answer": "محمد بن عبد الكريم الخطابي",
+        "decoys": [
+            "أحمد الهيبة",
+            "عسو أوبسلام",
+            "موحا أوحمو الزياني"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Abd-el-Krim"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام انطلقت المسيرة الخضراء السلمية لاسترجاع الأقاليم الجنوبية المغربية؟",
+        "correct_answer": "1975 م",
+        "decoys": [
+            "1969 م",
+            "1971 م",
+            "1979 م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Morocco/Independent-Morocco"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما اسم المعاهدة الموقعة عام 1912 التي فرضت بموجبها الحماية الفرنسية على المغرب؟",
+        "correct_answer": "معاهدة فاس",
+        "decoys": [
+            "معاهدة طنجة",
+            "معاهدة تطوان",
+            "معاهدة للا مغنية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Morocco/The-French-protectorate-1912-56"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو المؤرخ والمفكر المغاربي البارز المولود في تونس ومؤسس علم الاجتماع وصاحب كتاب \"المقدمة\"؟",
+        "correct_answer": "ابن خلدون",
+        "decoys": [
+            "ابن رشد",
+            "لسان الدين بن الخطيب",
+            "الشريف الإدريسي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Ibn-Khaldun"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من كان ملك نوميديا الأمازيغي التاريخي الذي وحد أراضيها واشتهر بتحالفاته في شمال أفريقيا؟",
+        "correct_answer": "ماسينيسا",
+        "decoys": [
+            "سيفاقس",
+            "يوغرطة",
+            "يوبا الأول"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Masinissa"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هي ملكة منطقة الأوراس في شمال أفريقيا التي قادت المقاومة ضد الجيوش الأموية في أواخر القرن السابع؟",
+        "correct_answer": "ديهيا (الكاهنة)",
+        "decoys": [
+            "تينهينان",
+            "كنزة الأوربية",
+            "تاهمارت"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/North-Africa"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام نالت تونس استقلالها عن الحماية الفرنسية ليتولى الحبيب بورقيبة رئاسة الجمهورية؟",
+        "correct_answer": "1956 م",
+        "decoys": [
+            "1952 م",
+            "1960 م",
+            "1962 م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Tunisia"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام اندلعت ثورة التحرير الجزائرية ضد الاستعمار الفرنسي والتي استمرت حتى استقلال البلاد عام 1962؟",
+        "correct_answer": "1954 م",
+        "decoys": [
+            "1945 م",
+            "1950 م",
+            "1958 م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Algerian-War"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي السلالة الحاكمة في المغرب التي شيدت المدرسة البوعنانية في فاس ومدرسة العطارين في القرن الرابع عشر؟",
+        "correct_answer": "الدولة المرينية",
+        "decoys": [
+            "الدولة السعدية",
+            "الدولة الموحدية",
+            "الدولة الإدريسية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Morocco/The-Marinids"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو السلطان العلوي الذي اتخذ من مكناس عاصمة له وشيد أسوارها وقصورها الضخمة في القرن السابع عشر؟",
+        "correct_answer": "المولى إسماعيل",
+        "decoys": [
+            "المولى الرشيد",
+            "سيدي محمد بن عبد الله",
+            "المولى سليمان"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Ismail-Moroccan-sultan"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "أي مدينة مغربية احتضنت مؤتمر قادة الحلفاء عام 1943 بحضور فرانكلين روزفلت ووينستون تشرشل؟",
+        "correct_answer": "الدار البيضاء",
+        "decoys": [
+            "مراكش",
+            "طنجة",
+            "الرباط"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Casablanca-Conference"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو زعيم حركة المقاومة الليبية ضد الاحتلال الإيطالي الذي حارب لأكثر من عقدين حتى أُعدم عام 1931؟",
+        "correct_answer": "عمر المختار",
+        "decoys": [
+            "أحمد الشريف السنوسي",
+            "إدريس السنوسي",
+            "رمضان السويحلي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Omar-al-Mukhtar"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما اسم المدينة الأثرية الرومانية الواقعة قرب زرهون والمصنفة ضمن مواقع التراث العالمي في المغرب؟",
+        "correct_answer": "وليلي",
+        "decoys": [
+            "ليكسوس",
+            "شالة",
+            "تمودة"
+        ],
+        "image_url": null,
+        "source_url": "https://whc.unesco.org/en/list/836/"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو القائد الفاتح الذي أسس مدينة القيروان في تونس عام 50 هـ (670 م) وبنى جامعها العتيق؟",
+        "correct_answer": "عقبة بن نافع",
+        "decoys": [
+            "موسى بن نصير",
+            "حسان بن النعمان",
+            "عبد الله بن سعد"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Kairouan"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو السلطان المملوكي الذي قاد الجيش إلى النصر الحاسم على المغول في معركة عين جالوت عام 1260 م؟",
+        "correct_answer": "سيف الدين قطز",
+        "decoys": [
+            "الظاهر بيبرس",
+            "المنصور قلاوون",
+            "عز الدين أيبك"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Ayn-Jalut"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الخليفة الراشد الثاني الذي اعتمد التاريخ بالتقويم الهجري ودون الدواوين في الدولة الإسلامية؟",
+        "correct_answer": "عمر بن الخطاب",
+        "decoys": [
+            "أبو بكر الصديق",
+            "عثمان بن عفان",
+            "علي بن أبي طالب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Umar-I"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو القائد العسكري المسلم الملقب بـ \"سيف الله المسلول\" الذي قاد جيش المسلمين في معركة اليرموك عام 636 م؟",
+        "correct_answer": "خالد بن الوليد",
+        "decoys": [
+            "أبو عبيدة بن الجراح",
+            "عمرو بن العاص",
+            "سعد بن أبي وقاص"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Khalid-ibn-al-Walid"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الأمير الأموي الملقب بـ \"صقر قريش\" الذي نجا بعد زوال الدولة الأموية وأسس إمارة قرطبة في الأندلس عام 756 م؟",
+        "correct_answer": "عبد الرحمن الداخل",
+        "decoys": [
+            "عبد الرحمن الناصر",
+            "هشام الأول",
+            "الحكم بن هشام"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Abd-al-Rahman-I"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المعركة الحاسمة التي انتصر فيها صلاح الدين الأيوبي عام 1187 م ممهداً الطريق لاستعادة القدس؟",
+        "correct_answer": "معركة حطين",
+        "decoys": [
+            "معركة أرسوف",
+            "معركة مرج دابق",
+            "معركة عين جالوت"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Hattin"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو القائد الفاطمي الذي فتح مصر وأشرف على بناء مدينة القاهرة والجامع الأزهر عام 969 م؟",
+        "correct_answer": "جوهر الصقلي",
+        "decoys": [
+            "بدر الجمالي",
+            "طارق بن زياد",
+            "أسد بن الفرات"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Jawhar"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو القائد المسلم الذي قاد عبور المضيق إلى شبه الجزيرة الإيبيرية عام 711 م وسُمي الجبل باسمه؟",
+        "correct_answer": "طارق بن زياد",
+        "decoys": [
+            "موسى بن نصير",
+            "طريف بن مالك",
+            "عبد العزيز بن موسى"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Tariq-ibn-Ziyad"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في عهد أي سلطان عثماني بلغت الدولة ذروة قوتها ووصلت جيوشها لمحاصرة فيينا لأول مرة عام 1529 م؟",
+        "correct_answer": "سليمان القانوني",
+        "decoys": [
+            "سليم الأول",
+            "بايزيد الثاني",
+            "مراد الرابع"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Suleyman-the-Magnificent"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي معركة عام 1517 م انتصر السلطان العثماني سليم الأول على المماليك لتصبح مصر ولاية عثمانية؟",
+        "correct_answer": "معركة الريدانية",
+        "decoys": [
+            "معركة مرج دابق",
+            "معركة جالديران",
+            "معركة موهاكس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Raydaniyah"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الطبيب والفيلسوف القرطبي الشهير صاحب كتاب \"تهافت التهافت\" وشروحات أرسطو والمعروف في الغرب باسم (Averroes)؟",
+        "correct_answer": "ابن رشد",
+        "decoys": [
+            "ابن طفيل",
+            "ابن باجة",
+            "ابن حزم"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Averroes"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الجغرافي المسلم الذي رسم خريطة العالم الدقيقة للملك روجر الثاني ملك صقلية في القرن الثاني عشر؟",
+        "correct_answer": "الشريف الإدريسي",
+        "decoys": [
+            "ياقوت الحموي",
+            "ابن جبير",
+            "المسعودي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/al-Sharif-al-Idrisi"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الخليفة العباسي الخامس الذي بلغت بغداد في عهده أوج ازدهارها الحضاري وأهدى ساعة مائية للإمبراطور شارلمان؟",
+        "correct_answer": "هارون الرشيد",
+        "decoys": [
+            "أبو جعفر المنصور",
+            "المأمون",
+            "المعتصم بالله"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Harun-al-Rashid"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام سقطت مملكة غرناطة آخر معاقل المسلمين في الأندلس بيد الملكين الكاثوليكيين؟",
+        "correct_answer": "1492 م",
+        "decoys": [
+            "1453 م",
+            "1517 م",
+            "1482 م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Granada-Spain"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المملكة التاريخية في نيجيريا الحالية التي اشتهرت بسبك المنحوتات واللوحات البرونزية الفنية الرفيعة؟",
+        "correct_answer": "مملكة بنين",
+        "decoys": [
+            "مملكة أويو",
+            "مملكة داهومي",
+            "مملكة الكونغو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Benin-historical-kingdom-West-Africa"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي معركة عام 1879 كبد محاربو الزولو الجيش البريطاني هزيمة قاسية وغير متوقعة في جنوب أفريقيا؟",
+        "correct_answer": "معركة إيساندلوانا",
+        "decoys": [
+            "معركة رورك دريفت",
+            "معركة أولوندي",
+            "معركة بلود ريفر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Isandlwana"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المملكة النوبية القديمة في السودان الحالي التي اتخذت من مروي مقراً لحكامها وشيدت الأهرامات النوبية؟",
+        "correct_answer": "مملكة كوش",
+        "decoys": [
+            "مملكة المقرة",
+            "مملكة علوة",
+            "سلطنة سنار"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Kush"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الملك الذي وحد قبائل أشانتي في غانا الحالية في أواخر القرن السابع عشر وأسس رمز \"العرش الذهبي\"؟",
+        "correct_answer": "أوسي توتو",
+        "decoys": [
+            "كوفي كاري كاري",
+            "بريمبيه الأول",
+            "أوسي بونوسو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Osei-Tutu"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هي الملكة المحاربة الشهيرة التي حكمت مملكة زازاو (زاريا) في شمال نيجيريا في القرن السادس عشر الميلادي؟",
+        "correct_answer": "الملكة أمينة",
+        "decoys": [
+            "الملكة نزينغا",
+            "الملكة ياء أسانتيوا",
+            "الملكة رانافالونا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Amina"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي الجزيرة الواقعة قبالة سواحل دكار في السنغال التي كانت مركزاً رئيسياً لتجارة العبيد عبر الأطلسي؟",
+        "correct_answer": "جزيرة غوريه",
+        "decoys": [
+            "جزيرة روبن",
+            "جزيرة زنجبار",
+            "جزيرة ساو تومي"
+        ],
+        "image_url": null,
+        "source_url": "https://whc.unesco.org/en/list/26/"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي الدولة الأفريقية التي قاد حركتها التحريرية الزعيم الثوري أميلكار كابرال ضد الاستعمار البرتغالي؟",
+        "correct_answer": "غينيا بيساو",
+        "decoys": [
+            "موزمبيق",
+            "أنغولا",
+            "ساو تومي وبرينسيب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Amilcar-Cabral"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الإمبراطور الذي حكم إثيوبيا من عام 1930 حتى 1974 واعتبرته الحركة الراستافارية شخصية ذات مكانة دينية؟",
+        "correct_answer": "هيلا سيلاسي",
+        "decoys": [
+            "منليك الثاني",
+            "تيودروس الثاني",
+            "يوحنس الرابع"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Haile-Selassie-I"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي الحرب التي نشبت بين بريطانيا وأسرة تشينغ الصينية عام 1839 وانتهت بتنازل الصين عن جزيرة هونغ كونغ؟",
+        "correct_answer": "حرب الأفيون الأولى",
+        "decoys": [
+            "حرب الأفيون الثانية",
+            "حرب البوكسر",
+            "الحرب الصينية اليابانية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Opium-Wars"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي معركة حاسمة عام 1600 م انتصر توكوغاوا إياسو ليمهد الطريق لقيام حكم الشوغونية في اليابان؟",
+        "correct_answer": "معركة سيكيغاهارا",
+        "decoys": [
+            "معركة ناغاشينو",
+            "معركة كاواناكاجيما",
+            "معركة دان نو أورا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Sekigahara"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المملكة الكورية القديمة التي نجحت في توحيد الممالك الثلاث لشبه الجزيرة الكورية في القرن السابع الميلادي؟",
+        "correct_answer": "مملكة شلا",
+        "decoys": [
+            "مملكة غوغوريو",
+            "مملكة بايكتشي",
+            "مملكة غوريو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Silla"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الزعيم الثوري ومؤسس جمهورية الصين عام 1912 الذي يُلقب بـ \"أب الأمة\" الصينية الحديثة؟",
+        "correct_answer": "صون يات سين",
+        "decoys": [
+            "تشانغ كاي شيك",
+            "ماو تسي تونغ",
+            "تشو إن لاي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Sun-Yat-sen"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هو التمرد الدامي الواسع الذي قاده هونغ شيوكوان في الصين بين عامي 1850 و1864 وكلف ملايين الأرواح؟",
+        "correct_answer": "تمرد تايبينغ",
+        "decoys": [
+            "تمرد الملاكمين",
+            "تمرد اللوتس الأبيض",
+            "ثورة دونغان"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Taiping-Rebellion"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو سلطان المغول في الهند الذي اشتهر بسياسة التسامح الديني والاندماج وألغى ضريبة الجزية في القرن السادس عشر؟",
+        "correct_answer": "أكبر الكبير",
+        "decoys": [
+            "جهانكير",
+            "أورنغزيب",
+            "شاه جهان"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Akbar"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الشاه الصفوي الذي جعل من أصفهان عاصمة بديعة لبلاد فارس وشيد ساحة نقش جهان في أواخر القرن السادس عشر؟",
+        "correct_answer": "عباس الأول",
+        "decoys": [
+            "إسماعيل الأول",
+            "طهماسب الأول",
+            "نادر شاه"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Abbas-I-Safavid-shah"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "أي مدينة إندونيسية استضافت عام 1955 المؤتمر الآسيوي الأفريقي الشهير الذي مهد لظهور حركة عدم الانحياز؟",
+        "correct_answer": "باندونغ",
+        "decoys": [
+            "جاكرتا",
+            "سورابايا",
+            "يوغياكارتا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Bandung-Conference"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام قاد المهاتما غاندي مسيرة الملح السلمية إلى داندي احتجاجاً على ضريبة الملح البريطانية في الهند؟",
+        "correct_answer": "1930 م",
+        "decoys": [
+            "1919 م",
+            "1925 م",
+            "1942 م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Salt-March"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "أي مدينة يابانية كانت أول مدينة في التاريخ تستهدف بإلقاء قنبلة ذرية في 6 أغسطس 1945؟",
+        "correct_answer": "هيروشيما",
+        "decoys": [
+            "ناغازاكي",
+            "طوكيو",
+            "أوساكا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/atomic-bombings-of-Hiroshima-and-Nagasaki"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام سقطت الإمبراطورية الرومانية الغربية تقليدياً بعد خلع الإمبراطور رومولوس أوغستولوس؟",
+        "correct_answer": "476 م",
+        "decoys": [
+            "395 م",
+            "410 م",
+            "455 م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/ancient-Rome"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو ملك الفرنجة الذي توج إمبراطوراً للإمبراطورية الرومانية المقدسة في كنيسة القديس بطرس بروما عام 800 م؟",
+        "correct_answer": "شارلمان",
+        "decoys": [
+            "بيبين القصير",
+            "كلوفيس الأول",
+            "لويس الورع"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Charlemagne"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي معركة بحرية عام 1805 انتصر الأسطول البريطاني بقيادة اللورد نيلسون على الأسطول الفرنسي الإسباني؟",
+        "correct_answer": "معركة طرف الغار (ترافلغار)",
+        "decoys": [
+            "معركة النيل",
+            "معركة يوتلاند",
+            "معركة كوبنهاغن"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Trafalgar-European-history"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي قاعة بقصر فرساي أُعلن قيام الإمبراطورية الألمانية الموحدة وتتويج القيصر فيلهلم الأول عام 1871؟",
+        "correct_answer": "قاعة المرايا",
+        "decoys": [
+            "قاعة العرش",
+            "قاعة المعارك",
+            "قاعة التويجري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Franco-German-War"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو القيصر الروسي الذي أسس مدينة سانت بطرسبرغ عام 1703 وقاد نهضة تحديث شاملة لروسيا؟",
+        "correct_answer": "بطرس الأكبر",
+        "decoys": [
+            "إيفان الرهيب",
+            "ألكسندر الأول",
+            "نيقولا الأول"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Peter-the-Great"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المعركة الحاسمة عام 1805 التي انتصر فيها نابليون بونابرت وعُرفت باسم \"معركة الأباطرة الثلاثة\"؟",
+        "correct_answer": "معركة أوسترليتز",
+        "decoys": [
+            "معركة إينا",
+            "معركة فريدلاند",
+            "معركة لايبزيغ"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Austerlitz"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "أي ملك فرنسي أُعدم بالمقصلة في ساحة الثورة في باريس في يناير 1793 أثناء أحداث الثورة الفرنسية؟",
+        "correct_answer": "لويس السادس عشر",
+        "decoys": [
+            "لويس الخامس عشر",
+            "لويس الرابع عشر",
+            "لويس الثامن عشر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Louis-XVI"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي معاهدة السلام الموقعة عام 1713 التي وضعت حداً لحرب الخلافة الإسبانية في أوروبا؟",
+        "correct_answer": "معاهدة أوترخت",
+        "decoys": [
+            "معاهدة آخن",
+            "معاهدة باريس",
+            "معاهدة ريسفيك"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Peace-of-Utrecht"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي مدينة ألقى النبلاء البروتستانت ممثلي الإمبراطور الكاثوليكي من النافذة عام 1618 مشعلين حرب الثلاثين عاماً؟",
+        "correct_answer": "براغ",
+        "decoys": [
+            "فيينا",
+            "برنو",
+            "كراكوف"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Defenestration-of-Prague-1618"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المعركة الجوية الكبرى التي خاضتها بريطانيا ضد سلاح الجو الألماني في صيف وخريف عام 1940؟",
+        "correct_answer": "معركة بريطانيا",
+        "decoys": [
+            "معركة دنكرك",
+            "معركة الأردين",
+            "معركة المانش"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Britain-European-history_1940"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو المستشار الألماني الملقب بـ \"المستشار الحديدي\" الذي نجح في تحقيق الوحدة الألمانية في القرن التاسع عشر؟",
+        "correct_answer": "أوتو فون بسمارك",
+        "decoys": [
+            "كليمنس فون مترنيخ",
+            "برنهارد فون بولوف",
+            "هيلموت فون مولتكه"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Otto-von-Bismarck"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام تم إعلان مملكة إيطاليا الموحدة رسمياً برئاسة الملك فيكتور إيمانويل الثاني؟",
+        "correct_answer": "1861 م",
+        "decoys": [
+            "1848 م",
+            "1870 م",
+            "1882 م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/place/Italy/Unification"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المعاهدة الموقعة عام 1992 في هولندا والتي تأسس بموجبها الاتحاد الأوروبي رسمياً؟",
+        "correct_answer": "معاهدة ماستريخت",
+        "decoys": [
+            "معاهدة روما",
+            "معاهدة لشبونة",
+            "معاهدة أمستردام"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Maastricht-Treaty"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الفيلسوف الفرنسي صاحب كتاب \"روح القوانين\" الذي دعا فيه إلى مبدأ فصل السلطات الثلاث عام 1748؟",
+        "correct_answer": "مونتسكيو",
+        "decoys": [
+            "جان جاك روسو",
+            "فولتير",
+            "دينيس ديدرو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Montesquieu"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هو الاحتجاج الشهير عام 1773 الذي ألقى فيه المستعمرون الأمريكيون صناديق الشاي في ميناء بوسطن؟",
+        "correct_answer": "حفلة شاي بوسطن",
+        "decoys": [
+            "مذبحة بوسطن",
+            "معركة ليكسينغتون",
+            "مؤتمر فيلادلفيا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Boston-Tea-Party"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الزعيم الثوري الملقب بـ \"المحرر\" الذي قاد نضال استقلال دول كولومبيا وفنزويلا والإكوادور والبيرو وبوليفيا؟",
+        "correct_answer": "سيمون بوليفار",
+        "decoys": [
+            "خوسيه دي سان مارتين",
+            "برناردو أوهيغينز",
+            "أنطونيو خوسيه دي سوكري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Simon-Bolivar"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو الغازي الإسباني (الكونكيستادور) الذي قاد الحملة التي أسقطت إمبراطورية الأزتيك في المكسيك عام 1521؟",
+        "correct_answer": "إرنان كورتيس",
+        "decoys": [
+            "فرانسيسكو بيسارو",
+            "دييغو دي ألماغرو",
+            "بيدرو دي ألفارادو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Hernan-Cortes"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو القائد الإسباني الذي قاد الغزو الذي دمر إمبراطورية الإنكا في جبال الأنديز عام 1532؟",
+        "correct_answer": "فرانسيسكو بيسارو",
+        "decoys": [
+            "إرنان كورتيس",
+            "فاسكو نونييز دي بالبوا",
+            "خوان بونثي دي ليون"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Francisco-Pizarro"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المعاهدة الموقعة عام 1848 التي أنهت الحرب المكسيكية الأمريكية وتنازلت المكسيك بموجبها عن أراضٍ شاسعة؟",
+        "correct_answer": "معاهدة غوادالوبي هيدالغو",
+        "decoys": [
+            "معاهدة باريس",
+            "معاهدة غنت",
+            "معاهدة فالديفيا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Treaty-of-Guadalupe-Hidalgo"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام افتتحت قناة بنما المائية رسمياً للملاحة البحرية لتربط بين المحيطين الأطلسي والهادئ؟",
+        "correct_answer": "1914 م",
+        "decoys": [
+            "1898 م",
+            "1904 م",
+            "1920 م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Panama-Canal"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المواجهة الدبلوماسية والعسكرية الخطيرة عام 1962 التي كادت تشعل حرباً نووية بسبب صواريخ سوفيتية في الكاريبي؟",
+        "correct_answer": "أزمة الصواريخ الكوبية",
+        "decoys": [
+            "أزمة حصار برلين",
+            "أزمة خليج الخنازير",
+            "أزمة السويس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Cuban-missile-crisis"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "من هو القائد الوطني الأرجنتيني الذي قاد جيش الأنديز لتحرير تشيلي والبيرو من السيطرة الاستعمارية الإسبانية؟",
+        "correct_answer": "خوسيه دي سان مارتين",
+        "decoys": [
+            "سيمون بوليفار",
+            "فرانسيسكو دي ميراندا",
+            "مانويل بلغرانو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Jose-de-San-Martin"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي مدينة تم اغتيال الأرشيدوق فرانز فرديناند عام 1914، مما أشعل فتيل اندلاع الحرب العالمية الأولى؟",
+        "correct_answer": "سراييفو",
+        "decoys": [
+            "بلغراد",
+            "فيينا",
+            "زغرب"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/assassination-of-Franz-Ferdinand"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المنظمة الدولية التي تأسست عام 1920 ومقرها جنيف بهدف حفظ السلام العالمي عقب الحرب العالمية الأولى؟",
+        "correct_answer": "عصبة الأمم",
+        "decoys": [
+            "حركة عدم الانحياز",
+            "محكمة العدل الدولية",
+            "حلف الناتو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/League-of-Nations"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "أي قاعدة عسكرية أمريكية في جزر هاواي تعرضت لهجوم مفاجئ من الطيران الياباني في 7 ديسمبر 1941؟",
+        "correct_answer": "بيرل هاربر",
+        "decoys": [
+            "ميدواي",
+            "غوام",
+            "وايك آيلاند"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Pearl-Harbor-attack"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي المعركة البحرية الحاسمة في المحيط الهادئ في يونيو 1942 التي غيرت مسار الحرب ضد اليابان؟",
+        "correct_answer": "معركة ميدواي",
+        "decoys": [
+            "معركة بحر المرجان",
+            "معركة خليج ليتي",
+            "معركة إيو جيما"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Battle-of-Midway"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي شبه جزيرة عُقد مؤتمر يالطا عام 1945 بحضور روزفلت وتشرشل وستالين لبحث ترتيبات ما بعد الحرب العالمية الثانية؟",
+        "correct_answer": "شبه جزيرة القرم",
+        "decoys": [
+            "شبه جزيرة البلقان",
+            "شبه جزيرة إيبيريا",
+            "شبه جزيرة اسكندنافيا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Yalta-Conference"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هي معاهدة السلام المنفصلة التي وقعتها روسيا مع ألمانيا في مارس 1918 للخروج من الحرب العالمية الأولى؟",
+        "correct_answer": "معاهدة برست ليتوفسك",
+        "decoys": [
+            "معاهدة فرساي",
+            "معاهدة سان جيرمان",
+            "معاهدة تريانون"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/treaties-of-Brest-Litovsk"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "في أي عام هبط رواد فضاء مركبة أبولو 11 الأمريكية على سطح القمر لأول مرة في تاريخ البشرية؟",
+        "correct_answer": "1969 م",
+        "decoys": [
+            "1965 م",
+            "1971 م",
+            "1973 م"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/topic/Apollo-11"
+    },
+    {
+        "category_id": 2,
+        "language_code": "ar",
+        "question_text": "ما هو الاسم المعروف للهجوم العسكري المشترك لبريطانيا وفرنسا وإسرائيل على مصر عام 1956 عقب تأميم القناة؟",
+        "correct_answer": "العدوان الثلاثي",
+        "decoys": [
+            "حرب الاستنزاف",
+            "حرب الوديعة",
+            "حرب الأيام الستة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Suez-Crisis"
+    }
+]

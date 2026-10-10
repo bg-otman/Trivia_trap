@@ -1,15 +1,23 @@
-'use client';
+"use client";
 
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+import { ErrorState } from "@/components/ui/error-state";
 
-export default function Error({ error, reset }: { error: Error; reset: () => void }) {
+export default function UserProfileError({ reset }: { error: Error; reset: () => void }) {
+    const router = useRouter();
+
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <h1 className="text-4xl font-bold mb-4">Something went wrong!</h1>
-            <p className="text-lg mb-8">{error.message}</p>
-            <button onClick={() => redirect("/profile")} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Back to Profile
-            </button>
-        </div>
+        <DashboardShell>
+            <ErrorState
+                title="Profile unavailable"
+                description="We couldn't load this player right now. Check your connection and try again."
+                actionLabel="Try again"
+                onAction={reset}
+                secondaryActionLabel="Back to dashboard"
+                onSecondaryAction={() => router.push("/dashboard")}
+                className="mx-auto mt-16 max-w-xl"
+            />
+        </DashboardShell>
     );
 }

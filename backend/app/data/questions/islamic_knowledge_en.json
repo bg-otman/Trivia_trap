@@ -1,0 +1,1302 @@
+[
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which surah is the shortest in the Quran, consisting of only three verses?",
+    "correct_answer": "Surah Al-Kawthar",
+    "decoys": [
+      "Surah Al-Ikhlas",
+      "Surah An-Nas",
+      "Surah Al-Falaq"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/108"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which surah in the Quran does not begin with the Bismillah opening phrase?",
+    "correct_answer": "Surah At-Tawbah",
+    "decoys": [
+      "Surah Al-Anfal",
+      "Surah Yunus",
+      "Surah Hud"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/9"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which female figure is the only woman mentioned explicitly by name in the Quran?",
+    "correct_answer": "Maryam",
+    "decoys": [
+      "Khadijah",
+      "Asiyah",
+      "Sarah"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/19"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which companion of Prophet Muhammad is explicitly mentioned by name in the text of the Quran?",
+    "correct_answer": "Zayd ibn Harithah",
+    "decoys": [
+      "Abu Bakr",
+      "Ali ibn Abi Talib",
+      "Bilal ibn Rabah"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/33/37"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which surah of the Quran contains the Bismillah twice, once at the start and once within the verses?",
+    "correct_answer": "Surah An-Naml",
+    "decoys": [
+      "Surah An-Nur",
+      "Surah Saba",
+      "Surah Fatir"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/27/30"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "According to the Quran, upon which mountain elevation did the ark of Prophet Nuh come to rest after the deluge?",
+    "correct_answer": "Mount Judi",
+    "decoys": [
+      "Mount Sinai",
+      "Mount Arafat",
+      "Mount Uhud"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/11/44"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which surah of the Quran is described in authentic hadiths as being equal in value to one-third of the Quran?",
+    "correct_answer": "Surah Al-Ikhlas",
+    "decoys": [
+      "Surah Al-Fatiha",
+      "Surah Al-Mulk",
+      "Surah Yasin"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:5013"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Into how many equal parts or juz is the Quran traditionally divided to aid sequential monthly reading?",
+    "correct_answer": "30",
+    "decoys": [
+      "20",
+      "40",
+      "60"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Quran"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "In which surah of the Quran does the renowned 'Verse of Light' (Ayat an-Nur) appear?",
+    "correct_answer": "Surah An-Nur",
+    "decoys": [
+      "Surah Az-Zumar",
+      "Surah Ash-Shura",
+      "Surah Al-Hadid"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/24/35"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which prophet is mentioned most frequently by personal name across the chapters of the Quran?",
+    "correct_answer": "Prophet Musa",
+    "decoys": [
+      "Prophet Ibrahim",
+      "Prophet Isa",
+      "Prophet Nuh"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Moses-Hebrew-prophet"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "In the Quran, what was the miraculous sign given to Prophet Salih's people, the tribe of Thamud?",
+    "correct_answer": "A she-camel",
+    "decoys": [
+      "A golden ram",
+      "A white dove",
+      "A roaring lion"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/7/73"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which surah is named after the honeybee whose hive construction and nectar are cited as divine signs for humanity?",
+    "correct_answer": "Surah An-Nahl",
+    "decoys": [
+      "Surah An-Naml",
+      "Surah Al-Ankabut",
+      "Surah Al-Baqarah"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/16/68-69"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which surah concludes with two blessed verses that Prophet Muhammad recommended reciting each night for protection?",
+    "correct_answer": "Surah Al-Baqarah",
+    "decoys": [
+      "Surah Ali 'Imran",
+      "Surah Al-Mulk",
+      "Surah Al-Kahf"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:5009"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "According to Surah Al-Kahf, who was the righteous servant whom Prophet Musa journeyed to seek out and learn wisdom from?",
+    "correct_answer": "Al-Khidr",
+    "decoys": [
+      "Luqman",
+      "Dhul-Kifl",
+      "Talut"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/18/65"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What is the name of the sacred valley where Allah spoke directly to Prophet Musa and commanded him to remove his shoes?",
+    "correct_answer": "Tuwa",
+    "decoys": [
+      "Bakkah",
+      "Hunayn",
+      "Yathrib"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/20/12"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which surah repeatedly asks: 'Which of the favors of your Lord will you both deny?' a total of 31 times?",
+    "correct_answer": "Surah Ar-Rahman",
+    "decoys": [
+      "Surah Al-Waqi'ah",
+      "Surah Al-Hadid",
+      "Surah Al-Mulk"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/55"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "In the Quran, which fruit tree is paired with the olive in the opening divine oath of Surah At-Tin?",
+    "correct_answer": "Fig",
+    "decoys": [
+      "Date palm",
+      "Pomegranate",
+      "Grapevine"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/95/1"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "In Surah Al-Fil, what did the heavenly flock of birds (Ababil) drop upon the invading army of the elephant?",
+    "correct_answer": "Stones of baked clay",
+    "decoys": [
+      "Blazing embers of coal",
+      "Iron darts",
+      "Scorching sulfur"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/105/4"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which surah opens with the prophetic declaration that the Hour has drawn near and the moon has been split?",
+    "correct_answer": "Surah Al-Qamar",
+    "decoys": [
+      "Surah An-Najm",
+      "Surah At-Tariq",
+      "Surah Al-Inshiqaq"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/54/1"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which surah is named after the mineral iron and notes that Allah sent down iron with immense power and benefits?",
+    "correct_answer": "Surah Al-Hadid",
+    "decoys": [
+      "Surah Az-Zukhruf",
+      "Surah As-Saff",
+      "Surah Al-Jathiyah"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/57/25"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "According to Islamic belief, who was the very first prophet sent to humanity as well as the first human created?",
+    "correct_answer": "Prophet Adam",
+    "decoys": [
+      "Prophet Idris",
+      "Prophet Nuh",
+      "Prophet Ibrahim"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Adam-Islamic-tradition"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which honorific title, meaning 'the Intimate Friend of Allah', is traditionally conferred upon Prophet Ibrahim?",
+    "correct_answer": "Khalilullah",
+    "decoys": [
+      "Kalimullah",
+      "Ruhullah",
+      "Habibullah"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/4/125"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which prophet was gifted miraculous control over the wind currents and granted authority over ranks of jinn?",
+    "correct_answer": "Prophet Sulayman",
+    "decoys": [
+      "Prophet Dawud",
+      "Prophet Musa",
+      "Prophet Yusuf"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/34/12"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which prophet is venerated in the Quran for his legendary patience through severe physical illness and loss of family?",
+    "correct_answer": "Prophet Ayyub",
+    "decoys": [
+      "Prophet Yunus",
+      "Prophet Zakariya",
+      "Prophet Ya'qub"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/21/83-84"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What holy scripture was revealed to Prophet Musa (Moses) according to Islamic doctrine?",
+    "correct_answer": "Tawrat",
+    "decoys": [
+      "Injeel",
+      "Zabur",
+      "Suhuf"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/5/44"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What holy book of revelation was sent down to Prophet Isa (Jesus) according to the Quran?",
+    "correct_answer": "Injeel",
+    "decoys": [
+      "Tawrat",
+      "Zabur",
+      "Avesta"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/5/46"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "According to the Quran, which prophet miraculously spoke as an infant from the cradle to defend his mother's honor?",
+    "correct_answer": "Prophet Isa",
+    "decoys": [
+      "Prophet Yahya",
+      "Prophet Musa",
+      "Prophet Ismail"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/19/30"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "To which ancient Arabian civilization was Prophet Hud sent to call them away from idolatry and arrogance?",
+    "correct_answer": "'Ad",
+    "decoys": [
+      "Thamud",
+      "Madyan",
+      "Quraysh"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/7/65"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "According to the Quran, which prophet stood alongside his father Prophet Ibrahim to erect the foundations of the Kaaba?",
+    "correct_answer": "Prophet Ismail",
+    "decoys": [
+      "Prophet Ishaq",
+      "Prophet Ya'qub",
+      "Prophet Yusuf"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/2/127"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which elderly prophet prayed earnestly for an heir and was granted the glad tidings of a righteous son named Yahya?",
+    "correct_answer": "Prophet Zakariya",
+    "decoys": [
+      "Prophet Imran",
+      "Prophet Shu'ayb",
+      "Prophet Dawud"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/19/7"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which skill was Prophet Dawud endowed with by divine grace, enabling him to mold iron with his hands into protective coats of mail?",
+    "correct_answer": "Armor making",
+    "decoys": [
+      "Shipbuilding",
+      "Stone masonry",
+      "Pottery"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/34/10-11"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which prophet is revered in the Quran with the title 'Kalimullah' because Allah spoke directly to him on the mount?",
+    "correct_answer": "Prophet Musa",
+    "decoys": [
+      "Prophet Isa",
+      "Prophet Ibrahim",
+      "Prophet Nuh"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/4/164"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which prophet was renowned for his God-given gift of dream interpretation, including the royal dream of seven years of harvest?",
+    "correct_answer": "Prophet Yusuf",
+    "decoys": [
+      "Prophet Daniyal",
+      "Prophet Idris",
+      "Prophet Harun"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/12/43-49"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "According to the Quran, which prophet preached honest business transactions and fair scales to the merchants of Madyan?",
+    "correct_answer": "Prophet Shu'ayb",
+    "decoys": [
+      "Prophet Salih",
+      "Prophet Hud",
+      "Prophet Lut"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/26/176-182"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which prophet was a relative of Prophet Ibrahim and was sent to warn the corrupt inhabitants of the city of Sodom?",
+    "correct_answer": "Prophet Lut",
+    "decoys": [
+      "Prophet Ishaq",
+      "Prophet Ismail",
+      "Prophet Ya'qub"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Lot-biblical-figure"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What honorable epithet, meaning 'the Trustworthy', did the citizens of Mecca bestow upon Prophet Muhammad in his youth?",
+    "correct_answer": "Al-Amin",
+    "decoys": [
+      "As-Siddiq",
+      "Al-Farooq",
+      "Dhun-Nurayn"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "At approximately what age was Prophet Muhammad when he received the inaugural revelation of the Quran in Cave Hira?",
+    "correct_answer": "40",
+    "decoys": [
+      "25",
+      "30",
+      "50"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad/The-prophetic-call"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Who was the desert foster mother from the Banu Sa'd tribe who nursed and raised Prophet Muhammad during early infancy?",
+    "correct_answer": "Halimah as-Sa'diyyah",
+    "decoys": [
+      "Barakah Umm Ayman",
+      "Thuwaybah",
+      "Fatimah bint Asad"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What was the pre-Islamic name of the oasis city of Medina before Prophet Muhammad arrived during the Hijrah?",
+    "correct_answer": "Yathrib",
+    "decoys": [
+      "Khaybar",
+      "Taif",
+      "Tabuk"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Medina-Saudi-Arabia"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What was the name of the heavenly winged mount that transported Prophet Muhammad on the miraculous Night Journey (Isra)?",
+    "correct_answer": "Al-Buraq",
+    "decoys": [
+      "Al-Qaswa",
+      "Duldul",
+      "Ya'fur"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3207"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What historical term designates the sorrowful year when both Khadijah and Abu Talib passed away in Mecca?",
+    "correct_answer": "Year of Sorrow",
+    "decoys": [
+      "Year of Delegations",
+      "Year of the Elephant",
+      "Year of Cleansing"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What was the name of Prophet Muhammad's she-camel that knelt down to mark the site of the Prophet's Mosque in Medina?",
+    "correct_answer": "Al-Qaswa",
+    "decoys": [
+      "Al-Buraq",
+      "Adba",
+      "Shahba"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3906"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "In which year of the Hijri calendar did the peaceful Conquest of Mecca (Fath Makkah) occur?",
+    "correct_answer": "8 AH",
+    "decoys": [
+      "2 AH",
+      "5 AH",
+      "10 AH"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "During the Battle of the Trench (Khandaq), which Persian companion suggested digging a defensive ditch around Medina?",
+    "correct_answer": "Salman al-Farsi",
+    "decoys": [
+      "Abu Dharr al-Ghifari",
+      "Miqdad ibn Amr",
+      "Ammar ibn Yasir"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Battle-of-the-Ditch"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What formal agreement established civic cooperation and mutual rights between Muslim emigrants, local clans, and Jewish tribes in Medina?",
+    "correct_answer": "Constitution of Medina",
+    "decoys": [
+      "Treaty of Hudaybiyyah",
+      "Charter of Najran",
+      "Pledge of Aqabah"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Constitution-of-Medina"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "On which sacred plain did Prophet Muhammad deliver his celebrated Farewell Sermon (Khutbat al-Wada) during his final pilgrimage?",
+    "correct_answer": "Mount Arafat",
+    "decoys": [
+      "Mount Safa",
+      "Mount Hira",
+      "Mount Uhud"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/muslim:1218a"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which daughter of Prophet Muhammad was the mother of his beloved grandsons Al-Hasan and Al-Husayn?",
+    "correct_answer": "Fatimah",
+    "decoys": [
+      "Ruqayyah",
+      "Zaynab",
+      "Umm Kulthum"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Fatimah"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which Christian monk noticed the physical signs of upcoming prophethood in young Muhammad during a trade caravan to Syria?",
+    "correct_answer": "Bahira",
+    "decoys": [
+      "Waraqah ibn Nawfal",
+      "Negus",
+      "Salman"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Bahira"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Who was the knowledgeable Christian cousin of Khadijah whom she consulted when Muhammad received his first revelation from Gabriel?",
+    "correct_answer": "Waraqah ibn Nawfal",
+    "decoys": [
+      "Bahira",
+      "Zayd ibn Amr",
+      "Uthman ibn Huwayrith"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What was the royal title of the righteous Christian monarch of Abyssinia who gave shelter and security to the early Muslim migrants?",
+    "correct_answer": "Negus (Al-Najashi)",
+    "decoys": [
+      "Heraclius",
+      "Chosroes",
+      "Muqawqis"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad/The-emigration-to-Abyssinia"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What was the very first mosque founded by Prophet Muhammad and his companions upon reaching the outskirts of Medina?",
+    "correct_answer": "Quba Mosque",
+    "decoys": [
+      "Al-Qiblatayn Mosque",
+      "Al-Ijabah Mosque",
+      "Al-Fath Mosque"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Medina-Saudi-Arabia"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What was the historical pledge of steadfast allegiance taken beneath an acacia tree at Hudaybiyyah mentioned in Surah Al-Fath?",
+    "correct_answer": "Bay'at ar-Ridwan",
+    "decoys": [
+      "First Pledge of Aqabah",
+      "Second Pledge of Aqabah",
+      "Hilf al-Fudul"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/48/18"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which mountain near Medina did Prophet Muhammad affectionately describe by stating: 'This is a mountain that loves us and we love it'?",
+    "correct_answer": "Mount Uhud",
+    "decoys": [
+      "Mount Hira",
+      "Mount Thawr",
+      "Mount Nur"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:4084"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What noble pre-Islamic Meccan compact of justice did young Muhammad attend, formed to champion wronged merchants and victims?",
+    "correct_answer": "Hilf al-Fudul",
+    "decoys": [
+      "Dar an-Nadwah",
+      "Mala' of Quraysh",
+      "Hilf al-Ahlaf"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "In whose private Meccan residence did Prophet Muhammad and the earliest believers gather quietly for worship and study?",
+    "correct_answer": "Al-Arqam ibn Abi al-Arqam",
+    "decoys": [
+      "Abu Bakr as-Siddiq",
+      "Al-Abbas ibn Abd al-Muttalib",
+      "Hakim ibn Hizam"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Muhammad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Who was the closest companion of Prophet Muhammad who became the first adult male convert and the first Caliph of Islam?",
+    "correct_answer": "Abu Bakr as-Siddiq",
+    "decoys": [
+      "Umar ibn al-Khattab",
+      "Uthman ibn Affan",
+      "Ali ibn Abi Talib"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Abu-Bakr"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which title of honor, signifying 'the one who distinguishes truth from falsehood', was given to Caliph Umar ibn al-Khattab?",
+    "correct_answer": "Al-Farooq",
+    "decoys": [
+      "As-Siddiq",
+      "Dhun-Nurayn",
+      "Asadullah"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Umar-I"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which honorary epithet, meaning 'Possessor of the Two Lights', was bestowed upon the third Caliph, Uthman ibn Affan?",
+    "correct_answer": "Dhun-Nurayn",
+    "decoys": [
+      "Sayfuddin",
+      "Amin al-Ummah",
+      "Al-Farooq"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Uthman-ibn-Affan"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Who was the young cousin of Prophet Muhammad who volunteered to sleep in his bed to foil an assassination plot during the Hijrah?",
+    "correct_answer": "Ali ibn Abi Talib",
+    "decoys": [
+      "Ja'far ibn Abi Talib",
+      "Abdullah ibn Abbas",
+      "Usama ibn Zayd"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Ali-Muslim-caliph"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which young scholar companion was renowned for his unmatched mastery of Quranic exegesis and titled 'Interpreter of the Quran'?",
+    "correct_answer": "Abdullah ibn Abbas",
+    "decoys": [
+      "Abdullah ibn Mas'ud",
+      "Ubayy ibn Ka'b",
+      "Mu'adh ibn Jabal"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:75"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which legendary military commander among the companions was honored with the title 'Sayfullah' (the Sword of Allah)?",
+    "correct_answer": "Khalid ibn al-Walid",
+    "decoys": [
+      "Sa'd ibn Abi Waqqas",
+      "Hamza ibn Abd al-Muttalib",
+      "Al-Zubayr ibn al-Awwam"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3757"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which brave paternal uncle of Prophet Muhammad was known as 'Asadullah' (the Lion of Allah) and fell as a martyr at Uhud?",
+    "correct_answer": "Hamza ibn Abd al-Muttalib",
+    "decoys": [
+      "Al-Abbas ibn Abd al-Muttalib",
+      "Abu Talib",
+      "Az-Zubayr ibn Abd al-Muttalib"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Hamzah-ibn-Abd-al-Muttalib"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which companion was praised by Prophet Muhammad as the 'Trustee of this Nation' (Amin al-Ummah)?",
+    "correct_answer": "Abu Ubaydah ibn al-Jarrah",
+    "decoys": [
+      "Talhah ibn Ubaydullah",
+      "Sa'id ibn Zayd",
+      "Abd ar-Rahman ibn Awf"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:3744"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which wife of Prophet Muhammad was renowned for her exceptional erudition in Islamic law, jurisprudence, and hadith narration?",
+    "correct_answer": "Aisha bint Abi Bakr",
+    "decoys": [
+      "Umm Salamah",
+      "Juwayriyyah bint al-Harith",
+      "Sawdah bint Zam'ah"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Aishah"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which companion is historically documented to have transmitted the largest individual collection of hadiths from Prophet Muhammad?",
+    "correct_answer": "Abu Hurayrah",
+    "decoys": [
+      "Anas ibn Malik",
+      "Jabir ibn Abdullah",
+      "Abdullah ibn Umar"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Abu-Hurayrah"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What is the primary foundational pillar of Islam, articulating faith in the absolute oneness of Allah and the messengership of Muhammad?",
+    "correct_answer": "Shahada",
+    "decoys": [
+      "Salah",
+      "Zakat",
+      "Sawm"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/shahada"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "How many obligatory daily prayers (Salah) are ordained for practicing Muslims across each day and night cycle?",
+    "correct_answer": "5",
+    "decoys": [
+      "3",
+      "7",
+      "10"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/salat"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What is the Islamic religious term for the minor ritual ablution performed with water before standing in prayer?",
+    "correct_answer": "Wudu",
+    "decoys": [
+      "Tayammum",
+      "Ghusl",
+      "Istinja"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/wudu"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What dry ritual purification with clean earth or dust is sanctioned when water is inaccessible or physically harmful to use?",
+    "correct_answer": "Tayammum",
+    "decoys": [
+      "Wudu",
+      "Ghusl",
+      "Miswak"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/4/43"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What is the Islamic term for the wholesome pre-dawn meal eaten before beginning the daily fast at Fajr time?",
+    "correct_answer": "Suhur",
+    "decoys": [
+      "Iftar",
+      "Walima",
+      "Aqiqa"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:1923"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What is the communal or family meal called with which Muslims break their day-long fast right after sunset?",
+    "correct_answer": "Iftar",
+    "decoys": [
+      "Suhur",
+      "Fidyah",
+      "Kaffarah"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Iftar"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What is the baseline financial threshold of surplus savings a Muslim must hold over a lunar year before Zakat becomes due?",
+    "correct_answer": "Nisab",
+    "decoys": [
+      "Sadaqah",
+      "Khums",
+      "Jizya"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/zakat"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What sacred state of spiritual dedication and specific unstitched white apparel is assumed by pilgrims undertaking Hajj or Umrah?",
+    "correct_answer": "Ihram",
+    "decoys": [
+      "Kiswah",
+      "Tawaf",
+      "Sa'i"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/ihram"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What special optional communal night prayers are offered in mosques following Isha prayer strictly during the month of Ramadan?",
+    "correct_answer": "Taraweeh",
+    "decoys": [
+      "Tahajjud",
+      "Duha",
+      "Witr"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:2009"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What general Arabic term denotes voluntary, compassionate almsgiving offered beyond the prescribed obligations of Zakat?",
+    "correct_answer": "Sadaqah",
+    "decoys": [
+      "Nisab",
+      "Waqf",
+      "Ushr"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/sadaqah"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What is the name of the ancient stone cubic sanctuary standing in the courtyard of Al-Masjid al-Haram in Mecca?",
+    "correct_answer": "Kaaba",
+    "decoys": [
+      "Maqam Ibrahim",
+      "Hijr Ismail",
+      "Safa"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Kaaba-shrine-Mecca-Saudi-Arabia"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What is the name of the gold-embroidered black silk drape that drapes the outer stone walls of the holy Kaaba?",
+    "correct_answer": "Kiswah",
+    "decoys": [
+      "Ihram",
+      "Burdah",
+      "Ghata"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/kiswah"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What is the name of the miraculous desert spring in Mecca that welled up beneath baby Ismail to quench his and Hajar's thirst?",
+    "correct_answer": "Zamzam",
+    "decoys": [
+      "Kawthar",
+      "Salsabil",
+      "Tasnim"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Zamzam"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What is the small stone station near the Kaaba that preserves the imprint of Prophet Ibrahim's feet while building the sanctuary?",
+    "correct_answer": "Maqam Ibrahim",
+    "decoys": [
+      "Hijr Ismail",
+      "Al-Multazam",
+      "Bab as-Salam"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/2/125"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which sacred sanctuary in Jerusalem served as the primary orientation of prayer (Qibla) for early Muslims before Mecca?",
+    "correct_answer": "Al-Aqsa Mosque",
+    "decoys": [
+      "Umayyad Mosque",
+      "Great Mosque of Kufa",
+      "Prophet's Mosque"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Al-Aqsa-Mosque"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which Caliph officially established the Islamic Hijri calendar, selecting the historic emigration to Medina as its starting epoch?",
+    "correct_answer": "Umar ibn al-Khattab",
+    "decoys": [
+      "Abu Bakr as-Siddiq",
+      "Uthman ibn Affan",
+      "Ali ibn Abi Talib"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Muslim-calendar"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "On which exact calendar day of the holy month of Muharram is the historical fast of Ashura observed?",
+    "correct_answer": "10th",
+    "decoys": [
+      "1st",
+      "15th",
+      "27th"
+    ],
+    "image_url": null,
+    "source_url": "https://sunnah.com/bukhari:2004"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which major Islamic religious festival commences on the 10th of Dhul-Hijjah to honor Prophet Ibrahim's willingness to sacrifice?",
+    "correct_answer": "Eid al-Adha",
+    "decoys": [
+      "Eid al-Fitr",
+      "Mawlid an-Nabi",
+      "Laylat al-Qadr"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Eid-al-Adha"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which Islamic celebration marks the jubilant conclusion of the month-long Ramadan fast on the opening day of Shawwal?",
+    "correct_answer": "Eid al-Fitr",
+    "decoys": [
+      "Eid al-Adha",
+      "Laylat al-Bara'at",
+      "Ashura"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Eid-al-Fitr"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "How many total months within the Islamic lunar year are explicitly designated in the Quran as sacred inviolable months?",
+    "correct_answer": "Four",
+    "decoys": [
+      "Two",
+      "Three",
+      "Six"
+    ],
+    "image_url": null,
+    "source_url": "https://quran.com/9/36"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Collectively, what title designates the first four righteous caliphs who steered the early Muslim realm after Prophet Muhammad?",
+    "correct_answer": "Rashidun Caliphs",
+    "decoys": [
+      "Umayyad Caliphs",
+      "Abbasid Caliphs",
+      "Fatimid Caliphs"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Rashidun"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Succeeding the era of the four Rashidun caliphs, which ruling house established the city of Damascus as its imperial capital?",
+    "correct_answer": "Umayyad Dynasty",
+    "decoys": [
+      "Abbasid Dynasty",
+      "Ottoman Dynasty",
+      "Ayyubid Dynasty"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Umayyad-dynasty-Islamic-history"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which celebrated Abbasid caliph presided over Baghdad during its golden age of prosperity and scholarship in the late 8th century?",
+    "correct_answer": "Harun al-Rashid",
+    "decoys": [
+      "Al-Ma'mun",
+      "Al-Mansur",
+      "Al-Mutawakkil"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Harun-al-Rashid"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "In 711 CE, which commander led Muslim forces across the straits from North Africa into the Iberian Peninsula, naming Gibraltar after himself?",
+    "correct_answer": "Tariq ibn Ziyad",
+    "decoys": [
+      "Musa ibn Nusayr",
+      "Uqba ibn Nafi",
+      "Amr ibn al-Aas"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Tariq-ibn-Ziyad"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which Andalusian city in southern Spain flourished as the grand capital of the western Umayyad Caliphate and a hub of European learning?",
+    "correct_answer": "Cordoba",
+    "decoys": [
+      "Seville",
+      "Toledo",
+      "Granada"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/place/Cordoba-Spain"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which chivalrous Muslim sultan defeated the Crusader army at the Battle of Hattin in 1187 and recaptured Jerusalem?",
+    "correct_answer": "Saladin (Salah ad-Din)",
+    "decoys": [
+      "Nur ad-Din Zengi",
+      "Baybars",
+      "Qutuz"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Saladin"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "In 1260 CE, which Mamluk sultan led forces in the Galilee region to decisively halt the westward advance of the Mongol Empire at Ain Jalut?",
+    "correct_answer": "Sayf ad-Din Qutuz",
+    "decoys": [
+      "Baybars",
+      "Shajar al-Durr",
+      "Qalawun"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/event/Battle-of-Ain-Jalut"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which dynasty founded the royal capital city of Cairo (Al-Qahira) in 969 CE and established the famous Al-Azhar mosque and academy?",
+    "correct_answer": "Fatimid Dynasty",
+    "decoys": [
+      "Ayyubid Dynasty",
+      "Tulunid Dynasty",
+      "Mamluk Dynasty"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Fatimid-dynasty"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which young Ottoman sultan captured the fortified Byzantine capital of Constantinople in 1453 CE, earning the title 'The Conqueror'?",
+    "correct_answer": "Mehmed II",
+    "decoys": [
+      "Suleiman the Magnificent",
+      "Selim I",
+      "Murad II"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Mehmed-II"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "In which Moroccan city is the historic University of Al-Qarawiyyin situated, founded in 859 CE by Fatima al-Fihri?",
+    "correct_answer": "Fez",
+    "decoys": [
+      "Marrakesh",
+      "Rabat",
+      "Tangier"
+    ],
+    "image_url": null,
+    "source_url": "https://whc.unesco.org/en/list/170/"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "What major intellectual academy and library in Abbasid Baghdad served as the center of the translation movement and scientific research?",
+    "correct_answer": "House of Wisdom (Bayt al-Hikmah)",
+    "decoys": [
+      "Nizamiyyah Academy",
+      "Dar al-Ilm",
+      "Maragha Observatory"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/topic/Bayt-al-Hikmah"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which Persian clinical physician wrote the comprehensive medical encyclopedia 'Kitab al-Hawi' and pioneered clinical differentiation of smallpox?",
+    "correct_answer": "Al-Razi (Rhazes)",
+    "decoys": [
+      "Ibn Sina",
+      "Ibn Rushd",
+      "Ibn Zuhr"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/al-Razi"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which master philosopher and jurist from Muslim Cordoba wrote definitive commentaries on Aristotle and was known in the West as 'Averroes'?",
+    "correct_answer": "Ibn Rushd",
+    "decoys": [
+      "Ibn Tufayl",
+      "Ibn Bajjah",
+      "Al-Farabi"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Averroes"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which medieval Muslim cartographer and geographer drew the renowned world map and geographic treatise 'Tabula Rogeriana' in Sicily?",
+    "correct_answer": "Muhammad al-Idrisi",
+    "decoys": [
+      "Ibn Hawqal",
+      "Al-Masudi",
+      "Al-Muqaddasi"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/al-Sharif-al-Idrisi"
+  },
+  {
+    "category_id": 12,
+    "language_code": "en",
+    "question_text": "Which 14th-century North African scholar wrote the famous 'Muqaddimah', founding the early philosophical study of sociology and historiography?",
+    "correct_answer": "Ibn Khaldun",
+    "decoys": [
+      "Al-Tabari",
+      "Ibn al-Athir",
+      "Ibn Kathir"
+    ],
+    "image_url": null,
+    "source_url": "https://www.britannica.com/biography/Ibn-Khaldun"
+  }
+]

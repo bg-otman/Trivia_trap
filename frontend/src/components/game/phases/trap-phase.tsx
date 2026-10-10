@@ -63,8 +63,8 @@ export function TrapPhase({
     if (submitted) return;
     const trimmedAnswer = answer.trim();
 
-    if (trimmedAnswer.length < 2) {
-      setError("Write a convincing answer before submitting.");
+    if (trimmedAnswer.length < 1) {
+      setError("Write an answer before submitting.");
       return;
     }
 

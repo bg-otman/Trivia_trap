@@ -363,7 +363,7 @@ def calculate_results(
     votes: dict[str, str],
     players: dict[str, "PlayerInfo"],
     voting_choices: list[dict],
-) -> dict:
+) -> dict | tuple[dict, dict[str, dict], dict[str, dict]]:
     choices_by_id = prepare_voting_choices(
         voting_choices
     )
@@ -374,8 +374,11 @@ def calculate_results(
         choices_by_id=choices_by_id,
     )
 
-    return build_results_payload(
+    results = build_results_payload(
         choices_by_id=choices_by_id,
         player_stats=player_stats,
         players=players,
     )
+    # if include_details:
+    return results, player_stats, choices_by_id
+    # return results

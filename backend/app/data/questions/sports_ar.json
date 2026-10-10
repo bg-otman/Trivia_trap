@@ -1,0 +1,1302 @@
+[
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي منتخب فاز بالنسخة الأولى من بطولة كأس العالم لكرة القدم عام 1930؟",
+        "correct_answer": "الأوروغواي",
+        "decoys": [
+            "الأرجنتين",
+            "البرازيل",
+            "إيطاليا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/1930uruguay"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي منتخب حقق لقب كأس العالم لكرة القدم عام 1998 للمرة الأولى في تاريخه؟",
+        "correct_answer": "فرنسا",
+        "decoys": [
+            "البرازيل",
+            "هولندا",
+            "كرواتيا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/1998france"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو اللاعب الوحيد الذي فاز ببطولة كأس العالم لكرة القدم ثلاث مرات كلاعب؟",
+        "correct_answer": "بيليه",
+        "decoys": [
+            "دييغو مارادونا",
+            "فرانتس بكنباور",
+            "ماريو زاغالو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Pele-Brazilian-athlete"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "على أي ملعب أقيمت المباراة الحاسمة لكأس العالم 1950 بحضور أكبر جمهور في تاريخ البطولة؟",
+        "correct_answer": "استاد ماراكانا",
+        "decoys": [
+            "استاد ويمبلي",
+            "استاد أزتيكا",
+            "استاد سانتياغو برنابيو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/1950brazil"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو حارس المرمى الوحيد الذي فاز بجائزة الكرة الذهبية لأفضل لاعب في العالم؟",
+        "correct_answer": "ليف ياشين",
+        "decoys": [
+            "دينو زوف",
+            "جانلويجي بوفون",
+            "إيكر كاسياس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Lev-Yashin"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي نادٍ فاز بأول خمس نسخ متتالية من بطولة دوري أبطال أوروبا بين عامي 1956 و1960؟",
+        "correct_answer": "ريال مدريد",
+        "decoys": [
+            "بنفيكا",
+            "إيه سي ميلان",
+            "بايرن ميونخ"
+        ],
+        "image_url": null,
+        "source_url": "https://www.uefa.com/uefachampionsleague/history/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي منتخب توج بلقب كأس الأمم الأفريقية لكرة القدم ثلاث مرات متتالية بين 2006 و2010؟",
+        "correct_answer": "مصر",
+        "decoys": [
+            "الكاميرون",
+            "غانا",
+            "نيجيريا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.cafonline.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من سجل هدف الفوز لإسبانيا في نهائي كأس العالم لكرة القدم 2010 ضد هولندا؟",
+        "correct_answer": "أندريس إنييستا",
+        "decoys": [
+            "تشافي هيرنانديز",
+            "دافيد فيا",
+            "فرناندو توريس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/2010southafrica"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في أي دولة أقيمت بطولة كأس العالم لكرة القدم عام 1982؟",
+        "correct_answer": "إسبانيا",
+        "decoys": [
+            "إيطاليا",
+            "المكسيك",
+            "الأرجنتين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/1982spain"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي منتخب فاز ببطولة أمم أوروبا (يورو 1992) رغم مشاركته كبديل لمنتخب يوغوسلافيا؟",
+        "correct_answer": "الدنمارك",
+        "decoys": [
+            "اليونان",
+            "السويد",
+            "هولندا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.uefa.com/uefaeuro/history/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو الهداف التاريخي لنهائيات كأس العالم لكرة القدم برصيد 16 هدفاً؟",
+        "correct_answer": "ميروسلاف كلوزه",
+        "decoys": [
+            "رونالدو نازاريو",
+            "غيرد مولر",
+            "جوست فونتين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو أول منتخب عربي وأفريقي يبلغ الدور الثاني (ثمن النهائي) في كأس العالم عام 1986؟",
+        "correct_answer": "المغرب",
+        "decoys": [
+            "الجزائر",
+            "تونس",
+            "مصر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/1986mexico"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما كان اسم كأس بطولة كأس العالم لكرة القدم قبل اعتماد الكأس الحالية عام 1974؟",
+        "correct_answer": "كأس جول ريميه",
+        "decoys": [
+            "كأس هنري ديلوناي",
+            "كأس أرتور دروري",
+            "كأس رودولف سيلدرايرس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من كان المدير الفني الذي قاد إيطاليا للتتويج بكأس العالم لكرة القدم عام 2006؟",
+        "correct_answer": "مارتشيلو ليبي",
+        "decoys": [
+            "جوفاني تراباتوني",
+            "تشيزاري مالديني",
+            "أريغو ساكي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/2006germany"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي منتخب توج بلقب بطولة كوبا أمريكا المئوية عام 2016 بعد تغلبه على الأرجنتين بركلات الترجيح؟",
+        "correct_answer": "تشيلي",
+        "decoys": [
+            "البرازيل",
+            "كولومبيا",
+            "الأوروغواي"
+        ],
+        "image_url": null,
+        "source_url": "https://copaamerica.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من فاز بجائزة الكرة الذهبية لأفضل لاعب في العالم عام 2005؟",
+        "correct_answer": "رونالدينيو",
+        "decoys": [
+            "فرانك لامبارد",
+            "ستيفن جيرارد",
+            "تييري هنري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.francefootball.fr/ballon-d-or/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي نادٍ ألماني حقق الثلاثية التاريخية (الدوري والكأس ودوري الأبطال) لأول مرة في تاريخه عام 2013؟",
+        "correct_answer": "بايرن ميونخ",
+        "decoys": [
+            "بوروسيا دورتموند",
+            "باير ليفركوزن",
+            "هامبورغ"
+        ],
+        "image_url": null,
+        "source_url": "https://www.uefa.com/uefachampionsleague/history/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي دولة استضافت النسخة الأولى من بطولة كأس الأمم الآسيوية لكرة القدم عام 1956؟",
+        "correct_answer": "هونغ كونغ",
+        "decoys": [
+            "كوريا الجنوبية",
+            "اليابان",
+            "الكويت"
+        ],
+        "image_url": null,
+        "source_url": "https://www.the-afc.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من سجل الهدف الشهير بلقب \"هدف القرن\" في ربع نهائي كأس العالم 1986 أمام إنجلترا؟",
+        "correct_answer": "دييغو مارادونا",
+        "decoys": [
+            "خورخي فالدانو",
+            "غاري لينيكر",
+            "كلاوديو كانيجيا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/1986mexico"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في أي دولة أقيمت النسخة الافتتاحية من بطولة كأس العالم لكرة القدم للسيدات عام 1991؟",
+        "correct_answer": "الصين",
+        "decoys": [
+            "الولايات المتحدة",
+            "السويد",
+            "ألمانيا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/womens/womensworldcup/china1991"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو أكثر لاعب تتويجاً بكأس أوروبا للأندية البطلة برصيد 6 ألقاب مع ريال مدريد؟",
+        "correct_answer": "فرانشيسكو خينتو",
+        "decoys": [
+            "ألفريدو دي ستيفانو",
+            "فيرينتس بوشكاش",
+            "رايموند كوبا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.uefa.com/uefachampionsleague/history/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من نال جائزة الحذاء الذهبي كهداف لكأس العالم لكرة القدم 2002 برصيد 8 أهداف؟",
+        "correct_answer": "رونالدو نازاريو",
+        "decoys": [
+            "ميروسلاف كلوزه",
+            "ريفالدو",
+            "كريستيان فييري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fifa.com/en/tournaments/mens/worldcup/2002koreajapan"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو اللاعب الوحيد الذي سجل 100 نقطة في مباراة واحدة في دوري السلة الأمريكي (NBA) عام 1962؟",
+        "correct_answer": "ويلت تشامبرلين",
+        "decoys": [
+            "بيل راسل",
+            "مايكل جوردن",
+            "إلجين بايلور"
+        ],
+        "image_url": null,
+        "source_url": "https://www.nba.com/history/records"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي فريق حقق بطولة دوري كرة السلة الأمريكي للمحترفين (NBA) ست مرات خلال تسعينيات القرن العشرين؟",
+        "correct_answer": "شيكاغو بولز",
+        "decoys": [
+            "لوس أنجلوس ليكرز",
+            "هيوستن روكتس",
+            "سان أنطونيو سبيرز"
+        ],
+        "image_url": null,
+        "source_url": "https://www.nba.com/history/finals-mvp"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو اللاعب الذي نال جائزة أفضل لاعب في نهائيات دوري السلة الأمريكي (Finals MVP) ست مرات؟",
+        "correct_answer": "مايكل جوردن",
+        "decoys": [
+            "ليبرون جيمس",
+            "ماجيك جونسون",
+            "شاكيل أونيل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.nba.com/history/awards/finals-mvp"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هي جنسية أسطورة كرة السلة ديرك نوفيتسكي الذي قاد دالاس مافريكس للقب NBA عام 2011؟",
+        "correct_answer": "ألمانية",
+        "decoys": [
+            "فرنسية",
+            "إسبانية",
+            "صربية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.nba.com/history"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي منتخب توج بلقب بطولة كأس العالم لكرة السلة (FIBA) عام 2006 في اليابان؟",
+        "correct_answer": "إسبانيا",
+        "decoys": [
+            "اليونان",
+            "الولايات المتحدة",
+            "الأرجنتين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fiba.basketball/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو اللاعب الأكثر تتويجاً ببطولات دوري السلة الأمريكي (NBA) كلاعب برصيد 11 لقباً؟",
+        "correct_answer": "بيل راسل",
+        "decoys": [
+            "سام جونز",
+            "كريم عبد الجبار",
+            "بوب كوزي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.nba.com/history/records"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في أي دورة ألعاب أولمبية شارك المنتخب الأمريكي الأصلي الملقب بـ \"فريق الأحلام\" (Dream Team)؟",
+        "correct_answer": "برشلونة 1992",
+        "decoys": [
+            "سيول 1988",
+            "أتلانتا 1996",
+            "سيدني 2000"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/olympic-games/barcelona-1992"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو نجم دوري السلة الأمريكي الذي اشتهر برمية الخطاف الساحقة \"سكاي هوك\" (Skyhook)؟",
+        "correct_answer": "كريم عبد الجبار",
+        "decoys": [
+            "حكيم أولاجوان",
+            "باتريك يوينغ",
+            "ديفيد روبنسون"
+        ],
+        "image_url": null,
+        "source_url": "https://www.nba.com/history"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي نادٍ أحرز لقب الدوري الأوروبي لكرة السلة (اليوروليغ) عام 2010 في باريس؟",
+        "correct_answer": "برشلونة",
+        "decoys": [
+            "أولمبياكوس",
+            "سسكا موسكو",
+            "ريال مدريد"
+        ],
+        "image_url": null,
+        "source_url": "https://www.euroleaguebasketball.net/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي لاعب إسباني قاد منتخب بلاده للفوز بكأس العالم لكرة السلة 2006 ونال لقب NBA مع لوس أنجلوس ليكرز؟",
+        "correct_answer": "باو غاسول",
+        "decoys": [
+            "مارك غاسول",
+            "ريكي روبيو",
+            "خوسيه كالديرون"
+        ],
+        "image_url": null,
+        "source_url": "https://www.nba.com/history"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "على أي نوع من الملاعب تقام مباريات بطولة ويمبلدون للتنس سنوياً؟",
+        "correct_answer": "الملاعب العشبية",
+        "decoys": [
+            "الملاعب الترابية",
+            "الملاعب الصلبة",
+            "الملاعب السجادية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.wimbledon.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو لاعب التنس الملقب بـ \"ملك الملاعب الترابية\" لحصده 14 لقباً في بطولة رولان غاروس؟",
+        "correct_answer": "رافاييل نادال",
+        "decoys": [
+            "بيورن بورغ",
+            "غوستافو كويرتن",
+            "ماتس فيلاندر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.rolandgarros.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هي لاعبة التنس التي حققت \"الغراند سلام الذهبي\" عام 1988 بفوزها بالبطولات الكبرى الأربع والذهب الأولمبي؟",
+        "correct_answer": "شتيفي غراف",
+        "decoys": [
+            "مارتينا نافراتيلوفا",
+            "كريس إيفرت",
+            "سيرينا ويليامز"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Steffi-Graf"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من فاز بلقب فردي الرجال في بطولة ويمبلدون للتنس خمس مرات متتالية بين عامي 2003 و2007؟",
+        "correct_answer": "روجر فيدرير",
+        "decoys": [
+            "نوفاك دجوكوفيتش",
+            "بيت سامبراس",
+            "أندريه أغاسي"
+        ],
+        "image_url": null,
+        "source_url": "https://www.wimbledon.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في أي مدينة أسترالية تقام بطولة أستراليا المفتوحة للتنس سنوياً؟",
+        "correct_answer": "ملبورن",
+        "decoys": [
+            "سيدني",
+            "بريسبان",
+            "بيرث"
+        ],
+        "image_url": null,
+        "source_url": "https://ausopen.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من كان أصغر لاعب يحرز لقب فردي الرجال في ويمبلدون عام 1985 وهو في سن السابعة عشرة؟",
+        "correct_answer": "بوريس بيكر",
+        "decoys": [
+            "مايكل تشانغ",
+            "ليتون هيويت",
+            "ستيفان إدبرغ"
+        ],
+        "image_url": null,
+        "source_url": "https://www.wimbledon.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في أي مدينة تقام سنوياً منافسات بطولة أمريكا المفتوحة للتنس (US Open)؟",
+        "correct_answer": "نيويورك",
+        "decoys": [
+            "لوس أنجلوس",
+            "ميامي",
+            "شيكاغو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.usopen.org/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي منتخب فاز بكأس ديفيز للتنس عام 2018 بعد تغلبه على فرنسا في النهائي؟",
+        "correct_answer": "كرواتيا",
+        "decoys": [
+            "الأرجنتين",
+            "إسبانيا",
+            "سويسرا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.daviscup.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هي أول لاعبة تنس عربية وأفريقية تبلغ نهائي بطولتي ويمبلدون وأمريكا المفتوحة في عام 2022؟",
+        "correct_answer": "أنس جابر",
+        "decoys": [
+            "ميار شريف",
+            "سليمة صفر",
+            "فاطمة النبهاني"
+        ],
+        "image_url": null,
+        "source_url": "https://www.wtatennis.com/players/316847/ons-jabeur"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو اللاعب الأسترالي الوحيد في العصر المفتوح الذي أحرز جميع البطولات الأربع الكبرى للتنس في عام واحد (1969)؟",
+        "correct_answer": "رود لافر",
+        "decoys": [
+            "جون نيوكومب",
+            "كين روزوول",
+            "روي إيمرسون"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Rod-Laver"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في أي مدينة سجل العداء الجامايكي يوسين بولت أرقامه القياسية العالمية لسباقي 100 و200 متر عام 2009؟",
+        "correct_answer": "برلين",
+        "decoys": [
+            "بكين",
+            "لندن",
+            "روما"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو البطل المغربي الذي سجل الرقم القياسي العالمي لسباق 1500 متر عام 1998 برقم قدره 3:26.00 دقيقة؟",
+        "correct_answer": "هشام الكروج",
+        "decoys": [
+            "سعيد عويطة",
+            "نور الدين مرسلي",
+            "سفيان البقالي"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/athletes/morocco/hicham-el-guerrouj-14188639"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هي العداءة المغربية التي أصبحت أول امرأة عربية وأفريقية تفوز بذهبية أولمبية في لوس أنجلوس 1984؟",
+        "correct_answer": "نوال المتوكل",
+        "decoys": [
+            "حسيبة بولمرقة",
+            "غادة شعاع",
+            "نزهة بدوان"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/nawal-el-moutawakel"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو الرياضي الأمريكي صاحب القفزة التاريخية البالغة 8.90 متر في الوثب الطويل في أولمبياد 1968؟",
+        "correct_answer": "بوب بيمون",
+        "decoys": [
+            "مايك باويل",
+            "كارل لويس",
+            "جيسي أوينز"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/bob-beamon"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو الرياضي الذي ابتكر تقنية القفز العالي بالظهر نحو العارضة في أولمبياد مكسيكو 1968؟",
+        "correct_answer": "ديك فوسبري",
+        "decoys": [
+            "خافيير سوتومايور",
+            "ياروسلاف ريباكوف",
+            "ستيفان هولم"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/dick-fosbury"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو العداء الإثيوبي الذي فاز بسباق الماراثون الأولمبي عام 1960 وهو يركض حافي القدمين؟",
+        "correct_answer": "أبيبي بيكيلا",
+        "decoys": [
+            "هايله غبريسيلاسي",
+            "كينينيسا بيكيلي",
+            "ميروتس ييفتر"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/abebe-bikila"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هي جنسية العداء الأسطوري بافو نورمي الملقب بـ \"الفنلندي الطائر\" وصاحب تسع ذهبيات أولمبية؟",
+        "correct_answer": "فنلندية",
+        "decoys": [
+            "سويدية",
+            "نرويجية",
+            "دنماركية"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/paavo-nurmi"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو البطل الجزائري الذي توج بذهبية سباق 1500 متر في دورة الألعاب الأولمبية ببرشلونة 1992؟",
+        "correct_answer": "نور الدين مرسلي",
+        "decoys": [
+            "توفيق مخلوفي",
+            "عبد الرحمن حماد",
+            "سعيد سياف"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/noureddine-morceli"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو العداء الأمريكي الأسطوري الذي أحرز أربع ذهبيات في ألعاب القوى خلال أولمبياد برلين 1936؟",
+        "correct_answer": "جيسي أوينز",
+        "decoys": [
+            "كارل لويس",
+            "جيم ثورب",
+            "مايكل جونسون"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/jesse-owens"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "إلى أي دولة ينتمي أسطورة القفز بالزانة سيرغي بوبكا الذي تجاوز حاجز 6 أمتار لأول مرة؟",
+        "correct_answer": "أوكرانيا",
+        "decoys": [
+            "بولندا",
+            "رومانيا",
+            "المجر"
+        ],
+        "image_url": null,
+        "source_url": "https://worldathletics.org/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو الطول القانوني بالمتر لحوض السباحة في المسابقات الأولمبية (المسبح الطويل)؟",
+        "correct_answer": "50 متراً",
+        "decoys": [
+            "25 متراً",
+            "75 متراً",
+            "100 متر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.worldaquatics.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو السباح الأمريكي الذي حطم الرقم القياسي بفوزه بثماني ميداليات ذهبية في أولمبياد بكين 2008؟",
+        "correct_answer": "مايكل فيلبس",
+        "decoys": [
+            "مارك سبيتز",
+            "ريان لوكتي",
+            "إيان ثورب"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/michael-phelps"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "كم عدد اللاعبين داخل الماء لكل فريق أثناء سير مباراة كرة الماء الرسمية؟",
+        "correct_answer": "7 لاعبين",
+        "decoys": [
+            "5 لاعبين",
+            "6 لاعبين",
+            "8 لاعبين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.worldaquatics.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو السباح الأسترالي الملقب بـ \"التوربيدو\" الذي أحرز ثلاث ذهبيات في أولمبياد سيدني 2000؟",
+        "correct_answer": "إيان ثورب",
+        "decoys": [
+            "غرانت هاكيت",
+            "مايكل كليم",
+            "بيتر هورغن"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/ian-thorpe"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي من أساليب السباحة الأربعة التالية يبدأ فيه المتسابقون سباقهم من داخل الماء؟",
+        "correct_answer": "سباحة الظهر",
+        "decoys": [
+            "سباحة الصدر",
+            "سباحة الفراشة",
+            "السباحة الحرة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.worldaquatics.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو السباح التونسي الذي فاز بالميدالية الذهبية الأولمبية في سباق 1500 متر حرة في بكين 2008؟",
+        "correct_answer": "أسامة الملولي",
+        "decoys": [
+            "أحمد الحفناوي",
+            "فريد بن شيخ",
+            "تقي مرابط"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/oussama-mellouli"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو السباح الأمريكي الذي حقق سبع ميداليات ذهبية بأرقام قياسية عالمية في أولمبياد ميونخ 1972؟",
+        "correct_answer": "مارك سبيتز",
+        "decoys": [
+            "مات بيوندي",
+            "جوني فايسمولر",
+            "دون شولاندر"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/mark-spitz"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في سباق السباحة المتنوعة الفردي (Individual Medley)، ما هو الأسلوب الأول الذي يبدأ به السباح؟",
+        "correct_answer": "سباحة الفراشة",
+        "decoys": [
+            "سباحة الظهر",
+            "سباحة الصدر",
+            "السباحة الحرة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.worldaquatics.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو السائق الألماني الذي توج بلقب بطولة العالم لسباقات فورمولا 1 سبع مرات، منها خمس مرات متتالية مع فيراري؟",
+        "correct_answer": "مايكل شوماخر",
+        "decoys": [
+            "سيباستيان فيتل",
+            "نيكو روسبيرغ",
+            "نيكي لاودا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/drivers/hall-of-fame"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هي جنسية سائق الفورمولا 1 الأسطوري آيرتون سينا الفائز ببطولة العالم ثلاث مرات؟",
+        "correct_answer": "برازيلية",
+        "decoys": [
+            "أرجنتينية",
+            "كولومبية",
+            "إيطالية"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/drivers/hall-of-fame/Ayrton_Senna.html"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو اسم الحلبة الشهيرة التي يقام عليها سباق جائزة موناكو الكبرى للفورمولا 1 داخل شوارع المدينة؟",
+        "correct_answer": "حلبة مونتي كارلو",
+        "decoys": [
+            "حلبة مونزا",
+            "حلبة سيلفرستون",
+            "حلبة سبا فرانكورشان"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي فريق في سباقات فورمولا 1 يشتهر تاريخياً باللون الأحمر وهو الأكثر فوزاً ببطولة الصانعين؟",
+        "correct_answer": "فيراري",
+        "decoys": [
+            "مكلارين",
+            "ويليامز",
+            "مرسيدس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "كم ساعة تستمر منافسات سباق التحمل الشهير للسيارات الذي ينظم سنوياً في مدينة لومان الفرنسية؟",
+        "correct_answer": "24 ساعة",
+        "decoys": [
+            "12 ساعة",
+            "6 ساعات",
+            "48 ساعة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.24h-lemans.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو أصغر سائق في تاريخ الفورمولا 1 يتوج ببطولة العالم للسائقين وكان عمره 23 عاماً في 2010؟",
+        "correct_answer": "سيباستيان فيتل",
+        "decoys": [
+            "لويس هاميلتون",
+            "فرناندو ألونسو",
+            "ماكس فيرستابين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/drivers/hall-of-fame"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من أي دولة انطلق رالي دكار الصحراوي الشهير في نسخته الأولى عام 1979؟",
+        "correct_answer": "فرنسا",
+        "decoys": [
+            "إسبانيا",
+            "إيطاليا",
+            "البرتغال"
+        ],
+        "image_url": null,
+        "source_url": "https://www.dakar.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو السائق الأرجنتيني الذي حصد خمسة ألقاب عالمية في فورمولا 1 مع أربعة فرق مختلفة في الخمسينيات؟",
+        "correct_answer": "خوان مانويل فانجيو",
+        "decoys": [
+            "ألبرتو أسكاري",
+            "جاك برابهام",
+            "ستيرلينغ موس"
+        ],
+        "image_url": null,
+        "source_url": "https://www.formula1.com/en/drivers/hall-of-fame/Juan_Manuel_Fangio.html"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في أي مدينة أقيم نزال الملاكمة التاريخي المسمى \"نزال الغابة\" بين محمد علي وجورج فورمان عام 1974؟",
+        "correct_answer": "كينشاسا",
+        "decoys": [
+            "مانيلا",
+            "لاس فيغاس",
+            "نيويورك"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/event/Rumble-in-the-Jungle"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو الملاكم الأمريكي الذي توج أصغر بطل للوزن الثقيل في التاريخ عام 1986 وهو في العشرين من عمره؟",
+        "correct_answer": "مايك تايسون",
+        "decoys": [
+            "إيفاندر هوليفيلد",
+            "لينوكس لويس",
+            "لاري هولمز"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Mike-Tyson"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في أي دولة نشأت رياضة التايكوندو القتالية قبل أن تصبح رياضة أولمبية رسمية؟",
+        "correct_answer": "كوريا الجنوبية",
+        "decoys": [
+            "اليابان",
+            "الصين",
+            "تايلاند"
+        ],
+        "image_url": null,
+        "source_url": "https://www.worldtaekwondo.org/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو المعلم الياباني الذي أسس رياضة الجودو الحديثة عام 1882؟",
+        "correct_answer": "جيغورو كانو",
+        "decoys": [
+            "غيتشين فوناكوشي",
+            "موريهيه أويشيبا",
+            "ماسوتاتسو أوياما"
+        ],
+        "image_url": null,
+        "source_url": "https://www.ijf.org/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هي الرياضة القتالية التايلاندية التقليدية المشهورة بلقب \"فن الأطراف الثمانية\"؟",
+        "correct_answer": "موياي تاي",
+        "decoys": [
+            "التايكوندو",
+            "الووشو",
+            "الكيك بوكسينغ"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/sports/Muay-Thai"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هما الأسلوبان المعتمدان في منافسات المصارعة ضمن دورة الألعاب الأولمبية الصيفية؟",
+        "correct_answer": "المصارعة الرومانية والمصارعة الحرة",
+        "decoys": [
+            "مصارعة السامبو والمصارعة الحرة",
+            "المصارعة الرومانية ومصارعة السومو",
+            "المصارعة الحرة والمصارعة الاحترافية"
+        ],
+        "image_url": null,
+        "source_url": "https://uww.org/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو الملاكم الفلبيني الوحيد الذي توج بألقاب عالمية في ثمانية أوزان مختلفة في الملاكمة للمحترفين؟",
+        "correct_answer": "ماني باكوياو",
+        "decoys": [
+            "فلويد مايويذر",
+            "نونييتو دونير",
+            "خوان مانويل ماركيز"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Manny-Pacquiao"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هي الجزيرة اليابانية التي تعتبر الموطن الأصلي والمهد التاريخي لرياضة الكاراتيه؟",
+        "correct_answer": "أوكيناوا",
+        "decoys": [
+            "هوكايدو",
+            "هونشو",
+            "كيوشو"
+        ],
+        "image_url": null,
+        "source_url": "https://www.wkf.net/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو المعنى العربي للعبارة اللاتينية \"Citius, Altius, Fortius\" التي تمثل الشعار الأولمبي الكلاسيكي؟",
+        "correct_answer": "أسرع، أعلى، أقوى",
+        "decoys": [
+            "شرف، قوة، نصر",
+            "سلام، وحدة، أمل",
+            "شجاعة، عزم، كفاح"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/olympic-games/olympic-motto"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو البارون الفرنسي الذي أعاد إحياء الألعاب الأولمبية وأسس اللجنة الأولمبية الدولية عام 1894؟",
+        "correct_answer": "بيير دي كوبرتان",
+        "decoys": [
+            "خوان أنطونيو سامارانش",
+            "أفيري بروندج",
+            "توماس باخ"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/pierre-de-coubertin"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في أي موقع أثري يوناني يتم إيقاد الشعلة الأولمبية التقليدية قبل انطلاق كل دورة ألعاب أولمبية؟",
+        "correct_answer": "أولمبيا القديمة",
+        "decoys": [
+            "أكروبوليس أثينا",
+            "دلفي",
+            "سبارتا"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/olympic-games/olympic-flame"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي مدينة إسبانية استضافت دورة الألعاب الأولمبية الصيفية عام 1992؟",
+        "correct_answer": "برشلونة",
+        "decoys": [
+            "مدريد",
+            "إشبيلية",
+            "فالنسيا"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/olympic-games/barcelona-1992"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي دورة ألعاب أولمبية صيفية قاطعتها الولايات المتحدة ونحو 60 دولة أخرى عام 1980؟",
+        "correct_answer": "موسكو 1980",
+        "decoys": [
+            "مونتريال 1976",
+            "لوس أنجلوس 1984",
+            "سيول 1988"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/olympic-games/moscow-1980"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في أي عام كان مقرراً إقامة دورة الألعاب الأولمبية الصيفية التي ألغيت بسبب الحرب العالمية الأولى؟",
+        "correct_answer": "1916",
+        "decoys": [
+            "1912",
+            "1920",
+            "1924"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هي أول مدينة في التاريخ استضافت كلاً من دورة الألعاب الأولمبية الصيفية (2008) والشتوية (2022)؟",
+        "correct_answer": "بكين",
+        "decoys": [
+            "طوكيو",
+            "لندن",
+            "باريس"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/olympic-games/beijing-2022"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هي لاعبة الجمباز الرومانية التي نالت أول علامة 10 كاملة في تاريخ الجمباز الأولمبي في مونتريال 1976؟",
+        "correct_answer": "ناديا كومانتشي",
+        "decoys": [
+            "سيمونا أمانار",
+            "لافينيا ميلوسوفيتشي",
+            "إيكاترينا زابو"
+        ],
+        "image_url": null,
+        "source_url": "https://olympics.com/en/athletes/nadia-comaneci"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "كم عدد اللاعبين الأساسيين داخل الملعب لكل فريق أثناء سير مباراة كرة اليد الرسمية؟",
+        "correct_answer": "7 لاعبين",
+        "decoys": [
+            "5 لاعبين",
+            "6 لاعبين",
+            "8 لاعبين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.ihf.info/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "كم تبلغ المدة الرسمية للشوط الواحد في مباراة كرة اليد لفئة الكبار؟",
+        "correct_answer": "30 دقيقة",
+        "decoys": [
+            "20 دقيقة",
+            "25 دقيقة",
+            "35 دقيقة"
+        ],
+        "image_url": null,
+        "source_url": "https://www.ihf.info/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هما أبعاد ملعب كرة اليد القانوني بالمتر (الطول في العرض)؟",
+        "correct_answer": "40 في 20 متراً",
+        "decoys": [
+            "30 في 15 متراً",
+            "50 في 25 متراً",
+            "45 في 20 متراً"
+        ],
+        "image_url": null,
+        "source_url": "https://www.ihf.info/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "أي منتخب يحمل الرقم القياسي كأكثر المتوجين بلقب بطولة العالم لكرة اليد للرجال برصيد 6 ألقاب؟",
+        "correct_answer": "فرنسا",
+        "decoys": [
+            "السويد",
+            "الدنمارك",
+            "ألمانيا"
+        ],
+        "image_url": null,
+        "source_url": "https://www.ihf.info/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو الحد الأقصى للمسات المسموح بها لكل فريق لإعادة الكرة فوق الشبكة في الكرة الطائرة؟",
+        "correct_answer": "3 لمسات",
+        "decoys": [
+            "لمستان",
+            "4 لمسات",
+            "5 لمسات"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fivb.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "في الكرة الطائرة، ما هو مسمى اللاعب المدافع الحر الذي يرتدي قميصاً بلون مختلف ولا يحق له الإرسال أو الهجوم؟",
+        "correct_answer": "الليبرو",
+        "decoys": [
+            "المعد",
+            "الضارب الخارجي",
+            "حائط الصد"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fivb.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو الارتفاع الرسمي لشبكة الكرة الطائرة لمنافسات الرجال فوق منتصف الملعب؟",
+        "correct_answer": "2.43 متر",
+        "decoys": [
+            "2.24 متر",
+            "2.35 متر",
+            "2.50 متر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fivb.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "كم شوطاً يلزم الفريق الفوز بها لحسم مباراة الكرة الطائرة بنظام أفضل خمسة أشواط؟",
+        "correct_answer": "3 أشواط",
+        "decoys": [
+            "شوطان",
+            "4 أشواط",
+            "5 أشواط"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fivb.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو لون القميص الذي يرتديه متصدر الترتيب العام في طواف فرنسا للدراجات (تور دو فرانس)؟",
+        "correct_answer": "القميص الأصفر",
+        "decoys": [
+            "القميص الوردي",
+            "القميص الأخضر",
+            "القميص الأبيض"
+        ],
+        "image_url": null,
+        "source_url": "https://www.letour.fr/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو لون القميص الذي يرتديه متصدر الترتيب العام في طواف إيطاليا للدراجات (جيرو دي إيطاليا)؟",
+        "correct_answer": "القميص الوردي",
+        "decoys": [
+            "القميص الأصفر",
+            "القميص الأزرق",
+            "القميص الأحمر"
+        ],
+        "image_url": null,
+        "source_url": "https://www.giroditalia.it/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "من هو الدراج البلجيكي الأسطوري الملقب بـ \"آكل لحوم البشر\" لفوزه بطواف فرنسا وطواف إيطاليا 5 مرات لكل منهما؟",
+        "correct_answer": "إيدي ميركس",
+        "decoys": [
+            "برنار هينو",
+            "ميغيل إندوراين",
+            "جاك أنكيتيل"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/biography/Eddy-Merckx"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو المقذوف الخاص المستخدم في رياضة كرة الريشة (البادمنتون) بدلاً من الكرة التقليدية؟",
+        "correct_answer": "الريشة الطائرة",
+        "decoys": [
+            "قرص الهوكي",
+            "كرة البينغ بونغ",
+            "كرة التنس"
+        ],
+        "image_url": null,
+        "source_url": "https://corporate.bwfbadminton.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو القطر المعتمد رسمياً لكرات تنس الطاولة بالمليمتر منذ عام 2000؟",
+        "correct_answer": "40 ملم",
+        "decoys": [
+            "38 ملم",
+            "44 ملم",
+            "48 ملم"
+        ],
+        "image_url": null,
+        "source_url": "https://www.ittf.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "كم عدد اللاعبين على الجليد لكل فريق أثناء اللعب في مباراة هوكي الجليد الرسمية؟",
+        "correct_answer": "6 لاعبين",
+        "decoys": [
+            "5 لاعبين",
+            "7 لاعبين",
+            "8 لاعبين"
+        ],
+        "image_url": null,
+        "source_url": "https://www.iihf.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هو الاتحاد الدولي المسؤول عن تنظيم بطولات الشطرنج العالمية وتصنيف أساتذتها؟",
+        "correct_answer": "الاتحاد الدولي للشطرنج (FIDE)",
+        "decoys": [
+            "الاتحاد الدولي للرجبي (WR)",
+            "الاتحاد الدولي للهوكي (FIH)",
+            "الاتحاد الدولي للتجديف (FISA)"
+        ],
+        "image_url": null,
+        "source_url": "https://www.fide.com/"
+    },
+    {
+        "category_id": 4,
+        "language_code": "ar",
+        "question_text": "ما هي الصخرة الطبيعية الصلبة التي تصنع منها حجارة لعبة الكيرلنغ الأولمبية التقليدية؟",
+        "correct_answer": "الغرانيت",
+        "decoys": [
+            "الرخام",
+            "البازلت",
+            "الحجر الجيري"
+        ],
+        "image_url": null,
+        "source_url": "https://www.britannica.com/sports/curling"
+    }
+]

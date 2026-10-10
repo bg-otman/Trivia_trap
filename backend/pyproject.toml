@@ -15,9 +15,13 @@ dependencies = [
     "pyjwt>=2.14.0",
     "requests>=2.34.2",
     "sqlalchemy[asyncio]>=2.1.1",
+    "python-multipart>=0.0.32",
 ]
 
 [dependency-groups]
 dev = [
     "pytest>=9.1.1",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "app"]
