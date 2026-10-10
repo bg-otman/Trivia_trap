@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock
 import pytest
 from starlette.websockets import WebSocket
 
-from app.engine.events import join_room
+from app.engine.events import join_room, to_next_phase
 from app.engine.room_manager import send_initial_game_error
-from app.engine.room_models import PlayerInfo, Room, RoomMetaData, RoomSettings
-from app.engine.utils import GameError
+from app.engine.room_models import PlayerInfo, Room, RoomMetaData, RoomPhase, RoomSettings
+from app.engine.utils import Context, GameError
 
 
 def websocket() -> WebSocket:
@@ -74,6 +74,23 @@ def test_joining_started_game_returns_actionable_error() -> None:
         join_room({"ROOM01": room}, websocket(), "ROOM01", "2", "Guest", 2)
 
     assert captured.value.error_code == "GAME_IN_PROGRESS"
+
+
+def test_starting_game_requires_two_connected_players() -> None:
+    disconnected_player = player("Player", 2)
+    disconnected_player.is_present = False
+    room = Room(
+        meta_data=RoomMetaData(host_id="1", settings=RoomSettings()),
+        players={"1": player("Host", 1), "2": disconnected_player},
+    )
+    manager = SimpleNamespace(rooms={"ROOM01": room})
+    context = Context(room_id="ROOM01", user_id="1", user_name="Host")
+
+    with pytest.raises(GameError, match="At least 2 connected players") as captured:
+        asyncio.run(to_next_phase(manager, context))
+
+    assert captured.value.error_code == "NOT_ENOUGH_PLAYERS"
+    assert room.meta_data.phase.current_state == RoomPhase.LOBBY
 
 
 def test_initial_game_error_is_sent_directly_then_closed() -> None:

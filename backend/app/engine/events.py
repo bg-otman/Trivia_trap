@@ -348,6 +348,14 @@ async def to_next_phase(manager: RoomManager, context: Context):
     room = manager.rooms.get(context.room_id)
     # start game
     if room.meta_data.phase.current_state == RoomPhase.LOBBY:
+        present_player_count = sum(
+            player.is_present for player in room.players.values()
+        )
+        if present_player_count < 2:
+            raise GameError(
+                "NOT_ENOUGH_PLAYERS",
+                "At least 2 connected players are required to start the game",
+            )
         player_user_ids = {player_id: player.db_user_id for player_id, player in room.players.items()}
         stored = await load_unlocked_achievements(set(player_user_ids.values()))
         room.meta_data.achievement_state = reset_game_progress(room.meta_data.achievement_state)

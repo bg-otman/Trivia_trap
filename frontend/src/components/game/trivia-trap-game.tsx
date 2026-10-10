@@ -87,7 +87,9 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
     createInitialState(roomCode, undefined, mockState),
   );
   const [showGameIntro, setShowGameIntro] = useState(false);
-  const [connectionState, setConnectionState] = useState<LobbyConnectionState>(() => lobbyConnectionForMockState(mockState));
+  const [connectionState] = useState<LobbyConnectionState>(() =>
+    lobbyConnectionForMockState(mockState),
+  );
   const introTimeoutRef = useRef<number | null>(null);
   const categoryTimeoutRef = useRef<number | null>(null);
   const categoryRequestedRef = useRef(false);
@@ -469,18 +471,10 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
     setGame(createInitialState(roomCode, "LOBBY"));
   }
 
-  function retryConnection() {
-    setConnectionState("connecting");
-    window.setTimeout(() => {
-      setConnectionState("restored");
-      window.setTimeout(() => setConnectionState("connected"), 1200);
-    }, 700);
-  }
-
   function leaveRoom() {
     if (leavingRoomRef.current) return;
-    if (roomId && !websocket.leaveRoom()) return;
     leavingRoomRef.current = true;
+    if (roomId) websocket.leaveRoom();
     setShowGameIntro(false);
     router.push("/dashboard");
   }
@@ -531,7 +525,6 @@ export function TriviaTrapGame({ roomCode, roomId, mockState, currentUser }: Tri
             showMockChatTyping={!roomId}
             connectionState={roomId ? websocketConnectionState(websocket.connectionState) : connectionState}
             connectionError={roomId ? websocket.error : null}
-            onRetryConnection={roomId ? websocket.reconnect : retryConnection}
             onLeaveRoom={leaveRoom}
           />
         );

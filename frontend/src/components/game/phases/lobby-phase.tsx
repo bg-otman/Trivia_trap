@@ -73,7 +73,6 @@ interface LobbyPhaseProps {
   showMockChatTyping?: boolean;
   connectionState?: LobbyConnectionState;
   connectionError?: ServerErrorData | null;
-  onRetryConnection?: () => void;
   onLeaveRoom?: () => void;
 }
 
@@ -121,7 +120,6 @@ export function LobbyPhase({
   showMockChatTyping = false,
   connectionState = "connected",
   connectionError,
-  onRetryConnection,
   onLeaveRoom,
 }: LobbyPhaseProps) {
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -138,6 +136,9 @@ export function LobbyPhase({
   const readyPlayers = eligiblePlayers.filter(
     (player) => player.status !== "OFFLINE",
   );
+  const canStartGame = players.filter(
+    (player) => player.status !== "OFFLINE",
+  ).length >= 2;
   const openSlots = Math.max(0, settings.maxPlayers - players.length);
   const connectionPresentation = connectionError
     ? gameErrorPresentation(connectionError)
@@ -471,7 +472,9 @@ export function LobbyPhase({
                   </p>
                   <p className="mt-0.5 text-[11px] text-muted-foreground">
                     {isHost
-                      ? "Start when everyone has joined."
+                      ? canStartGame
+                        ? "Start when everyone has joined."
+                        : "At least 2 connected players are required."
                       : "Waiting for the host to start the game."}
                   </p>
                 </div>
@@ -481,6 +484,7 @@ export function LobbyPhase({
                   type="button"
                   size="lg"
                   onClick={onStartGame}
+                  disabled={!canStartGame}
                   className="w-full sm:w-auto sm:min-w-64"
                 >
                   <Play className="size-4 fill-current" /> START GAME
@@ -506,10 +510,8 @@ export function LobbyPhase({
             <ErrorState
               title={connectionPresentation.title}
               description={connectionPresentation.message}
-              actionLabel="RETRY"
-              onAction={onRetryConnection}
-              secondaryActionLabel="LEAVE ROOM"
-              onSecondaryAction={onLeaveRoom}
+              actionLabel="LEAVE ROOM"
+              onAction={onLeaveRoom}
               className="w-full max-w-lg bg-card"
             />
           ) : connectionState === "restored" ? (

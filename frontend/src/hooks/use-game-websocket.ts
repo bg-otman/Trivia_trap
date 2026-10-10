@@ -59,17 +59,11 @@ export function useGameWebSocket(roomId: string | undefined, sessionUser: Sessio
   const sendChatMessage = useMemo(() => client.sendChatMessage.bind(client), [client]);
   const kickPlayer = useMemo(() => client.kickPlayer.bind(client), [client]);
   const leaveRoom = useMemo(() => () => {
-    const sent = client.leaveRoom();
-    if (!sent) {
-      store.setError({
-        code: "LEAVE_FAILED",
-        message: "Could not leave the room. Check your connection and try again.",
-      });
-      return false;
-    }
+    // The server notification is best-effort: a disconnected player must still
+    // be able to clear local room state and leave the screen.
+    client.leaveRoom();
     client.disconnect();
     store.reset();
-    return true;
   }, [client, store]);
   const nextPhase = useMemo(() => client.nextPhase.bind(client), [client]);
   const returnToLobby = useMemo(() => client.returnToLobby.bind(client), [client]);
