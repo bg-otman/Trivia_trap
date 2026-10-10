@@ -2,6 +2,9 @@ const isLoopback = (hostname: string) => hostname === "localhost" || hostname ==
 
 function apiBaseUrl(): string {
   const configured = process.env.NEXT_PUBLIC_API_BASE_URL;
+  // Production browsers reach the API through the same HTTPS Nginx gateway.
+  if (!configured && process.env.NODE_ENV === "production") return "/api";
+
   const browserHost = typeof window === "undefined" ? undefined : window.location.hostname;
 
   // A login cookie belongs to a hostname, even when frontend and API use different ports.
