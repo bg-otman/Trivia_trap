@@ -6,7 +6,7 @@ This file describes the repository as checked in. Before changing behavior, conf
 
 - The backend is a FastAPI application on Python >=3.13. It uses Pydantic, `python-statemachine`, async SQLAlchemy/`asyncpg`, Alembic, and `uv` (`backend/pyproject.toml`, `backend/uv.lock`).
 - The frontend is Next.js 16, React 19, TypeScript, and Tailwind CSS. `frontend/package.json` declares pnpm; both `pnpm-lock.yaml` and `package-lock.json` are present. The frontend Makefile uses pnpm.
-- PostgreSQL is the persistent store. The application and Alembic both specify the local URL in `backend/app/dataProcessing/database.py` and `backend/alembic.ini`. Live room state is held in the backend process; Redis is not integrated.
+- PostgreSQL is the persistent data store. The application and Alembic both specify the local URL in `backend/app/dataProcessing/database.py` and `backend/alembic.ini`. Docker Compose persists uploaded avatars in the `backend_uploads` volume mounted at `/app/uploads`. Live room state is held in the backend process; Redis is not integrated.
 
 ## Repository map
 

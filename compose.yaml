@@ -102,6 +102,9 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      PASSWORD_RESET_URL: ${PASSWORD_RESET_URL}
+      SMTP_EMAIL: ${SMTP_EMAIL}
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
     depends_on:
       vault-bootstrap:
         condition: service_completed_successfully
@@ -112,6 +115,7 @@ services:
     volumes:
       - ./infra/vault/backend-agent.hcl:/vault/agent.hcl:ro
       - vault_backend_approle:/vault/approle:ro
+      - backend_uploads:/app/uploads
     healthcheck:
       test:
         [
@@ -271,6 +275,7 @@ volumes:
   vault_monitoring_approle:
   postgres_data:
   postgres_backups:
+  backend_uploads:
   monitoring_runtime_secrets:
   prometheus_data:
   grafana_data:
