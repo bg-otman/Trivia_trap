@@ -32,84 +32,84 @@ REQUIRED_FIELDS = {
 # These IDs belong to the JSON source. They are mapped to database IDs at run time.
 CATEGORY_SEEDS: dict[int, dict[str, Any]] = {
     1: {
-        "image_url": "/images/science.png",
+        "image_url": "/images/science.webp",
         "translations": {
             "en": "Science",
             "ar": "العلوم",
         },
     },
     2: {
-        "image_url": "/images/history.png",
+        "image_url": "/images/history.webp",
         "translations": {
             "en": "History",
             "ar": "التاريخ",
         },
     },
     3: {
-        "image_url": "/images/geography.png",
+        "image_url": "/images/geography.webp",
         "translations": {
             "en": "Geography",
             "ar": "الجغرافيا",
         },
     },
     4: {
-        "image_url": "/images/sports.png",
+        "image_url": "/images/sports.webp",
         "translations": {
             "en": "Sports",
             "ar": "الرياضة",
         },
     },
     5: {
-        "image_url": "/images/art-literature.png",
+        "image_url": "/images/art_literature.webp",
         "translations": {
             "en": "Art & Literature",
             "ar": "الفن والأدب",
         },
     },
     6: {
-        "image_url": "/images/technology.png",
+        "image_url": "/images/technology.webp",
         "translations": {
             "en": "Technology",
             "ar": "التكنولوجيا",
         },
     },
     7: {
-        "image_url": "/images/animals-nature.png",
+        "image_url": "/images/animals_nature.webp",
         "translations": {
             "en": "Animals & Nature",
             "ar": "الحيوانات والطبيعة",
         },
     },
     8: {
-        "image_url": "/images/anime.png",
+        "image_url": "/images/anime.webp",
         "translations": {
             "en": "Anime",
             "ar": "الأنمي",
         },
     },
     9: {
-        "image_url": "/images/movies-tv.png",
+        "image_url": "/images/movies_tv.webp",
         "translations": {
             "en": "Movies & TV",
             "ar": "الأفلام والتلفزيون",
         },
     },
     10: {
-        "image_url": "/images/gaming.png",
+        "image_url": "/images/gaming.webp",
         "translations": {
             "en": "Gaming",
             "ar": "ألعاب الفيديو",
         },
     },
     11: {
-        "image_url": "/images/weird-facts.png",
+        "image_url": "/images/weird_facts.webp",
         "translations": {
             "en": "Weird Facts",
             "ar": "حقائق غريبة",
         },
     },
     12: {
-        "image_url": "/images/islamic-knowledge.png",
+        "image_url": "/images/islamic_knowledge.webp",
         "translations": {
             "en": "Islamic Knowledge",
             "ar": "الثقافة الإسلامية",
