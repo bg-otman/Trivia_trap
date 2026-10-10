@@ -200,11 +200,11 @@
       setCard("frontend-card", frontendOk,
         frontendOk ? "Web application is responding." : "Web application is unavailable.");
 
-      const apiOk = await fetchOk("/health");
+      const apiOk = await fetchOk("/api/health");
       setCard("api-card", apiOk,
         apiOk ? "FastAPI is responding." : "FastAPI is unavailable.");
 
-      const databaseOk = await fetchOk("/ready");
+      const databaseOk = await fetchOk("/api/ready");
       setCard("database-card", databaseOk,
         databaseOk ? "Backend can query PostgreSQL." : "PostgreSQL is not ready.");
 
