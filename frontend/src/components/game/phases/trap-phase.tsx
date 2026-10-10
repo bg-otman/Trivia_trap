@@ -1,10 +1,11 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { Check, LockKeyhole, MessageSquareText, Send } from "lucide-react";
+import { Check, Keyboard, LockKeyhole, MessageSquareText, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { QuestionCard } from "@/components/game/question/question-card";
+import { ArabicVirtualKeyboard } from "@/components/game/question/arabic-virtual-keyboard";
 import { PhaseContent } from "@/components/game/system/phase-transition";
 import { WaitingArena } from "@/components/game/voting/waiting/waiting-arena";
 import { WaitingSwap } from "@/components/game/voting/waiting/waiting-swap";
@@ -39,6 +40,8 @@ export function TrapPhase({
 }: TrapPhaseProps) {
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [showArabicKeyboard, setShowArabicKeyboard] = useState(false);
+  const arabicKeyboardOpen = language === "ar" && showArabicKeyboard;
   const submitTimeout = useRef<number | null>(null);
   const reducedMotion = useReducedMotion();
   const successIcon = useRef<HTMLSpanElement>(null);
@@ -126,40 +129,72 @@ export function TrapPhase({
               onSubmit={submitTrap}
               className="rounded-2xl border border-white/10 bg-[#19191f]/90 p-5 shadow-[0_16px_36px_rgba(0,0,0,0.2)] sm:p-6"
             >
-              <label
-                htmlFor="trap-answer"
-                className="font-meta text-[11px] font-black tracking-[0.13em] text-primary"
-              >
-                {submitted ? (
-                  <span className="inline-flex items-center gap-2">
-                    <LockKeyhole className="size-3.5" aria-hidden="true" />
-                    ANSWER LOCKED
-                  </span>
-                ) : (
-                  "YOUR ANSWER"
+              <div className="flex items-center justify-between gap-3">
+                <span
+                  id="trap-answer-label"
+                  className="font-meta text-[11px] font-black tracking-[0.13em] text-primary"
+                >
+                  {submitted ? (
+                    <span className="inline-flex items-center gap-2">
+                      <LockKeyhole className="size-3.5" aria-hidden="true" />
+                      ANSWER LOCKED
+                    </span>
+                  ) : (
+                    "YOUR ANSWER"
+                  )}
+                </span>
+                {language === "ar" && !submitted && (
+                  <button
+                    type="button"
+                    disabled={submitting}
+                    aria-pressed={arabicKeyboardOpen}
+                    aria-controls={arabicKeyboardOpen ? "arabic-keyboard-panel" : undefined}
+                    onClick={() => setShowArabicKeyboard((open) => !open)}
+                    className="inline-flex items-center gap-2 rounded-lg border border-primary/40 px-3 py-2 text-xs font-bold text-primary transition hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-50"
+                  >
+                    <Keyboard className="size-4" aria-hidden="true" />
+                    {arabicKeyboardOpen ? "إخفاء لوحة المفاتيح" : "لوحة مفاتيح عربية"}
+                  </button>
                 )}
-              </label>
-              <div className="mt-3 flex flex-col gap-3 sm:flex-row">
-                <Input
-                  id="trap-answer"
-                  value={answer}
-                  disabled={submitted || submitting}
-                  onChange={(event) => {
-                    onAnswerChange(event.target.value);
-                    if (error) setError(null);
-                  }}
-                  maxLength={80}
-                  autoComplete="off"
-                  placeholder="Write an answer that could fool the other players..."
-                  aria-describedby={error ? "trap-error" : "trap-help"}
-                  dir={language === "ar" ? "rtl" : "ltr"}
-                  aria-invalid={Boolean(error)}
-                  className="h-12 min-w-0 flex-1 rounded-xl border border-border bg-black/25 px-4 text-sm font-semibold text-white outline-none transition placeholder:text-[#6f6f78] focus:border-primary focus:ring-2 focus:ring-primary/20"
-                />
+              </div>
+              <div className={arabicKeyboardOpen ? "mt-3 flex flex-col gap-3" : "mt-3 flex flex-col gap-3 sm:flex-row"}>
+                {arabicKeyboardOpen ? (
+                  <ArabicVirtualKeyboard
+                    value={answer}
+                    maxLength={80}
+                    disabled={submitted || submitting}
+                    onChange={(next) => {
+                      onAnswerChange(next);
+                      if (error) setError(null);
+                    }}
+                    onUnavailable={() => {
+                      setShowArabicKeyboard(false);
+                      setError("Could not load the Arabic keyboard. Use your device keyboard.");
+                    }}
+                  />
+                ) : (
+                  <Input
+                    id="trap-answer"
+                    aria-labelledby="trap-answer-label"
+                    dir={language === "ar" ? "rtl" : "ltr"}
+                    value={answer}
+                    disabled={submitted || submitting}
+                    onChange={(event) => {
+                      onAnswerChange(event.target.value);
+                      if (error) setError(null);
+                    }}
+                    maxLength={80}
+                    autoComplete="off"
+                    placeholder="Write an answer that could fool the other players..."
+                    aria-describedby={error ? "trap-error" : "trap-help"}
+                    aria-invalid={Boolean(error)}
+                    className="h-12 min-w-0 flex-1 rounded-xl border border-border bg-black/25 px-4 text-sm font-semibold text-white outline-none transition placeholder:text-[#6f6f78] focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  />
+                )}
                 <Button
                   type="submit"
                   disabled={submitted || submitting}
-                  className="h-12 px-6"
+                  className={arabicKeyboardOpen ? "h-12 self-end px-6" : "h-12 px-6"}
                 >
                   {submitting ? "LOCKING ANSWER..." : submitted ? "ANSWER LOCKED" : "SUBMIT ANSWER"}
                   {submitted ? (
