@@ -1,3 +1,5 @@
+import type { GameLanguage } from "@/types/game";
+
 export type GameConnectionState =
   | "CONNECTING"
   | "CONNECTED"
@@ -14,7 +16,7 @@ export interface LobbySettingsState {
   bluff_time: number;
   vote_time: number;
   max_players: number;
-  language: string;
+  language: GameLanguage;
 }
 export interface LobbyState {
   round: number;
@@ -35,7 +37,7 @@ export interface UpdateSettingsData {
   bluff_time: number;
   vote_time: number;
   max_players: number;
-  language: string;
+  language: GameLanguage;
 }
 export interface UpdateSettingsMessage {
   event: "UPDATE_SETTINGS";
@@ -78,7 +80,7 @@ export interface CategoryPhaseMessage {
 export interface GetQuestionCategoryData {
   id: number;
   name: string;
-  language: string;
+  language: GameLanguage;
 }
 export interface GetQuestionMessage {
   event: "GET_QUESTION";

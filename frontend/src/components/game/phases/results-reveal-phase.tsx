@@ -10,17 +10,20 @@ import {
   SubmittedAnswerCard,
 } from "@/components/game/results/answer-reveal-card";
 import type { AnswerReveal } from "@/types/results";
+import type { GameLanguage } from "@/types/game";
 
 interface ResultsRevealPhaseProps {
   reveal: AnswerReveal;
   isHost: boolean;
   onShowResults: () => void;
+  language?: GameLanguage;
 }
 
 export function ResultsRevealPhase({
   reveal,
   isHost,
   onShowResults,
+  language = "en",
 }: ResultsRevealPhaseProps) {
   const [revealing, setRevealing] = useState(true);
 
@@ -51,7 +54,7 @@ export function ResultsRevealPhase({
           </p>
         </PhaseContent>
 
-        <PhaseContent delay={0.22}><CorrectAnswerCard answer={reveal.correctAnswer} voterNames={reveal.correctVoterNames} /></PhaseContent>
+        <PhaseContent delay={0.22}><CorrectAnswerCard answer={reveal.correctAnswer} voterNames={reveal.correctVoterNames} language={language} /></PhaseContent>
 
         <div className="mb-3 mt-6 flex items-center justify-between gap-3 px-1">
           <div className="flex items-center gap-2 text-[#e4e1e6]">
@@ -67,7 +70,7 @@ export function ResultsRevealPhase({
 
         <StaggerGroup delay={0.48} stagger={0.11} className="grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2">
           {reveal.submissions.map((submission, index) => (
-            <StaggerItem key={submission.id} direction={index % 2 === 0 ? -1 : 1}><SubmittedAnswerCard submission={submission} /></StaggerItem>
+            <StaggerItem key={submission.id} direction={index % 2 === 0 ? -1 : 1}><SubmittedAnswerCard submission={submission} language={language} /></StaggerItem>
           ))}
         </StaggerGroup>
 

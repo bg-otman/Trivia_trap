@@ -7,12 +7,14 @@ import { QuestionMedia } from "./question-media";
 import type { Question } from "@/types/question";
 import { cn } from "@/lib/utils";
 import { playCategoryHandoff } from "@/animations/category-transition";
+import type { GameLanguage } from "@/types/game";
 
 interface QuestionCardProps {
   question: Question;
   currentRound: number;
   totalRounds: number;
   className?: string;
+  language?: GameLanguage;
 }
 
 export function QuestionCard({
@@ -20,6 +22,7 @@ export function QuestionCard({
   currentRound,
   totalRounds,
   className,
+  language = "en",
 }: QuestionCardProps) {
   const hasImage = question.type === "IMAGE";
   const categoryTarget = useRef<HTMLDivElement>(null);
@@ -78,7 +81,7 @@ export function QuestionCard({
           <p className="mb-3 font-meta text-[11px] font-bold tracking-[0.16em] text-primary">
             THE QUESTION
           </p>
-          <h1 dir="auto" className="text-balance font-display text-2xl font-black leading-tight tracking-[-0.025em] text-foreground sm:text-3xl lg:text-[2.15rem] lg:leading-[1.2]">
+          <h1 dir={language === "ar" ? "rtl" : "auto"} className="text-balance font-display text-2xl font-black leading-tight tracking-[-0.025em] text-foreground sm:text-3xl lg:text-[2.15rem] lg:leading-[1.2]">
             {question.text}
           </h1>
 

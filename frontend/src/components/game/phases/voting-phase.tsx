@@ -4,6 +4,7 @@ import { VotingArena } from "@/components/game/voting/voting-arena";
 import { LoadingState } from "@/components/ui/loading-state";
 import type { Question, VotingOption } from "@/types/question";
 import type { Player } from "@/types/player";
+import type { GameLanguage } from "@/types/game";
 
 interface VotingPhaseProps {
   players: Player[];
@@ -13,6 +14,7 @@ interface VotingPhaseProps {
   hasVoted: boolean;
   seconds: number;
   onCastVote: (optionId: VotingOption["id"]) => void;
+  language?: GameLanguage;
 }
 
 export function VotingPhase({
@@ -23,6 +25,7 @@ export function VotingPhase({
   hasVoted,
   seconds,
   onCastVote,
+  language = "en",
 }: VotingPhaseProps) {
   if (options.length === 0) {
     return (
@@ -40,6 +43,7 @@ export function VotingPhase({
       lockedOptionId={hasVoted ? selectedVote : null}
       votingClosed={seconds <= 0 || hasVoted}
       onVote={onCastVote}
+      language={language}
     />
   );
 }

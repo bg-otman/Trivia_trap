@@ -50,6 +50,7 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { WaitingArena } from "@/components/game/voting/waiting/waiting-arena";
 import { WaitingMessage } from "@/components/game/voting/waiting/waiting-message";
 import { InviteFriendsDialog } from "@/components/game/lobby/invite-friends-dialog";
+import { connectionErrorPresentation, gameErrorPresentation } from "@/lib/game-error";
 
 export type LobbyConnectionState =
   | "connected"
@@ -77,7 +78,7 @@ interface LobbyPhaseProps {
 }
 
 const settingFields: Array<{
-  key: keyof GameSettings;
+  key: "totalRounds" | "bluffTime" | "voteTime" | "maxPlayers";
   label: string;
   suffix: string;
   min: number;
@@ -138,6 +139,9 @@ export function LobbyPhase({
     (player) => player.status !== "OFFLINE",
   );
   const openSlots = Math.max(0, settings.maxPlayers - players.length);
+  const connectionPresentation = connectionError
+    ? gameErrorPresentation(connectionError)
+    : connectionErrorPresentation;
   function saveSettings() {
     onSettingsChange(draftSettings);
     setSettingsOpen(false);
@@ -500,23 +504,8 @@ export function LobbyPhase({
         <div className="absolute inset-0 z-30 grid place-items-center bg-background/75 p-5 backdrop-blur-[2px]">
           {connectionState === "failed" ? (
             <ErrorState
-              title={
-                connectionError?.code === "FULL_ROOM"
-                  ? "ROOM FULL"
-                  : connectionError?.code == "GAME_IN_PROGRESS"
-                    ? "GAME IN PROGRESS"
-                    : connectionError?.code === "ROOM_NOT_FOUND"
-                      ? "ROOM NOT FOUND"
-                      : connectionError?.code === "FORBIDDEN"
-                      ? "ACCESS DENIED"
-                      : connectionError?.code === "PLAYER_NOT_FOUND"
-                        ? "PLAYER NOT FOUND"
-                        : "CONNECTION LOST"
-              }
-              description={
-                connectionError?.message ??
-                "We couldn&apos;t reconnect to the room."
-              }
+              title={connectionPresentation.title}
+              description={connectionPresentation.message}
               actionLabel="RETRY"
               onAction={onRetryConnection}
               secondaryActionLabel="LEAVE ROOM"

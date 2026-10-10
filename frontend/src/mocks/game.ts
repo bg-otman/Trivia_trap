@@ -12,6 +12,7 @@ export const mockGame: GameState = {
     bluffTime: 30,
     voteTime: 20,
     maxPlayers: 10,
+    language: "en",
   },
   players: mockPlayers,
 };

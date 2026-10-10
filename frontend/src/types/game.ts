@@ -9,12 +9,14 @@ export type GamePhase =
   | "ROUND_RESULTS"
   | "FINAL_RESULTS";
 
+export type GameLanguage = "en" | "ar";
+
 export interface GameSettings {
   totalRounds: number;
   bluffTime: number;
   voteTime: number;
   maxPlayers: number;
-  language?: string;
+  language: GameLanguage;
 }
 
 export interface GameState {
