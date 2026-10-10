@@ -104,7 +104,9 @@ services:
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
       PASSWORD_RESET_URL: ${PASSWORD_RESET_URL}
       SMTP_EMAIL: ${SMTP_EMAIL}
-      SMTP_PASSWORD: ${SMTP_PASSWORD}
+      SMTP_PASSWORD_FILE: /run/secrets/smtp_password
+    secrets:
+      - smtp_password
     depends_on:
       vault-bootstrap:
         condition: service_completed_successfully
@@ -280,3 +282,7 @@ volumes:
   prometheus_data:
   grafana_data:
   nginx_certs:
+
+secrets:
+  smtp_password:
+    file: ./infra/secrets/smtp_password

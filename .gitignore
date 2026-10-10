@@ -13,3 +13,6 @@ __pycache__/
 # TLS material
 infra/nginx/certs/*.crt
 infra/nginx/certs/*.key
+
+# Local Docker Compose secrets
+infra/secrets/
